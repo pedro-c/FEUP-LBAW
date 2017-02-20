@@ -1,0 +1,259 @@
+//colors
+$color_ebony_clay_approx: #22313f;
+$white: #fff;
+$color_confetti_approx: #e9d460;
+$color_firefly_approx: #192532;
+$color_mountain_mist_approx: #999;
+$black_15: rgba(0, 0, 0, .15);
+$black_17_5: rgba(0, 0, 0, .175);
+$color_fern_approx: #5cb85c;
+$color_goblin_approx: #3d8b3d;
+$color_chestnut_rose_approx: #d9534f;
+$color_tall_poppy_approx: #b52b27;
+$color_casablanca_approx: #f0ad4e;
+$color_golden_bell_approx: #df8a13;
+
+body {
+  margin-top: 100px;
+  background-color: $white;
+}
+@media(min-width:768px) {
+  body {
+    margin-top: 50px;
+  }
+  #wrapper {
+  }
+  #page-wrapper {
+    padding: 10px;
+    margin-left: 80px;
+  }
+  .side-nav {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 80px;
+    border: none;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 0;
+    overflow-y: auto;
+    background-color: $color_ebony_clay_approx;
+    bottom: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+    > li {
+      width: 100%;
+      > a {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+        vertical-align: middle;
+        > p {
+          font-size: 0.8em;
+          margin: 0;
+          color: $white;
+        }
+      }
+    }
+    li a {
+      &:hover {
+        i,p{
+          color: $color_confetti_approx !important;
+        }
+        outline: none;
+        color: $color_confetti_approx;
+        background-color: $color_firefly_approx !important;
+      }
+      &:focus {
+        i,p{
+          color: $color_confetti_approx !important;
+        }
+        outline: none;
+        color: $color_confetti_approx;
+        background-color: $color_firefly_approx !important;
+      }
+    }
+  }
+}
+#wrapper {
+  padding-left: 0;
+}
+#page-wrapper {
+  width: 100%;
+  padding: 0;
+  background-color: $white;
+}
+.huge {
+  font-size: 50px;
+  line-height: normal;
+  font-size: 40px;
+}
+.top-nav {
+  padding: 0 15px;
+  > li {
+    display: inline-block;
+    float: left;
+    > a {
+      padding-top: 15px;
+      line-height: 20px;
+      color: $color_mountain_mist_approx;
+      &:hover {
+        color: $color_confetti_approx;
+        background-color: $color_ebony_clay_approx;
+        height: 80px;
+      }
+      &:focus {
+        color: $color_confetti_approx;
+        background-color: $color_ebony_clay_approx;
+        height: 80px;
+      }
+    }
+  }
+  > .open {
+    > a {
+      color: $color_confetti_approx;
+      background-color: $color_ebony_clay_approx;
+      height: 80px;
+      &:hover {
+        color: $color_confetti_approx;
+        background-color: $color_ebony_clay_approx;
+        height: 80px;
+      }
+      &:focus {
+        color: $color_confetti_approx;
+        background-color: $color_ebony_clay_approx;
+        height: 80px;
+      }
+    }
+    > .dropdown-menu {
+      float: left;
+      position: absolute;
+      margin-top: 0;
+      border: 1px solid $black_15;
+      //Instead of the line below you could use @include border-top-left-radius($radius)
+      border-top-left-radius: 0;
+      //Instead of the line below you could use @include border-top-right-radius($radius)
+      border-top-right-radius: 0;
+      background-color: $white;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 6px 12px $black_17_5;
+      > li > a {
+        white-space: normal;
+      }
+    }
+  }
+}
+ul {
+  &.message-dropdown {
+    padding: 0;
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  &.alert-dropdown {
+    width: 200px;
+  }
+}
+li {
+  &.message-preview {
+    width: 275px;
+    border-bottom: 1px solid $black_15;
+    > a {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+  &.message-footer {
+    margin: 5px 0;
+  }
+}
+.side-nav {
+  > li > ul {
+    padding: 0;
+    > li > a {
+      display: block;
+      padding: 10px 15px 10px 38px;
+      text-decoration: none;
+      color: $color_mountain_mist_approx;
+      &:hover {
+        color: $white;
+      }
+      > i {
+        text-align: center;
+      }
+    }
+  }
+  li i.icons-header {
+    color: $white;
+  }
+}
+.flot-chart {
+  display: block;
+  height: 400px;
+}
+.flot-chart-content {
+  width: 100%;
+  height: 100%;
+}
+.panel-green {
+  border-color: $color_fern_approx;
+  > a {
+    color: $color_fern_approx;
+    &:hover {
+      color: $color_goblin_approx;
+    }
+  }
+  > .panel-heading {
+    border-color: $color_fern_approx;
+    color: $white;
+    background-color: $color_fern_approx;
+  }
+}
+.panel-red {
+  border-color: $color_chestnut_rose_approx;
+  > a {
+    color: $color_chestnut_rose_approx;
+    &:hover {
+      color: $color_tall_poppy_approx;
+    }
+  }
+  > .panel-heading {
+    border-color: $color_chestnut_rose_approx;
+    color: $white;
+    background-color: $color_chestnut_rose_approx;
+  }
+}
+.panel-yellow {
+  border-color: $color_casablanca_approx;
+  > a {
+    color: $color_casablanca_approx;
+    &:hover {
+      color: $color_golden_bell_approx;
+    }
+  }
+  > .panel-heading {
+    border-color: $color_casablanca_approx;
+    color: $white;
+    background-color: $color_casablanca_approx;
+  }
+}
+.navbar.navbar-inverse.navbar-fixed-top {
+  background-color: $color_ebony_clay_approx;
+  margin: 0;
+  border-color: transparent;
+  height: 80px;
+  border: 0;
+  .navbar-brand {
+    height: 80px;
+  }
+  .icons-header {
+    color: $white;
+  }
+  .dropdown-toggle {
+    color: $white;
+  }
+}
+.collapse .navbar-collapse .navbar-ex1-collapse {
+  border: 0;
+  margin: 0;
+}
