@@ -65,8 +65,8 @@ body {
 .top-nav>.open>a:hover,
 .top-nav>.open>a:focus {
     color: #fff;
-    background-color:  #496eb3;
-    height: 60px;
+    background-color: #e9d460;
+    height: 80px;
 }
 
 .top-nav>.open>.dropdown-menu {
@@ -86,14 +86,18 @@ body {
 }
 
 .navbar.navbar-inverse.navbar-fixed-top{
-    background-color: #4B77BE;
+    background-color: #22313F;
     margin: 0;
     border-color: transparent;
-    height: 60px;
+    height: 80px;
     border: 0;
 }
 
-.navbar.navbar-inverse.navbar-fixed-top .navbar-brand,
+.navbar.navbar-inverse.navbar-fixed-top .navbar-brand
+{
+    height: 80px;
+}
+
 .navbar.navbar-inverse.navbar-fixed-top .icons-header,
 .navbar.navbar-inverse.navbar-fixed-top .dropdown-toggle{
     color: white;
@@ -135,13 +139,13 @@ ul.alert-dropdown {
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
-        top: 51px;
+        top: 80px;
         left: 0;
         width: 80px;
         border: none;
         border-radius: 0;
         overflow-y: auto;
-        background-color: #4B77BE;
+        background-color: #22313F;
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;
@@ -168,7 +172,7 @@ ul.alert-dropdown {
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
-        background-color: #496eb3 !important;
+        background-color: #e9d460 !important;
     }
 }
 
