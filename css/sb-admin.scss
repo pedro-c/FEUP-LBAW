@@ -1,3 +1,6 @@
+//fonts
+$font-stack: Roboto, Helvetica, sans-serif;
+
 //colors
 $color_ebony_clay_approx: #22313f;
 $white: #fff;
@@ -14,11 +17,13 @@ $color_casablanca_approx: #f0ad4e;
 $color_golden_bell_approx: #df8a13;
 
 body {
+  font-family: $font-stack;
   margin-top: 100px;
   background-color: $white;
 }
 @media(min-width:768px) {
   body {
+    font-family: $font-stack;
     margin-top: 50px;
   }
   #wrapper {
@@ -49,6 +54,7 @@ body {
         text-align: center;
         vertical-align: middle;
         > p {
+          font: $font-stack;
           font-size: 0.8em;
           margin: 0;
           color: $white;
