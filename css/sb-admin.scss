@@ -41,7 +41,7 @@ body {
   .side-nav {
     position: fixed;
     top: 80px;
-    left: 0;
+    left: 10px;
     width: 80px;
     border: none;
     //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
@@ -276,6 +276,9 @@ li {
   background-color: $blue_secondary !important;
 }
 
+.navbar-nav{
+  margin: 0px -15px 0px -15px !important;
+}
 .navbar-collapse{
-
+  max-height: none !important;
 }

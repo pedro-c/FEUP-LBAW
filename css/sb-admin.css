@@ -18,7 +18,7 @@ body {
   .side-nav {
     position: fixed;
     top: 80px;
-    left: 0;
+    left: 10px;
     width: 80px;
     border: none;
     border-radius: 0;
@@ -201,5 +201,11 @@ li.message-footer {
   border: 0;
   margin: 0;
   background-color: #22313f !important; }
+
+.navbar-nav {
+  margin: 0px -15px 0px -15px !important; }
+
+.navbar-collapse {
+  max-height: none !important; }
 
 /*# sourceMappingURL=sb-admin.css.map */
