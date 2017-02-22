@@ -24,12 +24,12 @@ body {
 @media(min-width:768px) {
   body {
     font-family: $font-stack;
-    margin-top: 50px;
+    margin-top: 80px;
   }
   #wrapper {
   }
   #page-wrapper {
-    padding: 10px;
+    position: relative;
     margin-left: 80px;
   }
   .side-nav {
@@ -96,6 +96,8 @@ body {
 }
 .top-nav {
   padding: 0 15px;
+  z-index: -4;
+  height: 80px;
   > li {
     display: inline-block;
     float: left;
