@@ -3,7 +3,9 @@ $font-stack: Roboto, Helvetica, sans-serif;
 
 //colors
 $color_ebony_clay_approx: #22313f;
+$blue_secondary: #22313f;
 $white: #fff;
+$background_white: #ecf0f1;
 $color_confetti_approx: #e9d460;
 $color_firefly_approx: #192532;
 $color_mountain_mist_approx: #999;
@@ -19,18 +21,20 @@ $color_golden_bell_approx: #df8a13;
 body {
   font-family: $font-stack;
   margin-top: 100px;
-  background-color: $white;
+  background-color: $background_white;
 }
 @media(min-width:768px) {
   body {
     font-family: $font-stack;
     margin-top: 80px;
+    background-color: #ecf0f1;
   }
   #wrapper {
   }
   #page-wrapper {
     position: relative;
     margin-left: 80px;
+
   }
   .side-nav {
     position: fixed;
@@ -86,7 +90,7 @@ body {
 }
 #page-wrapper {
   width: 100%;
-  padding: 0;
+  padding: 60px;
   background-color: $white;
 }
 .huge {
@@ -95,6 +99,7 @@ body {
   font-size: 40px;
 }
 .top-nav {
+  background-color: $blue_secondary;
   padding: 0 15px;
   z-index: -4;
   height: 80px;
@@ -176,6 +181,8 @@ li {
   }
 }
 .side-nav {
+  max-height: none !important;
+  background-color: $blue_secondary;
   > li > ul {
     padding: 0;
     > li > a {
@@ -264,4 +271,5 @@ li {
 .collapse .navbar-collapse .navbar-ex1-collapse {
   border: 0;
   margin: 0;
+  background-color: $blue_secondary !important;
 }

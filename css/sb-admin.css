@@ -1,12 +1,13 @@
 body {
   font-family: Roboto, Helvetica, sans-serif;
   margin-top: 100px;
-  background-color: #fff; }
+  background-color: #ecf0f1; }
 
 @media (min-width: 768px) {
   body {
     font-family: Roboto, Helvetica, sans-serif;
-    margin-top: 80px; }
+    margin-top: 80px;
+    background-color: #ecf0f1; }
 
   #page-wrapper {
     position: relative;
@@ -54,7 +55,7 @@ body {
 
 #page-wrapper {
   width: 100%;
-  padding: 0;
+  padding: 60px;
   background-color: #fff; }
 
 .huge {
@@ -63,6 +64,7 @@ body {
   font-size: 40px; }
 
 .top-nav {
+  background-color: #22313f;
   padding: 0 15px;
   z-index: -4;
   height: 80px; }
@@ -122,19 +124,22 @@ li.message-preview {
 li.message-footer {
   margin: 5px 0; }
 
-.side-nav > li > ul {
-  padding: 0; }
-  .side-nav > li > ul > li > a {
-    display: block;
-    padding: 10px 15px 10px 38px;
-    text-decoration: none;
-    color: #999; }
-    .side-nav > li > ul > li > a:hover {
-      color: #fff; }
-    .side-nav > li > ul > li > a > i {
-      text-align: center; }
-.side-nav li i.icons-header {
-  color: #fff; }
+.side-nav {
+  max-height: none !important;
+  background-color: #22313f; }
+  .side-nav > li > ul {
+    padding: 0; }
+    .side-nav > li > ul > li > a {
+      display: block;
+      padding: 10px 15px 10px 38px;
+      text-decoration: none;
+      color: #999; }
+      .side-nav > li > ul > li > a:hover {
+        color: #fff; }
+      .side-nav > li > ul > li > a > i {
+        text-align: center; }
+  .side-nav li i.icons-header {
+    color: #fff; }
 
 .flot-chart {
   display: block;
@@ -192,6 +197,7 @@ li.message-footer {
 
 .collapse .navbar-collapse .navbar-ex1-collapse {
   border: 0;
-  margin: 0; }
+  margin: 0;
+  background-color: #22313f !important; }
 
 /*# sourceMappingURL=sb-admin.css.map */
