@@ -11,7 +11,9 @@ body {
 
   #page-wrapper {
     position: relative;
-    margin-left: 80px; }
+    margin-left: 80px;
+    padding: 0px !important;
+    height: 100%; }
 
   .side-nav {
     position: fixed;
@@ -56,7 +58,7 @@ body {
 #page-wrapper {
   width: 100%;
   padding: 60px;
-  background-color: #fff; }
+  background-color: #ecf0f1; }
 
 .huge {
   font-size: 50px;
