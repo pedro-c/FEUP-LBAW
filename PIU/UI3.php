@@ -4,54 +4,60 @@ include_once "common/header.html";
 
 <div id="page-wrapper">
 
-    <div class="container-fluid">
+        <table>
+            <td class="side-bar">
 
-        <!-- Page Heading -->
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <button type="button" class="btn btn-default navbar-btn">To-Do</button>
-                <button type="button" class="btn btn-default navbar-btn">Completed</button>
-            </div>
+            </td>
+            <td>
+                <!-- Page Heading -->
+                <div class="tasks-body">
+                    <div class="">
+                        <button type="button" class="btn btn-default navbar-btn">To-Do</button>
+                        <button type="button" class="btn btn-default navbar-btn">Completed</button>
+                    </div>
 
 
-            <div class="col-lg-6">
-                <div class="navbar">
-                    <button class="btn-warning">Add Task</button>
-                </div>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <button>Complete</button>
-                            </td>
-                            <td>
-                                <div>
-                                    <textarea>
-                                        Task1
-                                    </textarea>
+                    <div class="tasks-card">
+                        <div class="navbar">
+                            <button class="btn-warning">Add Task</button>
+                        </div>
+                        <table class="tasks">
+                            <tbody class="tasks">
+                            <tr class="task">
+                                <div class="task-content">
+                                    <td>
+                                        <button>Complete</button>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <input type="text" placeholder="Task">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button>Delete</button>
+                                    </td>
                                 </div>
-                            </td>
-                            <td>
-                                <button>Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-lg-6">
-                <div class="navbar">
-                    <input type="text" placeholder="Assign to">
-                    <input type="date" name="deadline">
-                    <button class="btn-danger"> Delete </button>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tasks-card create-task">
+                        <div class="navbar">
+                            <input type="text" placeholder="Assign to">
+                            <input type="date" name="deadline">
+                            <button class="btn-danger"> Delete </button>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="New Task">
+                            <input type="text" placeholder="Description">
+                            <input type="text" placeholder="#project">
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <input type="text" placeholder="New Task">
-                    <input type="text" placeholder="Description">
-                    <input type="text" placeholder="#project">
-                </div>
-            </div>
-        </div>
-    </div>
+            </td>
+        </table>
+
+
 </div>
 
 
