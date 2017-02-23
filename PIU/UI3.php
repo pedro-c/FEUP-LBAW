@@ -4,12 +4,7 @@ include_once "common/header.html";
 
 <div id="page-wrapper">
 
-        <table>
-            <td class="side-bar">
-
-            </td>
-            <td>
-                <!-- Page Heading -->
+        <!-- Page Heading -->
                 <div class="tasks-body">
                     <div class="">
                         <button type="button" class="btn btn-default navbar-btn">To-Do</button>
@@ -54,8 +49,7 @@ include_once "common/header.html";
                         </div>
                     </div>
                 </div>
-            </td>
-        </table>
+
 
 
 </div>
