@@ -35,9 +35,12 @@ body {
 .login-box {
   //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
   color: white;
-  border-radius: 15px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
+
+  .border_radius{
+    border-radius: 15px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+  }
 
   .content_login {
     background-color: $blue_secondary;
@@ -135,6 +138,131 @@ body {
     }
   }
 
+  .form-register{
+    margin-top: 60px;
+    font-size: medium;
+
+    .form-register-right{
+      margin-left: 35px;
+    }
+
+    .email{
+      display: inline-block;
+    }
+
+    #email-input-id.email-input{
+      font-size: medium;
+      padding-top: 15px;
+      background-color: transparent;
+      border: none;
+      border-bottom-style: solid;
+      border-bottom-color: #425262;
+
+      &:focus{
+        outline: none;
+      }
+
+      &:-moz-placeholder{
+        color: #425262;
+      }
+      &:-ms-input-placeholder{
+        color: #425262;
+      }
+      &::-moz-placeholder{
+        color: #425262;
+      }
+      &:-ms-input-placeholder{
+        color: #425262;
+      }
+
+    }
+    .username{
+      padding-top: 35px;
+      display: inline-block;
+    }
+
+    #username-input-id.username-input{
+      font-size: medium;
+      padding-top: 15px;
+      background-color: transparent;
+      border: none;
+      border-bottom-style: solid;
+      border-bottom-color: #425262;
+
+      &:focus{
+        outline: none;
+      }
+
+      &:-moz-placeholder{
+        color: #425262;
+      }
+      &:-ms-input-placeholder{
+        color: #425262;
+      }
+      &::-moz-placeholder{
+        color: #425262;
+      }
+      &:-ms-input-placeholder{
+        color: #425262;
+      }
+
+    }
+    .password{
+      padding-top: 35px;
+      display: inline-block;
+    }
+
+    #password-input-id.password-input{
+      padding-top: 15px;
+      background-color: transparent;
+      border:none;
+      border-bottom-style: solid;
+      border-bottom-color: #425262;
+
+      &:focus{
+        outline: none;
+      }
+      &:-moz-placeholder{
+        color: #425262;
+      }
+      &:-ms-input-placeholder{
+        color: #425262;
+      }
+      &::-moz-placeholder{
+        color: #425262;
+      }
+      &:-ms-input-placeholder{
+        color: #425262;
+      }
+
+    }
+    .form-actions{
+
+      margin: 0;
+      background-color: transparent;
+      color: white;
+      text-align: center;
+
+      .register-button{
+        padding: 10px 50px 10px 50px;
+        margin-top: 70px;
+        background-color: #425262;
+        border: none;
+        color: white;
+
+        &:active,
+        &:focus,
+        &:hover,
+        &:visited{
+          background-color: $color_yellow;
+          color: white;
+        }
+      }
+
+
+    }
+  }
+
   .form-login{
       margin-top: 90px;
       font-size: medium;
@@ -145,11 +273,6 @@ body {
 
       .username{
 
-      }
-
-      .password{
-        padding-top: 35px;
-        display: inline-block;
       }
 
       #username-input-id.username-input{
@@ -178,6 +301,11 @@ body {
         }
 
       }
+
+    .password{
+      padding-top: 35px;
+      display: inline-block;
+    }
 
     #password-input-id.password-input{
         padding-top: 15px;
@@ -213,7 +341,7 @@ body {
 
       .login-button{
         padding: 10px 50px 10px 50px;
-        margin-top: 120px;
+        margin-top: 90px;
         background-color: #425262;
         border: none;
         color: white;
@@ -226,6 +354,8 @@ body {
           color: white;
         }
       }
+
+
     }
 
 
