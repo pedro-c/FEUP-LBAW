@@ -2,6 +2,9 @@
 include_once "common/header.html";
 ?>
 
+<!-- Custom CSS -->
+<link href="../css/tasks.css" rel="stylesheet">7
+
 <div id="page-wrapper">
 
         <!-- Page Heading -->

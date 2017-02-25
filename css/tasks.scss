@@ -1,0 +1,33 @@
+@import 'global';
+
+.tasks-card{
+  width: 70vw;
+  display: inline-block;
+  background-color: $white;
+  margin: 15px;
+  height: 70vh;
+  border-radius: 5px;
+  float: none;
+  .create-task{
+    visibility: hidden;
+  }
+}
+.tasks{
+  width: 100%;
+  margin: 0px;
+}
+.task{
+  border-style: solid;
+  border-width: 1px 0px 1px 0px;
+  width: 100%;
+}
+.task-content{
+  margin: 10px;
+}
+.tasks-body{
+  width: 100%;
+  text-align: center;
+}
+.side-bar{
+  width: 0px;
+}
