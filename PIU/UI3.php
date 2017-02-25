@@ -16,28 +16,28 @@ include_once "common/header.html";
 
 
                     <div class="tasks-card">
-                        <div class="navbar">
+                        <div class="tasks-header">
                             <button class="btn-warning">Add Task</button>
                         </div>
-                        <table class="tasks">
-                            <tbody class="tasks">
-                            <tr class="task">
-                                <div class="task-content">
+                        <div class="task-content">
+                            <table class="tasks">
+                                <tbody>
+                                <tr class="task">
                                     <td>
-                                        <button>Complete</button>
+                                        <button id="btn complete-task">Complete</button>
                                     </td>
                                     <td>
                                         <div>
-                                            <input type="text" placeholder="Task">
+                                            <textarea>ddsfs</textarea>
                                         </div>
                                     </td>
                                     <td>
-                                        <button>Delete</button>
+                                        <button id="btn delete-task">Delete</button>
                                     </td>
-                                </div>
-                            </tr>
-                            </tbody>
-                        </table>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div class="tasks-card create-task">
                         <div class="navbar">
