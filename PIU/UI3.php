@@ -3,7 +3,7 @@ include_once "common/header.html";
 ?>
 
 <!-- Custom CSS -->
-<link href="../css/tasks.css" rel="stylesheet">7
+<link href="../css/tasks.css" rel="stylesheet">
 
 <div id="page-wrapper">
 
