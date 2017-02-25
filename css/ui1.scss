@@ -1,0 +1,236 @@
+//colors
+$color_ebony_clay_approx: #334251;
+$color_dove_gray_approx: #6c6c6c;
+$color_confetti_approx: #e9d460;
+$color_firefly_approx: #192532;
+
+//@extend-elements
+//original selectors
+//html, body
+%extend_1 {
+  margin: 0;
+  height: 100%;
+  background-color: whitesmoke;
+  width: 100%;
+}
+
+
+html {
+  @extend %extend_1;
+}
+body {
+  @extend %extend_1;
+}
+.container {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.vertical-align {
+  min-height: 50vh;
+  display: table-cell;
+  vertical-align: middle;
+  // padding-top: 25vh;
+  //padding-bottom: 25vh;
+}
+.login-box {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  color: white;
+  border-radius: 15px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+
+  .content_login {
+    background-color: $color-ebony_clay_approx;
+    height: 80vh;
+  }
+
+  .content_image{
+    background-image: url("../assets/2.png");
+    background-repeat: no-repeat;
+  }
+
+  .nopadding{
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .button_loginIn{
+    margin-top: 20px;
+    float: left;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 5px 30px 5px 15px;
+    background-color: $color-ebony_clay_approx;
+    border-color: transparent;
+    color: white;
+    //retirar depois do js
+    background-color: $color_confetti_approx;
+    &:active,
+    &:focus,
+    &:hover,
+    &:visited{
+      background-color: $color_confetti_approx;
+    }
+  }
+
+  .button_signUp{
+    margin-top: 20px;
+    color: white;
+    float: right;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #425262;
+    padding: 5px 15px 5px 30px;
+    border-color: transparent;
+    &:active,
+    &:focus,
+    &:hover,
+    &:visited{
+      background-color: $color_confetti_approx;
+    }
+  }
+
+
+  .description-links{
+    margin-top: 70px;
+    font-size: x-large;
+    text-align: center;
+
+    .sign-in-title{
+      text-align: center;
+      text-decoration: none;
+      margin-right: 20px;
+      padding-bottom: 5px;
+      color: white;
+      // retirar depois de css
+      border-bottom: 4px solid;
+      border-bottom-color: $color_confetti_approx;
+      &:hover,
+      &:visited{
+        border-bottom: 4px solid;
+        border-bottom-color: $color_confetti_approx;
+      }
+    }
+
+    .or-title{
+      padding-right: 20px;
+      color: white;
+      font-size: large;
+    }
+
+    .sign-up-title{
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      padding-bottom: 5px;
+      &:hover,
+      &:visited{
+        border-bottom: 4px solid;
+        border-bottom-color: $color_confetti_approx;
+      }
+    }
+  }
+
+  .form-login{
+      margin-top: 90px;
+      font-size: medium;
+
+    .form-login-right{
+      margin-left: 35px;
+    }
+
+      .username{
+
+      }
+
+      .password{
+        padding-top: 35px;
+        display: inline-block;
+      }
+
+      #username-input-id.username-input{
+        font-size: medium;
+        padding-top: 15px;
+        background-color: transparent;
+        border: none;
+        border-bottom-style: solid;
+        border-bottom-color: #425262;
+
+        &:focus{
+          outline: none;
+        }
+
+        &:-moz-placeholder{
+          color: #425262;
+        }
+        &:-ms-input-placeholder{
+          color: #425262;
+        }
+        &::-moz-placeholder{
+          color: #425262;
+        }
+        &:-ms-input-placeholder{
+          color: #425262;
+        }
+
+      }
+
+    #password-input-id.password-input{
+        padding-top: 15px;
+        background-color: transparent;
+        border:none;
+        border-bottom-style: solid;
+        border-bottom-color: #425262;
+
+        &:focus{
+          outline: none;
+        }
+        &:-moz-placeholder{
+          color: #425262;
+        }
+        &:-ms-input-placeholder{
+          color: #425262;
+        }
+        &::-moz-placeholder{
+          color: #425262;
+        }
+        &:-ms-input-placeholder{
+          color: #425262;
+        }
+
+      }
+
+    .form-actions{
+
+      margin: 0;
+      background-color: transparent;
+      color: white;
+      text-align: center;
+
+      .login-button{
+        padding: 10px 50px 10px 50px;
+        margin-top: 120px;
+        background-color: #425262;
+        border: none;
+        color: white;
+
+        &:active,
+        &:focus,
+        &:hover,
+        &:visited{
+          background-color: $color_confetti_approx;
+          color: white;
+        }
+      }
+    }
+
+
+    }
+  }

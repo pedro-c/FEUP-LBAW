@@ -1,0 +1,142 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  background-color: whitesmoke;
+  width: 100%; }
+
+.container {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%; }
+
+.vertical-align {
+  min-height: 50vh;
+  display: table-cell;
+  vertical-align: middle; }
+
+.login-box {
+  color: white;
+  border-radius: 15px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px; }
+  .login-box .content_login {
+    background-color: #334251;
+    height: 80vh; }
+  .login-box .content_image {
+    background-image: url("../assets/2.png");
+    background-repeat: no-repeat; }
+  .login-box .nopadding {
+    padding: 0 !important;
+    margin: 0 !important; }
+  .login-box .button_loginIn {
+    margin-top: 20px;
+    float: left;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 5px 30px 5px 15px;
+    background-color: #334251;
+    border-color: transparent;
+    color: white;
+    background-color: #e9d460; }
+    .login-box .button_loginIn:active, .login-box .button_loginIn:focus, .login-box .button_loginIn:hover, .login-box .button_loginIn:visited {
+      background-color: #e9d460; }
+  .login-box .button_signUp {
+    margin-top: 20px;
+    color: white;
+    float: right;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #425262;
+    padding: 5px 15px 5px 30px;
+    border-color: transparent; }
+    .login-box .button_signUp:active, .login-box .button_signUp:focus, .login-box .button_signUp:hover, .login-box .button_signUp:visited {
+      background-color: #e9d460; }
+  .login-box .description-links {
+    margin-top: 70px;
+    font-size: x-large;
+    text-align: center; }
+    .login-box .description-links .sign-in-title {
+      text-align: center;
+      text-decoration: none;
+      margin-right: 20px;
+      padding-bottom: 5px;
+      color: white;
+      border-bottom: 4px solid;
+      border-bottom-color: #e9d460; }
+      .login-box .description-links .sign-in-title:hover, .login-box .description-links .sign-in-title:visited {
+        border-bottom: 4px solid;
+        border-bottom-color: #e9d460; }
+    .login-box .description-links .or-title {
+      padding-right: 20px;
+      color: white;
+      font-size: large; }
+    .login-box .description-links .sign-up-title {
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      padding-bottom: 5px; }
+      .login-box .description-links .sign-up-title:hover, .login-box .description-links .sign-up-title:visited {
+        border-bottom: 4px solid;
+        border-bottom-color: #e9d460; }
+  .login-box .form-login {
+    margin-top: 90px;
+    font-size: medium; }
+    .login-box .form-login .form-login-right {
+      margin-left: 35px; }
+    .login-box .form-login .password {
+      padding-top: 35px;
+      display: inline-block; }
+    .login-box .form-login #username-input-id.username-input {
+      font-size: medium;
+      padding-top: 15px;
+      background-color: transparent;
+      border: none;
+      border-bottom-style: solid;
+      border-bottom-color: #425262; }
+      .login-box .form-login #username-input-id.username-input:focus {
+        outline: none; }
+      .login-box .form-login #username-input-id.username-input:-moz-placeholder {
+        color: #425262; }
+      .login-box .form-login #username-input-id.username-input:-ms-input-placeholder {
+        color: #425262; }
+      .login-box .form-login #username-input-id.username-input::-moz-placeholder {
+        color: #425262; }
+      .login-box .form-login #username-input-id.username-input:-ms-input-placeholder {
+        color: #425262; }
+    .login-box .form-login #password-input-id.password-input {
+      padding-top: 15px;
+      background-color: transparent;
+      border: none;
+      border-bottom-style: solid;
+      border-bottom-color: #425262; }
+      .login-box .form-login #password-input-id.password-input:focus {
+        outline: none; }
+      .login-box .form-login #password-input-id.password-input:-moz-placeholder {
+        color: #425262; }
+      .login-box .form-login #password-input-id.password-input:-ms-input-placeholder {
+        color: #425262; }
+      .login-box .form-login #password-input-id.password-input::-moz-placeholder {
+        color: #425262; }
+      .login-box .form-login #password-input-id.password-input:-ms-input-placeholder {
+        color: #425262; }
+    .login-box .form-login .form-actions {
+      margin: 0;
+      background-color: transparent;
+      color: white;
+      text-align: center; }
+      .login-box .form-login .form-actions .login-button {
+        padding: 10px 50px 10px 50px;
+        margin-top: 120px;
+        background-color: #425262;
+        border: none;
+        color: white; }
+        .login-box .form-login .form-actions .login-button:active, .login-box .form-login .form-actions .login-button:focus, .login-box .form-login .form-actions .login-button:hover, .login-box .form-login .form-actions .login-button:visited {
+          background-color: #e9d460;
+          color: white; }
+
+/*# sourceMappingURL=login.css.map */
