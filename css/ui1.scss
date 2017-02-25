@@ -1,8 +1,5 @@
 //colors
-$color_ebony_clay_approx: #334251;
-$color_dove_gray_approx: #6c6c6c;
-$color_confetti_approx: #e9d460;
-$color_firefly_approx: #192532;
+@import 'global';
 
 //@extend-elements
 //original selectors
@@ -10,7 +7,7 @@ $color_firefly_approx: #192532;
 %extend_1 {
   margin: 0;
   height: 100%;
-  background-color: whitesmoke;
+  background-color: $background_white;
   width: 100%;
 }
 
@@ -43,7 +40,7 @@ body {
   -moz-border-radius: 7px;
 
   .content_login {
-    background-color: $color-ebony_clay_approx;
+    background-color: $blue_secondary;
     height: 80vh;
   }
 
@@ -65,16 +62,16 @@ body {
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     padding: 5px 30px 5px 15px;
-    background-color: $color-ebony_clay_approx;
+    background-color: $blue_secondary;
     border-color: transparent;
     color: white;
     //retirar depois do js
-    background-color: $color_confetti_approx;
+    background-color: $color_yellow;
     &:active,
     &:focus,
     &:hover,
     &:visited{
-      background-color: $color_confetti_approx;
+      background-color: $color_yellow;
     }
   }
 
@@ -93,7 +90,7 @@ body {
     &:focus,
     &:hover,
     &:visited{
-      background-color: $color_confetti_approx;
+      background-color: $color_yellow;
     }
   }
 
@@ -111,11 +108,11 @@ body {
       color: white;
       // retirar depois de css
       border-bottom: 4px solid;
-      border-bottom-color: $color_confetti_approx;
+      border-bottom-color: $color_yellow;
       &:hover,
       &:visited{
         border-bottom: 4px solid;
-        border-bottom-color: $color_confetti_approx;
+        border-bottom-color: $color_yellow;
       }
     }
 
@@ -133,7 +130,7 @@ body {
       &:hover,
       &:visited{
         border-bottom: 4px solid;
-        border-bottom-color: $color_confetti_approx;
+        border-bottom-color: $color_yellow;
       }
     }
   }
@@ -225,7 +222,7 @@ body {
         &:focus,
         &:hover,
         &:visited{
-          background-color: $color_confetti_approx;
+          background-color: $color_yellow;
           color: white;
         }
       }
