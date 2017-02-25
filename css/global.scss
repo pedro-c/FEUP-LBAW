@@ -21,6 +21,11 @@ $color_golden_bell_approx: #df8a13;
 body {
   padding: 0;
   margin: 0;
+  background-color: $background_white;
+}
+
+#parent{
+  height: 100%;
 }
 
 #header {

@@ -1,6 +1,10 @@
 body {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  background-color: #ecf0f1; }
+
+#parent {
+  height: 100%; }
 
 #header {
   position: fixed;
