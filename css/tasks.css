@@ -70,7 +70,8 @@ body {
   width: 70%;
   display: inline-block;
   background-color: #fff;
-  margin: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 10px;
   height: 70vh;
   border-radius: 5px;
   float: none; }
@@ -80,41 +81,49 @@ body {
 .tasks {
   width: 100%; }
 
+.tasks-nav {
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+  .tasks-nav button {
+    background-color: white;
+    box-shadow: none;
+    border: 0;
+    margin: 10px; }
+    .tasks-nav button:focus, .tasks-nav button:hover {
+      border-bottom: solid 4px #e9d460; }
+
 .task-content {
   margin: 20px !important; }
 
 .tasks-header {
   margin: 15px 20px 15px 20px;
   float: left; }
+  .tasks-header button {
+    padding: 5px;
+    border-radius: 3px;
+    color: #1AAFD0;
+    background-color: transparent;
+    margin: auto;
+    border: 1px solid #1AAFD0; }
+    .tasks-header button:hover {
+      background-color: #1AAFD0;
+      color: white;
+      transition: all 0.2s ease-in-out; }
 
 .task {
+  vertical-align: middle;
   border-style: solid;
+  border-color: #D3D3D3;
   border-width: 1px 0px 1px 0px;
   width: 100%; }
-  .task textarea {
-    vertical-align: baseline;
-    overflow: hidden;
-    color: #1B2432;
-    width: 100%;
-    height: 35px;
-    line-height: 35px;
-    background: transparent;
-    border: 0px solid transparent;
-    outline: 0px solid transparent;
-    padding: 0;
-    resize: none;
-    word-wrap: normal;
-    white-space: nowrap;
-    user-select: text;
-    flex-direction: column;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: start;
-    -webkit-writing-mode: horizontal-tb;
-    border-collapse: separate;
-    empty-cells: show; }
+  .task #complete-button {
+    font-size: 1.5em; }
+    .task #complete-button:hover {
+      color: #1AAFD0; }
+  .task #delete-button {
+    font-size: 1.2em; }
+    .task #delete-button:hover {
+      color: red; }
   .task #complete-task {
     float: left;
     height: 25px; }
@@ -131,5 +140,66 @@ body {
 
 .side-bar {
   width: 0px; }
+
+.create-task {
+  padding: 10px; }
+  .create-task #complete-button {
+    float: left;
+    font-size: 2em; }
+    .create-task #complete-button:hover {
+      color: #1AAFD0; }
+  .create-task #create-task-title {
+    display: inline-block;
+    align-content: left; }
+    .create-task #create-task-title i {
+      font-size: 2em; }
+    .create-task #create-task-title textarea {
+      width: auto;
+      font-size: 2em; }
+      .create-task #create-task-title textarea:focus, .create-task #create-task-title textarea:hover {
+        border: 1px solid #D3D3D3;
+        outline: 1px solid #D3D3D3; }
+  .create-task #create-task-navbar {
+    border-bottom: solid 1px #D3D3D3;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%; }
+    .create-task #create-task-navbar i {
+      vertical-align: middle;
+      float: left;
+      font-size: 1.5em;
+      margin: 5px 10px 5px 10px; }
+    .create-task #create-task-navbar #task-assign {
+      width: auto;
+      font-size: 1.5em;
+      float: left; }
+    .create-task #create-task-navbar #delete-button {
+      float: right; }
+
+textarea {
+  vertical-align: middle;
+  overflow: hidden;
+  color: #1B2432;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  background: transparent;
+  border: 0px solid transparent;
+  outline: 0px solid transparent;
+  padding: 0;
+  resize: none;
+  word-wrap: normal;
+  white-space: nowrap;
+  user-select: text;
+  flex-direction: column;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  -webkit-writing-mode: horizontal-tb;
+  border-collapse: separate;
+  empty-cells: show; }
 
 /*# sourceMappingURL=tasks.css.map */

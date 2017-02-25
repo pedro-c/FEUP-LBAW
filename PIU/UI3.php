@@ -9,30 +9,30 @@ include_once "common/header.html";
 
         <!-- Page Heading -->
                 <div class="tasks-body">
-                    <div class="">
-                        <button type="button" class="btn btn-default navbar-btn">To-Do</button>
-                        <button type="button" class="btn btn-default navbar-btn">Completed</button>
+                    <div class="tasks-nav">
+                        <button type="button">To-Do</button>
+                        <button type="button">Completed</button>
                     </div>
 
 
                     <div class="tasks-card">
                         <div class="tasks-header">
-                            <button class="btn-warning">Add Task</button>
+                            <button>Add Task</button>
                         </div>
                         <div class="task-content">
                             <table class="tasks">
                                 <tbody>
                                 <tr class="task">
                                     <td>
-                                        <button id="btn complete-task">Complete</button>
+                                        <i class="fa fa-check-circle-o" id="complete-button"></i>
                                     </td>
                                     <td>
                                         <div>
-                                            <textarea>ddsfs</textarea>
+                                            <textarea>Tarefa 1</textarea>
                                         </div>
                                     </td>
                                     <td>
-                                        <button id="btn delete-task">Delete</button>
+                                        <i class="fa fa-times" id="delete-button"></i>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -40,15 +40,24 @@ include_once "common/header.html";
                         </div>
                     </div>
                     <div class="tasks-card create-task">
-                        <div class="navbar">
-                            <input type="text" placeholder="Assign to">
-                            <input type="date" name="deadline">
-                            <button class="btn-danger"> Delete </button>
+                        <div id="create-task-navbar">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <textarea id="task-assign">Assign to</textarea>
+                            <button class="btn btn-danger" id="delete-button"> Delete </button>
                         </div>
                         <div>
-                            <input type="text" placeholder="New Task">
-                            <input type="text" placeholder="Description">
-                            <input type="text" placeholder="#project">
+                            <div id="create-task-title">
+                                <i class="fa fa-check-circle-o" id="complete-button"></i>
+                                <textarea>Tarefa 1</textarea>
+                            </div>
+                            <div>
+                                <i class="fa fa-calendar"></i>
+                                <input type="date" name="deadline">
+                                <i class="fa fa-tag"></i>
+                            </div>
+                            <div>
+                                <textarea>Description</textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
