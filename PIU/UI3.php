@@ -18,18 +18,18 @@ include_once "common/header.html";
 
                     <div class="tasks-card" id="task-card">
                         <div class="tasks-header">
-                            <button>Add Task</button>
+                            <button id="add-task">Add Task</button>
                         </div>
                         <div class="task-content">
                             <table class="tasks">
-                                <tbody>
+                                <tbody id="task-list">
                                 <tr class="task">
                                     <td>
                                         <i class="fa fa-check-circle-o" id="complete-button"></i>
                                     </td>
                                     <td>
                                         <div>
-                                            <textarea id="task-title">Tarefa 1</textarea>
+                                            <textarea onclick="toggle();" id="task-title">Tarefa 1</textarea>
                                         </div>
                                     </td>
                                     <td>
