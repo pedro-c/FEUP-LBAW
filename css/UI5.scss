@@ -1,0 +1,77 @@
+//colors
+@import 'global';
+
+.nopadding{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.files_title{
+
+  background-color: $background_white;
+
+  button {
+    display: inline;
+    margin-right: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    &:hover,
+    &:visited{
+      border-bottom: 4px solid;
+      border-bottom-color: $color_yellow;
+    }
+  }
+
+  button:first-child {
+    border-bottom: 4px solid;
+    border-bottom-color: $color_yellow;
+  }
+}
+
+.files_list{
+
+  background-color: $background_white;
+  margin-top: 50px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+
+  .file{
+    border-bottom: 1px solid;
+    border-bottom-color: grey;
+    padding: 15px 10px 15px 10px;
+    text-align: center;
+
+    .user_name{
+      font-size: xx-small;
+    }
+
+
+    .minutes{
+      font-size: x-small;
+      float: right;
+      margin-bottom: 0 !important;
+    }
+
+    .file_details{
+      display: inline-block;
+
+      .file_show{
+        width: 20px;
+      }
+      .file_description{
+      }
+    }
+
+
+    .size{
+
+    }
+
+    .perfil_picture{
+      width: 60px;
+    }
+  }
+}
+
