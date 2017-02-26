@@ -4,14 +4,15 @@ include_once "common/header.html";
 <link href="../css/UI6.css" rel="stylesheet">
 
 <?php
-/*
-TODO mudar para ele preencher consoante o número de elementos que tiver
+
+//TODO mudar para ele preencher consoante o número de elementos que tiver
 $num_elems = 4;
 $elems_per_row = 3;
-*/
+
+$num_rows = ceil($num_elems / $elems_per_row);
+
 $num_cols = 3;
-$num_rows = 3;
-$col_division = 12 / $num_cols;
+$col_division = 12 / $num_cols; //DONT CHANGE. Used for grid position purposes
 ?>
 
 <div id="page-wrapper">
@@ -23,7 +24,7 @@ $col_division = 12 / $num_cols;
       </div>
         <?php for($i = 0; $i < $num_rows; $i++) {?>
         <div class="row">
-            <?php for($j = 0; $j < $num_cols; $j++) {?>
+            <?php for($j = 0; $j < $num_cols && $num_elems > 0; $j++, $num_elems--) {?>
             <div class="col-md-<?php echo $col_division; ?>">
                 <div class="panel panel-default">
                     <div class="panel-body">
