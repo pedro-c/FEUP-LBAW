@@ -4,6 +4,7 @@ include_once "common/header.html";
 
 <!-- Custom CSS -->
 <link href="../css/tasks.css" rel="stylesheet">
+<script src="../js/tasks.js"></script>
 
 <div id="page-wrapper">
 
@@ -15,7 +16,7 @@ include_once "common/header.html";
                     </div>
 
 
-                    <div class="tasks-card">
+                    <div class="tasks-card" id="task-card">
                         <div class="tasks-header">
                             <button>Add Task</button>
                         </div>
@@ -28,7 +29,7 @@ include_once "common/header.html";
                                     </td>
                                     <td>
                                         <div>
-                                            <textarea>Tarefa 1</textarea>
+                                            <textarea id="task-title">Tarefa 1</textarea>
                                         </div>
                                     </td>
                                     <td>
@@ -39,7 +40,7 @@ include_once "common/header.html";
                             </table>
                         </div>
                     </div>
-                    <div class="tasks-card create-task">
+                    <div class="tasks-card create-task" id="create-task" style="display: none">
                         <div id="create-task-navbar">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <textarea id="task-assign">Assign to</textarea>

@@ -1,12 +1,21 @@
 @import 'global';
 
+
+.tasks-body{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
 .tasks-card{
+  overflow-y: auto;
   width: 70%;
   display: inline-block;
   background-color: $white;
   box-shadow: 0 1px 3px rgba(0,0,0,0.3);
   margin: 10px;
-  height: 70vh;
+  min-height: 50%;
   border-radius: 5px;
   float: none;
   .create-task{
@@ -80,16 +89,20 @@
 .task-content{
   margin: 10px;
 }
-.tasks-body{
-  width: 100%;
-  text-align: center;
-}
+
 .side-bar{
   width: 0px;
 }
 
+#create-task{
+  transition: all 0.2s ease-in-out;
+}
+
 .create-task{
   padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.2s ease-in-out;
   #complete-button{
     float: left;
     font-size: 2em;
