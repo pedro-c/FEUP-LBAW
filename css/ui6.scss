@@ -1,0 +1,28 @@
+//colors
+//F7 + F8 to use
+@import 'global';
+
+#title_team_name {
+  margin-top: 10px;
+}
+
+.media {
+
+  #profile_pic {
+    padding-right: 20px;
+
+    img {
+      border-radius: 50px;
+    }
+  }
+
+  .media-body {
+    #team_role {
+      margin-top: 20px;
+    }
+
+    i {
+      margin-left: 88%;
+    }
+  }
+}
