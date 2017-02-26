@@ -19,6 +19,8 @@ $(document).ready(function(){
 
     });
 
+
+
 });
 function toggle() {
     var id="create-task";
@@ -26,6 +28,7 @@ function toggle() {
     var state = document.getElementById(id).style.display;
     if (state != 'none') {
         document.getElementById(id).style.display = 'none';
+        document.getElementById(id).style.width='1%';
         taskCard.style.width='70%';
     } else {
         document.getElementById(id).style.display = 'inline-block';

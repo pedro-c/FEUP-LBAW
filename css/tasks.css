@@ -83,6 +83,7 @@ body {
   display: inline-block; }
 
 .tasks-card {
+  transition: width 0.2s ease-in-out;
   overflow-y: auto;
   width: 70%;
   display: inline-block;
@@ -155,7 +156,8 @@ body {
   width: 0px; }
 
 #create-task {
-  transition: all 0.2s ease-in-out; }
+  width: 1%;
+  transition: all 2s; }
 
 .create-task {
   padding: 10px;
@@ -186,15 +188,15 @@ body {
     width: 100%; }
     .create-task #create-task-navbar i {
       vertical-align: middle;
-      float: left;
+      align-self: left;
       font-size: 1.5em;
       margin: 5px 10px 5px 10px; }
     .create-task #create-task-navbar #task-assign {
       width: auto;
       font-size: 1.5em;
-      float: left; }
+      align-self: left; }
     .create-task #create-task-navbar #delete-button {
-      float: right; }
+      align-self: right; }
 
 textarea {
   vertical-align: middle;
