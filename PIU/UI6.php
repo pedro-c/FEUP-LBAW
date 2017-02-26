@@ -6,7 +6,7 @@ include_once "common/header.html";
 <?php
 
 //TODO mudar para ele preencher consoante o número de elementos que tiver
-$num_elems = 4;
+$num_elems = 6;
 $elems_per_row = 3;
 
 $num_rows = ceil($num_elems / $elems_per_row);
@@ -26,8 +26,9 @@ $col_division = 12 / $num_cols; //DONT CHANGE. Used for grid position purposes
         <div class="row">
             <?php for($j = 0; $j < $num_cols && $num_elems > 0; $j++, $num_elems--) {?>
             <div class="col-md-<?php echo $col_division; ?>">
-                <div class="panel panel-default">
+                <div class="panel panel-default" id="profile_card">
                     <div class="panel-body">
+                      <?php if($num_elems > 1) { ?>
                        <div class="media">
                             <div class="media-left media-middle" id="profile_pic">
                                 <img style="width: 100px;" src="../assets/default_image_profile1.jpg" class="media-object" alt="Profile Photo">
@@ -38,6 +39,18 @@ $col_division = 12 / $num_cols; //DONT CHANGE. Used for grid position purposes
                                 <i class="fa fa-search-plus fa-2x"></i>
                             </div>
                        </div>
+                      <?php } else { ?>
+                        <div class="row" id="add_member" align="center">
+                          <div class="col-md-12">
+                            <i class="fa fa-plus-circle fa-4x"></i>
+                          </div>
+                        </div>
+                        <div class="row" align="center">
+                          <div class="col-md-12">
+                            <h3>Add a new member!</h3>
+                          </div>
+                        </div>
+                      <?php } ?>
                     </div>
                 </div>
             </div>
