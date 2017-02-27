@@ -111,7 +111,8 @@ html, body {
     color: white;
     background-color: #e9d460; }
     .login-box .button_loginIn:active, .login-box .button_loginIn:focus, .login-box .button_loginIn:hover, .login-box .button_loginIn:visited {
-      background-color: #e9d460; }
+      background-color: #e9d460;
+      outline: 0; }
   .login-box .button_signUp {
     margin-top: 20px;
     color: white;
@@ -124,9 +125,10 @@ html, body {
     padding: 5px 15px 5px 30px;
     border-color: transparent; }
     .login-box .button_signUp:active, .login-box .button_signUp:focus, .login-box .button_signUp:hover, .login-box .button_signUp:visited {
-      background-color: #e9d460; }
+      background-color: #e9d460;
+      outline: 0; }
   .login-box .description-links {
-    margin-top: 70px;
+    margin-top: 50px;
     font-size: x-large;
     text-align: center;
     cursor: pointer; }
@@ -140,7 +142,8 @@ html, body {
       border-bottom-color: #e9d460; }
       .login-box .description-links .sign-in-title:hover, .login-box .description-links .sign-in-title:visited {
         border-bottom: 4px solid;
-        border-bottom-color: #e9d460; }
+        border-bottom-color: #e9d460;
+        outline: 0; }
     .login-box .description-links .or-title {
       padding-right: 20px;
       color: white;
@@ -152,9 +155,10 @@ html, body {
       padding-bottom: 5px; }
       .login-box .description-links .sign-up-title:hover, .login-box .description-links .sign-up-title:visited {
         border-bottom: 4px solid;
-        border-bottom-color: #e9d460; }
+        border-bottom-color: #e9d460;
+        outline: 0; }
   .login-box .form-register {
-    margin-top: 60px;
+    margin-top: 50px;
     font-size: medium; }
     .login-box .form-register .form-register-right {
       margin-left: 45px;
@@ -166,7 +170,8 @@ html, body {
       .login-box .form-register .form-register-right .border-bottom:nth-child(11) {
         padding-bottom: 4px;
         border-bottom-style: solid;
-        border-bottom-color: #425262; }
+        border-bottom-color: #425262;
+        outline: 0; }
     .login-box .form-register .email {
       display: inline-block; }
     .login-box .form-register #email-input-id.email-input {
@@ -226,15 +231,16 @@ html, body {
       text-align: center; }
       .login-box .form-register .form-actions .register-button {
         padding: 10px 50px 10px 50px;
-        margin-top: 70px;
+        margin-top: 40px;
         background-color: #425262;
         border: none;
         color: white; }
         .login-box .form-register .form-actions .register-button:active, .login-box .form-register .form-actions .register-button:focus, .login-box .form-register .form-actions .register-button:hover, .login-box .form-register .form-actions .register-button:visited {
           background-color: #e9d460;
-          color: white; }
+          color: white;
+          outline: 0; }
   .login-box .form-login {
-    margin-top: 90px;
+    margin-top: 70px;
     font-size: medium; }
     .login-box .form-login .form-login-right {
       margin-left: 35px;
@@ -245,7 +251,8 @@ html, body {
       .login-box .form-login .form-login-right .border-bottom:nth-child(7) {
         padding-bottom: 4px;
         border-bottom-style: solid;
-        border-bottom-color: #425262; }
+        border-bottom-color: #425262;
+        outline: 0; }
     .login-box .form-login #username-input-id.username-input {
       font-size: medium;
       padding-top: 15px;
@@ -285,12 +292,13 @@ html, body {
       text-align: center; }
       .login-box .form-login .form-actions .login-button {
         padding: 10px 60px 10px 60px;
-        margin-top: 140px;
+        margin-top: 120px;
         background-color: #425262;
         border: none;
         color: white; }
         .login-box .form-login .form-actions .login-button:active, .login-box .form-login .form-actions .login-button:focus, .login-box .form-login .form-actions .login-button:hover, .login-box .form-login .form-actions .login-button:visited {
           background-color: #e9d460;
-          color: white; }
+          color: white;
+          outline: 0; }
 
 /*# sourceMappingURL=ui1.css.map */
