@@ -146,6 +146,7 @@
   #create-task-description{
     textarea{
       min-height: 50px;
+      padding: 10px;
       &:focus,
       &:hover{
         border: 1px solid $light_grey;
@@ -189,6 +190,9 @@
 
 }
 
+.well{
+  height: ;
+}
 textarea{
   vertical-align: middle;
   overflow: hidden;

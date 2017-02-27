@@ -192,7 +192,8 @@ body {
       padding: 0px 10px 0px 10px;
       float: left; }
   .create-task #create-task-description textarea {
-    min-height: 50px; }
+    min-height: 50px;
+    padding: 10px; }
     .create-task #create-task-description textarea:focus, .create-task #create-task-description textarea:hover {
       border: 1px solid #D3D3D3;
       border-radius: 2px; }

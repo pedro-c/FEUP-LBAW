@@ -4,7 +4,10 @@ include_once "common/header.html";
 
 <!-- Custom CSS -->
 <link href="../css/tasks.css" rel="stylesheet">
+<link href="../css/bootstrap-datepicker3.css" rel="stylesheet">
+<link href="../css/bootstrap-datepicker.css" rel="stylesheet">
 <script src="../js/tasks.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
 
 <div id="page-wrapper">
 
@@ -54,8 +57,15 @@ include_once "common/header.html";
                                 <textarea placeholder="New Task"></textarea>
                             </div>
                             <div class="col-xs-12" id="create-task-settings">
-                                <i class="fa fa-calendar"></i>
-                                <input type="date" name="deadline">
+                                <div class="input-group date">
+                                    <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                </div>
+                                <script>
+                                    $('.input-group.date').datepicker({
+                                        format: "dd/M/yyyy",
+                                        todayHighlight: true
+                                    });
+                                </script>
                                 <i class="fa fa-tag"></i>
                             </div>
                             <div class="col-xs-12" id="create-task-description">
