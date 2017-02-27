@@ -77,6 +77,7 @@ body {
     &:hover,
     &:visited {
       background-color: $color_yellow;
+      outline: 0;
     }
   }
 
@@ -96,11 +97,12 @@ body {
     &:hover,
     &:visited {
       background-color: $color_yellow;
+      outline: 0;
     }
   }
 
   .description-links {
-    margin-top: 70px;
+    margin-top: 50px;
     font-size: x-large;
     text-align: center;
     cursor: pointer;
@@ -118,6 +120,7 @@ body {
       &:visited {
         border-bottom: 4px solid;
         border-bottom-color: $color_yellow;
+        outline: 0;
       }
     }
 
@@ -136,12 +139,13 @@ body {
       &:visited {
         border-bottom: 4px solid;
         border-bottom-color: $color_yellow;
+        outline: 0;
       }
     }
   }
 
   .form-register {
-    margin-top: 60px;
+    margin-top: 50px;
     font-size: medium;
 
     .form-register-right {
@@ -158,6 +162,7 @@ body {
         padding-bottom: 4px;
         border-bottom-style: solid;
         border-bottom-color: #425262;
+        outline: 0;
       }
     }
 
@@ -246,7 +251,6 @@ body {
 
     }
     .form-actions {
-
       margin: 0;
       background-color: transparent;
       color: white;
@@ -254,7 +258,7 @@ body {
 
       .register-button {
         padding: 10px 50px 10px 50px;
-        margin-top: 70px;
+        margin-top: 40px;
         background-color: #425262;
         border: none;
         color: white;
@@ -265,6 +269,7 @@ body {
         &:visited {
           background-color: $color_yellow;
           color: white;
+          outline: 0;
         }
       }
 
@@ -272,7 +277,7 @@ body {
   }
 
   .form-login {
-    margin-top: 90px;
+    margin-top: 70px;
     font-size: medium;
 
     .form-login-right {
@@ -288,6 +293,7 @@ body {
         padding-bottom: 4px;
         border-bottom-style: solid;
         border-bottom-color: #425262;
+        outline: 0;
       }
     }
 
@@ -357,7 +363,7 @@ body {
 
       .login-button {
         padding: 10px 60px 10px 60px;
-        margin-top: 140px;
+        margin-top: 120px;
         background-color: #425262;
         border: none;
         color: white;
@@ -368,6 +374,7 @@ body {
         &:visited {
           background-color: $color_yellow;
           color: white;
+          outline: 0;
         }
       }
 
