@@ -1,5 +1,22 @@
 @import 'global';
 
+@media (max-width: 767px) {
+  #replies {
+    margin-bottom: 100px;
+  }
+
+  #mobile-back {
+    border-color: $color_ebony_clay;
+    background-color: $color_ebony_clay;
+    color: #fafafa;
+    text-align: center;
+    vertical-align: middle;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+}
 
 /*Overriding bootstrap class panel-primary*/
 .panel-primary {

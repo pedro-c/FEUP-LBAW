@@ -70,6 +70,18 @@ body {
           color: #e9d460 !important; }
       #sidebar li a p {
         margin-bottom: 0px !important; } }
+@media (max-width: 767px) {
+  #replies {
+    margin-bottom: 100px; }
+
+  #mobile-back {
+    border-color: #22313f;
+    background-color: #22313f;
+    color: #fafafa;
+    text-align: center;
+    vertical-align: middle; }
+    #mobile-back :hover {
+      cursor: pointer; } }
 /*Overriding bootstrap class panel-primary*/
 .panel-primary {
   border-color: #22313f; }
