@@ -19,10 +19,36 @@ body {
   @extend %extend_1;
 }
 
+@media(min-width: 768px) {
+
+  .container {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  #slider-card {
+    display: block !important;
+  }
+  #login-card {
+    width: 50% !important;
+  }
+
+}
+
 .container {
+  align-content: center;
   display: table;
   position: absolute;
   height: 100%;
+  width: 100%;
+}
+
+#slider-card {
+  display: none;
+}
+
+#login-card {
   width: 100%;
 }
 
@@ -58,7 +84,6 @@ body {
     padding: 0 !important;
     margin: 0 !important;
   }
-
   .button_loginIn {
     margin-top: 20px;
     float: left;
@@ -152,13 +177,13 @@ body {
       margin-left: 45px;
       margin-right: 45px;
 
-      .border-bottom{
+      .border-bottom {
         padding-left: 0 !important;
       }
 
       .border-bottom:nth-child(3),
       .border-bottom:nth-child(7),
-      .border-bottom:nth-child(11){
+      .border-bottom:nth-child(11) {
         padding-bottom: 4px;
         border-bottom-style: solid;
         border-bottom-color: #425262;
@@ -284,12 +309,12 @@ body {
       margin-left: 35px;
       margin-right: 45px;
 
-      .border-bottom{
+      .border-bottom {
         padding-left: 0 !important;
       }
 
       .border-bottom:nth-child(3),
-      .border-bottom:nth-child(7){
+      .border-bottom:nth-child(7) {
         padding-bottom: 4px;
         border-bottom-style: solid;
         border-bottom-color: #425262;
