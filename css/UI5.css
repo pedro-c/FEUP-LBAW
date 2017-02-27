@@ -86,11 +86,18 @@ body {
     border-bottom-color: #e9d460; }
 
 .files_list {
+  text-align: center;
   background-color: #ecf0f1;
   margin-top: 50px;
   height: auto;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+  .files_list .upload_file {
+    border: none;
+    font-weight: bold;
+    background-color: transparent;
+    cursor: pointer;
+    margin-bottom: 20px; }
   .files_list .file {
     border-bottom: 1px solid;
     border-bottom-color: grey;
