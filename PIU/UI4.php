@@ -6,7 +6,7 @@
     <div class="row"><br>
         <div id="forum-posts" class="list-group">
             <div class="forum-posts-nav">
-                <button class="list-group-item forum-post" id="new-post-button">
+                <button class="list-group-item new-post-button">
                     <h4 class="list-group-item-heading">Make a new post </h4>
                     <div class="list-group-item-text">
                         <a class="glyphicon glyphicon-plus"> </a>

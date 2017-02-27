@@ -70,6 +70,9 @@ body {
           color: #e9d460 !important; }
       #sidebar li a p {
         margin-bottom: 0px !important; } }
+.new-post-button {
+  margin-bottom: 10px; }
+
 @media (max-width: 767px) {
   #replies {
     margin-bottom: 100px; }

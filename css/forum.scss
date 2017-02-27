@@ -1,7 +1,8 @@
 @import 'global';
 
-#new-post-button {
+.new-post-button {
   //background-color: $color_mountain_mist_approx;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 767px) {
