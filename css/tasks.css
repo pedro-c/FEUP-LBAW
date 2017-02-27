@@ -134,10 +134,12 @@ body {
   border-width: 1px 0px 1px 0px;
   width: 100%; }
   .task #complete-button {
+    color: grey;
     font-size: 1.5em; }
     .task #complete-button:hover {
       color: #1AAFD0; }
   .task #delete-button {
+    color: grey;
     font-size: 1.2em; }
     .task #delete-button:hover {
       color: red; }
