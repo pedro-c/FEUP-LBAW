@@ -1,9 +1,5 @@
 @import 'global';
 
-.new-post-button {
-  //background-color: $color_mountain_mist_approx;
-  margin-bottom: 10px;
-}
 
 .list-group{
   border-radius: 10px;
@@ -11,6 +7,33 @@
 
 .list-group-item{
   box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+button#new-post-button {
+  margin-bottom: 10px;
+
+  .row{
+    display: table;
+    height: 100%;
+  }
+
+  &:hover{
+    #plus-icon h4{color: $color_yellow;}
+  }
+
+  #plus-icon{
+    vertical-align: middle;
+    text-align: center;
+    float: none;
+    display: table-cell;
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
+
+  #new-content{
+    display: table-cell;
+    float: none;
+  }
 }
 
 @media (max-width: 767px) {
@@ -33,7 +56,8 @@
 
 /*Overriding bootstrap class panel-primary*/
 .panel-primary {
-  border-color: $color_ebony_clay;
+  border: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 .panel-primary > .panel-heading {
   color: #fafafa;
