@@ -9,7 +9,7 @@
 }
 
 .tasks-card{
-  transition: width 0.2s ease-in-out;
+  //transition: width 0.2s ease-in-out;
   overflow-y: auto;
   width: 70%;
   display: inline-block;
@@ -104,7 +104,7 @@
   padding: 10px 25px 10px 25px;
   overflow-y: auto;
   overflow-x: hidden;
-  transition: all 0.2s ease-in-out;
+  //transition: all 0.2s ease-in-out;
   #complete-button{
     float: left;
     font-size: 2em;
@@ -190,9 +190,17 @@
 
 }
 
-.well{
-  height: ;
+.datepicker-dropdown{
+  margin-top: 60px;
 }
+
+.date{
+  width: 200px;
+  span{
+    width: 50px;
+  }
+}
+
 textarea{
   vertical-align: middle;
   overflow: hidden;

@@ -83,7 +83,6 @@ body {
   display: inline-block; }
 
 .tasks-card {
-  transition: width 0.2s ease-in-out;
   overflow-y: auto;
   width: 70%;
   display: inline-block;
@@ -162,8 +161,7 @@ body {
 .create-task {
   padding: 10px 25px 10px 25px;
   overflow-y: auto;
-  overflow-x: hidden;
-  transition: all 0.2s ease-in-out; }
+  overflow-x: hidden; }
   .create-task #complete-button {
     float: left;
     font-size: 2em; }
@@ -219,6 +217,14 @@ body {
       float: left; }
     .create-task #create-task-navbar #delete-button {
       float: right; }
+
+.datepicker-dropdown {
+  margin-top: 60px; }
+
+.date {
+  width: 200px; }
+  .date span {
+    width: 50px; }
 
 textarea {
   vertical-align: middle;

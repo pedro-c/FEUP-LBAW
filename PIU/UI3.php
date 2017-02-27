@@ -58,14 +58,9 @@ include_once "common/header.html";
                             </div>
                             <div class="col-xs-12" id="create-task-settings">
                                 <div class="input-group date">
-                                    <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control">
                                 </div>
-                                <script>
-                                    $('.input-group.date').datepicker({
-                                        format: "dd/M/yyyy",
-                                        todayHighlight: true
-                                    });
-                                </script>
                                 <i class="fa fa-tag"></i>
                             </div>
                             <div class="col-xs-12" id="create-task-description">
