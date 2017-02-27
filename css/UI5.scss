@@ -1,14 +1,15 @@
-//colors
 @import 'global';
 
-.nopadding{
+.nopadding {
   padding: 0 !important;
   margin: 0 !important;
 }
 
-.files_title{
+.files_title {
 
-  background-color: $background_white;
+  background-color: $white;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 
   button {
     display: inline;
@@ -17,7 +18,7 @@
     background-color: transparent;
     cursor: pointer;
     &:hover,
-    &:visited{
+    &:visited {
       border-bottom: 4px solid;
       border-bottom-color: $color_yellow;
     }
@@ -29,48 +30,67 @@
   }
 }
 
-.files_list{
+.files_list {
 
-  background-color: $background_white;
+  font-weight: normal;
+  background-color: $white;
   margin-top: 50px;
   height: auto;
   border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 
-  .file{
+  .add_new_file {
+    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-left: 15px;
+    button {
+      padding: 5px;
+      border-radius: 3px;
+      color: $light_blue;
+      background-color: transparent;
+      margin: auto;
+      border: 1px solid $light_blue;
+      &:hover {
+        background-color: $light_blue;
+        color: white;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+
+  .file {
     border-bottom: 1px solid;
-    border-bottom-color: grey;
-    padding: 15px 10px 15px 10px;
-    text-align: center;
+    border-bottom-color: #bcbcbc;
+    vertical-align: middle;
+    padding: 15px 15px 15px 15px;
 
-    .user_name{
-      font-size: xx-small;
+    .align_center_div{
+      text-align: center;
     }
 
-
-    .minutes{
-      font-size: x-small;
-      float: right;
+    .vertical-align{
+      display: flex;
+      align-items: center;
+    }
+    .minutes {
+      font-size: small;
       margin-bottom: 0 !important;
+      font-weight: normal !important
     }
-
-    .file_details{
+    .file_details {
       display: inline-block;
 
-      .file_show{
-        width: 20px;
+      .file_show {
+        width: 25px;
+        margin-right: 5px;
       }
-      .file_description{
+
+      .file_description {
+        font-weight: normal !important;
       }
     }
-
-
-    .size{
-
-    }
-
-    .perfil_picture{
-      width: 60px;
+    .perfil_picture {
+      width: 70px;
     }
   }
 }

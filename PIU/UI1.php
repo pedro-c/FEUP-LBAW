@@ -28,13 +28,13 @@
 
 <div class="container">
     <div class="row vertical-align">
-        <div class="col-xs-10 col-xs-offset-1 login-box">
+        <div class="col-xs-8 col-xs-offset-2 login-box">
             <div class="border_radius">
-                <div class="col-xs-6 content_login nopadding ">
+                <div class="col-xs-6 content_login nopadding" id="slider-card">
                     <img class="img-responsive" src="../assets/2.png"
                          style="width:100%;overflow: hidden; height: 100%;"/>
                 </div>
-                <div class="col-xs-6 content_login pull-right">
+                <div class="col-xs-6 content_login pull-right" id="login-card">
                     <div class="row">
                         <div class="col-xs-3"></div>
                         <div class="col-xs-3"></div>
