@@ -1,18 +1,22 @@
 <?php
 include_once "common/header.html";
 ?>
+
 <link href="../css/UI6.css" rel="stylesheet">
+<script src="../jquery-3.1.1.min.js"></script>
+<script src="../js/ui6.js"></script>
 
 <?php
-
-//TODO mudar para ele preencher consoante o número de elementos que tiver
+$is_coordinator = false;
 $num_elems = 6;
+if($is_coordinator) { //Adds the "Add new member" panel
+  $num_elems++;
+}
+
 $elems_per_row = 3;
 
 $num_rows = ceil($num_elems / $elems_per_row);
-
-$num_cols = 3;
-$col_division = 12 / $num_cols; //DONT CHANGE. Used for grid position purposes
+$col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purposes
 ?>
 
 <div id="page-wrapper">
@@ -24,11 +28,11 @@ $col_division = 12 / $num_cols; //DONT CHANGE. Used for grid position purposes
       </div>
         <?php for($i = 0; $i < $num_rows; $i++) {?>
         <div class="row">
-            <?php for($j = 0; $j < $num_cols && $num_elems > 0; $j++, $num_elems--) {?>
+            <?php for($j = 0; $j < $elems_per_row && $num_elems > 0; $j++, $num_elems--) {?>
             <div class="col-md-<?php echo $col_division; ?>">
                 <div class="panel panel-default" id="profile_card">
                     <div class="panel-body">
-                      <?php if($num_elems > 1) { ?>
+                      <?php if($num_elems > 1 || !$is_coordinator) { ?>
                        <div class="media">
                             <div class="media-left media-middle" id="profile_pic">
                                 <img style="width: 100px;" src="../assets/default_image_profile1.jpg" class="media-object" alt="Profile Photo">
@@ -36,8 +40,63 @@ $col_division = 12 / $num_cols; //DONT CHANGE. Used for grid position purposes
                             <div class="media-body">
                                 <h4 class="media-heading">José Carlos Milheiro Soares Coutinho</h4>
                                 <h5 id="team_role">Team Manager</h5>
-                                <i class="fa fa-search-plus fa-2x"></i>
+                                <i class="fa fa-search-plus fa-2x" data-toggle="collapse" data-target="#profile_details<?php echo $num_elems;?>"></i>
                             </div>
+                       </div>
+                       <div id="profile_details<?php echo $num_elems;?>" class="collapse">
+                         <div class="profile_details">
+                           <div class="row">
+                             <div class="col-md-1">
+                             </div>
+                             <div class="col-md-5" align="center">
+                              <p>From:</p>
+                             </div>
+                             <div class="col-md-5">
+                               <p>Porto, Portugal</p>
+                             </div>
+                             <div class="col-md-1">
+                             </div>
+                           </div>
+                           <div class="row">
+                             <div class="col-md-1">
+                             </div>
+                             <div class="col-md-5" align="center">
+                              <p>Email:</p>
+                             </div>
+                             <div class="col-md-5">
+                               <p>jczelik@gmail.com</p>
+                             </div>
+                             <div class="col-md-1">
+                             </div>
+                           </div>
+                           <div class="row">
+                             <div class="col-md-1">
+                             </div>
+                             <div class="col-md-5" align="center">
+                              <p>Phone:</p>
+                             </div>
+                             <div class="col-md-5">
+                               <p>999-999-999</p>
+                             </div>
+                             <div class="col-md-1">
+                             </div>
+                           </div>
+                           <div class="row">
+                             <div class="col-md-1">
+                             </div>
+                             <div class="col-md-5" align="center">
+                              <p>Profile:</p>
+                             </div>
+                             <div class="col-md-5">
+                               <a>direkt.com/user1</a>
+                             </div>
+                             <div class="col-md-1">
+                             </div>
+                           </div>
+                           <div class="col-md-12">
+                             <i class="fa fa-search-minus fa-2x" data-toggle="collapse" data-target="#profile_details<?php echo $num_elems;?>"></i>
+                           </div>
+                         </div>
                        </div>
                       <?php } else { ?>
                         <div class="row" id="add_member" align="center">
@@ -77,4 +136,60 @@ include_once "common/footer.html";
                                 </div>
                             </div>
                         </div>*/
+
+/* TODO PROFILE DETAILS HTML
+<div class="profile_details">
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-5" align="center">
+     <p>From:</p>
+    </div>
+    <div class="col-md-5">
+      <p>Porto, Portugal</p>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-5" align="center">
+     <p>Email:</p>
+    </div>
+    <div class="col-md-5">
+      <p>jczelik@gmail.com</p>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-5" align="center">
+     <p>Phone:</p>
+    </div>
+    <div class="col-md-5">
+      <p>999-999-999</p>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-5" align="center">
+     <p>Profile:</p>
+    </div>
+    <div class="col-md-5">
+      <a>direkt.com/user1</a>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+  <div class="col-md-12">
+    <i class="fa fa-search-minus fa-2x"></i>
+  </div>
+</div>
+*/
 ?>
