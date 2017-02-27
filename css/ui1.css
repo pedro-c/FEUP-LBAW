@@ -1,7 +1,75 @@
+body {
+  padding: 0;
+  margin: 0; }
+
+#header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 50px;
+  background-color: #22313f; }
+
+#sidebar {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: auto;
+  background-color: #22313f;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  text-align: center; }
+
+#parent {
+  margin-top: 50px;
+  margin-left: 0px;
+  background-color: #fff; }
+
+#bs-example-navbar-collapse-1 {
+  border-top-width: 0px !important;
+  padding: 0 !important;
+  background-color: #22313f;
+  margin: 0;
+  overflow-x: hidden;
+  text-align: center; }
+
+@media (min-width: 768px) {
+  #parent {
+    margin-left: 100px; }
+
+  #sidebar {
+    position: fixed;
+    top: 49px;
+    width: 100px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    bottom: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px; }
+    #sidebar li a {
+      width: 100px;
+      text-align: center; }
+      #sidebar li a:hover {
+        outline: none;
+        color: #e9d460;
+        background-color: #192532 !important; }
+        #sidebar li a:hover i, #sidebar li a:hover p {
+          color: #e9d460 !important; }
+      #sidebar li a:focus {
+        outline: none;
+        color: #e9d460;
+        background-color: #192532 !important; }
+        #sidebar li a:focus i, #sidebar li a:focus p {
+          color: #e9d460 !important; }
+      #sidebar li a p {
+        margin-bottom: 0px !important; } }
 html, body {
   margin: 0;
   height: 100%;
-  background-color: whitesmoke;
+  background-color: #ecf0f1;
   width: 100%; }
 
 .container {
@@ -16,12 +84,13 @@ html, body {
   vertical-align: middle; }
 
 .login-box {
-  color: white;
-  border-radius: 15px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px; }
+  color: white; }
+  .login-box .border_radius {
+    border-radius: 15px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px; }
   .login-box .content_login {
-    background-color: #334251;
+    background-color: #22313f;
     height: 80vh; }
   .login-box .content_image {
     background-image: url("../assets/2.png");
@@ -37,7 +106,7 @@ html, body {
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     padding: 5px 30px 5px 15px;
-    background-color: #334251;
+    background-color: #22313f;
     border-color: transparent;
     color: white;
     background-color: #e9d460; }
@@ -59,7 +128,8 @@ html, body {
   .login-box .description-links {
     margin-top: 70px;
     font-size: x-large;
-    text-align: center; }
+    text-align: center;
+    cursor: pointer; }
     .login-box .description-links .sign-in-title {
       text-align: center;
       text-decoration: none;
@@ -78,26 +148,109 @@ html, body {
     .login-box .description-links .sign-up-title {
       text-align: center;
       text-decoration: none;
-      color: white;
+      color: #425262;
       padding-bottom: 5px; }
       .login-box .description-links .sign-up-title:hover, .login-box .description-links .sign-up-title:visited {
         border-bottom: 4px solid;
         border-bottom-color: #e9d460; }
+  .login-box .form-register {
+    margin-top: 60px;
+    font-size: medium; }
+    .login-box .form-register .form-register-right {
+      margin-left: 45px;
+      margin-right: 45px; }
+      .login-box .form-register .form-register-right .border-bottom {
+        padding-left: 0 !important; }
+      .login-box .form-register .form-register-right .border-bottom:nth-child(3),
+      .login-box .form-register .form-register-right .border-bottom:nth-child(7),
+      .login-box .form-register .form-register-right .border-bottom:nth-child(11) {
+        padding-bottom: 4px;
+        border-bottom-style: solid;
+        border-bottom-color: #425262; }
+    .login-box .form-register .email {
+      display: inline-block; }
+    .login-box .form-register #email-input-id.email-input {
+      font-size: medium;
+      padding-top: 15px;
+      background-color: transparent;
+      border: none; }
+      .login-box .form-register #email-input-id.email-input:focus {
+        outline: none; }
+      .login-box .form-register #email-input-id.email-input:-moz-placeholder {
+        color: #425262; }
+      .login-box .form-register #email-input-id.email-input:-ms-input-placeholder {
+        color: #425262; }
+      .login-box .form-register #email-input-id.email-input::-moz-placeholder {
+        color: #425262; }
+      .login-box .form-register #email-input-id.email-input:-ms-input-placeholder {
+        color: #425262; }
+    .login-box .form-register .username {
+      padding-top: 35px;
+      display: inline-block; }
+    .login-box .form-register #username-input-id.username-input {
+      font-size: medium;
+      padding-top: 15px;
+      background-color: transparent;
+      border: none; }
+      .login-box .form-register #username-input-id.username-input:focus {
+        outline: none; }
+      .login-box .form-register #username-input-id.username-input:-moz-placeholder {
+        color: #425262; }
+      .login-box .form-register #username-input-id.username-input:-ms-input-placeholder {
+        color: #425262; }
+      .login-box .form-register #username-input-id.username-input::-moz-placeholder {
+        color: #425262; }
+      .login-box .form-register #username-input-id.username-input:-ms-input-placeholder {
+        color: #425262; }
+    .login-box .form-register .password {
+      padding-top: 35px;
+      display: inline-block; }
+    .login-box .form-register #password-input-id.password-input {
+      padding-top: 15px;
+      background-color: transparent;
+      border: none; }
+      .login-box .form-register #password-input-id.password-input:focus {
+        outline: none; }
+      .login-box .form-register #password-input-id.password-input:-moz-placeholder {
+        color: #425262; }
+      .login-box .form-register #password-input-id.password-input:-ms-input-placeholder {
+        color: #425262; }
+      .login-box .form-register #password-input-id.password-input::-moz-placeholder {
+        color: #425262; }
+      .login-box .form-register #password-input-id.password-input:-ms-input-placeholder {
+        color: #425262; }
+    .login-box .form-register .form-actions {
+      margin: 0;
+      background-color: transparent;
+      color: white;
+      text-align: center; }
+      .login-box .form-register .form-actions .register-button {
+        padding: 10px 50px 10px 50px;
+        margin-top: 70px;
+        background-color: #425262;
+        border: none;
+        color: white; }
+        .login-box .form-register .form-actions .register-button:active, .login-box .form-register .form-actions .register-button:focus, .login-box .form-register .form-actions .register-button:hover, .login-box .form-register .form-actions .register-button:visited {
+          background-color: #e9d460;
+          color: white; }
   .login-box .form-login {
     margin-top: 90px;
     font-size: medium; }
     .login-box .form-login .form-login-right {
-      margin-left: 35px; }
-    .login-box .form-login .password {
-      padding-top: 35px;
-      display: inline-block; }
+      margin-left: 35px;
+      margin-right: 45px; }
+      .login-box .form-login .form-login-right .border-bottom {
+        padding-left: 0 !important; }
+      .login-box .form-login .form-login-right .border-bottom:nth-child(3),
+      .login-box .form-login .form-login-right .border-bottom:nth-child(7) {
+        padding-bottom: 4px;
+        border-bottom-style: solid;
+        border-bottom-color: #425262; }
     .login-box .form-login #username-input-id.username-input {
       font-size: medium;
       padding-top: 15px;
       background-color: transparent;
-      border: none;
-      border-bottom-style: solid;
-      border-bottom-color: #425262; }
+      border: none; }
       .login-box .form-login #username-input-id.username-input:focus {
         outline: none; }
       .login-box .form-login #username-input-id.username-input:-moz-placeholder {
@@ -108,12 +261,13 @@ html, body {
         color: #425262; }
       .login-box .form-login #username-input-id.username-input:-ms-input-placeholder {
         color: #425262; }
+    .login-box .form-login .password {
+      padding-top: 35px;
+      display: inline-block; }
     .login-box .form-login #password-input-id.password-input {
       padding-top: 15px;
       background-color: transparent;
-      border: none;
-      border-bottom-style: solid;
-      border-bottom-color: #425262; }
+      border: none; }
       .login-box .form-login #password-input-id.password-input:focus {
         outline: none; }
       .login-box .form-login #password-input-id.password-input:-moz-placeholder {
@@ -130,8 +284,8 @@ html, body {
       color: white;
       text-align: center; }
       .login-box .form-login .form-actions .login-button {
-        padding: 10px 50px 10px 50px;
-        margin-top: 120px;
+        padding: 10px 60px 10px 60px;
+        margin-top: 140px;
         background-color: #425262;
         border: none;
         color: white; }
@@ -139,4 +293,4 @@ html, body {
           background-color: #e9d460;
           color: white; }
 
-/*# sourceMappingURL=login.css.map */
+/*# sourceMappingURL=ui1.css.map */
