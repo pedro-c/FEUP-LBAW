@@ -3,21 +3,20 @@
 <link href="../css/forum.css" rel="stylesheet">
 <script src="../js/forum.js"></script>
 <div class="page-wrapper container">
-    <div class="row">
-        <br>
-        <div id="forum-content" class="list-group">
-            <span class="list-group-item forum-post">
+    <div class="row"><br>
+        <div id="forum-posts" class="list-group">
+            <div class="forum-posts-nav">
+            <button class="list-group-item forum-post">
                 <h4 class="list-group-item-heading">New Feature?</h4>
                 <div class="list-group-item-text">
                     <a class="submitter-pic glyphicon glyphicon-user"> </a>
                     <small>
-                    <span class="submitter-uname">pedroc</span> -
-                    <span class="post-submission-date">Yesterday at 8:01</span>
+                        <span class="submitter-uname">pedroc</span> -
+                        <span class="post-submission-date">Yesterday at 8:01</span>
                     </small>
                 </div>
-            </span>
-            <div class="clearfix"></div>
-            <span class="list-group-item forum-post">
+            </button>
+            <button class="list-group-item forum-post">
                 <h4 class="list-group-item-heading">Who did this? Like, seriously?!!</h4>
                 <div class="list-group-item-text">
                     <a class="submitter-pic glyphicon glyphicon-user"> </a>
@@ -26,9 +25,8 @@
                         <span class="post-submission-date">Feb 23 at 23:31</span>
                     </small>
                 </div>
-            </span>
-            <div class="clearfix"></div>
-            <span class="list-group-item forum-post">
+            </button>
+            <button class="list-group-item forum-post">
                 <h4 class="list-group-item-heading">Great PHP resource!</h4>
                 <div class="list-group-item-text">
                     <a class="submitter-pic glyphicon glyphicon-user"> </a>
@@ -37,9 +35,8 @@
                         <span class="post-submission-date">Feb 24 at 12:18</span>
                     </small>
                 </div>
-            </span>
-            <div class="clearfix"></div>
-            <span class="list-group-item forum-post">
+            </button>
+            <button class="list-group-item forum-post">
                 <h4 class="list-group-item-heading">Deployment Instructions</h4>
                 <div class="list-group-item-text">
                     <a class="submitter-pic glyphicon glyphicon-user"> </a>
@@ -48,9 +45,8 @@
                         <span class="post-submission-date">Feb 12 at 15:12</span>
                     </small>
                 </div>
-            </span>
-            <div class="clearfix"></div>
-            <span class="list-group-item forum-post">
+            </button>
+            <button class="list-group-item forum-post">
                 <h4 class="list-group-item-heading">Some requirement changes..</h4>
                 <div class="list-group-item-text">
                     <a class="submitter-pic glyphicon glyphicon-user"> </a>
@@ -59,9 +55,8 @@
                         <span class="post-submission-date">Jan 27 at 00:28</span>
                     </small>
                 </div>
-            </span>
-            <div class="clearfix"></div>
-            <span class="list-group-item forum-post">
+            </button>
+            <button class="list-group-item forum-post">
                 <h4 class="list-group-item-heading">Just a heads up!</h4>
                 <div class="list-group-item-text">
                     <a class="submitter-pic glyphicon glyphicon-user"> </a>
@@ -70,9 +65,8 @@
                         <span class="post-submission-date">Dec 21 at 8:01</span>
                     </small>
                 </div>
-            </span>
-            <div class="clearfix"></div>
-            <span class="list-group-item forum-post">
+            </button>
+            <button class="list-group-item forum-post">
                 <h4 class="list-group-item-heading">Random idea</h4>
                 <div class="list-group-item-text">
                     <a class="submitter-pic glyphicon glyphicon-user"> </a>
@@ -81,7 +75,7 @@
                         <span class="post-submission-date">Dec 20 at 21:01</span>
                     </small>
                 </div>
-            </span>
+            </button>
             <nav aria-label="Page navigation">
                 <div class="text-center">
                     <ul class="pagination">
@@ -103,8 +97,8 @@
                     </ul>
                 </div>
             </nav>
+        </div><!-- forum content -->
         </div>
-
-    </div>
+    </div><!-- row -->
 </div>
-<?php include_once "common/footer.html"?>
+<?php include_once "common/footer.html" ?>
