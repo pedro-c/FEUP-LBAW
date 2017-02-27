@@ -21,6 +21,7 @@ $color_golden_bell_approx: #df8a13;
 body {
   padding: 0;
   margin: 0;
+  font-family: $font-stack;
   background-color: $background_white;
 }
 
@@ -80,6 +81,7 @@ body {
     overflow-x: hidden;
     padding-bottom: 40px;
     li a {
+      color: $background_white;
       width: 100px;
       text-align: center;
       &:hover {

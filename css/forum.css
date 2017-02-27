@@ -1,6 +1,7 @@
 body {
   padding: 0;
   margin: 0;
+  font-family: Roboto, Helvetica, sans-serif;
   background-color: #ecf0f1; }
 
 #parent {
@@ -54,6 +55,7 @@ body {
     overflow-x: hidden;
     padding-bottom: 40px; }
     #sidebar li a {
+      color: #ecf0f1;
       width: 100px;
       text-align: center; }
       #sidebar li a:hover {
@@ -72,6 +74,12 @@ body {
         margin-bottom: 0px !important; } }
 .new-post-button {
   margin-bottom: 10px; }
+
+.list-group {
+  border-radius: 10px; }
+
+.list-group-item {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
 
 @media (max-width: 767px) {
   #replies {

@@ -5,6 +5,14 @@
   margin-bottom: 10px;
 }
 
+.list-group{
+  border-radius: 10px;
+}
+
+.list-group-item{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
 @media (max-width: 767px) {
   #replies {
     margin-bottom: 100px;
