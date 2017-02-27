@@ -35,16 +35,17 @@
                          style="width:100%;overflow: hidden; height: 100%;"/>
                 </div>
                 <div class="col-xs-6 content_login pull-right" id="login-card">
-                    <div class="row">
-                        <div class="col-xs-3"></div>
-                        <div class="col-xs-3"></div>
-                        <div class="col-xs-3 nopadding col-lg-offset-3"> <!--Retirar padding das colunas-->
-                            <button class="button_loginIn btn btn-default" onclick="signIn()">Sign In</button>
+                   <!-- <div class="row">
+                          <div class="col-xs-4"></div>
+                          <div id="buttons">
+                              <div class="col-xs-4 nopadding col-lg-offset-4"> <!--Retirar padding das colunas-->
+                        <!--        <button class="button_loginIn btn btn-default" onclick="signIn()">Sign In</button>
+                            </div>
+                            <div class="col-xs-4 nopadding">
+                                <button class="button_signUp btn btn-default" onclick="signUp()">Sign Up</button>
+                            </div>
                         </div>
-                        <div class="col-xs-3 nopadding">
-                            <button class="button_signUp btn btn-default" onclick="signUp()">Sign Up</button>
-                        </div>
-                    </div>
+                    </div>-->
                     <div class="row row-centered">
                         <div class="description-links">
                             <div class="col-xs-12 nopadding">
@@ -127,7 +128,8 @@
                                     </div>
                                     <div class="col-xs-12 col-login nopadding">
                                         <div class="form-actions nopadding">
-                                            <input class="btn btn-default register-button" type="submit" value="Register">
+                                            <input class="btn btn-default register-button" type="submit"
+                                                   value="Register">
                                         </div>
                                     </div>
 
