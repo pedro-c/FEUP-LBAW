@@ -12,7 +12,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="../css/UI1.css" rel="stylesheet">
+    <link href="../css/ui1.css" rel="stylesheet">
     <link href="../css/plugins/morris.css" rel="stylesheet">
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -59,21 +59,21 @@
                             <div class="form-login">
                                 <form>
                                     <div class="form-login-right">
-                                        <div class="col-xs-12 bottom-border">
+                                        <div class="col-xs-12">
                                             <span class="username"> Username: </span>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12 bottom-border">
+                                        <div class="col-xs-12">
                                             <input id="username-input-id" class="username-input"
                                                    placeholder="Enter your username"
                                                    type="text">
                                         </div>
                                         <br>
-                                        <div class="col-xs-12 bottom-border">
+                                        <div class="col-xs-12">
                                             <span class="password"> Password: </span>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12 bottom-border">
+                                        <div class="col-xs-12">
                                             <input id="password-input-id" class="password-input"
                                                    placeholder="Enter your password"
                                                    type="password">
@@ -94,31 +94,32 @@
                                 <form>
                                     <div class="form-register-right">
 
-                                        <div class="col-xs-12 bottom-border">
+                                        <div class="col-xs-12">
                                             <span class="email"> Email: </span>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12 bottom-border">
+                                        <div class="col-xs-12">
                                             <input id="email-input-id" class="email-input"
                                                    placeholder="Enter your email"
                                                    type="email">
                                         </div>
-                                        <br>
-                                        <div class="col-xs-12 bottom-border">
+
+
+                                        <div class="col-xs-12">
                                             <span class="username"> Username: </span>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12 bottom-border">
+                                        <div class="col-xs-12">
                                             <input id="username-input-id" class="username-input"
                                                    placeholder="Choose your username"
                                                    type="text">
                                         </div>
                                         <br>
-                                        <div class="col-xs-12 bottom-border">
+                                        <div class="col-xs-12">
                                             <span class="password"> Password: </span>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12 bottom-border">
+                                        <div class="col-xs-12">
                                             <input id="password-input-id" class="password-input"
                                                    placeholder="Choose your password"
                                                    type="password">

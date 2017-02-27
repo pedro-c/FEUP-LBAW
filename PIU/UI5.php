@@ -17,12 +17,6 @@ include_once "common/header.html";
     <div class="row">
         <div class="col-xs-8 col-md-offset-2">
             <div class="files_list">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                        <button class="upload_file">Upload New File</button>
-                    </div>
-                </div>
                 <div class="file file1">
                     <div class="row">
                         <div class="col-xs-2">
