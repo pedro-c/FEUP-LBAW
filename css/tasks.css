@@ -3,7 +3,8 @@ body {
   margin: 0;
   background-color: #ecf0f1;
   height: 100vh;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  font-family: Roboto, Helvetica, sans-serif; }
 
 #header {
   position: fixed;
