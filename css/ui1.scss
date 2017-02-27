@@ -86,16 +86,15 @@ body {
   }
   .button_loginIn {
     margin-top: 20px;
-    float: left;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 5px 30px 5px 15px;
+    padding: 5px 15px 5px 30px;
+    float: right;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
     background-color: $blue_secondary;
     border-color: transparent;
     color: white;
-    //retirar depois do js
     background-color: $color_yellow;
     &:active,
     &:focus,
@@ -109,13 +108,13 @@ body {
   .button_signUp {
     margin-top: 20px;
     color: white;
-    float: right;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
+    float: left;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
     background-color: #425262;
-    padding: 5px 15px 5px 30px;
+    padding: 5px 30px 5px 15px;
     border-color: transparent;
     &:active,
     &:focus,

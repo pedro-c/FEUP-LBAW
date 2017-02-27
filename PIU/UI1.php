@@ -39,10 +39,10 @@
                         <div class="col-xs-3"></div>
                         <div class="col-xs-3"></div>
                         <div class="col-xs-3 nopadding col-lg-offset-3"> <!--Retirar padding das colunas-->
-                            <button class="button_signUp btn btn-default" onclick="signUp()">Sign Up</button>
+                            <button class="button_loginIn btn btn-default" onclick="signIn()">Sign In</button>
                         </div>
                         <div class="col-xs-3 nopadding">
-                            <button class="button_loginIn btn btn-default" onclick="signIn()">Sign In</button>
+                            <button class="button_signUp btn btn-default" onclick="signUp()">Sign Up</button>
                         </div>
                     </div>
                     <div class="row row-centered">
