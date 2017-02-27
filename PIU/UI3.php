@@ -40,26 +40,28 @@ include_once "common/header.html";
                             </table>
                         </div>
                     </div>
-                    <div class="tasks-card create-task" id="create-task" style="display: none">
-                        <div id="create-task-navbar">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            <textarea id="task-assign">Assign to</textarea>
+                    <div class="tasks-card create-task row" id="create-task" style="display: none">
+                        <div class="col-xs-12" id="create-task-navbar">
+                            <div class="col-xs-12" id="assign-to">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <textarea placeholder="Assign to" id="task-assign"></textarea>
+                            </div>
                             <button class="btn btn-danger" id="delete-button"> Delete </button>
                         </div>
-                        <div>
-                            <div id="create-task-title">
+
+                            <div class="col-xs-12" id="create-task-title">
                                 <i class="fa fa-check-circle-o" id="complete-button"></i>
-                                <textarea>Tarefa 1</textarea>
+                                <textarea placeholder="New Task"></textarea>
                             </div>
-                            <div>
+                            <div class="col-xs-12" id="create-task-settings">
                                 <i class="fa fa-calendar"></i>
                                 <input type="date" name="deadline">
                                 <i class="fa fa-tag"></i>
                             </div>
-                            <div>
-                                <textarea>Description</textarea>
+                            <div class="col-xs-12" id="create-task-description">
+                                <textarea placeholder="Description"></textarea>
                             </div>
-                        </div>
+
                     </div>
                 </div>
 

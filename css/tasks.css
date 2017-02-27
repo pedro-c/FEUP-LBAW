@@ -90,7 +90,7 @@ body {
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   margin: 10px;
-  min-height: 100%;
+  height: 85%;
   border-radius: 5px;
   float: none; }
   .tasks-card .create-task {
@@ -160,7 +160,7 @@ body {
   transition: all 2s; }
 
 .create-task {
-  padding: 10px;
+  padding: 10px 25px 10px 25px;
   overflow-y: auto;
   overflow-x: hidden;
   transition: all 0.2s ease-in-out; }
@@ -171,32 +171,53 @@ body {
       color: #1AAFD0; }
   .create-task #create-task-title {
     display: inline-block;
-    align-content: left; }
+    align-content: left;
+    margin-top: 30px; }
     .create-task #create-task-title i {
-      font-size: 2em; }
+      color: grey;
+      font-size: 2em;
+      float: left;
+      padding: 0px 10px 0px 0px; }
     .create-task #create-task-title textarea {
-      width: auto;
+      width: 50%;
+      float: left;
       font-size: 2em; }
       .create-task #create-task-title textarea:focus, .create-task #create-task-title textarea:hover {
         border: 1px solid #D3D3D3;
-        outline: 1px solid #D3D3D3; }
+        border-radius: 2px; }
+  .create-task #create-task-settings {
+    width: 100%;
+    padding: 20px 0px 20px 10px; }
+    .create-task #create-task-settings i, .create-task #create-task-settings input {
+      padding: 0px 10px 0px 10px;
+      float: left; }
+  .create-task #create-task-description textarea {
+    min-height: 50px; }
+    .create-task #create-task-description textarea:focus, .create-task #create-task-description textarea:hover {
+      border: 1px solid #D3D3D3;
+      border-radius: 2px; }
   .create-task #create-task-navbar {
     border-bottom: solid 1px #D3D3D3;
     padding: 10px;
     display: inline-block;
     vertical-align: middle;
     width: 100%; }
+    .create-task #create-task-navbar #assign-to {
+      width: 65%; }
+      .create-task #create-task-navbar #assign-to:focus, .create-task #create-task-navbar #assign-to:hover {
+        border: 1px solid #D3D3D3;
+        border-radius: 20px; }
     .create-task #create-task-navbar i {
       vertical-align: middle;
-      align-self: left;
+      float: left;
       font-size: 1.5em;
-      margin: 5px 10px 5px 10px; }
+      margin: 5px 10px 5px 0px; }
     .create-task #create-task-navbar #task-assign {
-      width: auto;
+      width: 70%;
       font-size: 1.5em;
-      align-self: left; }
+      float: left; }
     .create-task #create-task-navbar #delete-button {
-      align-self: right; }
+      float: right; }
 
 textarea {
   vertical-align: middle;
