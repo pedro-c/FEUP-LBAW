@@ -100,7 +100,7 @@ include_once "common/header.html";
                     <div class="file2">
                         <div class="row vertical-align">
                             <div class="col-xs-2 align_center_div">
-                                <img class="perfil_picture" src="../assets/avatar4.png">
+                                <img class="perfil_picture" src="../assets/avatar7.png">
                             </div>
                             <div class="col-xs-5">
                                 <div class="file_details">
