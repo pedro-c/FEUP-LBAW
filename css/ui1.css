@@ -128,7 +128,8 @@ html, body {
   .login-box .description-links {
     margin-top: 70px;
     font-size: x-large;
-    text-align: center; }
+    text-align: center;
+    cursor: pointer; }
     .login-box .description-links .sign-in-title {
       text-align: center;
       text-decoration: none;
@@ -147,7 +148,7 @@ html, body {
     .login-box .description-links .sign-up-title {
       text-align: center;
       text-decoration: none;
-      color: white;
+      color: #425262;
       padding-bottom: 5px; }
       .login-box .description-links .sign-up-title:hover, .login-box .description-links .sign-up-title:visited {
         border-bottom: 4px solid;
@@ -156,16 +157,23 @@ html, body {
     margin-top: 60px;
     font-size: medium; }
     .login-box .form-register .form-register-right {
-      margin-left: 35px; }
+      margin-left: 45px;
+      margin-right: 45px; }
+      .login-box .form-register .form-register-right .border-bottom {
+        padding-left: 0 !important; }
+      .login-box .form-register .form-register-right .border-bottom:nth-child(3),
+      .login-box .form-register .form-register-right .border-bottom:nth-child(7),
+      .login-box .form-register .form-register-right .border-bottom:nth-child(11) {
+        padding-bottom: 4px;
+        border-bottom-style: solid;
+        border-bottom-color: #425262; }
     .login-box .form-register .email {
       display: inline-block; }
     .login-box .form-register #email-input-id.email-input {
       font-size: medium;
       padding-top: 15px;
       background-color: transparent;
-      border: none;
-      border-bottom-style: solid;
-      border-bottom-color: #425262; }
+      border: none; }
       .login-box .form-register #email-input-id.email-input:focus {
         outline: none; }
       .login-box .form-register #email-input-id.email-input:-moz-placeholder {
@@ -183,9 +191,7 @@ html, body {
       font-size: medium;
       padding-top: 15px;
       background-color: transparent;
-      border: none;
-      border-bottom-style: solid;
-      border-bottom-color: #425262; }
+      border: none; }
       .login-box .form-register #username-input-id.username-input:focus {
         outline: none; }
       .login-box .form-register #username-input-id.username-input:-moz-placeholder {
@@ -202,9 +208,7 @@ html, body {
     .login-box .form-register #password-input-id.password-input {
       padding-top: 15px;
       background-color: transparent;
-      border: none;
-      border-bottom-style: solid;
-      border-bottom-color: #425262; }
+      border: none; }
       .login-box .form-register #password-input-id.password-input:focus {
         outline: none; }
       .login-box .form-register #password-input-id.password-input:-moz-placeholder {
@@ -233,14 +237,20 @@ html, body {
     margin-top: 90px;
     font-size: medium; }
     .login-box .form-login .form-login-right {
-      margin-left: 35px; }
+      margin-left: 35px;
+      margin-right: 45px; }
+      .login-box .form-login .form-login-right .border-bottom {
+        padding-left: 0 !important; }
+      .login-box .form-login .form-login-right .border-bottom:nth-child(3),
+      .login-box .form-login .form-login-right .border-bottom:nth-child(7) {
+        padding-bottom: 4px;
+        border-bottom-style: solid;
+        border-bottom-color: #425262; }
     .login-box .form-login #username-input-id.username-input {
       font-size: medium;
       padding-top: 15px;
       background-color: transparent;
-      border: none;
-      border-bottom-style: solid;
-      border-bottom-color: #425262; }
+      border: none; }
       .login-box .form-login #username-input-id.username-input:focus {
         outline: none; }
       .login-box .form-login #username-input-id.username-input:-moz-placeholder {
@@ -257,9 +267,7 @@ html, body {
     .login-box .form-login #password-input-id.password-input {
       padding-top: 15px;
       background-color: transparent;
-      border: none;
-      border-bottom-style: solid;
-      border-bottom-color: #425262; }
+      border: none; }
       .login-box .form-login #password-input-id.password-input:focus {
         outline: none; }
       .login-box .form-login #password-input-id.password-input:-moz-placeholder {
@@ -276,8 +284,8 @@ html, body {
       color: white;
       text-align: center; }
       .login-box .form-login .form-actions .login-button {
-        padding: 10px 50px 10px 50px;
-        margin-top: 90px;
+        padding: 10px 60px 10px 60px;
+        margin-top: 140px;
         background-color: #425262;
         border: none;
         color: white; }
