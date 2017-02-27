@@ -22,6 +22,7 @@
     }
 
     i {
+      cursor: pointer;
       margin-left: 88%;
     }
   }
@@ -30,7 +31,20 @@
 .profile_details {
   margin-top: 20px;
 
-  i {
+  i#zoom_out {
+    cursor: pointer;
     margin-left: 97%;
+  }
+
+  #profile_actions i {
+    cursor: pointer;
+  }
+}
+
+#add_member_card {
+  cursor: pointer;
+  :active {
+    background-color:#192532 !important;
+    color: #e9d460;
   }
 }

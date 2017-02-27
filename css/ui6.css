@@ -76,11 +76,21 @@ body {
 .media .media-body #team_role {
   margin-top: 20px; }
 .media .media-body i {
+  cursor: pointer;
   margin-left: 88%; }
 
 .profile_details {
   margin-top: 20px; }
-  .profile_details i {
+  .profile_details i#zoom_out {
+    cursor: pointer;
     margin-left: 97%; }
+  .profile_details #profile_actions i {
+    cursor: pointer; }
+
+#add_member_card {
+  cursor: pointer; }
+  #add_member_card :active {
+    background-color: #192532 !important;
+    color: #e9d460; }
 
 /*# sourceMappingURL=ui6.css.map */

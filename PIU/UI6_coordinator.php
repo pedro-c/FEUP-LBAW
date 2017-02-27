@@ -30,7 +30,11 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
         <div class="row">
             <?php for($j = 0; $j < $elems_per_row && $num_elems > 0; $j++, $num_elems--) {?>
             <div class="col-md-<?php echo $col_division; ?>">
-                <div class="panel panel-default" id="profile_card">
+                <div class="panel panel-default" id=<?php if($is_coordinator && $num_elems == 1) {
+                  echo "add_member_card";
+                } else {
+                  echo "profile_card";
+                } ?>>
                     <div class="panel-body">
                       <?php if($num_elems > 1 || !$is_coordinator) { ?>
                        <div class="media">
@@ -46,55 +50,59 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                        <div id="profile_details<?php echo $num_elems;?>" class="collapse">
                          <div class="profile_details">
                            <div class="row">
-                             <div class="col-md-1">
+                             <div class="col-xs-1">
                              </div>
-                             <div class="col-md-5" align="center">
+                             <div class="col-xs-5" align="center">
                               <p>From:</p>
                              </div>
-                             <div class="col-md-5">
+                             <div class="col-xs-5">
                                <p>Porto, Portugal</p>
                              </div>
-                             <div class="col-md-1">
+                             <div class="col-xs-1">
                              </div>
                            </div>
                            <div class="row">
-                             <div class="col-md-1">
-                             </div>
-                             <div class="col-md-5" align="center">
+                             <div class="col-xs-1"></div>
+                             <div class="col-xs-5" align="center">
                               <p>Email:</p>
                              </div>
-                             <div class="col-md-5">
+                             <div class="col-xs-5">
                                <p>jczelik@gmail.com</p>
                              </div>
-                             <div class="col-md-1">
-                             </div>
+                             <div class="col-xs-1"></div>
                            </div>
                            <div class="row">
-                             <div class="col-md-1">
-                             </div>
-                             <div class="col-md-5" align="center">
+                             <div class="col-xs-1"></div>
+                             <div class="col-xs-5" align="center">
                               <p>Phone:</p>
                              </div>
-                             <div class="col-md-5">
+                             <div class="col-xs-5">
                                <p>999-999-999</p>
                              </div>
-                             <div class="col-md-1">
-                             </div>
+                             <div class="col-xs-1"></div>
                            </div>
                            <div class="row">
-                             <div class="col-md-1">
-                             </div>
-                             <div class="col-md-5" align="center">
+                             <div class="col-xs-1"></div>
+                             <div class="col-xs-5" align="center">
                               <p>Profile:</p>
                              </div>
-                             <div class="col-md-5">
+                             <div class="col-xs-5">
                                <a>direkt.com/user1</a>
                              </div>
-                             <div class="col-md-1">
-                             </div>
+                             <div class="col-xs-1"></div>
                            </div>
-                           <div class="col-md-12">
-                             <i class="fa fa-search-minus fa-2x" data-toggle="collapse" data-target="#profile_details<?php echo $num_elems;?>"></i>
+                           <div class="row" id="profile_actions">
+                             <div class="col-xs-3"></div>
+                             <div class="col-xs-3" align="center">
+                              <i class="fa fa-star fa-3x" id="promote<?php echo $num_elems;?>"></i>
+                             </div>
+                             <div class="col-xs-3" align="center">
+                               <i class="fa fa-times fa-3x" id="remove<?php echo $num_elems;?>"></i>
+                             </div>
+                             <div class="col-xs-3"></div>
+                           </div>
+                           <div class="col-xs-12" id="zoom_out_action">
+                             <i class="fa fa-search-minus fa-2x" data-toggle="collapse" data-target="#profile_details<?php echo $num_elems;?>" id="zoom_out"></i>
                            </div>
                          </div>
                        </div>
