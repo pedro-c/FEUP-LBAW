@@ -1,5 +1,9 @@
 @import 'global';
 
+#new-post-button {
+  //background-color: $color_mountain_mist_approx;
+}
+
 @media (max-width: 767px) {
   #replies {
     margin-bottom: 100px;
