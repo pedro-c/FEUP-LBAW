@@ -1,11 +1,22 @@
 @import 'global';
 
+
+.tasks-body{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
 .tasks-card{
-  width: 70vw;
+  transition: width 0.2s ease-in-out;
+  overflow-y: auto;
+  width: 70%;
   display: inline-block;
   background-color: $white;
-  margin: 15px;
-  height: 70vh;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  margin: 10px;
+  height: 85%;
   border-radius: 5px;
   float: none;
   .create-task{
@@ -14,20 +25,192 @@
 }
 .tasks{
   width: 100%;
-  margin: 0px;
+}
+.tasks-nav{
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  button{
+    background-color: white;
+    box-shadow: none;
+    border: 0;
+    margin: 10px;
+    &:focus,
+    &:hover{
+      border-bottom: solid 4px $color_yellow;
+    }
+  }
+}
+.task-content{
+  margin: 20px !important;
+}
+.tasks-header{
+  margin: 15px 20px 15px 20px;
+  float: left;
+  button{
+    padding: 5px;
+    border-radius: 3px;
+    color: $light_blue;
+    background-color: transparent;
+    margin: auto;
+    border: 1px solid $light_blue;
+    &:hover{
+      background-color: $light_blue;
+      color: white;
+      transition: all 0.2s ease-in-out;
+    }
+  }
 }
 .task{
+  vertical-align: middle;
   border-style: solid;
+  border-color: $light_grey;
   border-width: 1px 0px 1px 0px;
   width: 100%;
+  #complete-button{
+    font-size: 1.5em;
+    &:hover{
+      color: $light_blue;
+    }
+  }
+  #delete-button{
+    font-size: 1.2em;
+    &:hover{
+      color: red;
+    }
+  }
+  #complete-task{
+    float: left;
+    height: 25px;
+  }
+  #delete-task{
+    float: right;
+    height: 25px;
+  }
 }
 .task-content{
   margin: 10px;
 }
-.tasks-body{
-  width: 100%;
-  text-align: center;
-}
+
 .side-bar{
   width: 0px;
+}
+
+#create-task{
+  width: 1%;
+  transition: all 2s;
+}
+
+.create-task{
+  padding: 10px 25px 10px 25px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.2s ease-in-out;
+  #complete-button{
+    float: left;
+    font-size: 2em;
+    &:hover{
+      color: $light_blue;
+    }
+  }
+  #create-task-title{
+    display: inline-block;
+    align-content: left;
+    margin-top: 30px;
+    i{
+      color: grey;
+      font-size: 2em;
+      float: left;
+      padding: 0px 10px 0px 0px;
+    }
+    textarea{
+      width: 50%;
+      float: left;
+      font-size: 2em;
+      &:focus,
+      &:hover{
+        border: 1px solid $light_grey;
+        border-radius: 2px;
+      }
+    }
+
+  }
+  #create-task-settings{
+    width: 100%;
+    padding: 20px 0px 20px 10px;
+    i, input{
+      padding: 0px 10px 0px 10px;
+      float: left;
+    }
+  }
+
+  #create-task-description{
+    textarea{
+      min-height: 50px;
+      &:focus,
+      &:hover{
+        border: 1px solid $light_grey;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  #create-task-navbar{
+
+    border-bottom: solid 1px $light_grey;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+
+    #assign-to{
+      width: 65%;
+      &:focus,
+      &:hover{
+        border: 1px solid $light_grey;
+        border-radius: 20px;
+      }
+    }
+
+    i{
+      vertical-align: middle;
+      float: left;
+      font-size: 1.5em;
+      margin: 5px 10px 5px 0px;
+    }
+    #task-assign{
+      width: 70%;
+      font-size: 1.5em;
+      float: left;
+    }
+    #delete-button{
+      float: right;
+    }
+  }
+
+}
+
+textarea{
+  vertical-align: middle;
+  overflow: hidden;
+  color: #1B2432;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  background: transparent;
+  border: 0px solid transparent;
+  outline: 0px solid transparent;
+  padding: 0;
+  resize: none;
+  word-wrap: normal;
+  white-space: nowrap;
+  user-select: text;
+  flex-direction: column;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  -webkit-writing-mode: horizontal-tb;
+  border-collapse: separate;
+  empty-cells: show;
 }
