@@ -126,12 +126,17 @@ button#new-post-button.active #plus-icon h4 {
     background-color: #d9c559;
     border-color: #d9c559; }
 
-.btn-reply {
+#submit-reply:hover, #submit-new-post:hover {
+  color: #fff;
+  background-color: #d9c559;
+  border-color: #d9c559; }
+
+.btn-reply, #submit-reply, #submit-new-post {
   background-color: #e9d460;
   border-color: #e9d460;
   color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
-  .btn-reply i {
+  .btn-reply i, #submit-reply i, #submit-new-post i {
     color: #fff; }
 
 .btn-comment {

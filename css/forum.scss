@@ -75,8 +75,12 @@ button#new-post-button.active{
   }
 }
 
-
-.btn-reply{
+#submit-reply:hover, #submit-new-post:hover{
+  color: $white;
+  background-color: #d9c559;
+  border-color: #d9c559;
+}
+.btn-reply, #submit-reply, #submit-new-post{
   background-color: $color_yellow;
   border-color: $color_yellow;
   color: $white;
