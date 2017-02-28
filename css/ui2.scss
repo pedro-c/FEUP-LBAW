@@ -1,0 +1,82 @@
+@import 'global';
+
+@media (min-width: 768px){
+  body {
+    overflow: hidden;
+  }
+}
+
+#title {
+  display:inline;
+  margin-right: 15px;
+}
+
+#subtitle{
+  color: #777;
+}
+
+#project-presentation{
+  margin-top: -35px;
+  margin-bottom: -10px;
+}
+
+.panel-title{
+  text-align: center;
+  color: $white;
+}
+
+.dash-item-text{
+  margin-left: 5px;
+}
+
+.dash-card>.panel>.panel-body{
+    text-align: center;
+}
+
+.to-page{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  background-color: $white;
+  border-color: $white;
+  color: $color_ebony_clay;
+  margin-right: 10px;
+  margin-bottom: -5px;
+}
+
+/*Overriding bootstrap class panel-primary*/
+.panel-primary {
+  border: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.panel-primary > .panel-heading{
+  color:$white;
+  background-color: $color_ebony_clay;
+  border-color:  $color_ebony_clay;
+}
+
+.panel-primary:hover {
+  cursor: pointer;
+
+  a:hover{
+    color: $white;
+    background-color: $color_yellow;
+    border-color: $color_yellow;
+    box-shadow: none;
+  }
+}
+.panel-primary:hover > .panel-heading{
+  color: $white;
+  background-color: $color_yellow;
+  border-color: $color_yellow;
+}
+.panel-primary:hover > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: $color_yellow;
+}
+
+.panel-primary:hover > .panel-heading .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: $color_ebony_clay;
+}
