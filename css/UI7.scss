@@ -1,0 +1,59 @@
+@import 'global';
+
+
+#page-meetings{
+
+.title_bar{
+  background-color: white;
+  padding: 10px 10px 0px 10px;
+
+  button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &:hover{
+      border-bottom: 4px solid;
+      border-bottom-color: $color_yellow;
+    }
+  }
+
+  button:first-child{
+    border-bottom: 4px solid;
+    border-bottom-color: $color_yellow;
+  }
+}
+
+#future_meetings{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 4%;
+
+
+  .meetings{
+    margin-top: 10px;
+
+    .specify_padding{
+      padding-left: 15px !important;
+      padding-right: 0px !important;
+      margin-bottom: 5px;
+    }
+
+    .meeting{
+      border-radius: 5px;
+      vertical-align: middle;
+      padding-top: 4px;
+      background-color: $background_white;
+    }
+  }
+}
+
+  #schedule_meeting{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 4%;
+  }
+
+
+}

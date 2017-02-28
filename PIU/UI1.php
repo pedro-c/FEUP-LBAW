@@ -12,12 +12,12 @@
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="../css/ui1.css" rel="stylesheet">
+    <link href="../css/UI1.css" rel="stylesheet">
     <link href="../css/plugins/morris.css" rel="stylesheet">
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <script src="../js/ui1.js"></script>
+    <script src="../js/UI1.js"></script>
     <script src="../jquery-3.1.1.min.js"></script>
 
 

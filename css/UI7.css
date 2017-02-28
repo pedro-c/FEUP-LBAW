@@ -1,0 +1,115 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #ecf0f1;
+  height: 100vh;
+  overflow-y: hidden;
+  font-family: Roboto, Helvetica, sans-serif; }
+
+#header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 50px;
+  background-color: #22313f; }
+
+#sidebar {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: auto;
+  background-color: #22313f;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  text-align: center; }
+
+#parent {
+  margin-top: 50px;
+  margin-left: 0px;
+  background-color: #ecf0f1;
+  height: 100%; }
+
+#main-content {
+  height: 100%; }
+
+#page-wrapper {
+  height: 100%; }
+
+#bs-example-navbar-collapse-1 {
+  border-top-width: 0px !important;
+  padding: 0 !important;
+  background-color: #22313f;
+  margin: 0;
+  overflow-x: hidden;
+  text-align: center; }
+
+@media (min-width: 768px) {
+  #parent {
+    margin-left: 100px; }
+
+  #sidebar {
+    position: fixed;
+    top: 49px;
+    width: 100px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    bottom: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px; }
+    #sidebar li a {
+      width: 100px;
+      text-align: center; }
+      #sidebar li a:hover {
+        outline: none;
+        color: #e9d460;
+        background-color: #192532 !important; }
+        #sidebar li a:hover i, #sidebar li a:hover p {
+          color: #e9d460 !important; }
+      #sidebar li a:focus {
+        outline: none;
+        color: #e9d460;
+        background-color: #192532 !important; }
+        #sidebar li a:focus i, #sidebar li a:focus p {
+          color: #e9d460 !important; }
+      #sidebar li a p {
+        margin-bottom: 0px !important; } }
+#page-meetings .title_bar {
+  background-color: white;
+  padding: 10px 10px 0px 10px; }
+  #page-meetings .title_bar button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer; }
+    #page-meetings .title_bar button:hover {
+      border-bottom: 4px solid;
+      border-bottom-color: #e9d460; }
+  #page-meetings .title_bar button:first-child {
+    border-bottom: 4px solid;
+    border-bottom-color: #e9d460; }
+#page-meetings #future_meetings {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 4%; }
+  #page-meetings #future_meetings .meetings {
+    margin-top: 10px; }
+    #page-meetings #future_meetings .meetings .specify_padding {
+      padding-left: 15px !important;
+      padding-right: 0px !important;
+      margin-bottom: 5px; }
+    #page-meetings #future_meetings .meetings .meeting {
+      border-radius: 5px;
+      vertical-align: middle;
+      padding-top: 4px;
+      background-color: #ecf0f1; }
+#page-meetings #schedule_meeting {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 4%; }
+
+/*# sourceMappingURL=UI7.css.map */
