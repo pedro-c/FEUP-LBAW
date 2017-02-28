@@ -66,6 +66,30 @@ button#new-post-button.active{
   }
 }
 
+#reply-post-button{
+  margin-bottom: 5px;
+  &:hover{
+    color: $white;
+    background-color: #d9c559;
+    border-color: #d9c559;
+  }
+}
+
+
+.btn-reply{
+  background-color: $color_yellow;
+  border-color: $color_yellow;
+  color: $white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+
+  i{
+    color: $white;
+  }
+}
+
+.btn-comment{
+  margin-top: 10px;
+}
 
 /*Overriding bootstrap class panel-primary*/
 .panel-primary {
@@ -232,4 +256,13 @@ button.list-group-item:focus {
 .pagination-sm > li:last-child > span {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+}
+
+/* Overriding btn-default bootstrap class */
+.btn-default:focus,
+.btn-default:hover ,
+.btn-default.focus {
+  color: $white;
+  background-color: $color_yellow;
+  border-color: $color_yellow;
 }

@@ -28,6 +28,10 @@ $(document).ready(function(){
                 '</div>' +
             '</div>' +
 
+            '<div id="reply-button">' +
+                '<a id="reply-post-button" class="btn btn-default btn-reply"><i class="glyphicon glyphicon-plus"></i> Reply to this post</a>' +
+            '</div>' +
+
             '<ul id="replies" class="list-group">' +
                 '<li class="list-group-item">' +
                     '<h5 class="list-group-item-heading"><a class="glyphicon glyphicon-user"></a> <strong>Username</strong></h5>' +
@@ -52,6 +56,12 @@ $(document).ready(function(){
                 '<li class="list-group-item">' +
                     '<h5 class="list-group-item-heading"><a class="glyphicon glyphicon-user"></a> <strong>Username</strong></h5>' +
                     '<p class="list-group-item-text">Great idea!</p>' +
+                '</li>' +
+                '<li id="post-reply" class="list-group-item">' +
+                    '<h5 class="list-group-item-heading"><a class="glyphicon glyphicon-user"></a> <strong>My Username</strong></h5>' +
+                    '<textarea class="form-control" rows="3" style="resize: none" placeholder="Reply to this post"></textarea>'+
+                    '<button id="submit-reply" class="btn btn-default btn-form btn-comment" type="submit">Submit</button>' +
+                    '<button id="cancel-reply" class="btn btn-default btn-form btn-comment">Cancel</button>' +
                 '</li>' +
             '</ul>' +
         '</div>'
@@ -125,6 +135,17 @@ $(document).ready(function(){
         nav.width(nav.parent().width());
 
         mobileBack.click(mobileBackHandler);
+        $("#cancel-new-post").click(mobileBackHandler);
+
+        $("#new-post-text").focus();
+
+        $("#reply-post-button").click(function(){
+            $('html, body').animate({
+                scrollTop: $("#post-reply").offset().top
+            }, 500);
+
+            $("#post-reply textarea").focus();
+        });
     };
 
     let resetForum = function () {
@@ -133,6 +154,7 @@ $(document).ready(function(){
         newPostButton.removeClass("background");
         forum.removeClass("col-lg-3 col-md-3 col-sm-3 hidden-xs");
         nav.width(nav.parent().width());
-    }
+    };
+
 
 });

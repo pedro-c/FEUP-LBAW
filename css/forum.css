@@ -119,6 +119,24 @@ button#new-post-button.active #plus-icon h4 {
     vertical-align: middle; }
     #mobile-back :hover {
       cursor: pointer; } }
+#reply-post-button {
+  margin-bottom: 5px; }
+  #reply-post-button:hover {
+    color: #fff;
+    background-color: #d9c559;
+    border-color: #d9c559; }
+
+.btn-reply {
+  background-color: #e9d460;
+  border-color: #e9d460;
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+  .btn-reply i {
+    color: #fff; }
+
+.btn-comment {
+  margin-top: 10px; }
+
 /*Overriding bootstrap class panel-primary*/
 .panel-primary {
   border: 0;
@@ -277,5 +295,13 @@ button.list-group-item:focus {
 .pagination-sm > li:last-child > span {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px; }
+
+/* Overriding btn-default bootstrap class */
+.btn-default:focus,
+.btn-default:hover,
+.btn-default.focus {
+  color: #fff;
+  background-color: #e9d460;
+  border-color: #e9d460; }
 
 /*# sourceMappingURL=forum.css.map */
