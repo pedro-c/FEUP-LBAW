@@ -5,6 +5,7 @@ $(document).ready(function(){
     let forum = $("#forum-posts");
     let posts = $(".forum-post");
     let nav = $(".forum-posts-nav");
+    let newPostButton = $("#new-post-button");
     let curPost;
 
     let displayedPosts = [];
@@ -56,30 +57,23 @@ $(document).ready(function(){
         '</div>'
     );
 
-    posts.click(function(){
-        curPost = $(this);
-        if(curPost.hasClass("active")){
-            curPost.removeClass("active");
-            displayedPosts.pop().remove();
-            forum.removeClass("col-lg-3 col-md-3 col-sm-3 hidden-xs");
-            nav.width(nav.parent().width());
-            return;
-        }
+    let newPostPanel = $(
+        '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">' +
+            '<div id="new-post-panel" class="panel panel-primary">' +
+                '<div class="panel-heading"><h3 class="panel-title">New Post</h3></div>' +
+                '<div class="panel-body">' +
+                    '<div class="form-group">' +
+                        '<textarea class="form-control" rows="17" id="new-post-text" style="resize: none" placeholder="Write something"></textarea>' +
+                    '</div>' +
+                    '<button id="submit-new-post" class="btn btn-default btn-form" type="submit">Submit</button>' +
+                    '<button id="cancel-new-post" class="btn btn-default btn-form">Cancel</button>' +
+                '</div>' +
+            '</div>' +
+        '</div>'
+    );
 
-        $(".forum-post.active").removeClass("active");
-        curPost.toggleClass("active");
-
-
-        forum.addClass("col-lg-3 col-md-3 col-sm-3 hidden-xs");
-        postContent.append(mobileBack);
-        displayedPosts.push(postContent);
-        forum.after(postContent);
-
-        nav.affix();
-        nav.width(nav.parent().width());
-
-        mobileBack.click(mobileBackHandler);
-    });
+    posts.click(function(){showForumContent($(this),false);});
+    newPostButton.click(function(){showForumContent($(this),true);});
 
     let mobileBackHandler = function(){
         if(curPost.hasClass("active")){
@@ -87,7 +81,58 @@ $(document).ready(function(){
             displayedPosts.pop().remove();
             forum.removeClass("col-lg-3 col-md-3 col-sm-3 hidden-xs");
             nav.width(nav.parent().width());
+        }
+    };
+
+    /**
+     *
+     * @param clickedObject jQuery Object the button that was clicked
+     * @param newPost boolean true if writing a new post
+     */
+    let showForumContent = function(clickedObject, newPost){
+        curPost = clickedObject;
+
+        if(displayedPosts.length > 0)
+            displayedPosts.pop().remove();
+
+        if(curPost.hasClass("active")){
+            resetForum();
             return;
         }
+
+        let displayedContent;
+
+        if(newPost === true)
+            displayedContent = newPostPanel.append(mobileBack);
+        else
+            displayedContent = postContent.append(mobileBack);
+
+
+        forum.removeClass("col-lg-3 col-md-3 col-sm-3 hidden-xs");
+        posts.addClass("background");
+        newPostButton.addClass("background");
+        $(".forum-post.active").removeClass("active");
+        $("#new-post-button.active").removeClass("active");
+        curPost.toggleClass("active");
+
+
+        forum.addClass("col-lg-3 col-md-3 col-sm-3 hidden-xs");
+
+        displayedPosts.push(displayedContent);
+        forum.after(displayedContent);
+
+        nav.affix();
+        nav.width(nav.parent().width());
+
+        mobileBack.click(mobileBackHandler);
+    };
+
+    let resetForum = function () {
+        curPost.removeClass("active");
+        posts.removeClass("background");
+        newPostButton.removeClass("background");
+        forum.removeClass("col-lg-3 col-md-3 col-sm-3 hidden-xs");
+        nav.width(nav.parent().width());
     }
+
 });

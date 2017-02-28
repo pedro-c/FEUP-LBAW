@@ -3,7 +3,7 @@ $font-stack: Roboto, Helvetica, sans-serif;
 
 //colors
 $color_ebony_clay: #22313f;
-$blue_secondary: #22313f;
+$blue_secondary: #425c77;
 $white: #fff;
 $background_white: #ecf0f1;
 $color_yellow: #e9d460;
@@ -23,6 +23,7 @@ body {
   margin: 0;
   font-family: $font-stack;
   background-color: $background_white;
+  overflow-y: scroll;
 }
 
 #parent{

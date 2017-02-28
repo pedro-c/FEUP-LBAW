@@ -12,7 +12,7 @@
                             <h4 class="glyphicon glyphicon-plus"></h4>
                         </div>
                         <div id="new-content" class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
-                            <h4 class="list-group-item-heading">Make a new post </h4>
+                            <h4 class="list-group-item-heading">Write a new post </h4>
                             <div class="list-group-item-text">
                                 <small>
                                     <span class="post-submission-date">Create a new discussion</span>
