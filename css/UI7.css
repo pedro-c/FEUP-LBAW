@@ -158,13 +158,15 @@ body {
     #page-meetings #schedule_meeting .button_trash .trash {
       padding: 4px 20px 4px 20px;
       color: white;
-      background-color: #22313f;
+      background-color: #c0392b;
       border: none;
       border-radius: 5px;
       align-self: center;
       outline: 0; }
       #page-meetings #schedule_meeting .button_trash .trash:hover {
-        background-color: #e9d460;
-        border: none; }
+        background-color: transparent;
+        border: 2px solid;
+        border-color: #c0392b;
+        color: #c0392b; }
 
 /*# sourceMappingURL=UI7.css.map */
