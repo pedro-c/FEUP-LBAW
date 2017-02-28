@@ -3,7 +3,7 @@ $font-stack: Roboto, Helvetica, sans-serif;
 
 //colors
 $color_ebony_clay: #22313f;
-$blue_secondary: #22313f;
+$blue_secondary: #425c77;
 $white: #fff;
 $background_white: #ecf0f1;
 $color_yellow: #e9d460;
@@ -21,6 +21,13 @@ $color_golden_bell_approx: #df8a13;
 body {
   padding: 0;
   margin: 0;
+  font-family: $font-stack;
+  background-color: $background_white;
+  overflow-y: scroll;
+}
+
+#parent{
+  height: 100%;
 }
 
 #header {
@@ -75,6 +82,7 @@ body {
     overflow-x: hidden;
     padding-bottom: 40px;
     li a {
+      color: $background_white;
       width: 100px;
       text-align: center;
       &:hover {
