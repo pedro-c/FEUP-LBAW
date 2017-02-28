@@ -8,6 +8,9 @@ include_once "common/header.html";
 <link href="../css/bootstrap-datepicker.css" rel="stylesheet">
 <script src="../js/tasks.js"></script>
 <script src="../js/bootstrap-datepicker.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
 
 <div id="page-wrapper">
 
@@ -61,7 +64,14 @@ include_once "common/header.html";
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                     <input type="text" class="form-control">
                                 </div>
-                                <i class="fa fa-tag"></i>
+                                <div class="input-group task-tags">
+                                    <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                                    <select class="select2-multiple form-control" multiple="multiple">
+                                        <option value="M">Marketing</option>
+                                        <option value="L">Logistics</option>
+                                        <option value="S">Sponsors</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col-xs-12" id="create-task-description">
                                 <textarea placeholder="Description"></textarea>

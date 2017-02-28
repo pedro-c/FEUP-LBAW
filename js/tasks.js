@@ -24,6 +24,8 @@ $(document).ready(function(){
         todayHighlight: true
     });
 
+    $(".select2-multiple").select2();
+
 });
 function toggle() {
     var id="create-task";
