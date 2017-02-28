@@ -48,6 +48,7 @@ include_once "common/header.html";
                     </div>
                     <div class="tasks-card create-task row" id="create-task" style="display: none">
                         <div class="col-xs-12" id="create-task-navbar">
+                            <i class="fa fa-arrow-left" onclick="toggle();"  aria-hidden="true"></i>
                             <div class="col-xs-12" id="assign-to">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <textarea placeholder="Assign to" id="task-assign"></textarea>
@@ -76,6 +77,20 @@ include_once "common/header.html";
                             <div class="col-xs-12" id="create-task-description">
                                 <textarea placeholder="Description"></textarea>
                             </div>
+                        <div class="task-comments col-xs-12">
+                            <div class="comment-info">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <h4>Pedro Costa</h4>
+                                <p>Today at 17:49</p>
+                            </div>
+                            <p>Good luck !</p>
+
+                        </div>
+                        <div class="add-comment" id="add-comment">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <textarea placeholder="Write a comment..."></textarea>
+                            <button class="btn">Add</button>
+                        </div>
 
                     </div>
                 </div>

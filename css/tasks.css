@@ -90,7 +90,7 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   margin: 10px;
   height: 85%;
-  border-radius: 5px;
+  border-radius: 3px;
   float: none; }
   .tasks-card .create-task {
     visibility: hidden; }
@@ -161,9 +161,14 @@ body {
   transition: all 2s; }
 
 .create-task {
+  position: relative;
   padding: 10px 25px 10px 25px;
   overflow-y: auto;
   overflow-x: hidden; }
+  .create-task i {
+    cursor: pointer; }
+    .create-task i:hover {
+      color: #1AAFD0; }
   .create-task #complete-button {
     float: left;
     font-size: 2em; }
@@ -186,6 +191,7 @@ body {
         border: 1px solid #D3D3D3;
         border-radius: 2px; }
   .create-task #create-task-settings {
+    display: inline-block;
     width: 100%;
     padding: 20px 0px 20px 10px; }
     .create-task #create-task-settings i, .create-task #create-task-settings input {
@@ -221,6 +227,7 @@ body {
       float: right; }
   .create-task .task-tags {
     text-align: start;
+    padding: 5px;
     width: 200px; }
     .create-task .task-tags span {
       width: 100% !important;
@@ -229,12 +236,66 @@ body {
       .create-task .task-tags span li > span {
         display: inline !important; }
     .create-task .task-tags span.input-group-addon {
-      width: 50px !important; }
+      width: 50px !important;
+      border-bottom-left-radius: 4px !important;
+      border-top-left-radius: 4px !important; }
+  .create-task .task-comments {
+    border-top: solid 1px #D3D3D3;
+    width: 100%;
+    text-align: left; }
+    .create-task .task-comments .comment-info {
+      width: 100%;
+      display: inline-block !important;
+      text-align: left; }
+      .create-task .task-comments .comment-info i {
+        width: 20px; }
+      .create-task .task-comments .comment-info h4, .create-task .task-comments .comment-info p {
+        display: inline-block !important;
+        min-width: 100px;
+        max-width: 400px; }
+  .create-task .add-comment {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: solid 1px #D3D3D3;
+    padding: 20px 15px 20px 15px;
+    height: 100px;
+    width: 100%;
+    text-align: left;
+    display: flex; }
+    .create-task .add-comment i {
+      font-size: 2em;
+      padding: 5px;
+      vertical-align: middle;
+      align-self: center; }
+    .create-task .add-comment textarea {
+      height: 100%;
+      padding: 2px;
+      border: 1px solid #D3D3D3;
+      border-radius: 4px 0px 0px 4px; }
+      .create-task .add-comment textarea:focus {
+        border: 2px solid #D3D3D3; }
+        .create-task .add-comment textarea:focus #add-comment {
+          height: 100px; }
+    .create-task .add-comment button {
+      height: 100%;
+      width: 50px;
+      padding: 5px;
+      border-radius: 0px 4px 4px 0px;
+      color: #1AAFD0;
+      background-color: transparent;
+      margin: auto;
+      border: 1px solid #1AAFD0; }
+      .create-task .add-comment button:hover {
+        background-color: #1AAFD0;
+        color: white;
+        transition: all 0.2s ease-in-out; }
 
 .datepicker-dropdown {
   margin-top: 60px; }
 
 .date {
+  padding: 5px;
   width: 200px; }
   .date span {
     width: 50px; }
