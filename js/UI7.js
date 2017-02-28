@@ -5,8 +5,9 @@ function schedule() {
     $("#container_meetings").addClass("col-sm-offset-1");
     $("#container_schedule_meeting").show();
     $("#container_schedule_meeting").addClass("col-xs-5");
-    $(".specify_padding").addClass("col-xs-12");
-    $(".specify_padding").removeClass("col-xs-6");
+    $(".specify_padding").addClass("col-xs-10");
+    $(".specify_padding").addClass("col-sm-offset-1");
+    $(".specify_padding").removeClass("col-xs-5");
 
 
 }

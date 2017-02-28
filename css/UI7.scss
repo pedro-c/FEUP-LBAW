@@ -28,22 +28,88 @@
   border-radius: 5px;
   background-color: white;
   margin-top: 4%;
+  padding-bottom: 4%;
+  overflow: visible;
+
+  .button_scheduale{
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    .schedule{
+      padding: 4px 20px 4px 20px;
+      color: white;
+      background-color: $blue_secondary;
+      border: none;
+      border-radius: 5px;
+      align-self: center;
+      outline: 0;
+
+      &:hover{
+        background-color: $color_yellow;
+        border: none;
+      }
+    }
+  }
 
 
   .meetings{
     margin-top: 10px;
 
     .specify_padding{
-      padding-left: 15px !important;
+      padding-left: 20px !important;
       padding-right: 0px !important;
-      margin-bottom: 5px;
+      margin-bottom: 15px;
     }
 
     .meeting{
+      padding-left: 25px;
       border-radius: 5px;
       vertical-align: middle;
       padding-top: 4px;
       background-color: $background_white;
+
+
+      #see_more{
+        font-size: 24px;
+        float: right;
+        margin-right: 30px;
+        font-weight: normal;
+        cursor: pointer;
+      }
+
+      .information_meeting{
+
+        .hour{
+          font-size: medium;
+        }
+
+        #plus_user{
+          color: $color_yellow;
+          font-size: 26px;
+          cursor: pointer;
+        }
+
+        .date{
+          font-size: large;
+          font-weight: bold;
+        }
+
+        .user_responsible{
+          font-weight: normal;
+          font-size: x-small;
+        }
+
+        .guests{
+          padding-top: 5px;
+          .user_photo{
+            margin-right: 5px;
+            width: 25px;
+            float: left;
+          }
+        }
+      }
+
+
     }
   }
 }
@@ -53,6 +119,28 @@
     border-radius: 5px;
     background-color: white;
     margin-top: 4%;
+
+
+    .button_trash{
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      .trash{
+        padding: 4px 20px 4px 20px;
+        color: white;
+        background-color: $blue_secondary;
+        border: none;
+        border-radius: 5px;
+        align-self: center;
+        outline: 0;
+
+        &:hover{
+          background-color: $color_yellow;
+          border: none;
+        }
+      }
+
+    }
   }
 
 
