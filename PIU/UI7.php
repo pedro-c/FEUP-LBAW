@@ -122,7 +122,20 @@ include_once "common/header.html";
                 <button class="trash"> <span id="trash" class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
             </div>
             <div class="form_meeting">
-
+                <form class="new_meeting">
+                    <label>Title: </label>
+                    <input class="title" type="text" name="firstname" placeholder="Creative Review"><br>
+                    <label>Meeting Date:</label>
+                    <input class="date" type="date" name="lastname" placeholder="Choose a Date"><br>
+                    <label>Meeting Time:</label>
+                    <input class="time" type="time" name="lastname" placeholder=""><br>
+                    <label>Atendees:</label>
+                    <input class="atendees" type="text" name="lastname" placeholder="Add/Remove Participants"><br>
+                    <label>Agenda:</label>
+                    <input class="agenda" type="text" name="lastname" placeholder="Important Points"><br>
+                    <label>Minutes:</label>
+                    <input class="minutes" type="number" name="lastname" placeholder="Duration"><br>
+                </form>
             </div>
         </div>
     </div>
