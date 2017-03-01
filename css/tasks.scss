@@ -11,6 +11,17 @@
   height: 100%;
   text-align: center;
   display: inline-block;
+  .go-back{
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: $blue_secondary;
+    color: white;
+    display: none;
+  }
 }
 
 .tasks-card{
@@ -296,6 +307,9 @@
     width: 50px;
   }
 }
+
+
+
 
 textarea{
   vertical-align: middle;

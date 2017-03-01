@@ -3,7 +3,16 @@ body {
   margin: 0;
   background-color: #ecf0f1;
   height: 100vh;
+<<<<<<< Updated upstream
   overflow-y: hidden; }
+=======
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: Roboto, Helvetica, sans-serif; }
+
+#parent {
+  height: 100%; }
+>>>>>>> Stashed changes
 
 #header {
   position: fixed;
@@ -81,6 +90,16 @@ body {
   height: 100%;
   text-align: center;
   display: inline-block; }
+  .tasks-body .go-back {
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #22313f;
+    color: white;
+    display: none; }
 
 .tasks-card {
   overflow-y: auto;

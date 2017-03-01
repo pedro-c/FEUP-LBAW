@@ -43,7 +43,6 @@ include_once "common/header.html";
                     </div>
                     <div class="tasks-card create-task row" id="create-task" style="display: none">
                         <div class="col-xs-12" id="create-task-navbar">
-                            <i class="fa fa-arrow-left" onclick="toggle();"  aria-hidden="true"></i>
                             <div class="col-xs-12" id="assign-to">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <textarea placeholder="Assign to" id="task-assign"></textarea>
@@ -88,9 +87,10 @@ include_once "common/header.html";
                         </div>
 
                     </div>
+                    <div class="go-back" id="go-back" onclick="toggle();">
+                        <p><< Back</p>
+                    </div>
                 </div>
-
-
 
 </div>
 
