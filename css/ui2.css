@@ -73,9 +73,6 @@ body {
           color: #e9d460 !important; }
       #sidebar li a p {
         margin-bottom: 0px !important; } }
-@media (min-width: 768px) {
-  body {
-    overflow: hidden; } }
 #title {
   display: inline;
   margin-right: 15px; }
@@ -83,12 +80,24 @@ body {
 #subtitle {
   color: #777; }
 
-#project-presentation {
-  margin-top: -35px;
-  margin-bottom: -10px; }
+.panel-body > .list-group {
+  margin-bottom: 5px; }
+
+i.dash-title-icon {
+  margin-right: 5px; }
+
+.dash-item-user .dash-item-username {
+  margin-left: 10px; }
+
+.dash-date {
+  float: right; }
+
+.panel-heading {
+  display: block; }
+  .panel-heading:hover {
+    text-decoration: none; }
 
 .panel-title {
-  text-align: center;
   color: #fff; }
 
 .dash-item-text {
@@ -98,12 +107,9 @@ body {
   text-align: center; }
 
 .to-page {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  background-color: #fff;
-  border-color: #fff;
-  color: #22313f;
-  margin-right: 10px;
-  margin-bottom: -5px; }
+  float: right; }
+  .to-page small {
+    color: #fff; }
 
 /*Overriding bootstrap class panel-primary*/
 .panel-primary {
@@ -114,14 +120,14 @@ body {
   color: #fff;
   background-color: #22313f;
   border-color: #22313f; }
+  .panel-primary > .panel-heading:hover {
+    cursor: pointer; }
 
-.panel-primary:hover {
-  cursor: pointer; }
-  .panel-primary:hover a:hover {
-    color: #fff;
-    background-color: #e9d460;
-    border-color: #e9d460;
-    box-shadow: none; }
+.panel-primary:hover a:hover {
+  color: #fff;
+  background-color: #e9d460;
+  border-color: #e9d460;
+  box-shadow: none; }
 
 .panel-primary:hover > .panel-heading {
   color: #fff;

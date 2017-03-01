@@ -1,11 +1,5 @@
 @import 'global';
 
-@media (min-width: 768px){
-  body {
-    overflow: hidden;
-  }
-}
-
 #title {
   display:inline;
   margin-right: 15px;
@@ -15,13 +9,32 @@
   color: #777;
 }
 
-#project-presentation{
-  margin-top: -35px;
-  margin-bottom: -10px;
+.panel-body>.list-group{
+  margin-bottom: 5px;
+}
+i.dash-title-icon{
+  margin-right: 5px;
+}
+.dash-item-user{
+  .dash-item-username{
+    margin-left: 10px;
+  }
+}
+
+.dash-date{
+  float: right;
+}
+
+.panel-heading{
+  display: block;
+
+  &:hover{
+    text-decoration: none;
+  }
 }
 
 .panel-title{
-  text-align: center;
+  //text-align: center;
   color: $white;
 }
 
@@ -34,12 +47,10 @@
 }
 
 .to-page{
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-  background-color: $white;
-  border-color: $white;
-  color: $color_ebony_clay;
-  margin-right: 10px;
-  margin-bottom: -5px;
+  float:right;
+  small {
+    color: $white;
+  }
 }
 
 /*Overriding bootstrap class panel-primary*/
@@ -52,10 +63,12 @@
   color:$white;
   background-color: $color_ebony_clay;
   border-color:  $color_ebony_clay;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .panel-primary:hover {
-  cursor: pointer;
 
   a:hover{
     color: $white;
