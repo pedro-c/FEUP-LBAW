@@ -11,13 +11,14 @@
   width: 100%;
 }
 
-
 html {
   @extend %extend_1;
 }
+
 body {
   @extend %extend_1;
 }
+
 .container {
   display: table;
   position: absolute;
@@ -32,11 +33,12 @@ body {
   // padding-top: 25vh;
   //padding-bottom: 25vh;
 }
+
 .login-box {
   //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
   color: white;
 
-  .border_radius{
+  .border_radius {
     border-radius: 15px;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
@@ -47,17 +49,17 @@ body {
     height: 80vh;
   }
 
-  .content_image{
+  .content_image {
     background-image: url("../assets/2.png");
     background-repeat: no-repeat;
   }
 
-  .nopadding{
+  .nopadding {
     padding: 0 !important;
     margin: 0 !important;
   }
 
-  .button_loginIn{
+  .button_loginIn {
     margin-top: 20px;
     float: left;
     border-bottom-left-radius: 0;
@@ -73,12 +75,12 @@ body {
     &:active,
     &:focus,
     &:hover,
-    &:visited{
+    &:visited {
       background-color: $color_yellow;
     }
   }
 
-  .button_signUp{
+  .button_signUp {
     margin-top: 20px;
     color: white;
     float: right;
@@ -92,18 +94,18 @@ body {
     &:active,
     &:focus,
     &:hover,
-    &:visited{
+    &:visited {
       background-color: $color_yellow;
     }
   }
 
-
-  .description-links{
+  .description-links {
     margin-top: 70px;
     font-size: x-large;
     text-align: center;
+    cursor: pointer;
 
-    .sign-in-title{
+    .sign-in-title {
       text-align: center;
       text-decoration: none;
       margin-right: 20px;
@@ -113,137 +115,144 @@ body {
       border-bottom: 4px solid;
       border-bottom-color: $color_yellow;
       &:hover,
-      &:visited{
+      &:visited {
         border-bottom: 4px solid;
         border-bottom-color: $color_yellow;
       }
     }
 
-    .or-title{
+    .or-title {
       padding-right: 20px;
       color: white;
       font-size: large;
     }
 
-    .sign-up-title{
+    .sign-up-title {
       text-align: center;
       text-decoration: none;
-      color: white;
+      color: #425262;
       padding-bottom: 5px;
       &:hover,
-      &:visited{
+      &:visited {
         border-bottom: 4px solid;
         border-bottom-color: $color_yellow;
       }
     }
   }
 
-  .form-register{
+  .form-register {
     margin-top: 60px;
     font-size: medium;
 
-    .form-register-right{
-      margin-left: 35px;
+    .form-register-right {
+      margin-left: 45px;
+      margin-right: 45px;
+
+      .border-bottom{
+        padding-left: 0 !important;
+      }
+
+      .border-bottom:nth-child(3),
+      .border-bottom:nth-child(7),
+      .border-bottom:nth-child(11){
+        padding-bottom: 4px;
+        border-bottom-style: solid;
+        border-bottom-color: #425262;
+      }
     }
 
-    .email{
+    .email {
       display: inline-block;
     }
 
-    #email-input-id.email-input{
+    #email-input-id.email-input {
       font-size: medium;
       padding-top: 15px;
       background-color: transparent;
       border: none;
-      border-bottom-style: solid;
-      border-bottom-color: #425262;
 
-      &:focus{
+      &:focus {
         outline: none;
       }
 
-      &:-moz-placeholder{
+      &:-moz-placeholder {
         color: #425262;
       }
-      &:-ms-input-placeholder{
+      &:-ms-input-placeholder {
         color: #425262;
       }
-      &::-moz-placeholder{
+      &::-moz-placeholder {
         color: #425262;
       }
-      &:-ms-input-placeholder{
+      &:-ms-input-placeholder {
         color: #425262;
       }
 
     }
-    .username{
+    .username {
       padding-top: 35px;
       display: inline-block;
     }
 
-    #username-input-id.username-input{
+    #username-input-id.username-input {
       font-size: medium;
       padding-top: 15px;
       background-color: transparent;
       border: none;
-      border-bottom-style: solid;
-      border-bottom-color: #425262;
 
-      &:focus{
+      &:focus {
         outline: none;
       }
 
-      &:-moz-placeholder{
+      &:-moz-placeholder {
         color: #425262;
       }
-      &:-ms-input-placeholder{
+      &:-ms-input-placeholder {
         color: #425262;
       }
-      &::-moz-placeholder{
+      &::-moz-placeholder {
         color: #425262;
       }
-      &:-ms-input-placeholder{
+      &:-ms-input-placeholder {
         color: #425262;
       }
 
     }
-    .password{
+    .password {
       padding-top: 35px;
       display: inline-block;
     }
 
-    #password-input-id.password-input{
+    #password-input-id.password-input {
       padding-top: 15px;
       background-color: transparent;
-      border:none;
-      border-bottom-style: solid;
-      border-bottom-color: #425262;
+      border: none;
 
-      &:focus{
+      &:focus {
         outline: none;
       }
-      &:-moz-placeholder{
+      &:-moz-placeholder {
         color: #425262;
       }
-      &:-ms-input-placeholder{
+      &:-ms-input-placeholder {
         color: #425262;
       }
-      &::-moz-placeholder{
+      &::-moz-placeholder {
         color: #425262;
       }
-      &:-ms-input-placeholder{
+      &:-ms-input-placeholder {
         color: #425262;
       }
 
     }
-    .form-actions{
+    .form-actions {
 
       margin: 0;
       background-color: transparent;
       color: white;
       text-align: center;
 
-      .register-button{
+      .register-button {
         padding: 10px 50px 10px 50px;
         margin-top: 70px;
         background-color: #425262;
@@ -253,95 +262,102 @@ body {
         &:active,
         &:focus,
         &:hover,
-        &:visited{
+        &:visited {
           background-color: $color_yellow;
           color: white;
         }
       }
 
-
     }
   }
 
-  .form-login{
-      margin-top: 90px;
-      font-size: medium;
+  .form-login {
+    margin-top: 90px;
+    font-size: medium;
 
-    .form-login-right{
+    .form-login-right {
       margin-left: 35px;
-    }
+      margin-right: 45px;
 
-      .username{
-
+      .border-bottom{
+        padding-left: 0 !important;
       }
 
-      #username-input-id.username-input{
-        font-size: medium;
-        padding-top: 15px;
-        background-color: transparent;
-        border: none;
+      .border-bottom:nth-child(3),
+      .border-bottom:nth-child(7){
+        padding-bottom: 4px;
         border-bottom-style: solid;
         border-bottom-color: #425262;
+      }
+    }
 
-        &:focus{
-          outline: none;
-        }
+    .username {
 
-        &:-moz-placeholder{
-          color: #425262;
-        }
-        &:-ms-input-placeholder{
-          color: #425262;
-        }
-        &::-moz-placeholder{
-          color: #425262;
-        }
-        &:-ms-input-placeholder{
-          color: #425262;
-        }
+    }
 
+    #username-input-id.username-input {
+      font-size: medium;
+      padding-top: 15px;
+      background-color: transparent;
+      border: none;
+
+      &:focus {
+        outline: none;
       }
 
-    .password{
+      &:-moz-placeholder {
+        color: #425262;
+      }
+      &:-ms-input-placeholder {
+        color: #425262;
+      }
+      &::-moz-placeholder {
+        color: #425262;
+      }
+      &:-ms-input-placeholder {
+        color: #425262;
+      }
+
+    }
+
+    .password {
       padding-top: 35px;
       display: inline-block;
     }
 
-    #password-input-id.password-input{
-        padding-top: 15px;
-        background-color: transparent;
-        border:none;
-        border-bottom-style: solid;
-        border-bottom-color: #425262;
+    #password-input-id.password-input {
+      padding-top: 15px;
+      background-color: transparent;
+      border: none;
 
-        &:focus{
-          outline: none;
-        }
-        &:-moz-placeholder{
-          color: #425262;
-        }
-        &:-ms-input-placeholder{
-          color: #425262;
-        }
-        &::-moz-placeholder{
-          color: #425262;
-        }
-        &:-ms-input-placeholder{
-          color: #425262;
-        }
-
+      &:focus {
+        outline: none;
+      }
+      &:-moz-placeholder {
+        color: #425262;
+      }
+      &:-ms-input-placeholder {
+        color: #425262;
+      }
+      &::-moz-placeholder {
+        color: #425262;
+      }
+      &:-ms-input-placeholder {
+        color: #425262;
       }
 
-    .form-actions{
+    }
+
+    .form-actions {
 
       margin: 0;
       background-color: transparent;
       color: white;
       text-align: center;
 
-      .login-button{
-        padding: 10px 50px 10px 50px;
-        margin-top: 90px;
+      .login-button {
+        padding: 10px 60px 10px 60px;
+        margin-top: 140px;
         background-color: #425262;
         border: none;
         color: white;
@@ -349,15 +365,13 @@ body {
         &:active,
         &:focus,
         &:hover,
-        &:visited{
+        &:visited {
           background-color: $color_yellow;
           color: white;
         }
       }
 
-
     }
 
-
-    }
   }
+}
