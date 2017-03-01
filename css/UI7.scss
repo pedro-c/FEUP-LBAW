@@ -1,133 +1,132 @@
 @import 'global';
 
+#page-meetings {
 
-#page-meetings{
+  .nopadding {
+    padding: 0 !important;
+  }
 
-.title_bar{
-  background-color: white;
-  padding: 10px 10px 0px 10px;
+  .title_bar {
+    background-color: white;
+    padding: 10px 10px 0px 10px;
 
-  button{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    &:hover{
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      &:hover {
+        border-bottom: 4px solid;
+        border-bottom-color: $color_yellow;
+      }
+    }
+
+    button:first-child {
       border-bottom: 4px solid;
       border-bottom-color: $color_yellow;
     }
   }
 
-  button:first-child{
-    border-bottom: 4px solid;
-    border-bottom-color: $color_yellow;
-  }
-}
+  #future_meetings {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 4%;
+    padding-bottom: 4%;
+    overflow-y: scroll !important;
 
-#future_meetings{
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-  border-radius: 5px;
-  background-color: white;
-  margin-top: 4%;
-  padding-bottom: 4%;
-  overflow: visible;
-  overflow-y: scroll;
+    .button_scheduale {
+      padding-top: 20px;
+      padding-bottom: 20px;
 
-  .button_scheduale{
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-    .schedule{
-      padding: 4px 20px 4px 20px;
-      color: white;
-      background-color: $blue_secondary;
-      border: none;
-      border-radius: 5px;
-      align-self: center;
-      outline: 0;
-
-      &:hover{
-        background-color: $color_yellow;
+      .schedule {
+        padding: 4px 20px 4px 20px;
+        color: white;
+        background-color: $blue_secondary;
         border: none;
-      }
-    }
-  }
+        border-radius: 5px;
+        align-self: center;
+        outline: 0;
 
-
-  .meetings{
-    margin-top: 10px;
-
-    .specify_padding{
-      padding-left: 20px !important;
-      padding-right: 0px !important;
-      margin-bottom: 15px;
-    }
-
-    .meeting{
-      padding-left: 25px;
-      border-radius: 5px;
-      vertical-align: middle;
-      padding-top: 4px;
-      background-color: $background_white;
-
-
-      #see_more{
-        font-size: 24px;
-        float: right;
-        margin-right: 30px;
-        font-weight: normal;
-        cursor: pointer;
-      }
-
-      .information_meeting{
-
-        .hour{
-          font-size: medium;
+        &:hover {
+          background-color: $color_yellow;
+          border: none;
         }
+      }
+    }
 
-        #plus_user{
-          color: $color_yellow;
-          font-size: 26px;
+    .meetings {
+      margin-top: 10px;
+
+      .specify_padding {
+        padding-left: 20px !important;
+        padding-right: 0px !important;
+        margin-bottom: 15px;
+      }
+
+      .meeting {
+        padding-left: 25px;
+        border-radius: 5px;
+        vertical-align: middle;
+        padding-top: 4px;
+        background-color: $background_white;
+
+        #see_more {
+          font-size: 24px;
+          float: right;
+          margin-right: 30px;
+          font-weight: normal;
           cursor: pointer;
         }
 
-        .date{
-          font-size: large;
-          font-weight: bold;
-        }
+        .information_meeting {
 
-        .user_responsible{
-          font-weight: normal;
-          font-size: x-small;
-        }
+          .hour {
+            font-size: medium;
+          }
 
-        .guests{
-          padding-top: 5px;
-          .user_photo{
-            margin-right: 5px;
-            width: 25px;
-            float: left;
+          #plus_user {
+            color: $color_yellow;
+            font-size: 26px;
+            cursor: pointer;
+          }
+
+          .date {
+            font-size: large;
+            font-weight: bold;
+          }
+
+          .user_responsible {
+            font-weight: normal;
+            font-size: x-small;
+          }
+
+          .guests {
+            padding-top: 5px;
+            .user_photo {
+              margin-right: 5px;
+              width: 25px;
+              float: left;
+            }
           }
         }
+
       }
-
-
     }
   }
-}
 
-  .form_meeting{
+  .form_meeting {
 
-    label{
+    label {
       margin-bottom: 20px;
     }
 
-    .new_meeting{
+    .new_meeting {
       margin-top: 10px;
       padding-left: 25px;
       padding-bottom: 190px;
       padding-top: 50px;
 
-      .title{
+      .title {
         background-color: transparent;
         border: none;
         outline: 0;
@@ -135,54 +134,54 @@
         font-size: medium;
       }
 
-      .date{
+      .date {
         background-color: transparent;
         border: none;
         outline: 0;
       }
 
-      .time{
+      .time {
         background-color: transparent;
         border: none;
         outline: 0;
       }
 
-      .atendees{
+      .atendees {
         background-color: transparent;
         border: none;
         outline: 0;
       }
 
-      .agenda{
+      .agenda {
         margin-bottom: 20px;
       }
 
-      textarea.agenda{
+      textarea.agenda {
         background-color: transparent;
         outline: 0;
 
       }
 
-      .minutes{
-        background-color: transparent;
-        border: none;
-        outline: 0;
-      }
-
-      .file{
+      .minutes {
         background-color: transparent;
         border: none;
         outline: 0;
       }
 
-      .box_input{
+      .file {
+        background-color: transparent;
+        border: none;
+        outline: 0;
+      }
+
+      .box_input {
         border: 3px dashed;
         border-radius: 6px;
         border-color: #2C3E50;
         background-color: #F2F1EF;
         vertical-align: middle;
 
-        .box_button{
+        .box_button {
           background-color: transparent;
           font-size: medium;
           border: none;
@@ -195,17 +194,16 @@
 
   }
 
-  #schedule_meeting{
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  #schedule_meeting {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     background-color: white;
     margin-top: 4%;
 
-
-    .button_trash{
+    .button_trash {
       margin: 20px 20px 20px 20px;
 
-      .trash{
+      .trash {
         padding: 4px 20px 4px 20px;
         color: white;
         background-color: #c0392b;
@@ -214,7 +212,7 @@
         align-self: center;
         outline: 0;
 
-        &:hover{
+        &:hover {
           background-color: transparent;
           border: 2px solid;
           border-color: #c0392b;;
@@ -225,46 +223,50 @@
     }
   }
 
-  #create-task-settings{
+  #create-meeting-settings {
     display: inline-block;
-    width: 100%;
-    padding: 20px 0px 20px 10px;
-    i, input{
+    i, input,select {
       padding: 0px 10px 0px 10px;
       float: left;
     }
-  }
-  .task-tags{
-    text-align: start;
-    padding: 5px;
-    width: 200px;
-    span{
-      li > span{
-        display: inline !important;
-      }
-      width: 100% !important;
-      border-bottom-left-radius: 0px;
-      border-top-left-radius: 0px;
-    }
-    span.input-group-addon{
-      width: 50px !important;
-      border-bottom-left-radius: 4px !important;
-      border-top-left-radius: 4px !important;
 
-    }
-  }
-
-  .datepicker-dropdown{
-    margin-top: 60px;
-  }
-
-  .date{
-    padding: 5px;
-    width: 200px;
-    span{
+    span {
       width: 50px;
+      font-size: small;
     }
+
+    input {
+      top: 1px;
+    }
+
+    .metting-design{
+      text-align: start;
+      padding: 5px;
+      width: 200px;
+      span{
+        li > span{
+          display: inline !important;
+        }
+        width: 100% !important;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+      }
+      span.input-group-addon{
+        width: 50px !important;
+        border-bottom-left-radius: 4px !important;
+        border-top-left-radius: 4px !important;
+
+      }
+    }
+
   }
 
+  .inputs_meetings {
+    margin-bottom: 25px !important;
+  }
+}
 
+.datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-bottom {
+  margin-top: 60px;
+  margin-left: 60px;
 }

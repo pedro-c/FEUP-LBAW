@@ -3,7 +3,7 @@ body {
   margin: 0;
   background-color: #ecf0f1;
   height: 100vh;
-  overflow-y: hidden;
+  overflow-y: scroll;
   font-family: Roboto, Helvetica, sans-serif; }
 
 #parent {

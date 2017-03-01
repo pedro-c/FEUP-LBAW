@@ -24,7 +24,7 @@ body {
   margin: 0;
   background-color: $background_white;
   height: 100vh;
-  overflow-y: hidden;
+  overflow-y: scroll;
   font-family: $font-stack;
 }
 

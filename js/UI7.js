@@ -1,3 +1,17 @@
+$(document).ready(function () {
+
+
+    $('.input-group.date').datepicker({
+        format: "dd/M/yyyy",
+        todayHighlight: true
+    });
+
+    $(".select2-multiple").select2();
+
+
+
+});
+
 function schedule() {
     $("#container_meetings").removeClass("col-xs-10");
     $("#container_meetings").removeClass("col-sm-offset-1");
@@ -8,6 +22,4 @@ function schedule() {
     $(".specify_padding").addClass("col-xs-10");
     $(".specify_padding").addClass("col-sm-offset-1");
     $(".specify_padding").removeClass("col-xs-5");
-
-
 }
