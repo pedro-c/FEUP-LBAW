@@ -163,13 +163,37 @@ include_once 'common/header.html';
                     </h4>
                 </a>
                 <div class="panel-body">
-                    <div class="list-group">
-                        <button class="list-group-item">
-                            <span><i class="glyphicon glyphicon-user dash-icon"></i><span class="dash-item-username">epassos</span></span>
-                        </button>
-                        <button class="list-group-item">
-                            <span><i class="glyphicon glyphicon-user dash-icon"></i><span class="dash-item-username">epassos</span></span>
-                        </button>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                            <a href="#" class="thumbnail">
+                                <img alt="Team member picture" src=""
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                            <a href="#" class="thumbnail">
+
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                            <a href="#" class="thumbnail">
+
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                            <a href="#" class="thumbnail">
+
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                            <a href="#" class="thumbnail">
+
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                            <a href="#" class="thumbnail">
+
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
