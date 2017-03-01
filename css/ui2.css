@@ -106,6 +106,14 @@ i.dash-title-icon {
 .dash-card > .panel > .panel-body {
   text-align: center; }
 
+.thumbnail.dash-thumbnail {
+  border: none;
+  margin-bottom: 5px; }
+
+.dash-user-thumb {
+  height: 20px;
+  width: 20px; }
+
 .to-page {
   float: right; }
   .to-page small {
