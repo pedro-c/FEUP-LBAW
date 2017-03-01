@@ -1,6 +1,12 @@
 body {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  font-family: Roboto, Helvetica, sans-serif;
+  background-color: #ecf0f1;
+  overflow-y: scroll; }
+
+#parent {
+  height: 100%; }
 
 #header {
   position: fixed;
@@ -50,6 +56,7 @@ body {
     overflow-x: hidden;
     padding-bottom: 40px; }
     #sidebar li a {
+      color: #ecf0f1;
       width: 100px;
       text-align: center; }
       #sidebar li a:hover {
@@ -90,7 +97,7 @@ html, body {
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px; }
   .login-box .content_login {
-    background-color: #22313f;
+    background-color: #425c77;
     height: 80vh; }
   .login-box .content_image {
     background-image: url("../assets/2.png");
@@ -106,7 +113,7 @@ html, body {
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     padding: 5px 30px 5px 15px;
-    background-color: #22313f;
+    background-color: #425c77;
     border-color: transparent;
     color: white;
     background-color: #e9d460; }

@@ -1,18 +1,13 @@
 body {
   padding: 0;
   margin: 0;
-<<<<<<< HEAD
-  font-family: Roboto, Helvetica, sans-serif;
   background-color: #ecf0f1;
-  overflow-y: scroll; }
+  height: 100vh;
+  overflow-y: hidden;
+  font-family: Roboto, Helvetica, sans-serif; }
 
 #parent {
   height: 100%; }
-=======
-  background-color: #ecf0f1;
-  height: 100vh;
-  overflow-y: hidden; }
->>>>>>> UI3
 
 #header {
   position: fixed;
