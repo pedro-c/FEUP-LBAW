@@ -93,4 +93,14 @@ body {
     background-color: #192532 !important;
     color: #e9d460; }
 
+.modal-content .modal-footer #accept_button:hover {
+  background-color: green;
+  color: white; }
+.modal-content .modal-footer #cancel_button:hover {
+  background-color: red;
+  color: white; }
+
+#promote1 {
+  padding-top: 4px; }
+
 /*# sourceMappingURL=ui6.css.map */

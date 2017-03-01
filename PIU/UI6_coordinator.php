@@ -94,10 +94,10 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                            <div class="row" id="profile_actions">
                              <div class="col-xs-3"></div>
                              <div class="col-xs-3" align="center">
-                              <i class="fa fa-star fa-3x" id="promote<?php echo $num_elems;?>"></i>
+                              <i class="fa fa-star fa-3x" id="promote<?php echo $num_elems;?>" ></i>
                              </div>
                              <div class="col-xs-3" align="center">
-                               <i class="fa fa-times fa-3x" id="remove<?php echo $num_elems;?>"></i>
+                               <i class="fa fa-times fa-3x" id="remove<?php echo $num_elems;?>" data-toggle="modal" data-target="#remove_member_dialog"></i>
                              </div>
                              <div class="col-xs-3"></div>
                            </div>
@@ -150,6 +150,27 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
       <div class="modal-footer">
         <button type="button" class="btn btn-default">Send</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Confirmation of User Delete-->
+<div id="remove_member_dialog" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Remove user from project</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to remove this member from the project?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="remove_member_button">Yes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="no_remove_member_button">No</button>
       </div>
     </div>
 

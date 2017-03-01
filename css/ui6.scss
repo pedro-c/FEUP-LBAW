@@ -48,3 +48,19 @@
     color: #e9d460;
   }
 }
+
+
+.modal-content .modal-footer {
+  #accept_button:hover {
+      background-color: green;
+      color: white;
+  }
+  #cancel_button:hover {
+    background-color: red;
+    color: white;
+  }
+}
+
+#promote1{
+  padding-top: 4px;
+}
