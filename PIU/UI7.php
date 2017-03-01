@@ -31,7 +31,7 @@ include_once "common/header.html";
                                         <span id="see_more" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                         <div class="padding">
                                             <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                                            <label class="date">15.04.2018</label><br>
+                                            <label class="date" >15.04.2018</label><br>
                                             <label class="description">Planing new project </label><br>
                                         </div>
                                     </div>
@@ -152,11 +152,24 @@ include_once "common/header.html";
                     </div>
                     <div class="calendar">
                         <span class="meetings_icon glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" placeholder="Choose a date">
                     </div>
                    <div class="atendees">
                         <span class="meetings_icon glyphicon glyphicon-user" aria-hidden="true"></span>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" placeholder="Invite Participants">
+                    </div>
+                    <div class="minutes">
+                        <span class="meetings_icon glyphicon glyphicon-time" aria-hidden="true"></span>
+                        <input type="number" class="form-control" placeholder="Meeting Duration">
+                    </div>
+
+                    <div class="agenda">
+                       <ul>
+                           <li>Write Some Important Tasks</li>
+                           <li>To Do Before the Meeting</li>
+                           <li style="font-size: medium;font-weight: bold">Click Here!</li>
+                       </ul>
+                        <button>Add More Tasks</button>
                     </div>
 
                 </form>

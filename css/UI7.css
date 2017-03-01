@@ -229,7 +229,7 @@ body {
   margin-top: 4%;
   padding: 20px; }
   #page-meetings #schedule_meeting .button_trash {
-    margin: 0 0 20px 0; }
+    margin: 0 0 50px 0; }
     #page-meetings #schedule_meeting .button_trash .trash {
       padding: 4px 20px 4px 20px;
       color: white;
@@ -244,13 +244,13 @@ body {
         border-color: #c0392b;
         color: #c0392b; }
 #page-meetings #create-meeting-settings .new_meeting .title {
-  padding-bottom: 10px; }
+  margin-bottom: 20px; }
 #page-meetings #create-meeting-settings .new_meeting .calendar {
   text-align: center;
   vertical-align: middle;
   height: 30px;
   display: table;
-  margin-bottom: 10px; }
+  margin-bottom: 20px; }
   #page-meetings #create-meeting-settings .new_meeting .calendar span {
     width: 60px;
     border: solid 1px #bebebe;
@@ -264,13 +264,13 @@ body {
     height: 30px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px; }
-#page-meetings #create-meeting-settings .new_meeting .atendees {
+#page-meetings #create-meeting-settings .new_meeting .atendees, #page-meetings #create-meeting-settings .new_meeting .minutes {
   text-align: center;
   vertical-align: middle;
   height: 30px;
   display: table;
-  margin-bottom: 10px; }
-  #page-meetings #create-meeting-settings .new_meeting .atendees span {
+  margin-bottom: 20px; }
+  #page-meetings #create-meeting-settings .new_meeting .atendees span, #page-meetings #create-meeting-settings .new_meeting .minutes span {
     width: 60px;
     border: solid 1px #bebebe;
     border-top-left-radius: 3px;
@@ -280,9 +280,17 @@ body {
     display: table-cell;
     vertical-align: middle;
     padding-bottom: 10px; }
-  #page-meetings #create-meeting-settings .new_meeting .atendees input {
+  #page-meetings #create-meeting-settings .new_meeting .atendees input, #page-meetings #create-meeting-settings .new_meeting .minutes input {
     height: 30px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px; }
+#page-meetings #create-meeting-settings .new_meeting .agenda {
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  padding: 20px; }
+  #page-meetings #create-meeting-settings .new_meeting .agenda textarea {
+    width: 100%;
+    height: 90px;
+    overflow-y: scroll; }
 
 /*# sourceMappingURL=UI7.css.map */
