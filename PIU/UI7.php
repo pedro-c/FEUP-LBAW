@@ -28,7 +28,8 @@ include_once "common/header.html";
                             <div class="col-xs-5 col-sm-offset-1 specify_padding ">
                                 <div class="meeting">
                                     <div class="information_meeting"><br>
-                                        <span id="see_more" class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                                        <span id="see_more" class="glyphicon glyphicon-zoom-in"
+                                              aria-hidden="true"></span>
                                         <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                                         <label class="date">28.02.2018</label><br>
                                         <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
@@ -40,14 +41,16 @@ include_once "common/header.html";
                                             <img class="user_photo" src="../assets/avatar3.png">
                                             <img class="user_photo" src="../assets/avatar4.png">
                                             <img class="user_photo" src="../assets/avatar7.png">
-                                            <span id="plus_user" class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                            <span id="plus_user" class="glyphicon glyphicon-plus-sign"
+                                                  aria-hidden="true"></span>
                                         </label>
                                         <br>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-xs-5 specify_padding"">
+                            <div class="col-xs-5 specify_padding"
+                            ">
                             <div class="meeting">
                                 <div class="information_meeting"><br>
                                     <span id="see_more" class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
@@ -60,7 +63,8 @@ include_once "common/header.html";
                                     <label class="guests">
                                         <img class="user_photo" src="../assets/avatar3.png">
                                         <img class="user_photo" src="../assets/avatar6.png">
-                                        <span id="plus_user" class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                        <span id="plus_user" class="glyphicon glyphicon-plus-sign"
+                                              aria-hidden="true"></span>
                                     </label>
                                     <br>
                                 </div>
@@ -85,14 +89,16 @@ include_once "common/header.html";
                                         <img class="user_photo" src="../assets/avatar1.png">
                                         <img class="user_photo" src="../assets/avatar2.png">
                                         <img class="user_photo" src="../assets/avatar4.png">
-                                        <span id="plus_user" class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                        <span id="plus_user" class="glyphicon glyphicon-plus-sign"
+                                              aria-hidden="true"></span>
                                     </label>
                                     <br>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-xs-5 specify_padding"">
+                        <div class="col-xs-5 specify_padding"
+                        ">
                         <div class="meeting">
                             <div class="information_meeting"><br>
                                 <span id="see_more" class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
@@ -106,7 +112,8 @@ include_once "common/header.html";
                                     <img class="user_photo" src="../assets/avatar3.png">
                                     <img class="user_photo" src="../assets/avatar6.png">
                                     <img class="user_photo" src="../assets/avatar1.png">
-                                    <span id="plus_user" class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                    <span id="plus_user" class="glyphicon glyphicon-plus-sign"
+                                          aria-hidden="true"></span>
                                 </label>
                                 <br>
                             </div>
@@ -118,23 +125,45 @@ include_once "common/header.html";
     </div>
     <div id="container_schedule_meeting" hidden>
         <div id="schedule_meeting">
-            <div class="text-center button_trash">
-                <button class="trash"> <span id="trash" class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+            <div class="button_trash pull-right">
+                <button class="trash"><span id="trash" class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
             </div>
             <div class="form_meeting">
-                <form class="new_meeting">
-                    <label>Title: </label>
-                    <input class="title" type="text" name="firstname" placeholder="Creative Review"><br>
-                    <label>Meeting Date:</label>
-                    <input class="date" type="date" name="lastname" placeholder="Choose a Date"><br>
-                    <label>Meeting Time:</label>
+                <form class="new_meeting" method="post" action="" enctype="multipart/form-data">
+                    <label class="title">Title: </label>
+                    <input class="title" type="text" name="firstname" placeholder="Choose a Creative Title"><br>
+                    <div class="col-xs-12" id="create-task-settings">
+                        <div class="input-group date">
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="input-group task-tags">
+                            <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                            <select class="select2-multiple form-control" multiple="multiple">
+                                <option value="M">Marketing</option>
+                                <option value="L">Logistics</option>
+                                <option value="S">Sponsors</option>
+                            </select>
+                        </div>
+                    </div>
+                   <!-- <label>Meeting Time:</label>
                     <input class="time" type="time" name="lastname" placeholder=""><br>
                     <label>Atendees:</label>
                     <input class="atendees" type="text" name="lastname" placeholder="Add/Remove Participants"><br>
-                    <label>Agenda:</label>
-                    <input class="agenda" type="text" name="lastname" placeholder="Important Points"><br>
+                    <label>Agenda:</label><br>
+                    <div class="col-xs-10 col-sm-offset-1">
+                        <textarea class="agenda" rows="3" cols="55"></textarea><br>
+                    </div>
                     <label>Minutes:</label>
-                    <input class="minutes" type="number" name="lastname" placeholder="Duration"><br>
+                    <input class="minutes" type="number" name="lastname" placeholder="Duration"><br>-->
+                    <label>Important Files:</label>
+                    <div class="col-xs-10 box_input text-center col-sm-offset-1">
+                        <input class="box_file" type="file" name="files[]" id="file"
+                               data-multiple-caption="{count} files selected" multiple/><br><br>
+                        <label for="file"><strong>Choose a file</strong><span class=" text-center box_dragndrop"> or drag it here</span>.</label>
+                        <br><br><button class="box_button" type="submit">Upload</button>
+                    </div>
                 </form>
             </div>
         </div>
