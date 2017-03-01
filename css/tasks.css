@@ -3,16 +3,23 @@ body {
   margin: 0;
   background-color: #ecf0f1;
   height: 100vh;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   overflow-y: hidden; }
 =======
   overflow-y: scroll;
   overflow-x: hidden;
+=======
+  overflow-y: hidden;
+>>>>>>> develop
   font-family: Roboto, Helvetica, sans-serif; }
 
 #parent {
   height: 100%; }
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> develop
 
 #header {
   position: fixed;
@@ -69,6 +76,7 @@ body {
     overflow-x: hidden;
     padding-bottom: 40px; }
     #sidebar li a {
+      color: #ecf0f1;
       width: 100px;
       text-align: center; }
       #sidebar li a:hover {
