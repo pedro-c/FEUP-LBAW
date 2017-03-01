@@ -6,6 +6,7 @@ include_once "common/header.html";
 <link href="../css/tasks.css" rel="stylesheet">
 <script src="../js/tasks.js"></script>
 
+
 <div id="page-wrapper">
 
         <!-- Page Heading -->
@@ -42,6 +43,7 @@ include_once "common/header.html";
                     </div>
                     <div class="tasks-card create-task row" id="create-task" style="display: none">
                         <div class="col-xs-12" id="create-task-navbar">
+                            <i class="fa fa-arrow-left" onclick="toggle();"  aria-hidden="true"></i>
                             <div class="col-xs-12" id="assign-to">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <textarea placeholder="Assign to" id="task-assign"></textarea>
@@ -54,13 +56,36 @@ include_once "common/header.html";
                                 <textarea placeholder="New Task"></textarea>
                             </div>
                             <div class="col-xs-12" id="create-task-settings">
-                                <i class="fa fa-calendar"></i>
-                                <input type="date" name="deadline">
-                                <i class="fa fa-tag"></i>
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group task-tags">
+                                    <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                                    <select class="select2-multiple form-control" multiple="multiple">
+                                        <option value="M">Marketing</option>
+                                        <option value="L">Logistics</option>
+                                        <option value="S">Sponsors</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col-xs-12" id="create-task-description">
                                 <textarea placeholder="Description"></textarea>
                             </div>
+                        <div class="task-comments col-xs-12">
+                            <div class="comment-info">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <h4>Pedro Costa</h4>
+                                <p>Today at 17:49</p>
+                            </div>
+                            <p>Good luck !</p>
+
+                        </div>
+                        <div class="add-comment" id="add-comment">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <textarea placeholder="Write a comment..."></textarea>
+                            <button class="btn">Add</button>
+                        </div>
 
                     </div>
                 </div>

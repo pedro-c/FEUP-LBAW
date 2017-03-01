@@ -28,6 +28,10 @@ body {
   font-family: $font-stack;
 }
 
+#parent{
+  height: 100%;
+}
+
 #header {
   position: fixed;
   top: 0px;
@@ -89,6 +93,7 @@ body {
     overflow-x: hidden;
     padding-bottom: 40px;
     li a {
+      color: $background_white;
       width: 100px;
       text-align: center;
       &:hover {
