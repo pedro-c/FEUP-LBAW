@@ -131,21 +131,25 @@ include_once "common/header.html";
             </div>
             <div class="form_meeting">
                 <form class="new_meeting" method="post" action="" enctype="multipart/form-data">
-                    <label class="title">Title: </label>
-                    <input class="title" type="text" name="firstname" placeholder="Choose a Creative Title"><br>
+                  <!--  <label class="title">Title: </label>
+                    <input class="title" type="text" name="firstname" placeholder="Choose a Creative Title"><br>-->
                     <div class="col-xs-12" id="create-task-settings">
+                        <div class="input-title">
+                            <span class="input-title"></span>
+                            <input type="text" class="form-control">
+                        </div>
                         <div class="input-group date">
                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                             <input type="text" class="form-control">
                         </div>
-                        <div class="input-group task-tags">
+                       <!-- <div class="input-group task-tags">
                             <span class="input-group-addon"><i class="fa fa-tag"></i></span>
                             <select class="select2-multiple form-control" multiple="multiple">
                                 <option value="M">Marketing</option>
                                 <option value="L">Logistics</option>
                                 <option value="S">Sponsors</option>
                             </select>
-                        </div>
+                        </div>-->
                     </div>
                    <!-- <label>Meeting Time:</label>
                     <input class="time" type="time" name="lastname" placeholder=""><br>
@@ -157,12 +161,12 @@ include_once "common/header.html";
                     </div>
                     <label>Minutes:</label>
                     <input class="minutes" type="number" name="lastname" placeholder="Duration"><br>-->
-                    <label>Important Files:</label>
+                  <!--  <label>Important Files:</label>
                     <div class="col-xs-10 box_input text-center col-sm-offset-1">
                         <input class="box_file" type="file" name="files[]" id="file"
                                data-multiple-caption="{count} files selected" multiple/><br><br>
                         <label for="file"><strong>Choose a file</strong><span class=" text-center box_dragndrop"> or drag it here</span>.</label>
-                        <br><br><button class="box_button" type="submit">Upload</button>
+                        <br><br><button class="box_button" type="submit">Upload</button>-->
                     </div>
                 </form>
             </div>

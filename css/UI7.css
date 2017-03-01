@@ -96,7 +96,8 @@ body {
   background-color: white;
   margin-top: 4%;
   padding-bottom: 4%;
-  overflow: visible; }
+  overflow: visible;
+  overflow-y: scroll; }
   #page-meetings #future_meetings .button_scheduale {
     padding-top: 20px;
     padding-bottom: 20px; }
