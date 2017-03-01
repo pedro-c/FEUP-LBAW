@@ -1,9 +1,10 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: Roboto, Helvetica, sans-serif;
   background-color: #ecf0f1;
-  overflow-y: scroll; }
+  height: 100vh;
+  overflow-y: hidden;
+  font-family: Roboto, Helvetica, sans-serif; }
 
 #parent {
   height: 100%; }
@@ -31,7 +32,14 @@ body {
 #parent {
   margin-top: 50px;
   margin-left: 0px;
-  background-color: #ecf0f1; }
+  background-color: #ecf0f1;
+  height: 100%; }
+
+#main-content {
+  height: 100%; }
+
+#page-wrapper {
+  height: 100%; }
 
 #bs-example-navbar-collapse-1 {
   border-top-width: 0px !important;

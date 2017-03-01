@@ -6,6 +6,9 @@ body {
   overflow-y: hidden;
   font-family: Roboto, Helvetica, sans-serif; }
 
+#parent {
+  height: 100%; }
+
 #header {
   position: fixed;
   top: 0px;
@@ -61,6 +64,7 @@ body {
     overflow-x: hidden;
     padding-bottom: 40px; }
     #sidebar li a {
+      color: #ecf0f1;
       width: 100px;
       text-align: center; }
       #sidebar li a:hover {
