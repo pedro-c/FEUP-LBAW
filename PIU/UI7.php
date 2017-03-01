@@ -28,12 +28,12 @@ include_once "common/header.html";
                             <div class="col-xs-5 col-sm-offset-1 specify_padding ">
                                 <div class="meeting">
                                     <div class="header">
-                                          <span id="see_more" class="pull-right glyphicon glyphicon-chevron-right"
-                                               aria-hidden="true"></span>
+                                        <span id="see_more" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <div class="padding">
                                             <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                                            <label class="date">28.02.2018</label><br>
-                                            <label class="description">Discussion about Summer Internships </label><br>
-
+                                            <label class="date">15.04.2018</label><br>
+                                            <label class="description">Planing new project </label><br>
+                                        </div>
                                     </div>
                                     <div class="information_meeting"><br>
                                         <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
@@ -56,18 +56,17 @@ include_once "common/header.html";
                             ">
                             <div class="meeting">
                                 <div class="header">
-                                    <span id="see_more" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                                    <label class="date">30.02.2018</label><br>
-                                    <label class="description">New Interns</label><br>
-
+                                    <span id="see_more" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <div class="padding">
+                                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                        <label class="date">15.04.2018</label><br>
+                                        <label class="description">Planing new project </label><br>
+                                    </div>
                                 </div>
                                 <div class="information_meeting"><br>
 
-
                                     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                     <label class="hour">3:00PM</label><br>
-
                                     <label class="user_responsible">Edgar Passos</label><br>
                                     <label class="guests">
                                         <img class="user_photo" src="../assets/avatar3.png">
@@ -85,10 +84,12 @@ include_once "common/header.html";
                         <div class="col-xs-5 col-sm-offset-1 specify_padding ">
                             <div class="meeting">
                                 <div class="header">
-                                    <span id="see_more" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                                    <label class="date">03.03.2018</label><br>
-                                    <label class="description">ITK Project</label><br>
+                                    <span id="see_more" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <div class="padding">
+                                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                        <label class="date">15.04.2018</label><br>
+                                        <label class="description">Planing new project </label><br>
+                                    </div>
                                 </div>
                                 <div class="information_meeting"><br>
                                     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
@@ -112,10 +113,12 @@ include_once "common/header.html";
                         ">
                         <div class="meeting">
                             <div class="header">
-                                <span id="see_more" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span id="see_more" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <div class="padding">
                                 <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                                 <label class="date">15.04.2018</label><br>
                                 <label class="description">Planing new project </label><br>
+                                </div>
                             </div>
                             <div class="information_meeting"><br>
                                 <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
@@ -151,7 +154,7 @@ include_once "common/header.html";
                         <span class="meetings_icon glyphicon glyphicon-calendar" aria-hidden="true"></span>
                         <input type="text" class="form-control">
                     </div>
-                    <div class="atendees">
+                   <div class="atendees">
                         <span class="meetings_icon glyphicon glyphicon-user" aria-hidden="true"></span>
                         <input type="text" class="form-control">
                     </div>

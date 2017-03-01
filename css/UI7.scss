@@ -1,5 +1,10 @@
 @import 'global';
 
+.datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-bottom {
+  margin-top: 60px;
+  margin-left: 60px;
+}
+
 #page-meetings {
 
   .nopadding {
@@ -80,6 +85,15 @@
           position: absolute;
           top:0;
           left: 0;
+
+          .padding{
+            padding-left: 20px !important;
+          }
+
+
+          .see_more{
+            padding-right: 20px !important;
+          }
         }
 
         #see_more {
@@ -93,7 +107,8 @@
         .information_meeting {
 
           .hour {
-            font-size: medium;
+            font-size: large;
+
           }
 
           #plus_user {
@@ -105,21 +120,23 @@
           .date {
             font-size: large;
             font-weight: bold;
+            padding-left: 25px;
           }
 
           .user_responsible {
             font-weight: normal;
-            font-size: x-small;
+            font-size: small;
           }
 
           .guests {
-            padding-top: 5px;
+            padding-top: 10px;
             .user_photo {
               margin-right: 5px;
               width: 25px;
               float: left;
             }
           }
+
         }
 
       }
@@ -241,34 +258,59 @@
     .new_meeting{
 
       .title{
-
+        padding-bottom: 10px;
 
       }
 
       .calendar{
-        height: 30px;
-        display: flex;
         text-align: center;
         vertical-align: middle;
+        height: 30px;
+        display:table;
+
+        margin-bottom: 10px;
+
         span{
-          vertical-align: middle;
-          width: 50px;
-          border: solid 1px grey;
-          border-top-left-radius: 0px;
-          border-bottom-left-radius: 0px;
-          background-color: $light_grey;
-          text-align: center;
-        }
-        input{
+          width: 60px;
+          border: solid 1px #bebebe;
           border-top-left-radius: 3px;
           border-bottom-left-radius: 3px;
+          background-color: $background_white;
+          text-align: center;
+          display:table-cell;
+          vertical-align:middle;
+        }
+
+        input{
+          height: 30px;
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
         }
       }
 
       .atendees{
-        display: flex;
-        span{
+        text-align: center;
+        vertical-align: middle;
+        height: 30px;
+        display:table;
+        margin-bottom: 10px;
 
+        span{
+          width: 60px;
+          border: solid 1px #bebebe;
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+          background-color: $background_white;
+          text-align: center;
+          display:table-cell;
+          vertical-align:middle;
+          padding-bottom: 10px;
+        }
+
+        input{
+          height: 30px;
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
         }
       }
 
@@ -283,9 +325,4 @@
 
 
   }
-}
-
-.datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-bottom {
-  margin-top: 60px;
-  margin-left: 60px;
 }

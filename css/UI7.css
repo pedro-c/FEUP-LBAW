@@ -81,6 +81,10 @@ body {
           color: #e9d460 !important; }
       #sidebar li a p {
         margin-bottom: 0px !important; } }
+.datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-bottom {
+  margin-top: 60px;
+  margin-left: 60px; }
+
 #page-meetings .nopadding {
   padding: 0 !important; }
 #page-meetings .title_bar {
@@ -139,6 +143,10 @@ body {
         position: absolute;
         top: 0;
         left: 0; }
+        #page-meetings #future_meetings .meetings .meeting .header .padding {
+          padding-left: 20px !important; }
+        #page-meetings #future_meetings .meetings .meeting .header .see_more {
+          padding-right: 20px !important; }
       #page-meetings #future_meetings .meetings .meeting #see_more {
         font-size: 24px;
         float: right;
@@ -146,19 +154,20 @@ body {
         font-weight: normal;
         cursor: pointer; }
       #page-meetings #future_meetings .meetings .meeting .information_meeting .hour {
-        font-size: medium; }
+        font-size: large; }
       #page-meetings #future_meetings .meetings .meeting .information_meeting #plus_user {
         color: #e9d460;
         font-size: 26px;
         cursor: pointer; }
       #page-meetings #future_meetings .meetings .meeting .information_meeting .date {
         font-size: large;
-        font-weight: bold; }
+        font-weight: bold;
+        padding-left: 25px; }
       #page-meetings #future_meetings .meetings .meeting .information_meeting .user_responsible {
         font-weight: normal;
-        font-size: x-small; }
+        font-size: small; }
       #page-meetings #future_meetings .meetings .meeting .information_meeting .guests {
-        padding-top: 5px; }
+        padding-top: 10px; }
         #page-meetings #future_meetings .meetings .meeting .information_meeting .guests .user_photo {
           margin-right: 5px;
           width: 25px;
@@ -234,27 +243,46 @@ body {
         border: 2px solid;
         border-color: #c0392b;
         color: #c0392b; }
+#page-meetings #create-meeting-settings .new_meeting .title {
+  padding-bottom: 10px; }
 #page-meetings #create-meeting-settings .new_meeting .calendar {
-  height: 30px;
-  display: flex;
   text-align: center;
-  vertical-align: middle; }
+  vertical-align: middle;
+  height: 30px;
+  display: table;
+  margin-bottom: 10px; }
   #page-meetings #create-meeting-settings .new_meeting .calendar span {
-    vertical-align: middle;
-    width: 50px;
-    border: solid 1px grey;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    background-color: #D3D3D3;
-    text-align: center; }
-  #page-meetings #create-meeting-settings .new_meeting .calendar input {
+    width: 60px;
+    border: solid 1px #bebebe;
     border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px; }
+    border-bottom-left-radius: 3px;
+    background-color: #ecf0f1;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle; }
+  #page-meetings #create-meeting-settings .new_meeting .calendar input {
+    height: 30px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px; }
 #page-meetings #create-meeting-settings .new_meeting .atendees {
-  display: flex; }
-
-.datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-bottom {
-  margin-top: 60px;
-  margin-left: 60px; }
+  text-align: center;
+  vertical-align: middle;
+  height: 30px;
+  display: table;
+  margin-bottom: 10px; }
+  #page-meetings #create-meeting-settings .new_meeting .atendees span {
+    width: 60px;
+    border: solid 1px #bebebe;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: #ecf0f1;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    padding-bottom: 10px; }
+  #page-meetings #create-meeting-settings .new_meeting .atendees input {
+    height: 30px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px; }
 
 /*# sourceMappingURL=UI7.css.map */
