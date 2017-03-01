@@ -59,21 +59,21 @@
                             <div class="form-login">
                                 <form>
                                     <div class="form-login-right">
-                                        <div class="col-xs-12">
+                                        <div class="col-xs-12 border-bottom">
                                             <span class="username"> Username: </span>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12">
+                                        <div class="col-xs-12 border-bottom">
                                             <input id="username-input-id" class="username-input"
                                                    placeholder="Enter your username"
                                                    type="text">
                                         </div>
                                         <br>
-                                        <div class="col-xs-12">
+                                        <div class="col-xs-12 border-bottom">
                                             <span class="password"> Password: </span>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12">
+                                        <div class="col-xs-12 border-bottom">
                                             <input id="password-input-id" class="password-input"
                                                    placeholder="Enter your password"
                                                    type="password">
@@ -94,32 +94,31 @@
                                 <form>
                                     <div class="form-register-right">
 
-                                        <div class="col-xs-12">
+                                        <div class="col-xs-12 border-bottom">
                                             <span class="email"> Email: </span>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12">
+                                        <div class="col-xs-12 border-bottom">
                                             <input id="email-input-id" class="email-input"
                                                    placeholder="Enter your email"
                                                    type="email">
                                         </div>
-
-
-                                        <div class="col-xs-12">
+                                        <br>
+                                        <div class="col-xs-12 border-bottom">
                                             <span class="username"> Username: </span>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12">
+                                        <div class="col-xs-12 border-bottom">
                                             <input id="username-input-id" class="username-input"
                                                    placeholder="Choose your username"
                                                    type="text">
                                         </div>
                                         <br>
-                                        <div class="col-xs-12">
+                                        <div class="col-xs-12 border-bottom">
                                             <span class="password"> Password: </span>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12">
+                                        <div class="col-xs-12 border-bottom">
                                             <input id="password-input-id" class="password-input"
                                                    placeholder="Choose your password"
                                                    type="password">

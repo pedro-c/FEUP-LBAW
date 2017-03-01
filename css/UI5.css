@@ -81,83 +81,47 @@ body {
           color: #e9d460 !important; }
       #sidebar li a p {
         margin-bottom: 0px !important; } }
-#title {
-  display: inline;
-  margin-right: 15px; }
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important; }
 
-#subtitle {
-  color: #777; }
-
-.panel-body > .list-group {
-  margin-bottom: 5px; }
-
-i.dash-title-icon {
-  margin-right: 5px; }
-
-.dash-item-user .dash-item-username {
-  margin-left: 10px; }
-
-.dash-date {
-  float: right; }
-
-.panel-heading {
-  display: block; }
-  .panel-heading:hover {
-    text-decoration: none; }
-
-.panel-title {
-  color: #fff; }
-
-.dash-item-text {
-  margin-left: 5px; }
-
-.dash-card > .panel > .panel-body {
-  text-align: center; }
-
-.thumbnail.dash-thumbnail {
-  border: none;
-  margin-bottom: 5px; }
-
-.dash-user-thumb {
-  height: 20px;
-  width: 20px; }
-
-.to-page {
-  float: right; }
-  .to-page small {
-    color: #fff; }
-
-/*Overriding bootstrap class panel-primary*/
-.panel-primary {
-  border: 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
-
-.panel-primary > .panel-heading {
-  color: #fff;
-  background-color: #22313f;
-  border-color: #22313f; }
-  .panel-primary > .panel-heading:hover {
+.files_title {
+  background-color: #ecf0f1; }
+  .files_title button {
+    display: inline;
+    margin-right: 20px;
+    border: none;
+    background-color: transparent;
     cursor: pointer; }
+    .files_title button:hover, .files_title button:visited {
+      border-bottom: 4px solid;
+      border-bottom-color: #e9d460; }
+  .files_title button:first-child {
+    border-bottom: 4px solid;
+    border-bottom-color: #e9d460; }
 
-.panel-primary:hover a:hover {
-  color: #fff;
-  background-color: #e9d460;
-  border-color: #e9d460;
-  box-shadow: none; }
+.files_list {
+  background-color: #ecf0f1;
+  margin-top: 50px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+  .files_list .file {
+    border-bottom: 1px solid;
+    border-bottom-color: grey;
+    padding: 15px 10px 15px 10px;
+    text-align: center; }
+    .files_list .file .user_name {
+      font-size: xx-small; }
+    .files_list .file .minutes {
+      font-size: x-small;
+      float: right;
+      margin-bottom: 0 !important; }
+    .files_list .file .file_details {
+      display: inline-block; }
+      .files_list .file .file_details .file_show {
+        width: 20px; }
+    .files_list .file .perfil_picture {
+      width: 60px; }
 
-.panel-primary:hover > .panel-heading {
-  color: #fff;
-  background-color: #e9d460;
-  border-color: #e9d460; }
-
-.panel-primary:hover > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #e9d460; }
-
-.panel-primary:hover > .panel-heading .badge {
-  color: #337ab7;
-  background-color: #fff; }
-
-.panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #22313f; }
-
-/*# sourceMappingURL=ui2.css.map */
+/*# sourceMappingURL=UI5.css.map */
