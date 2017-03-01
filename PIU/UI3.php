@@ -4,12 +4,7 @@ include_once "common/header.html";
 
 <!-- Custom CSS -->
 <link href="../css/tasks.css" rel="stylesheet">
-<link href="../css/bootstrap-datepicker3.css" rel="stylesheet">
-<link href="../css/bootstrap-datepicker.css" rel="stylesheet">
 <script src="../js/tasks.js"></script>
-<script src="../js/bootstrap-datepicker.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
 
 <div id="page-wrapper">
