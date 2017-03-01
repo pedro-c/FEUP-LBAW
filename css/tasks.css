@@ -3,23 +3,12 @@ body {
   margin: 0;
   background-color: #ecf0f1;
   height: 100vh;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-  overflow-y: hidden; }
-=======
   overflow-y: scroll;
   overflow-x: hidden;
-=======
-  overflow-y: hidden;
->>>>>>> develop
   font-family: Roboto, Helvetica, sans-serif; }
 
 #parent {
   height: 100%; }
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> develop
 
 #header {
   position: fixed;
@@ -145,12 +134,12 @@ body {
   .tasks-header button {
     padding: 5px;
     border-radius: 3px;
-    color: #1AAFD0;
-    background-color: transparent;
+    color: white;
+    background-color: #e9d460;
     margin: auto;
-    border: 1px solid #1AAFD0; }
+    border: 1px solid #e9d460; }
     .tasks-header button:hover {
-      background-color: #1AAFD0;
+      background-color: #d9c559;
       color: white;
       transition: all 0.2s ease-in-out; }
 
@@ -237,10 +226,17 @@ body {
     vertical-align: middle;
     width: 100%; }
     .create-task #create-task-navbar #assign-to {
+      vertical-align: middle;
+      display: block;
       width: 65%; }
       .create-task #create-task-navbar #assign-to:focus, .create-task #create-task-navbar #assign-to:hover {
         border: 1px solid #D3D3D3;
         border-radius: 20px; }
+      .create-task #create-task-navbar #assign-to img {
+        padding-top: 5px;
+        padding-right: 5px;
+        float: left;
+        width: 30px; }
     .create-task #create-task-navbar i {
       vertical-align: middle;
       float: left;
@@ -276,6 +272,11 @@ body {
       text-align: left; }
       .create-task .task-comments .comment-info i {
         width: 20px; }
+      .create-task .task-comments .comment-info img {
+        padding-top: 5px;
+        padding-right: 5px;
+        float: left;
+        width: 35px; }
       .create-task .task-comments .comment-info h4, .create-task .task-comments .comment-info p {
         display: inline-block !important;
         min-width: 100px;
@@ -295,6 +296,13 @@ body {
       padding: 5px;
       vertical-align: middle;
       align-self: center; }
+    .create-task .add-comment img {
+      padding-right: 5px;
+      vertical-align: middle;
+      align-self: center;
+      float: left;
+      width: 50px;
+      height: 50px; }
     .create-task .add-comment textarea {
       height: 100%;
       padding: 2px;

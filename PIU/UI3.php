@@ -44,7 +44,7 @@ include_once "common/header.html";
                     <div class="tasks-card create-task row" id="create-task" style="display: none">
                         <div class="col-xs-12" id="create-task-navbar">
                             <div class="col-xs-12" id="assign-to">
-                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <img src="../assets/avatar5.jpg" class="img-circle">
                                 <textarea placeholder="Assign to" id="task-assign"></textarea>
                             </div>
                             <button class="btn btn-danger" id="delete-button"> Delete </button>
@@ -73,7 +73,7 @@ include_once "common/header.html";
                             </div>
                         <div class="task-comments col-xs-12">
                             <div class="comment-info">
-                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <img src="../assets/avatar6.png" class="img-circle">
                                 <h4>Pedro Costa</h4>
                                 <p>Today at 17:49</p>
                             </div>
@@ -81,7 +81,7 @@ include_once "common/header.html";
 
                         </div>
                         <div class="add-comment" id="add-comment">
-                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <img src="../assets/avatar6.png" class="img-circle">
                             <textarea placeholder="Write a comment..."></textarea>
                             <button class="btn">Add</button>
                         </div>

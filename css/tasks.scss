@@ -65,12 +65,12 @@
   button{
     padding: 5px;
     border-radius: 3px;
-    color: $light_blue;
-    background-color: transparent;
+    color: white;
+    background-color: $color_yellow;
     margin: auto;
-    border: 1px solid $light_blue;
+    border: 1px solid $color_yellow;
     &:hover{
-      background-color: $light_blue;
+      background-color: #d9c559;
       color: white;
       transition: all 0.2s ease-in-out;
     }
@@ -190,11 +190,19 @@
     width: 100%;
 
     #assign-to{
+      vertical-align: middle;
+      display: block;
       width: 65%;
       &:focus,
       &:hover{
         border: 1px solid $light_grey;
         border-radius: 20px;
+      }
+      img{
+        padding-top: 5px;
+        padding-right: 5px;
+        float: left;
+        width:30px;
       }
     }
 
@@ -243,6 +251,12 @@
       i{
         width: 20px;
       }
+      img{
+        padding-top: 5px;
+        padding-right: 5px;
+        float: left;
+        width:35px;
+      }
       h4,p{
         display: inline-block !important;
         min-width: 100px;
@@ -265,6 +279,14 @@
       padding: 5px;
       vertical-align: middle;
       align-self: center;
+    }
+    img{
+      padding-right: 5px;
+      vertical-align: middle;
+      align-self: center;
+      float: left;
+      width:50px;
+      height: 50px;
     }
     textarea{
       height: 100%;
