@@ -27,14 +27,17 @@ include_once "common/header.html";
                         <div class="row">
                             <div class="col-xs-5 col-sm-offset-1 specify_padding ">
                                 <div class="meeting">
+                                    <div class="header">
+                                          <span id="see_more" class="pull-right glyphicon glyphicon-chevron-right"
+                                               aria-hidden="true"></span>
+                                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                            <label class="date">28.02.2018</label><br>
+                                            <label class="description">Discussion about Summer Internships </label><br>
+
+                                    </div>
                                     <div class="information_meeting"><br>
-                                        <span id="see_more" class="glyphicon glyphicon-zoom-in"
-                                              aria-hidden="true"></span>
-                                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                                        <label class="date">28.02.2018</label><br>
                                         <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                         <label class="hour">7:00PM</label><br>
-                                        <label class="description">Discussion about Summer Internships </label><br>
                                         <label class="user_responsible">Maria Joao Mira Paulo</label><br>
                                         <label class="guests">
                                             <img class="user_photo" src="../assets/avatar2.png">
@@ -52,13 +55,19 @@ include_once "common/header.html";
                             <div class="col-xs-5 specify_padding"
                             ">
                             <div class="meeting">
-                                <div class="information_meeting"><br>
-                                    <span id="see_more" class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                                <div class="header">
+                                    <span id="see_more" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                     <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                                     <label class="date">30.02.2018</label><br>
+                                    <label class="description">New Interns</label><br>
+
+                                </div>
+                                <div class="information_meeting"><br>
+
+
                                     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                     <label class="hour">3:00PM</label><br>
-                                    <label class="description">New Interns</label><br>
+
                                     <label class="user_responsible">Edgar Passos</label><br>
                                     <label class="guests">
                                         <img class="user_photo" src="../assets/avatar3.png">
@@ -75,13 +84,15 @@ include_once "common/header.html";
                     <div class="row">
                         <div class="col-xs-5 col-sm-offset-1 specify_padding ">
                             <div class="meeting">
-                                <div class="information_meeting"><br>
-                                    <span id="see_more" class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                                <div class="header">
+                                    <span id="see_more" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                     <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                                     <label class="date">03.03.2018</label><br>
+                                    <label class="description">ITK Project</label><br>
+                                </div>
+                                <div class="information_meeting"><br>
                                     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                     <label class="hour">7:00PM</label><br>
-                                    <label class="description">ITK Project</label><br>
                                     <label class="user_responsible">Edgar Passos</label><br>
                                     <label class="guests">
                                         <img class="user_photo" src="../assets/avatar3.png">
@@ -100,13 +111,15 @@ include_once "common/header.html";
                         <div class="col-xs-5 specify_padding"
                         ">
                         <div class="meeting">
-                            <div class="information_meeting"><br>
-                                <span id="see_more" class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                            <div class="header">
+                                <span id="see_more" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                                 <label class="date">15.04.2018</label><br>
+                                <label class="description">Planing new project </label><br>
+                            </div>
+                            <div class="information_meeting"><br>
                                 <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                 <label class="hour">8:00PM</label><br>
-                                <label class="description">Planing new project </label><br>
                                 <label class="user_responsible">Pedro Costa</label><br>
                                 <label class="guests">
                                     <img class="user_photo" src="../assets/avatar3.png">
@@ -129,56 +142,32 @@ include_once "common/header.html";
                 <button class="trash"><span id="trash" class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                 </button>
             </div>
-            <div class="form_meeting">
+            <div class="form-meeting" id="create-meeting-settings">
                 <form class="new_meeting" method="post" action="" enctype="multipart/form-data">
-                    <div class="form-meeting" id="create-meeting-settings">
-                        <div class="col-xs-10 nopadding inputs_meetings">
-                            <span class="input-title"></span>
-                            <input type="text" class="form-control" placeholder="Choose a creative Title">
-                        </div>
-                        <div class="col-xs-8 nopadding inputs_meetings input-group date">
-                            <span class="input-group-addon glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-xs-8 metting-design nopadding particpants_meeting">
-                            <span class="input-group-addon glyphicon glyphicon-user" aria-hidden="true"></span>
-                            <select class="select2-multiple form-control" multiple="multiple">
-                                <option value="M">Marketing</option>
-                                <option value="L">Logistics</option>
-                                <option value="S">Sponsors</option>
-                            </select>
-                        </div>
+                    <div class="title">
+                        <input type="text" class="form-control" placeholder="Choose a creative Title">
                     </div>
-                    <!-- <div class="input-group task-tags">
-                         <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                         <select class="select2-multiple form-control" multiple="multiple">
-                             <option value="M">Marketing</option>
-                             <option value="L">Logistics</option>
-                             <option value="S">Sponsors</option>
-                         </select>
-                     </div>-->
+                    <div class="calendar">
+                        <span class="meetings_icon glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="atendees">
+                        <span class="meetings_icon glyphicon glyphicon-user" aria-hidden="true"></span>
+                        <input type="text" class="form-control">
+                    </div>
+
+                </form>
+                <!-- <div class="input-group task-tags">
+                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                     <select class="select2-multiple form-control" multiple="multiple">
+                         <option value="M">Marketing</option>
+                         <option value="L">Logistics</option>
+                         <option value="S">Sponsors</option>
+                     </select>
+                 </div>-->
             </div>
-            <!-- <label>Meeting Time:</label>
-             <input class="time" type="time" name="lastname" placeholder=""><br>
-             <label>Atendees:</label>
-             <input class="atendees" type="text" name="lastname" placeholder="Add/Remove Participants"><br>
-             <label>Agenda:</label><br>
-             <div class="col-xs-10 col-sm-offset-1">
-                 <textarea class="agenda" rows="3" cols="55"></textarea><br>
-             </div>
-             <label>Minutes:</label>
-             <input class="minutes" type="number" name="lastname" placeholder="Duration"><br>-->
-            <!--  <label>Important Files:</label>
-              <div class="col-xs-10 box_input text-center col-sm-offset-1">
-                  <input class="box_file" type="file" name="files[]" id="file"
-                         data-multiple-caption="{count} files selected" multiple/><br><br>
-                  <label for="file"><strong>Choose a file</strong><span class=" text-center box_dragndrop"> or drag it here</span>.</label>
-                  <br><br><button class="box_button" type="submit">Upload</button>-->
         </div>
-        </form>
     </div>
-</div>
-</div>
 </div>
 
 

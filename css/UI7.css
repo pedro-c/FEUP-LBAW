@@ -124,11 +124,21 @@ body {
       padding-right: 0px !important;
       margin-bottom: 15px; }
     #page-meetings #future_meetings .meetings .meeting {
-      padding-left: 25px;
       border-radius: 5px;
       vertical-align: middle;
-      padding-top: 4px;
-      background-color: #ecf0f1; }
+      background-color: #ecf0f1;
+      position: relative;
+      padding: 90px 0 30px 25px; }
+      #page-meetings #future_meetings .meetings .meeting .header {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding: 20px 30px 10px 10px;
+        background-color: #22313f;
+        color: white;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0; }
       #page-meetings #future_meetings .meetings .meeting #see_more {
         font-size: 24px;
         float: right;
@@ -207,9 +217,10 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   background-color: white;
-  margin-top: 4%; }
+  margin-top: 4%;
+  padding: 20px; }
   #page-meetings #schedule_meeting .button_trash {
-    margin: 20px 20px 20px 20px; }
+    margin: 0 0 20px 0; }
     #page-meetings #schedule_meeting .button_trash .trash {
       padding: 4px 20px 4px 20px;
       color: white;
@@ -223,32 +234,24 @@ body {
         border: 2px solid;
         border-color: #c0392b;
         color: #c0392b; }
-#page-meetings #create-meeting-settings {
-  display: inline-block; }
-  #page-meetings #create-meeting-settings i, #page-meetings #create-meeting-settings input, #page-meetings #create-meeting-settings select {
-    padding: 0px 10px 0px 10px;
-    float: left; }
-  #page-meetings #create-meeting-settings span {
+#page-meetings #create-meeting-settings .new_meeting .calendar {
+  height: 30px;
+  display: flex;
+  text-align: center;
+  vertical-align: middle; }
+  #page-meetings #create-meeting-settings .new_meeting .calendar span {
+    vertical-align: middle;
     width: 50px;
-    font-size: small; }
-  #page-meetings #create-meeting-settings input {
-    top: 1px; }
-  #page-meetings #create-meeting-settings .metting-design {
-    text-align: start;
-    padding: 5px;
-    width: 200px; }
-    #page-meetings #create-meeting-settings .metting-design span {
-      width: 100% !important;
-      border-bottom-left-radius: 0px;
-      border-top-left-radius: 0px; }
-      #page-meetings #create-meeting-settings .metting-design span li > span {
-        display: inline !important; }
-    #page-meetings #create-meeting-settings .metting-design span.input-group-addon {
-      width: 50px !important;
-      border-bottom-left-radius: 4px !important;
-      border-top-left-radius: 4px !important; }
-#page-meetings .inputs_meetings {
-  margin-bottom: 25px !important; }
+    border: solid 1px grey;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: #D3D3D3;
+    text-align: center; }
+  #page-meetings #create-meeting-settings .new_meeting .calendar input {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px; }
+#page-meetings #create-meeting-settings .new_meeting .atendees {
+  display: flex; }
 
 .datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-bottom {
   margin-top: 60px;
