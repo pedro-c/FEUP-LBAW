@@ -16,15 +16,15 @@ include_once "common/header.html";
         </div>
     </div>
 
-    <div class="container_meetings">
+    <div class="container_meetings container">
         <div class="row">
-            <div id="container_meetings" class="container">
+            <div id="container_meetings">
                 <div id="future_meetings">
                     <div class="text-center button_scheduale">
                         <button class="schedule" onclick="schedule()">Schedule Meeting</button>
                     </div>
-                    <div class="meetings">
-                        <div class="col-xs-6 panel panel-default meeting">
+                    <div class="meetings">2
+                        <div class="col-lg-6 col-xs-6 panel panel-default meeting">
                             <div class="panel-heading">
                                     <span id="see_more" class="glyphicon glyphicon-chevron-right"
                                           aria-hidden="true"></span>
@@ -52,7 +52,7 @@ include_once "common/header.html";
                             </div>
                         </div>
 
-                        <div class="col-xs-6 col-sm-offset-1 panel panel-default meeting">
+                        <div class="col-lg-6 col-xs-6 panel panel-default meeting">
                             <div class="panel-heading">
                                     <span id="see_more" class="glyphicon glyphicon-chevron-right"
                                           aria-hidden="true"></span>
@@ -79,6 +79,12 @@ include_once "common/header.html";
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
                     <!-- <div class="col-xs-5 specify_padding"
                      ">
                      <div class="meeting">
@@ -105,56 +111,29 @@ include_once "common/header.html";
                          </div>
                      </div>
                  </div>-->
-                </div>
 
-                <div class="row">
-                    <!--  <div class="col-xs-5 col-sm-offset-1 specify_padding ">
-                          <div class="meeting">
-                              <div class="header">
-                                  <span id="see_more" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                  <div class="padding">
-                                      <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                                      <label class="date">15.04.2018</label><br>
-                                      <label class="description">Planing new project </label><br>
-                                  </div>
-                              </div>
-                              <div class="information_meeting"><br>
-                                  <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                  <label class="hour">7:00PM</label><br>
-                                  <label class="user_responsible">Edgar Passos</label><br>
-                                  <label class="guests">
-                                      <img class="user_photo" src="../assets/avatar3.png">
-                                      <img class="user_photo" src="../assets/avatar6.png">
-                                      <img class="user_photo" src="../assets/avatar1.png">
-                                      <img class="user_photo" src="../assets/avatar2.png">
-                                      <img class="user_photo" src="../assets/avatar4.png">
-                                      <span id="plus_user" class="glyphicon glyphicon-plus-sign"
-                                            aria-hidden="true"></span>
-                                  </label>
-                                  <br>
-                              </div>
-                          </div>
-                      </div>
 
-                      <div class="col-xs-5 specify_padding"
-                      ">
+
+                <!--  <div class="col-xs-5 col-sm-offset-1 specify_padding ">
                       <div class="meeting">
                           <div class="header">
                               <span id="see_more" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                               <div class="padding">
-                              <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                              <label class="date">15.04.2018</label><br>
-                              <label class="description">Planing new project </label><br>
+                                  <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                  <label class="date">15.04.2018</label><br>
+                                  <label class="description">Planing new project </label><br>
                               </div>
                           </div>
                           <div class="information_meeting"><br>
                               <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                              <label class="hour">8:00PM</label><br>
-                              <label class="user_responsible">Pedro Costa</label><br>
+                              <label class="hour">7:00PM</label><br>
+                              <label class="user_responsible">Edgar Passos</label><br>
                               <label class="guests">
                                   <img class="user_photo" src="../assets/avatar3.png">
                                   <img class="user_photo" src="../assets/avatar6.png">
                                   <img class="user_photo" src="../assets/avatar1.png">
+                                  <img class="user_photo" src="../assets/avatar2.png">
+                                  <img class="user_photo" src="../assets/avatar4.png">
                                   <span id="plus_user" class="glyphicon glyphicon-plus-sign"
                                         aria-hidden="true"></span>
                               </label>
@@ -162,10 +141,36 @@ include_once "common/header.html";
                           </div>
                       </div>
                   </div>
+
+                  <div class="col-xs-5 specify_padding"
+                  ">
+                  <div class="meeting">
+                      <div class="header">
+                          <span id="see_more" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                          <div class="padding">
+                          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                          <label class="date">15.04.2018</label><br>
+                          <label class="description">Planing new project </label><br>
+                          </div>
+                      </div>
+                      <div class="information_meeting"><br>
+                          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                          <label class="hour">8:00PM</label><br>
+                          <label class="user_responsible">Pedro Costa</label><br>
+                          <label class="guests">
+                              <img class="user_photo" src="../assets/avatar3.png">
+                              <img class="user_photo" src="../assets/avatar6.png">
+                              <img class="user_photo" src="../assets/avatar1.png">
+                              <span id="plus_user" class="glyphicon glyphicon-plus-sign"
+                                    aria-hidden="true"></span>
+                          </label>
+                          <br>
+                      </div>
+                  </div>
               </div>
           </div>
-      </div>-->
-                </div>
+      </div>
+  </div>-->
                 <div id="container_schedule_meeting" hidden>
                     <div id="schedule_meeting">
                         <div class="button_trash pull-right">

@@ -69,15 +69,14 @@
         border-radius: 5px;
         vertical-align: middle;
         background-color: $white;
-        position: relative;
+
 
         .panel-heading{
           width: 100%;
           padding-left: 30px !important;
           padding-right: 0px !important;
           padding-top: 15px;
-          border-radius: 5px;
-          background-color: $blue_secondary;
+          background-color: $color_ebony_clay;
           color: white;
 
           &:hover{

@@ -127,14 +127,12 @@ body {
     #page-meetings #future_meetings .meetings .meeting {
       border-radius: 5px;
       vertical-align: middle;
-      background-color: #fff;
-      position: relative; }
+      background-color: #fff; }
       #page-meetings #future_meetings .meetings .meeting .panel-heading {
         width: 100%;
         padding-left: 30px !important;
         padding-right: 0px !important;
         padding-top: 15px;
-        border-radius: 5px;
         background-color: #22313f;
         color: white; }
         #page-meetings #future_meetings .meetings .meeting .panel-heading:hover {
