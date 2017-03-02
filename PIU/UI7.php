@@ -149,7 +149,7 @@ include_once "common/header.html";
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="button_trash">
-                        <button class="trash"><span id="trash" class="glyphicon glyphicon-trash"
+                        <button class="trash" onclick="exit_trash()"><span id="trash" class="glyphicon glyphicon-trash"
                                                     aria-hidden="true"></span>
                         </button>
                     </div>
@@ -186,21 +186,24 @@ include_once "common/header.html";
                                 </div>
                             </div>-->
 
-                            <div class="box drag_here text-center">
+                            <div class="box drag_here text-center hidden-xs">
                                 <div>
                                 <span class="glyphicon glyphicon-plus"></span>
                                 <br>
                                 <span class="info"> Drag Files Here </span>
                                 </div>
                             </div>
+                            <div class="text-center">
+                                <input id="submit" type="submit" value="Submit" style="margin-top: 20px;">
+                            </div>
 
                         </form>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
+    <div id="mobile-back" class="hidden-lg hidden-md hidden-sm navbar navbar-default navbar-fixed-bottom" onclick="exitMobile()" hidden><h4>« Back</h4></div>
 </div>
 
 

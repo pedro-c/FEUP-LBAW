@@ -77,6 +77,18 @@ body {
   text-align: center;
 }
 
+#mobile-back {
+  border-color: $color_ebony_clay;
+  background-color: $color_ebony_clay;
+  color: #fafafa;
+  text-align: center;
+  vertical-align: middle;
+
+  :hover {
+    cursor: pointer;
+  }
+}
+
 @media(min-width:768px) {
 
   #parent {

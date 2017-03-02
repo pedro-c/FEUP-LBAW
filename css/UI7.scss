@@ -7,6 +7,8 @@
 
 #page-meetings {
 
+  height: 100%;
+
   .nopadding {
     padding: 0 !important;
   }
@@ -170,6 +172,7 @@
     }
 
     .form_meeting {
+
       .new_meeting {
         margin-top: 10px;
         padding-left: 25px;
@@ -370,4 +373,20 @@
 
 
   }
+
+  #submit{
+    padding: 4px 20px 4px 20px;
+    color: white;
+    background-color: $color_yellow;
+    border: none;
+    border-radius: 5px;
+    align-self: center;
+    outline: 0;
+
+    &:hover {
+      background-color: $blue_secondary;
+      border: none;
+    }
+  }
+
 }
