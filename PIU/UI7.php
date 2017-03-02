@@ -25,12 +25,14 @@ include_once "common/header.html";
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
                         <div class="panel-heading">
-                                    <span id="see_more" class="glyphicon glyphicon-chevron-right"
-                                          aria-hidden="true"></span>
                             <div class="padding">
                                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
                                 <label class="date">15.04.2018</label><br>
                                 <label class="description">Planing new project </label><br>
+                            </div>
+                            <div class="align_middle">
+                                <span id="see_more" class="glyphicon glyphicon-chevron-right"
+                                      aria-hidden="true"></span>
                             </div>
                         </div>
                         <div class="panel-body">
@@ -55,12 +57,15 @@ include_once "common/header.html";
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
                         <div class="panel-heading">
-                                    <span id="see_more" class="glyphicon glyphicon-chevron-right"
-                                          aria-hidden="true"></span>
+
                             <div class="padding">
                                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
                                 <label class="date">15.04.2018</label><br>
                                 <label class="description">New Interns - Projects and Resumes </label><br>
+                            </div>
+                            <div class="align_middle">
+                                    <span id="see_more" class="glyphicon glyphicon-chevron-right"
+                                          aria-hidden="true"></span>
                             </div>
                         </div>
                         <div class="panel-body">
@@ -87,12 +92,14 @@ include_once "common/header.html";
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
                         <div class="panel-heading">
-                                    <span id="see_more" class="glyphicon glyphicon-chevron-right"
-                                          aria-hidden="true"></span>
                             <div class="padding">
                                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
                                 <label class="date">15.04.2018</label><br>
                                 <label class="description">Planing new project </label><br>
+                            </div>
+                            <div class="align_middle">
+                                    <span id="see_more" class="glyphicon glyphicon-chevron-right"
+                                          aria-hidden="true"></span>
                             </div>
                         </div>
                         <div class="panel-body">
@@ -114,13 +121,14 @@ include_once "common/header.html";
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
                         <div class="panel-heading">
-                                    <span id="see_more" class="glyphicon glyphicon-chevron-right"
-                                          aria-hidden="true"></span>
                             <div class="padding">
                                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
                                 <label class="date">15.04.2018</label><br>
                                 <label class="description">New Interns - Projects and Resumes </label><br>
                             </div>
+                            <div class="align_middle">
+                                    <span id="see_more" class="glyphicon glyphicon-chevron-right"
+                                          aria-hidden="true"></span></div>
                         </div>
                         <div class="panel-body">
                             <div class="information_meeting"><br>
