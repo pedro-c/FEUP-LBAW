@@ -169,14 +169,17 @@ include_once "common/header.html";
                             <div class="title">
                                 <input type="text" class="form-control" placeholder="Choose a creative Title">
                             </div>
-                            <div class="calendar">
-                                        <span class="meetings_icon glyphicon glyphicon-calendar"
-                                              aria-hidden="true"></span>
-                                <input type="text" class="form-control" placeholder="Choose a date">
+                            <div class="calendar input-group date">
+                                <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                <input type="text" class="form-control">
                             </div>
                             <div class="atendees">
                                 <span class="meetings_icon glyphicon glyphicon-user" aria-hidden="true"></span>
-                                <input type="text" class="form-control" placeholder="Invite Participants">
+                                <select class="select2-multiple form-control" multiple="multiple" placeholder="Invite Participants">
+                                    <option value="P">Pedro</option>
+                                    <option value="J">João</option>
+                                    <option value="E">Edgar</option>
+                                </select>
                             </div>
                             <div class="minutes">
                                 <span class="meetings_icon glyphicon glyphicon-time" aria-hidden="true"></span>
