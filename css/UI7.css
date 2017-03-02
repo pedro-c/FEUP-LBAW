@@ -239,9 +239,12 @@ body {
 #page-meetings #create-meeting-settings .new_meeting .calendar {
   text-align: center;
   vertical-align: middle;
-  height: 30px;
+  height: 34px;
   display: table;
   margin-bottom: 20px; }
+  #page-meetings #create-meeting-settings .new_meeting .calendar input.form-control {
+    top: 1px;
+    height: 34px; }
   #page-meetings #create-meeting-settings .new_meeting .calendar span {
     width: 60px;
     border: solid 1px #bebebe;
@@ -258,10 +261,15 @@ body {
 #page-meetings #create-meeting-settings .new_meeting .atendees, #page-meetings #create-meeting-settings .new_meeting .minutes {
   text-align: center;
   vertical-align: middle;
-  height: 30px;
+  height: 34px;
   display: table;
   margin-bottom: 20px; }
-  #page-meetings #create-meeting-settings .new_meeting .atendees span, #page-meetings #create-meeting-settings .new_meeting .minutes span {
+  #page-meetings #create-meeting-settings .new_meeting .atendees span.select2, #page-meetings #create-meeting-settings .new_meeting .minutes span.select2 {
+    top: 1px; }
+  #page-meetings #create-meeting-settings .new_meeting .atendees span.select2-selection, #page-meetings #create-meeting-settings .new_meeting .minutes span.select2-selection {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; }
+  #page-meetings #create-meeting-settings .new_meeting .atendees span.meetings_icon, #page-meetings #create-meeting-settings .new_meeting .minutes span.meetings_icon {
     width: 60px;
     border: solid 1px #bebebe;
     border-top-left-radius: 3px;
@@ -269,10 +277,8 @@ body {
     background-color: #ecf0f1;
     text-align: center;
     display: table-cell;
-    vertical-align: middle;
-    padding-bottom: 10px; }
+    vertical-align: middle; }
   #page-meetings #create-meeting-settings .new_meeting .atendees input, #page-meetings #create-meeting-settings .new_meeting .minutes input {
-    height: 30px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px; }
 #page-meetings #create-meeting-settings .new_meeting .agenda {

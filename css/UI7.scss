@@ -259,11 +259,15 @@
       .calendar{
         text-align: center;
         vertical-align: middle;
-        height: 30px;
+        height: 34px;
         display:table;
 
         margin-bottom: 20px;
 
+        input.form-control{
+          top: 1px;
+          height: 34px;
+        }
         span{
           width: 60px;
           border: solid 1px #bebebe;
@@ -285,11 +289,20 @@
       .atendees,.minutes{
         text-align: center;
         vertical-align: middle;
-        height: 30px;
+        height: 34px;
         display:table;
         margin-bottom: 20px;
 
-        span{
+        span.select2{
+          top: 1px;
+        }
+
+        span.select2-selection{
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+
+        span.meetings_icon{
           width: 60px;
           border: solid 1px #bebebe;
           border-top-left-radius: 3px;
@@ -298,11 +311,9 @@
           text-align: center;
           display:table-cell;
           vertical-align:middle;
-          padding-bottom: 10px;
         }
 
         input{
-          height: 30px;
           border-top-left-radius: 0px;
           border-bottom-left-radius: 0px;
         }
@@ -360,10 +371,6 @@
       }
 
       .meetings_icon{
-
-      }
-
-      input.form-control{
 
       }
     }

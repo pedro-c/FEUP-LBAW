@@ -3,7 +3,8 @@ $(document).ready(function () {
 
     $('.input-group.date').datepicker({
         format: "dd/M/yyyy",
-        todayHighlight: true
+        todayHighlight: true,
+        orientation: "bottom left"
     });
 
     $(".select2-multiple").select2();
