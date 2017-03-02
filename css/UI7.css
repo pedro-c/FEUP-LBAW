@@ -101,9 +101,8 @@ body {
     border-bottom: 4px solid;
     border-bottom-color: #e9d460; }
 #page-meetings #future_meetings {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-  background-color: white;
+  border: none;
+  background-color: transparent;
   margin-top: 4%;
   padding-bottom: 4%;
   overflow-y: scroll !important; }
@@ -113,65 +112,61 @@ body {
     #page-meetings #future_meetings .button_scheduale .schedule {
       padding: 4px 20px 4px 20px;
       color: white;
-      background-color: #22313f;
+      background-color: #e9d460;
       border: none;
       border-radius: 5px;
       align-self: center;
       outline: 0; }
       #page-meetings #future_meetings .button_scheduale .schedule:hover {
-        background-color: #e9d460;
+        background-color: #22313f;
         border: none; }
   #page-meetings #future_meetings .meetings {
     margin-top: 10px; }
-    #page-meetings #future_meetings .meetings .specify_padding {
-      padding-left: 20px !important;
-      padding-right: 0px !important;
-      margin-bottom: 15px; }
+    #page-meetings #future_meetings .meetings .panel {
+      padding: 0 !important; }
     #page-meetings #future_meetings .meetings .meeting {
       border-radius: 5px;
       vertical-align: middle;
-      background-color: #ecf0f1;
-      position: relative;
-      padding: 90px 0 30px 25px; }
-      #page-meetings #future_meetings .meetings .meeting .header {
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        padding: 20px 30px 10px 10px;
-        background-color: #22313f;
-        color: white;
+      background-color: #fff;
+      position: relative; }
+      #page-meetings #future_meetings .meetings .meeting .panel-heading {
         width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0; }
-        #page-meetings #future_meetings .meetings .meeting .header .padding {
-          padding-left: 20px !important; }
-        #page-meetings #future_meetings .meetings .meeting .header .see_more {
-          padding-right: 20px !important; }
-      #page-meetings #future_meetings .meetings .meeting #see_more {
-        font-size: 24px;
-        float: right;
-        margin-right: 30px;
-        font-weight: normal;
-        cursor: pointer; }
-      #page-meetings #future_meetings .meetings .meeting .information_meeting .hour {
-        font-size: large; }
-      #page-meetings #future_meetings .meetings .meeting .information_meeting #plus_user {
-        color: #e9d460;
-        font-size: 26px;
-        cursor: pointer; }
-      #page-meetings #future_meetings .meetings .meeting .information_meeting .date {
-        font-size: large;
-        font-weight: bold;
-        padding-left: 25px; }
-      #page-meetings #future_meetings .meetings .meeting .information_meeting .user_responsible {
-        font-weight: normal;
-        font-size: small; }
-      #page-meetings #future_meetings .meetings .meeting .information_meeting .guests {
-        padding-top: 10px; }
-        #page-meetings #future_meetings .meetings .meeting .information_meeting .guests .user_photo {
-          margin-right: 5px;
-          width: 25px;
-          float: left; }
+        padding-left: 30px !important;
+        padding-right: 0px !important;
+        padding-top: 15px;
+        border-radius: 5px;
+        background-color: #22313f;
+        color: white; }
+        #page-meetings #future_meetings .meetings .meeting .panel-heading:hover {
+          background-color: #e9d460; }
+        #page-meetings #future_meetings .meetings .meeting .panel-heading #see_more {
+          font-size: 24px;
+          float: right;
+          margin-right: 30px;
+          cursor: pointer;
+          vertical-align: middle; }
+      #page-meetings #future_meetings .meetings .meeting .panel-body {
+        padding-left: 30px !important;
+        padding-top: 0px !important; }
+        #page-meetings #future_meetings .meetings .meeting .panel-body .information_meeting .hour {
+          font-size: large; }
+        #page-meetings #future_meetings .meetings .meeting .panel-body .information_meeting #plus_user {
+          color: #e9d460;
+          font-size: 30px;
+          cursor: pointer; }
+        #page-meetings #future_meetings .meetings .meeting .panel-body .information_meeting .date {
+          font-size: large;
+          font-weight: bold;
+          padding-left: 25px; }
+        #page-meetings #future_meetings .meetings .meeting .panel-body .information_meeting .user_responsible {
+          font-weight: normal;
+          font-size: small; }
+        #page-meetings #future_meetings .meetings .meeting .panel-body .information_meeting .guests {
+          padding-top: 10px; }
+          #page-meetings #future_meetings .meetings .meeting .panel-body .information_meeting .guests .user_photo {
+            margin-right: 5px;
+            width: 30px;
+            float: left; }
 #page-meetings .form_meeting label {
   margin-bottom: 20px; }
 #page-meetings .form_meeting .new_meeting {
@@ -285,12 +280,26 @@ body {
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px; }
 #page-meetings #create-meeting-settings .new_meeting .agenda {
-  background-color: #ecf0f1;
+  background-color: white;
   border-radius: 5px;
   padding: 20px; }
   #page-meetings #create-meeting-settings .new_meeting .agenda textarea {
     width: 100%;
     height: 90px;
     overflow-y: scroll; }
+  #page-meetings #create-meeting-settings .new_meeting .agenda button {
+    background-color: #22313f;
+    border-radius: 5px;
+    border-color: transparent;
+    color: white; }
+    #page-meetings #create-meeting-settings .new_meeting .agenda button:hover {
+      background-color: #e9d460; }
+#page-meetings #create-meeting-settings .new_meeting .box.drag_here {
+  vertical-align: middle;
+  border-radius: 5px;
+  height: 150px;
+  margin-top: 20px;
+  border: 1px dashed grey;
+  background-color: #ecf0f1; }
 
 /*# sourceMappingURL=UI7.css.map */

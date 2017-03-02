@@ -32,9 +32,8 @@
   }
 
   #future_meetings {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    background-color: white;
+    border: none;
+    background-color: transparent;
     margin-top: 4%;
     padding-bottom: 4%;
     overflow-y: scroll !important;
@@ -46,14 +45,14 @@
       .schedule {
         padding: 4px 20px 4px 20px;
         color: white;
-        background-color: $blue_secondary;
+        background-color: $color_yellow;
         border: none;
         border-radius: 5px;
         align-self: center;
         outline: 0;
 
         &:hover {
-          background-color: $color_yellow;
+          background-color: $blue_secondary;
           border: none;
         }
       }
@@ -62,83 +61,77 @@
     .meetings {
       margin-top: 10px;
 
-      .specify_padding {
-        padding-left: 20px !important;
-        padding-right: 0px !important;
-        margin-bottom: 15px;
+      .panel{
+        padding: 0 !important;
       }
 
       .meeting {
         border-radius: 5px;
         vertical-align: middle;
-        background-color: $background_white;
+        background-color: $white;
         position: relative;
-        padding: 90px 0 30px 25px;
 
-        .header{
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-          padding: 20px 30px 10px 10px;
+        .panel-heading{
+          width: 100%;
+          padding-left: 30px !important;
+          padding-right: 0px !important;
+          padding-top: 15px;
+          border-radius: 5px;
           background-color: $blue_secondary;
           color: white;
-          width: 100%;
-          position: absolute;
-          top:0;
-          left: 0;
 
-          .padding{
-            padding-left: 20px !important;
+          &:hover{
+            background-color: $color_yellow;
           }
 
-
-          .see_more{
-            padding-right: 20px !important;
-          }
-        }
-
-        #see_more {
-          font-size: 24px;
-          float: right;
-          margin-right: 30px;
-          font-weight: normal;
-          cursor: pointer;
-        }
-
-        .information_meeting {
-
-          .hour {
-            font-size: large;
-
-          }
-
-          #plus_user {
-            color: $color_yellow;
-            font-size: 26px;
+          #see_more {
+            font-size: 24px;
+            float: right;
+            margin-right: 30px;
             cursor: pointer;
+            vertical-align: middle;
           }
-
-          .date {
-            font-size: large;
-            font-weight: bold;
-            padding-left: 25px;
-          }
-
-          .user_responsible {
-            font-weight: normal;
-            font-size: small;
-          }
-
-          .guests {
-            padding-top: 10px;
-            .user_photo {
-              margin-right: 5px;
-              width: 25px;
-              float: left;
-            }
-          }
-
         }
 
+        .panel-body{
+          padding-left: 30px !important;
+          padding-top: 0px !important;
+
+
+          .information_meeting {
+
+            .hour {
+              font-size: large;
+            }
+
+            #plus_user {
+              color: $color_yellow;
+              font-size: 30px;
+              cursor: pointer;
+            }
+
+            .date {
+              font-size: large;
+              font-weight: bold;
+              padding-left: 25px;
+            }
+
+            .user_responsible {
+              font-weight: normal;
+              font-size: small;
+            }
+
+            .guests {
+              padding-top: 10px;
+              .user_photo {
+                margin-right: 5px;
+                width: 30px;
+                float: left;
+              }
+            }
+
+          }
+        }
       }
     }
   }
@@ -316,7 +309,7 @@
 
       .agenda{
 
-        background-color: $background_white;
+        background-color: white;
         border-radius: 5px;
         padding: 20px;
         textarea{
@@ -324,7 +317,26 @@
           height: 90px;
           overflow-y: scroll;
         }
+        button{
+          background-color: $blue_secondary;
+          border-radius: 5px;
+          border-color: transparent;
+          color: white;
+          &:hover{
+            background-color: $color_yellow;
+          }
+        }
 
+      }
+
+
+      .box.drag_here{
+        vertical-align: middle;
+        border-radius: 5px;
+        height: 150px;
+        margin-top: 20px;
+        border: 1px dashed grey;
+        background-color: $background_white;
       }
 
       .meetings_icon{
