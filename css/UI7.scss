@@ -31,16 +31,16 @@
     }
   }
 
-  #future_meetings {
+  .container_meetings {
     border: none;
     background-color: transparent;
-    margin-top: 4%;
+    margin-top: 1%;
     padding-bottom: 4%;
     overflow-y: scroll !important;
 
     .button_scheduale {
       padding-top: 20px;
-      padding-bottom: 20px;
+      padding-bottom: 40px;
 
       .schedule {
         padding: 4px 20px 4px 20px;
@@ -58,178 +58,103 @@
       }
     }
 
-    .meetings {
-      margin-top: 10px;
+    .meeting {
+      border-radius: 5px;
+      vertical-align: middle;
+      background-color: $white;
 
-      .panel{
-        padding: 0 !important;
-      }
+      .panel-heading{
+        font-weight: lighter;
+        width: 100%;
+        padding-left: 30px !important;
+        padding-right: 0px !important;
+        padding-top: 10px;
+        background-color: $color_ebony_clay;
+        color: white;
 
-      .meeting {
-        border-radius: 5px;
-        vertical-align: middle;
-        background-color: $white;
-
-
-        .panel-heading{
-          width: 100%;
-          padding-left: 30px !important;
-          padding-right: 0px !important;
-          padding-top: 15px;
-          background-color: $color_ebony_clay;
-          color: white;
-
-          &:hover{
-            background-color: $color_yellow;
-          }
-
-          #see_more {
-            font-size: 24px;
-            float: right;
-            margin-right: 30px;
-            cursor: pointer;
-            vertical-align: middle;
-          }
+        &:hover{
+          background-color: $color_yellow;
         }
 
-        .panel-body{
-          padding-left: 30px !important;
-          padding-top: 0px !important;
+        #see_more {
+          font-size: 24px;
+          float: right;
+          margin-right: 30px;
+          cursor: pointer;
+          vertical-align: middle;
+        }
+
+        .description{
+          font-weight: normal;
+        }
+
+        .date {
+          font-size: large;
+          font-weight: normal;
+        }
+
+        i{
+          font-size: large;
+        }
+      }
+
+      .panel-body{
+        padding-left: 30px !important;
+        padding-top: 0px !important;
 
 
-          .information_meeting {
+        .information_meeting {
 
-            .hour {
-              font-size: large;
-            }
-
-            #plus_user {
-              color: $color_yellow;
-              font-size: 30px;
-              cursor: pointer;
-            }
-
-            .date {
-              font-size: large;
-              font-weight: bold;
-              padding-left: 25px;
-            }
-
-            .user_responsible {
-              font-weight: normal;
-              font-size: small;
-            }
-
-            .guests {
-              padding-top: 10px;
-              .user_photo {
-                margin-right: 5px;
-                width: 30px;
-                float: left;
-              }
-            }
-
+          .hour {
+            font-size: large;
+            font-weight: normal;
           }
+
+          #plus_user {
+            color: $color_yellow;
+            font-size: 35px;
+            cursor: pointer;
+          }
+
+          .user_responsible {
+            font-weight: normal;
+            padding-bottom: 5px;
+          }
+
+          .guests {
+            padding-top: 10px;
+            .user_photo {
+              margin-right: 5px;
+              width: 35px;
+              float: left;
+            }
+          }
+
         }
       }
     }
+
   }
 
-  .form_meeting {
+  #container_schedule_meeting{
 
-    label {
-      margin-bottom: 20px;
-    }
-
-    .new_meeting {
-      margin-top: 10px;
-      padding-left: 25px;
-      padding-bottom: 190px;
-      padding-top: 50px;
-
-      .title {
-        background-color: transparent;
-        border: none;
-        outline: 0;
-        padding-bottom: 15px;
+    .panel-heading{
+      background-color: $color_yellow;
+      color: white;
+      span{
         font-size: medium;
       }
-
-      .date {
-        background-color: transparent;
-        border: none;
-        outline: 0;
-      }
-
-      .time {
-        background-color: transparent;
-        border: none;
-        outline: 0;
-      }
-
-      .atendees {
-        background-color: transparent;
-        border: none;
-        outline: 0;
-      }
-
-      .agenda {
-        margin-bottom: 20px;
-      }
-
-      textarea.agenda {
-        background-color: transparent;
-        outline: 0;
-
-      }
-
-      .minutes {
-        background-color: transparent;
-        border: none;
-        outline: 0;
-      }
-
-      .file {
-        background-color: transparent;
-        border: none;
-        outline: 0;
-      }
-
-      .box_input {
-        border: 3px dashed;
-        border-radius: 6px;
-        border-color: #2C3E50;
-        background-color: #F2F1EF;
-        vertical-align: middle;
-
-        .box_button {
-          background-color: transparent;
-          font-size: medium;
-          border: none;
-          font-weight: bold;
-          margin-bottom: 10px;
-        }
-      }
-
     }
 
-  }
-
-  #schedule_meeting {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    background-color: white;
-    margin-top: 4%;
-    padding: 20px;
-
     .button_trash {
-      margin: 0 0 50px 0;
+      text-align: right;
+      margin-left: 15px;
 
       .trash {
-        padding: 4px 20px 4px 20px;
+        padding: 4px 15px 4px 15px;
         color: white;
         background-color: #c0392b;
-        border: 2px solid;
+        border: 2px solid #c0392b;
         border-radius: 5px;
         align-self: center;
         outline: 0;
@@ -243,7 +168,84 @@
       }
 
     }
+
+    .form_meeting {
+      .new_meeting {
+        margin-top: 10px;
+        padding-left: 25px;
+        padding-bottom: 190px;
+        padding-top: 50px;
+
+        .title {
+          background-color: transparent;
+          border: none;
+          outline: 0;
+          padding-bottom: 15px;
+          font-size: medium;
+        }
+
+        .date {
+          background-color: transparent;
+          border: none;
+          outline: 0;
+        }
+
+        .time {
+          background-color: transparent;
+          border: none;
+          outline: 0;
+        }
+
+        .atendees {
+          background-color: transparent;
+          border: none;
+          outline: 0;
+        }
+
+        .agenda {
+          margin-bottom: 20px;
+        }
+
+        textarea.agenda {
+          background-color: transparent;
+          outline: 0;
+
+        }
+
+        .minutes {
+          background-color: transparent;
+          border: none;
+          outline: 0;
+        }
+
+        .file {
+          background-color: transparent;
+          border: none;
+          outline: 0;
+        }
+
+        .box_input {
+          border: 3px dashed;
+          border-radius: 6px;
+          border-color: #2C3E50;
+          background-color: #F2F1EF;
+          vertical-align: middle;
+
+          .box_button {
+            background-color: transparent;
+            font-size: medium;
+            border: none;
+            margin-bottom: 10px;
+          }
+        }
+
+      }
+
+    }
+
+
   }
+
 
   #create-meeting-settings {
 
@@ -330,12 +332,31 @@
 
 
       .box.drag_here{
-        vertical-align: middle;
         border-radius: 5px;
         height: 150px;
-        margin-top: 20px;
+        margin-top: 40px;
         border: 1px dashed grey;
+        vertical-align: middle;
         background-color: $background_white;
+        display: table;
+        width: 100%;
+
+        div{
+          display: table-cell;
+          vertical-align: middle;
+        }
+        .info{
+          padding-top: 30px;
+          text-align: center;
+          font-size: medium;
+          color: grey;
+        }
+
+        .glyphicon.glyphicon-plus{
+          text-align: center;
+          font-size: x-large;
+          color: grey;
+        }
       }
 
       .meetings_icon{

@@ -13,13 +13,9 @@ $(document).ready(function () {
 });
 
 function schedule() {
-    $("#container_meetings").removeClass("col-xs-10");
-    $("#container_meetings").removeClass("col-sm-offset-1");
-    $("#container_meetings").addClass("col-xs-5");
-    $("#container_meetings").addClass("col-sm-offset-1");
+    $("#container_to_collapse").removeClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
+    $("#container_to_collapse").addClass("col-lg-6 col-md-6 col-sm-6 col-xs-6");
+    $(".meeting-panel").removeClass("col-lg-6 col-md-6 col-sm-6 col-xs-12");
+    $(".meeting-panel").addClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
     $("#container_schedule_meeting").show();
-    $("#container_schedule_meeting").addClass("col-xs-5");
-    $(".specify_padding").addClass("col-xs-10");
-    $(".specify_padding").addClass("col-sm-offset-1");
-    $(".specify_padding").removeClass("col-xs-5");
 }
