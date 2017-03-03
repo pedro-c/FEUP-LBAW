@@ -9,9 +9,8 @@ include_once "common/header.html";
     <div class="row">
         <div class="col-xs-12">
             <div class="title_bar text-center">
-                <button>Future Meetings</button>
-                <button>Past Meetings</button>
-                <button>Schedule a Meeting</button>
+                <button id="future_meetings" onclick="exit_trash()">Future Meetings</button>
+                <button id="schedule_meetings" onclick="schedule()">Schedule a Meeting</button>
             </div>
         </div>
     </div>
@@ -219,7 +218,7 @@ include_once "common/header.html";
                 <div class="panel-body">
                     <div class="info-meeting" id="create-meeting-settings">
                         <div class="title">Planing new project</div> <div class="date">15.04.2018</div><label class="hour">7:00PM</label>
-                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum nisi nunc. In fermentum tincidunt eros at viverra. Duis lacinia arcu a odio molestie, nec consectetur nisi blandit. Sed vitae nisl vel nulla laoreet semper id nec sapien. Proin gravida metus quis felis viverra, vitae tincidunt elit consectetur. Aliquam sed laoreet orci, id blandit ante. Pellentesque laoreet rhoncus metus, ullamcorper posuere erat rhoncus eu. In vel nibh condimentum, rutrum sem ac, malesuada lorem. Sed arcu nisi, imperdiet sit amet est at, tincidunt semper ipsum.</div>
+                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum nisi nunc. In fermentum tincidunt eros at viverra. Duis lacinia arcu a odio molestie, nec consectetur nisi blandit. Sed vitae nisl vel nulla laoreet semper id nec sapien. Proin gravida metus quis felis viverra, vitae tincidunt elit consectetur. Aliquam sed laoreet orci, id blandit ante. Pellentesque laoreet rhoncus metus, ullamcorper posuere erat rhoncus eu.</div>
                         <div class="minutes">Approximately 30 minutes</div>
                         <div class="files">
                             <img class="file_show" src="../assets/pdf.jpeg">

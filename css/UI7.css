@@ -104,7 +104,8 @@ body {
     #page-meetings .title_bar button {
       background-color: transparent;
       border: none;
-      cursor: pointer; }
+      cursor: pointer;
+      outline: 0; }
       #page-meetings .title_bar button:hover {
         border-bottom: 4px solid;
         border-bottom-color: #e9d460; }
