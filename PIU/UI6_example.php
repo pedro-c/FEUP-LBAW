@@ -2,7 +2,7 @@
 include_once "common/header.html";
 ?>
 
-<link href="../css/UI6.css" rel="stylesheet">
+<link href="../css/ui6.css" rel="stylesheet">
 <script src="../jquery-3.1.1.min.js"></script>
 <script src="../js/ui6.js"></script>
 
@@ -17,6 +17,12 @@ $elems_per_row = 3;
 
 $num_rows = ceil($num_elems / $elems_per_row);
 $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purposes
+
+
+$col1 = 1;
+$col2 = 5;
+$col3 = 5;
+$col4 = 1;
 ?>
 
 <div id="page-wrapper">
@@ -42,48 +48,50 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                        </div>
                        <div id="profile_details1" class="collapse">
                          <div class="profile_details">
+                           <hr />
                            <div class="row">
                              <div class="col-xs-1">
                              </div>
-                             <div class="col-xs-5" align="center">
+                             <div class="col-xs-3" align="center">
                               <p>From:</p>
                              </div>
-                             <div class="col-xs-5">
-                               <p>Vila Nova de Gaia, Portugal</p>
+                             <div class="col-xs-7">
+                               <p class="attribute_field">Vila Nova de Gaia, Portugal</p>
                              </div>
                              <div class="col-xs-1">
                              </div>
                            </div>
                            <div class="row">
                              <div class="col-xs-1"></div>
-                             <div class="col-xs-5" align="center">
+                             <div class="col-xs-3" align="center">
                               <p>Email:</p>
                              </div>
-                             <div class="col-xs-5">
-                               <p>gildazita@gmail.com</p>
+                             <div class="col-xs-7">
+                               <p class="attribute_field">gildazita@gmail.com</p>
                              </div>
                              <div class="col-xs-1"></div>
                            </div>
                            <div class="row">
                              <div class="col-xs-1"></div>
-                             <div class="col-xs-5" align="center">
+                             <div class="col-xs-3" align="center">
                               <p>Phone:</p>
                              </div>
-                             <div class="col-xs-5">
-                               <p>910-900-999</p>
+                             <div class="col-xs-7">
+                               <p class="attribute_field">910-900-999</p>
                              </div>
                              <div class="col-xs-1"></div>
                            </div>
                            <div class="row">
                              <div class="col-xs-1"></div>
-                             <div class="col-xs-5" align="center">
+                             <div class="col-xs-3" align="center">
                               <p>Profile:</p>
                              </div>
-                             <div class="col-xs-5">
-                               <a>direkt.com/1</a>
+                             <div class="col-xs-7">
+                               <a class="attribute_field">direkt.com/1</a>
                              </div>
                              <div class="col-xs-1"></div>
                            </div>
+                           <hr />
                            <div class="row" id="profile_actions">
                              <div class="col-xs-3"></div>
                              <div class="col-xs-3" align="center">
@@ -121,48 +129,50 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                                   </div>
                                   <div id="profile_details2" class="collapse">
                                     <div class="profile_details">
+                                      <hr />
                                       <div class="row">
                                         <div class="col-xs-1">
                                         </div>
-                                        <div class="col-xs-5" align="center">
+                                        <div class="col-xs-3" align="center">
                                          <p>From:</p>
                                         </div>
-                                        <div class="col-xs-5">
-                                          <p>Braga, Portugal</p>
+                                        <div class="col-xs-7">
+                                          <p class="attribute_field">Braga, Portugal</p>
                                         </div>
                                         <div class="col-xs-1">
                                         </div>
                                       </div>
                                       <div class="row">
                                         <div class="col-xs-1"></div>
-                                        <div class="col-xs-5" align="center">
+                                        <div class="col-xs-3" align="center">
                                          <p>Email:</p>
                                         </div>
-                                        <div class="col-xs-5">
-                                          <p>vimote@gmail.com</p>
+                                        <div class="col-xs-7">
+                                          <p class="attribute_field">vimote@gmail.com</p>
                                         </div>
                                         <div class="col-xs-1"></div>
                                       </div>
                                       <div class="row">
                                         <div class="col-xs-1"></div>
-                                        <div class="col-xs-5" align="center">
+                                        <div class="col-xs-3" align="center">
                                          <p>Phone:</p>
                                         </div>
-                                        <div class="col-xs-5">
-                                          <p>969-696-969</p>
+                                        <div class="col-xs-7">
+                                          <p class="attribute_field">969-696-969</p>
                                         </div>
                                         <div class="col-xs-1"></div>
                                       </div>
                                       <div class="row">
                                         <div class="col-xs-1"></div>
-                                        <div class="col-xs-5" align="center">
+                                        <div class="col-xs-3" align="center">
                                          <p>Profile:</p>
                                         </div>
-                                        <div class="col-xs-5">
-                                          <a>direkt.com/user2</a>
+                                        <div class="col-xs-7">
+                                          <a class="attribute_field">direkt.com/user2</a>
                                         </div>
                                         <div class="col-xs-1"></div>
                                       </div>
+                                      <hr />
                                       <div class="row" id="profile_actions">
                                         <div class="col-xs-3"></div>
                                         <div class="col-xs-3" align="center">
@@ -197,48 +207,50 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                                    </div>
                                    <div id="profile_details3" class="collapse">
                                      <div class="profile_details">
+                                       <hr />
                                        <div class="row">
                                          <div class="col-xs-1">
                                          </div>
-                                         <div class="col-xs-5" align="center">
+                                         <div class="col-xs-3" align="center">
                                           <p>From:</p>
                                          </div>
-                                         <div class="col-xs-5">
-                                           <p>Paredes de Coura, Portugal</p>
+                                         <div class="col-xs-7">
+                                           <p class="attribute_field">Paredes de Coura, Portugal</p>
                                          </div>
                                          <div class="col-xs-1">
                                          </div>
                                        </div>
                                        <div class="row">
                                          <div class="col-xs-1"></div>
-                                         <div class="col-xs-5" align="center">
+                                         <div class="col-xs-3" align="center">
                                           <p>Email:</p>
                                          </div>
-                                         <div class="col-xs-5">
-                                           <p>olamail@gmail.com</p>
+                                         <div class="col-xs-7">
+                                           <p class="attribute_field">olamail@gmail.com</p>
                                          </div>
                                          <div class="col-xs-1"></div>
                                        </div>
                                        <div class="row">
                                          <div class="col-xs-1"></div>
-                                         <div class="col-xs-5" align="center">
+                                         <div class="col-xs-3" align="center">
                                           <p>Phone:</p>
                                          </div>
-                                         <div class="col-xs-5">
-                                           <p>999-999-999</p>
+                                         <div class="col-xs-7">
+                                           <p class="attribute_field">999-999-999</p>
                                          </div>
                                          <div class="col-xs-1"></div>
                                        </div>
                                        <div class="row">
                                          <div class="col-xs-1"></div>
-                                         <div class="col-xs-5" align="center">
+                                         <div class="col-xs-3" align="center">
                                           <p>Profile:</p>
                                          </div>
-                                         <div class="col-xs-5">
-                                           <a>direkt.com/user1</a>
+                                         <div class="col-xs-7">
+                                           <a class="attribute_field">direkt.com/user1</a>
                                          </div>
                                          <div class="col-xs-1"></div>
                                        </div>
+                                       <hr />
                                        <div class="row" id="profile_actions">
                                          <div class="col-xs-3"></div>
                                          <div class="col-xs-3" align="center">
@@ -275,48 +287,50 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                                     </div>
                                     <div id="profile_details4" class="collapse">
                                       <div class="profile_details">
+                                        <hr />
                                         <div class="row">
                                           <div class="col-xs-1">
                                           </div>
-                                          <div class="col-xs-5" align="center">
+                                          <div class="col-xs-3" align="center">
                                            <p>From:</p>
                                           </div>
-                                          <div class="col-xs-5">
-                                            <p>Porto, Portugal</p>
+                                          <div class="col-xs-7">
+                                            <p class="attribute_field">Porto, Portugal</p>
                                           </div>
                                           <div class="col-xs-1">
                                           </div>
                                         </div>
                                         <div class="row">
                                           <div class="col-xs-1"></div>
-                                          <div class="col-xs-5" align="center">
+                                          <div class="col-xs-3" align="center">
                                            <p>Email:</p>
                                           </div>
-                                          <div class="col-xs-5">
-                                            <p>fabinho@iol.yahoo.br</p>
+                                          <div class="col-xs-7">
+                                            <p class="attribute_field">fabinho@iol.yahoo.br</p>
                                           </div>
                                           <div class="col-xs-1"></div>
                                         </div>
                                         <div class="row">
                                           <div class="col-xs-1"></div>
-                                          <div class="col-xs-5" align="center">
+                                          <div class="col-xs-3" align="center">
                                            <p>Phone:</p>
                                           </div>
-                                          <div class="col-xs-5">
-                                            <p>999-999-999</p>
+                                          <div class="col-xs-7">
+                                            <p class="attribute_field">999-999-999</p>
                                           </div>
                                           <div class="col-xs-1"></div>
                                         </div>
                                         <div class="row">
                                           <div class="col-xs-1"></div>
-                                          <div class="col-xs-5" align="center">
+                                          <div class="col-xs-3" align="center">
                                            <p>Profile:</p>
                                           </div>
-                                          <div class="col-xs-5">
-                                            <a>direkt.com/user1</a>
+                                          <div class="col-xs-7">
+                                            <a class="attribute_field">direkt.com/user1</a>
                                           </div>
                                           <div class="col-xs-1"></div>
                                         </div>
+                                        <hr />
                                         <div class="row" id="profile_actions">
                                           <div class="col-xs-3"></div>
                                           <div class="col-xs-3" align="center">
@@ -351,48 +365,50 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                                      </div>
                                      <div id="profile_details5" class="collapse">
                                        <div class="profile_details">
+                                         <hr />
                                          <div class="row">
                                            <div class="col-xs-1">
                                            </div>
-                                           <div class="col-xs-5" align="center">
+                                           <div class="col-xs-3" align="center">
                                             <p>From:</p>
                                            </div>
-                                           <div class="col-xs-5">
-                                             <p>Castelo Branco, Portugal</p>
+                                           <div class="col-xs-7">
+                                             <p class="attribute_field">Castelo Branco, Portugal</p>
                                            </div>
                                            <div class="col-xs-1">
                                            </div>
                                          </div>
                                          <div class="row">
                                            <div class="col-xs-1"></div>
-                                           <div class="col-xs-5" align="center">
+                                           <div class="col-xs-3" align="center">
                                             <p>Email:</p>
                                            </div>
-                                           <div class="col-xs-5">
-                                             <p>aaarmindorepete@gmail.com</p>
+                                           <div class="col-xs-7">
+                                             <p class="attribute_field">aaarmindorepete@gmail.com</p>
                                            </div>
                                            <div class="col-xs-1"></div>
                                          </div>
                                          <div class="row">
                                            <div class="col-xs-1"></div>
-                                           <div class="col-xs-5" align="center">
+                                           <div class="col-xs-3" align="center">
                                             <p>Phone:</p>
                                            </div>
-                                           <div class="col-xs-5">
-                                             <p>999-999-999</p>
+                                           <div class="col-xs-7">
+                                             <p class="attribute_field">999-999-999</p>
                                            </div>
                                            <div class="col-xs-1"></div>
                                          </div>
                                          <div class="row">
                                            <div class="col-xs-1"></div>
-                                           <div class="col-xs-5" align="center">
+                                           <div class="col-xs-3" align="center">
                                             <p>Profile:</p>
                                            </div>
-                                           <div class="col-xs-5">
-                                             <a>direkt.com/user1</a>
+                                           <div class="col-xs-7">
+                                             <a class="attribute_field">direkt.com/user1</a>
                                            </div>
                                            <div class="col-xs-1"></div>
                                          </div>
+                                         <hr />
                                          <div class="row" id="profile_actions">
                                            <div class="col-xs-3"></div>
                                            <div class="col-xs-3" align="center">
@@ -427,48 +443,50 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                                       </div>
                                       <div id="profile_details6" class="collapse">
                                         <div class="profile_details">
+                                          <hr />
                                           <div class="row">
                                             <div class="col-xs-1">
                                             </div>
-                                            <div class="col-xs-5" align="center">
+                                            <div class="col-xs-3" align="center">
                                              <p>From:</p>
                                             </div>
-                                            <div class="col-xs-5">
-                                              <p>Porto, Portugal</p>
+                                            <div class="col-xs-7">
+                                              <p class="attribute_field">Porto, Portugal</p>
                                             </div>
                                             <div class="col-xs-1">
                                             </div>
                                           </div>
                                           <div class="row">
                                             <div class="col-xs-1"></div>
-                                            <div class="col-xs-5" align="center">
+                                            <div class="col-xs-3" align="center">
                                              <p>Email:</p>
                                             </div>
-                                            <div class="col-xs-5">
-                                              <p>jczelik@gmail.com</p>
+                                            <div class="col-xs-7">
+                                              <p class="attribute_field">jczelik@gmail.com</p>
                                             </div>
                                             <div class="col-xs-1"></div>
                                           </div>
                                           <div class="row">
                                             <div class="col-xs-1"></div>
-                                            <div class="col-xs-5" align="center">
+                                            <div class="col-xs-3" align="center">
                                              <p>Phone:</p>
                                             </div>
-                                            <div class="col-xs-5">
-                                              <p>999-999-999</p>
+                                            <div class="col-xs-7">
+                                              <p class="attribute_field">999-999-999</p>
                                             </div>
                                             <div class="col-xs-1"></div>
                                           </div>
                                           <div class="row">
                                             <div class="col-xs-1"></div>
-                                            <div class="col-xs-5" align="center">
+                                            <div class="col-xs-3" align="center">
                                              <p>Profile:</p>
                                             </div>
-                                            <div class="col-xs-5">
-                                              <a>direkt.com/user1</a>
+                                            <div class="col-xs-7">
+                                              <a class="attribute_field">direkt.com/user1</a>
                                             </div>
                                             <div class="col-xs-1"></div>
                                           </div>
+                                          <hr />
                                           <div class="row" id="profile_actions">
                                             <div class="col-xs-3"></div>
                                             <div class="col-xs-3" align="center">

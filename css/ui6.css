@@ -81,11 +81,19 @@ body {
 
 .profile_details {
   margin-top: 20px; }
+  .profile_details .attribute_field {
+    overflow: auto; }
   .profile_details i#zoom_out {
     cursor: pointer;
     margin-left: 97%; }
   .profile_details #profile_actions i {
     cursor: pointer; }
+  .profile_details #profile_actions i.fa.fa-star {
+    color: #f0ad4e; }
+  .profile_details #profile_actions i.fa.fa-ban {
+    color: #b52b27; }
+  .profile_details #profile_actions i.fa.fa-times {
+    color: #d9534f; }
 
 #add_member_card {
   cursor: pointer; }
@@ -93,12 +101,18 @@ body {
     background-color: #192532 !important;
     color: #e9d460; }
 
-.modal-content .modal-footer #accept_button:hover {
-  background-color: green;
-  color: white; }
-.modal-content .modal-footer #cancel_button:hover {
-  background-color: red;
-  color: white; }
+.modal-content .modal-header {
+  background-color: #22313f;
+  color: #fff; }
+.modal-content .modal-footer {
+  background-color: #22313f;
+  color: #fff; }
+  .modal-content .modal-footer #accept_button:hover {
+    background-color: #e9d460;
+    color: #fff; }
+  .modal-content .modal-footer #cancel_button:hover {
+    background-color: #e9d460;
+    color: #fff; }
 
 #promote1 {
   padding-top: 4px; }

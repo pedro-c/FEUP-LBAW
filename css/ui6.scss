@@ -30,34 +30,62 @@
 
 .profile_details {
   margin-top: 20px;
+  .attribute_field {
+    overflow: auto;
+  }
 
   i#zoom_out {
     cursor: pointer;
     margin-left: 97%;
   }
 
-  #profile_actions i {
-    cursor: pointer;
+  #profile_actions {
+    i {
+      cursor: pointer;
+
+    }
+
+    i.fa.fa-star {
+      color: $color_casablanca_approx;
+    }
+
+    i.fa.fa-ban {
+      color: $color_tall_poppy_approx;
+    }
+
+    i.fa.fa-times {
+      color: $color_chestnut_rose_approx;
+    }
   }
 }
+
 
 #add_member_card {
   cursor: pointer;
   :active {
-    background-color:#192532 !important;
-    color: #e9d460;
+    background-color:$color_firefly_approx !important;
+    color: $color_yellow;
   }
 }
 
 
-.modal-content .modal-footer {
-  #accept_button:hover {
-      background-color: green;
-      color: white;
+.modal-content {
+  .modal-header {
+    background-color: $color_ebony_clay;
+    color: $white;
   }
-  #cancel_button:hover {
-    background-color: red;
-    color: white;
+  .modal-footer {
+    background-color: $color_ebony_clay;
+    color: $white;
+
+    #accept_button:hover {
+        background-color: $color_yellow;
+        color: $white;
+    }
+    #cancel_button:hover {
+      background-color: $color_yellow;
+      color: $white;
+    }
   }
 }
 
