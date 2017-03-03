@@ -2,6 +2,9 @@
 include_once "common/header.html";
 ?>
 
+<link href="../css/profile.css" rel="stylesheet"/>
+<script src="../js/pwstrength-bootstrap.min.js"></script>
+<script src="../js/profile.js"></script>
 
 <div id="page-wrapper">
 
@@ -9,10 +12,41 @@ include_once "common/header.html";
 
         <!-- Page Heading -->
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
-                    Profile Page
-                </h1>
+            <div class="content col-xs-8 col-md-4 col-xs-offset-2 col-md-offset-4">
+                <div class="profile-pic">
+                    <img class="img-circle" src="../../assets/avatar5.jpg">
+                </div>
+                <div class="personal-info">
+                    <div class="info">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        <input id="update-name" type="text" placeholder="Duarte Costa">
+                    </div>
+                    <div class="update">
+                        <button id="update-name-button" class="btn btn-success">Update</button>
+                    </div>
+                </div>
+                <div class="personal-info">
+                    <div class="info">
+                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        <input id="update-mail"type="email" placeholder="duartecosta@mail.com">
+                    </div>
+                    <div class="update">
+                        <button id="update-mail-button" class="btn btn-success">Update</button>
+                    </div>
+                </div>
+                <div class="password">
+                    <h4 id="change-password">Change Password</h4>
+                    <div>
+                        <input type="text" placeholder="Current Password">
+                    </div>
+                    <div id="new-password">
+                        <input type="text" placeholder="New Password">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Repeat Password">
+                    </div>
+                </div>
+                <button class="btn btn-success">Save</button>
             </div>
         </div>
     </div>
