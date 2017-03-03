@@ -1,6 +1,6 @@
 <?php include_once "common/header.html" ?>
 <!-- Custom CSS -->
-<link href="../css/forum.css" rel="stylesheet">
+<link href="../css/forum.css" rel="stylesheet"/>
 <script src="../js/forum.js"></script>
 <div class="page-wrapper container">
     <div class="row"><br>

@@ -8,7 +8,8 @@ $light_blue: #1AAFD0;
 $white: #fff;
 $background_white: #ecf0f1;
 $color_yellow: #e9d460;
-$color_firefly_approx: #090d13;
+$yellow_darker: #d9c559;
+$color_firefly_approx: #192532;
 $light_grey: #D3D3D3;
 $black_15: rgba(0, 0, 0, .15);
 $black_17_5: rgba(0, 0, 0, .175);
@@ -25,6 +26,7 @@ body {
   background-color: $background_white;
   height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   font-family: $font-stack;
 }
 
@@ -39,6 +41,26 @@ body {
   right: 0px;
   height: 50px;
   background-color: $color_ebony_clay;
+  color: white;
+  .navbar-right{
+    .dropdown-toggle{
+      vertical-align: middle;
+      height: 50px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      padding: 10px;
+    }
+    p{
+      font-size: 1.5em;
+      padding: 5px 10px 0 0;
+      color: white;
+    }
+    img{
+      height: 30px;
+      width: 30px;
+    }
+  }
 }
 #sidebar {
   position: relative;
@@ -47,6 +69,7 @@ body {
   bottom: 0px;
   width: auto;
   background-color: $color_ebony_clay;
+  color: white;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -95,6 +118,7 @@ body {
     margin-left: 100px;
   }
   #sidebar {
+    color: white;
     position: fixed;
     top: 49px;
     width: 100px;

@@ -4,6 +4,7 @@ body {
   background-color: #ecf0f1;
   height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   font-family: Roboto, Helvetica, sans-serif; }
 
 #parent {
@@ -15,7 +16,22 @@ body {
   left: 0px;
   right: 0px;
   height: 50px;
-  background-color: #22313f; }
+  background-color: #22313f;
+  color: white; }
+  #header .navbar-right .dropdown-toggle {
+    vertical-align: middle;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    padding: 10px; }
+  #header .navbar-right p {
+    font-size: 1.5em;
+    padding: 5px 10px 0 0;
+    color: white; }
+  #header .navbar-right img {
+    height: 30px;
+    width: 30px; }
 
 #sidebar {
   position: relative;
@@ -24,6 +40,7 @@ body {
   bottom: 0px;
   width: auto;
   background-color: #22313f;
+  color: white;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -63,6 +80,7 @@ body {
     margin-left: 100px; }
 
   #sidebar {
+    color: white;
     position: fixed;
     top: 49px;
     width: 100px;
@@ -79,13 +97,13 @@ body {
       #sidebar li a:hover {
         outline: none;
         color: #e9d460;
-        background-color: #090d13 !important; }
+        background-color: #192532 !important; }
         #sidebar li a:hover i, #sidebar li a:hover p {
           color: #e9d460 !important; }
       #sidebar li a:focus {
         outline: none;
         color: #e9d460;
-        background-color: #090d13 !important; }
+        background-color: #192532 !important; }
         #sidebar li a:focus i, #sidebar li a:focus p {
           color: #e9d460 !important; }
       #sidebar li a p {
@@ -95,6 +113,16 @@ body {
   height: 100%;
   text-align: center;
   display: inline-block; }
+  .tasks-body .go-back {
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #22313f;
+    color: white;
+    display: none; }
 
 .tasks-card {
   overflow-y: auto;
@@ -132,12 +160,12 @@ body {
   .tasks-header button {
     padding: 5px;
     border-radius: 3px;
-    color: #1AAFD0;
-    background-color: transparent;
+    color: white;
+    background-color: #e9d460;
     margin: auto;
-    border: 1px solid #1AAFD0; }
+    border: 1px solid #e9d460; }
     .tasks-header button:hover {
-      background-color: #1AAFD0;
+      background-color: #d9c559;
       color: white;
       transition: all 0.2s ease-in-out; }
 
@@ -224,10 +252,17 @@ body {
     vertical-align: middle;
     width: 100%; }
     .create-task #create-task-navbar #assign-to {
+      vertical-align: middle;
+      display: block;
       width: 65%; }
       .create-task #create-task-navbar #assign-to:focus, .create-task #create-task-navbar #assign-to:hover {
         border: 1px solid #D3D3D3;
         border-radius: 20px; }
+      .create-task #create-task-navbar #assign-to img {
+        padding-top: 5px;
+        padding-right: 5px;
+        float: left;
+        width: 30px; }
     .create-task #create-task-navbar i {
       vertical-align: middle;
       float: left;
@@ -263,6 +298,11 @@ body {
       text-align: left; }
       .create-task .task-comments .comment-info i {
         width: 20px; }
+      .create-task .task-comments .comment-info img {
+        padding-top: 5px;
+        padding-right: 5px;
+        float: left;
+        width: 35px; }
       .create-task .task-comments .comment-info h4, .create-task .task-comments .comment-info p {
         display: inline-block !important;
         min-width: 100px;
@@ -282,6 +322,13 @@ body {
       padding: 5px;
       vertical-align: middle;
       align-self: center; }
+    .create-task .add-comment img {
+      padding-right: 5px;
+      vertical-align: middle;
+      align-self: center;
+      float: left;
+      width: 50px;
+      height: 50px; }
     .create-task .add-comment textarea {
       height: 100%;
       padding: 2px;
