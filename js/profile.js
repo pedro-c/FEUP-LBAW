@@ -17,11 +17,6 @@ $(document).ready(function(){
         $('#update-mail-button').hide();
 
     });
-
-    $("#change-password").click(function () {
-       $(".password > div").show();
-    });
-
     var options = {};
     options.ui = {
         container: "#pwd-container",

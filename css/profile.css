@@ -66,6 +66,15 @@ body {
   overflow-x: hidden;
   text-align: center; }
 
+#mobile-back {
+  border-color: #22313f;
+  background-color: #22313f;
+  color: #fafafa;
+  text-align: center;
+  vertical-align: middle; }
+  #mobile-back :hover {
+    cursor: pointer; }
+
 @media (min-width: 768px) {
   #parent {
     margin-left: 100px; }

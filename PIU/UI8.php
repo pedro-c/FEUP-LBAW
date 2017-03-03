@@ -39,14 +39,16 @@ include_once "common/header.html";
                     <div>
                         <input type="text" placeholder="Current Password">
                     </div>
-                    <div id="new-password">
-                        <input type="text" placeholder="New Password">
+                    <div>
+                        <input id="new-password" type="text" placeholder="New Password">
                     </div>
                     <div>
                         <input type="text" placeholder="Repeat Password">
                     </div>
+                    <div>
+                        <button class="btn btn-success">Update</button>
+                    </div>
                 </div>
-                <button class="btn btn-success">Save</button>
             </div>
         </div>
     </div>
