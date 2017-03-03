@@ -17,11 +17,7 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    &:hover,
-    &:visited {
-      border-bottom: 4px solid;
-      border-bottom-color: $color_yellow;
-    }
+    outline: 0;
   }
 
   button:first-child {
@@ -57,16 +53,14 @@
       background-color: $blue_secondary;
       padding-left: 20px;
 
-      .file_details{
-
+      .file_details {
 
         color: white;
-        .file_description{
+        .file_description {
           font-weight: normal !important;
         }
 
-
-        .file_show{
+        .file_show {
           padding-right: 5px;
           width: 35px;
         }
@@ -76,37 +70,112 @@
     }
 
     .panel-body {
-     .minutes{
-       padding-bottom: 10px;
-       span{
-         font-weight: lighter;
-         font-size: small;
-       }
+      .minutes {
+        padding-bottom: 10px;
+        span {
+          font-weight: lighter;
+          font-size: small;
+        }
 
-       .hastag{
-        cursor: pointer;
-         color: $blue_secondary;
-         &:hover{
+        .hastag {
+          cursor: pointer;
+          color: $blue_secondary;
+          &:hover {
             color: $color_yellow;
-         }
-       }
-     }
+          }
+        }
+      }
 
-      .name{
+      .name {
         font-size: medium;
       }
 
-      .fa.fa-download{
+      .fa.fa-download {
         color: $blue_secondary;
         font-size: x-large;
-        &:hover{
+        &:hover {
           color: $color_yellow;
         }
       }
     }
   }
 
-  .container_to_collapse {
+  .uploadFile_container {
+
+    .panel-heading {
+      background-color: $color_yellow;
+      color: white;
+      padding-bottom: 20px;
+
+      .trash {
+        padding: 4px 15px 4px 15px;
+        color: white;
+        background-color: #c0392b;
+        border: 2px solid #c0392b;
+        border-radius: 5px;
+        align-self: center;
+        outline: 0;
+
+        &:hover {
+          background-color: #913025;
+          border: 2px solid;
+          border-color: #913025;
+          color: white;
+        }
+
+      }
+
+    }
+
+
+    .panel-body{
+      .box.drag_here {
+        border-radius: 5px;
+        height: 150px;
+        margin-top: 40px;
+        border: 1px dashed grey;
+        vertical-align: middle;
+        background-color: $background_white;
+        display: table;
+        width: 100%;
+
+        div {
+          display: table-cell;
+          vertical-align: middle;
+        }
+        .info {
+          padding-top: 30px;
+          text-align: center;
+          font-size: medium;
+          color: grey;
+        }
+
+        .glyphicon.glyphicon-plus {
+          text-align: center;
+          font-size: x-large;
+          color: grey;
+        }
+      }
+
+      .input-group.task-tags{
+        padding-top: 40px;
+      }
+    }
+
+    #submit {
+      padding: 4px 20px 4px 20px;
+      color: white;
+      background-color: $color_yellow;
+      border: none;
+      border-radius: 5px;
+      align-self: center;
+      outline: 0;
+
+      &:hover {
+        background-color: $blue_secondary;
+        border: none;
+      }
+    }
 
   }
 

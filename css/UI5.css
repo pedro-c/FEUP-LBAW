@@ -121,10 +121,8 @@ body {
     margin-right: 20px;
     border: none;
     background-color: transparent;
-    cursor: pointer; }
-    .files_title button:hover, .files_title button:visited {
-      border-bottom: 4px solid;
-      border-bottom-color: #e9d460; }
+    cursor: pointer;
+    outline: 0; }
   .files_title button:first-child {
     border-bottom: 4px solid;
     border-bottom-color: #e9d460; }
@@ -170,5 +168,56 @@ body {
   font-size: x-large; }
   .files_list .file .panel-body .fa.fa-download:hover {
     color: #e9d460; }
+.files_list .uploadFile_container .panel-heading {
+  background-color: #e9d460;
+  color: white;
+  padding-bottom: 20px; }
+  .files_list .uploadFile_container .panel-heading .trash {
+    padding: 4px 15px 4px 15px;
+    color: white;
+    background-color: #c0392b;
+    border: 2px solid #c0392b;
+    border-radius: 5px;
+    align-self: center;
+    outline: 0; }
+    .files_list .uploadFile_container .panel-heading .trash:hover {
+      background-color: #913025;
+      border: 2px solid;
+      border-color: #913025;
+      color: white; }
+.files_list .uploadFile_container .panel-body .box.drag_here {
+  border-radius: 5px;
+  height: 150px;
+  margin-top: 40px;
+  border: 1px dashed grey;
+  vertical-align: middle;
+  background-color: #ecf0f1;
+  display: table;
+  width: 100%; }
+  .files_list .uploadFile_container .panel-body .box.drag_here div {
+    display: table-cell;
+    vertical-align: middle; }
+  .files_list .uploadFile_container .panel-body .box.drag_here .info {
+    padding-top: 30px;
+    text-align: center;
+    font-size: medium;
+    color: grey; }
+  .files_list .uploadFile_container .panel-body .box.drag_here .glyphicon.glyphicon-plus {
+    text-align: center;
+    font-size: x-large;
+    color: grey; }
+.files_list .uploadFile_container .panel-body .input-group.task-tags {
+  padding-top: 40px; }
+.files_list .uploadFile_container #submit {
+  padding: 4px 20px 4px 20px;
+  color: white;
+  background-color: #e9d460;
+  border: none;
+  border-radius: 5px;
+  align-self: center;
+  outline: 0; }
+  .files_list .uploadFile_container #submit:hover {
+    background-color: #22313f;
+    border: none; }
 
 /*# sourceMappingURL=UI5.css.map */

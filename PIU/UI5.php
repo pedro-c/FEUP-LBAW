@@ -3,20 +3,21 @@ include_once "common/header.html";
 ?>
 
 <link href="../css/UI5.css" rel="stylesheet">
+<script src="../js/UI5.js"></script>
 
 <div class="files_pages">
     <div class="row">
         <div class="col-xs-12">
             <div class="files_title text-center">
-                <button>Files</button>
-                <button>Upload New File</button>
+                <button id="goBackButton" onclick="deleteUpload()">Files</button>
+                <button id="uploadButton" onclick="uploadFile()">Upload New File</button>
             </div>
         </div>
     </div>
 
     <div class="container files_list">
         <div class="text-center button_upload">
-            <button class="uploadFile">Upload a File</button>
+            <button class="uploadFile" onclick="uploadFile()">Upload a File</button>
         </div>
 
         <div id="container_to_collapse" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -147,6 +148,42 @@ include_once "common/header.html";
                 </div>
             </div>
 
+        </div>
+
+        <div class="uploadFile_container" hidden>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="panel panel-default meeting">
+                    <div class="panel-heading">
+                        <span>Upload File</span><span class="trash pull-right glyphicon glyphicon-trash"
+                                                      aria-hidden="true" onclick="deleteUpload()"></span>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="box drag_here text-center hidden-xs">
+                            <div>
+                                <span class="glyphicon glyphicon-plus"></span>
+                                <br>
+                                <span class="info"> Drag Files Here </span>
+                            </div>
+                        </div>
+
+                        <div class="input-group task-tags">
+                            <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                            <select class="select2-multiple form-control" multiple="multiple">
+                                <option value="M">Marketing</option>
+                                <option value="L">Logistics</option>
+                                <option value="S">Sponsors</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center">
+                            <input id="submit" type="submit" value="Submit" style="margin-top: 20px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-back" class="hidden-lg hidden-md hidden-sm navbar navbar-default navbar-fixed-bottom"
+                 onclick="exitMobile()" hidden><h4>« Back</h4></div>
         </div>
     </div>
 </div>
