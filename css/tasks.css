@@ -12,11 +12,46 @@ body {
 
 #header {
   position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  height: 50px;
-  background-color: #22313f; }
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #22313f;
+  color: white; }
+  #header .navbar-brand img {
+    margin-top: -10px;
+    margin-left: -10px;
+    height: 40px;
+    width: 80px; }
+  #header .navbar-right .dropdown-toggle {
+    background-color: #22313f;
+    vertical-align: middle;
+    padding: 10px;
+    height: 49px; }
+    #header .navbar-right .dropdown-toggle:active, #header .navbar-right .dropdown-toggle:focus, #header .navbar-right .dropdown-toggle:hover {
+      text-decoration: none;
+      background-color: #192532; }
+      #header .navbar-right .dropdown-toggle:active p, #header .navbar-right .dropdown-toggle:focus p, #header .navbar-right .dropdown-toggle:hover p {
+        color: #e9d460; }
+  #header .navbar-right p {
+    color: #ecf0f1;
+    font-size: 1.2em;
+    padding: 5px 10px 0 0; }
+  #header .navbar-right img {
+    height: 20px;
+    width: 20px; }
+  #header .dropdown-menu {
+    margin: 0;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    background-color: #192532;
+    border-color: #192532; }
+    #header .dropdown-menu li:hover a {
+      color: #e9d460;
+      background-color: #192532; }
+    #header .dropdown-menu li a {
+      color: #fff; }
+    #header .dropdown-menu i.nav-dropdown-icon {
+      float: right; }
 
 #sidebar {
   position: relative;
@@ -25,6 +60,7 @@ body {
   bottom: 0px;
   width: auto;
   background-color: #22313f;
+  color: white;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -55,6 +91,7 @@ body {
     margin-left: 100px; }
 
   #sidebar {
+    color: white;
     position: fixed;
     top: 49px;
     width: 100px;

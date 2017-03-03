@@ -1,7 +1,6 @@
 <?php include_once "common/header.html" ?>
 <!-- Custom CSS -->
 <link href="../css/forum.css" rel="stylesheet"/>
-<script src="../js/forum.js"></script>
 <div class="page-wrapper container">
     <div class="row"><br>
         <div id="forum-posts" class="list-group">
@@ -106,4 +105,5 @@
         </div>
     </div><!-- row -->
 </div>
+<script src="../js/forum.js"></script>
 <?php include_once "common/footer.html" ?>

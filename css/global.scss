@@ -36,29 +36,60 @@ body {
 
 #header {
   position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  height: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: $color_ebony_clay;
   color: white;
+  .navbar-brand img{
+    margin-top: -10px;
+    margin-left: -10px;
+    height: 40px;
+    width: 80px;
+  }
   .navbar-right{
     .dropdown-toggle{
+      background-color: $color_ebony_clay;
       vertical-align: middle;
-      height: 50px;
-      margin: 0;
-      padding: 0;
-      display: flex;
       padding: 10px;
+      height: 49px;
+      &:active,
+      &:focus,
+      &:hover {
+        text-decoration: none;
+        background-color: $color_firefly_approx;
+        p{
+          color: $color_yellow;
+        }
+      }
     }
     p{
-      font-size: 1.5em;
+      color: $background_white;
+      font-size: 1.2em;
       padding: 5px 10px 0 0;
-      color: white;
     }
     img{
-      height: 30px;
-      width: 30px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  .dropdown-menu{
+    margin: 0;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    background-color: $color_firefly_approx;
+    border-color: $color_firefly_approx;
+    li:hover a{
+      color: $color_yellow;
+      background-color: $color_firefly_approx;
+    }
+    li a{
+      color: $white;
+    }
+
+    i.nav-dropdown-icon{
+      float: right;
     }
   }
 }

@@ -9,11 +9,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- jQuery -->
-    <script src="../../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../../js/bootstrap.min.js"></script>
 
 
     <title>Direkt</title>
@@ -23,8 +18,8 @@
 
     <!-- Custom CSS -->
     <link href="../../css/global.css" rel="stylesheet">
-    <link href="../css/bootstrap-datepicker3.css" rel="stylesheet">
-    <link href="../css/bootstrap-datepicker.css" rel="stylesheet">
+    <link href="../../css/bootstrap-datepicker3.css" rel="stylesheet">
+    <link href="../../css/bootstrap-datepicker.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -37,7 +32,7 @@
     <![endif]-->
     <!-- jQuery -->
     <script src="../../js/jquery.js"></script>
-    <script src="../js/bootstrap-datepicker.js"></script>
+    <script src="../../js/bootstrap-datepicker.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
@@ -50,56 +45,73 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="#">
+                <img src="../../assets/logo.png" alt="Direkt"/>
+            </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="navbar">
             <div id="sidebar">
                 <ul class="nav navbar-nav" >
                     <li>
-                        <a href="UI2.php"><i class="fa fa-home fa-2x"></i><p>Dashboard</p></a>
+                        <a href="../UI2.php"><i class="fa fa-home fa-2x"></i><p>Dashboard</p></a>
                     </li>
                     <li>
-                        <a href="UI3.php"><i class="fa fa-check-square-o fa-2x"></i><p>Tasks</p></a>
+                        <a href="../UI3.php"><i class="fa fa-check-square-o fa-2x"></i><p>Tasks</p></a>
                     </li>
                     <li>
-                        <a href="UI4.php"><i class="fa fa-quote-right fa-2x"></i><p>Forum</p></a>
+                        <a href="../UI4.php"><i class="fa fa-quote-right fa-2x"></i><p>Forum</p></a>
                     </li>
                     <li>
-                        <a href="UI7.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
+                        <a href="../UI7.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
                     </li>
                     <li>
-                        <a href="UI5.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
+                        <a href="../UI5.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
                     </li>
                     <li>
-                        <a href="UI6.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
+                        <a href="../UI6.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
                     </li>
                 </ul>
             </div>
 
-
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <p>Duarte Costa</p>
-                        <img class="img-circle" src="../../assets/avatar5.jpg">
+            <!-- Top Navbar -->
+            <div class="nav navbar-nav navbar-right">
+                <div id="user-options" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <p>
+                            <img src="../../assets/avatar2.png" alt="User profile picture" class="nav-user-picture">
+                            <span id="nav-username">Edgar Passos</span>
+                        </p>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">Sign Out<i class="nav-dropdown-icon glyphicon glyphicon-log-out"></i></a></li>
                     </ul>
-                </li>
-            </ul>
+
+                </div>
+            </div>
+            <div class="nav navbar-nav navbar-right">
+                <div id="user-projects" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <p>
+                            <i class="glyphicon glyphicon-fire"></i>
+                            <span id="nav-project">My Project </span>
+                        </p>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Other Project</a></li>
+                        <li><a href="#">Another One</a></li>
+                        <li><a href="#">New Project<i class="nav-dropdown-icon glyphicon glyphicon-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
