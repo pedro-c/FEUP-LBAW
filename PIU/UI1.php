@@ -12,12 +12,12 @@
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="../css/ui1.css" rel="stylesheet">
+    <link href="../css/UI1.css" rel="stylesheet">
     <link href="../css/plugins/morris.css" rel="stylesheet">
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <script src="../js/ui1.js"></script>
+    <script src="../js/UI1.js"></script>
     <script src="../jquery-3.1.1.min.js"></script>
 
 
@@ -28,23 +28,24 @@
 
 <div class="container">
     <div class="row vertical-align">
-        <div class="col-xs-10 col-xs-offset-1 login-box">
+        <div class="col-xs-8 col-xs-offset-2 login-box">
             <div class="border_radius">
-                <div class="col-xs-6 content_login nopadding ">
+                <div class="col-xs-6 content_login nopadding" id="slider-card">
                     <img class="img-responsive" src="../assets/2.png"
                          style="width:100%;overflow: hidden; height: 100%;"/>
                 </div>
-                <div class="col-xs-6 content_login pull-right">
-                    <div class="row">
-                        <div class="col-xs-3"></div>
-                        <div class="col-xs-3"></div>
-                        <div class="col-xs-3 nopadding col-lg-offset-3"> <!--Retirar padding das colunas-->
-                            <button class="button_signUp btn btn-default" onclick="signUp()">Sign Up</button>
+                <div class="col-xs-6 content_login pull-right" id="login-card">
+                   <!-- <div class="row">
+                          <div class="col-xs-4"></div>
+                          <div id="buttons">
+                              <div class="col-xs-4 nopadding col-lg-offset-4"> <!--Retirar padding das colunas-->
+                        <!--        <button class="button_loginIn btn btn-default" onclick="signIn()">Sign In</button>
+                            </div>
+                            <div class="col-xs-4 nopadding">
+                                <button class="button_signUp btn btn-default" onclick="signUp()">Sign Up</button>
+                            </div>
                         </div>
-                        <div class="col-xs-3 nopadding">
-                            <button class="button_loginIn btn btn-default" onclick="signIn()">Sign In</button>
-                        </div>
-                    </div>
+                    </div>-->
                     <div class="row row-centered">
                         <div class="description-links">
                             <div class="col-xs-12 nopadding">
@@ -127,7 +128,8 @@
                                     </div>
                                     <div class="col-xs-12 col-login nopadding">
                                         <div class="form-actions nopadding">
-                                            <input class="btn btn-default register-button" type="submit" value="Register">
+                                            <input class="btn btn-default register-button" type="submit"
+                                                   value="Register">
                                         </div>
                                     </div>
 

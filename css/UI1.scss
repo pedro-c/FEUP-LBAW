@@ -19,10 +19,36 @@ body {
   @extend %extend_1;
 }
 
+@media(min-width: 768px) {
+
+  .container {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  #slider-card {
+    display: block !important;
+  }
+  #login-card {
+    width: 50% !important;
+  }
+
+}
+
 .container {
+  align-content: center;
   display: table;
   position: absolute;
   height: 100%;
+  width: 100%;
+}
+
+#slider-card {
+  display: none;
+}
+
+#login-card {
   width: 100%;
 }
 
@@ -59,48 +85,53 @@ body {
     margin: 0 !important;
   }
 
+  #buttons{
+    white-space: normal !important;
+  }
+
   .button_loginIn {
     margin-top: 20px;
-    float: left;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 5px 30px 5px 15px;
+    padding: 5px 15px 5px 15px;
+    float: right;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
     background-color: $blue_secondary;
     border-color: transparent;
     color: white;
-    //retirar depois do js
     background-color: $color_yellow;
     &:active,
     &:focus,
     &:hover,
     &:visited {
       background-color: $color_yellow;
+      outline: 0;
     }
   }
 
   .button_signUp {
     margin-top: 20px;
     color: white;
-    float: right;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
+    float: left;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
     background-color: #425262;
-    padding: 5px 15px 5px 30px;
+    padding: 5px 15px 5px 15px;
     border-color: transparent;
     &:active,
     &:focus,
     &:hover,
     &:visited {
       background-color: $color_yellow;
+      outline: 0;
     }
   }
 
   .description-links {
-    margin-top: 70px;
+    margin-top: 100px;
     font-size: x-large;
     text-align: center;
     cursor: pointer;
@@ -118,6 +149,7 @@ body {
       &:visited {
         border-bottom: 4px solid;
         border-bottom-color: $color_yellow;
+        outline: 0;
       }
     }
 
@@ -136,28 +168,30 @@ body {
       &:visited {
         border-bottom: 4px solid;
         border-bottom-color: $color_yellow;
+        outline: 0;
       }
     }
   }
 
   .form-register {
-    margin-top: 60px;
+    margin-top: 50px;
     font-size: medium;
 
     .form-register-right {
       margin-left: 45px;
       margin-right: 45px;
 
-      .border-bottom{
+      .border-bottom {
         padding-left: 0 !important;
       }
 
       .border-bottom:nth-child(3),
       .border-bottom:nth-child(7),
-      .border-bottom:nth-child(11){
+      .border-bottom:nth-child(11) {
         padding-bottom: 4px;
         border-bottom-style: solid;
         border-bottom-color: #425262;
+        outline: 0;
       }
     }
 
@@ -246,7 +280,6 @@ body {
 
     }
     .form-actions {
-
       margin: 0;
       background-color: transparent;
       color: white;
@@ -254,7 +287,7 @@ body {
 
       .register-button {
         padding: 10px 50px 10px 50px;
-        margin-top: 70px;
+        margin-top: 40px;
         background-color: #425262;
         border: none;
         color: white;
@@ -265,6 +298,7 @@ body {
         &:visited {
           background-color: $color_yellow;
           color: white;
+          outline: 0;
         }
       }
 
@@ -272,22 +306,23 @@ body {
   }
 
   .form-login {
-    margin-top: 90px;
+    margin-top: 70px;
     font-size: medium;
 
     .form-login-right {
       margin-left: 35px;
       margin-right: 45px;
 
-      .border-bottom{
+      .border-bottom {
         padding-left: 0 !important;
       }
 
       .border-bottom:nth-child(3),
-      .border-bottom:nth-child(7){
+      .border-bottom:nth-child(7) {
         padding-bottom: 4px;
         border-bottom-style: solid;
         border-bottom-color: #425262;
+        outline: 0;
       }
     }
 
@@ -349,7 +384,6 @@ body {
     }
 
     .form-actions {
-
       margin: 0;
       background-color: transparent;
       color: white;
@@ -357,7 +391,7 @@ body {
 
       .login-button {
         padding: 10px 60px 10px 60px;
-        margin-top: 140px;
+        margin-top: 122px;
         background-color: #425262;
         border: none;
         color: white;
@@ -368,6 +402,7 @@ body {
         &:visited {
           background-color: $color_yellow;
           color: white;
+          outline: 0;
         }
       }
 

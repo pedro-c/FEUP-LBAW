@@ -3,7 +3,11 @@ body {
   margin: 0;
   background-color: #ecf0f1;
   height: 100vh;
+<<<<<<< HEAD
   overflow-y: hidden;
+=======
+  overflow-y: scroll;
+>>>>>>> UI7
   font-family: Roboto, Helvetica, sans-serif; }
 
 #parent {
@@ -49,6 +53,15 @@ body {
   overflow-x: hidden;
   text-align: center; }
 
+#mobile-back {
+  border-color: #22313f;
+  background-color: #22313f;
+  color: #fafafa;
+  text-align: center;
+  vertical-align: middle; }
+  #mobile-back :hover {
+    cursor: pointer; }
+
 @media (min-width: 768px) {
   #parent {
     margin-left: 100px; }
@@ -70,13 +83,13 @@ body {
       #sidebar li a:hover {
         outline: none;
         color: #e9d460;
-        background-color: #192532 !important; }
+        background-color: #090d13 !important; }
         #sidebar li a:hover i, #sidebar li a:hover p {
           color: #e9d460 !important; }
       #sidebar li a:focus {
         outline: none;
         color: #e9d460;
-        background-color: #192532 !important; }
+        background-color: #090d13 !important; }
         #sidebar li a:focus i, #sidebar li a:focus p {
           color: #e9d460 !important; }
       #sidebar li a p {
@@ -86,7 +99,9 @@ body {
   margin: 0 !important; }
 
 .files_title {
-  background-color: #ecf0f1; }
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
   .files_title button {
     display: inline;
     margin-right: 20px;
@@ -101,27 +116,49 @@ body {
     border-bottom-color: #e9d460; }
 
 .files_list {
-  background-color: #ecf0f1;
+  font-weight: normal;
+  background-color: #fff;
   margin-top: 50px;
   height: auto;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+  .files_list .add_new_file {
+    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-left: 15px; }
+    .files_list .add_new_file button {
+      padding: 5px;
+      border-radius: 3px;
+      color: #1AAFD0;
+      background-color: transparent;
+      margin: auto;
+      border: 1px solid #1AAFD0; }
+      .files_list .add_new_file button:hover {
+        background-color: #1AAFD0;
+        color: white;
+        transition: all 0.2s ease-in-out; }
   .files_list .file {
     border-bottom: 1px solid;
-    border-bottom-color: grey;
-    padding: 15px 10px 15px 10px;
-    text-align: center; }
-    .files_list .file .user_name {
-      font-size: xx-small; }
+    border-bottom-color: #bcbcbc;
+    vertical-align: middle;
+    padding: 15px 15px 15px 15px; }
+    .files_list .file .align_center_div {
+      text-align: center; }
+    .files_list .file .vertical-align {
+      display: flex;
+      align-items: center; }
     .files_list .file .minutes {
-      font-size: x-small;
-      float: right;
-      margin-bottom: 0 !important; }
+      font-size: small;
+      margin-bottom: 0 !important;
+      font-weight: normal !important; }
     .files_list .file .file_details {
       display: inline-block; }
       .files_list .file .file_details .file_show {
-        width: 20px; }
+        width: 25px;
+        margin-right: 5px; }
+      .files_list .file .file_details .file_description {
+        font-weight: normal !important; }
     .files_list .file .perfil_picture {
-      width: 60px; }
+      width: 70px; }
 
 /*# sourceMappingURL=UI5.css.map */
