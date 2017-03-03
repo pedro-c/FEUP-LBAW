@@ -3,7 +3,8 @@ body {
   margin: 0;
   background-color: #ecf0f1;
   height: 100vh;
-  overflow-y: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
   font-family: Roboto, Helvetica, sans-serif; }
 
 #parent {
@@ -15,7 +16,22 @@ body {
   left: 0px;
   right: 0px;
   height: 50px;
-  background-color: #22313f; }
+  background-color: #22313f;
+  color: white; }
+  #header .navbar-right .dropdown-toggle {
+    vertical-align: middle;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    padding: 10px; }
+  #header .navbar-right p {
+    font-size: 1.5em;
+    padding: 5px 10px 0 0;
+    color: white; }
+  #header .navbar-right img {
+    height: 30px;
+    width: 30px; }
 
 #sidebar {
   position: relative;
@@ -24,6 +40,7 @@ body {
   bottom: 0px;
   width: auto;
   background-color: #22313f;
+  color: white;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -49,11 +66,21 @@ body {
   overflow-x: hidden;
   text-align: center; }
 
+#mobile-back {
+  border-color: #22313f;
+  background-color: #22313f;
+  color: #fafafa;
+  text-align: center;
+  vertical-align: middle; }
+  #mobile-back :hover {
+    cursor: pointer; }
+
 @media (min-width: 768px) {
   #parent {
     margin-left: 100px; }
 
   #sidebar {
+    color: white;
     position: fixed;
     top: 49px;
     width: 100px;

@@ -87,8 +87,8 @@ include_once "common/header.html";
                         </div>
 
                     </div>
-                    <div class="go-back" id="go-back" onclick="toggle();">
-                        <p><< Back</p>
+                    <div id="mobile-back" class="hidden-lg hidden-md hidden-sm navbar navbar-default navbar-fixed-bottom" ">
+                    <h4>« Back</h4>
                     </div>
                 </div>
 

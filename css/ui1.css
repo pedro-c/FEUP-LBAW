@@ -1,16 +1,11 @@
 body {
   padding: 0;
   margin: 0;
-<<<<<<< HEAD:css/ui1.css
-  font-family: Roboto, Helvetica, sans-serif;
-  background-color: #ecf0f1;
-  overflow-y: scroll; }
-=======
   background-color: #ecf0f1;
   height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   font-family: Roboto, Helvetica, sans-serif; }
->>>>>>> UI7:css/UI1.css
 
 #parent {
   height: 100%; }
@@ -21,7 +16,22 @@ body {
   left: 0px;
   right: 0px;
   height: 50px;
-  background-color: #22313f; }
+  background-color: #22313f;
+  color: white; }
+  #header .navbar-right .dropdown-toggle {
+    vertical-align: middle;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    padding: 10px; }
+  #header .navbar-right p {
+    font-size: 1.5em;
+    padding: 5px 10px 0 0;
+    color: white; }
+  #header .navbar-right img {
+    height: 30px;
+    width: 30px; }
 
 #sidebar {
   position: relative;
@@ -30,6 +40,7 @@ body {
   bottom: 0px;
   width: auto;
   background-color: #22313f;
+  color: white;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -69,6 +80,7 @@ body {
     margin-left: 100px; }
 
   #sidebar {
+    color: white;
     position: fixed;
     top: 49px;
     width: 100px;
@@ -85,13 +97,13 @@ body {
       #sidebar li a:hover {
         outline: none;
         color: #e9d460;
-        background-color: #090d13 !important; }
+        background-color: #192532 !important; }
         #sidebar li a:hover i, #sidebar li a:hover p {
           color: #e9d460 !important; }
       #sidebar li a:focus {
         outline: none;
         color: #e9d460;
-        background-color: #090d13 !important; }
+        background-color: #192532 !important; }
         #sidebar li a:focus i, #sidebar li a:focus p {
           color: #e9d460 !important; }
       #sidebar li a p {
@@ -139,7 +151,7 @@ html, body {
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px; }
   .login-box .content_login {
-    background-color: #425c77;
+    background-color: #22313f;
     height: 80vh; }
   .login-box .content_image {
     background-image: url("../assets/2.png");
@@ -151,15 +163,6 @@ html, body {
     white-space: normal !important; }
   .login-box .button_loginIn {
     margin-top: 20px;
-<<<<<<< HEAD:css/ui1.css
-    float: left;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 5px 30px 5px 15px;
-    background-color: #425c77;
-=======
     padding: 5px 15px 5px 15px;
     float: right;
     border-bottom-left-radius: 10px;
@@ -167,7 +170,6 @@ html, body {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
     background-color: #22313f;
->>>>>>> UI7:css/UI1.css
     border-color: transparent;
     color: white;
     background-color: #e9d460; }
