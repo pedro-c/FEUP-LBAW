@@ -20,6 +20,10 @@ function schedule() {
     $(".meeting-panel").addClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
     $("#mobile-back").show();
     $("#container_schedule_meeting").show();
+    $("#container_meeting_info").hide();
+    $("#schedule_meetings").css("border-bottom","4px solid");
+    $("#schedule_meetings").css("border-bottom-color","#e9d460");
+    $("#future_meetings").css("border-bottom","none");
 }
 
 function exitMobile() {
@@ -38,6 +42,9 @@ function exit_trash() {
     $(".meeting-panel").removeClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
     $("#container_schedule_meeting").hide();
     $("#container_meeting_info").hide();
+    $("#future_meetings").css("border-bottom","4px solid");
+    $("#future_meetings").css("border-bottom-color","#e9d460");
+    $("#schedule_meetings").css("border-bottom","none");
 }
 
 function show_Meeting_Info(){
@@ -46,5 +53,6 @@ function show_Meeting_Info(){
     $(".meeting-panel").removeClass("col-lg-6 col-md-6 col-sm-6 col-xs-12");
     $(".meeting-panel").addClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
     $("#mobile-back").show();
+    $("#container_schedule_meeting").hide();
     $("#container_meeting_info").show();
 }

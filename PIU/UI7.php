@@ -166,13 +166,29 @@ include_once "common/header.html";
                     <div class="form-meeting" id="create-meeting-settings">
                         <form class="new_meeting" method="post" action="" enctype="multipart/form-data">
                             <div class="title">
-                                <input type="text" class="form-control" placeholder="Choose a creative Title">
+                                <input type="text" class="form-control" placeholder="Choose a Creative Title">
                             </div>
+
+
+                            <textarea>Meeting Resume</textarea>
+
+
                             <div class="calendar input-group date">
                                 <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar"
                                       aria-hidden="true"></span>
                                 <input type="text" class="form-control">
                             </div>
+
+                            <div class="time">
+                                <span class="meetings_icon glyphicon glyphicon-time" aria-hidden="true"></span>
+                                <input type="time" class="form-control">
+                            </div>
+
+                            <div class="atendees">
+                                <span class="meetings_icon glyphicon glyphicon-pushpin" aria-hidden="true"></span>
+                                <input type="number" class="form-control" placeholder="Meeting Duration">
+                            </div>
+
                             <div class="atendees">
                                 <span class="meetings_icon glyphicon glyphicon-user" aria-hidden="true"></span>
                                 <select class="select2-multiple form-control" multiple="multiple"
@@ -181,10 +197,6 @@ include_once "common/header.html";
                                     <option value="J">João</option>
                                     <option value="E">Edgar</option>
                                 </select>
-                            </div>
-                            <div class="minutes">
-                                <span class="meetings_icon glyphicon glyphicon-time" aria-hidden="true"></span>
-                                <input type="number" class="form-control" placeholder="Meeting Duration">
                             </div>
 
                             <div class="box drag_here text-center hidden-xs">
@@ -208,7 +220,7 @@ include_once "common/header.html";
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div class="button_back">
+                    <div class="button_back hidden-xs">
                         <button class="back" onclick="exit_trash()">
                             <span id="trash" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
                         </button>
@@ -217,8 +229,16 @@ include_once "common/header.html";
                 </div>
                 <div class="panel-body">
                     <div class="info-meeting" id="create-meeting-settings">
-                        <div class="title">Planing new project</div> <div class="date">15.04.2018</div><label class="hour">7:00PM</label>
-                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum nisi nunc. In fermentum tincidunt eros at viverra. Duis lacinia arcu a odio molestie, nec consectetur nisi blandit. Sed vitae nisl vel nulla laoreet semper id nec sapien. Proin gravida metus quis felis viverra, vitae tincidunt elit consectetur. Aliquam sed laoreet orci, id blandit ante. Pellentesque laoreet rhoncus metus, ullamcorper posuere erat rhoncus eu.</div>
+                        <div class="title">Planing new project</div>
+                        <div class="date">15.04.2018</div>
+                        <label class="hour">7:00PM</label>
+                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+                            bibendum nisi nunc. In fermentum tincidunt eros at viverra. Duis lacinia arcu a odio
+                            molestie, nec consectetur nisi blandit. Sed vitae nisl vel nulla laoreet semper id nec
+                            sapien. Proin gravida metus quis felis viverra, vitae tincidunt elit consectetur. Aliquam
+                            sed laoreet orci, id blandit ante. Pellentesque laoreet rhoncus metus, ullamcorper posuere
+                            erat rhoncus eu.
+                        </div>
                         <div class="minutes">Approximately 30 minutes</div>
                         <div class="files">
                             <img class="file_show" src="../assets/pdf.jpeg">
