@@ -24,7 +24,7 @@ include_once "common/header.html";
             <div class="row">
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
-                        <div class="panel-heading">
+                        <div class="panel-heading" onclick="show_Meeting_Info()">
                             <div class="padding">
                                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
                                 <label class="date">15.04.2018</label><br>
@@ -32,7 +32,7 @@ include_once "common/header.html";
                             </div>
                             <div class="align_middle">
                                 <span id="see_more" class="glyphicon glyphicon-chevron-right"
-                                      aria-hidden="true"></span>
+                                      aria-hidden="true" onclick="show_Meeting_Info()"></span>
                             </div>
                         </div>
                         <div class="panel-body">
@@ -56,7 +56,7 @@ include_once "common/header.html";
 
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
-                        <div class="panel-heading">
+                        <div class="panel-heading" onclick="show_Meeting_Info()">
 
                             <div class="padding">
                                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
@@ -65,14 +65,14 @@ include_once "common/header.html";
                             </div>
                             <div class="align_middle">
                                     <span id="see_more" class="glyphicon glyphicon-chevron-right"
-                                          aria-hidden="true"></span>
+                                          aria-hidden="true" onclick="show_Meeting_Info()"></span>
                             </div>
                         </div>
                         <div class="panel-body">
                             <div class="information_meeting"><br>
-                                <label class="user_responsible">Maria Joao Mira Paulo</label><br>
                                 <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                 <label class="hour">7:00PM</label><br>
+                                <label class="user_responsible">Maria Joao Mira Paulo</label><br>
                                 <label class="guests">
                                     <img class="user_photo" src="../assets/avatar2.png">
                                     <img class="user_photo" src="../assets/avatar3.png">
@@ -91,7 +91,7 @@ include_once "common/header.html";
             <div class="row">
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
-                        <div class="panel-heading">
+                        <div class="panel-heading" onclick="show_Meeting_Info()">
                             <div class="padding">
                                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
                                 <label class="date">15.04.2018</label><br>
@@ -104,7 +104,7 @@ include_once "common/header.html";
                         </div>
                         <div class="panel-body">
                             <div class="information_meeting"><br>
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-time" aria-hidden="true" ></span>
                                 <label class="hour">7:00PM</label><br>
                                 <label class="user_responsible">Edgar Passos</label><br>
                                 <label class="guests">
@@ -120,7 +120,7 @@ include_once "common/header.html";
                 </div>
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
-                        <div class="panel-heading">
+                        <div class="panel-heading" onclick="show_Meeting_Info()">
                             <div class="padding">
                                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
                                 <label class="date">15.04.2018</label><br>
@@ -132,9 +132,9 @@ include_once "common/header.html";
                         </div>
                         <div class="panel-body">
                             <div class="information_meeting"><br>
-                                <label class="user_responsible">Pedro Duarte Costa</label><br>
                                 <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                 <label class="hour">7:00PM</label><br>
+                                <label class="user_responsible">Pedro Duarte Costa</label><br>
                                 <label class="guests">
                                     <img class="user_photo" src="../assets/avatar3.png">
                                     <img class="user_photo" src="../assets/avatar6.png">
@@ -185,17 +185,6 @@ include_once "common/header.html";
                                 <span class="meetings_icon glyphicon glyphicon-time" aria-hidden="true"></span>
                                 <input type="number" class="form-control" placeholder="Meeting Duration">
                             </div>
-
-                           <!-- <div class="agenda">
-                                <ul>
-                                    <li>Write Some Important Tasks</li>
-                                    <li>To Do Before the Meeting</li>
-                                    <li style="font-size: medium;font-weight: bold">Click Here!</li>
-                                </ul>
-                                <div class="text-center">
-                                    <button>Add More Tasks</button>
-                                </div>
-                            </div>-->
 
                             <div class="box drag_here text-center hidden-xs">
                                 <div>
