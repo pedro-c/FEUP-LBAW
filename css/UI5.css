@@ -16,7 +16,18 @@ body {
   left: 0;
   right: 0;
   background-color: #22313f;
-  color: white; }
+  color: white;
+  border: none !important; }
+  #header .navbar-header > button.navbar-toggle {
+    color: #fff; }
+    #header .navbar-header > button.navbar-toggle span {
+      color: #fff;
+      background-color: #fff; }
+    #header .navbar-header > button.navbar-toggle:hover, #header .navbar-header > button.navbar-toggle:focus, #header .navbar-header > button.navbar-toggle:active {
+      background-color: #e9d460;
+      border-color: #e9d460; }
+  #header #navbar {
+    border: none; }
   #header .navbar-brand img {
     margin-top: -10px;
     margin-left: -10px;
@@ -53,18 +64,40 @@ body {
     #header .dropdown-menu i.nav-dropdown-icon {
       float: right; }
 
-#sidebar {
+.mobile-user-options {
+  float: right;
+  margin-top: 8px;
+  margin-right: 10px;
+  vertical-align: middle;
+  color: #fff; }
+  .mobile-user-options img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px; }
+  .mobile-user-options:hover, .mobile-user-options:active, .mobile-user-options:focus {
+    text-decoration: none;
+    color: #e9d460; }
+
+#sidebar, #sidebar-resp {
   position: relative;
   top: 0px;
   left: 0px;
   bottom: 0px;
   width: auto;
   background-color: #22313f;
-  color: white;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   text-align: center; }
+  #sidebar ul li a, #sidebar-resp ul li a {
+    color: #fff; }
+  #sidebar ul li:hover a,
+  #sidebar ul li:active a,
+  #sidebar ul li:focus a, #sidebar-resp ul li:hover a,
+  #sidebar-resp ul li:active a,
+  #sidebar-resp ul li:focus a {
+    background-color: #192532;
+    color: #e9d460; }
 
 #parent {
   margin-top: 50px;

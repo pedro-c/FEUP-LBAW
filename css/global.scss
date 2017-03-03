@@ -41,6 +41,27 @@ body {
   right: 0;
   background-color: $color_ebony_clay;
   color: white;
+  border: none !important;
+
+ .navbar-header>button.navbar-toggle{
+    color: $white;
+   span{
+     color: $white;
+     background-color: $white;
+   }
+    &:hover,
+    &:focus,
+    &:active{
+      background-color: $color_yellow;
+      border-color: $color_yellow;
+    }
+
+  }
+
+  #navbar{
+    border: none;
+  }
+
   .navbar-brand img{
     margin-top: -10px;
     margin-left: -10px;
@@ -93,20 +114,53 @@ body {
     }
   }
 }
-#sidebar {
+
+
+.mobile-user-options {
+  float: right;
+  margin-top: 8px;
+  margin-right: 10px;
+  vertical-align: middle;
+  color: $white;
+  img{
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  &:hover,
+  &:active,
+  &:focus{
+    text-decoration: none;
+    color: $color_yellow;
+  }
+}
+#sidebar, #sidebar-resp{
   position: relative;
   top: 0px;
   left: 0px;
   bottom: 0px;
   width: auto;
   background-color: $color_ebony_clay;
-  color: white;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   text-align: center;
 
+  ul li a{
+    color: $white;
+  }
+
+  ul li:hover,
+  ul li:active,
+  ul li:focus{
+    a {
+      background-color: $color_firefly_approx;
+      color: $color_yellow;
+    }
+  }
 }
+
 #parent {
   margin-top: 50px;
   margin-left: 0px;
