@@ -79,13 +79,13 @@ body {
       #sidebar li a:hover {
         outline: none;
         color: #e9d460;
-        background-color: #192532 !important; }
+        background-color: #090d13 !important; }
         #sidebar li a:hover i, #sidebar li a:hover p {
           color: #e9d460 !important; }
       #sidebar li a:focus {
         outline: none;
         color: #e9d460;
-        background-color: #192532 !important; }
+        background-color: #090d13 !important; }
         #sidebar li a:focus i, #sidebar li a:focus p {
           color: #e9d460 !important; }
       #sidebar li a p {

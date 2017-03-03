@@ -147,7 +147,8 @@
 
   }
 
-  #container_schedule_meeting{
+  #container_schedule_meeting,
+  #container_meeting_info{
 
     .panel-heading{
       background-color: $color_yellow;
@@ -179,6 +180,86 @@
       }
 
     }
+
+    .button_back {
+      text-align: right;
+      margin-left: 15px;
+
+      .back {
+        padding: 4px 15px 4px 15px;
+        color: white;
+        background-color: $blue_secondary;
+        border: 2px solid $blue_secondary;
+        border-radius: 5px;
+        align-self: center;
+        outline: 0;
+
+        &:hover {
+          background-color:$color_firefly_approx;
+          border: 2px solid;
+          border-color: $color_firefly_approx;
+          color: white;
+        }
+      }
+
+    }
+
+    .info-meeting{
+      display: inline-block;
+
+      .title{
+        padding-bottom: 5px;
+        font-size: x-large;
+      }
+
+      .hour{
+        font-size: small;
+        font-weight: normal;
+        padding-bottom: 10px;
+      }
+
+      .description{
+        font-size: small;
+        padding-bottom: 30px;
+      }
+
+      .date{
+        font-size: large;
+        padding-bottom: 5px;
+      }
+
+      .minutes{
+        padding-bottom: 30px;
+      }
+
+      .files{
+        padding-bottom: 20px;
+        .file_show{
+          width: 25px;
+        }
+
+        label{
+          padding-bottom: 10px;
+        }
+      }
+
+      .guests{
+        padding-top: 10px;
+        .user_photo {
+          margin-right: 5px;
+          width: 55px;
+          float: left;
+        }
+        #plus {
+          color: $color_yellow;
+          font-size: 55px;
+          cursor: pointer;
+        }
+      }
+
+
+    }
+
 
     .form_meeting {
 
