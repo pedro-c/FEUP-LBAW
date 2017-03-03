@@ -14,107 +14,139 @@ include_once "common/header.html";
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-8 col-md-offset-2">
-            <div class="files_list">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="add_new_file">
-                            <button>Upload a new File</button>
+    <div class="container files_list">
+        <div class="text-center button_upload">
+            <button class="uploadFile">Upload a File</button>
+        </div>
+
+        <div id="container_to_collapse" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="file col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="panel panel-default meeting">
+                        <div class="panel-heading">
+                            <div class="file_details">
+                                <img class="file_show" src="../assets/excel.png">
+                                <label class="file_description"> Meeting_SummerInternship_2018 </label>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="minutes">
+                                <span>3 minutes ago</span>
+                                <span class="hastag pull-right">#general</span>
+                            </div>
+                            <div class="name">
+                                <span>Edgar Passos</span>
+                                <i class="pull-right fa fa-download" aria-hidden="true"></i>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                <div class="file">
-                    <div class="file1">
-                        <div class="row vertical-align">
-                            <div class="col-xs-2 align_center_div">
-                                <img class="perfil_picture" src="../assets/avatar1.png">
-                            </div>
-                            <div class="col-xs-5">
-                                <div class="file_details">
-                                    <img class="file_show" src="../assets/excel.png">
-                                    <label class="file_description"> Meeting_SummerInternship_2018 </label>
-                                </div>
-                            </div>
-                            <div class="col-xs-5 align_center_div">
-                                <label class="minutes"> 30 minutes ago</label>
+
+                <div class="file col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="panel panel-default meeting">
+                        <div class="panel-heading">
+                            <div class="file_details">
+                                <img class="file_show" src="../assets/pdf.png">
+                                <label class="file_description"> Meeting_4_Abr </label>
                             </div>
                         </div>
-                    </div>
-                </div>
-                    <div class="file">
-                        <div class="file2">
-                            <div class="row vertical-align">
-                                <div class="col-xs-2 align_center_div">
-                                    <img class="perfil_picture" src="../assets/avatar2.png">
-                                </div>
-                                <div class="col-xs-5">
-                                    <div class="file_details">
-                                        <img class="file_show" src="../assets/excel.png">
-                                        <label class="file_description"> Contacts_TIP_New </label>
-                                    </div>
-                                </div>
-                                <div class="col-xs-5 align_center_div">
-                                    <label class="minutes"> 1 hour ago</label>
-                                </div>
+                        <div class="panel-body">
+                            <div class="minutes">
+                                <span>10 minutes ago</span>
+                                <span class="hastag pull-right">#design</span>
                             </div>
-                        </div>
-                </div>
-                <div class="file">
-                    <div class="file3">
-                        <div class="row vertical-align">
-                            <div class="col-xs-2 align_center_div">
-                                <img class="perfil_picture" src="../assets/avatar3.png">
-                            </div>
-                            <div class="col-xs-5">
-                                <div class="file_details">
-                                    <img class="file_show" src="../assets/file.png">
-                                    <label class="file_description"> TimeTable_New </label>
-                                </div>
-                            </div>
-                            <div class="col-xs-5 align_center_div">
-                                <label class="minutes"> 6 hours ago</label>
+                            <div class="name">
+                                <span>Maria João Mira Paulo</span>
+                                <i class="pull-right fa fa-download" aria-hidden="true"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="file">
-                    <div class="file2">
-                        <div class="row vertical-align">
-                            <div class="col-xs-2 align_center_div">
-                                <img class="perfil_picture" src="../assets/avatar3.png">
-                            </div>
-                            <div class="col-xs-5">
-                                <div class="file_details">
-                                    <img class="file_show" src="../assets/pdf.jpeg">
-                                    <label class="file_description"> Meeting_4_Abr </label>
-                                </div>
-                            </div>
-                            <div class="col-xs-5 align_center_div">
-                                <label class="minutes"> 4 days ago</label>
+
+                <div class="file col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="panel panel-default meeting">
+                        <div class="panel-heading">
+                            <div class="file_details">
+                                <img class="file_show" src="../assets/file.png">
+                                <label class="file_description"> TimeTable_New </label>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="file">
-                    <div class="file2">
-                        <div class="row vertical-align">
-                            <div class="col-xs-2 align_center_div">
-                                <img class="perfil_picture" src="../assets/avatar7.png">
-                            </div>
-                            <div class="col-xs-5">
-                                <div class="file_details">
-                                    <img class="file_show" src="../assets/ppt.jpeg">
-                                    <label class="file_description"> Details_Meeting5 </label>
-                                </div>
-                            </div>
-                            <div class="col-xs-5 align_center_div">
-                                <label class="minutes"> 10 days ago</label>
+                        <div class="panel-body">
+                            <div class="minutes"><span>30 minutes ago</span>
+                                <span class="hastag pull-right">#general</span></div>
+                            <div class="name">
+                                <span>Zé Carlos</span>
+                                <i class="pull-right fa fa-download" aria-hidden="true"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="file col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="panel panel-default meeting">
+                        <div class="panel-heading">
+                            <div class="file_details">
+                                <img class="file_show" src="../assets/ppt.png">
+                                <label class="file_description"> Details_Meeting5 </label>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="minutes">
+                                <span>60 minutes ago</span>
+                                <span class="hastag pull-right">#general</span>
+                            </div>
+                            <div class="name">
+                                <span>Maria João Mira Paulo</span>
+                                <i class="pull-right fa fa-download" aria-hidden="true"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="file col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="panel panel-default meeting">
+                        <div class="panel-heading">
+                            <div class="file_details">
+                                <img class="file_show" src="../assets/excel.png">
+                                <label class="file_description"> Meeting_4_Abr </label>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="minutes">
+                                <span>1 day ago</span>
+                                <span class="hastag pull-right">#design</span>
+                            </div>
+                            <div class="name">
+                                <span>Edgar Passos</span>
+                                <i class="pull-right fa fa-download" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="file col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="panel panel-default meeting">
+                        <div class="panel-heading">
+                            <div class="file_details">
+                                <img class="file_show" src="../assets/word.png">
+                                <label class="file_description"> Project_ITK </label>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="minutes"><span>7 days ago</span>
+                                <span class="hastag pull-right">#general</span></div>
+                            <div class="name">
+                                <span>Pedro Costa</span>
+                                <i class="pull-right fa fa-download" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

@@ -32,66 +32,82 @@
 
 .files_list {
 
-  font-weight: normal;
-  background-color: $white;
-  margin-top: 50px;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  .button_upload {
+    padding-top: 20px;
+    padding-bottom: 40px;
 
-  .add_new_file {
-    margin-bottom: 5px;
-    margin-top: 15px;
-    margin-left: 15px;
-    button {
-      padding: 5px;
-      border-radius: 3px;
-      color: $light_blue;
-      background-color: transparent;
-      margin: auto;
-      border: 1px solid $light_blue;
+    .uploadFile {
+      padding: 4px 20px 4px 20px;
+      color: white;
+      background-color: $color_yellow;
+      border: none;
+      border-radius: 5px;
+      align-self: center;
+      outline: 0;
+
       &:hover {
-        background-color: $light_blue;
-        color: white;
-        transition: all 0.2s ease-in-out;
+        background-color: $blue_secondary;
+        border: none;
       }
     }
   }
 
   .file {
-    border-bottom: 1px solid;
-    border-bottom-color: #bcbcbc;
-    vertical-align: middle;
-    padding: 15px 15px 15px 15px;
+    .panel-heading {
+      background-color: $blue_secondary;
+      padding-left: 20px;
 
-    .align_center_div{
-      text-align: center;
-    }
+      .file_details{
 
-    .vertical-align{
-      display: flex;
-      align-items: center;
-    }
-    .minutes {
-      font-size: small;
-      margin-bottom: 0 !important;
-      font-weight: normal !important
-    }
-    .file_details {
-      display: inline-block;
 
-      .file_show {
-        width: 25px;
-        margin-right: 5px;
+        color: white;
+        .file_description{
+          font-weight: normal !important;
+        }
+
+
+        .file_show{
+          padding-right: 5px;
+          width: 35px;
+        }
+
       }
 
-      .file_description {
-        font-weight: normal !important;
-      }
     }
-    .perfil_picture {
-      width: 70px;
+
+    .panel-body {
+     .minutes{
+       padding-bottom: 10px;
+       span{
+         font-weight: lighter;
+         font-size: small;
+       }
+
+       .hastag{
+        cursor: pointer;
+         color: $blue_secondary;
+         &:hover{
+            color: $color_yellow;
+         }
+       }
+     }
+
+      .name{
+        font-size: medium;
+      }
+
+      .fa.fa-download{
+        color: $blue_secondary;
+        font-size: x-large;
+        &:hover{
+          color: $color_yellow;
+        }
+      }
     }
   }
-}
 
+  .container_to_collapse {
+
+  }
+
+}

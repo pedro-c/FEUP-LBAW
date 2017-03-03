@@ -129,50 +129,46 @@ body {
     border-bottom: 4px solid;
     border-bottom-color: #e9d460; }
 
-.files_list {
-  font-weight: normal;
-  background-color: #fff;
-  margin-top: 50px;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
-  .files_list .add_new_file {
-    margin-bottom: 5px;
-    margin-top: 15px;
-    margin-left: 15px; }
-    .files_list .add_new_file button {
-      padding: 5px;
-      border-radius: 3px;
-      color: #1AAFD0;
-      background-color: transparent;
-      margin: auto;
-      border: 1px solid #1AAFD0; }
-      .files_list .add_new_file button:hover {
-        background-color: #1AAFD0;
-        color: white;
-        transition: all 0.2s ease-in-out; }
-  .files_list .file {
-    border-bottom: 1px solid;
-    border-bottom-color: #bcbcbc;
-    vertical-align: middle;
-    padding: 15px 15px 15px 15px; }
-    .files_list .file .align_center_div {
-      text-align: center; }
-    .files_list .file .vertical-align {
-      display: flex;
-      align-items: center; }
-    .files_list .file .minutes {
-      font-size: small;
-      margin-bottom: 0 !important;
+.files_list .button_upload {
+  padding-top: 20px;
+  padding-bottom: 40px; }
+  .files_list .button_upload .uploadFile {
+    padding: 4px 20px 4px 20px;
+    color: white;
+    background-color: #e9d460;
+    border: none;
+    border-radius: 5px;
+    align-self: center;
+    outline: 0; }
+    .files_list .button_upload .uploadFile:hover {
+      background-color: #22313f;
+      border: none; }
+.files_list .file .panel-heading {
+  background-color: #22313f;
+  padding-left: 20px; }
+  .files_list .file .panel-heading .file_details {
+    color: white; }
+    .files_list .file .panel-heading .file_details .file_description {
       font-weight: normal !important; }
-    .files_list .file .file_details {
-      display: inline-block; }
-      .files_list .file .file_details .file_show {
-        width: 25px;
-        margin-right: 5px; }
-      .files_list .file .file_details .file_description {
-        font-weight: normal !important; }
-    .files_list .file .perfil_picture {
-      width: 70px; }
+    .files_list .file .panel-heading .file_details .file_show {
+      padding-right: 5px;
+      width: 35px; }
+.files_list .file .panel-body .minutes {
+  padding-bottom: 10px; }
+  .files_list .file .panel-body .minutes span {
+    font-weight: lighter;
+    font-size: small; }
+  .files_list .file .panel-body .minutes .hastag {
+    cursor: pointer;
+    color: #22313f; }
+    .files_list .file .panel-body .minutes .hastag:hover {
+      color: #e9d460; }
+.files_list .file .panel-body .name {
+  font-size: medium; }
+.files_list .file .panel-body .fa.fa-download {
+  color: #22313f;
+  font-size: x-large; }
+  .files_list .file .panel-body .fa.fa-download:hover {
+    color: #e9d460; }
 
 /*# sourceMappingURL=UI5.css.map */
