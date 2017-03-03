@@ -44,4 +44,5 @@ crashlytics-build.properties
 fabric.properties
 
 # SCSS Mapping
+*.css
 *.css.map
