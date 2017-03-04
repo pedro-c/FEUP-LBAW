@@ -23,7 +23,7 @@
                 <button class="list-group-item forum-post">
                     <h4 class="list-group-item-heading">Who did this? Like, seriously?!!</h4>
                     <div class="list-group-item-text">
-                        <a class="submitter-pic glyphicon glyphicon-user"> </a>
+                        <img class="user_photo" src="../assets/avatar3.png">
                         <small>
                             <span class="submitter-uname">epassos</span> -
                             <span class="post-submission-date">Feb 23 at 23:31</span>
@@ -33,7 +33,7 @@
                 <button class="list-group-item forum-post">
                     <h4 class="list-group-item-heading">Great PHP resource!</h4>
                     <div class="list-group-item-text">
-                        <a class="submitter-pic glyphicon glyphicon-user"> </a>
+                        <img class="user_photo" src="../assets/avatar4.png">
                         <small>
                             <span class="submitter-uname">jccoutinho</span> -
                             <span class="post-submission-date">Feb 24 at 12:18</span>
@@ -43,7 +43,7 @@
                 <button class="list-group-item forum-post">
                     <h4 class="list-group-item-heading">Deployment Instructions</h4>
                     <div class="list-group-item-text">
-                        <a class="submitter-pic glyphicon glyphicon-user"> </a>
+                        <img class="user_photo" src="../assets/avatar3.png">
                         <small>
                             <span class="submitter-uname">mariajoaomp</span> -
                             <span class="post-submission-date">Feb 12 at 15:12</span>
@@ -53,7 +53,7 @@
                 <button class="list-group-item forum-post">
                     <h4 class="list-group-item-heading">Some requirement changes..</h4>
                     <div class="list-group-item-text">
-                        <a class="submitter-pic glyphicon glyphicon-user"> </a>
+                        <img class="user_photo" src="../assets/avatar2.png">
                         <small>
                             <span class="submitter-uname">pedroc</span> -
                             <span class="post-submission-date">Jan 27 at 00:28</span>
@@ -63,7 +63,7 @@
                 <button class="list-group-item forum-post">
                     <h4 class="list-group-item-heading">Just a heads up!</h4>
                     <div class="list-group-item-text">
-                        <a class="submitter-pic glyphicon glyphicon-user"> </a>
+                        <img class="user_photo" src="../assets/avatar3.png">
                         <small>
                             <span class="submitter-uname">epassos</span> -
                             <span class="post-submission-date">Dec 21 at 8:01</span>
@@ -73,7 +73,7 @@
                 <button class="list-group-item forum-post">
                     <h4 class="list-group-item-heading">Random idea</h4>
                     <div class="list-group-item-text">
-                        <a class="submitter-pic glyphicon glyphicon-user"> </a>
+                        <img class="user_photo" src="../assets/avatar7.png">
                         <small>
                             <span class="submitter-uname">mariajoaomp</span> -
                             <span class="post-submission-date">Dec 20 at 21:01</span>

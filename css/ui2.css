@@ -177,6 +177,9 @@ i.dash-title-icon {
 .dash-item-user .dash-item-username {
   margin-left: 10px; }
 
+.file_show {
+  width: 20px; }
+
 .dash-date {
   float: right; }
 
