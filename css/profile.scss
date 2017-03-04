@@ -51,6 +51,22 @@
       border-bottom-left-radius: 0;
     }
   }
+  .new-project{
+    input{
+      height: 30px;
+      padding: 5px;
+      border: solid 1px $light_grey ;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      margin-right: -5px;
+    }
+    button{
+      margin-top:1px;
+      height: 30px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
 }
 
 .personal-info{

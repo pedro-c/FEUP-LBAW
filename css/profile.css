@@ -202,6 +202,18 @@ body {
     height: 30px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0; }
+  .project-managment .new-project input {
+    height: 30px;
+    padding: 5px;
+    border: solid 1px #D3D3D3;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    margin-right: -5px; }
+  .project-managment .new-project button {
+    margin-top: 1px;
+    height: 30px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; }
 
 .personal-info {
   width: 100%;

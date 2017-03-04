@@ -33,6 +33,7 @@
     <!-- jQuery -->
     <!-- jQuery -->
     <script src="../../js/jquery.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
     <script src="../../js/bootstrap-datepicker.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
@@ -119,14 +120,15 @@
             <!-- Top Navbar -->
             <div class="nav navbar-nav navbar-right hidden-xs">
                 <div id="user-options" class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <p>
                             <img src="../../assets/avatar2.png" alt="User profile picture" class="nav-user-picture">
                             <span id="nav-username">Edgar Passos</span>
                         </p>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">My Profile</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="/PIU/UI8.php">My Profile</a></li>
+                        <li role="separator" class="divider"></li>
                         <li><a href="#">Sign Out<i class="nav-dropdown-icon glyphicon glyphicon-log-out"></i></a></li>
                     </ul>
 
@@ -134,16 +136,16 @@
             </div>
             <div class="nav navbar-nav navbar-right hidden-xs">
                 <div id="user-projects" class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
                         <p>
                             <i class="glyphicon glyphicon-fire"></i>
                             <span id="nav-project">My Project </span>
                         </p>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Other Project</a></li>
-                        <li><a href="#">Another One</a></li>
-                        <li><a href="#">New Project<i class="nav-dropdown-icon glyphicon glyphicon-plus"></i></a></li>
+                        <li><a href="#">Project 1</a></li>
+                        <li><a href="#">Project 2</a></li>
+                        <li><a href="/PIU/UI8.php#new_project">New Project<i class="nav-dropdown-icon glyphicon glyphicon-plus"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -153,5 +155,3 @@
 
 <div id="parent">
 <div id="main-content">
-
-

@@ -22,11 +22,6 @@ include_once "common/header.html";
                     </div>
                 </div>
                 <div class="project-managment">
-                    <h4>Join Project</h4>
-                    <div class="join-project">
-                        <input type="text" placeholder="Insert Project ID">
-                        <button class="btn btn-success">Join</button>
-                    </div>
                     <h4>Current Projects</h4>
                     <div class="current-projects">
                         <div>
@@ -35,6 +30,16 @@ include_once "common/header.html";
                         <div>
                             <a href="#">Project 2</a>
                         </div>
+                    </div>
+                    <h4>Join Project</h4>
+                    <div class="join-project">
+                        <input type="text" placeholder="Insert Project ID">
+                        <button class="btn btn-success">Join</button>
+                    </div>
+                    <h4>New Project</h4>
+                    <div class="new-project">
+                        <input type="text" placeholder="Insert Project ID">
+                        <button class="btn btn-success">Create</button>
                     </div>
                 </div>
                 <div class="personal-info">
