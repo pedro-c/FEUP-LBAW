@@ -35,7 +35,8 @@ include_once 'common/header.html';
                                     class="dash-item-text">Implement feature</span></button>
                         <button class="list-group-item"><i class="glyphicon glyphicon-menu-right dash-icon"></i><span
                                     class="dash-item-text">Merge changes</span></button>
-                        <button class="list-group-item"><i class="glyphicon glyphicon-menu-right dash-icon"></i><span
+                        <button class="list-group-item">
+                         <i class="glyphicon glyphicon-menu-right dash-icon"></i><span
                                     class="dash-item-text">Fix conflicts</span></button>
                     </div>
                 </div>
@@ -126,7 +127,7 @@ include_once 'common/header.html';
                         <button class="list-group-item">
                             <div class="row">
                                 <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <i class="fa fa-file-excel-o dash-icon"></i><span class="dash-item-text">clients.xls</span>
+                               <img class="file_show" src="../assets/excel.png"><span class="dash-item-text">clients.xls</span>
                                 </span>
                                 <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
                                         <img src="../assets/avatar1.png" class="dash-user-thumb"/><span
@@ -137,7 +138,7 @@ include_once 'common/header.html';
                         <button class="list-group-item">
                             <div class="row">
                                 <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <i class="fa fa-file-pdf-o dash-icon"></i>
+                              <img class="file_show" src="../assets/pdf.png">
                                 <span class="dash-item-text">requirements.pdf</span>
                                 </span>
                                 <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
@@ -149,7 +150,7 @@ include_once 'common/header.html';
                         <button class="list-group-item">
                             <div class="row">
                                 <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <i class="fa fa-file-pdf-o dash-icon"></i>
+                             <img class="file_show" src="../assets/file.png">
                                 <span class="dash-item-text">team_guide.pdf</span>
                                 </span>
                                 <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
