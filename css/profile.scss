@@ -10,6 +10,7 @@
 }
 
 .profile-pic{
+  text-align: center;
   padding: 10px;
   cursor: pointer;
   index-z: -4;
@@ -25,11 +26,31 @@
     }
   }
 
-    &:hover {
-      background-image: url('../assets/plus.png');
+
+}
+
+.project-managment{
+  width: 100%;
+  border-top: solid 1px $light_grey ;
+  padding: 20px;
+  display: block;
+  align-content: center;
+  .join-project{
+    input{
+      height: 30px;
+      padding: 5px;
+      border: solid 1px $light_grey ;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      margin-right: -5px;
     }
-
-
+    button{
+      margin-top:1px;
+      height: 30px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
 }
 
 .personal-info{

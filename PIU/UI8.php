@@ -14,9 +14,31 @@ include_once "common/header.html";
         <div class="row">
             <div class="content col-xs-8 col-md-4 col-xs-offset-2 col-md-offset-4">
                 <div class="profile-pic">
-                    <img class="img-circle" src="../../assets/avatar5.jpg">
+                    <div>
+                        <img class="img-circle" src="../../assets/avatar5.jpg">
+                    </div>
+                    <div>
+                        <a href="#">Change Photo</a>
+                    </div>
+                </div>
+                <div class="project-managment">
+                    <h4>Join Project</h4>
+                    <div class="join-project">
+                        <input type="text" placeholder="Insert Project ID">
+                        <button class="btn btn-success">Join</button>
+                    </div>
+                    <h4>Current Projects</h4>
+                    <div class="current-projects">
+                        <div>
+                            <a href="#">Project 1</a>
+                        </div>
+                        <div>
+                            <a href="#">Project 2</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="personal-info">
+                    <h4 id="change-password">Edit Personal Info</h4>
                     <div class="info">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                         <input class="update-info" type="text" placeholder="Duarte Costa">
