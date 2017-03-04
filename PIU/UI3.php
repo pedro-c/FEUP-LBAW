@@ -92,7 +92,7 @@ include_once "common/header.html";
                         </div>
 
                     </div>
-                    <div id="mobile-back" class="hidden-lg hidden-md hidden-sm navbar navbar-default navbar-fixed-bottom" onclick="toggle()">
+                    <div id="mobile-back" class="navbar navbar-default navbar-fixed-bottom" onclick="toggle()">
                     <h4>« Back</h4>
                     </div>
                 </div>

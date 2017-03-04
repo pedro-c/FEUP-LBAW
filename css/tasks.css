@@ -440,6 +440,9 @@ textarea#task-title {
   width: 70%;
   float: left; }
 
+#mobile-back {
+  display: none; }
+
 textarea {
   vertical-align: middle;
   overflow: hidden;

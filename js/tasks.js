@@ -36,16 +36,19 @@ function toggle() {
         document.getElementById(id).style.width='1%';
         taskCard.style.width='70%';
         taskCard.style.display='inline-block';
+        document.getElementById('mobile-back').style.display='none';
     } else {
         if($(window).width() < 768 ){
             taskCard.style.width='1%';
             taskCard.style.display='none';
             document.getElementById(id).style.display = 'inline-block';
             document.getElementById(id).style.width='70%';
+            document.getElementById('mobile-back').style.display='inline-block';
         }else{
             document.getElementById(id).style.display = 'inline-block';
             document.getElementById(id).style.width='40%';
             taskCard.style.width='40%';
+            document.getElementById('mobile-back').style.display='none';
         }
 
 
