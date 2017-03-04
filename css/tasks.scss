@@ -62,7 +62,10 @@
 .tasks-header{
   margin: 15px 20px 15px 20px;
   float: left;
+  width: 90%;
+  vertical-align: middle;
   button{
+    float: left;
     padding: 5px;
     border-radius: 3px;
     color: white;
@@ -73,6 +76,19 @@
       background-color: #d9c559;
       color: white;
       transition: all 0.2s ease-in-out;
+    }
+  }
+  ul{
+    padding: 5px;
+    float: right;
+    li{
+      color: $blue_secondary;
+      display: inline;
+      padding-right: 5px;
+      &:hover{
+        color: $light_blue;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -103,6 +119,16 @@
   #delete-task{
     float: right;
     height: 25px;
+  }
+  p{
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 0.8em;
+    float: right;
+    height: 100%;
+    padding: 3px;
+    border: solid 1px $yellow_darker;
+    border-radius: 10px;
   }
 }
 .task-content{
@@ -330,6 +356,10 @@
   }
 }
 
+textarea#task-title{
+  width: 70%;
+  float: left;
+}
 
 
 

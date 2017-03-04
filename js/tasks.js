@@ -24,7 +24,7 @@ $(document).ready(function(){
         todayHighlight: true
     });
 
-    $(".select2-multiple").select2();
+    $('.select2-multiple').select2();
 
 });
 function toggle() {

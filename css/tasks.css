@@ -209,8 +209,11 @@ body {
 
 .tasks-header {
   margin: 15px 20px 15px 20px;
-  float: left; }
+  float: left;
+  width: 90%;
+  vertical-align: middle; }
   .tasks-header button {
+    float: left;
     padding: 5px;
     border-radius: 3px;
     color: white;
@@ -221,6 +224,16 @@ body {
       background-color: #d9c559;
       color: white;
       transition: all 0.2s ease-in-out; }
+  .tasks-header ul {
+    padding: 5px;
+    float: right; }
+    .tasks-header ul li {
+      color: #22313f;
+      display: inline;
+      padding-right: 5px; }
+      .tasks-header ul li:hover {
+        color: #1AAFD0;
+        cursor: pointer; }
 
 .task {
   vertical-align: middle;
@@ -244,6 +257,15 @@ body {
   .task #delete-task {
     float: right;
     height: 25px; }
+  .task p {
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 0.8em;
+    float: right;
+    height: 100%;
+    padding: 3px;
+    border: solid 1px #d9c559;
+    border-radius: 10px; }
 
 .task-content {
   margin: 10px; }
@@ -413,6 +435,10 @@ body {
   width: 200px; }
   .date span {
     width: 50px; }
+
+textarea#task-title {
+  width: 70%;
+  float: left; }
 
 textarea {
   vertical-align: middle;
