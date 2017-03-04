@@ -1,7 +1,7 @@
 <?php
 include_once 'common/header.html';
 ?>
-<link href="../css/ui2.css" rel="stylesheet"/>
+<link href="../css/UI2.css" rel="stylesheet"/>
 <script src="../js/dashboard.js"></script>
 
 <div class="page-wrapper container">

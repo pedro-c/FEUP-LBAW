@@ -161,102 +161,55 @@ body {
           color: #e9d460 !important; }
       #sidebar li a p {
         margin-bottom: 0px !important; } }
-#title {
-  display: inline;
-  margin-right: 15px; }
+#title_team_name {
+  margin-top: 10px; }
 
-#subtitle {
-  color: #777; }
+.media #profile_pic {
+  padding-right: 20px; }
+  .media #profile_pic img {
+    border-radius: 50px; }
+.media .media-body #team_role {
+  margin-top: 20px; }
+.media .media-body i {
+  cursor: pointer;
+  margin-left: 88%; }
 
-.panel-body > .list-group {
-  margin-bottom: 5px; }
+.profile_details {
+  margin-top: 20px; }
+  .profile_details .attribute_field {
+    overflow: auto; }
+  .profile_details i#zoom_out {
+    cursor: pointer;
+    margin-left: 97%; }
+  .profile_details #profile_actions i {
+    cursor: pointer; }
+  .profile_details #profile_actions i.fa.fa-star {
+    color: #f0ad4e; }
+  .profile_details #profile_actions i.fa.fa-ban {
+    color: #b52b27; }
+  .profile_details #profile_actions i.fa.fa-times {
+    color: #d9534f; }
 
-i.dash-title-icon {
-  margin-right: 5px; }
+#add_member_card {
+  cursor: pointer; }
+  #add_member_card :active {
+    background-color: #192532 !important;
+    color: #e9d460; }
 
-.dash-item-user .dash-item-username {
-  margin-left: 10px; }
-
-.file_show {
-  width: 20px; }
-
-.dash-date {
-  float: right; }
-
-.panel-heading {
-  display: block; }
-  .panel-heading:hover {
-    text-decoration: none; }
-
-.panel-title {
+.modal-content .modal-header {
+  background-color: #22313f;
   color: #fff; }
-
-.dash-item-text {
-  margin-left: 5px; }
-
-.dash-card > .panel > .panel-body {
-  text-align: center; }
-
-.thumbnail.dash-thumbnail {
-  border: none;
-  margin-bottom: 5px; }
-
-.dash-user-thumb {
-  height: 20px;
-  width: 20px; }
-
-.to-page {
-  float: right; }
-  .to-page small {
+.modal-content .modal-footer {
+  background-color: #22313f;
+  color: #fff; }
+  .modal-content .modal-footer #accept_button:hover {
+    background-color: #e9d460;
+    color: #fff; }
+  .modal-content .modal-footer #cancel_button:hover {
+    background-color: #e9d460;
     color: #fff; }
 
-/*Overriding bootstrap class panel-primary*/
-.panel-primary {
-  border: 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+#promote1 {
+  padding-top: 4px; }
 
-.panel-primary > .panel-heading {
-  color: #fff;
-  background-color: #22313f;
-  border-color: #22313f; }
-  .panel-primary > .panel-heading:hover {
-    cursor: pointer; }
-
-.panel-primary:hover a:hover {
-  color: #fff;
-  background-color: #e9d460;
-  border-color: #e9d460;
-  box-shadow: none; }
-
-.panel-primary:hover > .panel-heading {
-  color: #fff;
-  background-color: #e9d460;
-  border-color: #e9d460; }
-
-.panel-primary:hover > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #e9d460; }
-
-.panel-primary:hover > .panel-heading .badge {
-  color: #337ab7;
-  background-color: #fff; }
-
-.panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #22313f; }
-
-#project-title span {
-  display: none; }
-#project-title:hover span {
-  display: inline-block; }
-  #project-title:hover span:hover {
-    color: #d9c559;
-    cursor: pointer; }
-
-#project-description span.glyphicon {
-  display: none; }
-#project-description:hover span.glyphicon {
-  display: inline-block; }
-  #project-description:hover span.glyphicon:hover {
-    color: #d9c559;
-    cursor: pointer; }
-
-/*# sourceMappingURL=ui2.css.map */
+/*# sourceMappingURL=UI6.css.map */

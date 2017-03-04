@@ -2,7 +2,7 @@
 include_once "common/header.html";
 ?>
 
-<link href="../css/ui6.css" rel="stylesheet">
+<link href="../css/UI6.css" rel="stylesheet">
 <script src="../jquery-3.1.1.min.js"></script>
 <script src="../js/ui6.js"></script>
 
