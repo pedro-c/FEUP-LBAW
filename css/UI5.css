@@ -121,58 +121,177 @@ body {
     margin-right: 20px;
     border: none;
     background-color: transparent;
-    cursor: pointer; }
-    .files_title button:hover, .files_title button:visited {
-      border-bottom: 4px solid;
-      border-bottom-color: #e9d460; }
+    cursor: pointer;
+    outline: 0; }
   .files_title button:first-child {
     border-bottom: 4px solid;
     border-bottom-color: #e9d460; }
 
-.files_list {
-  font-weight: normal;
-  background-color: #fff;
-  margin-top: 50px;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
-  .files_list .add_new_file {
-    margin-bottom: 5px;
-    margin-top: 15px;
-    margin-left: 15px; }
-    .files_list .add_new_file button {
-      padding: 5px;
-      border-radius: 3px;
-      color: #1AAFD0;
-      background-color: transparent;
-      margin: auto;
-      border: 1px solid #1AAFD0; }
-      .files_list .add_new_file button:hover {
-        background-color: #1AAFD0;
-        color: white;
-        transition: all 0.2s ease-in-out; }
-  .files_list .file {
-    border-bottom: 1px solid;
-    border-bottom-color: #bcbcbc;
-    vertical-align: middle;
-    padding: 15px 15px 15px 15px; }
-    .files_list .file .align_center_div {
-      text-align: center; }
-    .files_list .file .vertical-align {
-      display: flex;
-      align-items: center; }
-    .files_list .file .minutes {
-      font-size: small;
-      margin-bottom: 0 !important;
+.files_list .button_upload {
+  padding-top: 20px;
+  padding-bottom: 40px; }
+  .files_list .button_upload .uploadFile {
+    padding: 4px 20px 4px 20px;
+    color: white;
+    background-color: #e9d460;
+    border: none;
+    border-radius: 5px;
+    align-self: center;
+    outline: 0; }
+    .files_list .button_upload .uploadFile:hover {
+      background-color: #22313f;
+      border: none; }
+.files_list .file .panel-heading {
+  background-color: #22313f;
+  padding-left: 20px; }
+  .files_list .file .panel-heading:hover {
+    background-color: #e9d460; }
+  .files_list .file .panel-heading .file_details {
+    color: white; }
+    .files_list .file .panel-heading .file_details .file_description {
       font-weight: normal !important; }
-    .files_list .file .file_details {
+    .files_list .file .panel-heading .file_details .file_show {
+      padding-right: 5px;
+      width: 35px; }
+.files_list .file .panel-body .minutes {
+  padding-bottom: 10px; }
+  .files_list .file .panel-body .minutes span {
+    font-weight: lighter;
+    font-size: small; }
+  .files_list .file .panel-body .minutes .hastag {
+    cursor: pointer;
+    color: #22313f; }
+    .files_list .file .panel-body .minutes .hastag:hover {
+      color: #e9d460; }
+.files_list .file .panel-body .name {
+  font-size: medium; }
+.files_list .file .panel-body .fa.fa-download {
+  color: #22313f;
+  font-size: x-large; }
+  .files_list .file .panel-body .fa.fa-download:hover {
+    color: #e9d460; }
+.files_list .uploadFile_container .panel-heading {
+  background-color: #e9d460;
+  color: white;
+  padding-bottom: 20px; }
+  .files_list .uploadFile_container .panel-heading .trash {
+    padding: 4px 15px 4px 15px;
+    color: white;
+    background-color: #c0392b;
+    border: 2px solid #c0392b;
+    border-radius: 5px;
+    align-self: center;
+    outline: 0; }
+    .files_list .uploadFile_container .panel-heading .trash:hover {
+      background-color: #913025;
+      border: 2px solid;
+      border-color: #913025;
+      color: white; }
+.files_list .uploadFile_container .panel-body .box.drag_here {
+  border-radius: 5px;
+  height: 150px;
+  margin-top: 40px;
+  border: 1px dashed grey;
+  vertical-align: middle;
+  background-color: #ecf0f1;
+  display: table;
+  width: 100%; }
+  .files_list .uploadFile_container .panel-body .box.drag_here div {
+    display: table-cell;
+    vertical-align: middle; }
+  .files_list .uploadFile_container .panel-body .box.drag_here .info {
+    padding-top: 30px;
+    text-align: center;
+    font-size: medium;
+    color: grey; }
+  .files_list .uploadFile_container .panel-body .box.drag_here .glyphicon.glyphicon-plus {
+    text-align: center;
+    font-size: x-large;
+    color: grey; }
+.files_list .uploadFile_container .panel-body .input-group.task-tags {
+  padding-top: 40px; }
+.files_list .uploadFile_container #submit {
+  padding: 4px 20px 4px 20px;
+  color: white;
+  background-color: #e9d460;
+  border: none;
+  border-radius: 5px;
+  align-self: center;
+  outline: 0; }
+  .files_list .uploadFile_container #submit:hover {
+    background-color: #22313f;
+    border: none; }
+.files_list #container_file_info .panel-heading {
+  color: white;
+  background-color: #e9d460; }
+  .files_list #container_file_info .panel-heading span {
+    font-size: medium; }
+  .files_list #container_file_info .panel-heading .file {
+    padding-left: 0 !important; }
+    .files_list #container_file_info .panel-heading .file .title {
+      padding-top: 15px !important;
+      font-size: large;
+      float: left;
       display: inline-block; }
-      .files_list .file .file_details .file_show {
-        width: 25px;
-        margin-right: 5px; }
-      .files_list .file .file_details .file_description {
-        font-weight: normal !important; }
-    .files_list .file .perfil_picture {
-      width: 70px; }
+    .files_list #container_file_info .panel-heading .file .file_show {
+      display: inline-block;
+      width: 60px;
+      margin-right: 10px;
+      float: left; }
+  .files_list #container_file_info .panel-heading .button_back {
+    text-align: right;
+    margin-left: 15px;
+    margin-bottom: 15px; }
+    .files_list #container_file_info .panel-heading .button_back .back {
+      padding: 4px 15px 4px 15px;
+      color: white;
+      background-color: #22313f;
+      border: 2px solid #22313f;
+      border-radius: 5px;
+      align-self: center;
+      outline: 0; }
+      .files_list #container_file_info .panel-heading .button_back .back:hover {
+        background-color: #192532;
+        border: 2px solid;
+        border-color: #192532;
+        color: white; }
+.files_list #container_file_info .panel-body .button_download {
+  text-align: center;
+  padding-top: 20px; }
+  .files_list #container_file_info .panel-body .button_download i {
+    font-size: large; }
+  .files_list #container_file_info .panel-body .button_download .download {
+    padding: 4px 20px 4px 20px;
+    color: white;
+    background-color: #e9d460;
+    border: none;
+    border-radius: 5px;
+    align-self: center;
+    outline: 0; }
+    .files_list #container_file_info .panel-body .button_download .download:hover {
+      background-color: #22313f;
+      border: none; }
+.files_list #container_file_info .panel-body #user {
+  padding-top: 30px; }
+  .files_list #container_file_info .panel-body #user #user_photo {
+    width: 70px;
+    float: left; }
+  .files_list #container_file_info .panel-body #user .name {
+    padding-left: 15px;
+    padding-top: 30px;
+    display: inline-block;
+    font-size: medium; }
+.files_list #container_file_info .panel-body .extra_info {
+  text-align: right;
+  padding-top: 15px; }
+  .files_list #container_file_info .panel-body .extra_info .hastag {
+    padding-bottom: 15px;
+    font-size: large;
+    font-weight: bold; }
+  .files_list #container_file_info .panel-body .extra_info .date {
+    padding-top: 20px;
+    padding-bottom: 5px; }
+  .files_list #container_file_info .panel-body .extra_info .minutes {
+    padding-bottom: 10px; }
 
 /*# sourceMappingURL=UI5.css.map */

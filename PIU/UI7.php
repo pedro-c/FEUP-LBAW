@@ -241,7 +241,7 @@ include_once "common/header.html";
                         </div>
                         <div class="minutes">Approximately 30 minutes</div>
                         <div class="files">
-                            <img class="file_show" src="../assets/pdf.jpeg">
+                            <img class="file_show" src="../assets/pdf.png">
                             <label class="file_description"> Meeting_15_Abr </label><br>
                             <img class="file_show" src="../assets/file.png">
                             <label class="file_description"> New_project_marketing </label>
