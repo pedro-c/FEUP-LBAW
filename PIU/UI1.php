@@ -30,22 +30,11 @@
     <div class="row vertical-align">
         <div class="col-xs-8 col-xs-offset-2 login-box">
             <div class="border_radius">
-                <div class="col-xs-6 content_login nopadding" id="slider-card">
+                <div class="col-lg-6 col-sm-6 col-md-6 hidden-xs content_login nopadding" id="slider-card">
                     <img class="img-responsive" src="../assets/2.png"
                          style="width:100%;overflow: hidden; height: 100%;"/>
                 </div>
-                <div class="col-xs-6 content_login pull-right" id="login-card">
-                   <!-- <div class="row">
-                          <div class="col-xs-4"></div>
-                          <div id="buttons">
-                              <div class="col-xs-4 nopadding col-lg-offset-4"> <!--Retirar padding das colunas-->
-                        <!--        <button class="button_loginIn btn btn-default" onclick="signIn()">Sign In</button>
-                            </div>
-                            <div class="col-xs-4 nopadding">
-                                <button class="button_signUp btn btn-default" onclick="signUp()">Sign Up</button>
-                            </div>
-                        </div>
-                    </div>-->
+                <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 content_login pull-right">
                     <div class="row row-centered">
                         <div class="description-links">
                             <div class="col-xs-12 nopadding">

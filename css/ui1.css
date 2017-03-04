@@ -114,29 +114,11 @@ html, body {
   background-color: #ecf0f1;
   width: 100%; }
 
-@media (min-width: 768px) {
-  .container {
-    display: table;
-    position: absolute;
-    height: 100%;
-    width: 100%; }
-
-  #slider-card {
-    display: block !important; }
-
-  #login-card {
-    width: 50% !important; } }
 .container {
   align-content: center;
   display: table;
   position: absolute;
   height: 100%;
-  width: 100%; }
-
-#slider-card {
-  display: none; }
-
-#login-card {
   width: 100%; }
 
 .vertical-align {
