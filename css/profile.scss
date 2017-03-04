@@ -11,9 +11,24 @@
 
 .profile-pic{
   padding: 10px;
+  cursor: pointer;
+  index-z: -4;
   img{
     width: 40%;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    &:hover {
+      -webkit-filter: blur(5px);
+    }
   }
+
+    &:hover {
+      background-image: url('../assets/plus.png');
+    }
+
 
 }
 

@@ -4,19 +4,13 @@ $(document).ready(function(){
     var updateNameButton = document.getElementById('update-name-button');
     var updateMailButton = document.getElementById('update-mail-button');
 
-    $("#update-name").focus(function () {
-        $('#update-name-button').show();
+    $(".update-info").focus(function () {
+        $('#update-button').show();
     }).blur(function () {
-        $('#update-name-button').hide();
+        $('#update-button').hide();
 
     });
-
-    $("#update-mail").focus(function () {
-        $('#update-mail-button').show();
-    }).blur(function () {
-        $('#update-mail-button').hide();
-
-    });
+    
     var options = {};
     options.ui = {
         container: "#pwd-container",

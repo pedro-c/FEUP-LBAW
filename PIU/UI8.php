@@ -19,19 +19,22 @@ include_once "common/header.html";
                 <div class="personal-info">
                     <div class="info">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        <input id="update-name" type="text" placeholder="Duarte Costa">
+                        <input class="update-info" type="text" placeholder="Duarte Costa">
                     </div>
-                    <div class="update">
-                        <button id="update-name-button" class="btn btn-success">Update</button>
-                    </div>
-                </div>
-                <div class="personal-info">
                     <div class="info">
                         <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                        <input id="update-mail"type="email" placeholder="duartecosta@mail.com">
+                        <input class="update-info" type="email" placeholder="duartecosta@mail.com">
+                    </div>
+                    <div class="info">
+                        <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+                        <input class="update-info" type="text" placeholder="Portugal">
+                    </div>
+                    <div class="info">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                        <input class="update-info" type="text" placeholder="Porto">
                     </div>
                     <div class="update">
-                        <button id="update-mail-button" class="btn btn-success">Update</button>
+                        <button id="update-button" class="btn btn-success">Update</button>
                     </div>
                 </div>
                 <div class="password">
