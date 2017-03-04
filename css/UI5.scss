@@ -53,6 +53,10 @@
       background-color: $blue_secondary;
       padding-left: 20px;
 
+      &:hover {
+        background-color: $color_yellow;
+      }
+
       .file_details {
 
         color: white;
@@ -127,8 +131,7 @@
 
     }
 
-
-    .panel-body{
+    .panel-body {
       .box.drag_here {
         border-radius: 5px;
         height: 150px;
@@ -157,7 +160,7 @@
         }
       }
 
-      .input-group.task-tags{
+      .input-group.task-tags {
         padding-top: 40px;
       }
     }
@@ -177,6 +180,124 @@
       }
     }
 
+  }
+
+  #container_file_info {
+
+    .panel-heading {
+      color: white;
+      background-color: $color_yellow;
+      span {
+        font-size: medium;
+      }
+
+      .file{
+        padding-left: 0 !important;
+
+        .title {
+          padding-top: 15px !important;
+          font-size: large;
+          float: left;
+          display: inline-block;
+        }
+
+        .file_show {
+          display: inline-block;
+          width: 60px;
+          margin-right: 10px;
+          float: left;
+        }
+      }
+
+
+      .button_back {
+        text-align: right;
+        margin-left: 15px;
+        margin-bottom: 15px;
+
+        .back {
+          padding: 4px 15px 4px 15px;
+          color: white;
+          background-color: $blue_secondary;
+          border: 2px solid $blue_secondary;
+          border-radius: 5px;
+          align-self: center;
+          outline: 0;
+
+          &:hover {
+            background-color: $color_firefly_approx;
+            border: 2px solid;
+            border-color: $color_firefly_approx;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .panel-body{
+
+      .button_download{
+        text-align: center;
+        i{
+          font-size: large;
+        }
+        .download{
+          padding: 4px 20px 4px 20px;
+          color: white;
+          background-color: $color_yellow;
+          border: none;
+          border-radius: 5px;
+          align-self: center;
+          outline: 0;
+
+          &:hover {
+            background-color: $blue_secondary;
+            border: none;
+          }
+
+        }
+        padding-top: 20px;
+      }
+
+      #user{
+        padding-top: 30px;
+        #user_photo {
+          width: 70px;
+          float: left;
+        }
+
+        .name{
+          padding-left: 15px;
+          padding-top: 30px;
+          display: inline-block;
+          font-size: medium;
+        }
+      }
+
+      .extra_info{
+        text-align: right;
+        padding-top: 15px;
+
+        .hastag{
+          padding-bottom: 15px;
+          font-size: large;
+          font-weight: bold;
+        }
+
+        .date {
+          padding-top: 20px;
+          padding-bottom: 5px;
+        }
+
+        .minutes {
+          padding-bottom: 10px;
+        }
+      }
+
+
+
+
+    }
   }
 
 }

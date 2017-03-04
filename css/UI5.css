@@ -144,6 +144,8 @@ body {
 .files_list .file .panel-heading {
   background-color: #22313f;
   padding-left: 20px; }
+  .files_list .file .panel-heading:hover {
+    background-color: #e9d460; }
   .files_list .file .panel-heading .file_details {
     color: white; }
     .files_list .file .panel-heading .file_details .file_description {
@@ -219,5 +221,77 @@ body {
   .files_list .uploadFile_container #submit:hover {
     background-color: #22313f;
     border: none; }
+.files_list #container_file_info .panel-heading {
+  color: white;
+  background-color: #e9d460; }
+  .files_list #container_file_info .panel-heading span {
+    font-size: medium; }
+  .files_list #container_file_info .panel-heading .file {
+    padding-left: 0 !important; }
+    .files_list #container_file_info .panel-heading .file .title {
+      padding-top: 15px !important;
+      font-size: large;
+      float: left;
+      display: inline-block; }
+    .files_list #container_file_info .panel-heading .file .file_show {
+      display: inline-block;
+      width: 60px;
+      margin-right: 10px;
+      float: left; }
+  .files_list #container_file_info .panel-heading .button_back {
+    text-align: right;
+    margin-left: 15px;
+    margin-bottom: 15px; }
+    .files_list #container_file_info .panel-heading .button_back .back {
+      padding: 4px 15px 4px 15px;
+      color: white;
+      background-color: #22313f;
+      border: 2px solid #22313f;
+      border-radius: 5px;
+      align-self: center;
+      outline: 0; }
+      .files_list #container_file_info .panel-heading .button_back .back:hover {
+        background-color: #192532;
+        border: 2px solid;
+        border-color: #192532;
+        color: white; }
+.files_list #container_file_info .panel-body .button_download {
+  text-align: center;
+  padding-top: 20px; }
+  .files_list #container_file_info .panel-body .button_download i {
+    font-size: large; }
+  .files_list #container_file_info .panel-body .button_download .download {
+    padding: 4px 20px 4px 20px;
+    color: white;
+    background-color: #e9d460;
+    border: none;
+    border-radius: 5px;
+    align-self: center;
+    outline: 0; }
+    .files_list #container_file_info .panel-body .button_download .download:hover {
+      background-color: #22313f;
+      border: none; }
+.files_list #container_file_info .panel-body #user {
+  padding-top: 30px; }
+  .files_list #container_file_info .panel-body #user #user_photo {
+    width: 70px;
+    float: left; }
+  .files_list #container_file_info .panel-body #user .name {
+    padding-left: 15px;
+    padding-top: 30px;
+    display: inline-block;
+    font-size: medium; }
+.files_list #container_file_info .panel-body .extra_info {
+  text-align: right;
+  padding-top: 15px; }
+  .files_list #container_file_info .panel-body .extra_info .hastag {
+    padding-bottom: 15px;
+    font-size: large;
+    font-weight: bold; }
+  .files_list #container_file_info .panel-body .extra_info .date {
+    padding-top: 20px;
+    padding-bottom: 5px; }
+  .files_list #container_file_info .panel-body .extra_info .minutes {
+    padding-bottom: 10px; }
 
 /*# sourceMappingURL=UI5.css.map */

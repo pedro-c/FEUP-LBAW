@@ -24,7 +24,7 @@ include_once "common/header.html";
             <div class="row">
                 <div class="file col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="panel panel-default meeting">
-                        <div class="panel-heading">
+                        <div class="panel-heading" onclick="fileInfo()">
                             <div class="file_details">
                                 <img class="file_show" src="../assets/excel.png">
                                 <label class="file_description"> Meeting_SummerInternship_2018 </label>
@@ -33,7 +33,7 @@ include_once "common/header.html";
                         <div class="panel-body">
                             <div class="minutes">
                                 <span>3 minutes ago</span>
-                                <span class="hastag pull-right">#general</span>
+                                <span class="hastag -rightpull">#general</span>
                             </div>
                             <div class="name">
                                 <span>Edgar Passos</span>
@@ -46,7 +46,7 @@ include_once "common/header.html";
 
                 <div class="file col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="panel panel-default meeting">
-                        <div class="panel-heading">
+                        <div class="panel-heading" onclick="fileInfo()">
                             <div class="file_details">
                                 <img class="file_show" src="../assets/pdf.png">
                                 <label class="file_description"> Meeting_4_Abr </label>
@@ -67,7 +67,7 @@ include_once "common/header.html";
 
                 <div class="file col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="panel panel-default meeting">
-                        <div class="panel-heading">
+                        <div class="panel-heading" onclick="fileInfo()">
                             <div class="file_details">
                                 <img class="file_show" src="../assets/file.png">
                                 <label class="file_description"> TimeTable_New </label>
@@ -87,7 +87,7 @@ include_once "common/header.html";
             <div class="row">
                 <div class="file col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="panel panel-default meeting">
-                        <div class="panel-heading">
+                        <div class="panel-heading" onclick="fileInfo()">
                             <div class="file_details">
                                 <img class="file_show" src="../assets/ppt.png">
                                 <label class="file_description"> Details_Meeting5 </label>
@@ -182,8 +182,59 @@ include_once "common/header.html";
                     </div>
                 </div>
             </div>
-            <div id="mobile-back" class="hidden-lg hidden-md hidden-sm navbar navbar-default navbar-fixed-bottom"
-                 onclick="exitMobile()" hidden><h4>« Back</h4></div>
         </div>
+
+        <div id="container_file_info" hidden>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" >
+                                <div class="file">
+                                    <img class="file_show" src="../assets/excel.png">
+                                    <div class="title">Meeting SummerInternship_2018</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="button_back hidden-xs">
+                                    <button class="back">
+                                        <span id="trash" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="info-file">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div id="user">
+                                        <img id="user_photo" src="../assets/avatar2.png">
+                                        <div class="name">Pedro Duarte da Costa</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="extra_info">
+                                        <span class="hastag">#general</span>
+                                        <div class="date">15.04.2018</div>
+                                        <div class="minutes">3 minutes ago</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button_download">
+                            <button class="download"><i class="fa fa-download" aria-hidden="true"></i>
+                                Download File
+                            </button>
+                        </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-back" class="hidden-lg hidden-md hidden-sm navbar navbar-default navbar-fixed-bottom"
+             onclick="exitMobile()" hidden><h4>« Back</h4></div>
     </div>
 </div>
