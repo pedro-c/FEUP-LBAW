@@ -37,7 +37,7 @@ include_once "common/header.html";
                         <button class="btn btn-success">Join</button>
                     </div>
                     <h4>New Project</h4>
-                    <div class="new-project">
+                    <div class="new-project" id="new_project">
                         <input type="text" placeholder="Insert Project ID">
                         <button class="btn btn-success">Create</button>
                     </div>
