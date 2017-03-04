@@ -3,16 +3,23 @@ include_once 'common/header.html';
 ?>
 <link href="../css/ui2.css" rel="stylesheet"/>
 <script src="../js/dashboard.js"></script>
+
 <div class="page-wrapper container">
     <div class="row"><br>
         <div id="project-presentation" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="page-header">
-                <h2 id="title">My Project</h2>
-                <span id="subtitle">
+                <div id="project-title">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    <h2 id="title">My Project</h2>
+                </div>
+                <div id="project-description">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                   <span id="subtitle">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa
                         nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi
                         cupiditate. Voluptatum ducimus voluptates voluptas?
                     </span>
+                </div>
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 dash-card">

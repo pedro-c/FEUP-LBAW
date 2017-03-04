@@ -103,3 +103,33 @@ i.dash-title-icon{
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: $color_ebony_clay;
 }
+
+#project-title{
+  span{
+    display: none;
+  }
+  &:hover{
+    span{
+      display: inline-block;
+      &:hover{
+        color: $yellow_darker;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#project-description{
+  span.glyphicon{
+    display: none;
+  }
+  &:hover{
+    span.glyphicon{
+      display: inline-block;
+      &:hover{
+        color: $yellow_darker;
+        cursor: pointer;
+      }
+    }
+  }
+}

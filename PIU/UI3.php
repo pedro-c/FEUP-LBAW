@@ -20,6 +20,10 @@ include_once "common/header.html";
                     <div class="tasks-card" id="task-card">
                         <div class="tasks-header">
                             <button id="add-task">Add Task</button>
+                            <ul class="tasks-tags">
+                                <li>#Logistics</li>
+                                <li>#Marketing</li>
+                            </ul>
                         </div>
                         <div class="task-content">
                             <table class="tasks">
@@ -31,6 +35,7 @@ include_once "common/header.html";
                                     <td>
                                         <div>
                                             <textarea onclick="toggle();" id="task-title">Tarefa 1</textarea>
+                                            <p>#Logistics</p>
                                         </div>
                                     </td>
                                     <td>
@@ -87,7 +92,7 @@ include_once "common/header.html";
                         </div>
 
                     </div>
-                    <div id="mobile-back" class="hidden-lg hidden-md hidden-sm navbar navbar-default navbar-fixed-bottom" ">
+                    <div id="mobile-back" class="navbar navbar-default navbar-fixed-bottom" onclick="toggle()">
                     <h4>« Back</h4>
                     </div>
                 </div>
