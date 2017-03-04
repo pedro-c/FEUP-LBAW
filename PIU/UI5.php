@@ -197,7 +197,7 @@ include_once "common/header.html";
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                 <div class="button_back hidden-xs">
-                                    <button class="back">
+                                    <button class="back" onclick="deleteUpload()">
                                         <span id="trash" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
                                     </button>
                                 </div>
@@ -223,7 +223,7 @@ include_once "common/header.html";
                             </div>
                         </div>
                         <div class="button_download">
-                            <button class="download"><i class="fa fa-download" aria-hidden="true"></i>
+                            <button class="download"><i class="fa fa-download" aria-hidden="true" ></i>
                                 Download File
                             </button>
                         </div>

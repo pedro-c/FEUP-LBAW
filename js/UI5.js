@@ -16,6 +16,7 @@ function uploadFile() {
     $("#uploadButton").css("border-bottom","4px solid #e9d460");
     $("#goBackButton").css("border","none");
     $("#mobile-back").show();
+    $("#container_file_info").hide();
 
 }
 
@@ -42,6 +43,7 @@ function deleteUpload() {
     $("#goBackButton").css("border-bottom","4px solid #e9d460");
     $("#uploadButton").css("border","none");
     $("#mobile-back").hide();
+    $("#container_file_info").hide();
 
 }
 
