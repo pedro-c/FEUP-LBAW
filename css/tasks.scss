@@ -1,12 +1,39 @@
 @import 'global';
 
+
+@media(min-width: 768px) {
+
+
+}
+
+.tasks-body{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: inline-block;
+  .go-back{
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: $blue_secondary;
+    color: white;
+    display: none;
+  }
+}
+
 .tasks-card{
-  width: 70vw;
+  //transition: width 0.2s ease-in-out;
+  overflow-y: auto;
+  width: 70%;
   display: inline-block;
   background-color: $white;
-  margin: 15px;
-  height: 70vh;
-  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  margin: 10px;
+  height: 85%;
+  border-radius: 3px;
   float: none;
   .create-task{
     visibility: hidden;
@@ -14,20 +41,352 @@
 }
 .tasks{
   width: 100%;
-  margin: 0px;
+}
+.tasks-nav{
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  button{
+    background-color: white;
+    box-shadow: none;
+    border: 0;
+    margin: 10px;
+    &:focus,
+    &:hover{
+      border-bottom: solid 4px $color_yellow;
+    }
+  }
+}
+.task-content{
+  margin: 20px !important;
+}
+.tasks-header{
+  margin: 15px 20px 15px 20px;
+  float: left;
+  width: 90%;
+  vertical-align: middle;
+  button{
+    float: left;
+    padding: 5px;
+    border-radius: 3px;
+    color: white;
+    background-color: $color_yellow;
+    margin: auto;
+    border: 1px solid $color_yellow;
+    &:hover{
+      background-color: #d9c559;
+      color: white;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  ul{
+    padding: 5px;
+    float: right;
+    li{
+      color: $blue_secondary;
+      display: inline;
+      padding-right: 5px;
+      &:hover{
+        color: $light_blue;
+        cursor: pointer;
+      }
+    }
+  }
 }
 .task{
+  vertical-align: middle;
   border-style: solid;
+  border-color: $light_grey;
   border-width: 1px 0px 1px 0px;
   width: 100%;
+  #complete-button{
+    color: grey;
+    font-size: 1.5em;
+    &:hover{
+      color: $light_blue;
+    }
+  }
+  #delete-button{
+    color: grey;
+    font-size: 1.2em;
+    &:hover{
+      color: red;
+    }
+  }
+  #complete-task{
+    float: left;
+    height: 25px;
+  }
+  #delete-task{
+    float: right;
+    height: 25px;
+  }
+  p{
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 0.8em;
+    float: right;
+    height: 100%;
+    padding: 3px;
+    border: solid 1px $yellow_darker;
+    border-radius: 10px;
+  }
 }
 .task-content{
   margin: 10px;
 }
-.tasks-body{
-  width: 100%;
-  text-align: center;
-}
+
 .side-bar{
   width: 0px;
+}
+
+#create-task{
+  width: 1%;
+  transition: all 2s;
+}
+
+.create-task{
+  position: relative;
+  i{
+    cursor:pointer;
+    &:hover{
+      color: $light_blue;
+    }
+  }
+  padding: 10px 25px 10px 25px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  //transition: all 0.2s ease-in-out;
+  #complete-button{
+    float: left;
+    font-size: 2em;
+    &:hover{
+      color: $light_blue;
+    }
+  }
+  #create-task-title{
+    display: inline-block;
+    align-content: left;
+    margin-top: 30px;
+    i{
+      color: grey;
+      font-size: 2em;
+      float: left;
+      padding: 0px 10px 0px 0px;
+    }
+    textarea{
+      width: 50%;
+      float: left;
+      font-size: 2em;
+      &:focus,
+      &:hover{
+        border: 1px solid $light_grey;
+        border-radius: 2px;
+      }
+    }
+
+  }
+  #create-task-settings{
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0px 20px 10px;
+    i, input{
+      padding: 0px 10px 0px 10px;
+      float: left;
+    }
+  }
+
+  #create-task-description{
+    textarea{
+      min-height: 50px;
+      padding: 10px;
+      &:focus,
+      &:hover{
+        border: 1px solid $light_grey;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  #create-task-navbar{
+
+    border-bottom: solid 1px $light_grey;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+
+    #assign-to{
+      vertical-align: middle;
+      display: block;
+      width: 65%;
+      &:focus,
+      &:hover{
+        border: 1px solid $light_grey;
+        border-radius: 20px;
+      }
+      img{
+        padding-top: 5px;
+        padding-right: 5px;
+        float: left;
+        width:30px;
+      }
+    }
+
+    i{
+      vertical-align: middle;
+      float: left;
+      font-size: 1.5em;
+      margin: 5px 10px 5px 0px;
+    }
+    #task-assign{
+      width: 70%;
+      font-size: 1.5em;
+      float: left;
+    }
+    #delete-button{
+      float: right;
+    }
+  }
+  .task-tags{
+    text-align: start;
+    padding: 5px;
+    width: 200px;
+    span{
+      li > span{
+        display: inline !important;
+      }
+      width: 100% !important;
+      border-bottom-left-radius: 0px;
+      border-top-left-radius: 0px;
+    }
+    span.input-group-addon{
+      width: 50px !important;
+      border-bottom-left-radius: 4px !important;
+      border-top-left-radius: 4px !important;
+
+    }
+  }
+  .task-comments{
+    border-top: solid 1px $light_grey;
+    width: 100%;
+    text-align: left;
+    .comment-info{
+      width: 100%;
+      display: inline-block !important;
+      text-align: left;
+      i{
+        width: 20px;
+      }
+      img{
+        padding-top: 5px;
+        padding-right: 5px;
+        float: left;
+        width:35px;
+      }
+      h4,p{
+        display: inline-block !important;
+        min-width: 100px;
+        max-width: 400px;
+      }
+    }
+  }
+  .add-comment{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: solid 1px $light_grey;
+    padding: 20px 15px 20px 15px;
+    height: 100px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    i{
+      font-size: 2em;
+      padding: 5px;
+      vertical-align: middle;
+      align-self: center;
+    }
+    img{
+      padding-right: 5px;
+      vertical-align: middle;
+      align-self: center;
+      float: left;
+      width:50px;
+      height: 50px;
+    }
+    textarea{
+      height: 100%;
+      padding: 2px;
+      border: 1px solid $light_grey;
+      border-radius: 4px 0px 0px 4px;
+      &:focus{
+        border: 2px solid $light_grey;
+        #add-comment{
+          height: 100px;
+        }
+      }
+    }
+    button{
+      height: 100%;
+      width: 50px;
+      padding: 5px;
+      border-radius: 0px 4px 4px 0px;
+      color: $light_blue;
+      background-color: transparent;
+      margin: auto;
+      border: 1px solid $light_blue;
+      &:hover{
+        background-color: $light_blue;
+        color: white;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
+.datepicker-dropdown{
+  margin-top: 60px;
+}
+
+.date{
+  padding: 5px;
+  width: 200px;
+  span{
+    width: 50px;
+  }
+}
+
+textarea#task-title{
+  width: 70%;
+  float: left;
+}
+
+#mobile-back{
+  display: none;
+}
+
+textarea{
+  vertical-align: middle;
+  overflow: hidden;
+  color: #1B2432;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  background: transparent;
+  border: 0px solid transparent;
+  outline: 0px solid transparent;
+  padding: 0;
+  resize: none;
+  word-wrap: normal;
+  white-space: nowrap;
+  user-select: text;
+  flex-direction: column;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  -webkit-writing-mode: horizontal-tb;
+  border-collapse: separate;
+  empty-cells: show;
 }
