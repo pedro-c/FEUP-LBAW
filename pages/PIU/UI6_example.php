@@ -2,9 +2,8 @@
 include_once "common/header.html";
 ?>
 
-<link href="../css/UI6.css" rel="stylesheet">
-<script src="../jquery-3.1.1.min.js"></script>
-<script src="../js/ui6.js"></script>
+<link href="../../css/UI6.css" rel="stylesheet">
+<script src="../../javascript/ui6.js"></script>
 
 <?php
 $is_coordinator = true;
@@ -38,7 +37,7 @@ $col4 = 1;
                     <div class="panel-body">
                        <div class="media">
                             <div class="media-left media-middle" id="profile_pic">
-                                <img style="width: 100px;" src="../assets/avatar1.png" class="media-object" alt="Profile Photo">
+                                <img style="width: 100px;" src="../../images/users/avatar1.png" class="media-object" alt="Profile Photo">
                             </div>
                             <div class="media-body">
                                 <h4 class="media-heading">Hermenegilda Martins da Silva</h4>
@@ -119,7 +118,7 @@ $col4 = 1;
                                <div class="panel-body">
                                   <div class="media">
                                        <div class="media-left media-middle" id="profile_pic">
-                                           <img style="width: 100px;" src="../assets/avatar2.png" class="media-object" alt="Profile Photo">
+                                           <img style="width: 100px;" src="../../images/users/avatar2.png" class="media-object" alt="Profile Photo">
                                        </div>
                                        <div class="media-body">
                                            <h4 class="media-heading">Virgílio Mota das Torres Cruz</h4>
@@ -197,7 +196,7 @@ $col4 = 1;
                                 <div class="panel-body">
                                    <div class="media">
                                         <div class="media-left media-middle" id="profile_pic">
-                                            <img style="width: 100px;" src="../assets/avatar3.png" class="media-object" alt="Profile Photo">
+                                            <img style="width: 100px;" src="../../images/users/avatar3.png" class="media-object" alt="Profile Photo">
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading">Josefino Mário Paredes Touca</h4>
@@ -277,7 +276,7 @@ $col4 = 1;
                                  <div class="panel-body">
                                     <div class="media">
                                          <div class="media-left media-middle" id="profile_pic">
-                                             <img style="width: 100px;" src="../assets/avatar4.png" class="media-object" alt="Profile Photo">
+                                             <img style="width: 100px;" src="../../images/users/avatar4.png" class="media-object" alt="Profile Photo">
                                          </div>
                                          <div class="media-body">
                                              <h4 class="media-heading">Fábinho Coentrão das Sopas Júnior</h4>
@@ -355,7 +354,7 @@ $col4 = 1;
                                   <div class="panel-body">
                                      <div class="media">
                                           <div class="media-left media-middle" id="profile_pic">
-                                              <img style="width: 100px;" src="../assets/avatar5.jpg" class="media-object" alt="Profile Photo">
+                                              <img style="width: 100px;" src="../../images/users/avatar5.jpg" class="media-object" alt="Profile Photo">
                                           </div>
                                           <div class="media-body">
                                               <h4 class="media-heading">Armindo António Armindo Branco Felicidade</h4>
@@ -433,7 +432,7 @@ $col4 = 1;
                                    <div class="panel-body">
                                       <div class="media">
                                            <div class="media-left media-middle" id="profile_pic">
-                                               <img style="width: 100px;" src="../assets/avatar6.png" class="media-object" alt="Profile Photo">
+                                               <img style="width: 100px;" src="../../images/users/avatar6.png" class="media-object" alt="Profile Photo">
                                            </div>
                                            <div class="media-body">
                                                <h4 class="media-heading">Bonifácio Jóli DeCáperio Pite Chuárzenéguere</h4>

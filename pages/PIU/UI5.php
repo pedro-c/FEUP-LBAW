@@ -2,8 +2,8 @@
 include_once "common/header.html";
 ?>
 
-<link href="../css/UI5.css" rel="stylesheet">
-<script src="../js/UI5.js"></script>
+<link href="../../css/UI5.css" rel="stylesheet">
+<script src="../../javascript/UI5.js"></script>
 
 <div class="files_pages">
     <div class="row">
@@ -26,7 +26,7 @@ include_once "common/header.html";
                     <div class="panel panel-default meeting">
                         <div class="panel-heading" onclick="fileInfo()">
                             <div class="file_details">
-                                <img class="file_show" src="../assets/excel.png">
+                                <img class="file_show" src="../../images/assets/excel.png">
                                 <label class="file_description"> Meeting_SummerInternship_2018 </label>
                             </div>
                         </div>
@@ -48,7 +48,7 @@ include_once "common/header.html";
                     <div class="panel panel-default meeting">
                         <div class="panel-heading" onclick="fileInfo()">
                             <div class="file_details">
-                                <img class="file_show" src="../assets/pdf.png">
+                                <img class="file_show" src="../../images/assets/pdf.png">
                                 <label class="file_description"> Meeting_4_Abr </label>
                             </div>
                         </div>
@@ -69,7 +69,7 @@ include_once "common/header.html";
                     <div class="panel panel-default meeting">
                         <div class="panel-heading" onclick="fileInfo()">
                             <div class="file_details">
-                                <img class="file_show" src="../assets/file.png">
+                                <img class="file_show" src="../../images/assets/file.png">
                                 <label class="file_description"> TimeTable_New </label>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ include_once "common/header.html";
                     <div class="panel panel-default meeting">
                         <div class="panel-heading" onclick="fileInfo()">
                             <div class="file_details">
-                                <img class="file_show" src="../assets/ppt.png">
+                                <img class="file_show" src="../../images/assets/ppt.png">
                                 <label class="file_description"> Details_Meeting5 </label>
                             </div>
                         </div>
@@ -111,7 +111,7 @@ include_once "common/header.html";
                     <div class="panel panel-default meeting">
                         <div class="panel-heading">
                             <div class="file_details">
-                                <img class="file_show" src="../assets/excel.png">
+                                <img class="file_show" src="../../images/assets/excel.png">
                                 <label class="file_description"> Meeting_4_Abr </label>
                             </div>
                         </div>
@@ -132,7 +132,7 @@ include_once "common/header.html";
                     <div class="panel panel-default meeting">
                         <div class="panel-heading">
                             <div class="file_details">
-                                <img class="file_show" src="../assets/word.png">
+                                <img class="file_show" src="../../images/assets/word.png">
                                 <label class="file_description"> Project_ITK </label>
                             </div>
                         </div>
@@ -191,7 +191,7 @@ include_once "common/header.html";
                         <div class="row">
                             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" >
                                 <div class="file">
-                                    <img class="file_show" src="../assets/excel.png">
+                                    <img class="file_show" src="../../images/assets/excel.png">
                                     <div class="title">Meeting SummerInternship_2018</div>
                                 </div>
                             </div>
@@ -209,7 +209,7 @@ include_once "common/header.html";
                             <div class="row">
                                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                     <div id="user">
-                                        <img id="user_photo" src="../assets/avatar2.png">
+                                        <img id="user_photo" src="../../images/users/avatar2.png">
                                         <div class="name">Pedro Duarte da Costa</div>
                                     </div>
                                 </div>

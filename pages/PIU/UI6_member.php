@@ -2,9 +2,8 @@
 include_once "common/header.html";
 ?>
 
-<link href="../css/UI6.css" rel="stylesheet">
-<script src="../jquery-3.1.1.min.js"></script>
-<script src="../js/ui6.js"></script>
+<link href="../../css/UI6.css" rel="stylesheet">
+<script src="../../javascript/ui6.js"></script>
 
 <?php
 $num_elems = 6;
@@ -29,7 +28,7 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                     <div class="panel-body">
                        <div class="media">
                             <div class="media-left media-middle" id="profile_pic">
-                                <img style="width: 100px;" src="../assets/default_image_profile1.jpg" class="media-object" alt="Profile Photo">
+                                <img style="width: 100px;" src="../../images/assets/default_image_profile1.jpg" class="media-object" alt="Profile Photo">
                             </div>
                             <div class="media-body">
                                 <h4 class="media-heading">José Carlos Milheiro Soares Coutinho</h4>

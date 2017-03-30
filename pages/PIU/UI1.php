@@ -10,15 +10,15 @@
     <meta name="author" content="">
     <title>Direkt</title>
     <!-- Bootstrap Core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="../css/UI1.css" rel="stylesheet">
-    <link href="../css/plugins/morris.css" rel="stylesheet">
-    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/UI1.css" rel="stylesheet">
+    <link href="../../css/plugins/morris.css" rel="stylesheet">
+    <link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <script src="../js/UI1.js"></script>
-    <script src="../js/jquery.js"></script>
+    <script src="../../javascript/UI1.js"></script>
+    <script src="../../javascript/jquery.js"></script>
 
 
 </head>
@@ -31,7 +31,7 @@
         <div class="col-xs-8 col-xs-offset-2 login-box">
             <div class="border_radius">
                 <div class="col-lg-6 col-sm-6 col-md-6 hidden-xs content_login nopadding" id="slider-card">
-                    <img class="img-responsive" src="../assets/2.png"
+                    <img class="img-responsive" src="../../images/assets/2.png"
                          style="width:100%;overflow: hidden; height: 100%;"/>
                 </div>
                 <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 content_login pull-right">

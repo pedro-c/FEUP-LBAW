@@ -20,7 +20,7 @@
 
 </section>
 
-<script>last_tweet_id = {$last_tweet_id}</script>
+<script>last_tweet_id =; {$last_tweet_id}</script>
 
 <script src="{$BASE_URL}javascript/tweets.js"></script>
 

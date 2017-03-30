@@ -34,31 +34,31 @@ $(document).ready(function(){
 
             '<ul id="replies" class="list-group">' +
                 '<li class="list-group-item">' +
-                    '<h5 class="list-group-item-heading"> <img class="user_photo" src="../assets/avatar3.png"><strong>Username</strong></h5>' +
+                    '<h5 class="list-group-item-heading"> <img class="user_photo" src="../../images/users/avatar3.png"><strong>Username</strong></h5>' +
                     '<p class="list-group-item-text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>' +
                 '</li>' +
                 '<li class="list-group-item">' +
-                    '<h5 class="list-group-item-heading"> <img class="user_photo" src="../assets/avatar4.png"> <strong>Username</strong></h5>' +
+                    '<h5 class="list-group-item-heading"> <img class="user_photo" src="../../images/users/avatar4.png"> <strong>Username</strong></h5>' +
                     '<p class="list-group-item-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>' +
                 '</li>' +
                 '<li class="list-group-item">' +
-                    '<h5 class="list-group-item-heading"> <img class="user_photo" src="../assets/avatar1.png"><strong>Username</strong></h5>' +
+                    '<h5 class="list-group-item-heading"> <img class="user_photo" src="../../images/users/avatar1.png"><strong>Username</strong></h5>' +
                     '<p class="list-group-item-text">Great idea!</p>' +
                 '</li>' +
                 '<li class="list-group-item">' +
-                    '<h5 class="list-group-item-heading"> <img class="user_photo" src="../assets/avatar2.png"> <strong>Username</strong></h5>' +
+                    '<h5 class="list-group-item-heading"> <img class="user_photo" src="../../images/users/avatar2.png"> <strong>Username</strong></h5>' +
                     '<p class="list-group-item-text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>' +
                 '</li>' +
                 '<li class="list-group-item">' +
-                    '<h5 class="list-group-item-heading"> <img class="user_photo" src="../assets/avatar6.png"> <strong>Username</strong></h5>' +
+                    '<h5 class="list-group-item-heading"> <img class="user_photo" src="../../images/users/avatar6.png"> <strong>Username</strong></h5>' +
                     '<p class="list-group-item-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>' +
                 '</li>' +
                 '<li class="list-group-item">' +
-                    '<h5 class="list-group-item-heading"> <img class="user_photo" src="../assets/avatar2.png"> <strong>Username</strong></h5>' +
+                    '<h5 class="list-group-item-heading"> <img class="user_photo" src="../../images/users/avatar2.png"> <strong>Username</strong></h5>' +
                     '<p class="list-group-item-text">Great idea!</p>' +
                 '</li>' +
                 '<li id="post-reply" class="list-group-item">' +
-                    '<h5 class="list-group-item-heading"><img class="user_photo" src="../assets/avatar7.png"><strong>My Username</strong></h5>' +
+                    '<h5 class="list-group-item-heading"><img class="user_photo" src="../../images/users/avatar7.png"><strong>My Username</strong></h5>' +
                     '<textarea class="form-control" rows="3" style="resize: none" placeholder="Reply to this post"></textarea>'+
                     '<button id="submit-reply" class="btn btn-default btn-form btn-comment" type="submit">Submit</button>' +
                     '<button id="cancel-reply" class="btn btn-default btn-form btn-comment">Cancel</button>' +

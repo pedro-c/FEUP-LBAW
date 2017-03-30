@@ -189,7 +189,7 @@ html, body {
     background-color: #22313f;
     height: 80vh; }
   .login-box .content_image {
-    background-image: url("../assets/2.png");
+    background-image: url("../images/assets/2.png");
     background-repeat: no-repeat; }
   .login-box .nopadding {
     padding: 0 !important;
