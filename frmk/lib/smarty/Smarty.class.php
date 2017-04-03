@@ -92,13 +92,13 @@ if (SMARTY_SPL_AUTOLOAD && set_include_path(get_include_path() . PATH_SEPARATOR 
 /**
  * Load always needed external class files
  */
-include_once SMARTY_SYSPLUGINS_DIR.'smarty_internal_data.php';
-include_once SMARTY_SYSPLUGINS_DIR.'smarty_internal_templatebase.php';
-include_once SMARTY_SYSPLUGINS_DIR.'smarty_internal_template.php';
-include_once SMARTY_SYSPLUGINS_DIR.'smarty_resource.php';
-include_once SMARTY_SYSPLUGINS_DIR.'smarty_internal_resource_file.php';
-include_once SMARTY_SYSPLUGINS_DIR.'smarty_cacheresource.php';
-include_once SMARTY_SYSPLUGINS_DIR.'smarty_internal_cacheresource_file.php';
+include_once SMARTY_SYSPLUGINS_DIR . 'smarty_internal_data.php';
+include_once SMARTY_SYSPLUGINS_DIR . 'smarty_internal_templatebase.php';
+include_once SMARTY_SYSPLUGINS_DIR . 'smarty_internal_template.php';
+include_once SMARTY_SYSPLUGINS_DIR . 'smarty_resource.php';
+include_once SMARTY_SYSPLUGINS_DIR . 'smarty_internal_resource_file.php';
+include_once SMARTY_SYSPLUGINS_DIR . 'smarty_cacheresource.php';
+include_once SMARTY_SYSPLUGINS_DIR . 'smarty_internal_cacheresource_file.php';
 
 /**
  * This is the main Smarty class
