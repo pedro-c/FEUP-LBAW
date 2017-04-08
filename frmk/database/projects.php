@@ -1,12 +1,9 @@
 <?php
 
-include_once ('init.php');
-
-function getProjects($idUser){
+function getProjects(){
     global $conn;
-    $stmt = $conn->prepare('SELECT * FROM project WHERE id = ?');
-    $stmt->execute([$idUser]);
+    $stmt = $conn->prepare("SELECT * FROM project");
+    $stmt->execute();
 
-
-    return $stmt->fetch();
+    return $stmt->fetchAll();
 }

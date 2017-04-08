@@ -1,5 +1,6 @@
 <?php
-include_once 'common/header.html';
+include_once 'common/header.php';
+include_once '../../database/projects.php'
 ?>
 <link href="../../css/UI2.css" rel="stylesheet"/>
 
