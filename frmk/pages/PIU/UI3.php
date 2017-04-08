@@ -1,5 +1,5 @@
 <?php
-include_once "common/header.html";
+include_once "common/header.php";
 ?>
 
 <!-- Custom CSS -->

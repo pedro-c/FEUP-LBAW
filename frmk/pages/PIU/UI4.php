@@ -1,4 +1,5 @@
-<?php include_once "common/header.html" ?>
+<?php include_once "common/header.php"
+?>
 <!-- Custom CSS -->
 <link href="../../css/forum.css" rel="stylesheet"/>
 <div class="page-wrapper container">

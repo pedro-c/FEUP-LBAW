@@ -1,3 +1,7 @@
+<?php
+include_once '../../config/init.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,32 +92,32 @@
         <div class="collapse navbar-collapse" id="navbar">
             <div id="sidebar-resp" class="hidden-lg hidden-md hidden-sm">
                 <div class="row">
-                <ul class="nav navbar-nav" >
-                    <li class="col-xs-6">
-                        <a href="../UI2.php"><i class="fa fa-home fa-2x"></i><p>Dashboard</p></a>
-                    </li>
-                    <li class="col-xs-6">
-                        <a href="../UI3.php"><i class="fa fa-check-square-o fa-2x"></i><p>Tasks</p></a>
-                    </li>
-                    <li class="col-xs-6">
-                        <a href="../UI4.php"><i class="fa fa-quote-right fa-2x"></i><p>Forum</p></a>
-                    </li>
-                    <li class="col-xs-6">
-                        <a href="../UI7.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
-                    </li>
-                    <li class="col-xs-6">
-                        <a href="../UI5.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
-                    </li>
-                    <li class="col-xs-6">
-                        <a href="../UI6_coordinator.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
-                    </li>
-                    <li  class="col-xs-6">
-                        <a href="#"> <i class="fa fa-refresh fa-2x"></i> <p>Change Project</p></a>
-                    </li>
-                    <li  class="col-xs-6">
-                        <a href="#"> <i class="fa fa-sign-out fa-2x"></i> <p>Sign Out</p></a>
-                    </li>
-                </ul>
+                    <ul class="nav navbar-nav" >
+                        <li class="col-xs-6">
+                            <a href="../UI2.php"><i class="fa fa-home fa-2x"></i><p>Dashboard</p></a>
+                        </li>
+                        <li class="col-xs-6">
+                            <a href="../UI3.php"><i class="fa fa-check-square-o fa-2x"></i><p>Tasks</p></a>
+                        </li>
+                        <li class="col-xs-6">
+                            <a href="../UI4.php"><i class="fa fa-quote-right fa-2x"></i><p>Forum</p></a>
+                        </li>
+                        <li class="col-xs-6">
+                            <a href="../UI7.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
+                        </li>
+                        <li class="col-xs-6">
+                            <a href="../UI5.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
+                        </li>
+                        <li class="col-xs-6">
+                            <a href="../UI6_coordinator.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
+                        </li>
+                        <li  class="col-xs-6">
+                            <a href="#"> <i class="fa fa-refresh fa-2x"></i> <p>Change Project</p></a>
+                        </li>
+                        <li  class="col-xs-6">
+                            <a href="#"> <i class="fa fa-sign-out fa-2x"></i> <p>Sign Out</p></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
@@ -154,4 +158,5 @@
 </nav>
 
 <div id="parent">
-<div id="main-content">
+    <div id="main-content">
+
