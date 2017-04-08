@@ -1,7 +1,8 @@
 <?php
 include_once 'common/header.php';
-include_once '../../database/projects.php'
+include_once '../../database/dashboard.php';
 ?>
+
 <link href="../../css/UI2.css" rel="stylesheet"/>
 
 <div class="page-wrapper container">

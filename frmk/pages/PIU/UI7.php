@@ -1,5 +1,6 @@
 <?php
 include_once "common/header.php";
+include_once "../../database/meetings.php";
 ?>
 
 <link href="../../css/UI7.css" rel="stylesheet">
