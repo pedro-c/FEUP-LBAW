@@ -1,13 +1,13 @@
 <?php
-session_set_cookie_params(3600, '/~lbaw16xx'); //FIXME
+session_set_cookie_params(3600, '/~lbaw1614');
 session_start();
 
 error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-$BASE_DIR = '/opt/lbaw/lbaw16xx/public_html/frmk/'; //FIXME
-$BASE_URL = '/~lbaw16xx/frmk/'; //FIXME
+$BASE_DIR = '/opt/lbaw/lbaw1614/public_html/frmk/';
+$BASE_URL = '/~lbaw1614/frmk/';
 
-$conn = new PDO('pgsql:host=dbm;dbname=lbaw16xx', 'lbaw16xx', '_password_'); //FIXME
+$conn = new PDO('pgsql:host=dbm;dbname=lbaw1614', 'lbaw1614', 'yz54fi76');
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
