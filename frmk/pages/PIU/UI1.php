@@ -50,12 +50,12 @@
                                 <form>
                                     <div class="form-login-right">
                                         <div class="col-xs-12 border-bottom">
-                                            <span class="username"> Username: </span>
+                                            <span class="username"> Email: </span>
                                         </div>
                                         <br>
                                         <div class="col-xs-12 border-bottom">
                                             <input id="username-input-id" class="username-input"
-                                                   placeholder="Enter your username"
+                                                   placeholder="Enter your email"
                                                    type="text">
                                         </div>
                                         <br>
