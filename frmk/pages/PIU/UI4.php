@@ -1,7 +1,7 @@
 <?php include_once "common/header.php"
 ?>
 <!-- Custom CSS -->
-<link href="../../css/forum.css" rel="stylesheet"/>
+<link href="../../css/UI4.css" rel="stylesheet"/>
 <div class="page-wrapper container">
     <div class="row"><br>
         <div id="forum-posts" class="list-group">
