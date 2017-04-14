@@ -27,7 +27,7 @@
 
                     {foreach $tasks as $task}
 
-                        $tag = getTagFromTask({$task.id});
+                        {$tags = getTagFromTaskId([$task.id])}
 
                         <tr class="task">
                             <td>
@@ -36,7 +36,9 @@
                             <td>
                                 <div>
                                     <textarea onclick="toggle();" id="task-title">{$task.name}</textarea>
-                                    <p>$tag</p>
+                                    {foreach $tags as $tag}
+                                    <p>{$tag.name}</p>
+                                    {/foreach}
                                 </div>
                             </td>
                             <td>
