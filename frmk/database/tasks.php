@@ -38,8 +38,17 @@
         return $stmt->fetchAll();
     }
 
-    function createTask($creator_id, $project_id){
+    function createTask(){
+
+        //$project_id=$_GET['project_id'];
+        //$creator_id=$_GET['cretor_id'];
+
+        echo "sadsadas";
+
+        $project_id=1;
+        $creator_id=1;
+
         global $conn;
-        $stmt = $conn->prepare("INSERT INTO task VALUES (DEFAULT, ?, ?, ?)");
-        $stmt->execute('New Task', $creator_id, $project_id);
+        $stmt = $conn->prepare("INSERT INTO task (id, name, description, deadline, creator_id, assigned_id, completer_id, project_id) VALUES (nextval('\"Task_id_seq\"'::regclass), ?, NULL, NULL, ?, NULL, NULL, ?)");
+        $stmt->execute(["New Task", $creator_id, $project_id]);
     }

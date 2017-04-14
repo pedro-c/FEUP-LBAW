@@ -1,7 +1,3 @@
-/**
- * Created by pedroc on 26/02/17.
- */
-
 $(document).ready(function(){
 
     var addTaskButton = $(".task-button");
