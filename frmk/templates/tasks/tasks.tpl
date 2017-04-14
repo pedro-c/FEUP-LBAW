@@ -16,7 +16,6 @@
         <div class="tasks-card" id="task-card">
             <div class="tasks-header">
                 <button id="task-button" class="task-button" value="create-task">Add Task</button>
-                {createTask()}
                 <ul class="tasks-tags">
                     <li>#Logistics</li>
                     <li>#Marketing</li>

@@ -49,6 +49,6 @@
         $creator_id=1;
 
         global $conn;
-        $stmt = $conn->prepare("INSERT INTO task (id, name, description, deadline, creator_id, assigned_id, completer_id, project_id) VALUES (nextval('\"Task_id_seq\"'::regclass), ?, NULL, NULL, ?, NULL, NULL, ?)");
+        $stmt = $conn->prepare("INSERT INTO task (id, name, description, deadline, creator_id, assigned_id, completer_id, project_id) VALUES (DEFAULT, ?, NULL, NULL, ?, NULL, NULL, ?)");
         $stmt->execute(["New Task", $creator_id, $project_id]);
     }
