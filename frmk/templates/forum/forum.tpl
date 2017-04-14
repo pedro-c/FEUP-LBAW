@@ -28,7 +28,7 @@
                         <button class="list-group-item forum-post">
                             <h4 class="list-group-item-heading">{$post.title}</h4>
                             <div class="list-group-item-text">
-                                <img class="user_photo" src={$BASE_DIR . $user.photo_path}>
+                                {*<img class="user_photo" src={$BASE_DIR . $user.photo_path}>*}
                                 <small>
                                     <span class="submitter-uname">{$user.username}</span> -
                                     <span class="post-submission-date">{$post.creation_date}</span>

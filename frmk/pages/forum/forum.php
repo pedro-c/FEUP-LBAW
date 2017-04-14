@@ -6,10 +6,16 @@
  * Time: 3:09 PM
  */
 
-include_once '../common/header.php';
+include_once '../../config/init.php';
+include_once $BASE_DIR . 'database/forum.php';
+include_once $BASE_DIR . 'pages/common/header.php';
+$projectId = 1;
+
+$posts = getProjectPosts(array($projectId));
+
+$smarty->assign('posts',$posts);
+$smarty->display($BASE_DIR . 'templates/forum/forum.tpl');
+
 ?>
-<!-- Custom CSS -->
-<link href="../../css/forum.css" rel="stylesheet"/>
-<script src="../../javascript/forum.js"></script>
 
 <?php include_once '../common/footer.php';?>
