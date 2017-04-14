@@ -15,7 +15,7 @@
 
         <div class="tasks-card" id="task-card">
             <div class="tasks-header">
-                <button id="add-task">Add Task</button>
+                <button id="task-button" class="task-button" name="create-task">Add Task</button>
                 <ul class="tasks-tags">
                     <li>#Logistics</li>
                     <li>#Marketing</li>
@@ -31,7 +31,7 @@
 
                         <tr class="task">
                             <td>
-                                <i class="fa fa-check-circle-o" id="complete-button"></i>
+                                <i id="complete-button" name="complete-task" class="fa fa-check-circle-o task-button"></i>
                             </td>
                             <td>
                                 <div>
@@ -42,7 +42,7 @@
                                 </div>
                             </td>
                             <td>
-                                <i class="fa fa-times" id="delete-button"></i>
+                                <i id="delete-button" name="delete-task" class="fa fa-times task-button" name="delete-task"></i>
                             </td>
                         </tr>
 

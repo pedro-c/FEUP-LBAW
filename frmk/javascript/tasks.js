@@ -3,19 +3,18 @@
  */
 
 $(document).ready(function(){
-    var addTaskButton = $("#add-task");
+
+    var addTaskButton = $(".task-button");
+
     addTaskButton.click(function () {
 
-        var tasklist = document.getElementById('task-list');
-        var row = tasklist.insertRow();
-        row.setAttribute("class", "task");
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-
-        cell1.innerHTML = "<i class='fa fa-check-circle-o' id='complete-button'></i>";
-        cell2.innerHTML = "<div><textarea onclick='toggle();' id='task-title'>New Task</textarea></div>";
-        cell3.innerHTML = "<i class='fa fa-times' id='delete-button'></i>";
+        var clickBtnValue = $(this).val();
+        var ajaxurl = '../database/tasks.php',
+            data =  {'action': clickBtnValue};
+        $.post(ajaxurl, data, function (response) {
+            // Response div goes here.
+            alert("action performed successfully");
+        });
 
     });
 
