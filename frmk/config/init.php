@@ -4,10 +4,10 @@ session_start();
 
 error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-$BASE_DIR = '/opt/lbaw/lbaw1614/public_html/frmk/';
-$BASE_URL = '/~lbaw1614/frmk/';
+$BASE_DIR = '/home/epassos/feup/3_ano/2_sem/lbaw/projeto/frmk/';
+$BASE_URL = '/proto/';
 
-$conn = new PDO('pgsql:host=dbm;dbname=lbaw1614', 'lbaw1614', 'yz54fi76');
+$conn = new PDO('pgsql:host=dbm.fe.up.pt;dbname=lbaw1614', 'lbaw1614', 'yz54fi76');
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

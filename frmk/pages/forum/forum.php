@@ -5,7 +5,23 @@
  * Date: 4/13/17
  * Time: 3:09 PM
  */
+
+
 include_once '../common/header.php';
+include_once '../../config/init.php';
+
+if(!isset($_POST['user_id'] || $_GET['project_id'])){
+    //do something
+}
+
+$userID = $_POST['user_id'];
+$projectID = $_POST['project_id'];
+
+$stmt = $conn->prepare('SELECT user_table.name, title, creation_date, content FROM forum_post, user_table 
+                                  WHERE forum_post.id_creator = user_table.id 
+                                  AND forum_post.id_project = ? ORDER BY date_modified DESC;');
+
+$stmt->execute(array($projectID));
 ?>
 <!-- Custom CSS -->
 <link href="../../css/forum.css" rel="stylesheet"/>
@@ -28,6 +44,7 @@ include_once '../common/header.php';
                         </div>
                     </div>
                 </button>
+                <!-- list the posts -->
                 <button class="list-group-item forum-post">
                     <h4 class="list-group-item-heading">Who did this? Like, seriously?!!</h4>
                     <div class="list-group-item-text">

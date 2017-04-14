@@ -45,3 +45,5 @@ fabric.properties
 
 # SCSS Mapping
 *.css.map
+
+*/config/init.php
