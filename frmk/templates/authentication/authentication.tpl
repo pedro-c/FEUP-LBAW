@@ -95,27 +95,59 @@
                                             <span class="error_messages">{$FIELD_ERRORS[0]}</span>
                                             <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
                                         </div><br>
-                                        <div class="col-xs-12 border-bottom">
-                                            <span class="name"> Name: </span>
+
+                                        <div class="col-xs-12 border-bottom group">
+                                            <div class="col-xs-6 border-bottom">
+                                                <span class="name"> Name: </span>
+                                            </div>
+
+                                            <div class="col-xs-6 border-bottom">
+                                                <span class="username"> Username: </span>
+                                            </div>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12 border-bottom">
-                                            <input id="name-input-id" name="name" class="name-input"
-                                                   placeholder="Enter your name">
-                                            <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
+
+                                        <div class="col-xs-12 border-bottom group">
+                                            <div class="col-xs-6 border-bottom">
+                                                <input id="name-input-id" name="name" class="name-input"
+                                                       placeholder="Enter your name">
+                                                <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
+                                            </div>
+
+                                            <div class="col-xs-6 border-bottom">
+                                                <input id="username-input-id" name="username" class="username-input"
+                                                       placeholder="Choose your username"
+                                                       type="text">
+                                                <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
+                                            </div>
+                                        </div>
+
+                                        <br>
+                                        <div class="col-xs-12 border-bottom group2">
+                                            <div class="col-xs-6 border-bottom">
+                                                <input type="radio" name="project" value="join" id="joinproject" onclick="joinProject()" />
+                                                <span class="project"> Join a Project ? </span>
+                                            </div>
+                                            <div class="col-xs-6 border-bottom">
+                                                <input type="radio" name="project" value="create" id="createproject" onclick="newProject()"/>
+                                                <span class="newproject"> Create a new Project ? </span>
+                                            </div>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12 border-bottom">
-                                            <span class="username"> Username: </span>
+                                        <div class="col-xs-12 border-bottom group1">
+
+                                            <div class="col-xs-6 border-bottom">
+                                                <input id="project-input-id" name="enterproject" class="project-input"
+                                                       placeholder="Enter Project Code" disabled>
+                                                <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
+                                            </div>
+                                            <div class="col-xs-6 border-bottom">
+                                                <input id="new-project-input-id" name="newproject" class="new-project-input"
+                                                       placeholder="Enter Project Name" disabled>
+                                                <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
+                                            </div>
                                         </div>
-                                        <br>
-                                        <div class="col-xs-12 border-bottom">
-                                            <input id="username-input-id" name="username" class="username-input"
-                                                   placeholder="Choose your username"
-                                                   type="text">
-                                            <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
-                                        </div>
-                                        <br>
+
                                         <div class="col-xs-12 border-bottom">
                                             <span class="password"> Password: </span>
                                         </div>
@@ -127,9 +159,8 @@
                                             <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
 
                                         </div>
-                                        <br>
-                                    </div>
-                                    <div class="col-xs-12 col-login nopadding">
+
+                                        <div class="col-xs-12 col-login nopadding">
                                         <div class="form-actions nopadding">
                                             <input class="btn btn-default register-button" type="submit"
                                                    value="Register">

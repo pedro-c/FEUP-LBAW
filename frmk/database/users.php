@@ -19,3 +19,34 @@ function createUser($name, $email, $username, $password){
     return $stmt->execute([$name, $email,$username,password_hash($password, PASSWORD_DEFAULT)]);
 }
 
+function checkForInvitation($email,$project){
+
+    global $conn;
+
+    $stmt = $conn->prepare('SELECT id_project FROM invited_users WHERE email = ?');
+    $stmt->execute([$email]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $id_project = $result['id_project'];
+
+    return ($project==$id_project);
+}
+
+function getUserId($email){
+    global $conn;
+    $stmt = $conn -> prepare('SELECT id FROM user_table WHERE email = ?');
+    $stmt->execute([$email]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result['id'];
+
+}
+
+function joinProject($id, $project){
+
+    global $conn;
+    $is_coordinator = 'false';
+    $stmt = $conn->prepare('INSERT INTO user_project VALUES(?,?,?)');
+    return $stmt->execute([$id,$project,$is_coordinator]);
+}
+

@@ -199,7 +199,7 @@ html, body {
   white-space: normal !important; }
 
 .description-links {
-  margin-top: 100px;
+  margin-top: 75px;
   font-size: x-large;
   text-align: center;
   cursor: pointer; }
@@ -230,7 +230,7 @@ html, body {
       outline: 0; }
 
 .form-login {
-  margin-top: 70px;
+  margin-top: 90px;
   font-size: small;
   color: white !important; }
   .form-login .form-login-right {
@@ -303,10 +303,7 @@ html, body {
     margin-right: 45px; }
     .form-register .form-register-right .border-bottom {
       padding-left: 0 !important; }
-    .form-register .form-register-right .border-bottom:nth-child(3),
-    .form-register .form-register-right .border-bottom:nth-child(7),
-    .form-register .form-register-right .border-bottom:nth-child(11),
-    .form-register .form-register-right .border-bottom:nth-child(15) {
+    .form-register .form-register-right .border {
       padding-bottom: 4px;
       border-bottom-style: solid;
       border-bottom-color: #425262;
@@ -380,6 +377,43 @@ html, body {
     .form-register #password-input-id.password-input::-moz-placeholder {
       color: #425262; }
     .form-register #password-input-id.password-input:-ms-input-placeholder {
+      color: #425262; }
+  .form-register .project {
+    display: inline-block; }
+  .form-register #project-input-id {
+    font-size: small;
+    background-color: transparent !important;
+    border: none !important; }
+    .form-register #project-input-id:focus {
+      outline: none; }
+    .form-register #project-input-id:-moz-placeholder {
+      color: #425262; }
+    .form-register #project-input-id:-ms-input-placeholder {
+      color: #425262; }
+    .form-register #project-input-id::-moz-placeholder {
+      color: #425262; }
+    .form-register #project-input-id:-ms-input-placeholder {
+      color: #425262; }
+  .form-register .group2 {
+    padding-top: 20px;
+    vertical-align: middle; }
+  .form-register .group1 {
+    padding-top: 10px; }
+  .form-register .new-project {
+    display: inline-block; }
+  .form-register #new-project-input-id {
+    font-size: small;
+    background-color: transparent !important;
+    border: none !important; }
+    .form-register #new-project-input-id:focus {
+      outline: none; }
+    .form-register #new-project-input-id:-moz-placeholder {
+      color: #425262; }
+    .form-register #new-project-input-id:-ms-input-placeholder {
+      color: #425262; }
+    .form-register #new-project-input-id::-moz-placeholder {
+      color: #425262; }
+    .form-register #new-project-input-id:-ms-input-placeholder {
       color: #425262; }
   .form-register .form-actions {
     margin: 0;

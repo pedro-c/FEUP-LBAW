@@ -58,7 +58,7 @@ body {
   }
 
 .description-links {
-  margin-top: 100px;
+  margin-top: 75px;
   font-size: x-large;
   text-align: center;
   cursor: pointer;
@@ -100,7 +100,7 @@ body {
 }
 
 .form-login {
-  margin-top: 70px;
+  margin-top: 90px;
   font-size: small;
   color: white !important;
 
@@ -153,6 +153,7 @@ body {
     }
 
   }
+
 
   .password {
     padding-top: 35px;
@@ -223,10 +224,7 @@ body {
       padding-left: 0 !important;
     }
 
-    .border-bottom:nth-child(3),
-    .border-bottom:nth-child(7),
-    .border-bottom:nth-child(11),
-    .border-bottom:nth-child(15){
+    .border{
       padding-bottom: 4px;
       border-bottom-style: solid;
       border-bottom-color: #425262;
@@ -349,6 +347,72 @@ body {
     }
 
   }
+
+  .project {
+    display: inline-block;
+  }
+
+  #project-input-id {
+    font-size: small;
+    background-color: transparent !important;
+    border: none !important;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+
+  .group2{
+    padding-top: 20px;
+    vertical-align: middle;
+  }
+
+  .group1{
+    padding-top: 10px;
+  }
+
+  .new-project {
+    display: inline-block;
+  }
+
+  #new-project-input-id {
+    font-size: small;
+    background-color: transparent !important;
+    border: none !important;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+
   .form-actions {
     margin: 0;
     background-color: transparent;
