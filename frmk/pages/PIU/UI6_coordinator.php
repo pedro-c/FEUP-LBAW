@@ -6,6 +6,28 @@ include_once "common/header.php";
 <script src="../../javascript/ui6.js"></script>
 
 <?php
+ini_set("display_errors", true); error_reporting(E_ALL);
+$BASE_DIR = '/home/jczelik/Documents/LBAW/FEUP-LBAW/frmk/';
+$BASE_URL = '/proto/';
+include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
+$smarty = new Smarty;
+$smarty->template_dir = $BASE_DIR . 'templates/';
+$smarty->compile_dir = $BASE_DIR . 'templates_c/';
+$smarty->assign('BASE_URL', $BASE_URL);
+if(!isset($smarty)) {
+  echo "gay";
+}
+//TODO Finish alterations
+//Alterations
+/*
+$sql_get_project_members =
+"SELECT name, username, email, phone_number, photo_path, birth_date, country_id, city, is_coordinator
+FROM user_table, user_project
+WHERE user_project.id_user = user_table.id AND user_project.id_project = 20;";
+
+$stmt = $conn->prepare($sql_get_project_members);
+$stmt->execute();*/
+//END of Alterations
 $is_coordinator = true;
 $num_elems = 6;
 if($is_coordinator) { //Adds the "Add new member" panel
@@ -27,100 +49,24 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
       </div>
         <?php for($i = 0; $i < $num_rows; $i++) {?>
         <div class="row">
-            <?php for($j = 0; $j < $elems_per_row && $num_elems > 0; $j++, $num_elems--) {?>
+            <?php for($j = 0; $j < $elems_per_row && $num_elems > 0; $j++, $num_elems--) {
+            ?>
             <div class="col-md-<?php echo $col_division; ?>">
-                <div class="panel panel-default" id=<?php if($is_coordinator && $num_elems == 1) {
-                  echo "add_member_card";
+                <?php if($is_coordinator && $num_elems == 1) {
+                  $smarty->display("team/add_member_card.tpl");
                 } else {
-                  echo "profile_card";
+                  $smarty->assign('profile_name', "José Carlos Coutinho");
+                  $smarty->assign('team_role', "Team Manager");
+                  $smarty->assign('element_number', $num_elems);
+                  $smarty->assign('city', "Porto");
+                  $smarty->assign('country', "Portugal");
+                  $smarty->assign('profile_email', "jczelik@gmail.com");
+                  $smarty->assign('profile_number', "913146206");
+                  $smarty->assign('profile_id', "1123");
+                  $smarty->assign('profile_image_path', "../images/users/avatar1.png");
+
+                  $smarty->display("team/profile_card.tpl");
                 } ?>>
-                    <div class="panel-body">
-                      <?php if($num_elems > 1 || !$is_coordinator) { ?>
-                       <div class="media">
-                            <div class="media-left media-middle" id="profile_pic">
-                                <img style="width: 100px;" src="../../images/assets/default_image_profile1.jpg" class="media-object" alt="Profile Photo">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">José Carlos Milheiro Soares Coutinho</h4>
-                                <h5 id="team_role">Team Manager</h5>
-                                <i class="fa fa-search-plus fa-2x" data-toggle="collapse" data-target="#profile_details<?php echo $num_elems;?>"></i>
-                            </div>
-                       </div>
-                       <div id="profile_details<?php echo $num_elems;?>" class="collapse">
-                         <div class="profile_details">
-                           <div class="row">
-                             <div class="col-xs-1">
-                             </div>
-                             <div class="col-xs-5" align="center">
-                              <p>From:</p>
-                             </div>
-                             <div class="col-xs-5">
-                               <p>Porto, Portugal</p>
-                             </div>
-                             <div class="col-xs-1">
-                             </div>
-                           </div>
-                           <div class="row">
-                             <div class="col-xs-1"></div>
-                             <div class="col-xs-5" align="center">
-                              <p>Email:</p>
-                             </div>
-                             <div class="col-xs-5">
-                               <p>jczelik@gmail.com</p>
-                             </div>
-                             <div class="col-xs-1"></div>
-                           </div>
-                           <div class="row">
-                             <div class="col-xs-1"></div>
-                             <div class="col-xs-5" align="center">
-                              <p>Phone:</p>
-                             </div>
-                             <div class="col-xs-5">
-                               <p>999-999-999</p>
-                             </div>
-                             <div class="col-xs-1"></div>
-                           </div>
-                           <div class="row">
-                             <div class="col-xs-1"></div>
-                             <div class="col-xs-5" align="center">
-                              <p>Profile:</p>
-                             </div>
-                             <div class="col-xs-5">
-                               <a>direkt.com/user1</a>
-                             </div>
-                             <div class="col-xs-1"></div>
-                           </div>
-                           <div class="row" id="profile_actions">
-                             <div class="col-xs-3"></div>
-                             <div class="col-xs-3" align="center">
-                              <i class="fa fa-star fa-3x" id="promote<?php echo $num_elems;?>" ></i>
-                             </div>
-                             <div class="col-xs-3" align="center">
-                               <i class="fa fa-times fa-3x" id="remove<?php echo $num_elems;?>" data-toggle="modal" data-target="#remove_member_dialog"></i>
-                             </div>
-                             <div class="col-xs-3"></div>
-                           </div>
-                           <div class="col-xs-12" id="zoom_out_action">
-                             <i class="fa fa-search-minus fa-2x" data-toggle="collapse" data-target="#profile_details<?php echo $num_elems;?>" id="zoom_out"></i>
-                           </div>
-                         </div>
-                       </div>
-                      <?php } else { ?>
-                        <div data-toggle="modal" data-target="#add_member_dialog">
-                          <div class="row" id="add_member" align="center">
-                            <div class="col-md-12">
-                              <i class="fa fa-plus-circle fa-4x"></i>
-                            </div>
-                          </div>
-                          <div class="row" align="center">
-                            <div class="col-md-12">
-                              <h3>Add a new member!</h3>
-                            </div>
-                          </div>
-                        </div>
-                      <?php } ?>
-                    </div>
-                </div>
             </div>
             <?php } ?>
         </div>
