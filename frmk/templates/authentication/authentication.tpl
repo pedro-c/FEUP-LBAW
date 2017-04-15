@@ -142,7 +142,7 @@
                                                 <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
                                             </div>
                                             <div class="col-xs-6 border-bottom">
-                                                <input id="new-project-input-id" name="newproject" class="new-project-input"
+                                                <input id="new-project-input-id" name="newProjectName" class="new-project-input"
                                                        placeholder="Enter Project Name" disabled>
                                                 <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
                                             </div>
