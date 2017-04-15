@@ -39,3 +39,14 @@ function getPostSubmitter($userId){
     $stmt->execute($userId);
     return $stmt->fetch(0);
 }
+
+function getUserPhoto($user){
+    global $BASE_DIR;
+    if (!is_null($user['photo_path']) && file_exists($BASE_DIR. $user['photo_path'])) {
+        return '../../images/users/' . $user['photo_path'];
+    }
+    else {
+        return '../../images/assets/default_image_profile1.jpg';
+    }
+}
+

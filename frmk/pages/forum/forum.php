@@ -13,6 +13,7 @@ $projectId = 1;
 
 $posts = getProjectPosts(array($projectId));
 
+$smarty->assign('project',$projectId);
 $smarty->assign('posts',$posts);
 $smarty->display($BASE_DIR . 'templates/forum/forum.tpl');
 

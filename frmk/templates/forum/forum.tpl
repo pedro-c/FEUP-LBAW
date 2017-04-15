@@ -1,7 +1,7 @@
 <link href="../../css/forum.css" rel="stylesheet">
 
 <div class="page-wrapper container">
-
+    <span hidden="hidden" class="project-id">{$project}</span>
     <div class="page-wrapper container">
         <div class="row"><br>
             <div id="forum-posts" class="list-group">
@@ -25,10 +25,12 @@
                     <!-- list the posts -->
                     {foreach $posts as $post}
                         {$user = getPostSubmitter([$post.id_creator])}
+                        {$photo = getUserPhoto([$user])}
                         <button class="list-group-item forum-post">
-                            <h4 class="list-group-item-heading">{$post.title}</h4>
-                            <div class="list-group-item-text">
-                                {*<img class="user_photo" src={$BASE_DIR . $user.photo_path}>*}
+                            <span class="post-id" hidden="hidden">{$post.id}</span>
+                            <h4 class="list-group-item-heading post-title">{$post.title}</h4>
+                            <div class="list-group-item-text post-submitter-info">
+                                <img class="submitter-photo" src="{$photo}">
                                 <small>
                                     <span class="submitter-uname">{$user.username}</span> -
                                     <span class="post-submission-date">{$post.creation_date}</span>
