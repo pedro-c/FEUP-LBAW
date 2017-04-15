@@ -6,6 +6,7 @@ include_once "common/header.php";
 <script src="../../javascript/ui6.js"></script>
 
 <?php
+
 ini_set("display_errors", true); error_reporting(E_ALL);
 $BASE_DIR = '/home/jczelik/Documents/LBAW/FEUP-LBAW/frmk/';
 $BASE_URL = '/proto/';
