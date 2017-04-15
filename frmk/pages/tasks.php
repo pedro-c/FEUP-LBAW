@@ -9,11 +9,7 @@ $tasks = getAllTasksFromProject($projectId);
 $smarty->assign('tasks', $tasks);
 $smarty->display($BASE_DIR . 'templates/tasks/tasks.tpl');
 
-
 ?>
-
-
-
 
 <?php
 include_once "common/footer.html";
