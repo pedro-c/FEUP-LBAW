@@ -12,7 +12,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="../css/UI1.css" rel="stylesheet">
+    <link href="../css/UI1_novo.css" rel="stylesheet">
     <link href="../css/plugins/morris.css" rel="stylesheet">
     <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -27,14 +27,14 @@
 
 
 <div class="container">
-    <div class="row vertical-align">
-        <div class="col-xs-8 col-xs-offset-2 login-box">
-            <div class="border_radius">
-                <div class="col-lg-6 col-sm-6 col-md-6 hidden-xs content_login nopadding" id="slider-card">
+    <div class="row">
+        <div class="panel panel-default login-box panelnopadding" >
+            <div class="panel-body panelnopadding">
+                <div class="col-lg-6 col-sm-6 col-md-6 hidden-xs content_login panelnopadding">
                     <img class="img-responsive" src="../images/assets/2.png"
                          style="width:100%;overflow: hidden; height: 100%;"/>
                 </div>
-                <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 content_login pull-right">
+                <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 content_login pull-right panelnopadding">
                     <div class="row row-centered">
                         <div class="description-links">
                             <div class="col-xs-12 nopadding">
@@ -48,16 +48,16 @@
                         <div class="col-xs-12">
                             <div class="form-login">
                                 <form action="{$BASE_URL}actions/users/login.php" method="post">
-
                                     <div class="form-login-right">
                                         <div class="col-xs-12 border-bottom">
-                                            <span class="username"> Email: </span>
+                                            <span class="email"> Email: </span>
                                         </div>
                                         <br>
                                         <div class="col-xs-12 border-bottom">
-                                            <input id="username-input-id" name="email" class="username-input"
+                                            <input id="email-input-id" name="email" class="email-input"
                                                    placeholder="Enter your email"
                                                    type="text">
+                                            <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
                                         </div>
                                         <br>
                                         <div class="col-xs-12 border-bottom">
@@ -68,37 +68,21 @@
                                             <input id="password-input-id" name="password" class="password-input"
                                                    placeholder="Enter your password"
                                                    type="password">
-                                        </div>
-                                        <div class="col-xs-12 border-bottom">
-                                            <span class="email">
-                                                {$ERROR_MESSAGES[0]} ola
-                                            </span>
+                                            <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
                                         </div>
                                         <br>
                                     </div>
                                     <div class="col-xs-12 col-login nopadding">
                                         <div class="form-actions nopadding">
-                                            <input href="../UI2.php" class="btn btn-default login-button" type="submit" value="Login">
+                                            <input class="btn btn-default login-button" type="submit" value="Login">
                                         </div>
                                     </div>
 
                                 </form>
-
                             </div>
-
-                            <!--SignUp-->
                             <div class="form-register" hidden>
                                 <form action="{$BASE_URL}actions/users/register.php" method="post">
                                     <div class="form-register-right">
-
-                                        <div class="col-xs-12 border-bottom">
-                                            <span class="email"> Name: </span>
-                                        </div>
-                                        <br>
-                                        <div class="col-xs-12 border-bottom">
-                                            <input id="email-input-id" name="name" class="email-input"
-                                                   placeholder="Enter your name">
-                                        </div>
 
                                         <div class="col-xs-12 border-bottom">
                                             <span class="email"> Email: </span>
@@ -108,6 +92,17 @@
                                             <input id="email-input-id" name="email" class="email-input"
                                                    placeholder="Enter your email"
                                                    type="email">
+                                            <span class="error_messages">{$FIELD_ERRORS[0]}</span>
+                                            <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
+                                        </div><br>
+                                        <div class="col-xs-12 border-bottom">
+                                            <span class="name"> Name: </span>
+                                        </div>
+                                        <br>
+                                        <div class="col-xs-12 border-bottom">
+                                            <input id="name-input-id" name="name" class="name-input"
+                                                   placeholder="Enter your name">
+                                            <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
                                         </div>
                                         <br>
                                         <div class="col-xs-12 border-bottom">
@@ -118,6 +113,7 @@
                                             <input id="username-input-id" name="username" class="username-input"
                                                    placeholder="Choose your username"
                                                    type="text">
+                                            <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
                                         </div>
                                         <br>
                                         <div class="col-xs-12 border-bottom">
@@ -128,17 +124,14 @@
                                             <input id="password-input-id" name="password" class="password-input"
                                                    placeholder="Choose your password"
                                                    type="password">
+                                            <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
+
                                         </div>
                                         <br>
                                     </div>
-                                    <div class="col-xs-12 border-bottom">
-                                            <span class="email">
-                                                {$ERROR_MESSAGES[0]} ola
-                                            </span>
-                                    </div>
                                     <div class="col-xs-12 col-login nopadding">
                                         <div class="form-actions nopadding">
-                                            <input href="../UI2.php" class="btn btn-default register-button" type="submit"
+                                            <input class="btn btn-default register-button" type="submit"
                                                    value="Register">
                                         </div>
                                     </div>
@@ -150,10 +143,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
-
-
 </body>
 </html>

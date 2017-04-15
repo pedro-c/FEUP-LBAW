@@ -187,224 +187,214 @@ html, body {
   display: table-cell;
   vertical-align: middle; }
 
-.login-box {
-  color: white; }
-  .login-box .border_radius {
-    border-radius: 15px;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px; }
-  .login-box .content_login {
-    background-color: #22313f;
-    height: 80vh; }
-  .login-box .content_image {
-    background-image: url("../images/assets/2.png");
-    background-repeat: no-repeat; }
-  .login-box .nopadding {
-    padding: 0 !important;
-    margin: 0 !important; }
-  .login-box #buttons {
-    white-space: normal !important; }
-  .login-box .button_loginIn {
-    margin-top: 20px;
-    padding: 5px 15px 5px 15px;
-    float: right;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    background-color: #22313f;
-    border-color: transparent;
-    color: white;
-    background-color: #e9d460; }
-    .login-box .button_loginIn:active, .login-box .button_loginIn:focus, .login-box .button_loginIn:hover, .login-box .button_loginIn:visited {
-      background-color: #e9d460;
-      outline: 0; }
-  .login-box .button_signUp {
-    margin-top: 20px;
-    color: white;
-    float: left;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: #425262;
-    padding: 5px 15px 5px 15px;
-    border-color: transparent; }
-    .login-box .button_signUp:active, .login-box .button_signUp:focus, .login-box .button_signUp:hover, .login-box .button_signUp:visited {
-      background-color: #e9d460;
-      outline: 0; }
-  .login-box .description-links {
-    margin-top: 100px;
-    font-size: x-large;
+.content_login {
+  background-color: #22313f;
+  height: 80vh; }
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important; }
+
+#buttons {
+  white-space: normal !important; }
+
+.description-links {
+  margin-top: 100px;
+  font-size: x-large;
+  text-align: center;
+  cursor: pointer; }
+  .description-links .sign-in-title {
     text-align: center;
-    cursor: pointer; }
-    .login-box .description-links .sign-in-title {
-      text-align: center;
-      text-decoration: none;
-      margin-right: 20px;
-      padding-bottom: 5px;
-      color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    padding-bottom: 5px;
+    color: white;
+    border-bottom: 4px solid;
+    border-bottom-color: #e9d460; }
+    .description-links .sign-in-title:hover, .description-links .sign-in-title:visited {
       border-bottom: 4px solid;
-      border-bottom-color: #e9d460; }
-      .login-box .description-links .sign-in-title:hover, .login-box .description-links .sign-in-title:visited {
-        border-bottom: 4px solid;
-        border-bottom-color: #e9d460;
+      border-bottom-color: #e9d460;
+      outline: 0; }
+  .description-links .or-title {
+    padding-right: 20px;
+    color: white;
+    font-size: large; }
+  .description-links .sign-up-title {
+    text-align: center;
+    text-decoration: none;
+    color: #425262;
+    padding-bottom: 5px; }
+    .description-links .sign-up-title:hover, .description-links .sign-up-title:visited {
+      border-bottom: 4px solid;
+      border-bottom-color: #e9d460;
+      outline: 0; }
+
+.form-login {
+  margin-top: 70px;
+  font-size: small;
+  color: white !important; }
+  .form-login .form-login-right {
+    margin-left: 35px;
+    margin-right: 45px; }
+    .form-login .form-login-right .border-bottom {
+      padding-left: 0 !important; }
+    .form-login .form-login-right .border-bottom:nth-child(3),
+    .form-login .form-login-right .border-bottom:nth-child(7) {
+      padding-bottom: 4px;
+      border-bottom-style: solid;
+      border-bottom-color: #425262;
+      outline: 0; }
+  .form-login .error_messages {
+    font-size: 15px; }
+  .form-login #email-input-id.email-input {
+    font-size: small;
+    padding-top: 15px;
+    background-color: transparent;
+    border: none; }
+    .form-login #email-input-id.email-input:focus {
+      outline: none; }
+    .form-login #email-input-id.email-input:-moz-placeholder {
+      color: #425262; }
+    .form-login #email-input-id.email-input:-ms-input-placeholder {
+      color: #425262; }
+    .form-login #email-input-id.email-input::-moz-placeholder {
+      color: #425262; }
+    .form-login #email-input-id.email-input:-ms-input-placeholder {
+      color: #425262; }
+  .form-login .password {
+    padding-top: 35px;
+    display: inline-block; }
+  .form-login #password-input-id.password-input {
+    padding-top: 15px;
+    background-color: transparent;
+    border: none; }
+    .form-login #password-input-id.password-input:focus {
+      outline: none; }
+    .form-login #password-input-id.password-input:-moz-placeholder {
+      color: #425262; }
+    .form-login #password-input-id.password-input:-ms-input-placeholder {
+      color: #425262; }
+    .form-login #password-input-id.password-input::-moz-placeholder {
+      color: #425262; }
+    .form-login #password-input-id.password-input:-ms-input-placeholder {
+      color: #425262; }
+  .form-login .form-actions {
+    margin: 0;
+    background-color: transparent;
+    color: white;
+    text-align: center; }
+    .form-login .form-actions .login-button {
+      padding: 10px 60px 10px 60px;
+      margin-top: 122px;
+      background-color: #425262;
+      border: none;
+      color: white; }
+      .form-login .form-actions .login-button:active, .form-login .form-actions .login-button:focus, .form-login .form-actions .login-button:hover, .form-login .form-actions .login-button:visited {
+        background-color: #e9d460;
+        color: white;
         outline: 0; }
-    .login-box .description-links .or-title {
-      padding-right: 20px;
-      color: white;
-      font-size: large; }
-    .login-box .description-links .sign-up-title {
-      text-align: center;
-      text-decoration: none;
-      color: #425262;
-      padding-bottom: 5px; }
-      .login-box .description-links .sign-up-title:hover, .login-box .description-links .sign-up-title:visited {
-        border-bottom: 4px solid;
-        border-bottom-color: #e9d460;
+
+.form-register {
+  margin-top: 50px;
+  font-size: small;
+  color: white !important; }
+  .form-register .form-register-right {
+    margin-left: 45px;
+    margin-right: 45px; }
+    .form-register .form-register-right .border-bottom {
+      padding-left: 0 !important; }
+    .form-register .form-register-right .border-bottom:nth-child(3),
+    .form-register .form-register-right .border-bottom:nth-child(7),
+    .form-register .form-register-right .border-bottom:nth-child(11),
+    .form-register .form-register-right .border-bottom:nth-child(15) {
+      padding-bottom: 4px;
+      border-bottom-style: solid;
+      border-bottom-color: #425262;
+      outline: 0; }
+  .form-register .email {
+    display: inline-block; }
+  .form-register #email-input-id.email-input {
+    font-size: small;
+    padding-top: 10px;
+    background-color: transparent;
+    border: none; }
+    .form-register #email-input-id.email-input:focus {
+      outline: none; }
+    .form-register #email-input-id.email-input:-moz-placeholder {
+      color: #425262; }
+    .form-register #email-input-id.email-input:-ms-input-placeholder {
+      color: #425262; }
+    .form-register #email-input-id.email-input::-moz-placeholder {
+      color: #425262; }
+    .form-register #email-input-id.email-input:-ms-input-placeholder {
+      color: #425262; }
+  .form-register .name {
+    padding-top: 20px;
+    display: inline-block; }
+  .form-register #name-input-id.name-input {
+    font-size: small;
+    padding-top: 10px;
+    background-color: transparent;
+    border: none; }
+    .form-register #name-input-id.name-input:focus {
+      outline: none; }
+    .form-register #name-input-id.name-input:-moz-placeholder {
+      color: #425262; }
+    .form-register #name-input-id.name-input:-ms-input-placeholder {
+      color: #425262; }
+    .form-register #name-input-id.name-input::-moz-placeholder {
+      color: #425262; }
+    .form-register #name-input-id.name-input:-ms-input-placeholder {
+      color: #425262; }
+  .form-register .username {
+    padding-top: 20px;
+    display: inline-block; }
+  .form-register #username-input-id.username-input {
+    font-size: small;
+    padding-top: 10px;
+    background-color: transparent;
+    border: none; }
+    .form-register #username-input-id.username-input:focus {
+      outline: none; }
+    .form-register #username-input-id.username-input:-moz-placeholder {
+      color: #425262; }
+    .form-register #username-input-id.username-input:-ms-input-placeholder {
+      color: #425262; }
+    .form-register #username-input-id.username-input::-moz-placeholder {
+      color: #425262; }
+    .form-register #username-input-id.username-input:-ms-input-placeholder {
+      color: #425262; }
+  .form-register .password {
+    padding-top: 20px;
+    display: inline-block; }
+  .form-register #password-input-id.password-input {
+    padding-top: 10px;
+    background-color: transparent;
+    border: none; }
+    .form-register #password-input-id.password-input:focus {
+      outline: none; }
+    .form-register #password-input-id.password-input:-moz-placeholder {
+      color: #425262; }
+    .form-register #password-input-id.password-input:-ms-input-placeholder {
+      color: #425262; }
+    .form-register #password-input-id.password-input::-moz-placeholder {
+      color: #425262; }
+    .form-register #password-input-id.password-input:-ms-input-placeholder {
+      color: #425262; }
+  .form-register .form-actions {
+    margin: 0;
+    background-color: transparent;
+    color: white;
+    text-align: center; }
+    .form-register .form-actions .register-button {
+      padding: 10px 50px 10px 50px;
+      margin-top: 33px;
+      background-color: #425262;
+      border: none;
+      color: white; }
+      .form-register .form-actions .register-button:active, .form-register .form-actions .register-button:focus, .form-register .form-actions .register-button:hover, .form-register .form-actions .register-button:visited {
+        background-color: #e9d460;
+        color: white;
         outline: 0; }
-  .login-box .form-register {
-    margin-top: 50px;
-    font-size: medium; }
-    .login-box .form-register .form-register-right {
-      margin-left: 45px;
-      margin-right: 45px; }
-      .login-box .form-register .form-register-right .border-bottom {
-        padding-left: 0 !important; }
-      .login-box .form-register .form-register-right .border-bottom:nth-child(3),
-      .login-box .form-register .form-register-right .border-bottom:nth-child(7),
-      .login-box .form-register .form-register-right .border-bottom:nth-child(11) {
-        padding-bottom: 4px;
-        border-bottom-style: solid;
-        border-bottom-color: #425262;
-        outline: 0; }
-    .login-box .form-register .email {
-      display: inline-block; }
-    .login-box .form-register #email-input-id.email-input {
-      font-size: medium;
-      padding-top: 15px;
-      background-color: transparent;
-      border: none; }
-      .login-box .form-register #email-input-id.email-input:focus {
-        outline: none; }
-      .login-box .form-register #email-input-id.email-input:-moz-placeholder {
-        color: #425262; }
-      .login-box .form-register #email-input-id.email-input:-ms-input-placeholder {
-        color: #425262; }
-      .login-box .form-register #email-input-id.email-input::-moz-placeholder {
-        color: #425262; }
-      .login-box .form-register #email-input-id.email-input:-ms-input-placeholder {
-        color: #425262; }
-    .login-box .form-register .username {
-      padding-top: 35px;
-      display: inline-block; }
-    .login-box .form-register #username-input-id.username-input {
-      font-size: medium;
-      padding-top: 15px;
-      background-color: transparent;
-      border: none; }
-      .login-box .form-register #username-input-id.username-input:focus {
-        outline: none; }
-      .login-box .form-register #username-input-id.username-input:-moz-placeholder {
-        color: #425262; }
-      .login-box .form-register #username-input-id.username-input:-ms-input-placeholder {
-        color: #425262; }
-      .login-box .form-register #username-input-id.username-input::-moz-placeholder {
-        color: #425262; }
-      .login-box .form-register #username-input-id.username-input:-ms-input-placeholder {
-        color: #425262; }
-    .login-box .form-register .password {
-      padding-top: 35px;
-      display: inline-block; }
-    .login-box .form-register #password-input-id.password-input {
-      padding-top: 15px;
-      background-color: transparent;
-      border: none; }
-      .login-box .form-register #password-input-id.password-input:focus {
-        outline: none; }
-      .login-box .form-register #password-input-id.password-input:-moz-placeholder {
-        color: #425262; }
-      .login-box .form-register #password-input-id.password-input:-ms-input-placeholder {
-        color: #425262; }
-      .login-box .form-register #password-input-id.password-input::-moz-placeholder {
-        color: #425262; }
-      .login-box .form-register #password-input-id.password-input:-ms-input-placeholder {
-        color: #425262; }
-    .login-box .form-register .form-actions {
-      margin: 0;
-      background-color: transparent;
-      color: white;
-      text-align: center; }
-      .login-box .form-register .form-actions .register-button {
-        padding: 10px 50px 10px 50px;
-        margin-top: 40px;
-        background-color: #425262;
-        border: none;
-        color: white; }
-        .login-box .form-register .form-actions .register-button:active, .login-box .form-register .form-actions .register-button:focus, .login-box .form-register .form-actions .register-button:hover, .login-box .form-register .form-actions .register-button:visited {
-          background-color: #e9d460;
-          color: white;
-          outline: 0; }
-  .login-box .form-login {
-    margin-top: 70px;
-    font-size: medium; }
-    .login-box .form-login .form-login-right {
-      margin-left: 35px;
-      margin-right: 45px; }
-      .login-box .form-login .form-login-right .border-bottom {
-        padding-left: 0 !important; }
-      .login-box .form-login .form-login-right .border-bottom:nth-child(3),
-      .login-box .form-login .form-login-right .border-bottom:nth-child(7) {
-        padding-bottom: 4px;
-        border-bottom-style: solid;
-        border-bottom-color: #425262;
-        outline: 0; }
-    .login-box .form-login #username-input-id.username-input {
-      font-size: medium;
-      padding-top: 15px;
-      background-color: transparent;
-      border: none; }
-      .login-box .form-login #username-input-id.username-input:focus {
-        outline: none; }
-      .login-box .form-login #username-input-id.username-input:-moz-placeholder {
-        color: #425262; }
-      .login-box .form-login #username-input-id.username-input:-ms-input-placeholder {
-        color: #425262; }
-      .login-box .form-login #username-input-id.username-input::-moz-placeholder {
-        color: #425262; }
-      .login-box .form-login #username-input-id.username-input:-ms-input-placeholder {
-        color: #425262; }
-    .login-box .form-login .password {
-      padding-top: 35px;
-      display: inline-block; }
-    .login-box .form-login #password-input-id.password-input {
-      padding-top: 15px;
-      background-color: transparent;
-      border: none; }
-      .login-box .form-login #password-input-id.password-input:focus {
-        outline: none; }
-      .login-box .form-login #password-input-id.password-input:-moz-placeholder {
-        color: #425262; }
-      .login-box .form-login #password-input-id.password-input:-ms-input-placeholder {
-        color: #425262; }
-      .login-box .form-login #password-input-id.password-input::-moz-placeholder {
-        color: #425262; }
-      .login-box .form-login #password-input-id.password-input:-ms-input-placeholder {
-        color: #425262; }
-    .login-box .form-login .form-actions {
-      margin: 0;
-      background-color: transparent;
-      color: white;
-      text-align: center; }
-      .login-box .form-login .form-actions .login-button {
-        padding: 10px 60px 10px 60px;
-        margin-top: 122px;
-        background-color: #425262;
-        border: none;
-        color: white; }
-        .login-box .form-login .form-actions .login-button:active, .login-box .form-login .form-actions .login-button:focus, .login-box .form-login .form-actions .login-button:hover, .login-box .form-login .form-actions .login-button:visited {
-          background-color: #e9d460;
-          color: white;
-          outline: 0; }
 
 /*# sourceMappingURL=UI1_novo.css.map */

@@ -3,7 +3,7 @@
   include_once('../../database/users.php');
 
   if (!$_POST['email'] || !$_POST['username'] || !$_POST['password']) {
-    $_SESSION['error_messages'][] = 'All fields are mandatory';
+    $_SESSION['error_messages'][] = '<br>'.'All fields are mandatory';
     $_SESSION['form_values'] = $_POST;
     header("Location:".$_SERVER['HTTP_REFERER']);
     exit;
@@ -19,10 +19,10 @@
   }
   catch (PDOException $e){
       if (strpos($e->getMessage(), 'users_pkey') !== false) {
-          $_SESSION['error_messages'][] = 'Duplicate username';
-          $_SESSION['field_errors']['username'] = 'Username already exists';
+          $_SESSION['error_messages'][] = '<br>'.'Duplicated email';
+          $_SESSION['field_errors']['email'] = '<br>'.'Email already exists';
       }
-      else $_SESSION['error_messages'][] = 'Error creating user';
+      else $_SESSION['error_messages'][] = '<br>'.'Error creating user';
 
       $_SESSION['form_values'] = $_POST;
       header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -31,8 +31,8 @@
 
   $_SESSION['email'] = $email;
   $_SESSION['username'] = $username;
-  $_SESSION['success_messages'][] = 'User registered successfully';
-  $_SESSION['success_messages'][] = 'User registered successfully';
+  $_SESSION['success_messages'][] = '<br>'.'User registered successfully';
+  $_SESSION['success_messages'][] = '<br>'.'User registered successfully';
 
   header('Location: ../../pages/PIU/UI2.php');
 ?>

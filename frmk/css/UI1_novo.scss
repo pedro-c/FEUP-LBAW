@@ -43,24 +43,9 @@ body {
 }
 
 
-.login-box {
-  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-  color: white;
-
-  .border_radius {
-    border-radius: 15px;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-  }
-
   .content_login {
-    background-color: $blue_secondary;
+    background-color: #22313f;
     height: 80vh;
-  }
-
-  .content_image {
-    background-image: url("../images/assets/2.png");
-    background-repeat: no-repeat;
   }
 
   .nopadding {
@@ -72,324 +57,322 @@ body {
     white-space: normal !important;
   }
 
-  .button_loginIn {
-    margin-top: 20px;
-    padding: 5px 15px 5px 15px;
-    float: right;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    background-color: $blue_secondary;
-    border-color: transparent;
-    color: white;
-    background-color: $color_yellow;
-    &:active,
-    &:focus,
-    &:hover,
-    &:visited {
-      background-color: $color_yellow;
-      outline: 0;
-    }
-  }
+.description-links {
+  margin-top: 100px;
+  font-size: x-large;
+  text-align: center;
+  cursor: pointer;
 
-  .button_signUp {
-    margin-top: 20px;
-    color: white;
-    float: left;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: #425262;
-    padding: 5px 15px 5px 15px;
-    border-color: transparent;
-    &:active,
-    &:focus,
-    &:hover,
-    &:visited {
-      background-color: $color_yellow;
-      outline: 0;
-    }
-  }
-
-  .description-links {
-    margin-top: 100px;
-    font-size: x-large;
+  .sign-in-title {
     text-align: center;
-    cursor: pointer;
-
-    .sign-in-title {
-      text-align: center;
-      text-decoration: none;
-      margin-right: 20px;
-      padding-bottom: 5px;
-      color: white;
-      // retirar depois de css
+    text-decoration: none;
+    margin-right: 20px;
+    padding-bottom: 5px;
+    color: white;
+    border-bottom: 4px solid;
+    border-bottom-color: $color_yellow;
+    &:hover,
+    &:visited {
       border-bottom: 4px solid;
       border-bottom-color: $color_yellow;
-      &:hover,
-      &:visited {
-        border-bottom: 4px solid;
-        border-bottom-color: $color_yellow;
-        outline: 0;
-      }
+      outline: 0;
+    }
+  }
+
+  .or-title {
+    padding-right: 20px;
+    color: white;
+    font-size: large;
+  }
+
+  .sign-up-title {
+    text-align: center;
+    text-decoration: none;
+    color: #425262;
+    padding-bottom: 5px;
+    &:hover,
+    &:visited {
+      border-bottom: 4px solid;
+      border-bottom-color: $color_yellow;
+      outline: 0;
+    }
+  }
+}
+
+.form-login {
+  margin-top: 70px;
+  font-size: small;
+  color: white !important;
+
+  .form-login-right {
+    margin-left: 35px;
+    margin-right: 45px;
+
+    .border-bottom {
+      padding-left: 0 !important;
     }
 
-    .or-title {
-      padding-right: 20px;
-      color: white;
-      font-size: large;
+    .border-bottom:nth-child(3),
+    .border-bottom:nth-child(7) {
+      padding-bottom: 4px;
+      border-bottom-style: solid;
+      border-bottom-color: #425262;
+      outline: 0;
+    }
+  }
+
+  .error_messages{
+    font-size: 15px;
+  }
+
+  .email {
+
+  }
+
+  #email-input-id.email-input {
+    font-size: small;
+    padding-top: 15px;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
     }
 
-    .sign-up-title {
-      text-align: center;
-      text-decoration: none;
+    &:-moz-placeholder {
       color: #425262;
-      padding-bottom: 5px;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+
+  .password {
+    padding-top: 35px;
+    display: inline-block;
+  }
+
+  #password-input-id.password-input {
+    padding-top: 15px;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+
+  .form-actions {
+    margin: 0;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+
+    .login-button {
+      padding: 10px 60px 10px 60px;
+      margin-top: 122px;
+      background-color: #425262;
+      border: none;
+      color: white;
+
+      &:active,
+      &:focus,
       &:hover,
       &:visited {
-        border-bottom: 4px solid;
-        border-bottom-color: $color_yellow;
+        background-color: $color_yellow;
+        color: white;
         outline: 0;
       }
+    }
+
+  }
+
+}
+
+
+.form-register {
+  margin-top: 50px;
+  font-size: small;
+  color: white !important;
+
+  .form-register-right {
+    margin-left: 45px;
+    margin-right: 45px;
+
+    .border-bottom {
+      padding-left: 0 !important;
+    }
+
+    .border-bottom:nth-child(3),
+    .border-bottom:nth-child(7),
+    .border-bottom:nth-child(11),
+    .border-bottom:nth-child(15){
+      padding-bottom: 4px;
+      border-bottom-style: solid;
+      border-bottom-color: #425262;
+      outline: 0;
     }
   }
 
-  .form-register {
-    margin-top: 50px;
-    font-size: medium;
-
-    .form-register-right {
-      margin-left: 45px;
-      margin-right: 45px;
-
-      .border-bottom {
-        padding-left: 0 !important;
-      }
-
-      .border-bottom:nth-child(3),
-      .border-bottom:nth-child(7),
-      .border-bottom:nth-child(11) {
-        padding-bottom: 4px;
-        border-bottom-style: solid;
-        border-bottom-color: #425262;
-        outline: 0;
-      }
-    }
-
-    .email {
-      display: inline-block;
-    }
-
-    #email-input-id.email-input {
-      font-size: medium;
-      padding-top: 15px;
-      background-color: transparent;
-      border: none;
-
-      &:focus {
-        outline: none;
-      }
-
-      &:-moz-placeholder {
-        color: #425262;
-      }
-      &:-ms-input-placeholder {
-        color: #425262;
-      }
-      &::-moz-placeholder {
-        color: #425262;
-      }
-      &:-ms-input-placeholder {
-        color: #425262;
-      }
-
-    }
-    .username {
-      padding-top: 35px;
-      display: inline-block;
-    }
-
-    #username-input-id.username-input {
-      font-size: medium;
-      padding-top: 15px;
-      background-color: transparent;
-      border: none;
-
-      &:focus {
-        outline: none;
-      }
-
-      &:-moz-placeholder {
-        color: #425262;
-      }
-      &:-ms-input-placeholder {
-        color: #425262;
-      }
-      &::-moz-placeholder {
-        color: #425262;
-      }
-      &:-ms-input-placeholder {
-        color: #425262;
-      }
-
-    }
-    .password {
-      padding-top: 35px;
-      display: inline-block;
-    }
-
-    #password-input-id.password-input {
-      padding-top: 15px;
-      background-color: transparent;
-      border: none;
-
-      &:focus {
-        outline: none;
-      }
-      &:-moz-placeholder {
-        color: #425262;
-      }
-      &:-ms-input-placeholder {
-        color: #425262;
-      }
-      &::-moz-placeholder {
-        color: #425262;
-      }
-      &:-ms-input-placeholder {
-        color: #425262;
-      }
-
-    }
-    .form-actions {
-      margin: 0;
-      background-color: transparent;
-      color: white;
-      text-align: center;
-
-      .register-button {
-        padding: 10px 50px 10px 50px;
-        margin-top: 40px;
-        background-color: #425262;
-        border: none;
-        color: white;
-
-        &:active,
-        &:focus,
-        &:hover,
-        &:visited {
-          background-color: $color_yellow;
-          color: white;
-          outline: 0;
-        }
-      }
-
-    }
+  .email {
+    display: inline-block;
   }
 
-  .form-login {
-    margin-top: 70px;
-    font-size: medium;
+  #email-input-id.email-input {
+    font-size: small;
+    padding-top: 10px;
+    background-color: transparent;
+    border: none;
 
-    .form-login-right {
-      margin-left: 35px;
-      margin-right: 45px;
+    &:focus {
+      outline: none;
+    }
 
-      .border-bottom {
-        padding-left: 0 !important;
-      }
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
 
-      .border-bottom:nth-child(3),
-      .border-bottom:nth-child(7) {
-        padding-bottom: 4px;
-        border-bottom-style: solid;
-        border-bottom-color: #425262;
+  }
+
+  .name {
+    padding-top: 20px;
+    display: inline-block;
+  }
+
+  #name-input-id.name-input {
+    font-size: small;
+    padding-top: 10px;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+
+  .username {
+    padding-top: 20px;
+    display: inline-block;
+  }
+
+  #username-input-id.username-input {
+    font-size: small;
+    padding-top: 10px;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+  .password {
+    padding-top: 20px;
+    display: inline-block;
+  }
+
+  #password-input-id.password-input {
+    padding-top: 10px;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+  .form-actions {
+    margin: 0;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+
+    .register-button {
+      padding: 10px 50px 10px 50px;
+      margin-top: 33px;
+      background-color: #425262;
+      border: none;
+      color: white;
+
+      &:active,
+      &:focus,
+      &:hover,
+      &:visited {
+        background-color: $color_yellow;
+        color: white;
         outline: 0;
       }
-    }
-
-    .username {
-
-    }
-
-    #username-input-id.username-input {
-      font-size: medium;
-      padding-top: 15px;
-      background-color: transparent;
-      border: none;
-
-      &:focus {
-        outline: none;
-      }
-
-      &:-moz-placeholder {
-        color: #425262;
-      }
-      &:-ms-input-placeholder {
-        color: #425262;
-      }
-      &::-moz-placeholder {
-        color: #425262;
-      }
-      &:-ms-input-placeholder {
-        color: #425262;
-      }
-
-    }
-
-    .password {
-      padding-top: 35px;
-      display: inline-block;
-    }
-
-    #password-input-id.password-input {
-      padding-top: 15px;
-      background-color: transparent;
-      border: none;
-
-      &:focus {
-        outline: none;
-      }
-      &:-moz-placeholder {
-        color: #425262;
-      }
-      &:-ms-input-placeholder {
-        color: #425262;
-      }
-      &::-moz-placeholder {
-        color: #425262;
-      }
-      &:-ms-input-placeholder {
-        color: #425262;
-      }
-
-    }
-
-    .form-actions {
-      margin: 0;
-      background-color: transparent;
-      color: white;
-      text-align: center;
-
-      .login-button {
-        padding: 10px 60px 10px 60px;
-        margin-top: 122px;
-        background-color: #425262;
-        border: none;
-        color: white;
-
-        &:active,
-        &:focus,
-        &:hover,
-        &:visited {
-          background-color: $color_yellow;
-          color: white;
-          outline: 0;
-        }
-      }
-
     }
 
   }
 }
+
+
