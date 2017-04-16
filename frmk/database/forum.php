@@ -33,11 +33,11 @@ function getProjectPosts($projectId){
     return $stmt->fetchAll();
 }
 
-function getPostSubmitter($userId){
+function getUser($userId){
     global $conn;
     $stmt = $conn->prepare("SELECT * FROM user_table WHERE id = ?");
-    $stmt->execute($userId);
-    return $stmt->fetch(0);
+    $stmt->execute(array($userId));
+    return $stmt->fetchAll()[0];
 }
 
 function getUserPhoto($user){
@@ -50,3 +50,21 @@ function getUserPhoto($user){
     }
 }
 
+function getPostContent($projectID, $postID){
+    global $conn;
+
+    $stmt = $conn->prepare("SELECT content FROM forum_post WHERE forum_post.id = ? AND forum_post.id_project = ?");
+    $stmt->execute(array($postID,$projectID));
+
+    $result = $stmt->fetchAll()[0];
+    return $result['content'];
+}
+
+function getReplies($postID){
+    global $conn;
+
+    $stmt = $conn->prepare("SELECT * FROM forum_reply WHERE forum_reply.post_ID = ? ORDER BY creation_date ASC");
+    $stmt->execute(array($postID));
+    $replies = $stmt->fetchAll();
+    return $replies;
+}

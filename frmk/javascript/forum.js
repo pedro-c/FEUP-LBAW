@@ -16,11 +16,6 @@ $(document).ready(function () {
     );
 
     let replies = $(
-        '<ul id="replies" class="list-group">' +
-        '<li class="list-group-item">' +
-        '<h5 class="list-group-item-heading"> <img class="user_photo" src="../../images/users/avatar3.png"><strong>Username</strong></h5>' +
-        '<p class="list-group-item-text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>' +
-        '</li>' +
         '<li class="list-group-item">' +
         '<h5 class="list-group-item-heading"> <img class="user_photo" src="../../images/users/avatar4.png"> <strong>Username</strong></h5>' +
         '<p class="list-group-item-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>' +
@@ -46,8 +41,7 @@ $(document).ready(function () {
         '<textarea class="form-control" rows="3" style="resize: none" placeholder="Reply to this post"></textarea>' +
         '<button id="submit-reply" class="btn btn-default btn-form btn-comment" type="submit">Submit</button>' +
         '<button id="cancel-reply" class="btn btn-default btn-form btn-comment">Cancel</button>' +
-        '</li>' +
-        '</ul>'
+        '</li>'
     );
 
     let newPostPanel = $(
@@ -146,11 +140,12 @@ $(document).ready(function () {
     };
 
     let makePostSection = function(clickedPost){
-        let header = makePostHeader(clickedPost);
-        let content = makePostContent(clickedPost);
+        let header = getPostHeader(clickedPost);
+        let content = getPostContent(clickedPost);
+        let replies = getPostReplies(clickedPost);
 
 
-        let post = $(
+        let postSection = $(
             '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">' +
             '<div id="post-content" class="panel panel-primary">' + header +
             '</div>' +
@@ -160,12 +155,13 @@ $(document).ready(function () {
             '</div>'
         );
 
-        post.find("#post-content").append(content);
+        postSection.find("#post-content").append(content);
+        postSection.append(replies);
 
-        return post;
+        return postSection;
     };
 
-    let makePostHeader = function(clickedPost){
+    let getPostHeader = function(clickedPost){
         let title = clickedPost.find(".post-title").text();
         let userPhoto = clickedPost.find(".submitter-photo").attr("src");
         let username = clickedPost.find(".submitter-uname").text();
@@ -182,12 +178,9 @@ $(document).ready(function () {
             '</div>';
     };
 
-    let makePostContent = function(clickedPost){
+    let getPostContent = function(clickedPost){
         let projectID = $(".project-id").text();
         let postID = clickedPost.find(".post-id").text();
-
-        console.log(projectID);
-        console.log(postID);
 
         let content = $(
         '<div class="panel-body" id="selected-post-content">' +
@@ -202,6 +195,38 @@ $(document).ready(function () {
         });
 
         return content;
-    }
+    };
+
+    let getPostReplies = function (clickedPost) {
+        let postID = clickedPost.find(".post-id").text();
+        let content = $(
+            '<ul id="replies" class="list-group">' +
+            '</ul>'
+        );
+
+        $.post("../../../actions/forum/get_post_replies.php",{
+            postID: parseInt(postID)
+        }, function(data){
+            let replies = JSON.parse(data);
+            for (let reply of replies){
+                let replyContent = reply.content;
+                let id = reply.id;
+                let creationDate = reply.creation_date;
+                let userPhoto = reply.photo;
+                let username = reply.username;
+
+                let replyElement = $(
+                '<li class="list-group-item">' +
+                '<h5 class="list-group-item-heading"><img class="submitter-photo" src='+ userPhoto +'><strong>'+ username + ' on ' + creationDate + '</strong></h5>' +
+                '<p class="list-group-item-text">'+ replyContent + '</p>' +
+                '</li>'
+                );
+
+                content.append(replyElement);
+                console.log(content);
+            }
+        });
+        return content;
+    };
 
 });

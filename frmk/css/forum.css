@@ -165,7 +165,8 @@ body {
   text-align: center; }
 
 .submitter-photo {
-  width: 25px; }
+  width: 25px;
+  margin-right: 3px; }
 
 button.btn-form {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
