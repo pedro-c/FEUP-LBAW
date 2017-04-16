@@ -1,7 +1,6 @@
 <link href="../../css/forum.css" rel="stylesheet">
 
 <div class="page-wrapper container">
-    <span hidden="hidden" class="project-id">{$project}</span>
     <div class="page-wrapper container">
         <div class="row"><br>
             <div id="forum-posts" class="list-group">

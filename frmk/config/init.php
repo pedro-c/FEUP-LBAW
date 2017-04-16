@@ -5,7 +5,7 @@ session_start();
 error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
 $BASE_DIR = '/home/epassos/feup/3_ano/2_sem/lbaw/projeto/frmk/';
-$BASE_URL = '/proto/';
+$BASE_URL = 'localhost:8080/';
 
 $conn = new PDO('pgsql:host=dbm.fe.up.pt;dbname=lbaw1614', 'lbaw1614', 'yz54fi76');
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);

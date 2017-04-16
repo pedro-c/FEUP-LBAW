@@ -9,14 +9,12 @@
 include_once '../../config/init.php';
 include_once $BASE_DIR . 'database/forum.php';
 include_once $BASE_DIR . 'pages/common/header.php';
-$projectId = 1;
+$projectId = $_SESSION['id_project'];
 
 $posts = getProjectPosts(array($projectId));
 
-$smarty->assign('project',$projectId);
 $smarty->assign('posts',$posts);
 $smarty->display($BASE_DIR . 'templates/forum/forum.tpl');
 
-?>
 
-<?php include_once '../common/footer.php';?>
+include_once '../common/footer.php';
