@@ -38,6 +38,17 @@ function getUsername($email){
     return $result['username'];
 }
 
+function getUserNameById($id){
+
+    global $conn;
+    $stmt = $conn -> prepare('SELECT user_table.name FROM user_table WHERE id = ?');
+    $stmt->execute([$id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result['name'];
+}
+
+
 function checkForInvitation($email,$project){
 
     global $conn;
@@ -58,4 +69,5 @@ function joinProject($id, $project){
     $stmt = $conn->prepare('INSERT INTO user_project VALUES(?,?,?)');
     return $stmt->execute([$id,$project,$is_coordinator]);
 }
+
 
