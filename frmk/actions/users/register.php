@@ -43,15 +43,15 @@
           exit;
       };
 
-  $_SESSION['id_project'] = $project_id;
+  $_SESSION['project_id'] = $project_id;
   $_SESSION['email'] = $email;
-  $_SESSION['id'] = getUserId($email);
+  $_SESSION['user_id'] = getUserId($email);
   $_SESSION['username'] = $username;
   $_SESSION['success_messages'][] = '<br>'.'User registered successfully';
   $_SESSION['success_messages'][] = '<br>'.'User registered successfully';
 
-  joinProject($_SESSION['id'], $_SESSION['id_project']);
+  joinProject($_SESSION['user_id'], $_SESSION['project_id']);
 
-   header('Location: ../../pages/PIU/UI2.php');
+  header('Location: ../../pages/dashboard.php');
 
 ?>
