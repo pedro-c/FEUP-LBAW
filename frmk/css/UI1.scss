@@ -51,7 +51,7 @@ body {
   }
 
   .content_image {
-    background-image: url("../assets/2.png");
+    background-image: url("../images/assets/2.png");
     background-repeat: no-repeat;
   }
 
@@ -106,47 +106,47 @@ body {
   }
 
   .description-links {
-    margin-top: 100px;
-    font-size: x-large;
-    text-align: center;
-    cursor: pointer;
+     margin-top: 100px;
+     font-size: x-large;
+     text-align: center;
+     cursor: pointer;
 
-    .sign-in-title {
-      text-align: center;
-      text-decoration: none;
-      margin-right: 20px;
-      padding-bottom: 5px;
-      color: white;
-      // retirar depois de css
-      border-bottom: 4px solid;
-      border-bottom-color: $color_yellow;
-      &:hover,
-      &:visited {
-        border-bottom: 4px solid;
-        border-bottom-color: $color_yellow;
-        outline: 0;
-      }
-    }
+     .sign-in-title {
+       text-align: center;
+       text-decoration: none;
+       margin-right: 20px;
+       padding-bottom: 5px;
+       color: white;
+       // retirar depois de css
+       border-bottom: 4px solid;
+       border-bottom-color: $color_yellow;
+       &:hover,
+       &:visited {
+         border-bottom: 4px solid;
+         border-bottom-color: $color_yellow;
+         outline: 0;
+       }
+     }
 
-    .or-title {
-      padding-right: 20px;
-      color: white;
-      font-size: large;
-    }
+     .or-title {
+       padding-right: 20px;
+       color: white;
+       font-size: large;
+     }
 
-    .sign-up-title {
-      text-align: center;
-      text-decoration: none;
-      color: #425262;
-      padding-bottom: 5px;
-      &:hover,
-      &:visited {
-        border-bottom: 4px solid;
-        border-bottom-color: $color_yellow;
-        outline: 0;
-      }
-    }
-  }
+     .sign-up-title {
+       text-align: center;
+       text-decoration: none;
+       color: #425262;
+       padding-bottom: 5px;
+       &:hover,
+       &:visited {
+         border-bottom: 4px solid;
+         border-bottom-color: $color_yellow;
+         outline: 0;
+       }
+     }
+   }
 
   .form-register {
     margin-top: 50px;
