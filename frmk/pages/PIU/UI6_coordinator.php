@@ -72,7 +72,7 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                 } else {
                   $team_member_title = "Team Member";
                   if($project_members[$j]['is_coordinator']) {
-                    $team_member_title = "Team Manager";
+                    $team_member_title = "Team Coordinator";
                   }
 
                   $smarty->assign('coordinator_permissions', $is_coordinator);
@@ -135,7 +135,10 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
         <p>Are you sure you want to remove this member from the project?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" id="remove_member_button">Yes</button>
+        <form action="../../actions/team/delete-member.php" method="post">
+          <!-- TODO Use JS to insert the user id in the form, when the button is clicked -->
+          <button type="button" class="btn btn-default" id="remove_member_button">Yes</button>
+        </form>
         <button type="button" class="btn btn-default" data-dismiss="modal" id="no_remove_member_button">No</button>
       </div>
     </div>
