@@ -43,7 +43,7 @@ $stmt->execute();
 $project_name = $stmt->fetch();
 
 //END of Alterations
-$is_coordinator = true;
+$is_coordinator = true; //TODO Set this variable according to session parameters
 $num_elems = count($project_members);
 if($is_coordinator) { //Adds the "Add new member" panel
   $num_elems++;
@@ -75,6 +75,7 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                     $team_member_title = "Team Manager";
                   }
 
+                  $smarty->assign('coordinator_permissions', $is_coordinator);
                   $smarty->assign('profile_name', $project_members[$j]['name']);
                   $smarty->assign('team_role', $team_member_title);
                   $smarty->assign('element_number', $num_elems);
