@@ -98,8 +98,8 @@
 
                                     {foreach $members as $member}
 
-                                        {$memberName = getUserNameById($member)}
-                                        <option value={$member}>{$member}</option>
+                                        {$memberName = getUserNameById($member['id_user'])}
+                                        <option value={$member}>{$memberName}</option>
                                     {/foreach}
                                 </select>
                             </div>
@@ -114,6 +114,9 @@
                             <div class="text-center">
                                 <input id="submit" type="submit" value="Submit" style="margin-top: 20px;">
                             </div>
+
+                            <div class="title">{$errors}</div>
+
 
                         </form>
                     </div>

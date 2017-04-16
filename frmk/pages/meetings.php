@@ -10,11 +10,10 @@ $meetings = getFutureMeetings($project);
 
 $members = getProjectMembers($project, $user_id);
 
-var_dump($members);
-
+$smarty->assign('errors', $_SESSION['error_messages']);
 $smarty->assign('members',$members);
 $smarty->assign('meetings',$meetings);
-//$smarty->display($BASE_DIR . 'templates/meetings.tpl');
+$smarty->display($BASE_DIR . 'templates/meetings.tpl');
 
 
 include_once "common/footer.php";
