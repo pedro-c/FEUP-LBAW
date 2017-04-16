@@ -159,4 +159,3 @@ include_once '../../config/init.php';
 
 <div id="parent">
     <div id="main-content">
-

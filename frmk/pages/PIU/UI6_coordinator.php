@@ -6,28 +6,42 @@ include_once "common/header.php";
 <script src="../../javascript/ui6.js"></script>
 
 <?php
-
+// ---- INIT
 ini_set("display_errors", true); error_reporting(E_ALL);
+$conn = new PDO('pgsql:host=dbm.fe.up.pt;dbname=lbaw1614', 'lbaw1614', 'yz54fi76');
+$conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$conn->exec('SET SCHEMA \'public\''); //FIXME?
+
 $BASE_DIR = '/home/jczelik/Documents/LBAW/FEUP-LBAW/frmk/';
 $BASE_URL = '/proto/';
 include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
 $smarty = new Smarty;
 $smarty->template_dir = $BASE_DIR . 'templates/';
 $smarty->compile_dir = $BASE_DIR . 'templates_c/';
+$smarty->setCompileDir($BASE_DIR . 'templates_c/');
 $smarty->assign('BASE_URL', $BASE_URL);
-if(!isset($smarty)) {
-  echo "gay";
-}
-//TODO Finish alterations
-//Alterations
-/*
+// ---- END INIT
+
 $sql_get_project_members =
 "SELECT name, username, email, phone_number, photo_path, birth_date, country_id, city, is_coordinator
 FROM user_table, user_project
-WHERE user_project.id_user = user_table.id AND user_project.id_project = 20;";
+WHERE user_project.id_user = user_table.id AND user_project.id_project = 1;";
+
+$sql_get_project_name =
+"SELECT name
+FROM project
+WHERE id = 1;";
 
 $stmt = $conn->prepare($sql_get_project_members);
-$stmt->execute();*/
+$stmt->execute();
+$project_members = $stmt->fetchAll();
+
+$stmt = $conn->prepare($sql_get_project_name);
+$stmt->execute();
+$project_name = $stmt->fetch();
+
 //END of Alterations
 $is_coordinator = true;
 $num_elems = 6;
@@ -45,7 +59,7 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
     <div class="container">
       <div class="panel panel-default" id="title_team_name">
         <div class="panel-body">
-          <h2>Team Name</h2>
+          <h2><?php echo reset($project_name)?></h2>
         </div>
       </div>
         <?php for($i = 0; $i < $num_rows; $i++) {?>
@@ -64,10 +78,10 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                   $smarty->assign('profile_email', "jczelik@gmail.com");
                   $smarty->assign('profile_number', "913146206");
                   $smarty->assign('profile_id', "1123");
-                  $smarty->assign('profile_image_path', "../images/users/avatar1.png");
+                  $smarty->assign('profile_image_path', "users/avatar1.png");
 
                   $smarty->display("team/profile_card.tpl");
-                } ?>>
+                } ?>
             </div>
             <?php } ?>
         </div>
