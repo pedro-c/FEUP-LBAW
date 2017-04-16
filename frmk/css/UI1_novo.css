@@ -170,7 +170,7 @@ html, body {
 .container {
   align-content: center;
   display: table;
-  position: absolute;
+  position: fixed;
   width: 65%;
   height: 80%;
   margin: auto;
@@ -199,7 +199,7 @@ html, body {
   white-space: normal !important; }
 
 .description-links {
-  margin-top: 75px;
+  margin-top: 65px;
   font-size: x-large;
   text-align: center;
   cursor: pointer; }
@@ -307,12 +307,13 @@ html, body {
       padding-bottom: 4px;
       border-bottom-style: solid;
       border-bottom-color: #425262;
-      outline: 0; }
+      outline: 0;
+      box-shadow: 0px 24px 3px -24px #425262; }
   .form-register .email {
     display: inline-block; }
   .form-register #email-input-id.email-input {
     font-size: small;
-    padding-top: 10px;
+    padding-top: 15px;
     background-color: transparent;
     border: none; }
     .form-register #email-input-id.email-input:focus {
@@ -325,12 +326,14 @@ html, body {
       color: #425262; }
     .form-register #email-input-id.email-input:-ms-input-placeholder {
       color: #425262; }
+  .form-register .error_messages {
+    font-size: 15px; }
   .form-register .name {
-    padding-top: 20px;
+    padding-top: 35px;
     display: inline-block; }
   .form-register #name-input-id.name-input {
     font-size: small;
-    padding-top: 10px;
+    padding-top: 15px;
     background-color: transparent;
     border: none; }
     .form-register #name-input-id.name-input:focus {
@@ -344,11 +347,11 @@ html, body {
     .form-register #name-input-id.name-input:-ms-input-placeholder {
       color: #425262; }
   .form-register .username {
-    padding-top: 20px;
+    padding-top: 35px;
     display: inline-block; }
   .form-register #username-input-id.username-input {
     font-size: small;
-    padding-top: 10px;
+    padding-top: 15px;
     background-color: transparent;
     border: none; }
     .form-register #username-input-id.username-input:focus {
@@ -362,10 +365,10 @@ html, body {
     .form-register #username-input-id.username-input:-ms-input-placeholder {
       color: #425262; }
   .form-register .password {
-    padding-top: 20px;
+    padding-top: 35px;
     display: inline-block; }
   .form-register #password-input-id.password-input {
-    padding-top: 10px;
+    padding-top: 15px;
     background-color: transparent;
     border: none; }
     .form-register #password-input-id.password-input:focus {
@@ -395,10 +398,11 @@ html, body {
     .form-register #project-input-id:-ms-input-placeholder {
       color: #425262; }
   .form-register .group2 {
-    padding-top: 20px;
+    padding-top: 35px;
+    padding-top: 15px;
     vertical-align: middle; }
   .form-register .group1 {
-    padding-top: 10px; }
+    padding-top: 15px; }
   .form-register .new-project {
     display: inline-block; }
   .form-register #new-project-input-id {
@@ -422,7 +426,7 @@ html, body {
     text-align: center; }
     .form-register .form-actions .register-button {
       padding: 10px 50px 10px 50px;
-      margin-top: 33px;
+      margin-top: 25px;
       background-color: #425262;
       border: none;
       color: white; }

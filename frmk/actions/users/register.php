@@ -21,7 +21,7 @@
     if($answer == "join"){
         if(!checkForInvitation($email,$project_id)){
             $_SESSION['error_messages'][] = '<br>'.'Not allowed to enter this project';
-            exit;
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
     }
     else if($answer == "create"){

@@ -88,7 +88,7 @@
                                             <span class="email"> Email: </span>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12 border-bottom">
+                                        <div class="col-xs-12 border-bottom border">
                                             <input id="email-input-id" name="email" class="email-input"
                                                    placeholder="Enter your email"
                                                    type="email">
@@ -96,7 +96,7 @@
                                             <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
                                         </div><br>
 
-                                        <div class="col-xs-12 border-bottom group">
+                                        <div class="col-xs-12 border-bottom group nopadding">
                                             <div class="col-xs-6 border-bottom">
                                                 <span class="name"> Name: </span>
                                             </div>
@@ -107,18 +107,16 @@
                                         </div>
                                         <br>
 
-                                        <div class="col-xs-12 border-bottom group">
-                                            <div class="col-xs-6 border-bottom">
+                                        <div class="col-xs-12 border-bottom group nopadding">
+                                            <div class="col-xs-6 border-bottom border">
                                                 <input id="name-input-id" name="name" class="name-input"
                                                        placeholder="Enter your name">
-                                                <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
                                             </div>
 
-                                            <div class="col-xs-6 border-bottom">
+                                            <div class="col-xs-6 border-bottom border">
                                                 <input id="username-input-id" name="username" class="username-input"
                                                        placeholder="Choose your username"
                                                        type="text">
-                                                <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
                                             </div>
                                         </div>
 
@@ -134,17 +132,15 @@
                                             </div>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12 border-bottom group1">
+                                        <div class="col-xs-12 border-bottom group1 nopadding">
 
-                                            <div class="col-xs-6 border-bottom">
+                                            <div class="col-xs-6 border-bottom border">
                                                 <input id="project-input-id" name="enterproject" class="project-input"
                                                        placeholder="Enter Project Code" disabled>
-                                                <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
                                             </div>
-                                            <div class="col-xs-6 border-bottom">
+                                            <div class="col-xs-6 border-bottom border">
                                                 <input id="new-project-input-id" name="newProjectName" class="new-project-input"
                                                        placeholder="Enter Project Name" disabled>
-                                                <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
                                             </div>
                                         </div>
 
@@ -152,11 +148,10 @@
                                             <span class="password"> Password: </span>
                                         </div>
                                         <br>
-                                        <div class="col-xs-12 border-bottom">
+                                        <div class="col-xs-12 border-bottom border">
                                             <input id="password-input-id" name="password" class="password-input"
                                                    placeholder="Choose your password"
                                                    type="password">
-                                            <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
 
                                         </div>
 
