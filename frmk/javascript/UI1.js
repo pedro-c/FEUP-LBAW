@@ -26,3 +26,16 @@ function signIn(){
     $(".sign-in-title").css("border-bottom", "4px solid");
     $(".sign-in-title").css("border-bottom-color", "#e9d460");
 }
+
+
+function newProject(){
+    $("#project-input-id").attr('disabled',true);
+    $("#new-project-input-id").removeAttr("disabled");
+
+}
+
+function joinProject(){
+    $("#project-input-id").removeAttr("disabled");
+    $("#new-project-input-id").attr('disabled',true);
+
+}
