@@ -35,7 +35,7 @@
                             </td>
                             <td>
                                 <div>
-                                    <textarea onclick="toggle();" id="task-title">{$task.name}</textarea>
+                                    <textarea onclick="toggle({$task.id});" id="task-title">{$task.name}</textarea>
                                     {foreach $tags as $tag}
                                     <p>{$tag.name}</p>
                                     {/foreach}
@@ -63,7 +63,7 @@
 
             <div class="col-xs-12" id="create-task-title">
                 <i class="fa fa-check-circle-o" id="complete-button"></i>
-                <textarea placeholder="New Task"></textarea>
+                <textarea id="task-name" placeholder="New Task"></textarea>
             </div>
             <div class="col-xs-12" id="create-task-settings">
                 <div class="input-group date">
@@ -80,7 +80,7 @@
                 </div>
             </div>
             <div class="col-xs-12" id="create-task-description">
-                <textarea placeholder="Description"></textarea>
+                <textarea id="task-description"placeholder="Description"></textarea>
             </div>
             <div class="task-comments col-xs-12">
                 <div class="comment-info">
