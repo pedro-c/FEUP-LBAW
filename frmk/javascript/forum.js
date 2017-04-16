@@ -15,35 +15,6 @@ $(document).ready(function () {
         '</div>'
     );
 
-    let replies = $(
-        '<li class="list-group-item">' +
-        '<h5 class="list-group-item-heading"> <img class="user_photo" src="../../images/users/avatar4.png"> <strong>Username</strong></h5>' +
-        '<p class="list-group-item-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>' +
-        '</li>' +
-        '<li class="list-group-item">' +
-        '<h5 class="list-group-item-heading"> <img class="user_photo" src="../../images/users/avatar1.png"><strong>Username</strong></h5>' +
-        '<p class="list-group-item-text">Great idea!</p>' +
-        '</li>' +
-        '<li class="list-group-item">' +
-        '<h5 class="list-group-item-heading"> <img class="user_photo" src="../../images/users/avatar2.png"> <strong>Username</strong></h5>' +
-        '<p class="list-group-item-text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>' +
-        '</li>' +
-        '<li class="list-group-item">' +
-        '<h5 class="list-group-item-heading"> <img class="user_photo" src="../../images/users/avatar6.png"> <strong>Username</strong></h5>' +
-        '<p class="list-group-item-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>' +
-        '</li>' +
-        '<li class="list-group-item">' +
-        '<h5 class="list-group-item-heading"> <img class="user_photo" src="../../images/users/avatar2.png"> <strong>Username</strong></h5>' +
-        '<p class="list-group-item-text">Great idea!</p>' +
-        '</li>' +
-        '<li id="post-reply" class="list-group-item">' +
-        '<h5 class="list-group-item-heading"><img class="user_photo" src="../../images/users/avatar7.png"><strong>My Username</strong></h5>' +
-        '<textarea class="form-control" rows="3" style="resize: none" placeholder="Reply to this post"></textarea>' +
-        '<button id="submit-reply" class="btn btn-default btn-form btn-comment" type="submit">Submit</button>' +
-        '<button id="cancel-reply" class="btn btn-default btn-form btn-comment">Cancel</button>' +
-        '</li>'
-    );
-
     let newPostPanel = $(
         '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">' +
         '<div id="new-post-panel" class="panel panel-primary">' +
@@ -91,14 +62,6 @@ $(document).ready(function () {
             return;
         }
 
-        let displayedContent;
-
-        if (newPost === true)
-            displayedContent = newPostPanel.append(mobileBack);
-        else {
-            let selectedPost = makePostSection(clickedObject);
-            displayedContent = selectedPost.append(mobileBack);
-        }
 
 
         forum.removeClass("col-lg-3 col-md-3 col-sm-3 hidden-xs");
@@ -110,6 +73,15 @@ $(document).ready(function () {
 
 
         forum.addClass("col-lg-3 col-md-3 col-sm-3 hidden-xs");
+
+        let displayedContent;
+
+        if (newPost === true)
+            displayedContent = newPostPanel.append(mobileBack);
+        else {
+            let selectedPost = makePostSection(clickedObject);
+            displayedContent = selectedPost.append(mobileBack);
+        }
 
         displayedPosts.push(displayedContent);
         forum.after(displayedContent);
