@@ -16,11 +16,11 @@
             <button class="schedule" onclick="schedule()">Schedule Meeting</button>
         </div>
         <div id="container_to_collapse" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
             {foreach $meetings as $meeting}
 
                 {$creatorName = getUserNameById($meeting.id_creator)}
 
-            <div class="row">
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
                         <div class="panel-heading" onclick="show_Meeting_Info()">
@@ -52,8 +52,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
             {/foreach}
+            </div>
+
         </div>
         <div id="container_schedule_meeting" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" hidden>
 
