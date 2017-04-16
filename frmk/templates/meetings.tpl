@@ -69,38 +69,38 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-meeting" id="create-meeting-settings">
-                        <form class="new_meeting" method="post" action="" enctype="multipart/form-data">
+                        <form class="new_meeting" method="post" action="../actions/meetings/scheduleMeeting.php" enctype="multipart/form-data">
                             <div class="title">
-                                <input type="text" class="form-control" placeholder="Choose a Creative Title">
+                                <input type="text" name="title" class="form-control" placeholder="Choose a Creative Title">
                             </div>
-
-
-                            <textarea>Meeting Resume</textarea>
-
+                            <textarea name="description">Meeting Resume</textarea>
 
                             <div class="calendar input-group date">
                                 <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar"
                                       aria-hidden="true"></span>
-                                <input type="text" class="form-control">
+                                <input type="text" name="date" class="form-control">
                             </div>
 
                             <div class="time">
                                 <span class="meetings_icon glyphicon glyphicon-time" aria-hidden="true"></span>
-                                <input type="time" class="form-control">
+                                <input type="time" name="time" class="form-control">
                             </div>
 
                             <div class="atendees">
                                 <span class="meetings_icon glyphicon glyphicon-pushpin" aria-hidden="true"></span>
-                                <input type="number" class="form-control" placeholder="Meeting Duration">
+                                <input type="number" name="duration" class="form-control" placeholder="Meeting Duration">
                             </div>
 
                             <div class="atendees">
                                 <span class="meetings_icon glyphicon glyphicon-user" aria-hidden="true"></span>
                                 <select class="select2-multiple form-control" multiple="multiple"
                                         placeholder="Invite Participants">
-                                    <option value="P">Pedro</option>
-                                    <option value="J">João</option>
-                                    <option value="E">Edgar</option>
+
+                                    {foreach $members as $member}
+
+                                        {$memberName = getUserNameById($member)}
+                                        <option value={$member}>{$member}</option>
+                                    {/foreach}
                                 </select>
                             </div>
 

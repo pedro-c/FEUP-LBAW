@@ -40,3 +40,12 @@ function getProjectDescription($project_id){
 
     return $result['description'];
 }
+
+function getProjectMembers($project, $user){
+    global $conn;
+
+    $stmt = $conn->prepare('SELECT id_user FROM user_project WHERE id_project=? AND id_user <> ? ');
+
+    $stmt->execute([$project,$user]);
+    return $stmt->fetchAll();
+}

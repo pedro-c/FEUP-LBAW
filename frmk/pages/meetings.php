@@ -2,12 +2,19 @@
 include_once "common/header.php";
 include_once($BASE_DIR .'database/meetings.php');
 include_once($BASE_DIR .'database/users.php');
+include_once($BASE_DIR .'database/projects.php');
 
 $project = $_SESSION['project_id'];
+$user_id = $_SESSION['user_id'];
 $meetings = getFutureMeetings($project);
 
+$members = getProjectMembers($project, $user_id);
+
+var_dump($members);
+
+$smarty->assign('members',$members);
 $smarty->assign('meetings',$meetings);
-$smarty->display($BASE_DIR . 'templates/meetings.tpl');
+//$smarty->display($BASE_DIR . 'templates/meetings.tpl');
 
 
 include_once "common/footer.php";
