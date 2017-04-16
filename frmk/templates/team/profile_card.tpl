@@ -13,7 +13,7 @@
      <div id="profile_details{$element_number}" class="collapse">
        <div class="profile_details">
          <hr />
-         <input type="hidden" value={$profile_id}/> <!-- TODO This will be used to pass values to the modal -->
+         <input type="hidden" class="member_id" value={$profile_id} /> <!-- TODO This will be used to pass values to the modal -->
          <div class="row">
            <div class="col-xs-1">
            </div>
@@ -73,7 +73,7 @@
            {/if}
            </div>
            <div class="col-xs-3" align="center">
-             <i class="fa fa-times fa-3x" id="remove{$element_number}" data-toggle="modal" data-target="#remove_member_dialog"></i>
+             <i class="fa fa-times fa-3x" id="remove" data-toggle="modal" data-target="#remove_member_dialog"></i>
            </div>
            <div class="col-xs-3"></div>
          </div>

@@ -24,15 +24,17 @@ $smarty->setCompileDir($BASE_DIR . 'templates_c/');
 $smarty->assign('BASE_URL', $BASE_URL);
 // ---- END INIT
 
+$project_id = 1;
+
 $sql_get_project_members =
 "SELECT id, name, username, email, phone_number, photo_path, birth_date, country_id, city, is_coordinator
 FROM user_table, user_project
-WHERE user_project.id_user = user_table.id AND user_project.id_project = 1;";
+WHERE user_project.id_user = user_table.id AND user_project.id_project = $project_id;";
 
 $sql_get_project_name =
 "SELECT name
 FROM project
-WHERE id = 1;";
+WHERE id = $project_id;";
 
 $stmt = $conn->prepare($sql_get_project_members);
 $stmt->execute();
@@ -114,8 +116,8 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default">Send</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" id="accept_button">Send</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel_button">Close</button>
       </div>
     </div>
 
@@ -137,9 +139,11 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
       <div class="modal-footer">
         <form action="../../actions/team/delete-member.php" method="post">
           <!-- TODO Use JS to insert the user id in the form, when the button is clicked -->
-          <button type="button" class="btn btn-default" id="remove_member_button">Yes</button>
+          <input type="hidden" name="project_id" value=<?php echo $project_id; ?> />
+          <input type="hidden" name="user_id" value="0" />
+          <button type="submit" class="btn btn-default" id="accept_button">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel_button">No</button>
         </form>
-        <button type="button" class="btn btn-default" data-dismiss="modal" id="no_remove_member_button">No</button>
       </div>
     </div>
 
