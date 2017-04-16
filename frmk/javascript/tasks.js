@@ -5,9 +5,10 @@ $(document).ready(function(){
     addTaskButton.click(function () {
 
         var clickBtnValue = $(this).val();
-        var ajaxurl = '../database/tasks.php',
+        console.log(clickBtnValue);
+        var ajaxurl = 'tasks.php',
             data =  {'action': clickBtnValue};
-        $.post(ajaxurl, data, function (response) {
+        $.post(ajaxurl, data, function () {
             // Response div goes here.
             alert("action performed successfully");
         });
