@@ -7,7 +7,7 @@ include_once "common/header.php";
 
 <?php
 // ---- INIT
-ini_set("display_errors", true); error_reporting(E_ALL);
+//ini_set("display_errors", true); error_reporting(E_ALL);
 $conn = new PDO('pgsql:host=dbm.fe.up.pt;dbname=lbaw1614', 'lbaw1614', 'yz54fi76');
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -25,7 +25,7 @@ $smarty->assign('BASE_URL', $BASE_URL);
 // ---- END INIT
 
 $sql_get_project_members =
-"SELECT name, username, email, phone_number, photo_path, birth_date, country_id, city, is_coordinator
+"SELECT id, name, username, email, phone_number, photo_path, birth_date, country_id, city, is_coordinator
 FROM user_table, user_project
 WHERE user_project.id_user = user_table.id AND user_project.id_project = 1;";
 
@@ -44,7 +44,7 @@ $project_name = $stmt->fetch();
 
 //END of Alterations
 $is_coordinator = true;
-$num_elems = 6;
+$num_elems = count($project_members);
 if($is_coordinator) { //Adds the "Add new member" panel
   $num_elems++;
 }
@@ -70,15 +70,20 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                 <?php if($is_coordinator && $num_elems == 1) {
                   $smarty->display("team/add_member_card.tpl");
                 } else {
-                  $smarty->assign('profile_name', "José Carlos Coutinho");
-                  $smarty->assign('team_role', "Team Manager");
+                  $team_member_title = "Team Member";
+                  if($project_members[$j]['is_coordinator']) {
+                    $team_member_title = "Team Manager";
+                  }
+
+                  $smarty->assign('profile_name', $project_members[$j]['name']);
+                  $smarty->assign('team_role', $team_member_title);
                   $smarty->assign('element_number', $num_elems);
-                  $smarty->assign('city', "Porto");
-                  $smarty->assign('country', "Portugal");
-                  $smarty->assign('profile_email', "jczelik@gmail.com");
-                  $smarty->assign('profile_number', "913146206");
-                  $smarty->assign('profile_id', "1123");
-                  $smarty->assign('profile_image_path', "users/avatar1.png");
+                  $smarty->assign('city', $project_members[$j]['city']);
+                  $smarty->assign('country', "Portugal"); //TODO QUERY to get this
+                  $smarty->assign('profile_email', $project_members[$j]['email']);
+                  $smarty->assign('profile_number', $project_members[$j]['phone_number']);
+                  $smarty->assign('profile_id', $project_members[$j]['id']);
+                  $smarty->assign('profile_image_path', "/users/".$project_members[$j]['photo_path']); //TODO user must define what is his photo
 
                   $smarty->display("team/profile_card.tpl");
                 } ?>
@@ -131,6 +136,48 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
       <div class="modal-footer">
         <button type="button" class="btn btn-default" id="remove_member_button">Yes</button>
         <button type="button" class="btn btn-default" data-dismiss="modal" id="no_remove_member_button">No</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Confirmation of User Promotion-->
+<div id="promote_member_dialog" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Promote member in project</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to promote this member to project coordinator?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="accept_button">Yes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel_button">No</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Confirmation of User Depromotion-->
+<div id="demote_member_dialog" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Remove Coordinator privileges</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to remove the privileges of this team coordinator? He will become a normal team member.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="accept_button">Yes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel_button">No</button>
       </div>
     </div>
 
