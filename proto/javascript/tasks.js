@@ -9,6 +9,7 @@ $(document).ready(function(){
         var ajaxurl = '../api/tasks/create-task.php',
             data =  {'action': clickBtnValue};
         $.post(ajaxurl, data, function (data) {
+            console.log(data);
             var tasklist = document.getElementById('task-list');
             var row = tasklist.insertRow();
             row.setAttribute("class", "task");
@@ -42,6 +43,7 @@ $(document).ready(function(){
     $(".select2").on('focusout', function() {
 
         console.log($("#task-assign option:selected").val());
+        console.log($("#task-name").attr("name"));
 
         $.ajax({
             type:'post',
@@ -49,7 +51,7 @@ $(document).ready(function(){
             data:  {'taskAssign': $("#task-assign option:selected").val(), 'taskId': $("#task-name").attr("name")},
             success: function() {
 
-                console.log("Success");
+                console.log("done");
 
             }
 
