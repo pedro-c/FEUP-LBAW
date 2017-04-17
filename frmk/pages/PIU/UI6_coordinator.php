@@ -1,29 +1,12 @@
 <?php
 include_once "common/header.php";
+include_once "../config/init.php";
 ?>
 
 <link href="../../css/UI6.css" rel="stylesheet">
 <script src="../../javascript/ui6.js"></script>
 
 <?php
-// ---- INIT
-//ini_set("display_errors", true); error_reporting(E_ALL);
-$conn = new PDO('pgsql:host=dbm.fe.up.pt;dbname=lbaw1614', 'lbaw1614', 'yz54fi76');
-$conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-$conn->exec('SET SCHEMA \'public\''); //FIXME?
-
-$BASE_DIR = '/home/jczelik/Documents/LBAW/FEUP-LBAW/frmk/';
-$BASE_URL = '/proto/';
-include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
-$smarty = new Smarty;
-$smarty->template_dir = $BASE_DIR . 'templates/';
-$smarty->compile_dir = $BASE_DIR . 'templates_c/';
-$smarty->setCompileDir($BASE_DIR . 'templates_c/');
-$smarty->assign('BASE_URL', $BASE_URL);
-// ---- END INIT
-
 //TODO THESE ARE TEST VALUES
 $project_id = 1;
 $_SESSION['email'] = 'ccastillo5@yellowpages.com';
