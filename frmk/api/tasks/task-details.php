@@ -7,7 +7,9 @@ if (isset($_POST['taskId'])) {
     $taskId = $_POST['taskId'];
 
     $taskDetails = getTaskDetails($taskId);
-    $taskTags = getTagFromTaskId([$taskId]);
+    $taskTags = getTagFromTaskId($taskId);
+    $taskAssignedName = getTaskAssignedName($taskId);
 
-    print json_encode([$taskDetails, $taskTags]);
+    print json_encode([$taskDetails, $taskTags, $taskAssignedName]);
 }
+

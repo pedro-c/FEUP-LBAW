@@ -24,7 +24,9 @@ $(document).ready(function(){
 
     $('.input-group.date').datepicker();
 
-    $('.select2-multiple').select2();
+    $('.select2-multiple').select2({
+        tags: true
+    });
 
 });
 function toggle(taskId) {
@@ -38,13 +40,19 @@ function toggle(taskId) {
 
             var response = JSON.parse(request);
 
-            console.log(response);
-
-            $("#task-assign").attr("placeholder", response[0][0].assigned_id);
+            $("#task-assign").attr("placeholder", response[2][0].name);
             $("#task-name").attr("placeholder", response[0][0].name);
             $("#task-description").attr("placeholder", response[0][0].description);
-            $("#task-deadline").attr("value",response[0][0].deadline);
-
+            $("#task-deadline-date").attr("value",response[0][0].deadline.split(" ")[0]);
+            $("#task-deadline-time").attr("value",response[0][0].deadline.split(" ")[1]);
+            $("#task-tags").html("");
+            for (var i = 0; i < response[1].length; i++) {
+                $("#task-tags").append($('<option>', {
+                    value: response[1][i].id,
+                    text: response[1][i].name,
+                    selected: true
+                }));
+            }
 
             var id = "create-task";
             var taskCard = document.getElementById("task-card");

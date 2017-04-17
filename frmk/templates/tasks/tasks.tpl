@@ -27,7 +27,7 @@
 
                     {foreach $tasks as $task}
 
-                        {$tags = getTagFromTaskId([$task.id])}
+                        {$tags = getTagFromTaskId($task.id)}
 
                         <tr class="task">
                             <td>
@@ -68,14 +68,13 @@
             <div class="col-xs-12" id="create-task-settings">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                    <input id="task-deadline" type="date" class="form-control">
+                    <input id="task-deadline-date" type="date" class="form-control">
+                    <input id="task-deadline-time" type="time" name="time" class="form-control">
                 </div>
                 <div class="input-group task-tags">
                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                    <select class="select2-multiple form-control" multiple="multiple">
-                        <option value="M">Marketing</option>
-                        <option value="L">Logistics</option>
-                        <option value="S">Sponsors</option>
+                    <select id="task-tags" class="select2-multiple form-control" multiple="multiple">
+
                     </select>
                 </div>
             </div>
