@@ -25,7 +25,7 @@
 
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
-                        <div class="panel-heading" onclick="show_Meeting_Info()">
+                        <div class="panel-heading" onclick="show_Meeting_Info({$meeting.id})">
                             <div class="padding">
                                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
                                 <label class="date">{$date}</label><br>
@@ -75,13 +75,7 @@
                             <div class="title">
                                 <input type="text" name="title" class="form-control" placeholder="Choose a Creative Title">
                             </div>
-                            <textarea name="description">Meeting Resume</textarea>
-
-                            <!--<div class="calendar input-group date">
-                                <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar"
-                                      aria-hidden="true"></span>
-                                <input type="text" name="date" class="form-control">
-                            </div>-->
+                            <textarea name="description" maxlength="512">Meeting Resume</textarea>
 
                             <div class="calendar">
                                 <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar"
@@ -101,13 +95,12 @@
 
                             <div class="atendees">
                                 <span class="meetings_icon glyphicon glyphicon-user" aria-hidden="true"></span>
-                                <select class="select2-multiple form-control" multiple="multiple"
-                                        placeholder="Invite Participants">
-
+                                <select name="invited_users[]" class="select2-multiple form-control" multiple="multiple"
+                                        placeholder="Invite Participants" multiple>
                                     {foreach $members as $member}
 
                                         {$memberName = getUserNameById($member['id_user'])}
-                                        <option value={$member}>{$memberName}</option>
+                                        <option value={$member['id_user']}>{$memberName}</option>
                                     {/foreach}
                                 </select>
                             </div>
@@ -145,17 +138,11 @@
                 </div>
                 <div class="panel-body">
                     <div class="info-meeting" id="create-meeting-settings">
-                        <div class="title">Planing new project</div>
-                        <div class="date">15.04.2018</div>
-                        <label class="hour">7:00PM</label>
-                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-                            bibendum nisi nunc. In fermentum tincidunt eros at viverra. Duis lacinia arcu a odio
-                            molestie, nec consectetur nisi blandit. Sed vitae nisl vel nulla laoreet semper id nec
-                            sapien. Proin gravida metus quis felis viverra, vitae tincidunt elit consectetur. Aliquam
-                            sed laoreet orci, id blandit ante. Pellentesque laoreet rhoncus metus, ullamcorper posuere
-                            erat rhoncus eu.
-                        </div>
-                        <div class="minutes">Approximately 30 minutes</div>
+                        <div id="meeting_title" class="title"></div>
+                        <div id="meeting_date" class="date"></div>
+                        <label id="meeting_time" class="hour"></label>
+                        <div id="meeting_description" class="description"></div>
+                        <div id="meeting_duration" class="minutes"></div>
                         <div class="files">
                             <img class="file_show" src="../images/assets/pdf.png">
                             <label class="file_description"> Meeting_15_Abr </label><br>

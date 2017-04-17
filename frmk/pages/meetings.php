@@ -4,8 +4,8 @@ include_once($BASE_DIR .'database/meetings.php');
 include_once($BASE_DIR .'database/users.php');
 include_once($BASE_DIR .'database/projects.php');
 
-$project = $_SESSION['project_id'];
 $user_id = $_SESSION['user_id'];
+$project = $_SESSION['project_id'];
 $meetings = getFutureMeetings($project);
 
 $members = getProjectMembers($project, $user_id);
