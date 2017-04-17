@@ -26,6 +26,8 @@ $smarty->assign('SUCCESS_MESSAGES', $_SESSION['success_messages']);
 $smarty->assign('FORM_VALUES', $_SESSION['form_values']);
 $smarty->assign('USERNAME', $_SESSION['username']);
 $smarty->assign('EMAIL', $_SESSION['email']);
+$smarty->assign('PROJECT_ID', $_SESSION['project_id']);
+$smarty->assign('USER_ID', $_SESSION['user_id']);
 
 unset($_SESSION['success_messages']);
 unset($_SESSION['error_messages']);
