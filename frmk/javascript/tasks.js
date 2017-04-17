@@ -49,27 +49,39 @@ function toggle(taskId) {
         success: function(request) {
             /*[{"id":312,"name":"New Task","description":null,"deadline":null,"creator_id":119,"assigned_id":null,"completer_id":null,"project_id":31}]*/
 
+            console.log(request);
+
             var response = JSON.parse(request);
 
             console.log(response);
 
-            /*$("#task-assign").html("");
-            $("#task-assign").append($('<option>', {
-                value: response[2][0].id,
-                text: response[2][0].name,
-                selected: true
-            }));
+
+            if(response[2][0]!=null){
+                $("#task-assign").html("");
+                $("#task-assign").append($('<option>', {
+                    value: response[2][0].id,
+                    text: response[2][0].name,
+                    selected: true
+                }));
+            }
+
             for (var i = 0; i < response[3].length; i++) {
                 $("#task-assign").append($('<option>', {
                     value: response[3][i].id,
                     text: response[3][i].name,
                 }));
-            }*/
-            $("#task-name").val(response[0][0].name);
+            }
+            if(response[0][0].name != null){
+                $("#task-name").val(response[0][0].name);
+            }
             $("#task-name").attr("name",taskId);
-            /*$("#task-description").attr("placeholder", response[0][0].description);
-            $("#task-deadline-date").attr("value",response[0][0].deadline.split(" ")[0]);
-            $("#task-deadline-time").attr("value",response[0][0].deadline.split(" ")[1]);
+            if(response[0][0].description != null){
+                $("#task-description").attr("placeholder", response[0][0].description);
+            }
+            if(response[0][0].deadline != null){
+                $("#task-deadline-date").attr("value",response[0][0].deadline.split(" ")[0]);
+                $("#task-deadline-time").attr("value",response[0][0].deadline.split(" ")[1]);
+            }
             $("#task-tags").html("");
             for (var i = 0; i < response[1].length; i++) {
                 $("#task-tags").append($('<option>', {
@@ -77,7 +89,7 @@ function toggle(taskId) {
                     text: response[1][i].name,
                     selected: true
                 }));
-            }*/
+            }
 
             var id = "create-task";
             var taskCard = document.getElementById("task-card");
