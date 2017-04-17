@@ -9,6 +9,7 @@ $(document).ready(function(){
         var ajaxurl = '../api/tasks/create-task.php',
             data =  {'action': clickBtnValue};
         $.post(ajaxurl, data, function (data) {
+            console.log(data);
             var tasklist = document.getElementById('task-list');
             var row = tasklist.insertRow();
             row.setAttribute("class", "task");
@@ -41,31 +42,37 @@ $(document).ready(function(){
 
     $(".select2").on('focusout', function() {
 
-        console.log($("#task-assign option:selected").val());
-
+        /*
         $.ajax({
             type:'post',
-            url: '../api/tasks/edit-task.php',
+            url: '../api/tasks/assign-task.php',
             data:  {'taskAssign': $("#task-assign option:selected").val(), 'taskId': $("#task-name").attr("name")},
             success: function() {
 
-                console.log("Success");
+                console.log("done");
 
             }
 
         });
+*/
+
+        
 
     });
 
     $("#task-name").focusout(function(e) {
-        console.log("asdsadsad");
 
+        $.ajax({
+            type:'post',
+            url: '../api/tasks/change-task-name.php',
+            data:  {'taskName': $("#task-name").val() , 'taskId': $("#task-name").attr("name")},
+            success: function() {
 
-    });
+                console.log("done");
 
-    $(".select2-single").focusout(function(e) {
-        console.log("asdsadsad");
+            }
 
+        });
 
     });
 
