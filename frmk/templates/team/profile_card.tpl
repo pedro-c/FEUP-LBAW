@@ -57,7 +57,7 @@
            <div class="col-xs-1"></div>
          </div>
          <hr />
-         {if $coordinator_permissions}
+         {if $coordinator_permissions and !$is_self}
          <div class="row" id="profile_actions">
            <div class="col-xs-3"></div>
            <div class="col-xs-3" align="center">

@@ -24,28 +24,40 @@ $smarty->setCompileDir($BASE_DIR . 'templates_c/');
 $smarty->assign('BASE_URL', $BASE_URL);
 // ---- END INIT
 
+//TODO THESE ARE TEST VALUES
 $project_id = 1;
+$_SESSION['email'] = 'ccastillo5@yellowpages.com';
+//$_SESSION['email'] = 'mjmp@feup.pt';
+
+$sql_get_member_status =
+"SELECT is_coordinator
+FROM user_project, user_table
+WHERE ? LIKE user_table.email AND user_table.id = user_project.id_user AND user_project.id_project = ?;";
 
 $sql_get_project_members =
 "SELECT id, name, username, email, phone_number, photo_path, birth_date, country_id, city, is_coordinator
 FROM user_table, user_project
-WHERE user_project.id_user = user_table.id AND user_project.id_project = $project_id;";
+WHERE user_project.id_user = user_table.id AND user_project.id_project = ?;";
 
 $sql_get_project_name =
 "SELECT name
 FROM project
-WHERE id = $project_id;";
+WHERE id = ?;";
+
+$stmt = $conn->prepare($sql_get_member_status);
+$stmt->execute(array($_SESSION['email'], $project_id));
+$is_coordinator = $stmt->fetch()['is_coordinator'];
 
 $stmt = $conn->prepare($sql_get_project_members);
-$stmt->execute();
+$stmt->execute(array($project_id));
 $project_members = $stmt->fetchAll();
 
 $stmt = $conn->prepare($sql_get_project_name);
-$stmt->execute();
+$stmt->execute(array($project_id));
 $project_name = $stmt->fetch();
 
 //END of Alterations
-$is_coordinator = true; //TODO Set this variable according to session parameters
+//$is_coordinator = true; //TODO Set this variable according to session parameters
 $num_elems = count($project_members);
 if($is_coordinator) { //Adds the "Add new member" panel
   $num_elems++;
@@ -73,11 +85,17 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                   $smarty->display("team/add_member_card.tpl");
                 } else {
                   $team_member_title = "Team Member";
+                  $is_self = FALSE;
                   if($project_members[$j]['is_coordinator']) {
                     $team_member_title = "Team Coordinator";
                   }
 
+                  if($project_members[$j]['email'] == $_SESSION['email']) {
+                    $is_self = TRUE;
+                  }
+
                   $smarty->assign('coordinator_permissions', $is_coordinator);
+                  $smarty->assign('is_self', $is_self);
                   $smarty->assign('profile_name', $project_members[$j]['name']);
                   $smarty->assign('team_role', $team_member_title);
                   $smarty->assign('element_number', $num_elems);
