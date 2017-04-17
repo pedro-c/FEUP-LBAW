@@ -142,7 +142,7 @@
                         <button class="list-group-item">
                             <div class="row">
                                 <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                             <img class="file_show" src="../../images/assets/file.png">
+                             <img class="file_show" src="../images/assets/file.png">
                                 <span class="dash-item-text">team_guide.pdf</span>
                                 </span>
                                 <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
