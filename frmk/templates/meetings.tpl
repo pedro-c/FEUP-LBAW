@@ -95,13 +95,12 @@
 
                             <div class="atendees">
                                 <span class="meetings_icon glyphicon glyphicon-user" aria-hidden="true"></span>
-                                <select class="select2-multiple form-control" multiple="multiple"
-                                        placeholder="Invite Participants">
-
+                                <select name="invited_users[]" class="select2-multiple form-control" multiple="multiple"
+                                        placeholder="Invite Participants" multiple>
                                     {foreach $members as $member}
 
                                         {$memberName = getUserNameById($member['id_user'])}
-                                        <option value={$member}>{$memberName}</option>
+                                        <option value={$member['id_user']}>{$memberName}</option>
                                     {/foreach}
                                 </select>
                             </div>
