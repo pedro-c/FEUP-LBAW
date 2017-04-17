@@ -1,4 +1,4 @@
-<link href="../../css/forum.css" rel="stylesheet">
+<link href="../css/forum.css" rel="stylesheet">
 
 <div class="page-wrapper container">
     <div class="page-wrapper container">
@@ -62,4 +62,4 @@
             </div>
         </div><!-- row -->
     </div>
-<script src="../../javascript/forum.js"></script>
+<script src="../javascript/forum.js"></script>
