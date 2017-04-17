@@ -18,7 +18,10 @@ function scheduleMeeting($title, $description, $date, $time, $duration, $id_crea
 
     global $conn;
     $stmt = $conn->prepare('INSERT INTO meeting(name, duration, description, id_creator, id_project, date ) values (?,?,?,?,?,?)');
-    return $stmt->execute([$title, $duration, $description, $id_creator, $id_project,$time]);
+    $stmt->execute([$title, $duration, $description, $id_creator, $id_project,$time]);
+
+    $last_id_meeting = $conn->lastInsertId();
+    return $last_id_meeting;
 }
 
 function getTimeFromTimestamp($timestamp){
