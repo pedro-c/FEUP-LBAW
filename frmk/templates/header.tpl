@@ -129,7 +129,7 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li><a href="../UI8.php">My Profile</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Sign Out<i class="nav-dropdown-icon glyphicon glyphicon-log-out"></i></a></li>
+                        <li><a href={$BASE_URL}actions/users/logout.php>Sign Out<i class="nav-dropdown-icon glyphicon glyphicon-log-out"></i></a></li>
                     </ul>
 
                 </div>
