@@ -12,7 +12,7 @@ function getMemberStatus($member_id, $project_id) {
     return $result['is_coordinator'];
 }
 
-function getProjectMembers($project_id) {
+function getTeamMembers($project_id) {
 
     global $conn;
     $sql_get_project_members = "SELECT id, name, username, email, phone_number, photo_path, birth_date, country_id, city, is_coordinator
@@ -25,7 +25,7 @@ function getProjectMembers($project_id) {
     return $project_members;
 }
 
-function getProjectName($project_id) {
+function getTeamName($project_id) {
 
     global $conn;
     $sql_get_project_name = "SELECT name FROM project WHERE id = ?;";

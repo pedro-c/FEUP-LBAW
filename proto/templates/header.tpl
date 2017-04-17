@@ -81,7 +81,7 @@
                     <a href="../pages/PIU/UI5.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
                 </li>
                 <li>
-                    <a href="../pages/PIU/UI6_coordinator.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
+                    <a href="../pages/team.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
                 </li>
             </ul>
         </div>
@@ -106,7 +106,7 @@
                             <a href="../UI5.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
                         </li>
                         <li class="col-xs-6">
-                            <a href="../UI6_coordinator.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
+                            <a href="../../team.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
                         </li>
                         <li  class="col-xs-6">
                             <a href="#"> <i class="fa fa-refresh fa-2x"></i> <p>Change Project</p></a>

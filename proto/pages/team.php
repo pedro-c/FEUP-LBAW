@@ -16,8 +16,8 @@ $project_id = 31;
 $user_id = 1;
 
 $is_coordinator = getMemberStatus($user_id, $project_id);
-$project_members = getProjectMembers($project_id);
-$project_name = getProjectName($project_id);
+$project_members = getTeamMembers($project_id);
+$project_name = getTeamName($project_id);
 
 
 //$is_coordinator = true; //TODO Set this variable according to session parameters
