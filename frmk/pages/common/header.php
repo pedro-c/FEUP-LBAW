@@ -1,5 +1,5 @@
 <?php
-include_once '../../config/init.php';
+include_once '../config/init.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,15 +18,15 @@ include_once '../../config/init.php';
     <title>Direkt</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../../css/global.css" rel="stylesheet">
-    <link href="../../css/bootstrap-datepicker3.css" rel="stylesheet">
-    <link href="../../css/bootstrap-datepicker.css" rel="stylesheet">
+    <link href="../css/global.css" rel="stylesheet">
+    <link href="../css/bootstrap-datepicker3.css" rel="stylesheet">
+    <link href="../css/bootstrap-datepicker.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,9 +36,9 @@ include_once '../../config/init.php';
     <![endif]-->
     <!-- jQuery -->
     <!-- jQuery -->
-    <script src="../../javascript/jquery.js"></script>
-    <script src="../../javascript/bootstrap.min.js"></script>
-    <script src="../../javascript/bootstrap-datepicker.js"></script>
+    <script src="../javascript/jquery.js"></script>
+    <script src="../javascript/bootstrap.min.js"></script>
+    <script src="../javascript/bootstrap-datepicker.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
@@ -58,10 +58,10 @@ include_once '../../config/init.php';
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
-                <img src="../../images/assets/logo.png" alt="Direkt"/>
+                <img src="../images/assets/logo.png" alt="Direkt"/>
             </a>
             <a href="#" class="mobile-user-options hidden-lg hidden-md hidden-sm">
-                <img src="../../images/users/avatar2.png" alt="Your Picture" class="user-collapse-picture"/>
+                <img src="../images/users/avatar2.png" alt="Your Picture" class="user-collapse-picture"/>
                 <span>John Doe</span>
             </a>
         </div>
@@ -72,7 +72,7 @@ include_once '../../config/init.php';
                     <a href="../PIU/UI2.php"><i class="fa fa-home fa-2x"></i><p>Dashboard</p></a>
                 </li>
                 <li>
-                    <a href="../PIU/UI3.php"><i class="fa fa-check-square-o fa-2x"></i><p>Tasks</p></a>
+                    <a href="../tasks.php"><i class="fa fa-check-square-o fa-2x"></i><p>Tasks</p></a>
                 </li>
                 <li>
                     <a href="../PIU/UI4.php"><i class="fa fa-quote-right fa-2x"></i><p>Forum</p></a>
@@ -126,7 +126,7 @@ include_once '../../config/init.php';
                 <div id="user-options" class="dropdown">
                     <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <p>
-                            <img src="../../images/users/avatar2.png" alt="User profile picture" class="nav-user-picture">
+                            <img src="../images/users/avatar2.png" alt="User profile picture" class="nav-user-picture">
                             <span id="nav-username">John Doe</span>
                         </p>
                     </a>
