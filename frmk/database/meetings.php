@@ -2,7 +2,7 @@
 
 function getFutureMeetings($project){
     global $conn;
-    $stmt = $conn->prepare('SELECT id,name,description,duration,id_creator,date FROM meeting WHERE meeting.date > CURRENT_DATE AND meeting.id_project = ?');
+    $stmt = $conn->prepare('SELECT id,name,description,id_creator,date FROM meeting WHERE meeting.date > CURRENT_DATE AND meeting.id_project = ?');
 
     $stmt->execute([$project]);
     return $stmt->fetchAll();
@@ -23,10 +23,23 @@ function scheduleMeeting($title, $description, $date, $time, $duration, $id_crea
 
 function getTimeFromTimestamp($timestamp){
     list($date, $time) = explode(' ', $timestamp);
-    return $time;
+    list($hours, $minutes, $seconds) = explode(':', $time);
+    $meetingDate = $hours.":".$minutes."h";
+    return $meetingDate;
 }
 
 function getDateFromTimestamp($timestamp){
     list($date, $time) = explode(' ', $timestamp);
     return $date;
+}
+
+function getMeetingDetails($meeting_id){
+
+    global $conn;
+    $stmt = $conn->prepare('SELECT name,description,duration,id_creator,date FROM meeting WHERE meeting.id = ?');
+
+    $stmt->execute([$meeting_id]);
+    return $stmt->fetchAll();
+
+
 }

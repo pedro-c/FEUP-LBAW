@@ -145,17 +145,11 @@
                 </div>
                 <div class="panel-body">
                     <div class="info-meeting" id="create-meeting-settings">
-                        <div class="title">Planing new project</div>
-                        <div class="date">15.04.2018</div>
-                        <label class="hour">7:00PM</label>
-                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-                            bibendum nisi nunc. In fermentum tincidunt eros at viverra. Duis lacinia arcu a odio
-                            molestie, nec consectetur nisi blandit. Sed vitae nisl vel nulla laoreet semper id nec
-                            sapien. Proin gravida metus quis felis viverra, vitae tincidunt elit consectetur. Aliquam
-                            sed laoreet orci, id blandit ante. Pellentesque laoreet rhoncus metus, ullamcorper posuere
-                            erat rhoncus eu.
-                        </div>
-                        <div class="minutes">Approximately 30 minutes</div>
+                        <div id="meeting_title" class="title"></div>
+                        <div id="meeting_date" class="date"></div>
+                        <label id="meeting_time" class="hour"></label>
+                        <div id="meeting_description" class="description"></div>
+                        <div id="meeting_duration" class="minutes"></div>
                         <div class="files">
                             <img class="file_show" src="../images/assets/pdf.png">
                             <label class="file_description"> Meeting_15_Abr </label><br>
