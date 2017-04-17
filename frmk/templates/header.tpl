@@ -37,6 +37,7 @@
     <script src="../javascript/bootstrap-datepicker.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="../javascript/header.js"></script>
 
 
 </head>
@@ -147,8 +148,7 @@
                         {foreach $projects as $project}
 
                             {$project_name = getProjectName($project.id_project)}
-                            <li><a href="#">{$project_name}</a></li>
-
+                            <li><a onclick="changeProject({$project.id_project})">{$project_name}</a></li>
                         {/foreach}
                         <li><a href="../PIU/UI8.php#new_project">New Project<i class="nav-dropdown-icon glyphicon glyphicon-plus"></i></a></li>
                     </ul>

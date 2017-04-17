@@ -4,4 +4,5 @@
   session_destroy();
   
   header('Location: ' . $BASE_URL . "pages/authentication.php");
+  header('Location: ../../pages/dashboard.php');
 ?>

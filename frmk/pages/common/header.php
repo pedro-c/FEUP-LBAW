@@ -4,7 +4,7 @@ include_once '../config/init.php';
 include_once('../database/users.php');
 include_once('../database/projects.php');
 
-$firstProjectName = getProjectName(getFirstUserProject($_SESSION['user_id']));
+$firstProjectName = getProjectName($_SESSION['project_id']);
 $name = getUserNameById($_SESSION['user_id']);
 $projects = getUserProjects($_SESSION['user_id']);
 
