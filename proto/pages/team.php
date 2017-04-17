@@ -8,12 +8,9 @@ include_once "../database/team.php";
 <script src="../javascript/ui6.js"></script>
 
 <?php
-/*
+
 $project_id = $_SESSION['project_id'];
 $user_id = $_SESSION['user_id'];
-*/
-$project_id = 31;
-$user_id = 1;
 
 $is_coordinator = getMemberStatus($user_id, $project_id);
 $project_members = getTeamMembers($project_id);
