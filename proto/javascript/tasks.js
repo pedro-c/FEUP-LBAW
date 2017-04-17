@@ -42,12 +42,9 @@ $(document).ready(function(){
 
     $(".select2").on('focusout', function() {
 
-        console.log($("#task-assign option:selected").val());
-        console.log($("#task-name").attr("name"));
-
         $.ajax({
             type:'post',
-            url: '../api/tasks/edit-task.php',
+            url: '../api/tasks/assign-task.php',
             data:  {'taskAssign': $("#task-assign option:selected").val(), 'taskId': $("#task-name").attr("name")},
             success: function() {
 
@@ -60,8 +57,18 @@ $(document).ready(function(){
     });
 
     $("#task-name").focusout(function(e) {
-        console.log("asdsadsad");
+        
+        $.ajax({
+            type:'post',
+            url: '../api/tasks/change-task-name.php',
+            data:  {'taskName': $("#task-name").val() , 'taskId': $("#task-name").attr("name")},
+            success: function() {
 
+                console.log("done");
+
+            }
+
+        });
 
     });
 

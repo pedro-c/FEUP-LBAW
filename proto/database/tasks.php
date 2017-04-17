@@ -101,3 +101,9 @@
         $stmt = $conn->prepare('UPDATE task SET assigned_id = ? WHERE id=?;');
         $stmt->execute([$assignedId,$taskId]);
     }
+
+    function setTaskName($name, $taskId){
+        global $conn;
+        $stmt = $conn->prepare('UPDATE task SET name = ? WHERE id=?;');
+        $stmt->execute([$name,$taskId]);
+    }
