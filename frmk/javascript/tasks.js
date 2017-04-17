@@ -22,10 +22,7 @@ $(document).ready(function(){
 
     });
 
-    $('.input-group.date').datepicker({
-        format: "dd/M/yyyy",
-        todayHighlight: true
-    });
+    $('.input-group.date').datepicker();
 
     $('.select2-multiple').select2();
 
@@ -35,17 +32,18 @@ function toggle(taskId) {
     $.ajax({
         type:'post',
         url: '../api/tasks/task-details.php',
-        data:  {'taskId': taskId},
+        data:  {'taskId': 2},
         success: function(request) {
             /*[{"id":312,"name":"New Task","description":null,"deadline":null,"creator_id":119,"assigned_id":null,"completer_id":null,"project_id":31}]*/
 
             var response = JSON.parse(request);
 
-            document.getElementById("task-assign").setAttribute("placeholder", response[0].assigned_id);
-            document.getElementById("task-name").setAttribute("placeholder", response[0].name);
-            document.getElementById("task-description").setAttribute("placeholder", response[0].description);
-            document.getElementById("task-assign").setAttribute("placeholder", response[0].assigned_id);
-            document.getElementById("task-assign").setAttribute("placeholder", response[0].assigned_id);
+            console.log(response);
+
+            $("#task-assign").attr("placeholder", response[0][0].assigned_id);
+            $("#task-name").attr("placeholder", response[0][0].name);
+            $("#task-description").attr("placeholder", response[0][0].description);
+            $("#task-deadline").attr("value",response[0][0].deadline);
 
 
             var id = "create-task";
@@ -74,4 +72,31 @@ function toggle(taskId) {
         }
 
     });
+}
+
+function back() {
+
+            var id = "create-task";
+            var taskCard = document.getElementById("task-card");
+            var state = document.getElementById(id).style.display;
+            if (state != 'none') {
+                document.getElementById(id).style.display = 'none';
+                document.getElementById(id).style.width = '1%';
+                taskCard.style.width = '70%';
+                taskCard.style.display = 'inline-block';
+                document.getElementById('mobile-back').style.display = 'none';
+            } else {
+                if ($(window).width() < 768) {
+                    taskCard.style.width = '1%';
+                    taskCard.style.display = 'none';
+                    document.getElementById(id).style.display = 'inline-block';
+                    document.getElementById(id).style.width = '70%';
+                    document.getElementById('mobile-back').style.display = 'inline-block';
+                } else {
+                    document.getElementById(id).style.display = 'inline-block';
+                    document.getElementById(id).style.width = '40%';
+                    taskCard.style.width = '40%';
+                    document.getElementById('mobile-back').style.display = 'none';
+                }
+            }
 }

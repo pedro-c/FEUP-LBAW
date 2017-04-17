@@ -66,9 +66,9 @@
                 <textarea id="task-name" placeholder="New Task"></textarea>
             </div>
             <div class="col-xs-12" id="create-task-settings">
-                <div class="input-group date">
+                <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                    <input type="text" class="form-control">
+                    <input id="task-deadline" type="date" class="form-control">
                 </div>
                 <div class="input-group task-tags">
                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
@@ -98,7 +98,7 @@
             </div>
 
         </div>
-        <div id="mobile-back" class="navbar navbar-default navbar-fixed-bottom" onclick="toggle()">
+        <div id="mobile-back" class="navbar navbar-default navbar-fixed-bottom" onclick="back()">
             <h4>« Back</h4>
         </div>
     </div>
