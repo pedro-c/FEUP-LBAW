@@ -164,9 +164,8 @@ body {
 #new-post-panel > .panel-body {
   text-align: center; }
 
-.submitter-photo {
-  width: 25px;
-  margin-right: 3px; }
+.user_photo {
+  width: 25px; }
 
 button.btn-form {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -396,4 +395,4 @@ button.list-group-item:focus {
   background-color: #e9d460;
   border-color: #e9d460; }
 
-/*# sourceMappingURL=forum.css.map */
+/*# sourceMappingURL=UI4.css.map */
