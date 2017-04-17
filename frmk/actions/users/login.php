@@ -1,7 +1,7 @@
 <?php
   include_once('../../config/init.php');
   include_once('../../database/users.php');
-include_once('../../database/projects.php');
+  include_once('../../database/projects.php');
 
   if (!$_POST['email'] || !$_POST['password']) {
     $_SESSION['error_messages'][] = '<br>'.'Invalid login';

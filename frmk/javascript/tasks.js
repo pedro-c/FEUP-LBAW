@@ -39,6 +39,48 @@ $(document).ready(function(){
         var task = $("#"+taskId).val(value);
     });
 
+    $(".select2").on('focusout', function() {
+
+        console.log($("#task-assign option:selected").val());
+
+        $.ajax({
+            type:'post',
+            url: '../api/tasks/edit-task.php',
+            data:  {'taskAssign': $("#task-assign option:selected").val(), 'taskId': $("#task-name").attr("name")},
+            success: function() {
+
+                console.log("Success");
+
+            }
+
+        });
+
+    });
+
+    $("#task-name").focusout(function(e) {
+        console.log("asdsadsad");
+
+
+    });
+
+    $(".select2-single").focusout(function(e) {
+        console.log("asdsadsad");
+
+
+    });
+
+    $("#task-deadline-date").focusout(function(e) {
+        console.log("asdsadsad");
+
+
+    });
+
+    $("#task-deadline-time").focusout(function(e) {
+
+        console.log("asdsadsad");
+
+    });
+
 });
 function toggle(taskId) {
 
@@ -54,7 +96,6 @@ function toggle(taskId) {
             var response = JSON.parse(request);
 
             console.log(response);
-
 
             if(response[2][0]!=null){
                 $("#task-assign").html("");

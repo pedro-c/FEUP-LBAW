@@ -77,9 +77,9 @@
 
     function getTaskAssignedName($taskId){
         global $conn;
-        $stmt = $conn->prepare("SELECT user_table.name FROM user_table, task WHERE task.id = ? AND task.assigned_id = user_table.id;");
+        $stmt = $conn->prepare("SELECT user_table.name, user_table.id FROM user_table, task WHERE task.id = ? AND task.assigned_id = user_table.id;");
         $stmt->execute([$taskId]);
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     function getTaskCompleterName($taskId){
@@ -91,9 +91,13 @@
 
     function getProjectMembersNames($project){
         global $conn;
-
-        $stmt = $conn->prepare('SELECT user_table.name FROM user_project, user_table WHERE id_project=? AND user_table.id=user_project.id_user');
-
+        $stmt = $conn->prepare('SELECT user_table.name, user_table.id FROM user_project, user_table WHERE id_project=? AND user_table.id=user_project.id_user');
         $stmt->execute([$project]);
         return $stmt->fetchAll();
+    }
+
+    function setTaskAssigned($assignedId, $taskId){
+        global $conn;
+        $stmt = $conn->prepare('UPDATE task SET assigned_id = ? WHERE id=?;');
+        $stmt->execute([$assignedId,$taskId]);
     }
