@@ -11,4 +11,5 @@ $(document).ready(function() {
     var member_id = $(this).parents(".profile_details").find("input.member_id").attr("value");
     $("#remove_member_dialog [name='user_id']").attr("value", member_id);
   })
+  
 });
