@@ -2,7 +2,7 @@
 
 function getFutureMeetings($project){
     global $conn;
-    $stmt = $conn->prepare('SELECT name,description,duration,id_creator,date FROM meeting WHERE meeting.date > CURRENT_DATE AND meeting.id_project = ?');
+    $stmt = $conn->prepare('SELECT id,name,description,duration,id_creator,date FROM meeting WHERE meeting.date > CURRENT_DATE AND meeting.id_project = ?');
 
     $stmt->execute([$project]);
     return $stmt->fetchAll();

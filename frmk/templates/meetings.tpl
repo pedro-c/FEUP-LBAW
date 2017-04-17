@@ -25,7 +25,7 @@
 
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
-                        <div class="panel-heading" onclick="show_Meeting_Info()">
+                        <div class="panel-heading" onclick="show_Meeting_Info({$meeting.id})">
                             <div class="padding">
                                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
                                 <label class="date">{$date}</label><br>
