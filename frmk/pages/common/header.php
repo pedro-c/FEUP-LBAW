@@ -69,16 +69,16 @@ include_once '../config/init.php';
         <div id="sidebar">
             <ul class="nav navbar-nav hidden-xs" >
                 <li>
-                    <a href="../PIU/UI2.php"><i class="fa fa-home fa-2x"></i><p>Dashboard</p></a>
+                    <a href="dashboard.php"><i class="fa fa-home fa-2x"></i><p>Dashboard</p></a>
                 </li>
                 <li>
-                    <a href="../tasks.php"><i class="fa fa-check-square-o fa-2x"></i><p>Tasks</p></a>
+                    <a href="tasks.php"><i class="fa fa-check-square-o fa-2x"></i><p>Tasks</p></a>
                 </li>
                 <li>
                     <a href="../PIU/UI4.php"><i class="fa fa-quote-right fa-2x"></i><p>Forum</p></a>
                 </li>
                 <li>
-                    <a href="../PIU/UI7.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
+                    <a href="meetings.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
                 </li>
                 <li>
                     <a href="../PIU/UI5.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>

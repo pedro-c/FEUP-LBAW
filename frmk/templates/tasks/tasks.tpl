@@ -15,7 +15,7 @@
 
         <div class="tasks-card" id="task-card">
             <div class="tasks-header">
-                <button id="add-task">Add Task</button>
+                <button id="task-button" class="task-button" value="create-task">Add Task</button>
                 <ul class="tasks-tags">
                     <li>#Logistics</li>
                     <li>#Marketing</li>
@@ -27,20 +27,22 @@
 
                     {foreach $tasks as $task}
 
-                        $tag = getTagFromTask({$task.id});
+                        {$tags = getTagFromTaskId($task.id)}
 
                         <tr class="task">
                             <td>
-                                <i class="fa fa-check-circle-o" id="complete-button"></i>
+                                <i id="complete-button" name="complete-task" class="fa fa-check-circle-o task-button"></i>
                             </td>
                             <td>
                                 <div>
-                                    <textarea onclick="toggle();" id="task-title">{$task.name}</textarea>
-                                    <p>$tag</p>
+                                    <textarea onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
+                                    {foreach $tags as $tag}
+                                    <p>{$tag.name}</p>
+                                    {/foreach}
                                 </div>
                             </td>
                             <td>
-                                <i class="fa fa-times" id="delete-button"></i>
+                                <i id="delete-button" name="delete-task" class="fa fa-times task-button" name="delete-task"></i>
                             </td>
                         </tr>
 
@@ -54,31 +56,32 @@
             <div class="col-xs-12" id="create-task-navbar">
                 <div class="col-xs-12" id="assign-to">
                     <img src="../images/users/avatar5.jpg" class="img-circle">
-                    <textarea placeholder="Assign to" id="task-assign"></textarea>
+                    <select id="task-assign" class="select2-single form-control" multiple="single" placeholder="Assign to">
+
+                    </select>
                 </div>
                 <button class="btn btn-danger" id="delete-button"> Delete </button>
             </div>
 
             <div class="col-xs-12" id="create-task-title">
                 <i class="fa fa-check-circle-o" id="complete-button"></i>
-                <textarea placeholder="New Task"></textarea>
+                <input type="text" id="task-name" placeholder="New Task">
             </div>
             <div class="col-xs-12" id="create-task-settings">
-                <div class="input-group date">
+                <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                    <input type="text" class="form-control">
+                    <input id="task-deadline-date" type="date" class="form-control">
+                    <input id="task-deadline-time" type="time" name="time" class="form-control">
                 </div>
                 <div class="input-group task-tags">
                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                    <select class="select2-multiple form-control" multiple="multiple">
-                        <option value="M">Marketing</option>
-                        <option value="L">Logistics</option>
-                        <option value="S">Sponsors</option>
+                    <select id="task-tags" class="select2-multiple form-control" multiple="multiple">
+
                     </select>
                 </div>
             </div>
             <div class="col-xs-12" id="create-task-description">
-                <textarea placeholder="Description"></textarea>
+                <textarea id="task-description"placeholder="Description"></textarea>
             </div>
             <div class="task-comments col-xs-12">
                 <div class="comment-info">
@@ -96,7 +99,7 @@
             </div>
 
         </div>
-        <div id="mobile-back" class="navbar navbar-default navbar-fixed-bottom" onclick="toggle()">
+        <div id="mobile-back" class="navbar navbar-default navbar-fixed-bottom" onclick="back()">
             <h4>« Back</h4>
         </div>
     </div>

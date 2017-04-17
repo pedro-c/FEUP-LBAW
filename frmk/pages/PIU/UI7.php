@@ -268,7 +268,7 @@ include_once "../../database/meetings.php";
 
 
 <?php
-include_once "common/footer.html";
+include_once "common/footer.php";
 ?>
 
 

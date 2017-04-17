@@ -19,6 +19,36 @@ function createUser($name, $email, $username, $password){
     return $stmt->execute([$name, $email,$username,password_hash($password, PASSWORD_DEFAULT)]);
 }
 
+function getUserId($email){
+    global $conn;
+    $stmt = $conn -> prepare('SELECT id FROM user_table WHERE email = ?');
+    $stmt->execute([$email]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result['id'];
+
+}
+
+function getUsername($email){
+    global $conn;
+    $stmt = $conn -> prepare('SELECT username FROM user_table WHERE email = ?');
+    $stmt->execute([$email]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result['username'];
+}
+
+function getUserNameById($id){
+
+    global $conn;
+    $stmt = $conn -> prepare('SELECT user_table.name FROM user_table WHERE id = ?');
+    $stmt->execute([$id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result['name'];
+}
+
+
 function checkForInvitation($email,$project){
 
     global $conn;
@@ -32,16 +62,6 @@ function checkForInvitation($email,$project){
     return ($project==$id_project);
 }
 
-function getUserId($email){
-    global $conn;
-    $stmt = $conn -> prepare('SELECT id FROM user_table WHERE email = ?');
-    $stmt->execute([$email]);
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    return $result['id'];
-
-}
-
 function joinProject($id, $project){
 
     global $conn;
@@ -49,4 +69,5 @@ function joinProject($id, $project){
     $stmt = $conn->prepare('INSERT INTO user_project VALUES(?,?,?)');
     return $stmt->execute([$id,$project,$is_coordinator]);
 }
+
 
