@@ -75,7 +75,7 @@
                             <div class="title">
                                 <input type="text" name="title" class="form-control" placeholder="Choose a Creative Title">
                             </div>
-                            <textarea name="description">Meeting Resume</textarea>
+                            <textarea name="description" maxlength="512">Meeting Resume</textarea>
 
                             <!--<div class="calendar input-group date">
                                 <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar"
