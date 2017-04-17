@@ -41,7 +41,7 @@ function removeMember($user_id, $project_id) {
     global $conn;
     $sql_remove_member = "DELETE FROM user_project WHERE id_user = ? AND id_project = ?;";
     $stmt = $conn->prepare($sql_remove_member);
-    $stmt->execute(array($user_id, $project_id));
+    return $stmt->execute(array($user_id, $project_id));
 }
 
 function inviteMember($user_email, $project_id) {
@@ -49,6 +49,6 @@ function inviteMember($user_email, $project_id) {
     global $conn;
     $sql_invite_member = "INSERT INTO invited_users (id_project, email) VALUES (?, ?);";
     $stmt = $conn->prepare($sql_invite_member);
-    $stmt->execute(array($project_id, $user_email));
+    return $stmt->execute(array($project_id, $user_email));
 }
 ?>

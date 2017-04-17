@@ -68,7 +68,7 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                   $smarty->assign('profile_email', $project_members[$actual_elem]['email']);
                   $smarty->assign('profile_number', $project_members[$actual_elem]['phone_number']);
                   $smarty->assign('profile_id', $project_members[$actual_elem]['id']);
-                  $smarty->assign('profile_image_path', "/users/".$project_members[$actual_elem]['photo_path']); //TODO user must define what is his photo
+                  $smarty->assign('profile_image_path', "users/".$project_members[$actual_elem]['photo_path']); //TODO user must define what is his photo
 
                   $smarty->display("team/profile_card.tpl");
                 } ?>
@@ -81,20 +81,23 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
 </div>
 
 <!-- Add a Member Modal Definition -->
-<?php $smarty->display("team/add_member_modal.tpl"); ?>
+<?php
+$smarty->assign('project_id', $project_id);
+$smarty->display("team/modals/add_member_modal.tpl");
+?>
 
 <!-- Confirmation of User Delete-->
 <?php
 $smarty->assign('project_id', $project_id);
-$smarty->display("team/remove_member_modal.tpl");
+$smarty->display("team/modals/remove_member_modal.tpl");
 ?>
 
 
 <!-- Confirmation of User Promotion-->
-<?php $smarty->display("team/promote_member_modal.tpl"); ?>
+<?php $smarty->display("team/modals/promote_member_modal.tpl"); ?>
 
 <!-- Confirmation of User Depromotion-->
-<?php $smarty->display("team/demote_member_modal.tpl"); ?>
+<?php $smarty->display("team/modals/demote_member_modal.tpl"); ?>
 <?php
 include_once "common/footer.html";
 ?>
