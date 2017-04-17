@@ -77,12 +77,6 @@
                             </div>
                             <textarea name="description" maxlength="512">Meeting Resume</textarea>
 
-                            <!--<div class="calendar input-group date">
-                                <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar"
-                                      aria-hidden="true"></span>
-                                <input type="text" name="date" class="form-control">
-                            </div>-->
-
                             <div class="calendar">
                                 <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar"
                                       aria-hidden="true"></span>

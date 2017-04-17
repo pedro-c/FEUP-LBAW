@@ -49,3 +49,12 @@ function getProjectMembers($project, $user){
     $stmt->execute([$project,$user]);
     return $stmt->fetchAll();
 }
+
+function getUserProjects($user_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT id_project FROM user_project WHERE id_user = ?');
+    $stmt->execute([$user_id]);
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
