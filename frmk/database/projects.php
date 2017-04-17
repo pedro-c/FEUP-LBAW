@@ -49,3 +49,14 @@ function getProjectMembers($project, $user){
     $stmt->execute([$project,$user]);
     return $stmt->fetchAll();
 }
+
+function getProjectMembersNames($project, $user){
+    global $conn;
+
+    $stmt = $conn->prepare('SELECT user_table.name FROM user_project, user_table WHERE id_project=? AND id_user <> ? AND user_table.id=user_project.id_user');
+
+    $stmt->execute([$project,$user]);
+    return $stmt->fetchAll();
+}
+
+

@@ -28,21 +28,46 @@ $(document).ready(function(){
         tags: true
     });
 
+    $('.select2-single').select2({
+        maximumSelectionLength: 1
+    });
+
+    $("#task-name").keyup(function(e) {
+        var m=$("#task-name");
+        var value= m.val();
+        var taskId = $("#task-name").attr("name");
+        var task = $("#"+taskId).val(value);
+    });
+
 });
 function toggle(taskId) {
 
     $.ajax({
         type:'post',
         url: '../api/tasks/task-details.php',
-        data:  {'taskId': 2},
+        data:  {'taskId': taskId},
         success: function(request) {
             /*[{"id":312,"name":"New Task","description":null,"deadline":null,"creator_id":119,"assigned_id":null,"completer_id":null,"project_id":31}]*/
 
             var response = JSON.parse(request);
 
-            $("#task-assign").attr("placeholder", response[2][0].name);
-            $("#task-name").attr("placeholder", response[0][0].name);
-            $("#task-description").attr("placeholder", response[0][0].description);
+            console.log(response);
+
+            /*$("#task-assign").html("");
+            $("#task-assign").append($('<option>', {
+                value: response[2][0].id,
+                text: response[2][0].name,
+                selected: true
+            }));
+            for (var i = 0; i < response[3].length; i++) {
+                $("#task-assign").append($('<option>', {
+                    value: response[3][i].id,
+                    text: response[3][i].name,
+                }));
+            }*/
+            $("#task-name").val(response[0][0].name);
+            $("#task-name").attr("name",taskId);
+            /*$("#task-description").attr("placeholder", response[0][0].description);
             $("#task-deadline-date").attr("value",response[0][0].deadline.split(" ")[0]);
             $("#task-deadline-time").attr("value",response[0][0].deadline.split(" ")[1]);
             $("#task-tags").html("");
@@ -52,7 +77,7 @@ function toggle(taskId) {
                     text: response[1][i].name,
                     selected: true
                 }));
-            }
+            }*/
 
             var id = "create-task";
             var taskCard = document.getElementById("task-card");

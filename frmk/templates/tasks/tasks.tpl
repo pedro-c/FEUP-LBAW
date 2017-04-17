@@ -35,7 +35,7 @@
                             </td>
                             <td>
                                 <div>
-                                    <textarea onclick="toggle({$task.id});" id="task-title">{$task.name}</textarea>
+                                    <textarea onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
                                     {foreach $tags as $tag}
                                     <p>{$tag.name}</p>
                                     {/foreach}
@@ -56,14 +56,16 @@
             <div class="col-xs-12" id="create-task-navbar">
                 <div class="col-xs-12" id="assign-to">
                     <img src="../images/users/avatar5.jpg" class="img-circle">
-                    <textarea placeholder="Assign to" id="task-assign"></textarea>
+                    <select id="task-assign" class="select2-single form-control" multiple="single" placeholder="Assign to">
+
+                    </select>
                 </div>
                 <button class="btn btn-danger" id="delete-button"> Delete </button>
             </div>
 
             <div class="col-xs-12" id="create-task-title">
                 <i class="fa fa-check-circle-o" id="complete-button"></i>
-                <textarea id="task-name" placeholder="New Task"></textarea>
+                <input type="text" id="task-name" placeholder="New Task">
             </div>
             <div class="col-xs-12" id="create-task-settings">
                 <div class="input-group">
