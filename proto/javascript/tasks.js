@@ -42,6 +42,7 @@ $(document).ready(function(){
 
     $(".select2").on('focusout', function() {
 
+        /*
         $.ajax({
             type:'post',
             url: '../api/tasks/assign-task.php',
@@ -53,11 +54,14 @@ $(document).ready(function(){
             }
 
         });
+*/
+
+        
 
     });
 
     $("#task-name").focusout(function(e) {
-        
+
         $.ajax({
             type:'post',
             url: '../api/tasks/change-task-name.php',
@@ -69,12 +73,6 @@ $(document).ready(function(){
             }
 
         });
-
-    });
-
-    $(".select2-single").focusout(function(e) {
-        console.log("asdsadsad");
-
 
     });
 
