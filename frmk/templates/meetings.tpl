@@ -20,13 +20,15 @@
             {foreach $meetings as $meeting}
 
                 {$creatorName = getUserNameById($meeting.id_creator)}
+                {$time = getTimeFromTimestamp($meeting.date)}
+                {$date = getDateFromTimestamp($meeting.date)}
 
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
                         <div class="panel-heading" onclick="show_Meeting_Info()">
                             <div class="padding">
                                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                                <label class="date">{$meeting.date}</label><br>
+                                <label class="date">{$date}</label><br>
                                 <label class="description">{$meeting.name} </label><br>
                             </div>
                             <div class="align_middle">
@@ -37,7 +39,7 @@
                         <div class="panel-body">
                             <div class="information_meeting"><br>
                                 <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                <label class="hour">{$meeting.date}</label><br>
+                                <label class="hour">{$time}</label><br>
                                 <label class="user_responsible">{$creatorName}</label><br>
                                 <label class="guests">
                                     <img class="user_photo" src="../images/users/avatar2.png">
@@ -75,10 +77,16 @@
                             </div>
                             <textarea name="description">Meeting Resume</textarea>
 
-                            <div class="calendar input-group date">
+                            <!--<div class="calendar input-group date">
                                 <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar"
                                       aria-hidden="true"></span>
                                 <input type="text" name="date" class="form-control">
+                            </div>-->
+
+                            <div class="calendar">
+                                <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar"
+                                      aria-hidden="true"></span>
+                                <input type="date" name="date" class="form-control">
                             </div>
 
                             <div class="time">

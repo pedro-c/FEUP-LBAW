@@ -2,7 +2,7 @@
 
 function getFutureMeetings($project){
     global $conn;
-    $stmt = $conn->prepare('SELECT name,date,description,duration,id_creator FROM meeting WHERE meeting.date > CURRENT_DATE AND meeting.id_project = ?');
+    $stmt = $conn->prepare('SELECT name,description,duration,id_creator,date FROM meeting WHERE meeting.date > CURRENT_DATE AND meeting.id_project = ?');
 
     $stmt->execute([$project]);
     return $stmt->fetchAll();
@@ -10,11 +10,23 @@ function getFutureMeetings($project){
 
 function scheduleMeeting($title, $description, $date, $time, $duration, $id_creator, $id_project){
 
-    list($hours, $minutes) = explode(':', $time);
-    $dateTime = \DateTime::createFromFormat('m/d/Y', $date)->setTime($hours, $minutes);
-    $timeStamp = $dateTime->getTimestamp();
+    list($year, $month, $day) = explode('-', $date);
+    list($hour, $minute, $second) = explode(':', $time);
+    $timestamp = mktime($hour, $minute, $second, $month, $day, $year);
+    $time = date('Y-m-d H:i:s',$timestamp);
+
 
     global $conn;
-    $stmt = $conn->prepare('INSERT INTO meeting(name, date, duration, description, id_creator, id_project) values (?,?,?,?,?,?)');
-    return $stmt->execute([$title, $timeStamp ,$duration, $description, $id_creator, $id_project ]);
+    $stmt = $conn->prepare('INSERT INTO meeting(name, duration, description, id_creator, id_project, date ) values (?,?,?,?,?,?)');
+    return $stmt->execute([$title, $duration, $description, $id_creator, $id_project,$time]);
+}
+
+function getTimeFromTimestamp($timestamp){
+    list($date, $time) = explode(' ', $timestamp);
+    return $time;
+}
+
+function getDateFromTimestamp($timestamp){
+    list($date, $time) = explode(' ', $timestamp);
+    return $date;
 }
