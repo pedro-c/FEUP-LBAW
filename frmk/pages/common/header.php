@@ -1,5 +1,5 @@
 <?php
-include_once '../config/init.php';
+include_once '../../config/init.php';
 ?>
 
 <!DOCTYPE html>
@@ -159,4 +159,3 @@ include_once '../config/init.php';
 
 <div id="parent">
     <div id="main-content">
-
