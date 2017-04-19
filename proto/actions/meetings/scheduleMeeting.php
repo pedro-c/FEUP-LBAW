@@ -15,6 +15,7 @@ if(isset($_POST['title']) && isset($_POST['date']) && isset($_POST['time']) && i
 
     $meeting_id = scheduleMeeting($title,$description, $date,$time,$duration,$_SESSION['user_id'],$_SESSION['project_id']);
    //inviteUserToMeeting($meeting_id, $invited_users);
+    $_SESSION['success_messages'][] = '<br>'.'Schedule Meeting successful';
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 }
