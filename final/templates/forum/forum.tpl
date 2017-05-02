@@ -21,29 +21,14 @@
                         </div>
                     </button>
 
-                    <!-- list the posts -->
+                    <!-- list the posts - to be filled by JS -->
                     <div id="post-listing">
-                    {*{foreach $posts as $post}*}
-                        {*{$user = getUser($post.id_creator)}*}
-                        {*{$photo = getUserPhoto($user)}*}
-                        {*<button class="list-group-item forum-post">*}
-                            {*<span class="post-id" hidden="hidden">{$post.id}</span>*}
-                            {*<h4 class="list-group-item-heading post-title">{$post.title}</h4>*}
-                            {*<div class="list-group-item-text post-submitter-info">*}
-                                {*<img class="submitter-photo" src="{$photo}">*}
-                                {*<small>*}
-                                    {*<span class="submitter-uname">{$user.username}</span> -*}
-                                    {*<span class="post-submission-date">{$post.creation_date}</span>*}
-                                {*</small>*}
-                            {*</div>*}
-                        {*</button>*}
-                    {*{/foreach}*}
                     </div>
 
                     <nav aria-label="Page navigation">
                         <div class="text-center">
                             <ul class="pagination">
-                                <li {if $forumPage == 1}class="disabled"{/if}>
+                                <li id="pagination-prev" {if $forumPage == 1}class="disabled"{/if}>
                                     <a href="#" aria-label="Previous">
                                         <span aria-hidden="true">&laquo;</span>
                                     </a>
@@ -57,7 +42,7 @@
                                         {/if}
                                     {/if}
                                 {/for}
-                                <li>
+                                <li id="pagination-next">
                                     <a href="#" aria-label="Next">
                                         <span aria-hidden="true">&raquo;</span>
                                     </a>

@@ -13,6 +13,33 @@ $(document).ready(function () {
     let curPost;
     let curPostID;
     let posts = $(".forum-post");
+    let paginationElements = $(".pagination li");
+
+    paginationElements.click(function () {
+        performPagination($(this),currentPage);
+    });
+
+   let performPagination = function(clickedObject, curPage){
+       let selectedPage;
+       console.log(clickedObject);
+       if (clickedObject.is("#pagination-next"))
+           selectedPage = curPage + 1;
+       else if (clickedObject.is("#pagination-prev"))
+           selectedPage = curPage - 1;
+       else selectedPage = parseInt($(this).text());
+       if (selectedPage === curPage)
+           return;
+
+       console.log(curPage);
+       console.log(selectedPage);
+       postListing.empty();
+       currentPage = selectedPage;
+       $(".pagination li.active").removeClass("active");
+       $('.pagination li:contains("' + selectedPage + '")').addClass("active");
+       console.log('.pagination li:contains("'+selectedPage+'")');
+       loadPagePosts(postListing, selectedPage);
+   }
+
 
     let displayedPosts = [];
     let mobileBack = $(
@@ -40,8 +67,7 @@ $(document).ready(function () {
         '</div>'
     );
 
-
-    postListing.on('click','.forum-post',function(){
+    postListing.on('click', '.forum-post', function () {
         showForumContent($(this), false);
     });
 
@@ -114,6 +140,9 @@ $(document).ready(function () {
         });
     };
 
+    /**
+     * Called when a user minimizes a post
+     */
     let resetForum = function () {
         curPost.removeClass("active");
         curPostID = -1;
@@ -123,6 +152,13 @@ $(document).ready(function () {
         nav.width(nav.parent().width());
     };
 
+
+    /**
+     * Creates the post element, fetches all the important information
+     * Such as the content and the replies
+     * @param clickedPost
+     * @returns {*|jQuery|HTMLElement}
+     */
     let makePostSection = function (clickedPost) {
         let header = getPostHeader(clickedPost);
         let content = getPostContent(clickedPost);
@@ -152,6 +188,11 @@ $(document).ready(function () {
         return postSection;
     };
 
+    /**
+     * Returns the header for the post element
+     * @param clickedPost
+     * @returns {string}
+     */
     let getPostHeader = function (clickedPost) {
         let title = clickedPost.find(".post-title").text();
         let userPhoto = clickedPost.find(".submitter-photo").attr("src");
@@ -169,8 +210,12 @@ $(document).ready(function () {
             '</div>';
     };
 
+    /**
+     * Returns the content of the selected post
+     * @param clickedPost
+     * @returns {*|jQuery|HTMLElement}
+     */
     let getPostContent = function (clickedPost) {
-        let projectID = $(".project-id").text();
         curPostID = clickedPost.find(".post-id").text();
 
         let content = $(
@@ -187,6 +232,11 @@ $(document).ready(function () {
         return content;
     };
 
+    /**
+     * Returns the replies for the selected post
+     * @param clickedPost
+     * @returns {*|jQuery|HTMLElement}
+     */
     let getPostReplies = function (clickedPost) {
         let content = $(
             '<ul id="replies" class="list-group">' +
@@ -217,6 +267,10 @@ $(document).ready(function () {
         return content;
     };
 
+    /**
+     * Creates a post request to submit a reply to a post
+     * and then displays the post in the page
+     */
     let submitReply = function () {
         let text = $("#reply-text");
         let content = text.val();
@@ -249,6 +303,11 @@ $(document).ready(function () {
     }
 });
 
+/**
+ * Creates a post request to get the page's posts
+ * @param postsSection
+ * @param currentPage
+ */
 function loadPagePosts(postsSection, currentPage) {
     $.post("../api/forum/get_page_posts.php", {
         forum_page: currentPage
