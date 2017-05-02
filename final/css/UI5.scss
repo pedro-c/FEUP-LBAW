@@ -1,0 +1,303 @@
+@import 'global';
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.files_title {
+
+  background-color: $white;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+  button {
+    display: inline;
+    margin-right: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: 0;
+  }
+
+  button:first-child {
+    border-bottom: 4px solid;
+    border-bottom-color: $color_yellow;
+  }
+}
+
+.files_list {
+
+  .button_upload {
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+    .uploadFile {
+      padding: 4px 20px 4px 20px;
+      color: white;
+      background-color: $color_yellow;
+      border: none;
+      border-radius: 5px;
+      align-self: center;
+      outline: 0;
+
+      &:hover {
+        background-color: $blue_secondary;
+        border: none;
+      }
+    }
+  }
+
+  .file {
+    .panel-heading {
+      background-color: $blue_secondary;
+      padding-left: 20px;
+
+      &:hover {
+        background-color: $color_yellow;
+      }
+
+      .file_details {
+
+        color: white;
+        .file_description {
+          font-weight: normal !important;
+        }
+
+        .file_show {
+          padding-right: 5px;
+          width: 35px;
+        }
+
+      }
+
+    }
+
+    .panel-body {
+      .minutes {
+        padding-bottom: 10px;
+        span {
+          font-weight: lighter;
+          font-size: small;
+        }
+
+        .hastag {
+          cursor: pointer;
+          color: $blue_secondary;
+          &:hover {
+            color: $color_yellow;
+          }
+        }
+      }
+
+      .name {
+        font-size: medium;
+      }
+
+      .fa.fa-download {
+        color: $blue_secondary;
+        font-size: x-large;
+        &:hover {
+          color: $color_yellow;
+        }
+      }
+    }
+  }
+
+  .uploadFile_container {
+
+    .panel-heading {
+      background-color: $color_yellow;
+      color: white;
+      padding-bottom: 20px;
+
+      .trash {
+        padding: 4px 15px 4px 15px;
+        color: white;
+        background-color: #c0392b;
+        border: 2px solid #c0392b;
+        border-radius: 5px;
+        align-self: center;
+        outline: 0;
+
+        &:hover {
+          background-color: #913025;
+          border: 2px solid;
+          border-color: #913025;
+          color: white;
+        }
+
+      }
+
+    }
+
+    .panel-body {
+      .box.drag_here {
+        border-radius: 5px;
+        height: 150px;
+        margin-top: 40px;
+        border: 1px dashed grey;
+        vertical-align: middle;
+        background-color: $background_white;
+        display: table;
+        width: 100%;
+
+        div {
+          display: table-cell;
+          vertical-align: middle;
+        }
+        .info {
+          padding-top: 30px;
+          text-align: center;
+          font-size: medium;
+          color: grey;
+        }
+
+        .glyphicon.glyphicon-plus {
+          text-align: center;
+          font-size: x-large;
+          color: grey;
+        }
+      }
+
+      .input-group.task-tags {
+        padding-top: 40px;
+      }
+    }
+
+    #submit {
+      padding: 4px 20px 4px 20px;
+      color: white;
+      background-color: $color_yellow;
+      border: none;
+      border-radius: 5px;
+      align-self: center;
+      outline: 0;
+
+      &:hover {
+        background-color: $blue_secondary;
+        border: none;
+      }
+    }
+
+  }
+
+  #container_file_info {
+
+    .panel-heading {
+      color: white;
+      background-color: $color_yellow;
+      span {
+        font-size: medium;
+      }
+
+      .file{
+        padding-left: 0 !important;
+
+        .title {
+          padding-top: 15px !important;
+          font-size: large;
+          float: left;
+          display: inline-block;
+        }
+
+        .file_show {
+          display: inline-block;
+          width: 60px;
+          margin-right: 10px;
+          float: left;
+        }
+      }
+
+
+      .button_back {
+        text-align: right;
+        margin-left: 15px;
+        margin-bottom: 15px;
+
+        .back {
+          padding: 4px 15px 4px 15px;
+          color: white;
+          background-color: $blue_secondary;
+          border: 2px solid $blue_secondary;
+          border-radius: 5px;
+          align-self: center;
+          outline: 0;
+
+          &:hover {
+            background-color: $color_firefly_approx;
+            border: 2px solid;
+            border-color: $color_firefly_approx;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .panel-body{
+
+      .button_download{
+        text-align: center;
+        i{
+          font-size: large;
+        }
+        .download{
+          padding: 4px 20px 4px 20px;
+          color: white;
+          background-color: $color_yellow;
+          border: none;
+          border-radius: 5px;
+          align-self: center;
+          outline: 0;
+
+          &:hover {
+            background-color: $blue_secondary;
+            border: none;
+          }
+
+        }
+        padding-top: 20px;
+      }
+
+      #user{
+        padding-top: 30px;
+        #user_photo {
+          width: 70px;
+          float: left;
+        }
+
+        .name{
+          padding-left: 15px;
+          padding-top: 30px;
+          display: inline-block;
+          font-size: medium;
+        }
+      }
+
+      .extra_info{
+        text-align: right;
+        padding-top: 15px;
+
+        .hastag{
+          padding-bottom: 15px;
+          font-size: large;
+          font-weight: bold;
+        }
+
+        .date {
+          padding-top: 20px;
+          padding-bottom: 5px;
+        }
+
+        .minutes {
+          padding-bottom: 10px;
+        }
+      }
+
+
+
+
+    }
+  }
+
+}

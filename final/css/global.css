@@ -1,0 +1,103 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #ecf0f1;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: Roboto, Helvetica, sans-serif; }
+
+#parent {
+  height: 100%; }
+
+#header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 50px;
+  background-color: #22313f;
+  color: white; }
+  #header .navbar-right .dropdown-toggle {
+    vertical-align: middle;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    padding: 10px; }
+  #header .navbar-right p {
+    font-size: 1.5em;
+    padding: 5px 10px 0 0;
+    color: white; }
+  #header .navbar-right img {
+    height: 30px;
+    width: 30px; }
+
+#sidebar {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: auto;
+  background-color: #22313f;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  text-align: center; }
+
+#parent {
+  margin-top: 50px;
+  margin-left: 0px;
+  background-color: #ecf0f1;
+  height: 100%; }
+
+#main-content {
+  height: 100%; }
+
+#page-wrapper {
+  height: 100%; }
+
+#bs-example-navbar-collapse-1 {
+  border-top-width: 0px !important;
+  padding: 0 !important;
+  background-color: #22313f;
+  margin: 0;
+  overflow-x: hidden;
+  text-align: center; }
+
+@media (min-width: 768px) {
+  #parent {
+    margin-left: 100px; }
+
+  #sidebar {
+    color: white;
+    position: fixed;
+    top: 49px;
+    width: 100px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    bottom: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px; }
+    #sidebar li a {
+      color: #ecf0f1;
+      width: 100px;
+      text-align: center; }
+      #sidebar li a:hover {
+        outline: none;
+        color: #e9d460;
+        background-color: #192532 !important; }
+        #sidebar li a:hover i, #sidebar li a:hover p {
+          color: #e9d460 !important; }
+      #sidebar li a:focus {
+        outline: none;
+        color: #e9d460;
+        background-color: #192532 !important; }
+        #sidebar li a:focus i, #sidebar li a:focus p {
+          color: #e9d460 !important; }
+      #sidebar li a p {
+        margin-bottom: 0px !important; } }
+
+/*# sourceMappingURL=global.css.map */
