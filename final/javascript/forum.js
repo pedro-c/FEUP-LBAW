@@ -3,6 +3,11 @@
  */
 $(document).ready(function () {
     let forum = $("#forum-posts");
+    let postListing = $("#post-listing");
+    let currentPage = parseInt($("ul.pagination li.active").text());
+
+    loadPagePosts(postListing,currentPage);
+
     let posts = $(".forum-post");
     let nav = $(".forum-posts-nav");
     let newPostButton = $("#new-post-button");
@@ -35,7 +40,9 @@ $(document).ready(function () {
         '</div>'
     );
 
+
     posts.click(function () {
+        console.log("clicked post");
         showForumContent($(this), false);
     });
     newPostButton.click(function () {
@@ -66,7 +73,6 @@ $(document).ready(function () {
             resetForum();
             return;
         }
-
 
 
         forum.removeClass("col-lg-3 col-md-3 col-sm-3 hidden-xs");
@@ -117,7 +123,7 @@ $(document).ready(function () {
         nav.width(nav.parent().width());
     };
 
-    let makePostSection = function(clickedPost){
+    let makePostSection = function (clickedPost) {
         let header = getPostHeader(clickedPost);
         let content = getPostContent(clickedPost);
         let replies = getPostReplies(clickedPost);
@@ -132,7 +138,7 @@ $(document).ready(function () {
             '</div>' +
             '<li id="post-reply" class="list-group-item">' +
             '<h5 class="list-group-item-heading"><img class="submitter-photo" src="../../images/users/avatar7.png"><strong>' + username + '</strong></h5>' +
-            '<textarea id="reply-text" class="form-control" rows="3" style="resize: none" required="required" placeholder="Reply to this post"></textarea>'+
+            '<textarea id="reply-text" class="form-control" rows="3" style="resize: none" required="required" placeholder="Reply to this post"></textarea>' +
             '<button id="submit-reply" class="btn btn-default btn-form btn-comment">Submit</button>' +
             '</li>' +
             '</div>'
@@ -146,7 +152,7 @@ $(document).ready(function () {
         return postSection;
     };
 
-    let getPostHeader = function(clickedPost){
+    let getPostHeader = function (clickedPost) {
         let title = clickedPost.find(".post-title").text();
         let userPhoto = clickedPost.find(".submitter-photo").attr("src");
         let username = clickedPost.find(".submitter-uname").text();
@@ -163,18 +169,18 @@ $(document).ready(function () {
             '</div>';
     };
 
-    let getPostContent = function(clickedPost){
+    let getPostContent = function (clickedPost) {
         let projectID = $(".project-id").text();
         curPostID = clickedPost.find(".post-id").text();
 
         let content = $(
-        '<div class="panel-body" id="selected-post-content">' +
-        '</div>'
+            '<div class="panel-body" id="selected-post-content">' +
+            '</div>'
         );
 
-        $.post("../api/forum/get_post_content.php",{
-            postID : parseInt(curPostID)
-        },function(data){
+        $.post("../api/forum/get_post_content.php", {
+            postID: parseInt(curPostID)
+        }, function (data) {
             content.text(data);
         });
 
@@ -187,11 +193,11 @@ $(document).ready(function () {
             '</ul>'
         );
 
-        $.post("../api/forum/get_post_replies.php",{
+        $.post("../api/forum/get_post_replies.php", {
             postID: parseInt(curPostID)
-        }, function(data){
+        }, function (data) {
             let replies = JSON.parse(data);
-            for (let reply of replies){
+            for (let reply of replies) {
                 let replyContent = reply.content;
                 let id = reply.id;
                 let creationDate = reply.creation_date;
@@ -199,10 +205,10 @@ $(document).ready(function () {
                 let username = reply.username;
 
                 let replyElement = $(
-                '<li class="list-group-item">' +
-                '<h5 class="list-group-item-heading"><img class="submitter-photo" src='+ userPhoto +'><strong>'+ username + ' on ' + creationDate + '</strong></h5>' +
-                '<p class="list-group-item-text">'+ replyContent + '</p>' +
-                '</li>'
+                    '<li class="list-group-item">' +
+                    '<h5 class="list-group-item-heading"><img class="submitter-photo" src=' + userPhoto + '><strong>' + username + ' on ' + creationDate + '</strong></h5>' +
+                    '<p class="list-group-item-text">' + replyContent + '</p>' +
+                    '</li>'
                 );
 
                 content.append(replyElement);
@@ -212,36 +218,67 @@ $(document).ready(function () {
         return content;
     };
 
-    let submitReply = function(){
+    let submitReply = function () {
         let text = $("#reply-text");
-       let content = text.val();
-       if(content === null || content === "")
-           return;
+        let content = text.val();
+        if (content === null || content === "")
+            return;
 
 
-       $.post("../api/forum/submit_post_reply.php",{
-           postID: curPostID,
-           content: content,
-       }, function(data){
-           console.log(data);
-           let reply = JSON.parse(data);
-           let replyContent = reply.content;
-           let id = reply.id;
-           let creationDate = reply.creation_date;
-           let userPhoto = reply.photo;
-           let username = reply.username;
+        $.post("../api/forum/submit_post_reply.php", {
+            postID: curPostID,
+            content: content,
+        }, function (data) {
+            let reply = JSON.parse(data);
+            let replyContent = reply.content;
+            let id = reply.id;
+            let creationDate = reply.creation_date;
+            let userPhoto = reply.photo;
+            let username = reply.username;
 
-           let replyElement = $(
-               '<li class="list-group-item">' +
-               '<h5 class="list-group-item-heading"><img class="submitter-photo" src='+ userPhoto +'><strong>'+ username + ' on ' + creationDate + '</strong></h5>' +
-               '<p class="list-group-item-text">'+ replyContent + '</p>' +
-               '</li>'
-           );
+            let replyElement = $(
+                '<li class="list-group-item">' +
+                '<h5 class="list-group-item-heading"><img class="submitter-photo" src=' + userPhoto + '><strong>' + username + ' on ' + creationDate + '</strong></h5>' +
+                '<p class="list-group-item-text">' + replyContent + '</p>' +
+                '</li>'
+            );
 
-           $("#replies:last-child").append(replyElement);
-       });
+            $("#replies:last-child").append(replyElement);
+        });
 
-       text.val("");
+        text.val("");
     }
-
 });
+
+function loadPagePosts(postsSection, currentPage) {
+    $.post("../api/forum/get_page_posts.php", {
+        forum_page: currentPage
+    }, function (data) {
+        console.log(data);
+        let posts = JSON.parse(data);
+        for (let post of posts) {
+            console.log(post);
+            let photo = post.submitter_photo;
+            let postID = post.id;
+            let title = post.title;
+            let creationDate = post.creation_date;
+            let username = post.username;
+
+            let postElement = $(
+                '<button class="list-group-item forum-post">' +
+                '<span class="post-id" hidden="hidden">' + postID + '</span>' +
+                '<h4 class="list-group-item-heading post-title">' + title + '</h4>' +
+                '<div class="list-group-item-text post-submitter-info">' +
+                '<img class="submitter-photo" src="{$photo}">' +
+                '<small>' +
+                '<span class="submitter-uname">' + username + '</span> -' +
+                '<span class="post-submission-date">' + creationDate + '</span>' +
+                '</small>' +
+                '</div>' +
+                '</button>'
+            );
+
+            postsSection.append(postElement);
+        }
+    })
+}

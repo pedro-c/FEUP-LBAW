@@ -32,7 +32,8 @@ function getProjectPosts($projectId,$forumPage){
     $offset = ($forumPage - 1) * 5;
     $stmt = $conn->prepare("SELECT * FROM forum_post WHERE id_project = ? ORDER BY date_modified DESC LIMIT 5 OFFSET ?");
     $stmt->execute(array($projectId,$offset));
-    return $stmt->fetchAll();
+    $posts = $stmt->fetchAll();
+    return $posts;
 }
 
 function getUser($userId){

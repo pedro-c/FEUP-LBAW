@@ -22,21 +22,24 @@
                     </button>
 
                     <!-- list the posts -->
-                    {foreach $posts as $post}
-                        {$user = getUser($post.id_creator)}
-                        {$photo = getUserPhoto($user)}
-                        <button class="list-group-item forum-post">
-                            <span class="post-id" hidden="hidden">{$post.id}</span>
-                            <h4 class="list-group-item-heading post-title">{$post.title}</h4>
-                            <div class="list-group-item-text post-submitter-info">
-                                <img class="submitter-photo" src="{$photo}">
-                                <small>
-                                    <span class="submitter-uname">{$user.username}</span> -
-                                    <span class="post-submission-date">{$post.creation_date}</span>
-                                </small>
-                            </div>
-                        </button>
-                    {/foreach}
+                    <div id="post-listing">
+                    {*{foreach $posts as $post}*}
+                        {*{$user = getUser($post.id_creator)}*}
+                        {*{$photo = getUserPhoto($user)}*}
+                        {*<button class="list-group-item forum-post">*}
+                            {*<span class="post-id" hidden="hidden">{$post.id}</span>*}
+                            {*<h4 class="list-group-item-heading post-title">{$post.title}</h4>*}
+                            {*<div class="list-group-item-text post-submitter-info">*}
+                                {*<img class="submitter-photo" src="{$photo}">*}
+                                {*<small>*}
+                                    {*<span class="submitter-uname">{$user.username}</span> -*}
+                                    {*<span class="post-submission-date">{$post.creation_date}</span>*}
+                                {*</small>*}
+                            {*</div>*}
+                        {*</button>*}
+                    {*{/foreach}*}
+                    </div>
+
                     <nav aria-label="Page navigation">
                         <div class="text-center">
                             <ul class="pagination">
@@ -45,31 +48,15 @@
                                         <span aria-hidden="true">&laquo;</span>
                                     </a>
                                 </li>
-                                {if $numPages >= 5}
-                                    {if $forumPage == 1}
-                                        <li class="active"><a href="#">1</a></li>
+                                {for $i=1 to $numPages}
+                                    {if $i == $forumPage}
+                                        <li class="active"><a>{$i}</a></li>
                                         {else}
-                                        <li><a href="#">1</a></li>
-                                    {/if}
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li class="disabled"><a href="#">...</a></li>
-                                        <li><a href="#">{$numPages}</a></li>
-                                    {else}
-                                        {if $forumPage == 1}
-                                            <li class="active"><a href="#">1</a></li>
-                                            {else}
-                                            <li><a href="#">1</a></li>
+                                        {if $i == 1 || $i == $numPages || $i >= $forumPage - 2 || $i <= forumPage + 2}
+                                            <li><a>{$i}</a></li>
                                         {/if}
-                                        {for $i= 2 to $numPages}
-                                            <li><a href="#">{$i}</a></li>
-                                        {/for}
-                                {/if}
-                                {*<li class="active"><a href="#">1</a></li>*}
-                                {*<li><a href="#">{if $forumPage != 1}{$forumPage}{else} 2{/if}</a></li>*}
-                                {*<li><a href="#">3</a></li>*}
-                                {*<li class = "disabled"><a href="#">...</a></li>*}
-                                {*<li><a>{$numPages}</a></li>*}
+                                    {/if}
+                                {/for}
                                 <li>
                                     <a href="#" aria-label="Next">
                                         <span aria-hidden="true">&raquo;</span>
