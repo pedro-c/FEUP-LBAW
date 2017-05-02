@@ -6,13 +6,13 @@ $(document).ready(function () {
     let postListing = $("#post-listing");
     let currentPage = parseInt($("ul.pagination li.active").text());
 
-    loadPagePosts(postListing,currentPage);
+    loadPagePosts(postListing, currentPage);
 
-    let posts = $(".forum-post");
     let nav = $(".forum-posts-nav");
     let newPostButton = $("#new-post-button");
     let curPost;
     let curPostID;
+    let posts = $(".forum-post");
 
     let displayedPosts = [];
     let mobileBack = $(
@@ -41,10 +41,10 @@ $(document).ready(function () {
     );
 
 
-    posts.click(function () {
-        console.log("clicked post");
+    postListing.on('click','.forum-post',function(){
         showForumContent($(this), false);
     });
+
     newPostButton.click(function () {
         showForumContent($(this), true);
     });
@@ -212,7 +212,6 @@ $(document).ready(function () {
                 );
 
                 content.append(replyElement);
-                console.log(content);
             }
         });
         return content;
@@ -254,10 +253,8 @@ function loadPagePosts(postsSection, currentPage) {
     $.post("../api/forum/get_page_posts.php", {
         forum_page: currentPage
     }, function (data) {
-        console.log(data);
         let posts = JSON.parse(data);
         for (let post of posts) {
-            console.log(post);
             let photo = post.submitter_photo;
             let postID = post.id;
             let title = post.title;
@@ -271,7 +268,7 @@ function loadPagePosts(postsSection, currentPage) {
                 '<div class="list-group-item-text post-submitter-info">' +
                 '<img class="submitter-photo" src="{$photo}">' +
                 '<small>' +
-                '<span class="submitter-uname">' + username + '</span> -' +
+                '<span class="submitter-uname">' + username + '</span> - ' +
                 '<span class="post-submission-date">' + creationDate + '</span>' +
                 '</small>' +
                 '</div>' +
