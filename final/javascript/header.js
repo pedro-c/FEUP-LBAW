@@ -8,5 +8,5 @@ function changeProject(projectId){
             document.location = "dashboard.php";
         }
     });
-
 }
+

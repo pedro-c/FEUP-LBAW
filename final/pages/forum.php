@@ -13,11 +13,15 @@ include_once $BASE_DIR . 'database/forum.php';
 include_once $BASE_DIR . 'pages/common/header.php';
 
 $projectId = $_SESSION['project_id'];
+$forumPage = 1;
 
-$posts = getProjectPosts(array($projectId));
+$numPosts = getNumPosts(array($projectId));
+$posts = getProjectPosts($projectId,$forumPage);
+$numPages =  ceil($numPosts / 5);
 
+$smarty->assign('numPages',$numPages);
+$smarty->assign('forumPage',$forumPage);
 $smarty->assign('posts',$posts);
 $smarty->display($BASE_DIR . 'templates/forum/forum.tpl');
-
 
 include_once 'common/footer.php';

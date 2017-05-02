@@ -20,10 +20,18 @@ function submit_post($id_project, $id_user, $title, $content){
     return $result;
 }
 
-function getProjectPosts($projectId){
+function getNumPosts($projectId){
     global $conn;
-    $stmt = $conn->prepare("SELECT * FROM forum_post WHERE id_project = ? ORDER BY date_modified DESC");
+    $stmt = $conn->prepare("SELECT COUNT(*) FROM forum_post WHERE id_project = ?");
     $stmt->execute($projectId);
+    return $stmt->fetch()['count'];
+}
+
+function getProjectPosts($projectId,$forumPage){
+    global $conn;
+    $offset = ($forumPage - 1) * 5;
+    $stmt = $conn->prepare("SELECT * FROM forum_post WHERE id_project = ? ORDER BY date_modified DESC LIMIT 5 OFFSET ?");
+    $stmt->execute(array($projectId,$offset));
     return $stmt->fetchAll();
 }
 

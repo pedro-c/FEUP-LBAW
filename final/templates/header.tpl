@@ -72,7 +72,7 @@
                     <a href="../pages/tasks.php"><i class="fa fa-check-square-o fa-2x"></i><p>Tasks</p></a>
                 </li>
                 <li>
-                    <a href="../pages/forum.php"><i class="fa fa-quote-right fa-2x"></i><p>Forum</p></a>
+                    <a class="to-forum" href="../pages/forum.php"><i class="fa fa-quote-right fa-2x"></i><p>Forum</p></a>
                 </li>
                 <li>
                     <a href="../pages/meetings.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
@@ -97,7 +97,7 @@
                             <a href="../../tasks.php"><i class="fa fa-check-square-o fa-2x"></i><p>Tasks</p></a>
                         </li>
                         <li class="col-xs-6">
-                            <a href="../../forum.php"><i class="fa fa-quote-right fa-2x"></i><p>Forum</p></a>
+                            <a class="to-forum" href="../../forum.php"><i class="fa fa-quote-right fa-2x"></i><p>Forum</p></a>
                         </li>
                         <li class="col-xs-6">
                             <a href="../../meetings.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>

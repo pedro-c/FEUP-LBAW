@@ -40,16 +40,36 @@
                     <nav aria-label="Page navigation">
                         <div class="text-center">
                             <ul class="pagination">
-                                <li class="disabled">
+                                <li {if $forumPage == 1}class="disabled"{/if}>
                                     <a href="#" aria-label="Previous">
                                         <span aria-hidden="true">&laquo;</span>
                                     </a>
                                 </li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
+                                {if $numPages >= 5}
+                                    {if $forumPage == 1}
+                                        <li class="active"><a href="#">1</a></li>
+                                        {else}
+                                        <li><a href="#">1</a></li>
+                                    {/if}
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li class="disabled"><a href="#">...</a></li>
+                                        <li><a href="#">{$numPages}</a></li>
+                                    {else}
+                                        {if $forumPage == 1}
+                                            <li class="active"><a href="#">1</a></li>
+                                            {else}
+                                            <li><a href="#">1</a></li>
+                                        {/if}
+                                        {for $i= 2 to $numPages}
+                                            <li><a href="#">{$i}</a></li>
+                                        {/for}
+                                {/if}
+                                {*<li class="active"><a href="#">1</a></li>*}
+                                {*<li><a href="#">{if $forumPage != 1}{$forumPage}{else} 2{/if}</a></li>*}
+                                {*<li><a href="#">3</a></li>*}
+                                {*<li class = "disabled"><a href="#">...</a></li>*}
+                                {*<li><a>{$numPages}</a></li>*}
                                 <li>
                                     <a href="#" aria-label="Next">
                                         <span aria-hidden="true">&raquo;</span>
