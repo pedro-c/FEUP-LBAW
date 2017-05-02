@@ -10,7 +10,7 @@ function getFutureMeetings($project){
 
 function getUserFutureMeeting($project){
     global $conn;
-    $user = $_SESSION['id_user'];
+    $user = $_SESSION['user_id'];
     $stmt = $conn->prepare('SELECT id,name,description,date FROM meeting,user_meeting WHERE meeting.date > CURRENT_DATE AND meeting.id_project = ? AND id = user_meeting.meeting_id AND user_meeting.user_id=?');
 
     $stmt->execute([$project,$user]);
@@ -53,3 +53,20 @@ function getMeetingDetails($meeting_id){
     $stmt->execute([$meeting_id]);
     return $stmt->fetchAll();
 }
+/*
+function inviteUserToMeeting($meeting_id, $invited_users, $id_creator){
+    global $conn;
+    $is_creator = !1;
+    $is_creator_false = !0;
+
+    for ($i = 1; $i <= count($invited_users); $i++) {
+        $stmt = $conn->prepare('INSERT INTO user_meeting(meeting_id, user_id, is_creator) values (?,?,?)');
+        echo $meeting_id;
+        echo $invited_users[$i];
+        echo $is_creator_false;
+        $stmt->execute([$meeting_id, $invited_users[$i],$is_creator_false]);
+    }
+
+    $stmt = $conn->prepare('INSERT INTO user_meeting(meeting_id, user_id, is_creator) values (?,?,?)');
+    $stmt->execute([$meeting_id,$id_creator,$is_creator]);
+}*/
