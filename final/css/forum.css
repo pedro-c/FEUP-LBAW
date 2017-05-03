@@ -333,6 +333,9 @@ button.list-group-item:focus {
   background-color: #eee;
   border-color: #ddd; }
 
+.pagination > li > a:hover {
+  cursor: pointer; }
+
 .pagination > .active > a,
 .pagination > .active > span,
 .pagination > .active > a:hover,

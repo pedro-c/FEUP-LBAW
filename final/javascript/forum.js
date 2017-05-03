@@ -2,10 +2,13 @@
  * Created by epassos on 2/25/17.
  */
 $(document).ready(function () {
+    let currentPage = 1;
+    let numPages = -1;
+
     let forum = $("#forum-posts");
     let postListing = $("#post-listing");
-    let currentPage = parseInt($("ul.pagination li.active").text());
 
+    loadPagination(currentPage, numPages);
     loadPagePosts(postListing, currentPage);
 
     let nav = $(".forum-posts-nav");
@@ -13,32 +16,33 @@ $(document).ready(function () {
     let curPost;
     let curPostID;
     let posts = $(".forum-post");
-    let paginationElements = $(".pagination li");
+    let pagination = $(".pagination");
 
-    paginationElements.click(function () {
-        performPagination($(this),currentPage);
+    pagination.on('click', 'li', function () {
+        performPagination($(this), currentPage);
+        loadPagination(currentPage, numPages);
     });
 
-   let performPagination = function(clickedObject, curPage){
-       let selectedPage;
-       console.log(clickedObject);
-       if (clickedObject.is("#pagination-next"))
-           selectedPage = curPage + 1;
-       else if (clickedObject.is("#pagination-prev"))
-           selectedPage = curPage - 1;
-       else selectedPage = parseInt($(this).text());
-       if (selectedPage === curPage)
-           return;
 
-       console.log(curPage);
-       console.log(selectedPage);
-       postListing.empty();
-       currentPage = selectedPage;
-       $(".pagination li.active").removeClass("active");
-       $('.pagination li:contains("' + selectedPage + '")').addClass("active");
-       console.log('.pagination li:contains("'+selectedPage+'")');
-       loadPagePosts(postListing, selectedPage);
-   }
+    let performPagination = function (clickedObject, curPage) {
+        let selectedPage;
+
+        if (clickedObject.is("#pagination-next"))
+            selectedPage = curPage + 1;
+        else if (clickedObject.is("#pagination-prev"))
+            selectedPage = curPage - 1;
+        else selectedPage = parseInt(clickedObject.text());
+
+        if (selectedPage === curPage)
+            return;
+
+        postListing.empty();
+        currentPage = selectedPage;
+        $(".pagination li.active").removeClass("active");
+        $('.pagination li:contains("' + selectedPage + '")').addClass("active");
+        console.log('.pagination li:contains("' + selectedPage + '")');
+        loadPagePosts(postListing, selectedPage);
+    };
 
 
     let displayedPosts = [];
@@ -337,4 +341,44 @@ function loadPagePosts(postsSection, currentPage) {
             postsSection.append(postElement);
         }
     })
+}
+
+function loadPagination(currentPage) {
+
+    $.post("../api/forum/get_num_pages.php",
+        function (data) {
+            console.log(data);
+            numPages = data;
+            let paginationPages = $(".pagination");
+            paginationPages.empty();
+
+            paginationPages.append(
+                '<li id="pagination-prev"' + (currentPage === 1 ? 'class="disabled"' : '') + '>' +
+                '<a href="#" aria-label="Previous">' +
+                '<span aria-hidden="true">&laquo;</span>' +
+                '</a>' +
+                '</li>'
+            );
+
+            for (let i = 1; i <= numPages; i++) {
+                let element;
+
+                if (i === currentPage) {
+                    element = '<li class="active"><a>' + i + '</a></li>';
+                    paginationPages.append(element);
+                }
+                else if (i === 1 || i >= currentPage - 2 || i <= currentPage + 2) {
+                    element = '<li><a>' + i + '</a></li>';
+                    paginationPages.append(element);
+                }
+            }
+
+            paginationPages.append(
+                '<li id="pagination-next"' + (currentPage === numPages ? 'class="disabled"' : '') + '>' +
+                '<a href="#" aria-label="Previous">' +
+                '<span aria-hidden="true">&raquo;</span>' +
+                '</a>' +
+                '</li>'
+            );
+        });
 }

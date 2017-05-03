@@ -28,7 +28,6 @@ if($forumPage < 0)
 
 if($forumPage > $numPages)
     $forumPage = $numPages;
-//$posts = getProjectPosts($projectId, $forumPage);
 
 $smarty->assign('numPages', $numPages);
 $smarty->assign('forumPage', $forumPage);

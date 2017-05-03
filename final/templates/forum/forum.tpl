@@ -33,15 +33,17 @@
                                         <span aria-hidden="true">&laquo;</span>
                                     </a>
                                 </li>
+                                <span id="pagination-pages">
                                 {for $i=1 to $numPages}
                                     {if $i == $forumPage}
-                                        <li class="active"><a>{$i}</a></li>
-                                        {else}
-                                        {if $i == 1 || $i == $numPages || $i >= $forumPage - 2 || $i <= forumPage + 2}
-                                            <li><a>{$i}</a></li>
-                                        {/if}
+                                    <li class="active"><a>{$i}</a></li>
+                                    {else}
+                                    {if $i == 1 || $i == $numPages || $i >= $forumPage - 2 || $i <= forumPage + 2}
+                                    <li><a>{$i}</a></li>
                                     {/if}
-                                {/for}
+                                    {/if}
+                                    {/for}
+                                    </span>
                                 <li id="pagination-next">
                                     <a href="#" aria-label="Next">
                                         <span aria-hidden="true">&raquo;</span>
@@ -54,4 +56,4 @@
             </div>
         </div><!-- row -->
     </div>
-<script src="../javascript/forum.js"></script>
+    <script src="../javascript/forum.js"></script>
