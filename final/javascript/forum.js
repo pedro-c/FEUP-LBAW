@@ -3,12 +3,11 @@
  */
 $(document).ready(function () {
     let currentPage = 1;
-    let numPages = -1;
 
     let forum = $("#forum-posts");
     let postListing = $("#post-listing");
 
-    loadPagination(currentPage, numPages);
+    loadPagination(currentPage);
     loadPagePosts(postListing, currentPage);
 
     let nav = $(".forum-posts-nav");
@@ -20,20 +19,30 @@ $(document).ready(function () {
 
     pagination.on('click', 'li', function () {
         performPagination($(this), currentPage);
-        loadPagination(currentPage, numPages);
+        loadPagination(currentPage );
     });
 
 
     let performPagination = function (clickedObject, curPage) {
+        let numPages = parseInt($("#pagination-n-pages").text());
         let selectedPage;
 
-        if (clickedObject.is("#pagination-next"))
+        if (clickedObject.is("#pagination-next")) {
+            console.log(curPage);
+            if (curPage == numPages)
+                return;
             selectedPage = curPage + 1;
-        else if (clickedObject.is("#pagination-prev"))
+        }
+        else if (clickedObject.is("#pagination-prev")) {
+            console.log(curPage);
+            if (curPage == 1)
+                return;
             selectedPage = curPage - 1;
+        }
+
         else selectedPage = parseInt(clickedObject.text());
 
-        if (selectedPage === curPage)
+        if (selectedPage == curPage)
             return;
 
         postListing.empty();
@@ -344,13 +353,20 @@ function loadPagePosts(postsSection, currentPage) {
 }
 
 function loadPagination(currentPage) {
+    let nPages = parseInt($("#pagination-n-pages").text());
 
     $.post("../api/forum/get_num_pages.php",
         function (data) {
-            console.log(data);
-            numPages = data;
+            let numPages = data;
+
+            if(nPages === numPages) {
+                return;
+            }
+
             let paginationPages = $(".pagination");
             paginationPages.empty();
+
+            paginationPages.append('<i id="pagination-n-pages" hidden="hidden">' + numPages + '</i>');
 
             paginationPages.append(
                 '<li id="pagination-prev"' + (currentPage === 1 ? 'class="disabled"' : '') + '>' +
@@ -361,16 +377,27 @@ function loadPagination(currentPage) {
             );
 
             for (let i = 1; i <= numPages; i++) {
-                let element;
+                let element = null;
 
                 if (i === currentPage) {
-                    element = '<li class="active"><a>' + i + '</a></li>';
-                    paginationPages.append(element);
+                    element = $('<li class="active"><a>' + i + '</a></li>');
                 }
-                else if (i === 1 || i >= currentPage - 2 || i <= currentPage + 2) {
-                    element = '<li><a>' + i + '</a></li>';
-                    paginationPages.append(element);
+                else if (i == 1 || i == numPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+                    element = $('<li><a>' + i + '</a></li>');
                 }
+
+                if (element === null)
+                    continue;
+
+                if (i == 1) {
+                    element.attr('id', 'pagination-first'); //= '<li id="pagination-first"><a>' + i + '</a></li>';
+                }
+                if (i == numPages) {
+                    element.attr('id', 'pagination-last'); // element = '<li id="pagination-last"><a>' + i + '</a></li>';
+                }
+
+                paginationPages.append(element);
+
             }
 
             paginationPages.append(

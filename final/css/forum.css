@@ -234,6 +234,12 @@ button#new-post-button.active #plus-icon h4 {
 .btn-comment {
   margin-top: 10px; }
 
+#pagination-first a {
+  margin-right: 5px; }
+
+#pagination-last a {
+  margin-left: 5px; }
+
 /*Overriding bootstrap class panel-primary*/
 .panel-primary {
   border: 0;
