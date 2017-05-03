@@ -1,0 +1,139 @@
+@import 'global';
+
+#title {
+  display:inline;
+  margin-right: 15px;
+}
+
+#subtitle{
+  color: #777;
+}
+
+.panel-body>.list-group{
+  margin-bottom: 5px;
+}
+i.dash-title-icon{
+  margin-right: 5px;
+}
+.dash-item-user{
+  .dash-item-username{
+    margin-left: 10px;
+  }
+}
+
+.file_show{
+  width: 20px;
+}
+
+.dash-date{
+  float: right;
+}
+
+.panel-heading{
+  display: block;
+
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.panel-title{
+  //text-align: center;
+  color: $white;
+}
+
+.dash-item-text{
+  margin-left: 5px;
+}
+
+.dash-card>.panel>.panel-body{
+    text-align: center;
+}
+
+.thumbnail.dash-thumbnail{
+  border: none;
+  margin-bottom: 5px;
+}
+
+.dash-user-thumb{
+  height:20px;
+  width: 20px;
+}
+
+.to-page{
+  float:right;
+  small {
+    color: $white;
+  }
+}
+
+/*Overriding bootstrap class panel-primary*/
+.panel-primary {
+  border: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.panel-primary > .panel-heading{
+  color:$white;
+  background-color: $color_ebony_clay;
+  border-color:  $color_ebony_clay;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.panel-primary:hover {
+
+  a:hover{
+    color: $white;
+    background-color: $color_yellow;
+    border-color: $color_yellow;
+    box-shadow: none;
+  }
+}
+.panel-primary:hover > .panel-heading{
+  color: $white;
+  background-color: $color_yellow;
+  border-color: $color_yellow;
+}
+.panel-primary:hover > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: $color_yellow;
+}
+
+.panel-primary:hover > .panel-heading .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: $color_ebony_clay;
+}
+
+#project-title{
+  span{
+    display: none;
+  }
+  &:hover{
+    span{
+      display: inline-block;
+      &:hover{
+        color: $yellow_darker;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#project-description{
+  span.glyphicon{
+    display: none;
+  }
+  &:hover{
+    span.glyphicon{
+      display: inline-block;
+      &:hover{
+        color: $yellow_darker;
+        cursor: pointer;
+      }
+    }
+  }
+}
