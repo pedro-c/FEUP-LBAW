@@ -69,3 +69,11 @@ function inviteUserToMeeting($meeting_id, $invited_users, $id_creator){
     $stmt = $conn->prepare('INSERT INTO user_meeting(meeting_id, user_id, is_creator) values (?,?,?)');
     $stmt->execute([$meeting_id,$id_creator,'true']);
 }
+
+function getInvitedUsers($meeting_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT user_id FROM user_meeting WHERE meeting.id = ?');
+
+    $stmt->execute([$meeting_id]);
+    return $stmt->fetchAll();
+}

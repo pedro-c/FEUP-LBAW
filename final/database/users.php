@@ -70,4 +70,14 @@ function joinProject($id, $project){
     return $stmt->execute([$id,$project,$is_coordinator]);
 }
 
+function getUserPhotoPath($user_id){
+
+    global $conn;
+    $stmt = $conn -> prepare('SELECT photo_path FROM user_table WHERE id = ?');
+    $stmt->execute([$user_id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result['photo_path'];
+}
+
 
