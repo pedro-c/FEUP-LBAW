@@ -3,10 +3,15 @@ include_once "common/header.php";
 include_once($BASE_DIR .'database/meetings.php');
 include_once($BASE_DIR .'database/users.php');
 include_once($BASE_DIR .'database/projects.php');
+include_once($BASE_DIR .'database/team.php');
 
 $user_id = $_SESSION['user_id'];
 $project = $_SESSION['project_id'];
-$meetings = getFutureMeetings($project);
+
+
+if(getMemberStatus($user_id, $project))
+    $meetings = getFutureMeeting($project);
+else $meetings = getUserFutureMeeting($project);
 
 $members = getProjectMembers($project, $user_id);
 

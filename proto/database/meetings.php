@@ -53,20 +53,19 @@ function getMeetingDetails($meeting_id){
     $stmt->execute([$meeting_id]);
     return $stmt->fetchAll();
 }
-/*
+
 function inviteUserToMeeting($meeting_id, $invited_users, $id_creator){
     global $conn;
-    $is_creator = !1;
-    $is_creator_false = !0;
 
-    for ($i = 1; $i <= count($invited_users); $i++) {
+    echo count($invited_users);
+
+    for ($i = 0; $i < count($invited_users); $i++) {
         $stmt = $conn->prepare('INSERT INTO user_meeting(meeting_id, user_id, is_creator) values (?,?,?)');
-        echo $meeting_id;
-        echo $invited_users[$i];
-        echo $is_creator_false;
-        $stmt->execute([$meeting_id, $invited_users[$i],$is_creator_false]);
+        echo $meeting_id . " invited user ";
+        echo $invited_users[$i] . " ";
+        $stmt->execute([$meeting_id, $invited_users[$i],'false']);
     }
 
     $stmt = $conn->prepare('INSERT INTO user_meeting(meeting_id, user_id, is_creator) values (?,?,?)');
-    $stmt->execute([$meeting_id,$id_creator,$is_creator]);
-}*/
+    $stmt->execute([$meeting_id,$id_creator,'true']);
+}
