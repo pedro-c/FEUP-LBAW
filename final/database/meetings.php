@@ -77,3 +77,14 @@ function getInvitedUsers($meeting_id){
     $stmt->execute([$meeting_id]);
     return $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
 }
+
+
+function isMeetingCreator($meeting_id, $user_id){
+    global $conn;
+
+    $stmt = $conn->prepare('SELECT is_creator FROM user_meeting WHERE meeting_id = ? AND user_id = ?');
+    $stmt->execute([$meeting_id,$user_id]);
+    $result = $stmt->fetch();
+
+    return $result['is_creator'];
+}

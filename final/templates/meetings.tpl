@@ -45,17 +45,23 @@
 
                                     {$invited_users = getInvitedUsers(($meeting.id))}
 
+                                    {$coordinator = getMemberStatus($user_aut, $project)}
+                                    {$creator = isMeetingCreator($meeting.id, $user_aut)}
 
                                     {foreach $invited_users as $user}
 
                                         {$photo = getUserPhoto($user)}
 
-                                    <img class="user_photo" src={$photo}>
+                                    <img class="user_photo" style="border-radius: 50%;" src={$photo} >
 
                                     {/foreach}
 
-                                    <span id="plus_user" class="glyphicon glyphicon-plus-sign"
-                                          aria-hidden="true"></span>
+                                    {if $coordinator == 'true' || $creator == 'true' }
+                                        <span id="plus_user" class="glyphicon glyphicon-plus-sign"
+                                              aria-hidden="true" style="border-radius: 50%;"></span>
+                                    {/if}
+
+
                                 </label>
                                 <br>
                             </div>
