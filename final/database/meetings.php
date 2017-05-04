@@ -78,6 +78,26 @@ function getInvitedUsers($meeting_id){
     return $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
 }
 
+function getInvitedUsersPhotos($meeting_id){
+    global $conn;
+
+    $stmt = $conn->prepare('SELECT photo_path FROM user_table INNER JOIN user_meeting ON user_meeting.user_id=user_table.id AND user_meeting.meeting_id=?');
+    $stmt->execute([$meeting_id]);
+    $result =  $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
+
+
+    for($i = 0; $i < count($result); $i++){
+        if (!is_null($result[$i]) && file_exists("../images/users/". $result[$i])) {
+            $photos[$i] = '../images/users/' . $result[$i];
+        }
+        else {
+            $photos[$i] =  '../images/assets/default_image_profile1.jpg';
+        }
+    }
+
+    return $photos;
+}
+
 
 function isMeetingCreator($meeting_id, $user_id){
     global $conn;

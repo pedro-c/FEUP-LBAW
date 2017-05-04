@@ -165,13 +165,8 @@
 
                         </div>
 
-                        <div class="guests">
-                            <img class="user_photo" src="../images/users/avatar2.png">
-                            <img class="user_photo" src="../images/users/avatar3.png">
-                            <img class="user_photo" src="../images/users/avatar4.png">
-                            <img class="user_photo" src="../images/users/avatar7.png">
-                            <span id="plus" class="glyphicon glyphicon-plus-sign"
-                                  aria-hidden="true"></span>
+                        <div id="guest_div" class="guests">
+
                         </div>
                     </div>
                 </div>

@@ -75,6 +75,26 @@ function show_Meeting_Info(meeting_id){
         }
     });
 
+    $.ajax({
+        type: 'POST',
+        data: { 'meeting_id': meeting_id} ,
+        url:'../api/meetings/meeting-attendees.php',
+        dataType: 'json',
+        success: function (data) {
+
+            $("#guest_div").html(" ");
+            console.log(data);
+
+            var i;
+            for(i = 0; i< data.length; i++){
+                console.log("Ola" + i);
+                $("#guest_div").append("<img style='border-radius: 50%;' class='user_photo' src=" + data[i] + ">")
+            }
+
+            $("#guest_div").append("<span id='plus' class='glyphicon glyphicon-plus-sign'aria-hidden='true'></span>")
+        }
+    });
+
     $("#container_to_collapse").removeClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
     $("#container_to_collapse").addClass("col-lg-6 col-md-6 col-sm-6 hidden-xs");
     $(".meeting-panel").removeClass("col-lg-6 col-md-6 col-sm-6 col-xs-12");
