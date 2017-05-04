@@ -100,6 +100,14 @@ button#new-post-button.active{
   margin-top: 10px;
 }
 
+#pagination-first a{
+  margin-right: 5px;
+}
+
+#pagination-last a{
+  margin-left: 5px;
+}
+
 /*Overriding bootstrap class panel-primary*/
 .panel-primary {
   border: 0;
