@@ -77,15 +77,44 @@ $(document).ready(function(){
     });
 
     $("#task-deadline-date").focusout(function(e) {
-        console.log("asdsadsad");
 
+        $.ajax({
+            type:'post',
+            url: '../api/tasks/set-task-deadline.php',
+            data:  {'taskDeadline': $("#task-deadline-date").val()+" "+$("#task-deadline-time").val() , 'taskId': $("#task-name").attr("name")},
+            success: function() {
+                console.log($("#task-deadline-date").val()+" "+$("#task-deadline-time").val());
+            }
+
+        });
 
     });
 
     $("#task-deadline-time").focusout(function(e) {
 
-        console.log("asdsadsad");
+        $.ajax({
+            type:'post',
+            url: '../api/tasks/set-task-deadline.php',
+            data:  {'taskDeadline': $("#task-deadline-date").val()+" "+$("#task-deadline-time").val() , 'taskId': $("#task-name").attr("name")},
+            success: function() {
+                console.log($("#task-deadline-date").val()+" "+$("#task-deadline-time").val());
+            }
 
+        });
+    });
+
+    $("#task-description").focusout(function(e){
+        $.ajax({
+            type:'post',
+            url: '../api/tasks/change-task-description.php',
+            data:  {'taskDescription': $("#task-description").val() , 'taskId': $("#task-name").attr("name")},
+            success: function() {
+                console.log("description: " + $("#task-description").val());
+                console.log("id: " + $("#task-name").attr("name"));
+
+            }
+
+        });
     });
 
 });
@@ -124,7 +153,7 @@ function toggle(taskId) {
             }
             $("#task-name").attr("name",taskId);
             if(response[0][0].description != null){
-                $("#task-description").attr("placeholder", response[0][0].description);
+                $("#task-description").val(response[0][0].description);
             }
             if(response[0][0].deadline != null){
                 $("#task-deadline-date").attr("value",response[0][0].deadline.split(" ")[0]);

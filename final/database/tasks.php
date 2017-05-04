@@ -107,3 +107,15 @@
         $stmt = $conn->prepare('UPDATE task SET name = ? WHERE id=?;');
         $stmt->execute([$name,$taskId]);
     }
+
+    function setTaskDescription($description, $taskId){
+        global $conn;
+        $stmt = $conn->prepare('UPDATE task SET description = ? WHERE id=?;');
+        $stmt->execute([$description,$taskId]);
+    }
+
+    function setTaskDeadline($deadline, $taskId){
+        global $conn;
+        $stmt = $conn->prepare('UPDATE task SET deadline = ? WHERE id=?;');
+        $stmt->execute([$deadline,$taskId]);
+    }
