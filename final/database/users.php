@@ -71,7 +71,7 @@ function joinProject($id, $project){
 }
 
 
-function getUserPhoto($user){
+function getPhoto($user){
 
 
     global $conn;

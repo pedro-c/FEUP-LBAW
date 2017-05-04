@@ -50,7 +50,7 @@
 
                                     {foreach $invited_users as $user}
 
-                                        {$photo = getUserPhoto($user)}
+                                        {$photo = getPhoto($user)}
 
                                     <img class="user_photo" style="border-radius: 50%;" src={$photo} >
 
@@ -120,11 +120,10 @@
                             </div>
 
                             <div class="box drag_here text-center hidden-xs">
-                                <div>
                                     <span class="glyphicon glyphicon-plus"></span>
                                     <br>
-                                    <span class="info"> Drag Files Here </span>
-                                </div>
+                                    <span  class="info"> Drag Files Here </span><br><br>
+                                    <button class="btn btn-default box__button" type="submit">Upload</button>
                             </div>
                             <div class="text-center">
                                 <input id="submit" type="submit" value="Submit" style="margin-top: 20px;">
