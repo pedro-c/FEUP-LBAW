@@ -47,6 +47,13 @@
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    function getTaskComments($taskId){
+        global $conn;
+        $stmt = $conn->prepare("SELECT * FROM comment WHERE id_task = ?;");
+        $stmt->execute([$taskId]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     function getTaskName($taskId){
         global $conn;
         $stmt = $conn->prepare("SELECT name FROM task WHERE id = ?;");
@@ -118,4 +125,16 @@
         global $conn;
         $stmt = $conn->prepare('UPDATE task SET deadline = ? WHERE id=?;');
         $stmt->execute([$deadline,$taskId]);
+    }
+
+    function addTaskTag($tag, $taskId){
+        global $conn;
+        $stmt = $conn->prepare("INSERT INTO task_tag (task_id, tag_id) VALUES (?,?);");
+        $stmt->execute($tag, $taskId);
+    }
+
+    function addTaskComment($comment, $taskId){
+        global $conn;
+        $stmt = $conn->prepare("INSERT INTO comment (id, creation_date, content, id_user, id_task) VALUES (DEFAULT,LOCALTIMESTAMP,?,?,?);");
+        $stmt->execute([$comment, $_SESSION['user_id'],$taskId]);
     }

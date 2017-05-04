@@ -117,6 +117,40 @@ $(document).ready(function(){
         });
     });
 
+    $("#add-comment-btn").click(function(e){
+        if($("#comment-content").val() != ""){
+            $.ajax({
+                 type:'post',
+                 url: '../api/tasks/add-task-comment.php',
+                 data:  {'taskComment': $("#comment-content").val() , 'taskId': $("#task-name").attr("name")},
+                 success: function() {
+                     console.log($("#comment-content").val(""));
+                 }
+
+             });
+
+            $.ajax({
+                type:'post',
+                url: '../api/tasks/get-task-comments.php',
+                data:  {'taskId': $("#task-name").attr("name")},
+                success: function(request) {
+                    var response = JSON.parse(request);
+
+                    console.log(response);
+
+                    $("#task-comments").html("");
+                    for (var i = 0; i < response[0].length; i++) {
+                        $("#task-comments").append("<div class='comment-info'><img src='../images/users/avatar6.png' class='img-circle'><h4>" + response[0][i].id_user + "</h4><p>" + response[0][i].creation_date + "</p></div><p>" + response[0][i].content +"</p>");
+                    }
+                }
+
+            });
+        }
+
+
+
+    });
+
 });
 function toggle(taskId) {
 
@@ -191,9 +225,16 @@ function toggle(taskId) {
                     document.getElementById('mobile-back').style.display = 'none';
                 }
             }
+
+            $("#task-comments").html("");
+            for (var i = 0; i < response[4].length; i++) {
+                $("#task-comments").append("<div class='comment-info'><img src='../images/users/avatar6.png' class='img-circle'><h4>" + response[4][i].id_user + "</h4><p>" + response[4][i].creation_date + "</p></div><p>" + response[4][i].content +"</p>");
+            }
         }
 
     });
+
+
 }
 
 function back() {

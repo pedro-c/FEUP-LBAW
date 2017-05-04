@@ -83,19 +83,14 @@
             <div class="col-xs-12" id="create-task-description">
                 <textarea id="task-description"placeholder="Description"></textarea>
             </div>
-            <div class="task-comments col-xs-12">
-                <div class="comment-info">
-                    <img src="../images/users/avatar6.png" class="img-circle">
-                    <h4>Pedro Costa</h4>
-                    <p>Today at 17:49</p>
-                </div>
-                <p>Good luck !</p>
+            <div id="task-comments" class="task-comments col-xs-12">
+
 
             </div>
             <div class="add-comment" id="add-comment">
                 <img src="../images/users/avatar6.png" class="img-circle">
-                <textarea placeholder="Write a comment..."></textarea>
-                <button class="btn">Add</button>
+                <textarea id = "comment-content" placeholder="Write a comment..."></textarea>
+                <button id="add-comment-btn" class="btn">Add</button>
             </div>
 
         </div>

@@ -141,6 +141,7 @@
 
 #create-task{
   width: 1%;
+  overflow: hidden;
   transition: all 2s;
 }
 
@@ -265,6 +266,10 @@
       border-top-left-radius: 4px !important;
 
     }
+  }
+  #task-comments{
+    overflow: auto !important;
+    height: 45% !important;
   }
   .task-comments{
     border-top: solid 1px $light_grey;
