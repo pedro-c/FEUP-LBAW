@@ -22,7 +22,6 @@
                 {$creatorName = getUserNameById($meeting.id_creator)}
                 {$time = getTimeFromTimestamp($meeting.date)}
                 {$date = getDateFromTimestamp($meeting.date)}
-                {$invited_users = getInvitedUsers($meeting.id)}
 
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
@@ -43,13 +42,20 @@
                                 <label class="hour">{$time}</label><br>
                                 <label class="user_responsible">{$creatorName}</label><br>
                                 <label class="guests">
+
+                                    {$invited_users = getInvitedUsers(($meeting.id))}
+
+
                                     {foreach $invited_users as $user}
-                                        {$photo = getUserPhotoPath($user)}
-                                    <img class="user_photo" src="../images/users/avatar2.png">
+
+                                        {$photo = getUserPhoto($user)}
+
+                                    <img class="user_photo" src={$photo}>
+
                                     {/foreach}
 
                                     <span id="plus_user" class="glyphicon glyphicon-plus-sign"
-                                          aria-hidden="true"></span> ola
+                                          aria-hidden="true"></span>
                                 </label>
                                 <br>
                             </div>

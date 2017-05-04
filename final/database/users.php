@@ -70,14 +70,22 @@ function joinProject($id, $project){
     return $stmt->execute([$id,$project,$is_coordinator]);
 }
 
-function getUserPhotoPath($user_id){
+
+function getUserPhoto($user){
+
 
     global $conn;
     $stmt = $conn -> prepare('SELECT photo_path FROM user_table WHERE id = ?');
-    $stmt->execute([$user_id]);
+    $stmt->execute([$user]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    return $result['photo_path'];
+
+    if (!is_null($result['photo_path']) && file_exists("../images/users/". $result['photo_path'])) {
+        return '../images/users/' . $result['photo_path'];
+    }
+    else {
+        return '../images/assets/default_image_profile1.jpg';
+    }
 }
 
 

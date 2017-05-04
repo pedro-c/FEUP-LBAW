@@ -72,8 +72,8 @@ function inviteUserToMeeting($meeting_id, $invited_users, $id_creator){
 
 function getInvitedUsers($meeting_id){
     global $conn;
-    $stmt = $conn->prepare('SELECT user_id FROM user_meeting WHERE meeting.id = ?');
 
+    $stmt = $conn->prepare('SELECT user_id FROM user_meeting WHERE meeting_id = ?');
     $stmt->execute([$meeting_id]);
-    return $stmt->fetchAll();
+    return $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
 }
