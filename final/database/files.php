@@ -14,3 +14,13 @@ function addFileToMeeting($file_id, $meeting_id){
     $stmt = $conn->prepare('INSERT INTO file_meeting(file_id, meeting_id) values (?,?)');
     $stmt->execute([$file_id, $meeting_id]);
 }
+
+
+function getFilePath($file_id){
+    global $conn;
+    $stmt = $conn -> prepare('SELECT name FROM file WHERE id = ?');
+    $stmt->execute([$file_id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result['id'];
+}

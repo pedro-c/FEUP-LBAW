@@ -324,9 +324,12 @@ body {
       #page-meetings #container_schedule_meeting .info-meeting .files .file_show,
       #page-meetings #container_meeting_info .info-meeting .files .file_show {
         width: 25px; }
-      #page-meetings #container_schedule_meeting .info-meeting .files label,
-      #page-meetings #container_meeting_info .info-meeting .files label {
-        padding-bottom: 10px; }
+    #page-meetings #container_schedule_meeting .info-meeting #meeting_files a.file_description,
+    #page-meetings #container_meeting_info .info-meeting #meeting_files a.file_description {
+      padding-bottom: 10px;
+      padding-left: 10px;
+      text-decoration: none !important;
+      cursor: pointer !important; }
     #page-meetings #container_schedule_meeting .info-meeting .guests,
     #page-meetings #container_meeting_info .info-meeting .guests {
       padding-top: 10px; }

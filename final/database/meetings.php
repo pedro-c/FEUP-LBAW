@@ -98,7 +98,6 @@ function getInvitedUsersPhotos($meeting_id){
     return $photos;
 }
 
-
 function isMeetingCreator($meeting_id, $user_id){
     global $conn;
 
@@ -107,4 +106,13 @@ function isMeetingCreator($meeting_id, $user_id){
     $result = $stmt->fetch();
 
     return $result['is_creator'];
+}
+
+function getMeetingFiles($meeting_id){
+    global $conn;
+
+    $stmt = $conn->prepare('SELECT id, name FROM file INNER JOIN file_meeting ON file_meeting.file_id=file.id AND file_meeting.meeting_id=?');
+    $stmt->execute([$meeting_id]);
+
+    return $stmt->fetchAll();
 }

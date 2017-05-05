@@ -154,17 +154,8 @@
                         <label id="meeting_time" class="hour"></label>
                         <div id="meeting_description" class="description"></div>
                         <div id="meeting_duration" class="minutes"></div>
-                        <div class="files">
-                            <img class="file_show" src="../images/assets/pdf.png">
-                            <label class="file_description"> Meeting_15_Abr </label><br>
-                            <img class="file_show" src="../images/assets/file.png">
-                            <label class="file_description"> New_project_marketing </label>
-
-                        </div>
-
-                        <div id="guest_div" class="guests">
-
-                        </div>
+                        <div id="meeting_files" class="files"></div>
+                        <div id="guest_div" class="guests"></div>
                     </div>
                 </div>
             </div>

@@ -231,8 +231,15 @@
           width: 25px;
         }
 
-        label {
+      }
+
+      #meeting_files{
+
+        a.file_description{
           padding-bottom: 10px;
+          padding-left: 10px;
+          text-decoration: none !important;
+          cursor: pointer !important;
         }
       }
 

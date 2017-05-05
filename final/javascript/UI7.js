@@ -1,16 +1,13 @@
 $(document).ready(function () {
 
 
-    $('.input-group.date').datepicker({
+    $(".input-group.date").datepicker({
         format: "dd/M/yyyy",
         todayHighlight: true,
         orientation: "bottom left"
     });
 
     $(".select2-multiple").select2();
-
-
-
 });
 
 function schedule() {
@@ -45,6 +42,32 @@ function exit_trash() {
     $("#future_meetings").css("border-bottom","4px solid");
     $("#future_meetings").css("border-bottom-color","#e9d460");
     $("#schedule_meetings").css("border-bottom","none");
+}
+
+function getFormatImage(format) {
+    switch (format){
+        case "png":
+            return "../images/assets/png.png";
+        case "pdf":
+            return "../images/assets/pdf.png";
+        default:
+            return "../images/assets/default.png";
+    }
+}
+
+function downloadFile(file_id) {
+    console.log(file_id);
+
+    $.ajax({
+        type: 'POST',
+        data: { 'file_id': file_id } ,
+        url:'../api/meetings/download-file.php',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+        }
+    });
+
 }
 
 function show_Meeting_Info(meeting_id){
@@ -83,15 +106,34 @@ function show_Meeting_Info(meeting_id){
         success: function (data) {
 
             $("#guest_div").html(" ");
-            console.log(data);
+           // console.log(data);
 
             var i;
             for(i = 0; i< data.length; i++){
-                console.log("Ola" + i);
                 $("#guest_div").append("<img style='border-radius: 50%;' class='user_photo' src=" + data[i] + ">")
             }
 
             $("#guest_div").append("<span id='plus' class='glyphicon glyphicon-plus-sign'aria-hidden='true'></span>")
+        }
+    });
+
+    $.ajax({
+        type: 'POST',
+        data: { 'meeting_id': meeting_id} ,
+        url:'../api/meetings/meeting-files.php',
+        dataType: 'json',
+        success: function (data) {
+
+            $("#meeting_files").html(" ");
+            var i;
+            for(i = 0; i< data.length; i++){
+
+                var format = data[i].name.substr(data[i].name.length - 3);
+                $("#meeting_files").append(" <img class='file_show'" +  "src=" + getFormatImage(format) +">");
+                $("#meeting_files").append("<a id=" + data[i].id + " class='file_description' onclick='downloadFile(" + data[i].id + ")' >" +  data[i].name + "</a> <br>");
+
+            }
+
         }
     });
 
