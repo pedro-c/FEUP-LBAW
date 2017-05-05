@@ -151,6 +151,7 @@ $(document).ready(function(){
 
     });
 
+
 });
 function toggle(taskId) {
 

@@ -376,14 +376,11 @@ textarea{
   color: #1B2432;
   width: 100%;
   height: 35px;
-  line-height: 35px;
   background: transparent;
   border: 0px solid transparent;
   outline: 0px solid transparent;
   padding: 0;
   resize: none;
-  word-wrap: normal;
-  white-space: nowrap;
   user-select: text;
   flex-direction: column;
   text-transform: none;
@@ -391,7 +388,7 @@ textarea{
   text-shadow: none;
   display: inline-block;
   text-align: start;
-  -webkit-writing-mode: horizontal-tb;
+  //-webkit-writing-mode: horizontal-tb;
   border-collapse: separate;
   empty-cells: show;
 }
