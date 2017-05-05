@@ -119,18 +119,16 @@
                                 </select>
                             </div>
 
-                            <div class="box drag_here text-center hidden-xs">
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                    <br>
-                                    <span  class="info"> Drag Files Here </span><br><br>
-                                    <button class="btn btn-default box__button" type="submit">Upload</button>
+                            <div class="box drag_here hidden-xs" ondrop="drop_handler(event);" ondragover="dragover_handler(event);" ondragend="dragend_handler(event);">
+                                <input class="box__file" type="file" name="file[]" id="file" multiple />
+                                <label for="file"><strong>Choose a file </strong><span class="box__dragndrop"> or drag it here</span>.</label>
                             </div>
+
                             <div class="text-center">
                                 <input id="submit" type="submit" value="Submit" style="margin-top: 20px;">
                             </div>
 
                             <div class="title">{$errors}</div>
-
 
                         </form>
                     </div>
