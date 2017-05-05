@@ -24,3 +24,11 @@ function getFilePath($file_id){
 
     return $filename;
 }
+
+function getAllFiles($project_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT id,upload_date,uploader_id,name FROM file WHERE project_id = ?');
+    $stmt->execute([$project_id]);
+
+    return $stmt->fetchAll();
+}
