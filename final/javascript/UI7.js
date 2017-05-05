@@ -65,6 +65,7 @@ function downloadFile(file_id) {
         dataType: 'json',
         success: function (data) {
             console.log(data);
+            window.location.href = '../actions/meetings/download-file.php?f='+ data[0];
         }
     });
 

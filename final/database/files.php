@@ -20,7 +20,7 @@ function getFilePath($file_id){
     global $conn;
     $stmt = $conn -> prepare('SELECT name FROM file WHERE id = ?');
     $stmt->execute([$file_id]);
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $filename =  $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
 
-    return $result['id'];
+    return $filename;
 }
