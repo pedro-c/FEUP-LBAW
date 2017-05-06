@@ -240,6 +240,29 @@ button#new-post-button.active #plus-icon h4 {
 #pagination-last a {
   margin-left: 5px; }
 
+.reply-likes {
+  float: right; }
+
+.reply-like-button {
+  top: 5px; }
+
+#replies p.reply-content {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+#replies li.list-group-item {
+  padding-bottom: 0; }
+
+#replies .reply-like-button:hover,
+#replies .reply-likes:hover {
+  color: #e9d460;
+  cursor: pointer; }
+
+#replies .reply-like-button.liked {
+  color: #e9d460; }
+  #replies .reply-like-button.liked:hover {
+    color: black; }
+
 /*Overriding bootstrap class panel-primary*/
 .panel-primary {
   border: 0;

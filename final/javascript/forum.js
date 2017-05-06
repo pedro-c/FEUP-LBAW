@@ -269,8 +269,11 @@ $(document).ready(function () {
 
                 let replyElement = $(
                     '<li class="list-group-item">' +
-                    '<h5 class="list-group-item-heading"><img class="submitter-photo" src=' + userPhoto + '><strong>' + username + ' on ' + creationDate + '</strong></h5>' +
-                    '<p class="list-group-item-text">' + replyContent + '</p>' +
+                    '<h5 class="list-group-item-heading"><img class="submitter-photo" src=' + userPhoto + '><strong>' + username + ' on ' + creationDate + '</strong>' +
+                    '<span class="reply-likes"><strong><i class="fa fa-thumbs-up"></i> 5 likes</strong></span>' +
+                    '</h5>' +
+                    '<p class="list-group-item-text reply-content">' + replyContent + '</p>' +
+                    '<p><small class="reply-like-button"><i class="fa fa-thumbs-up"></i> Like</small></p>' +
                     '</li>'
                 );
 
@@ -382,7 +385,7 @@ function loadPagination(currentPage) {
                 if (i === currentPage) {
                     element = $('<li class="active"><a>' + i + '</a></li>');
                 }
-                else if (i == 1 || i == numPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+                else if (i == 1 || i == numPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
                     element = $('<li><a>' + i + '</a></li>');
                 }
 
