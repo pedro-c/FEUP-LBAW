@@ -41,7 +41,7 @@ include_once "common/header.php";
                                 {else}
                                 {$image = "../images/assets/default.png"}
                                 {/if}
-                                <img class="file_show" src={$image}>
+                                <img style="height: 35px" class="file_show" src={$image}>
                                 <label class="file_description">{$file.name|truncate:36}</label>
                             </div>
                         </div>
@@ -133,7 +133,7 @@ include_once "common/header.php";
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="extra_info">
-                                        <span class="hastag">#general</span>
+                                        <span id="tag_info" class="hastag"></span>
                                         <div id="upload_date" class="date"></div>
                                         <div id="upload_time" class="minutes"></div>
                                     </div>
