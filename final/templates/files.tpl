@@ -28,7 +28,7 @@ include_once "common/header.php";
 
                     {assign var="format" value=$file.name}
                     {$uploaderName = getUserNameById($file.uploader_id)}
-
+                    {$tag = getFileTag($file.id)}
 
                 <div class="file col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="panel panel-default meeting">
@@ -48,7 +48,8 @@ include_once "common/header.php";
                         <div class="panel-body">
                             <div class="minutes">
                                 <span>3 minutes ago</span>
-                                <span class="hastag -rightpull">#TAG</span>
+                                <span class="hastag -rightpull">
+                                    #{$tag}</span>
                             </div>
                             <div class="name">
                                 <span>{$uploaderName}</span>
@@ -63,7 +64,7 @@ include_once "common/header.php";
         </div>
 
         <div class="uploadFile_container" hidden>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hidden-xs">
                 <div class="panel panel-default meeting">
                     <div class="panel-heading">
                         <span>Upload File</span><span class="trash pull-right glyphicon glyphicon-trash"
@@ -71,32 +72,31 @@ include_once "common/header.php";
                     </div>
                     <div class="panel-body">
 
-                        <form action="file-upload.php" method="post" enctype="multipart/form-data">
-                        <div class="box drag_here text-center hidden-xs">
-                            <div>
+                        <form action="../actions/files/upload-file.php" method="post" enctype="multipart/form-data">
+                        <div class="box drag_here text-center">
                                 <br>
                                 <span class="glyphicon glyphicon-plus"></span>
                                 <br>
                                 <span class="info"> Drag Files Here </span>
                                 <br><br>
-                                <input name="files[]" type="file" /><br />
-                                <input class="btn btn-default" type="submit" value="Upload Files" />
-                            </div>
+                                <input name="file[]" type="file" /><br />
                         </div>
 
-                        <div class="input-group task-tags">
+                        <div class="input-group task-tags ">
                             <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                            <select class="select2-multiple form-control" multiple="multiple">
+                            <select name="tagOption" class="select2-multiple form-control" multiple="multiple">
                                 {foreach $tags as $tag}
                                 <option value={$tag.id}>{$tag.name}</option>
                                 {/foreach}
                             </select>
                         </div>
-                        </form>
+
 
                         <div class="text-center">
                             <input id="submit" type="submit" value="Submit" style="margin-top: 20px;">
                         </div>
+
+                        </form>
                     </div>
                 </div>
             </div>

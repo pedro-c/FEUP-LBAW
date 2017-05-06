@@ -39,5 +39,24 @@ function getFileDetails($file_id){
     $stmt->execute([$file_id]);
 
     return $stmt->fetchAll();
+
 }
+
+function addTagToFile($file_id,$tag_id){
+    global $conn;
+    $stmt = $conn->prepare('INSERT INTO file_tag  (tag_id,file_id) values (?,?)');
+    $stmt->execute([$tag_id,$file_id]);
+}
+
+function getFileTag($file_id){
+    global $conn;
+    $stmt = $conn -> prepare('SELECT name FROM tag INNER JOIN file_tag ON file_tag.file_id=? WHERE file_tag.tag_id = tag.id' );
+    $stmt->execute([$file_id]);
+
+    return $stmt->fetch()['name'];
+}
+
+
+
+
 
