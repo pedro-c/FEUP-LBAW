@@ -8,8 +8,8 @@
     <!-- Page Heading -->
     <div class="tasks-body">
         <div class="tasks-nav">
-            <button type="button">To-Do</button>
-            <button type="button">Completed</button>
+            <button type="button" onclick="showUncompletedTasks()">To-Do</button>
+            <button type="button" onclick="showCompletedTasks()">Completed</button>
         </div>
 
 
@@ -27,15 +27,22 @@
 
                     {foreach $tasks as $task}
 
+                        {if $task.completer_id eq ''}
+                            {$completed = 'uncompleted'}
+                        {else}
+                            {$completed = 'completed'}
+                        {/if}
+
+
                         {$tags = getTagFromTaskId($task.id)}
 
-                        <tr class="task" id="{$task.id}">
+                        <tr class="task {$completed}" id="{$task.id}">
                             <td>
                                 <i id="complete-button" name="complete-task"  onclick="completeTask({$task.id})" class="fa fa-check-circle-o"></i>
                             </td>
                             <td>
                                 <div>
-                                    <textarea class="taskName" onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
+                                    <textarea class="task-name" onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
                                     {foreach $tags as $tag}
                                     <p>{$tag.name}</p>
                                     {/foreach}

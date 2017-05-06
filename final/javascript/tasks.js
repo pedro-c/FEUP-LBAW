@@ -2,6 +2,9 @@ $(document).ready(function(){
 
     var addTaskButton = $(".task-button");
 
+   $('.uncompleted').show();
+   $('.completed').hide();
+
     addTaskButton.click(function () {
 
         var clickBtnValue = $(this).val();
@@ -41,7 +44,7 @@ $(document).ready(function(){
         var m=$("#task-name");
         var value= m.val();
         var taskId = $("#task-name").attr("name");
-        $("#"+taskId+".taskName").val(value);
+        $("#"+taskId+".task-name").val(value);
     });
 
     $(".select2").on('focusout', function() {
@@ -308,4 +311,14 @@ function back() {
                     document.getElementById('mobile-back').style.display = 'none';
                 }
             }
+}
+
+function showUncompletedTasks() {
+    $('.uncompleted').show();
+    $('.completed').hide();
+}
+
+function showCompletedTasks() {
+    $('.uncompleted').hide();
+    $('.completed').show();
 }

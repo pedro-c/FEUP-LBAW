@@ -13,7 +13,21 @@
     function getAllTasksFromProject($projectId){
         global $conn;
         $stmt = $conn->prepare("SELECT * FROM task WHERE project_id = ? ORDER BY deadline ASC;");
-        $stmt->execute($projectId);
+        $stmt->execute([$projectId]);
+        return $stmt->fetchAll();
+    }
+
+    function getAllCompletedTasksFromProject($projectId){
+        global $conn;
+        $stmt = $conn->prepare("SELECT * FROM task WHERE project_id = ? AND completer_id IS NOT NULL ORDER BY deadline ASC;");
+        $stmt->execute([$projectId]);
+        return $stmt->fetchAll();
+    }
+
+    function getAllUncompletedTasksFromProject($projectId){
+        global $conn;
+        $stmt = $conn->prepare("SELECT * FROM task WHERE project_id = ? AND completer_id IS NULL ORDER BY deadline ASC;");
+        $stmt->execute([$projectId]);
         return $stmt->fetchAll();
     }
 
