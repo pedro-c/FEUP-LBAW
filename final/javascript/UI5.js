@@ -36,21 +36,29 @@ function fileInfo(file_id){
         url:'../api/files/file-details.php',
         dataType: 'json',
         success: function (data) {
-            console.log(data[0].name);
+            console.log(data[0]);
 
             var i;
             for(i=0; i< data.length; i++){
-                var format = data[i].name.substr(data[i].name.length - 3);
-                $("#format").attr('src', getFormatImage(format));
-                $("#file_name").text(data[i].name);
+               var format = data[i].file_name.substr(data[i].file_name.length - 3);
+               $("#format").attr('src', getFormatImage(format));
+                $("#file_name").text(data[i].file_name);
                 $("#download_file").attr('onclick','downloadFile('+ data[i].id + ')');
-                $("#uploader_id").text(data[i].uploader_id);
+                $("#uploader_id").text(data[i].uploader_name);
 
                 date = data[0].upload_date.substr(0,data[0].upload_date.indexOf(' '));
                 time = data[0].upload_date.substr(data[0].upload_date.indexOf(' ')+1);
 
+                //var atualDate = new Date().getTime();
+                //var diff = data[0].upload_date - atualDate;
+
+                //console.log(atualDate);
+
+                //console.log(data[0].upload_date);
+
                 $("#upload_date").text(date);
-                $("#upload_time").text(time);
+
+                $("#user_photo").attr('src','../images/users/'+ data[i].photo_path);
 
             }
 

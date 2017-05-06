@@ -71,22 +71,28 @@ include_once "common/header.php";
                     </div>
                     <div class="panel-body">
 
+                        <form action="file-upload.php" method="post" enctype="multipart/form-data">
                         <div class="box drag_here text-center hidden-xs">
                             <div>
+                                <br>
                                 <span class="glyphicon glyphicon-plus"></span>
                                 <br>
                                 <span class="info"> Drag Files Here </span>
+                                <br><br>
+                                <input name="files[]" type="file" /><br />
+                                <input class="btn btn-default" type="submit" value="Upload Files" />
                             </div>
                         </div>
 
                         <div class="input-group task-tags">
                             <span class="input-group-addon"><i class="fa fa-tag"></i></span>
                             <select class="select2-multiple form-control" multiple="multiple">
-                                <option value="M">Marketing</option>
-                                <option value="L">Logistics</option>
-                                <option value="S">Sponsors</option>
+                                {foreach $tags as $tag}
+                                <option value={$tag.id}>{$tag.name}</option>
+                                {/foreach}
                             </select>
                         </div>
+                        </form>
 
                         <div class="text-center">
                             <input id="submit" type="submit" value="Submit" style="margin-top: 20px;">
@@ -121,7 +127,7 @@ include_once "common/header.php";
                             <div class="row">
                                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                     <div id="user">
-                                        <img id="user_photo" src="../images/users/avatar2.png">
+                                        <img id="user_photo" src="../images/users/avatar1.png">
                                         <div id="uploader_id" class="name"></div>
                                     </div>
                                 </div>

@@ -35,8 +35,9 @@ function getAllFiles($project_id){
 
 function getFileDetails($file_id){
     global $conn;
-    $stmt = $conn->prepare('SELECT id,upload_date,uploader_id,project_id,name FROM file WHERE id = ?');
+    $stmt = $conn->prepare('SELECT user_table.name as uploader_name, user_table.photo_path, file.id,file.upload_date,file.uploader_id, file.project_id, file.name as file_name FROM file,user_table WHERE file.id = ? AND user_table.id = file.uploader_id');
     $stmt->execute([$file_id]);
 
     return $stmt->fetchAll();
 }
+
