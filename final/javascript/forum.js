@@ -23,11 +23,13 @@ $(document).ready(function () {
     });
 
     $("body").on('click','.reply-like-button',function(){
+        let replyElement = $(this).parents(".forum-reply");
         if($(this).hasClass('liked')) {
             //unlike
         }
         else{
             //like
+            likeReply(replyElement);
         }
     });
 
@@ -185,7 +187,8 @@ $(document).ready(function () {
         let header = getPostHeader(clickedPost);
         let content = getPostContent(clickedPost);
         let replies = getPostReplies(clickedPost);
-        let username = $("#nav-user-username").text();
+        let username = $("#nav-username").text();
+        let photo = $(".nav-user-picture").attr("src");
 
         let postSection = $(
             '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">' +
@@ -195,7 +198,7 @@ $(document).ready(function () {
             '<a id="reply-post-button" class="btn btn-default btn-reply"><i class="glyphicon glyphicon-plus"></i> Reply to this post</a>' +
             '</div>' +
             '<li id="post-reply" class="list-group-item">' +
-            '<h5 class="list-group-item-heading"><img class="submitter-photo" src="../../images/users/avatar7.png"><strong>' + username + '</strong></h5>' +
+            '<h5 class="list-group-item-heading"><img class="submitter-photo" src="'+photo+'"><strong>' + username + '</strong></h5>' +
             '<textarea id="reply-text" class="form-control" rows="3" style="resize: none" required="required" placeholder="Reply to this post"></textarea>' +
             '<button id="submit-reply" class="btn btn-default btn-form btn-comment">Submit</button>' +
             '</li>' +
@@ -270,19 +273,27 @@ $(document).ready(function () {
         }, function (data) {
             let replies = JSON.parse(data);
             for (let reply of replies) {
+                let id = reply.reply_id;
                 let replyContent = reply.content;
                 let numLikes = reply.n_likes;
                 let creationDate = reply.creation_date;
                 let userPhoto = reply.photo;
                 let username = reply.username;
+                let likedByUser = reply.liked;
 
                 let replyElement = $(
-                    '<li class="list-group-item">' +
-                    '<h5 class="list-group-item-heading"><img class="submitter-photo" src=' + userPhoto + '><strong>' + username + ' on ' + creationDate + '</strong>' +
+                    '<li class="list-group-item forum-reply">' +
+                    '<h5 class="list-group-item-heading">' +
+                    '<span hidden="hidden" class="reply-id">'+id+'</span>' +
+                    '<img class="submitter-photo" src=' + userPhoto + '>' +
+                    '<strong>' + username + ' on ' + creationDate + '</strong>' +
                     '<span class="reply-likes">'+ (numLikes > 0 ? '<strong><i class="fa fa-thumbs-up"></i> ' + numLikes + '</strong>' : '') + '</span>' +
                     '</h5>' +
                     '<p class="list-group-item-text reply-content">' + replyContent + '</p>' +
-                    '<p><small class="reply-like-button"><i class="fa fa-thumbs-up"></i> Like</small></p>' +
+                    '<p><small class="reply-like-button '+ (likedByUser ? 'liked' : '') + '">' +
+                    '<i class="fa fa-thumbs-up"></i>' +
+                    '<span class="like-status"> '+ (likedByUser ? 'Liked' : 'Like') + '</span>' +
+                    '</small></p>' +
                     '</li>'
                 );
 
@@ -340,6 +351,7 @@ function loadPagePosts(postsSection, currentPage) {
         let posts = JSON.parse(data);
         for (let post of posts) {
             let photo = post.submitter_photo;
+            console.log(photo);
             let postID = post.id;
             let title = post.title;
             let creationDate = post.creation_date;
@@ -350,7 +362,7 @@ function loadPagePosts(postsSection, currentPage) {
                 '<span class="post-id" hidden="hidden">' + postID + '</span>' +
                 '<h4 class="list-group-item-heading post-title">' + title + '</h4>' +
                 '<div class="list-group-item-text post-submitter-info">' +
-                '<img class="submitter-photo" src="{$photo}">' +
+                '<img class="submitter-photo" src="'+photo+'">' +
                 '<small>' +
                 '<span class="submitter-uname">' + username + '</span> - ' +
                 '<span class="post-submission-date">' + creationDate + '</span>' +
@@ -420,4 +432,17 @@ function loadPagination(currentPage) {
                 '</li>'
             );
         });
+}
+
+function likeReply(replyElement){
+    let replyId = parseInt(replyElement.find(".reply-id").text());
+    $.post("../api/forum/like_reply.php",{
+        reply_id : replyId
+    }, function(data){
+        console.log(data);
+        let replyLikeButton = replyElement.find(".reply-like-button");
+        replyLikeButton.addClass("liked");
+        replyLikeButton.find(".like-status").text(' Liked');
+        replyElement.find(".reply-likes").html("<strong><i class='fa fa-thumbs-up'></i> "+ data +"</strong>")
+    });
 }
