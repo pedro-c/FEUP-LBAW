@@ -8,17 +8,19 @@ $(document).ready(function(){
         console.log(clickBtnValue);
         var ajaxurl = '../api/tasks/create-task.php',
             data =  {'action': clickBtnValue};
-        $.post(ajaxurl, data, function (data) {
+        $.post(ajaxurl, data, function (response) {
+            var data = JSON.parse(response);
             console.log(data);
             var tasklist = document.getElementById('task-list');
             var row = tasklist.insertRow();
             row.setAttribute("class", "task");
+            row.setAttribute("id", data[0].id);
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
             cell1.innerHTML = "<i class='fa fa-check-circle-o' id='complete-button'></i>";
-            cell2.innerHTML = "<div><textarea onclick='toggle();' id='task-title'>New Task</textarea></div>";
-            cell3.innerHTML = "<i class='fa fa-times' id='delete-button'></i>";
+            cell2.innerHTML = "<div><textarea onclick='toggle("+data[0].id+");' id="+data[0].id+">New Task</textarea></div>";
+            cell3.innerHTML = "<i id='delete-button' onclick='deleteTask("+data[0].id+")' name='delete-task' class='fa fa-times'></i>";
         });
 
     });
@@ -42,21 +44,18 @@ $(document).ready(function(){
 
     $(".select2").on('focusout', function() {
 
-        /*
+
         $.ajax({
             type:'post',
             url: '../api/tasks/assign-task.php',
             data:  {'taskAssign': $("#task-assign option:selected").val(), 'taskId': $("#task-name").attr("name")},
             success: function() {
 
-                console.log("done");
+                console.log($("#task-assign option:selected").val());
 
             }
 
         });
-*/
-
-        
 
     });
 
@@ -117,6 +116,20 @@ $(document).ready(function(){
         });
     });
 
+    $("#task-tags").focusout(function(e){
+        $.ajax({
+            type:'post',
+            url: '../api/tasks/set-task-tags.php',
+            data:  {'taskTags':  $("#task-assign option:selected").val() , 'taskId': $("#task-name").attr("name")},
+            success: function() {
+                console.log($("#task-assign option:selected").val());
+                console.log("id: " + $("#task-name").attr("name"));
+
+            }
+
+        });
+    });
+
     $("#add-comment-btn").click(function(e){
         if($("#comment-content").val() != ""){
             $.ajax({
@@ -140,7 +153,7 @@ $(document).ready(function(){
 
                     $("#task-comments").html("");
                     for (var i = 0; i < response[0].length; i++) {
-                        $("#task-comments").append("<div class='comment-info'><img src='../images/users/avatar6.png' class='img-circle'><h4>" + response[0][i].id_user + "</h4><p>" + response[0][i].creation_date + "</p></div><p>" + response[0][i].content +"</p>");
+                        $("#task-comments").append("<div class='comment-info'><img src='../images/users/"+  response[0][i].photo_path +"' class='img-circle'><h4>" + response[0][i].name + "</h4></div><p>" + response[0][i].creation_date.substring(0,16) + "</p><p>" + response[0][i].content +"</p>");
                     }
                 }
 
@@ -229,13 +242,28 @@ function toggle(taskId) {
 
             $("#task-comments").html("");
             for (var i = 0; i < response[4].length; i++) {
-                $("#task-comments").append("<div class='comment-info'><img src='../images/users/avatar6.png' class='img-circle'><h4>" + response[4][i].id_user + "</h4><p>" + response[4][i].creation_date + "</p></div><p>" + response[4][i].content +"</p>");
+                $("#task-comments").append("<div class='comment-info'><img src='../images/users/"+  response[4][i].photo_path +"' class='img-circle'><h4>" + response[4][i].name + "</h4></div><p>" + response[4][i].creation_date.substring(0,16) + "</p><p>" + response[4][i].content +"</p>");
             }
         }
 
     });
 
 
+}
+
+function deleteTask(taskId) {
+
+    $.ajax({
+        type:'post',
+        url: '../api/tasks/delete-task.php',
+        data:  {'taskId': taskId},
+        success: function() {
+
+            $('#'+taskId).remove();
+
+        }
+
+    });
 }
 
 function back() {

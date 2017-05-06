@@ -29,9 +29,9 @@
 
                         {$tags = getTagFromTaskId($task.id)}
 
-                        <tr class="task">
+                        <tr class="task" id="{$task.id}">
                             <td>
-                                <i id="complete-button" name="complete-task" class="fa fa-check-circle-o task-button"></i>
+                                <i id="complete-button" name="complete-task" class="fa fa-check-circle-o"></i>
                             </td>
                             <td>
                                 <div>
@@ -42,7 +42,7 @@
                                 </div>
                             </td>
                             <td>
-                                <i id="delete-button" name="delete-task" class="fa fa-times task-button" name="delete-task"></i>
+                                <i id="delete-button" onclick="deleteTask({$task.id})" name="delete-task" class="fa fa-times"></i>
                             </td>
                         </tr>
 
@@ -75,7 +75,7 @@
                 </div>
                 <div class="input-group task-tags">
                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                    <select id="task-tags" class="select2-multiple form-control" multiple="multiple">
+                    <select id="task-tags" class="select2-single form-control" multiple="multiple">
 
                     </select>
                 </div>

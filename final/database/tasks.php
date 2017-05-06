@@ -29,6 +29,7 @@
         global $conn;
         $stmt = $conn->prepare("INSERT INTO task (id, name, description, deadline, creator_id, assigned_id, completer_id, project_id) VALUES (DEFAULT, ?, NULL, NULL, ?, NULL, NULL, ?) RETURNING id;");
         $stmt->execute(["New Task", $_SESSION['user_id'], $_SESSION['project_id']]);
+        return $stmt->fetchAll();
 
     }
 
@@ -37,7 +38,9 @@
     }
 
     function deleteTask($taskId){
-
+        global $conn;
+        $stmt = $conn->prepare("DELETE FROM task WHERE id = ?;");
+        $stmt->execute([$taskId]);
     }
 
     function getTaskDetails($taskId){
@@ -49,7 +52,7 @@
 
     function getTaskComments($taskId){
         global $conn;
-        $stmt = $conn->prepare("SELECT * FROM comment WHERE id_task = ?;");
+        $stmt = $conn->prepare("SELECT comment.creation_date, comment.content, user_table.name, user_table.photo_path FROM comment, user_table WHERE comment.id_task = ? AND comment.id_user = user_table.id;");
         $stmt->execute([$taskId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -84,7 +87,7 @@
 
     function getTaskAssignedName($taskId){
         global $conn;
-        $stmt = $conn->prepare("SELECT user_table.name, user_table.id FROM user_table, task WHERE task.id = ? AND task.assigned_id = user_table.id;");
+        $stmt = $conn->prepare("SELECT DISTINCT user_table.name, user_table.id FROM user_table, task WHERE task.id = ? AND task.assigned_id = user_table.id;");
         $stmt->execute([$taskId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -127,10 +130,16 @@
         $stmt->execute([$deadline,$taskId]);
     }
 
+    function deleteTaskTags($taskId){
+        global $conn;
+        $stmt = $conn->prepare("DELETE FROM task_tag WHERE task_id = ?;");
+        $stmt->execute([$taskId]);
+    }
+
     function addTaskTag($tag, $taskId){
         global $conn;
         $stmt = $conn->prepare("INSERT INTO task_tag (task_id, tag_id) VALUES (?,?);");
-        $stmt->execute($tag, $taskId);
+        $stmt->execute([$tag, $taskId]);
     }
 
     function addTaskComment($comment, $taskId){
