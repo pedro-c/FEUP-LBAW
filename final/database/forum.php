@@ -63,10 +63,26 @@ function getPostContent($projectID, $postID){
     return $result['content'];
 }
 
+/**
+ * Returns the creation date, content, replier id and number of likes of every reply of a given forum post
+ *
+ * @param $postID id of the forum post
+ * @return array creation date, content, replier id and number of likes
+ */
 function getReplies($postID){
     global $conn;
 
-    $stmt = $conn->prepare("SELECT * FROM forum_reply WHERE forum_reply.post_ID = ? ORDER BY creation_date ASC");
+    $stmt = $conn->prepare(
+        "SELECT creation_date,content,creator_id,n_likes
+        FROM 
+        (
+        SELECT creation_date,content,creator_id, count(forum_reply_like.user_id) AS n_likes
+        FROM forum_reply LEFT JOIN forum_reply_like ON id = reply_id
+        WHERE post_id = ?
+        GROUP BY id
+        ) reply_info
+        ORDER BY creation_date ASC"
+    );
     $stmt->execute(array($postID));
     $replies = $stmt->fetchAll();
     return $replies;

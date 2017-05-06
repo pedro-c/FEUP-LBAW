@@ -21,11 +21,11 @@ foreach ($replies as $reply){
     $replyOutput = array();
     $user = getUser($reply['creator_id']);
     $photo = getUserPhoto($user);
-    $replyOutput['id'] = $reply['id'];
     $replyOutput['content'] = $reply['content'];
     $replyOutput['creation_date'] = $reply['creation_date'];
     $replyOutput['username'] = $user['username'];
     $replyOutput['photo'] = $photo;
+    $replyOutput['n_likes'] = $reply['n_likes'];
 
     $output[$count] = $replyOutput;
     $count++;

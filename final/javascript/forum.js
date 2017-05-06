@@ -22,6 +22,15 @@ $(document).ready(function () {
         loadPagination(currentPage );
     });
 
+    $("body").on('click','.reply-like-button',function(){
+        if($(this).hasClass('liked')) {
+            //unlike
+        }
+        else{
+            //like
+        }
+    });
+
 
     let performPagination = function (clickedObject, curPage) {
         let numPages = parseInt($("#pagination-n-pages").text());
@@ -262,7 +271,7 @@ $(document).ready(function () {
             let replies = JSON.parse(data);
             for (let reply of replies) {
                 let replyContent = reply.content;
-                let id = reply.id;
+                let numLikes = reply.n_likes;
                 let creationDate = reply.creation_date;
                 let userPhoto = reply.photo;
                 let username = reply.username;
@@ -270,7 +279,7 @@ $(document).ready(function () {
                 let replyElement = $(
                     '<li class="list-group-item">' +
                     '<h5 class="list-group-item-heading"><img class="submitter-photo" src=' + userPhoto + '><strong>' + username + ' on ' + creationDate + '</strong>' +
-                    '<span class="reply-likes"><strong><i class="fa fa-thumbs-up"></i> 5 likes</strong></span>' +
+                    '<span class="reply-likes">'+ (numLikes > 0 ? '<strong><i class="fa fa-thumbs-up"></i> ' + numLikes + '</strong>' : '') + '</span>' +
                     '</h5>' +
                     '<p class="list-group-item-text reply-content">' + replyContent + '</p>' +
                     '<p><small class="reply-like-button"><i class="fa fa-thumbs-up"></i> Like</small></p>' +
