@@ -4,6 +4,7 @@ include_once "common/header.php";
 
 <link href="../css/UI5.css" rel="stylesheet">
 <script src="../javascript/UI5.js"></script>
+<script src="../javascript/UI7.js"></script>
 
 <div class="files_pages">
     <div class="row">
@@ -25,23 +26,33 @@ include_once "common/header.php";
 
                 {foreach $files as $file}
 
-                    {$uploaderName = getUserNameById($file.id)}
+                    {assign var="format" value=$file.name}
+                    {$uploaderName = getUserNameById($file.uploader_id)}
+
+
                 <div class="file col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="panel panel-default meeting">
                         <div class="panel-heading" onclick="fileInfo()">
                             <div class="file_details">
-                                <img class="file_show" src="../images/assets/excel.png">
-                                <label class="file_description">{$file.name}</label>
+                                {if {$format|substr:-3} eq "png"}
+                                {$image = "../images/assets/png.png"}
+                                {elseif {$format|substr:-3} eq "pdf"}
+                                {$image = "../images/assets/pdf.png"}
+                                {else}
+                                {$image = "../images/assets/default.png"}
+                                {/if}
+                                <img class="file_show" src={$image}>
+                                <label class="file_description">{$file.name|truncate:36}</label>
                             </div>
                         </div>
                         <div class="panel-body">
                             <div class="minutes">
                                 <span>3 minutes ago</span>
-                                <span class="hastag -rightpull">#general</span>
+                                <span class="hastag -rightpull">#TAG</span>
                             </div>
                             <div class="name">
                                 <span>{$uploaderName}</span>
-                                <i class="pull-right fa fa-download" aria-hidden="true"></i>
+                                <i class="pull-right fa fa-download" aria-hidden="true" onclick="downloadFile({$file.id})"></i>
                             </div>
 
                         </div>

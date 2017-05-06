@@ -9,8 +9,11 @@ $user_id = $_SESSION['user_id'];
 $project = $_SESSION['project_id'];
 
 $files = getAllFiles($project);
+$current_date = date('m/d/Y h:i:s a', time());
 
-$smarty->assign($files, 'files');
+
+$smarty->assign('currentDate',$current_date);
+$smarty->assign('files',$files);
 $smarty->assign($project, 'project_id');
 $smarty->display($BASE_DIR . 'templates/files.tpl');
 
