@@ -33,8 +33,10 @@
 
     }
 
-    function completeTask(){
-
+    function completeTask($taskId){
+        global $conn;
+        $stmt = $conn->prepare("UPDATE task SET completer_id = ? WHERE id = ?;");
+        $stmt->execute([$_SESSION['user_id'], $taskId]);
     }
 
     function deleteTask($taskId){

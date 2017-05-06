@@ -18,7 +18,7 @@ $(document).ready(function(){
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
-            cell1.innerHTML = "<i class='fa fa-check-circle-o' id='complete-button'></i>";
+            cell1.innerHTML = "<i class='fa fa-check-circle-o' id='complete-button' onclick='completeTask("+data[0].id+")'></i>";
             cell2.innerHTML = "<div><textarea onclick='toggle("+data[0].id+");' id="+data[0].id+">New Task</textarea></div>";
             cell3.innerHTML = "<i id='delete-button' onclick='deleteTask("+data[0].id+")' name='delete-task' class='fa fa-times'></i>";
         });
@@ -35,11 +35,13 @@ $(document).ready(function(){
         maximumSelectionLength: 1
     });
 
+
     $("#task-name").keyup(function(e) {
+
         var m=$("#task-name");
         var value= m.val();
         var taskId = $("#task-name").attr("name");
-        var task = $("#"+taskId).val(value);
+        $("#"+taskId+".taskName").val(value);
     });
 
     $(".select2").on('focusout', function() {
@@ -260,6 +262,21 @@ function deleteTask(taskId) {
         success: function() {
 
             $('#'+taskId).remove();
+
+        }
+
+    });
+}
+
+
+function completeTask(taskId) {
+
+    $.ajax({
+        type:'post',
+        url: '../api/tasks/complete-task.php',
+        data:  {'taskId': taskId},
+        success: function() {
+
 
         }
 

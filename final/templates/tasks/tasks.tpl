@@ -31,11 +31,11 @@
 
                         <tr class="task" id="{$task.id}">
                             <td>
-                                <i id="complete-button" name="complete-task" class="fa fa-check-circle-o"></i>
+                                <i id="complete-button" name="complete-task"  onclick="completeTask({$task.id})" class="fa fa-check-circle-o"></i>
                             </td>
                             <td>
                                 <div>
-                                    <textarea onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
+                                    <textarea class="taskName" onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
                                     {foreach $tags as $tag}
                                     <p>{$tag.name}</p>
                                     {/foreach}
@@ -60,11 +60,9 @@
 
                     </select>
                 </div>
-                <button class="btn btn-danger" id="delete-button"> Delete </button>
             </div>
 
             <div class="col-xs-12" id="create-task-title">
-                <i class="fa fa-check-circle-o" id="complete-button"></i>
                 <input type="text" id="task-name" placeholder="New Task">
             </div>
             <div class="col-xs-12" id="create-task-settings">
