@@ -32,7 +32,7 @@ include_once "common/header.php";
 
                 <div class="file col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="panel panel-default meeting">
-                        <div class="panel-heading" onclick="fileInfo()">
+                        <div class="panel-heading" onclick="fileInfo({$file.id})">
                             <div class="file_details">
                                 {if {$format|substr:-3} eq "png"}
                                 {$image = "../images/assets/png.png"}
@@ -103,8 +103,8 @@ include_once "common/header.php";
                         <div class="row">
                             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" >
                                 <div class="file">
-                                    <img class="file_show" src="../images/assets/excel.png">
-                                    <div class="title">Meeting SummerInternship_2018</div>
+                                    <img id="format" class="file_show" src="../images/assets/excel.png">
+                                    <div id="file_name" class="title">O</div>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -122,20 +122,20 @@ include_once "common/header.php";
                                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                     <div id="user">
                                         <img id="user_photo" src="../images/users/avatar2.png">
-                                        <div class="name">Pedro Duarte da Costa</div>
+                                        <div id="uploader_id" class="name"></div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="extra_info">
                                         <span class="hastag">#general</span>
-                                        <div class="date">15.04.2018</div>
-                                        <div class="minutes">3 minutes ago</div>
+                                        <div id="upload_date" class="date"></div>
+                                        <div id="upload_time" class="minutes"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="button_download">
-                            <button class="download"><i class="fa fa-download" aria-hidden="true" ></i>
+                            <button id="download_file" class="download"><i class="fa fa-download" aria-hidden="true"></i>
                                 Download File
                             </button>
                         </div>

@@ -32,3 +32,11 @@ function getAllFiles($project_id){
 
     return $stmt->fetchAll();
 }
+
+function getFileDetails($file_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT id,upload_date,uploader_id,project_id,name FROM file WHERE id = ?');
+    $stmt->execute([$file_id]);
+
+    return $stmt->fetchAll();
+}
