@@ -117,8 +117,8 @@
 
     function getTagsFromProject(){
         global $conn;
-        $stmt = $conn->prepare("SELECT DISTINCT tag.name, tag.id FROM tag, task_tag, task, project WHERE project.id = ? AND task.project_id = project.id AND task_tag.task_id = task.id AND task_tag.tag_id = tag.id;");
-        $stmt->execute([ $_SESSION['project_id']]);
+        $stmt = $conn->prepare("SELECT DISTINCT tag.name, tag.id FROM tag, file, file_tag, task_tag, task, project WHERE (project.id = ? AND task.project_id = project.id AND task_tag.task_id = task.id AND task_tag.tag_id = tag.id) OR (project.id = ? AND file.project_id = project.id AND file.id = file_tag.file_id AND file_tag.tag_id = tag.id);");
+        $stmt->execute([$_SESSION['project_id'],$_SESSION['project_id']]);
         return $stmt->fetchAll();
     }
 
