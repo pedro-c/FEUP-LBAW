@@ -46,7 +46,7 @@
         border: none;
       }
     }
-  }
+    }
 
   .file {
     .panel-heading {
@@ -297,6 +297,21 @@
 
 
 
+    }
+  }
+
+  .button_tag{
+    padding: 4px 20px 4px 20px;
+    color: white;
+    background-color: $color_yellow !important;
+    border: none;
+    border-radius: 5px;
+    align-self: center;
+    outline: 0;
+
+    &:hover {
+      background-color: $blue_secondary;
+      border: none;
     }
   }
 

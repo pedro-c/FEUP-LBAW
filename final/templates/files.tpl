@@ -17,10 +17,28 @@ include_once "common/header.php";
     </div>
 
     <div class="container files_list">
-        <div class="text-center button_upload">
-            <button class="uploadFile" onclick="uploadFile()">Upload a File</button>
-        </div>
 
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div style="text-align: -webkit-right;" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 button_upload">
+                    <button class="uploadFile" onclick="uploadFile()">Upload a File</button>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="dropdown">
+                        <button class="dropdown-toggle button_tag" type="button" data-toggle="dropdown">#Tag
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+
+                            {foreach $tags as $tag}
+                                <li><a value={$tag.id}>{$tag.name}</a></li>
+                            {/foreach}
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="container_to_collapse" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="row">
 
@@ -34,7 +52,7 @@ include_once "common/header.php";
                     <div class="panel panel-default meeting">
                         <div class="panel-heading" onclick="fileInfo({$file.id})">
                             <div class="file_details">
-                                {if {$format|substr:-3} eq "png"}
+                                {if {$format|substr:-3} eq "png" || "jpg"}
                                 {$image = "../images/assets/png.png"}
                                 {elseif {$format|substr:-3} eq "pdf"}
                                 {$image = "../images/assets/pdf.png"}
@@ -47,7 +65,7 @@ include_once "common/header.php";
                         </div>
                         <div class="panel-body">
                             <div class="minutes">
-                                <span>3 minutes ago</span>
+                                <span>{$file.upload_date|substr:11|truncate:5:""}h</span>
                                 <span class="hastag pull-right">{if {$tag} != null} #{$tag} {/if}</span>
                             </div>
                             <div class="name">

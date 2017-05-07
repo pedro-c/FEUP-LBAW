@@ -22,6 +22,10 @@ function getFormatImage(format) {
     switch (format){
         case "png":
             return "../images/assets/png.png";
+        case "jpg":
+            return "../images/assets/png.png";
+        case "JPG":
+            return "../images/assets/png.png";
         case "pdf":
             return "../images/assets/pdf.png";
         default:
@@ -41,6 +45,7 @@ function fileInfo(file_id){
             var i;
             for(i=0; i< data.length; i++){
                var format = data[i].file_name.substr(data[i].file_name.length - 3);
+               console.log("Format " + format);
                $("#format").attr('src', getFormatImage(format));
                 $("#file_name").text(data[i].file_name);
                 $("#download_file").attr('onclick','downloadFile('+ data[i].id + ')');

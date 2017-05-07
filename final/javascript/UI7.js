@@ -48,6 +48,10 @@ function getFormatImage(format) {
     switch (format){
         case "png":
             return "../images/assets/png.png";
+        case "JPG":
+            return "../images/assets/png.png";
+        case "jpg":
+            return "../images/assets/png.png";
         case "pdf":
             return "../images/assets/pdf.png";
         default:
