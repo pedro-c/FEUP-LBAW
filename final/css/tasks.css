@@ -364,13 +364,12 @@ body {
       width: 50px !important;
       border-bottom-left-radius: 4px !important;
       border-top-left-radius: 4px !important; }
-  .create-task #task-comments {
-    overflow: auto !important;
-    height: 45% !important; }
   .create-task .task-comments {
     border-top: solid 1px #D3D3D3;
     width: 100%;
-    text-align: left; }
+    text-align: left;
+    overflow: auto !important;
+    height: 45% !important; }
     .create-task .task-comments .comment-info {
       width: 100%;
       display: inline-block !important;

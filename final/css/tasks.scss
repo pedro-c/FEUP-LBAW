@@ -267,14 +267,13 @@
 
     }
   }
-  #task-comments{
-    overflow: auto !important;
-    height: 45% !important;
-  }
+
   .task-comments{
     border-top: solid 1px $light_grey;
     width: 100%;
     text-align: left;
+    overflow: auto !important;
+    height: 45% !important;
     .comment-info{
       width: 100%;
       display: inline-block !important;
@@ -369,6 +368,8 @@ textarea#task-title{
 #mobile-back{
   display: none;
 }
+
+
 
 textarea{
   vertical-align: middle;
