@@ -1,5 +1,7 @@
 <?php
 
+
+
 function getFutureMeetings($project){
     global $conn;
     $stmt = $conn->prepare('SELECT id,name,description,date FROM meeting WHERE meeting.date > CURRENT_DATE AND meeting.id_project = ?');
@@ -80,18 +82,20 @@ function getInvitedUsers($meeting_id){
 
 function getInvitedUsersPhotos($meeting_id){
     global $conn;
+    global $BASE_DIR;
 
     $stmt = $conn->prepare('SELECT photo_path FROM user_table INNER JOIN user_meeting ON user_meeting.user_id=user_table.id AND user_meeting.meeting_id=?');
     $stmt->execute([$meeting_id]);
-    $result =  $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
+    $result =  $stmt->fetchAll(PDO::FETCH_COLUMN, 0);;
 
+    $photos = [];
 
     for($i = 0; $i < count($result); $i++){
-        if (!is_null($result[$i]) && file_exists("../images/users/". $result[$i])) {
+        if (!is_null($result[$i]) && file_exists( $BASE_DIR . "images/users/". $result[$i])) {
             $photos[$i] = '../images/users/' . $result[$i];
         }
         else {
-            $photos[$i] =  '../images/assets/default_image_profile1.jpg';
+            $photos[$i] = '../images/users/default_image_profile1.jpg';
         }
     }
 

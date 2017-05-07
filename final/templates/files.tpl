@@ -48,8 +48,7 @@ include_once "common/header.php";
                         <div class="panel-body">
                             <div class="minutes">
                                 <span>3 minutes ago</span>
-                                <span class="hastag -rightpull">
-                                    #{$tag}</span>
+                                <span class="hastag pull-right">{if {$tag} != null} #{$tag} {/if}</span>
                             </div>
                             <div class="name">
                                 <span>{$uploaderName}</span>

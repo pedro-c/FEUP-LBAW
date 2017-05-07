@@ -82,7 +82,7 @@ function show_Meeting_Info(meeting_id){
         url:'../api/meetings/meeting-details.php',
         dataType: 'json',
         success: function (data) {
-            console.log(data[0]);
+        //    console.log(data[0]);
 
             date = data[0].date.substr(0,data[0].date.indexOf(' '));
             time = data[0].date.substr(data[0].date.indexOf(' ')+1);
@@ -107,11 +107,9 @@ function show_Meeting_Info(meeting_id){
         success: function (data) {
 
             $("#guest_div").html(" ");
-           // console.log(data);
-
             var i;
             for(i = 0; i< data.length; i++){
-                $("#guest_div").append("<img style='border-radius: 50%;' class='user_photo' src=" + data[i] + ">")
+                $("#guest_div").append("<img style='border-radius: 50%;' class='user_photo' src=" + data[i] + " >")
             }
 
             $("#guest_div").append("<span id='plus' class='glyphicon glyphicon-plus-sign'aria-hidden='true'></span>")

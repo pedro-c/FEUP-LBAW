@@ -48,11 +48,12 @@
                                     {$coordinator = getMemberStatus($user_aut, $project)}
                                     {$creator = isMeetingCreator($meeting.id, $user_aut)}
 
-                                    {foreach $invited_users as $user}
 
-                                        {$photo = getPhoto($user)}
+                                    {$photos = getInvitedUsersPhotos($meeting.id)}
 
-                                    <img class="user_photo" style="border-radius: 50%;" src={$photo} >
+                                    {foreach $photos as $photo}
+
+                                    <img class="user_photo" style="border-radius: 50%;" src={$photo}>
 
                                     {/foreach}
 
@@ -118,6 +119,16 @@
                                     {/foreach}
                                 </select>
                             </div>
+
+                            <div class="input-group task-tags ">
+                                <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                                <select name="tagOption" class="select2-multiple form-control" multiple="multiple">
+                                    {foreach $tags as $tag}
+                                        <option value={$tag.id}>{$tag.name}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+
 
                             <div class="box drag_here hidden-xs" ondrop="drop_handler(event);" ondragover="dragover_handler(event);" ondragend="dragend_handler(event);">
                                 <input class="box__file" type="file" name="file[]" id="file" multiple />
