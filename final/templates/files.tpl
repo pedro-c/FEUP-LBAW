@@ -24,7 +24,7 @@ include_once "common/header.php";
                     <button class="uploadFile" onclick="uploadFile()">Upload a File</button>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tagTop">
                     <div class="dropdown">
                         <button class="dropdown-toggle button_tag" type="button" data-toggle="dropdown">#Tag
                             <span class="caret"></span></button>

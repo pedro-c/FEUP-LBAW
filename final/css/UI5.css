@@ -194,6 +194,20 @@ body {
     .files_list .button_upload .uploadFile:hover {
       background-color: #22313f;
       border: none; }
+.files_list .button_tag {
+  padding: 4px 20px 4px 20px;
+  color: white;
+  background-color: #e9d460 !important;
+  border: none;
+  border-radius: 5px;
+  align-self: center;
+  outline: 0; }
+  .files_list .button_tag:hover {
+    background-color: #22313f;
+    border: none; }
+.files_list .tagTop {
+  padding-top: 20px;
+  padding-bottom: 40px; }
 .files_list .file .panel-heading {
   background-color: #22313f;
   padding-left: 20px; }
@@ -346,16 +360,5 @@ body {
     padding-bottom: 5px; }
   .files_list #container_file_info .panel-body .extra_info .minutes {
     padding-bottom: 10px; }
-.files_list .button_tag {
-  padding: 4px 20px 4px 20px;
-  color: white;
-  background-color: #e9d460 !important;
-  border: none;
-  border-radius: 5px;
-  align-self: center;
-  outline: 0; }
-  .files_list .button_tag:hover {
-    background-color: #22313f;
-    border: none; }
 
 /*# sourceMappingURL=UI5.css.map */

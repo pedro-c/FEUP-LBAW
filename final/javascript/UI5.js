@@ -53,15 +53,10 @@ function fileInfo(file_id){
 
                 date = data[0].upload_date.substr(0,data[0].upload_date.indexOf(' '));
                 time = data[0].upload_date.substr(data[0].upload_date.indexOf(' ')+1);
-
-                //var atualDate = new Date().getTime();
-                //var diff = data[0].upload_date - atualDate;
-
-                //console.log(atualDate);
-
-                //console.log(data[0].upload_date);
+                hours = time.substr(0,5);
 
                 $("#upload_date").text(date);
+                $("#upload_time").text(hours + "h");
 
                 $("#user_photo").attr('src','../images/users/'+ data[i].photo_path);
 
