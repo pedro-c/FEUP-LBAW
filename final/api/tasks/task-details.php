@@ -11,13 +11,15 @@ if (isset($_POST['taskId'])) {
     $taskAssignedName = null;
     $projectMembers = null;
     $taskComments = null;
+    $projectTags = null;
 
     $taskDetails = getTaskDetails($taskId);
     $taskTags = getTagFromTaskId($taskId);
     $taskAssignedName = getTaskAssignedName($taskId);
     $projectMembers = getProjectMembersNames($_SESSION['project_id']);
     $taskComments = getTaskComments($taskId);
+    $projectTags = getTagsFromProject();
 
-    print json_encode([$taskDetails, $taskTags, $taskAssignedName, $projectMembers, $taskComments]);
+    print json_encode([$taskDetails, $taskTags, $taskAssignedName, $projectMembers, $taskComments, $projectTags]);
 }
 

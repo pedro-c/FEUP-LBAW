@@ -115,6 +115,13 @@
         return $stmt->fetchAll();
     }
 
+    function getTagsFromProject(){
+        global $conn;
+        $stmt = $conn->prepare("SELECT DISTINCT tag.name, tag.id FROM tag, task_tag, task, project WHERE project.id = ? AND task.project_id = project.id AND task_tag.task_id = task.id AND task_tag.tag_id = tag.id;");
+        $stmt->execute([ $_SESSION['project_id']]);
+        return $stmt->fetchAll();
+    }
+
     function getProjectMembersNames($project){
         global $conn;
         $stmt = $conn->prepare('SELECT user_table.name, user_table.id FROM user_project, user_table WHERE id_project=? AND user_table.id=user_project.id_user');

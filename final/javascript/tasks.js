@@ -220,6 +220,14 @@ function toggle(taskId) {
                     selected: true
                 }));
             }
+            for (var i = 0; i < response[5].length; i++) {
+                $("#task-tags").append($('<option>', {
+                    value: response[5][i].id,
+                    text: response[5][i].name,
+                    selected: false
+                }));
+            }
+
 
             var id = "create-task";
             var taskCard = document.getElementById("task-card");
