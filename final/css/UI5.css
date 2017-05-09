@@ -194,17 +194,6 @@ body {
     .files_list .button_upload .uploadFile:hover {
       background-color: #22313f;
       border: none; }
-.files_list .button_tag {
-  padding: 4px 20px 4px 20px;
-  color: white;
-  background-color: #e9d460 !important;
-  border: none;
-  border-radius: 5px;
-  align-self: center;
-  outline: 0; }
-  .files_list .button_tag:hover {
-    background-color: #22313f;
-    border: none; }
 .files_list .tagTop {
   padding-top: 20px;
   padding-bottom: 40px; }

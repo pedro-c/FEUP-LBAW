@@ -12,12 +12,12 @@ $project = $_SESSION['project_id'];
 $files = getAllFiles($project);
 $current_date = date('m/d/Y h:i:s a', time());
 $tags = getAllTagNames();
-
 $smarty->assign('tags',$tags);
 $smarty->assign('currentDate',$current_date);
 $smarty->assign('files',$files);
 $smarty->assign($project, 'project_id');
 $smarty->display($BASE_DIR . 'templates/files.tpl');
+
 
 
 include_once "common/footer.php";

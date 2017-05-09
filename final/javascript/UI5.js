@@ -2,6 +2,9 @@ $(document).ready(function () {
 
     $(".select2-multiple").select2();
 
+
+
+
 });
 
 function uploadFile() {
@@ -111,3 +114,23 @@ function exitMobile() {
     $("#goBackButton").css("border-bottom","4px solid #e9d460");
     $("#uploadButton").css("border","none");
 }
+
+function changeTagName(tag_name){
+    $("#tag-name").html(tag_name).append('<span class="caret"></span>');
+
+    if(tag_name == 'All'){
+        $('.hastag.pull-right').each(function(i, obj) {
+                $(this).parents('.file').show();
+        });
+    }
+    else{
+        $('.hastag.pull-right').each(function(i, obj) {
+            var name = "#"+tag_name;
+            if($(this).text() != name)
+                $(this).parents('.file').hide();
+            else
+                $(this).parents('.file').show();
+        });
+    }
+}
+

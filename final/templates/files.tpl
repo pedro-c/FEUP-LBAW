@@ -24,14 +24,14 @@ include_once "common/header.php";
                     <button class="uploadFile" onclick="uploadFile()">Upload a File</button>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tagTop">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 button_upload">
                     <div class="dropdown">
-                        <button class="dropdown-toggle button_tag" type="button" data-toggle="dropdown">#Tag
+                        <button id="tag-name" class="dropdown-toggle uploadFile" type="button" data-toggle="dropdown">Tag
                             <span class="caret"></span></button>
                         <ul class="dropdown-menu">
-
+                                <li><a id="tag-name-dropwdown" onclick="changeTagName('All')">All</a></li>
                             {foreach $tags as $tag}
-                                <li><a value={$tag.id}>{$tag.name}</a></li>
+                                <li><a id="tag-name-dropwdown" onclick="changeTagName('{$tag.name}')">{$tag.name}</a></li>
                             {/foreach}
 
                         </ul>
@@ -66,7 +66,7 @@ include_once "common/header.php";
                         <div class="panel-body">
                             <div class="minutes">
                                 <span>{$file.upload_date|substr:11|truncate:5:""}h</span>
-                                <span class="hastag pull-right">{if {$tag} != null} #{$tag} {/if}</span>
+                                <span class="hastag pull-right">{if {$tag} != null}#{$tag}{/if}</span>
                             </div>
                             <div class="name">
                                 <span>{$uploaderName}</span>
