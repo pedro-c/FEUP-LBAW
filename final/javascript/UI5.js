@@ -22,6 +22,7 @@ function uploadFile() {
 }
 
 function getFormatImage(format) {
+
     switch (format){
         case "png":
             return "../images/assets/png.png";

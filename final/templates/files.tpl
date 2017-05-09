@@ -52,15 +52,19 @@ include_once "common/header.php";
                     <div class="panel panel-default meeting">
                         <div class="panel-heading" onclick="fileInfo({$file.id})">
                             <div class="file_details">
-                                {if {$format|substr:-3} eq "png" || "jpg"}
-                                {$image = "../images/assets/png.png"}
+                                {if {$format|substr:-3} eq "png"}
+                                     {$image = "../images/assets/png.png"}
                                 {elseif {$format|substr:-3} eq "pdf"}
-                                {$image = "../images/assets/pdf.png"}
+                                     {$image = "../images/assets/pdf.png"}
+                                {elseif {$format|substr:-3} eq "jpg"}
+                                    {$image = "../images/assets/png.png"}
+                                {elseif {$format|substr:-3} eq "JPG"}
+                                    {$image = "../images/assets/png.png"}
                                 {else}
-                                {$image = "../images/assets/default.png"}
+                                    {$image = "../images/assets/default.png"}
                                 {/if}
                                 <img style="height: 35px" class="file_show" src={$image}>
-                                <label class="file_description">{$file.name|truncate:36}</label>
+                                <label class="file_description">{$file.name|truncate:28}</label>
                             </div>
                         </div>
                         <div class="panel-body">
