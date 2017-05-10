@@ -102,6 +102,14 @@ function getInvitedUsersPhotos($meeting_id){
     return $photos;
 }
 
+function getNonInvitedUser($meeting_id, $project_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT id FROM user_table INNER JOIN user_project ON user_project.id_user=user_table.id AND user_project.id_project = ? AND user_table.id NOT IN ( SELECT id FROM user_meeting WHERE user_meeting.user_id=user_table.id AND user_meeting.meeting_id=?)');
+    $stmt->execute([$project_id,$meeting_id]);
+    return $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
+
+}
+
 function isMeetingCreator($meeting_id, $user_id){
     global $conn;
 

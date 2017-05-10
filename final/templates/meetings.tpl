@@ -43,8 +43,8 @@
                                 <label class="user_responsible">{$creatorName}</label><br>
                                 <label class="guests">
 
-                                    {$invited_users = getInvitedUsers(($meeting.id))}
-
+                                    {$invited_users = getInvitedUsers($meeting.id)}
+                                    {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)}
                                     {$coordinator = getMemberStatus($user_aut, $project)}
                                     {$creator = isMeetingCreator($meeting.id, $user_aut)}
 
@@ -58,8 +58,20 @@
                                     {/foreach}
 
                                     {if $coordinator == 'true' || $creator == 'true' }
+
                                         <span id="plus_user" class="glyphicon glyphicon-plus-sign"
-                                              aria-hidden="true" style="border-radius: 50%;"></span>
+                                              aria-hidden="true" style="border-radius: 50%;" onclick="inviteMoreUsers({$meeting.id})">
+                                        </span>
+                                        <div id='{$meeting.id|cat:'uninvited-users'}' class="uninvited-users" hidden>
+
+                                            <select name="uninvited_users[]" class="select2-multiple form-control" multiple="multiple" multiple>
+                                                {foreach $notInvitedmembers as $notInvitedmember}
+                                                    {$name = getUserNameById($notInvitedmember)}
+                                                    <option value={$notInvitedmember}>{$name}</option>
+                                                {/foreach}
+                                            </select>
+                                            <input id="submit_invite" type="submit" value="Invite" style="margin-top: 20px;">
+                                        </div>
                                     {/if}
 
 

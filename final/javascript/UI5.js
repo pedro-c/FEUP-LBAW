@@ -3,7 +3,11 @@ $(document).ready(function () {
     $(".select2-multiple").select2();
 
 
-
+    $( "#drag-here" ).bind( "dragover", function() {
+        console.log("dragover");
+        $("#here").className = "box drag-here text-center dragover";
+        return false;
+    });
 
 });
 
@@ -22,7 +26,6 @@ function uploadFile() {
 }
 
 function getFormatImage(format) {
-
     switch (format){
         case "png":
             return "../images/assets/png.png";
@@ -92,7 +95,6 @@ function fileInfo(file_id){
     $("#mobile-back").show();
     $("#container_file_info").show();
     $(".uploadFile_container").hide();
-
 }
 
 function deleteUpload() {
@@ -106,7 +108,6 @@ function deleteUpload() {
     $("#uploadButton").css("border","none");
     $("#mobile-back").hide();
     $("#container_file_info").hide();
-
 }
 
 function exitMobile() {

@@ -137,7 +137,7 @@
     }
 
     .panel-body {
-      .box.drag_here {
+      .box.drag-here {
         border-radius: 5px;
         height: 150px;
         margin-top: 40px;
@@ -163,6 +163,12 @@
           font-size: x-large;
           color: grey;
         }
+
+        .dragover {
+          background-color: $blue_secondary;
+          border: none;
+        }
+
       }
 
       .input-group.task-tags {

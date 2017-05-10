@@ -94,7 +94,7 @@ include_once "common/header.php";
                     <div class="panel-body">
 
                         <form action="../actions/files/upload-file.php" method="post" enctype="multipart/form-data">
-                        <div class="box drag_here text-center">
+                        <div id="drag-here" class="box drag-here text-center">
                                 <br>
                                 <span class="glyphicon glyphicon-plus"></span>
                                 <br>

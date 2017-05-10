@@ -10,6 +10,13 @@ $(document).ready(function () {
     $(".select2-multiple").select2();
 });
 
+
+function inviteMoreUsers(meeting_id) {
+    var identifier = '#' + meeting_id + 'uninvited-users';
+    $(identifier).show();
+}
+
+
 function schedule() {
     $("#container_to_collapse").removeClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
     $("#container_to_collapse").addClass("col-lg-6 col-md-6 col-sm-6 hidden-xs");
@@ -116,7 +123,7 @@ function show_Meeting_Info(meeting_id){
                 $("#guest_div").append("<img style='border-radius: 50%;' class='user_photo' src=" + data[i] + " >")
             }
 
-            $("#guest_div").append("<span id='plus' class='glyphicon glyphicon-plus-sign'aria-hidden='true'></span>")
+            $("#guest_div").append("<span id='plus' class='glyphicon glyphicon-plus-sign'aria-hidden='true' onclick='inviteMoreUsers()'></span>")
         }
     });
 
