@@ -70,4 +70,14 @@ function joinProject($id, $project){
     return $stmt->execute([$id,$project,$is_coordinator]);
 }
 
+function getUserInfo($id){
+
+    global $conn;
+    $stmt = $conn -> prepare('SELECT * FROM user_table WHERE id = ?');
+    $stmt->execute([$id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
 
