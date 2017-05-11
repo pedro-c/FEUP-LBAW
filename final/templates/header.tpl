@@ -128,7 +128,7 @@
                         </p>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="../UI8.php">My Profile</a></li>
+                        <li><a href="../pages/profile.php">My Profile</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href={$BASE_URL}actions/users/logout.php>Sign Out<i class="nav-dropdown-icon glyphicon glyphicon-log-out"></i></a></li>
                     </ul>
@@ -150,7 +150,7 @@
                             {$project_name = getProjectName($project.id_project)}
                             <li><a onclick="changeProject({$project.id_project})">{$project_name}</a></li>
                         {/foreach}
-                        <li><a href="../PIU/UI8.php#new_project">New Project<i class="nav-dropdown-icon glyphicon glyphicon-plus"></i></a></li>
+                        <li><a href="../pages/profile.php#new_project">New Project<i class="nav-dropdown-icon glyphicon glyphicon-plus"></i></a></li>
                     </ul>
                 </div>
             </div>
