@@ -118,6 +118,10 @@
             color: $color_yellow;
             font-size: 35px;
             cursor: pointer;
+
+            &:hover{
+              color: $blue_secondary;
+            }
           }
 
           .user_responsible {

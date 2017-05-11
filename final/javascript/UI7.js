@@ -8,12 +8,18 @@ $(document).ready(function () {
     });
 
     $(".select2-multiple").select2();
+
+    $("#hide").click(function(){
+        $("p").hide();
+    });
 });
 
 
 function inviteMoreUsers(meeting_id) {
     var identifier = '#' + meeting_id + 'uninvited-users';
-    $(identifier).show();
+    if($(identifier).is(":hidden"))
+        $(identifier).show();
+    else $(identifier).hide();
 }
 
 /*
@@ -140,8 +146,6 @@ function show_Meeting_Info(meeting_id){
             for(i = 0; i< data.length; i++){
                 $("#guest_div").append("<img style='border-radius: 50%;' class='user_photo' src=" + data[i] + " >")
             }
-
-            $("#guest_div").append("<span id='plus' class='glyphicon glyphicon-plus-sign'aria-hidden='true' onclick='inviteMoreUsers()'></span>")
         }
     });
 
