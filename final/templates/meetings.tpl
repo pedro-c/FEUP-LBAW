@@ -63,17 +63,18 @@
                                               aria-hidden="true" style="border-radius: 50%;" onclick="inviteMoreUsers({$meeting.id})">
                                         </span>
                                         <div id='{$meeting.id|cat:'uninvited-users'}' class="uninvited-users" hidden>
-
-                                            <select name="uninvited_users[]" class="select2-multiple form-control" multiple="multiple" multiple>
-                                                {foreach $notInvitedmembers as $notInvitedmember}
-                                                    {$name = getUserNameById($notInvitedmember)}
-                                                    <option value={$notInvitedmember}>{$name}</option>
-                                                {/foreach}
-                                            </select>
-                                            <input id="submit_invite" type="submit" value="Invite" style="margin-top: 20px;">
+                                            <form method="post" action="../actions/meetings/invite-user.php">
+                                                <select name="uninvited_users[]" id="uninvited-users" class="select2-multiple form-control" multiple="multiple" multiple>
+                                                    {foreach $notInvitedmembers as $notInvitedmember}
+                                                        {$name = getUserNameById($notInvitedmember)}
+                                                        <option value={$notInvitedmember}>{$name}</option>
+                                                    {/foreach}
+                                                </select>
+                                                <input name='meeting_id' value="{$meeting.id}" hidden>
+                                                <input name="Invite" id="submit_invite" type="submit" value="Invite" style="margin-top: 20px;">
+                                            </form>
                                         </div>
                                     {/if}
-
 
                                 </label>
                                 <br>

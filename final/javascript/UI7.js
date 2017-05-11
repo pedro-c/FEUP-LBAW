@@ -16,6 +16,24 @@ function inviteMoreUsers(meeting_id) {
     $(identifier).show();
 }
 
+/*
+function inviteUsers(meeting_id) {
+    console.log(meeting_id);
+    console.log($('#uninvited-users:selected').val());
+
+    $.ajax({
+        type: 'POST',
+        data: { 'meeting_id': meeting_id, 'uninvited_users': $('#uninvited-users:selected').val() } ,
+        url:'../api/meetings/invite-user.php',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+
+        }
+    });
+
+}*/
+
 
 function schedule() {
     $("#container_to_collapse").removeClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
