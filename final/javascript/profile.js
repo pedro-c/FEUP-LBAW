@@ -23,26 +23,12 @@ $(document).ready(function(){
 });
 
 function updateUserInfo() {
-
-    var $userName=$('#update-user-name').val();
-    var $userEmail=$('#update-user-email').val();
-    var $userCountry=$('#update-user-country').val();
-    var $userCity=$('#update-user-city').val();
-
-    console.log($userName);
-    console.log($userEmail);
-    console.log($userCountry);
-    console.log($userCity);
-
-
-     $.ajax({
+    $.ajax({
         type:'post',
         url: '../actions/users/edit-user-info.php',
-        data:  {'userName': $userName, 'userEmail': $userEmail, 'userCountry': $userCountry, 'userCity': $userCity},
+        data:  {'userName': $('#update-user-name').val(), 'userEmail': $('#update-user-email').val(), 'userCountry': $('#update-user-country').val(), 'userCity': $('#update-user-city').val()},
         success: function() {
-
-            console.log("success");
-
+            window.location.reload();
         }
 
     });

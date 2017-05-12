@@ -89,10 +89,10 @@ function getUserCountry($userId){
     return $result;
 }
 
-function update_user_info($userId, $userName, $userEmail, $userCountry, $userCity){
+function update_user_info($userName, $userEmail, $userCountry, $userCity){
     global $conn;
     $stmt = $conn->prepare('UPDATE user_table SET name = ?, email = ?, country_id = ?, city = ? WHERE id = ?');
-    $stmt->execute([$userName, $userEmail, $userCountry, $userCity, $userId]);
+    return $stmt->execute([$userName, $userEmail, $userCountry, $userCity, $_SESSION['user_id']]);
 }
 
 function getPhoto($user){

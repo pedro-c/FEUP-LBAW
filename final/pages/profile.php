@@ -7,6 +7,7 @@ $user = getUserInfo($_SESSION['user_id']);
 $projects = getUserProjects($_SESSION['user_id']);
 $country = getUserCountry($_SESSION['user_id']);
 
+$smarty->assign('user_photo_path', getPhoto($_SESSION['user_id']));
 $smarty->assign('projects',$projects);
 $smarty->assign('user', $user);
 $smarty->assign('country', $country);

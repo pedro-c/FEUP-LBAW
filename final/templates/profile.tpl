@@ -11,7 +11,7 @@
             <div class="content col-xs-8 col-md-4 col-xs-offset-2 col-md-offset-4">
                 <div class="profile-pic">
                     <div>
-                        <img class="img-circle" src="../images/users/{$user.photo_path}">
+                        <img class="img-circle" src="{$user_photo_path}">
                     </div>
                     <div>
                         <a href="#">Change Photo</a>
