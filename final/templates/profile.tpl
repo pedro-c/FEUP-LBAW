@@ -31,13 +31,13 @@
                     </div>
                     <h4>Join Project</h4>
                     <div class="join-project">
-                        <input type="text" placeholder="Insert Project ID">
-                        <button class="btn btn-success">Join</button>
+                        <input type="text" id="join-project-id" placeholder="Insert Project ID">
+                        <button class="btn btn-success" onclick="joinProject()">Join</button>
                     </div>
                     <h4>New Project</h4>
                     <div class="new-project" id="new_project">
-                        <input type="text" placeholder="Insert Project ID">
-                        <button class="btn btn-success">Create</button>
+                        <input type="text" id="create-project-id" placeholder="Insert Project ID">
+                        <button class="btn btn-success" onclick="createProject()">Create</button>
                     </div>
                 </div>
                 <div class="personal-info">

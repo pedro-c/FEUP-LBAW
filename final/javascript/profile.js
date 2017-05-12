@@ -33,3 +33,27 @@ function updateUserInfo() {
 
     });
 }
+
+function joinProject() {
+    $.ajax({
+        type:'post',
+        url: '../actions/users/join-project.php',
+        data:  {'projectId': $('#join-project-id').val()},
+        success: function() {
+            window.location.reload();
+        }
+
+    });
+}
+
+function createProject() {
+    $.ajax({
+        type:'post',
+        url: '../actions/users/edit-user-info.php',
+        data:  {'userName': $('#update-user-name').val(), 'userEmail': $('#update-user-email').val(), 'userCountry': $("#selected-country option:selected").val(), 'userCity': $('#update-user-city').val()},
+        success: function() {
+            window.location.reload();
+        }
+
+    });
+}
