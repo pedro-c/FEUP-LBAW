@@ -1,6 +1,5 @@
 <?php
 include_once "common/header.php";
-include_once($BASE_DIR .'database/profile.php');
 include_once($BASE_DIR .'database/users.php');
 
 $user = getUserInfo($_SESSION['user_id']);

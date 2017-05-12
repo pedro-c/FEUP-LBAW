@@ -49,8 +49,8 @@ function joinProject() {
 function createProject() {
     $.ajax({
         type:'post',
-        url: '../actions/users/edit-user-info.php',
-        data:  {'userName': $('#update-user-name').val(), 'userEmail': $('#update-user-email').val(), 'userCountry': $("#selected-country option:selected").val(), 'userCity': $('#update-user-city').val()},
+        url: '../actions/users/create-project.php',
+        data:  {'projectName': $('#create-project-name').val()},
         success: function() {
             window.location.reload();
         }

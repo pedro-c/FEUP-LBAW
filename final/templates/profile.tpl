@@ -36,7 +36,7 @@
                     </div>
                     <h4>New Project</h4>
                     <div class="new-project" id="new_project">
-                        <input type="text" id="create-project-id" placeholder="Insert Project ID">
+                        <input type="text" id="create-project-name" placeholder="Insert Project Name">
                         <button class="btn btn-success" onclick="createProject()">Create</button>
                     </div>
                 </div>

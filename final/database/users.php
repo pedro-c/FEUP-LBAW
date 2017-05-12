@@ -121,3 +121,17 @@ function getCountries(){
 }
 
 
+function createProject($name){
+
+    global $conn;
+    $stmt = $conn->prepare('INSERT INTO project(name) VALUES (?)');
+    $stmt->execute([$name]);
+
+    $last_id = $conn->lastInsertId();
+
+    global $conn;
+    $stmt = $conn->prepare('INSERT INTO user_project(id_user,id_project,is_coordinator) VALUES (?,?,?)');
+    $stmt->execute([$_SESSION['user_id'],$last_id,TRUE]);
+}
+
+
