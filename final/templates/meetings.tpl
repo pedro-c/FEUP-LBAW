@@ -1,117 +1,14 @@
-<link href="../css/UI7.css" rel="stylesheet">
-<script src="../javascript/UI7.js"></script>
-
-<div id="page-meetings">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="title_bar text-center">
-                <button id="future_meetings" onclick="exit_trash()">Future Meetings</button>
-                <button id="schedule_meetings" onclick="schedule()">Schedule a Meeting</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="container_meetings container">
-        <div class="row">
-            <div class="padding-tag-button col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <div class="text-center button_schedule">
-                    <button class="schedule pull-right" onclick="schedule()">Schedule Meeting</button>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <div class="padding-button-tags">
-                    <button id="tag-name" class="dropdown-toggle button-tags" typse="button" data-toggle="dropdown">Tag
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a id="tag-name-dropwdown" onclick="changeMeetingTagName('All')">All</a></li>
-                        {foreach $tags as $tag}
-                            <li><a id="tag-name-dropwdown" onclick="changeMeetingTagName('{$tag.name}')">{$tag.name}</a></li>
-                        {/foreach}
-                    </ul>
-                </div>
-            </div>
-            </div>
-        </div>
-
-        <div id="container_to_collapse" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="row">
-            {foreach $meetings as $meeting}
-
-                {$creator = getUserCreatorId($meeting.id)}
-                {$creatorName = getUserNameById($creator)}
-                {$time = getTimeFromTimestamp($meeting.date)}
-                {$date = getDateFromTimestamp($meeting.date)}
-                {$tag = getMeetingTag({$meeting.id})}
-
-                <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div class="panel panel-default meeting">
-                        <div class="panel-heading" onclick="show_Meeting_Info({$meeting.id})">
-                            <div class="padding">
-                                <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                                <label class="date">{$date}</label><br>
-                                <label class="description">{$meeting.name} </label><br>
-                            </div>
-                            <div class="align_middle">
-                                <span id="see_more" class="glyphicon glyphicon-chevron-right"
-                                      aria-hidden="true" onclick="show_Meeting_Info()"></span>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="information_meeting"><br>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                        <label class="hour">{$time}</label><br>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <label onclick="changeMeetingTagName('{$tag}')" class="tag-name pull-right">{if {$tag} != null}#{$tag}{/if}</label><br>
-                                    </div>
-                                </div>
-
-                                <label class="user_responsible">{$creatorName}</label><br>
-                                <label class="guests">
-
-                                    {$invited_users = getInvitedUsers($meeting.id)}
-                                    {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)}
-                                    {$coordinator = getMemberStatus($user_aut, $project)}
-                                    {$creator = isMeetingCreator($meeting.id, $user_aut)}
+<link href="../css/UI7.css" rel="stylesheet"> <script src="../javascript/UI7.js"></script> <div id="page-meetings"> <div class="row"> <div class="col-xs-12"> <div class="title_bar text-center"> <button id="future_meetings" onclick="exit_trash()">Future Meetings</button> <button id="schedule_meetings" onclick="schedule()">Schedule a Meeting</button> </div> </div> </div> <div class="container_meetings container"> <div class="row"> <div class="padding-tag-button col-lg-12 col-md-12 col-sm-12 col-xs-12"> <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <div class="text-center button_schedule"> <button class="schedule pull-right" onclick="schedule()">Schedule Meeting</button> </div> </div> <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <div class="padding-button-tags"> <button id="tag-name" class="dropdown-toggle button-tags" typse="button" data-toggle="dropdown">Tag <span class="caret"></span></button> <ul class="dropdown-menu"> <li><a id="tag-name-dropwdown" onclick="changeMeetingTagName('All')">All</a></li> {foreach $tags as $tag} <li><a id="tag-name-dropwdown" onclick="changeMeetingTagName('{$tag.name}')">{$tag.name}</a></li>{/foreach} </ul> </div> </div> </div> </div> <div id="container_to_collapse" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <div class="row"> {foreach $meetings as $meeting} {$creator = getUserCreatorId($meeting.id)} {$creatorName = getUserNameById($creator)} {$time = getTimeFromTimestamp($meeting.date)} {$date = getDateFromTimestamp($meeting.date)} {$tag = getMeetingTag({$meeting.id})} <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12"> <div class="panel panel-default meeting"> <div class="panel-heading" onclick="show_Meeting_Info({$meeting.id})"> <div class="padding"> <i class="fa fa-calendar-o" aria-hidden="true"></i> <label class="date">{$date}</label><br> <label class="description">{$meeting.name} </label><br> </div> <div class="align_middle"> <span id="see_more" class="glyphicon glyphicon-chevron-right" aria-hidden="true" onclick="show_Meeting_Info()"></span> </div> </div> <div class="panel-body"> <div class="information_meeting"><br> <div class="row"> <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <span class="glyphicon glyphicon-time" aria-hidden="true"></span> <label class="hour">{$time}</label><br> </div> <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <label onclick="changeMeetingTagName('{$tag}')" class="tag-name pull-right">{if {$tag} != null}#{$tag}{/if}</label><br> </div> </div> <label class="user_responsible">{$creatorName}</label><br> <label class="guests"> {$invited_users = getInvitedUsers($meeting.id)} {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)} {$coordinator = getMemberStatus($user_aut, $project)} {$creator = isMeetingCreator($meeting.id, $user_aut)} {$photos = getInvitedUsersPhotos($meeting.id)} {foreach $photos as $photo} <img class="user_photo" style="border-radius: 50%;" src={$photo}>{/foreach} {if $coordinator == 'true' || $creator == 'true' } <span id="plus_user" class="glyphicon glyphicon-plus-sign" aria-hidden="true" style="border-radius: 50%;" onclick="inviteMoreUsers({$meeting.id})"> </span> <div id='{$meeting.id|cat:'uninvited-users'}' class="uninvited-users" hidden> <form method="post" action="../actions/meetings/invite-user.php"> <select name="uninvited_users[]" id="uninvited-users" class="select2-multiple form-control" multiple="multiple" multiple> {foreach $notInvitedmembers as $notInvitedmember} {$name = getUserNameById($notInvitedmember)} <option value={$notInvitedmember}>{$name}</option>{/foreach} </select> <input name='meeting_id' value="{$meeting.id}" hidden> <input name="Invite" id="submit_invite" type="submit" value="Invite" style="margin-top: 20px;"> </form> </div> </div>
 
 
-                                    {$photos = getInvitedUsersPhotos($meeting.id)}
+                            {/if}
 
-                                    {foreach $photos as $photo}
-
-                                    <img class="user_photo" style="border-radius: 50%;" src={$photo}>
-
-                                    {/foreach}
-
-                                    {if $coordinator == 'true' || $creator == 'true' }
-
-                                        <span id="plus_user" class="glyphicon glyphicon-plus-sign"
-                                              aria-hidden="true" style="border-radius: 50%;" onclick="inviteMoreUsers({$meeting.id})">
-                                        </span>
-                                        <div id='{$meeting.id|cat:'uninvited-users'}' class="uninvited-users" hidden>
-                                            <form method="post" action="../actions/meetings/invite-user.php">
-                                                <select name="uninvited_users[]" id="uninvited-users" class="select2-multiple form-control" multiple="multiple" multiple>
-                                                    {foreach $notInvitedmembers as $notInvitedmember}
-                                                        {$name = getUserNameById($notInvitedmember)}
-                                                        <option value={$notInvitedmember}>{$name}</option>
-                                                    {/foreach}
-                                                </select>
-                                                <input name='meeting_id' value="{$meeting.id}" hidden>
-                                                <input name="Invite" id="submit_invite" type="submit" value="Invite" style="margin-top: 20px;">
-                                            </form>
-                                        </div>
-                                    {/if}
-
-                                </label>
-                                <br>
-                            </div>
+                            </label>
+                            <br>
                         </div>
                     </div>
                 </div>
-            {/foreach}
+                {/foreach}
             </div>
 
         </div>

@@ -170,12 +170,13 @@
           }
 
           #submit_invite{
-            background-color: $color_yellow;
+            background-color: $blue_secondary;
             border-radius: 5px;
             border-color: transparent;
             color: white;
+            font-weight: lighter;
             &:hover {
-              background-color: $blue_secondary;
+              background-color: $color_yellow;
             }
           }
 
