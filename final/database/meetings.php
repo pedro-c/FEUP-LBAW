@@ -19,6 +19,16 @@ function getUserFutureMeeting($project){
     return $stmt->fetchAll();
 }
 
+function getUserCreatorId($meeting_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT user_id FROM user_meeting WHERE meeting_id = ? AND is_creator = ?');
+
+    $stmt->execute([$meeting_id,'true']);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result['user_id'];
+}
+
 
 function scheduleMeeting($title, $description, $date, $time, $duration, $id_project){
 
@@ -147,4 +157,13 @@ function getMeetingTag($meeting_id){
     $stmt->execute([$meeting_id]);
 
     return $stmt->fetch()['name'];
+}
+
+
+function getNextThreeMeetings($project_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT name, date FROM meeting WHERE id_project = ? AND date > CURRENT_DATE ORDER BY date ASC LIMIT 3; ');
+    $stmt->execute([$project_id]);
+
+    return $stmt->fetchAll();
 }

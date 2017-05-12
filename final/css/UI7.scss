@@ -30,16 +30,28 @@
     }
   }
 
+  .padding-tag-button{
+    padding-bottom: 40px;
+  }
+
+  .tag-name.pull-right{
+    font-weight: lighter;
+    font-size: small;
+    cursor: pointer;
+    color: $blue_secondary;
+    &:hover {
+      color: $color_yellow;
+    }
+  }
+
   .container_meetings {
     border: none;
     background-color: transparent;
     margin-top: 1%;
     padding-bottom: 4%;
-    overflow-y: scroll !important;
 
-    .button_scheduale {
+    .button_schedule {
       padding-top: 20px;
-      padding-bottom: 40px;
 
       .schedule {
         padding: 4px 20px 4px 20px;
@@ -54,6 +66,25 @@
           background-color: $blue_secondary;
           border: none;
         }
+      }
+    }
+
+    .padding-button-tags{
+      padding-top: 20px;
+    }
+
+    .button-tags{
+      padding: 4px 20px 4px 20px;
+      color: white;
+      background-color: $color_yellow;
+      border: none;
+      border-radius: 5px;
+      align-self: center;
+      outline: 0;
+
+      &:hover {
+        background-color: $blue_secondary;
+        border: none;
       }
     }
 
@@ -135,6 +166,17 @@
               margin-right: 5px;
               width: 35px;
               float: left;
+            }
+          }
+
+          #submit_invite{
+            background-color: $blue_secondary;
+            border-radius: 5px;
+            border-color: transparent;
+            color: white;
+            font-weight: lighter;
+            &:hover {
+              background-color: $color_yellow;
             }
           }
 

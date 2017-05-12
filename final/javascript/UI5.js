@@ -52,8 +52,8 @@ function fileInfo(file_id){
             var i;
             for(i=0; i< data.length; i++){
                var format = data[i].file_name.substr(data[i].file_name.length - 3);
-               console.log("Format " + format);
-               $("#format").attr('src', getFormatImage(format));
+                console.log("Format " + format);
+                $("#format").attr('src', getFormatImage(format));
                 $("#file_name").text(data[i].file_name);
                 $("#download_file").attr('onclick','downloadFile('+ data[i].id + ')');
                 $("#uploader_id").text(data[i].uploader_name);
@@ -118,6 +118,8 @@ function exitMobile() {
 }
 
 function changeTagName(tag_name){
+
+
     $("#tag-name").html(tag_name).append('<span class="caret"></span>');
 
     if(tag_name == 'All'){

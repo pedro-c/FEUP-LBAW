@@ -179,3 +179,25 @@ function show_Meeting_Info(meeting_id){
 
 
 }
+
+function changeMeetingTagName(tag_name){
+
+    $("#tag-name").html(tag_name).append('<span class="caret"></span>');
+
+    if(tag_name == 'All'){
+        $('.tag-name').each(function(i, obj) {
+            $(this).parents('.meeting-panel').show();
+        });
+    }
+    else{
+        $('.tag-name').each(function(i, obj) {
+            var name = "#"+tag_name;
+
+            if($(this).text() != name)
+                $(this).parents('.meeting-panel').hide();
+            else
+                $(this).parents('.meeting-panel').show();
+
+        });
+    }
+}
