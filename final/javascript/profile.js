@@ -23,26 +23,36 @@ $(document).ready(function(){
 });
 
 function updateUserInfo() {
-
-    var $userName=$('#update-user-name').val();
-    var $userEmail=$('#update-user-email').val();
-    var $userCountry=$('#update-user-country').val();
-    var $userCity=$('#update-user-city').val();
-
-    console.log($userName);
-    console.log($userEmail);
-    console.log($userCountry);
-    console.log($userCity);
-
-
-     $.ajax({
+    $.ajax({
         type:'post',
         url: '../actions/users/edit-user-info.php',
-        data:  {'userName': $userName, 'userEmail': $userEmail, 'userCountry': $userCountry, 'userCity': $userCity},
+        data:  {'userName': $('#update-user-name').val(), 'userEmail': $('#update-user-email').val(), 'userCountry': $("#selected-country option:selected").val(), 'userCity': $('#update-user-city').val()},
         success: function() {
+            window.location.reload();
+        }
 
-            console.log("success");
+    });
+}
 
+function joinProject() {
+    $.ajax({
+        type:'post',
+        url: '../actions/users/join-project.php',
+        data:  {'projectId': $('#join-project-id').val()},
+        success: function() {
+            window.location.reload();
+        }
+
+    });
+}
+
+function createProject() {
+    $.ajax({
+        type:'post',
+        url: '../actions/users/create-project.php',
+        data:  {'projectName': $('#create-project-name').val()},
+        success: function() {
+            window.location.reload();
         }
 
     });
