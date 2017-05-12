@@ -13,22 +13,21 @@
 
     <div class="container_meetings container">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="padding-tag-button col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                 <div class="text-center button_schedule">
                     <button class="schedule pull-right" onclick="schedule()">Schedule Meeting</button>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <div class="button_schedule">
-                    <button id="tag-name" class="dropdown-toggle schedule" typse="button" data-toggle="dropdown">Tag
+                <div class="padding-button-tags">
+                    <button id="tag-name" class="dropdown-toggle button-tags" typse="button" data-toggle="dropdown">Tag
                         <span class="caret"></span></button>
                     <ul class="dropdown-menu">
                         <li><a id="tag-name-dropwdown" onclick="changeMeetingTagName('All')">All</a></li>
                         {foreach $tags as $tag}
                             <li><a id="tag-name-dropwdown" onclick="changeMeetingTagName('{$tag.name}')">{$tag.name}</a></li>
                         {/foreach}
-
                     </ul>
                 </div>
             </div>
@@ -59,10 +58,17 @@
                         </div>
                         <div class="panel-body">
                             <div class="information_meeting"><br>
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                <label class="hour">{$time}</label><br>
-                                <label class="user_responsible">{$creatorName}</label><br>
-                                  <label onclick="changeMeetingTagName('{$tag}')" class="tag_name">{if {$tag} != null}#{$tag}{/if} </label><br>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                        <label class="hour">{$time}</label><br>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label onclick="changeMeetingTagName('{$tag}')" class="tag-name pull-right">{if {$tag} != null}#{$tag}{/if} </label><br>
+                                    </div>
+                                </div>
+
+                                <label class="user_responsible">user {$creatorName}</label><br>
                                 <label class="guests">
 
                                     {$invited_users = getInvitedUsers($meeting.id)}

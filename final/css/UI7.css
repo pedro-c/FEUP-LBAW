@@ -180,15 +180,22 @@ body {
     #page-meetings .title_bar button:first-child {
       border-bottom: 4px solid;
       border-bottom-color: #e9d460; }
+  #page-meetings .padding-tag-button {
+    padding-bottom: 40px; }
+  #page-meetings .tag-name.pull-right {
+    font-weight: lighter;
+    font-size: small;
+    cursor: pointer;
+    color: #22313f; }
+    #page-meetings .tag-name.pull-right:hover {
+      color: #e9d460; }
   #page-meetings .container_meetings {
     border: none;
     background-color: transparent;
     margin-top: 1%;
-    padding-bottom: 4%;
-    overflow-y: scroll !important; }
+    padding-bottom: 4%; }
     #page-meetings .container_meetings .button_schedule {
-      padding-top: 20px;
-      padding-bottom: 40px; }
+      padding-top: 20px; }
       #page-meetings .container_meetings .button_schedule .schedule {
         padding: 4px 20px 4px 20px;
         color: white;
@@ -200,6 +207,19 @@ body {
         #page-meetings .container_meetings .button_schedule .schedule:hover {
           background-color: #22313f;
           border: none; }
+    #page-meetings .container_meetings .padding-button-tags {
+      padding-top: 20px; }
+    #page-meetings .container_meetings .button-tags {
+      padding: 4px 20px 4px 20px;
+      color: white;
+      background-color: #e9d460;
+      border: none;
+      border-radius: 5px;
+      align-self: center;
+      outline: 0; }
+      #page-meetings .container_meetings .button-tags:hover {
+        background-color: #22313f;
+        border: none; }
     #page-meetings .container_meetings .meeting {
       border-radius: 5px;
       vertical-align: middle;
