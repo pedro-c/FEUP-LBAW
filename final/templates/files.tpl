@@ -69,6 +69,8 @@ include_once "common/header.php";
                         </div>
                         <div class="panel-body">
                             <div class="minutes">
+                                {$date = get_day_name($file.upload_date)}
+                                <span>{$date} at </span>
                                 <span>{$file.upload_date|substr:11|truncate:5:""}</span>
                                 <span onclick="changeTagName('{$tag}')" class="hastag pull-right">{if {$tag} != null}#{$tag}{/if}</span>
                             </div>
@@ -100,7 +102,7 @@ include_once "common/header.php";
                                 <br>
                                 <span class="info"> Drag Files Here </span>
                                 <br><br>
-                                <input name="file[]" type="file" /><br />
+                                <input name="file[]" type="file"/><br />
                         </div>
 
                         <div class="input-group task-tags ">
@@ -131,7 +133,7 @@ include_once "common/header.php";
                             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" >
                                 <div class="file">
                                     <img id="format" class="file_show" src="../images/assets/excel.png">
-                                    <div id="file_name" class="title">O</div>
+                                    <div id="file_name" class="title"></div>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -166,14 +168,11 @@ include_once "common/header.php";
                                 Download File
                             </button>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
     <div id="mobile-back" class="hidden-lg hidden-md hidden-sm navbar navbar-default navbar-fixed-bottom"
          onclick="exitMobile()" hidden><h4>« Back</h4></div>
-</div>
 </div>

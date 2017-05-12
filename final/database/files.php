@@ -27,7 +27,7 @@ function getFilePath($file_id){
 
 function getAllFiles($project_id){
     global $conn;
-    $stmt = $conn->prepare('SELECT id,upload_date,uploader_id,name FROM file WHERE project_id = ?');
+    $stmt = $conn->prepare('SELECT id,upload_date,uploader_id,name FROM file WHERE project_id = ? ORDER BY upload_date DESC');
     $stmt->execute([$project_id]);
 
     return $stmt->fetchAll();
@@ -54,6 +54,16 @@ function getFileTag($file_id){
     $stmt->execute([$file_id]);
 
     return $stmt->fetch()['name'];
+}
+
+function get_day_name($timestamp){
+
+    if (strtotime($timestamp) >= strtotime("today"))
+        return "Today";
+    else if (strtotime($timestamp) >= strtotime("yesterday"))
+        return "Yesterday";
+
+    return date("Y-m-d", strtotime($timestamp));
 }
 
 
