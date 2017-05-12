@@ -169,6 +169,16 @@
             }
           }
 
+          #submit_invite{
+            background-color: $color_yellow;
+            border-radius: 5px;
+            border-color: transparent;
+            color: white;
+            &:hover {
+              background-color: $blue_secondary;
+            }
+          }
+
         }
       }
     }

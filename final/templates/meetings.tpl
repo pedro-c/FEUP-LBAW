@@ -38,7 +38,8 @@
             <div class="row">
             {foreach $meetings as $meeting}
 
-                {$creatorName = getUserNameById($meeting.id_creator)}
+                {$creator = getUserCreatorId($meeting.id)}
+                {$creatorName = getUserNameById($creator)}
                 {$time = getTimeFromTimestamp($meeting.date)}
                 {$date = getDateFromTimestamp($meeting.date)}
                 {$tag = getMeetingTag({$meeting.id})}
@@ -64,11 +65,11 @@
                                         <label class="hour">{$time}</label><br>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <label onclick="changeMeetingTagName('{$tag}')" class="tag-name pull-right">{if {$tag} != null}#{$tag}{/if} </label><br>
+                                        <label onclick="changeMeetingTagName('{$tag}')" class="tag-name pull-right">{if {$tag} != null}#{$tag}{/if}</label><br>
                                     </div>
                                 </div>
 
-                                <label class="user_responsible">user {$creatorName}</label><br>
+                                <label class="user_responsible">{$creatorName}</label><br>
                                 <label class="guests">
 
                                     {$invited_users = getInvitedUsers($meeting.id)}

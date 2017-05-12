@@ -19,6 +19,16 @@ function getUserFutureMeeting($project){
     return $stmt->fetchAll();
 }
 
+function getUserCreatorId($meeting_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT user_id FROM user_meeting WHERE meeting_id = ? AND is_creator = ?');
+
+    $stmt->execute([$meeting_id,'true']);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result['user_id'];
+}
+
 
 function scheduleMeeting($title, $description, $date, $time, $duration, $id_project){
 

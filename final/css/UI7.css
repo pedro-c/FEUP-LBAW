@@ -272,6 +272,13 @@ body {
             margin-right: 5px;
             width: 35px;
             float: left; }
+        #page-meetings .container_meetings .meeting .panel-body .information_meeting #submit_invite {
+          background-color: #e9d460;
+          border-radius: 5px;
+          border-color: transparent;
+          color: white; }
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting #submit_invite:hover {
+            background-color: #22313f; }
   #page-meetings #container_schedule_meeting .panel-heading,
   #page-meetings #container_meeting_info .panel-heading {
     background-color: #e9d460;
