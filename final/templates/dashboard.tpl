@@ -97,15 +97,6 @@
                                 <small class="dash-date">{$meeting.date|substr:0:10}</small>
                             </button>
                         {/foreach}
-
-                       <!-- <button class="list-group-item">
-                            <i class="glyphicon glyphicon-menu-right dash-icon"></i><span class="dash-item-text">Last Checkup</span>
-                            <small class="dash-date">24-03-2017</small>
-                        </button>
-                        <button class="list-group-item">
-                            <i class="glyphicon glyphicon-menu-right dash-icon"></i><span class="dash-item-text">Deadline Meeting</span>
-                            <small class="dash-date">30-03-2017</small>
-                        </button>-->
                     </div>
                 </div>
             </div>
