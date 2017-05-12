@@ -252,6 +252,7 @@ body {
         #page-meetings .container_meetings .meeting .panel-heading i {
           font-size: large; }
       #page-meetings .container_meetings .meeting .panel-body {
+        padding: 0 !important;
         padding-left: 30px !important;
         padding-top: 0px !important; }
         #page-meetings .container_meetings .meeting .panel-body .information_meeting .hour {
