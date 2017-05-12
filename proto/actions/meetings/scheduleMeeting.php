@@ -12,13 +12,18 @@ if(isset($_POST['title']) && isset($_POST['date']) && isset($_POST['time']) && i
     $duration = $_POST['duration'];
     $invited_users = $_POST['invited_users'];
 
-    $meeting_id = scheduleMeeting($title,$description, $date,$time,$duration,$_SESSION['project_id']);
-    inviteUserToMeeting($meeting_id, $invited_users, $_SESSION['user_id']);
-    $_SESSION['success_messages'][] = '<br>'.'Schedule Meeting successful';
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+
+   $meeting_id = scheduleMeeting($title,$description, $date,$time,$duration,$_SESSION['project_id']);
+   inviteUserToMeeting($meeting_id, $invited_users, $_SESSION['user_id']);
+   $_SESSION['success_messages'][] = '<br>'.'Schedule Meeting successful';
+   header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 }
 else{
     $_SESSION['error_messages'][] = '<br>'.'You are not allowed to schedule a meeting without fill title, date and time fields. You must invite at least one member.';
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
+
+
+
+

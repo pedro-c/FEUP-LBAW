@@ -83,5 +83,5 @@ function show_Meeting_Info(meeting_id){
     $("#container_schedule_meeting").hide();
     $("#container_meeting_info").show();
 
-
 }
+
