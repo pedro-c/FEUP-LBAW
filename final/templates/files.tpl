@@ -29,7 +29,7 @@ include_once "common/header.php";
                         <button id="tag-name" class="dropdown-toggle uploadFile" type="button" data-toggle="dropdown">Tag
                             <span class="caret"></span></button>
                         <ul class="dropdown-menu">
-                                <li><a id="tag-name-dropwdown" onclick="changeTagName('All')">All</a></li>
+                            <li><a id="tag-name-dropwdown" onclick="changeTagName('All')">All</a></li>
                             {foreach $tags as $tag}
                                 <li><a id="tag-name-dropwdown" onclick="changeTagName('{$tag.name}')">{$tag.name}</a></li>
                             {/foreach}

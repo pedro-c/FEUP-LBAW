@@ -118,6 +118,9 @@ function exitMobile() {
 }
 
 function changeTagName(tag_name){
+
+    console.log("entrei ");
+
     $("#tag-name").html(tag_name).append('<span class="caret"></span>');
 
     if(tag_name == 'All'){

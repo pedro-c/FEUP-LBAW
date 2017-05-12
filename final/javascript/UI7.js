@@ -179,3 +179,31 @@ function show_Meeting_Info(meeting_id){
 
 
 }
+
+function changeMeetingTagName(tag_name){
+
+    $("#tag-name").html(tag_name).append('<span class="caret"></span>');
+
+    if(tag_name == 'All'){
+        $('.tag_name').each(function(i, obj) {
+            $(this).parents('.meeting-panel').show();
+        });
+    }
+    else{
+        $('.tag_name').each(function(i, obj) {
+            var name = "#"+tag_name;
+
+            console.log(name + " e " +  $(this).text() );
+
+            if($(this).text() != name){
+                console.log("diferente " + name + " e " +  $(this).text() );
+                $(this).parents('.meeting-panel').hide();
+            }
+            else{
+                console.log("igual" + name + " e " +  $(this).text() );
+                $(this).parents('.meeting-panel').show();
+            }
+
+        });
+    }
+}

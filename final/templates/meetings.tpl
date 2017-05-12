@@ -12,9 +12,29 @@
     </div>
 
     <div class="container_meetings container">
-        <div class="text-center button_scheduale">
-            <button class="schedule" onclick="schedule()">Schedule Meeting</button>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="text-center button_schedule">
+                    <button class="schedule pull-right" onclick="schedule()">Schedule Meeting</button>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="button_schedule">
+                    <button id="tag-name" class="dropdown-toggle schedule" typse="button" data-toggle="dropdown">Tag
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a id="tag-name-dropwdown" onclick="changeMeetingTagName('All')">All</a></li>
+                        {foreach $tags as $tag}
+                            <li><a id="tag-name-dropwdown" onclick="changeMeetingTagName('{$tag.name}')">{$tag.name}</a></li>
+                        {/foreach}
+
+                    </ul>
+                </div>
+            </div>
+            </div>
         </div>
+
         <div id="container_to_collapse" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="row">
             {foreach $meetings as $meeting}
@@ -42,7 +62,7 @@
                                 <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                 <label class="hour">{$time}</label><br>
                                 <label class="user_responsible">{$creatorName}</label><br>
-                                  <label class="tag">{if {$tag} != null}#{$tag}{/if} </label><br>
+                                  <label onclick="changeMeetingTagName('{$tag}')" class="tag_name">{if {$tag} != null}#{$tag}{/if} </label><br>
                                 <label class="guests">
 
                                     {$invited_users = getInvitedUsers($meeting.id)}

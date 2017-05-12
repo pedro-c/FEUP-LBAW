@@ -186,10 +186,10 @@ body {
     margin-top: 1%;
     padding-bottom: 4%;
     overflow-y: scroll !important; }
-    #page-meetings .container_meetings .button_scheduale {
+    #page-meetings .container_meetings .button_schedule {
       padding-top: 20px;
       padding-bottom: 40px; }
-      #page-meetings .container_meetings .button_scheduale .schedule {
+      #page-meetings .container_meetings .button_schedule .schedule {
         padding: 4px 20px 4px 20px;
         color: white;
         background-color: #e9d460;
@@ -197,7 +197,7 @@ body {
         border-radius: 5px;
         align-self: center;
         outline: 0; }
-        #page-meetings .container_meetings .button_scheduale .schedule:hover {
+        #page-meetings .container_meetings .button_schedule .schedule:hover {
           background-color: #22313f;
           border: none; }
     #page-meetings .container_meetings .meeting {
