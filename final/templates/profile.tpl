@@ -52,7 +52,15 @@
                     </div>
                     <div class="info">
                         <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
-                        <input class="update-info" id="update-user-country" type="text" value="{$country}">
+                        <select id="selected-country" >
+                            {foreach $countries as $country}
+                                {if $country.name eq $user_country['0'].name}
+                                    <option selected="selected" value="{$user.country_id}">{$user_country['0'].name}</option>
+                                {else}
+                                    <option value="{$country.id}">{$country.name}</option>
+                                {/if}
+                            {/foreach}
+                        </select>
                     </div>
                     <div class="info">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span>

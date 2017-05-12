@@ -82,14 +82,14 @@ function getUserInfo($id){
 
 function getUserCountry($userId){
     global $conn;
-    $stmt = $conn -> prepare('SELECT country.name FROM user_table, country WHERE user_table.country_id = country.id AND user_table.id = ?');
+    $stmt = $conn -> prepare('SELECT DISTINCT country.name FROM user_table, country WHERE user_table.country_id = country.id AND user_table.id = ?');
     $stmt->execute([$userId]);
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $result = $stmt->fetchAll();
 
     return $result;
 }
 
-function update_user_info($userName, $userEmail, $userCountry, $userCity){
+function updateUserInfo($userName, $userEmail, $userCountry, $userCity){
     global $conn;
     $stmt = $conn->prepare('UPDATE user_table SET name = ?, email = ?, country_id = ?, city = ? WHERE id = ?');
     return $stmt->execute([$userName, $userEmail, $userCountry, $userCity, $_SESSION['user_id']]);
@@ -110,6 +110,14 @@ function getPhoto($user){
     else {
         return '../images/assets/default_image_profile1.jpg';
     }
+}
+
+function getCountries(){
+    global $conn;
+    $stmt = $conn -> prepare('SELECT * FROM country');
+    $stmt->execute();
+    return $stmt->fetchAll();
+
 }
 
 

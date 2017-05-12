@@ -9,7 +9,7 @@ if(isset($_SESSION['user_id'])){
     $userCity = $_POST['userCity'];
 
 
-    update_user_info($userName, $userEmail, $userCountry, $userCity);
+    updateUserInfo($userName, $userEmail, $userCountry, $userCity);
 }
 
 
