@@ -116,18 +116,23 @@
                 </a>
                 <div class="panel-body">
                     <div class="list-group">
-                        <button class="list-group-item">
-                            <div class="row">
+                        {foreach $files as $file}
+                            {$uploader_name = getNickNameById($file.uploader_id)}
+                            {$photo_path = getPhoto($file.uploader_id)}
+                            <button class="list-group-item">
+                                <div class="row">
                                 <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                               <img class="file_show" src="../images/assets/excel.png"><span class="dash-item-text">clients.xls</span>
+                               <img class="file_show" src="../images/assets/excel.png"><span class="dash-item-text">{$file.name|truncate:18}</span>
                                 </span>
-                                <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                        <img src="../images/users/avatar1.png" class="dash-user-thumb"/><span
-                                            class="dash-item-username"><small>mariajoaomp</small></span>
+                                    <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                                        <img src={$photo_path} class="dash-user-thumb"/><span
+                                                class="dash-item-username"><small>{$uploader_name}</small></span>
                                 </span>
-                            </div>
-                        </button>
-                        <button class="list-group-item">
+                                </div>
+                            </button>
+                        {/foreach}
+
+                     <!--   <button class="list-group-item">
                             <div class="row">
                                 <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                               <img class="file_show" src="../images/assets/pdf.png">
@@ -150,7 +155,7 @@
                                             class="dash-item-username"><small>jccoutinho</small></span>
                                 </span>
                             </div>
-                        </button>
+                        </button>-->
                     </div>
                 </div>
             </div>

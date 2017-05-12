@@ -66,7 +66,14 @@ function get_day_name($timestamp){
     return date("Y-m-d", strtotime($timestamp));
 }
 
+function getLastThreeUploadedFiles($project_id){
 
+    global $conn;
+    $stmt = $conn->prepare('SELECT uploader_id, name FROM file WHERE project_id = ? ORDER BY upload_date DESC LIMIT 3;');
+    $stmt->execute([$project_id]);
 
+    return $stmt->fetchAll();
+
+}
 
 

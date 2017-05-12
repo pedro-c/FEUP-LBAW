@@ -26,7 +26,6 @@ function getUserId($email){
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return $result['id'];
-
 }
 
 function getUsername($email){
@@ -38,7 +37,17 @@ function getUsername($email){
     return $result['username'];
 }
 
-function getUserNameById($id){
+function getNickNameById($id){
+    global $conn;
+    $stmt = $conn -> prepare('SELECT username FROM user_table WHERE id = ?');
+    $stmt->execute([$id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result['username'];
+}
+
+
+function getUsernameById($id){
 
     global $conn;
     $stmt = $conn -> prepare('SELECT user_table.name FROM user_table WHERE id = ?');
@@ -47,6 +56,7 @@ function getUserNameById($id){
 
     return $result['name'];
 }
+
 
 
 function checkForInvitation($email,$project){
