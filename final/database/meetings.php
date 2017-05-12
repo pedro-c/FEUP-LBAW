@@ -158,3 +158,12 @@ function getMeetingTag($meeting_id){
 
     return $stmt->fetch()['name'];
 }
+
+
+function getNextThreeMeetings($project_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT name, date FROM meeting WHERE id_project = ? AND date > CURRENT_DATE ORDER BY date ASC LIMIT 3; ');
+    $stmt->execute([$project_id]);
+
+    return $stmt->fetchAll();
+}

@@ -73,7 +73,6 @@ function getLastThreeUploadedFiles($project_id){
     $stmt->execute([$project_id]);
 
     return $stmt->fetchAll();
-
 }
 
 

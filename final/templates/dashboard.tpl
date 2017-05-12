@@ -91,18 +91,21 @@
                 </a>
                 <div class="panel-body">
                     <div class="list-group">
-                        <button class="list-group-item">
-                            <i class="glyphicon glyphicon-menu-right dash-icon"></i><span class="dash-item-text">General Meeting</span>
-                            <small class="dash-date">09-03-2017</small>
-                        </button>
-                        <button class="list-group-item">
+                        {foreach $meetings as $meeting}
+                            <button class="list-group-item">
+                                <i class="glyphicon glyphicon-menu-right dash-icon"></i><span class="dash-item-text">{$meeting.name}</span>
+                                <small class="dash-date">{$meeting.date|substr:0:10}</small>
+                            </button>
+                        {/foreach}
+
+                       <!-- <button class="list-group-item">
                             <i class="glyphicon glyphicon-menu-right dash-icon"></i><span class="dash-item-text">Last Checkup</span>
                             <small class="dash-date">24-03-2017</small>
                         </button>
                         <button class="list-group-item">
                             <i class="glyphicon glyphicon-menu-right dash-icon"></i><span class="dash-item-text">Deadline Meeting</span>
                             <small class="dash-date">30-03-2017</small>
-                        </button>
+                        </button>-->
                     </div>
                 </div>
             </div>
@@ -131,31 +134,6 @@
                                 </div>
                             </button>
                         {/foreach}
-
-                     <!--   <button class="list-group-item">
-                            <div class="row">
-                                <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                              <img class="file_show" src="../images/assets/pdf.png">
-                                <span class="dash-item-text">requirements.pdf</span>
-                                </span>
-                                <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                        <img src="../images/users/avatar2.png" class="dash-user-thumb"/><span
-                                            class="dash-item-username"><small>epassos</small></span>
-                                </span>
-                            </div>
-                        </button>
-                        <button class="list-group-item">
-                            <div class="row">
-                                <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                             <img class="file_show" src="../images/assets/file.png">
-                                <span class="dash-item-text">team_guide.pdf</span>
-                                </span>
-                                <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                        <img src="../images/users/avatar3.png" class="dash-user-thumb"/><span
-                                            class="dash-item-username"><small>jccoutinho</small></span>
-                                </span>
-                            </div>
-                        </button>-->
                     </div>
                 </div>
             </div>
