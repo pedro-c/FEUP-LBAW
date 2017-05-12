@@ -80,4 +80,18 @@ function getUserInfo($id){
     return $result;
 }
 
+function getUserCountry($userId){
+    global $conn;
+    $stmt = $conn -> prepare('SELECT country.name FROM user_table, country WHERE user_table.country_id = country.id AND user_table.id = ?');
+    $stmt->execute([$userId]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function update_user_info($userId, $userName, $userEmail, $userCountry, $userCity){
+    global $conn;
+    $stmt = $conn->prepare('UPDATE user_table SET name = ?, email = ?, country_id = ?, city = ? WHERE id = ?');
+    $stmt->execute([$userName, $userEmail, $userCountry, $userCity, $userId]);
+}
 

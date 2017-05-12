@@ -3,12 +3,13 @@ include_once "common/header.php";
 include_once($BASE_DIR .'database/profile.php');
 include_once($BASE_DIR .'database/users.php');
 
-$projectId=$_SESSION['project_id'];
-$userId=$_SESSION['user_id'];
+$user = getUserInfo($_SESSION['user_id']);
+$projects = getUserProjects($_SESSION['user_id']);
+$country = getUserCountry($_SESSION['user_id']);
 
-
-$user = getUserInfo($userId);
-
+$smarty->assign('projects',$projects);
+$smarty->assign('user', $user);
+$smarty->assign('country', $country);
 $smarty->display($BASE_DIR . 'templates/profile.tpl');
 
 ?>

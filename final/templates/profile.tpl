@@ -11,7 +11,7 @@
             <div class="content col-xs-8 col-md-4 col-xs-offset-2 col-md-offset-4">
                 <div class="profile-pic">
                     <div>
-                        <img class="img-circle" src="../../images/users/avatar5.jpg">
+                        <img class="img-circle" src="../images/users/{$user.photo_path}">
                     </div>
                     <div>
                         <a href="#">Change Photo</a>
@@ -20,12 +20,14 @@
                 <div class="project-managment">
                     <h4>Current Projects</h4>
                     <div class="current-projects">
-                        <div>
-                            <a href="#">Project 1</a>
-                        </div>
-                        <div>
-                            <a href="#">Project 2</a>
-                        </div>
+
+                        {foreach $projects as $project}
+
+                            {$project_name = getProjectName($project.id_project)}
+                            <div>
+                                <a onclick="changeProject({$project.id_project})">{$project_name}</a>
+                            </div>
+                        {/foreach}
                     </div>
                     <h4>Join Project</h4>
                     <div class="join-project">
@@ -42,22 +44,22 @@
                     <h4 id="change-password">Edit Personal Info</h4>
                     <div class="info">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        <input class="update-info" type="text" placeholder="Duarte Costa">
+                        <input class="update-info" id="update-user-name" type="text" value="{$user.name}">
                     </div>
                     <div class="info">
                         <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                        <input class="update-info" type="email" placeholder="duartecosta@mail.com">
+                        <input class="update-info" id="update-user-email" type="email" value="{$user.email}">
                     </div>
                     <div class="info">
                         <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
-                        <input class="update-info" type="text" placeholder="Portugal">
+                        <input class="update-info" id="update-user-country" type="text" value="{$country}">
                     </div>
                     <div class="info">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                        <input class="update-info" type="text" placeholder="Porto">
+                        <input class="update-info" id="update-user-city" type="text" value="{$user.city}">
                     </div>
                     <div class="update">
-                        <button id="update-button" class="btn btn-success">Update</button>
+                        <button id="update-button" class="btn btn-success" onclick="updateUserInfo()">Update</button>
                     </div>
                 </div>
                 <div class="password">
