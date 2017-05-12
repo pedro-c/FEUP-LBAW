@@ -215,6 +215,15 @@
         padding-bottom: 10px;
       }
 
+      .tag{
+        padding-bottom: 5px;
+        cursor: pointer;
+        color: $blue_secondary;
+        &:hover {
+          color: $color_yellow;
+        }
+      }
+
       .description {
         font-size: small;
         padding-bottom: 30px;
@@ -222,7 +231,6 @@
 
       .date {
         font-size: large;
-        padding-bottom: 5px;
       }
 
       .minutes {

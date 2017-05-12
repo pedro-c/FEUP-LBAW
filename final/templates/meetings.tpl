@@ -22,6 +22,7 @@
                 {$creatorName = getUserNameById($meeting.id_creator)}
                 {$time = getTimeFromTimestamp($meeting.date)}
                 {$date = getDateFromTimestamp($meeting.date)}
+                {$tag = getMeetingTag({$meeting.id})}
 
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
@@ -41,6 +42,7 @@
                                 <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                 <label class="hour">{$time}</label><br>
                                 <label class="user_responsible">{$creatorName}</label><br>
+                                  <label class="tag">{if {$tag} != null}#{$tag}{/if} </label><br>
                                 <label class="guests">
 
                                     {$invited_users = getInvitedUsers($meeting.id)}
@@ -141,7 +143,6 @@
                                     {/foreach}
                                 </select>
                             </div>
-
 
                             <div class="box drag_here hidden-xs" ondrop="drop_handler(event);" ondragover="dragover_handler(event);" ondragend="dragend_handler(event);">
                                 <input class="box__file" type="file" name="file[]" id="file" multiple />

@@ -134,3 +134,17 @@ function getMeetingFiles($meeting_id){
 
     return $stmt->fetchAll();
 }
+
+function addTagToMeeting($meeting_id,$tag_id){
+    global $conn;
+    $stmt = $conn->prepare('INSERT INTO meeting_tag(meeting_id,tag_id) values (?,?)');
+    $stmt->execute([$meeting_id,$tag_id]);
+}
+
+function getMeetingTag($meeting_id){
+    global $conn;
+    $stmt = $conn -> prepare('SELECT name FROM tag INNER JOIN meeting_tag ON meeting_tag.meeting_id = ? WHERE meeting_tag.tag_id = tag.id' );
+    $stmt->execute([$meeting_id]);
+
+    return $stmt->fetch()['name'];
+}

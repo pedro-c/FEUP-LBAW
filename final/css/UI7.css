@@ -309,14 +309,21 @@ body {
       font-size: small;
       font-weight: normal;
       padding-bottom: 10px; }
+    #page-meetings #container_schedule_meeting .info-meeting .tag,
+    #page-meetings #container_meeting_info .info-meeting .tag {
+      padding-bottom: 5px;
+      cursor: pointer;
+      color: #22313f; }
+      #page-meetings #container_schedule_meeting .info-meeting .tag:hover,
+      #page-meetings #container_meeting_info .info-meeting .tag:hover {
+        color: #e9d460; }
     #page-meetings #container_schedule_meeting .info-meeting .description,
     #page-meetings #container_meeting_info .info-meeting .description {
       font-size: small;
       padding-bottom: 30px; }
     #page-meetings #container_schedule_meeting .info-meeting .date,
     #page-meetings #container_meeting_info .info-meeting .date {
-      font-size: large;
-      padding-bottom: 5px; }
+      font-size: large; }
     #page-meetings #container_schedule_meeting .info-meeting .minutes,
     #page-meetings #container_meeting_info .info-meeting .minutes {
       padding-bottom: 30px; }

@@ -69,7 +69,7 @@ include_once "common/header.php";
                         </div>
                         <div class="panel-body">
                             <div class="minutes">
-                                <span>{$file.upload_date|substr:11|truncate:5:""}h</span>
+                                <span>{$file.upload_date|substr:11|truncate:5:""}</span>
                                 <span onclick="changeTagName('{$tag}')" class="hastag pull-right">{if {$tag} != null}#{$tag}{/if}</span>
                             </div>
                             <div class="name">
