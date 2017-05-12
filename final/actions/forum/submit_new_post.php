@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: epassos
- * Date: 4/16/17
- * Time: 6:24 PM
- */
 
 include_once '../../config/init.php';
 include_once $BASE_DIR . 'database/forum.php';

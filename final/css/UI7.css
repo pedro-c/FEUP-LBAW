@@ -241,6 +241,8 @@ body {
           color: #e9d460;
           font-size: 35px;
           cursor: pointer; }
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting #plus_user:hover {
+            color: #22313f; }
         #page-meetings .container_meetings .meeting .panel-body .information_meeting .user_responsible {
           font-weight: normal;
           padding-bottom: 5px; }
@@ -307,14 +309,21 @@ body {
       font-size: small;
       font-weight: normal;
       padding-bottom: 10px; }
+    #page-meetings #container_schedule_meeting .info-meeting .tag,
+    #page-meetings #container_meeting_info .info-meeting .tag {
+      padding-bottom: 5px;
+      cursor: pointer;
+      color: #22313f; }
+      #page-meetings #container_schedule_meeting .info-meeting .tag:hover,
+      #page-meetings #container_meeting_info .info-meeting .tag:hover {
+        color: #e9d460; }
     #page-meetings #container_schedule_meeting .info-meeting .description,
     #page-meetings #container_meeting_info .info-meeting .description {
       font-size: small;
       padding-bottom: 30px; }
     #page-meetings #container_schedule_meeting .info-meeting .date,
     #page-meetings #container_meeting_info .info-meeting .date {
-      font-size: large;
-      padding-bottom: 5px; }
+      font-size: large; }
     #page-meetings #container_schedule_meeting .info-meeting .minutes,
     #page-meetings #container_meeting_info .info-meeting .minutes {
       padding-bottom: 30px; }
@@ -324,9 +333,12 @@ body {
       #page-meetings #container_schedule_meeting .info-meeting .files .file_show,
       #page-meetings #container_meeting_info .info-meeting .files .file_show {
         width: 25px; }
-      #page-meetings #container_schedule_meeting .info-meeting .files label,
-      #page-meetings #container_meeting_info .info-meeting .files label {
-        padding-bottom: 10px; }
+    #page-meetings #container_schedule_meeting .info-meeting #meeting_files a.file_description,
+    #page-meetings #container_meeting_info .info-meeting #meeting_files a.file_description {
+      padding-bottom: 10px;
+      padding-left: 10px;
+      text-decoration: none !important;
+      cursor: pointer !important; }
     #page-meetings #container_schedule_meeting .info-meeting .guests,
     #page-meetings #container_meeting_info .info-meeting .guests {
       padding-top: 10px; }
@@ -488,15 +500,25 @@ body {
     #page-meetings #create-meeting-settings .new_meeting .box.drag_here div {
       display: table-cell;
       vertical-align: middle; }
-    #page-meetings #create-meeting-settings .new_meeting .box.drag_here .info {
-      padding-top: 30px;
-      text-align: center;
-      font-size: medium;
-      color: grey; }
     #page-meetings #create-meeting-settings .new_meeting .box.drag_here .glyphicon.glyphicon-plus {
       text-align: center;
       font-size: x-large;
       color: grey; }
+    #page-meetings #create-meeting-settings .new_meeting .box.drag_here #filedrag {
+      display: none;
+      font-weight: bold;
+      text-align: center;
+      padding: 1em 0;
+      margin: 1em 0;
+      color: #555;
+      border: 2px dashed #555;
+      border-radius: 7px;
+      cursor: default; }
+      #page-meetings #create-meeting-settings .new_meeting .box.drag_here #filedrag:hover {
+        color: #f00;
+        border-color: #f00;
+        border-style: solid;
+        box-shadow: inset 0 3px 4px #888; }
   #page-meetings #submit {
     padding: 4px 20px 4px 20px;
     color: white;

@@ -70,4 +70,68 @@ function joinProject($id, $project){
     return $stmt->execute([$id,$project,$is_coordinator]);
 }
 
+function getUserInfo($id){
+
+    global $conn;
+    $stmt = $conn -> prepare('SELECT * FROM user_table WHERE id = ?');
+    $stmt->execute([$id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function getUserCountry($userId){
+    global $conn;
+    $stmt = $conn -> prepare('SELECT DISTINCT country.name FROM user_table, country WHERE user_table.country_id = country.id AND user_table.id = ?');
+    $stmt->execute([$userId]);
+    $result = $stmt->fetchAll();
+
+    return $result;
+}
+
+function updateUserInfo($userName, $userEmail, $userCountry, $userCity){
+    global $conn;
+    $stmt = $conn->prepare('UPDATE user_table SET name = ?, email = ?, country_id = ?, city = ? WHERE id = ?');
+    return $stmt->execute([$userName, $userEmail, $userCountry, $userCity, $_SESSION['user_id']]);
+}
+
+function getPhoto($user){
+
+
+    global $conn;
+    $stmt = $conn -> prepare('SELECT photo_path FROM user_table WHERE id = ?');
+    $stmt->execute([$user]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+    if (!is_null($result['photo_path']) && file_exists("../images/users/". $result['photo_path'])) {
+        return '../images/users/' . $result['photo_path'];
+    }
+    else {
+        return '../images/assets/default_image_profile1.jpg';
+    }
+}
+
+function getCountries(){
+    global $conn;
+    $stmt = $conn -> prepare('SELECT * FROM country');
+    $stmt->execute();
+    return $stmt->fetchAll();
+
+}
+
+
+function createProject($name){
+
+    global $conn;
+    $stmt = $conn->prepare('INSERT INTO project(name) VALUES (?)');
+    $stmt->execute([$name]);
+
+    $last_id = $conn->lastInsertId();
+
+    global $conn;
+    $stmt = $conn->prepare('INSERT INTO user_project(id_user,id_project,is_coordinator) VALUES (?,?,?)');
+    $stmt->execute([$_SESSION['user_id'],$last_id,TRUE]);
+}
+
 

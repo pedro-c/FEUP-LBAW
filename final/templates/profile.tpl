@@ -11,7 +11,7 @@
             <div class="content col-xs-8 col-md-4 col-xs-offset-2 col-md-offset-4">
                 <div class="profile-pic">
                     <div>
-                        <img class="img-circle" src="../../images/users/avatar5.jpg">
+                        <img class="img-circle" src="{$user_photo_path}">
                     </div>
                     <div>
                         <a href="#">Change Photo</a>
@@ -20,56 +20,66 @@
                 <div class="project-managment">
                     <h4>Current Projects</h4>
                     <div class="current-projects">
-                        <div>
-                            <a href="#">Project 1</a>
-                        </div>
-                        <div>
-                            <a href="#">Project 2</a>
-                        </div>
+
+                        {foreach $projects as $project}
+
+                            {$project_name = getProjectName($project.id_project)}
+                            <div>
+                                <a onclick="changeProject({$project.id_project})">{$project_name}</a>
+                            </div>
+                        {/foreach}
                     </div>
                     <h4>Join Project</h4>
                     <div class="join-project">
-                        <input type="text" placeholder="Insert Project ID">
-                        <button class="btn btn-success">Join</button>
+                        <input type="text" id="join-project-id" placeholder="Insert Project ID">
+                        <button class="btn btn-success" onclick="joinProject()">Join</button>
                     </div>
                     <h4>New Project</h4>
                     <div class="new-project" id="new_project">
-                        <input type="text" placeholder="Insert Project ID">
-                        <button class="btn btn-success">Create</button>
+                        <input type="text" id="create-project-name" placeholder="Insert Project Name">
+                        <button class="btn btn-success" onclick="createProject()">Create</button>
                     </div>
                 </div>
                 <div class="personal-info">
                     <h4 id="change-password">Edit Personal Info</h4>
                     <div class="info">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        <input class="update-info" type="text" placeholder="Duarte Costa">
+                        <input class="update-info" id="update-user-name" type="text" value="{$user.name}">
                     </div>
                     <div class="info">
                         <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                        <input class="update-info" type="email" placeholder="duartecosta@mail.com">
+                        <input class="update-info" id="update-user-email" type="email" value="{$user.email}">
                     </div>
                     <div class="info">
                         <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
-                        <input class="update-info" type="text" placeholder="Portugal">
+                        <select id="selected-country" >
+                            {foreach $countries as $country}
+                                {if $country.name eq $user_country['0'].name}
+                                    <option selected="selected" value="{$user.country_id}">{$user_country['0'].name}</option>
+                                {else}
+                                    <option value="{$country.id}">{$country.name}</option>
+                                {/if}
+                            {/foreach}
+                        </select>
                     </div>
                     <div class="info">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                        <input class="update-info" type="text" placeholder="Porto">
+                        <input class="update-info" id="update-user-city" type="text" value="{$user.city}">
                     </div>
                     <div class="update">
-                        <button id="update-button" class="btn btn-success">Update</button>
+                        <button id="update-button" class="btn btn-success" onclick="updateUserInfo()">Update</button>
                     </div>
                 </div>
                 <div class="password">
                     <h4 id="change-password">Change Password</h4>
                     <div>
-                        <input type="text" placeholder="Current Password">
+                        <input type="password" placeholder="Current Password">
                     </div>
                     <div>
-                        <input id="new-password" type="text" placeholder="New Password">
+                        <input id="new-password" type="password" placeholder="New Password">
                     </div>
                     <div>
-                        <input type="text" placeholder="Repeat Password">
+                        <input type="password" placeholder="Repeat Password">
                     </div>
                     <div>
                         <button class="btn btn-success">Update</button>

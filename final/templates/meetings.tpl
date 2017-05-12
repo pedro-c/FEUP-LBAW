@@ -22,6 +22,7 @@
                 {$creatorName = getUserNameById($meeting.id_creator)}
                 {$time = getTimeFromTimestamp($meeting.date)}
                 {$date = getDateFromTimestamp($meeting.date)}
+                {$tag = getMeetingTag({$meeting.id})}
 
                 <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="panel panel-default meeting">
@@ -41,13 +42,42 @@
                                 <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                 <label class="hour">{$time}</label><br>
                                 <label class="user_responsible">{$creatorName}</label><br>
+                                  <label class="tag">{if {$tag} != null}#{$tag}{/if} </label><br>
                                 <label class="guests">
-                                    <img class="user_photo" src="../images/users/avatar2.png">
-                                    <img class="user_photo" src="../images/users/avatar3.png">
-                                    <img class="user_photo" src="../images/users/avatar4.png">
-                                    <img class="user_photo" src="../images/users/avatar7.png">
-                                    <span id="plus_user" class="glyphicon glyphicon-plus-sign"
-                                          aria-hidden="true"></span>
+
+                                    {$invited_users = getInvitedUsers($meeting.id)}
+                                    {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)}
+                                    {$coordinator = getMemberStatus($user_aut, $project)}
+                                    {$creator = isMeetingCreator($meeting.id, $user_aut)}
+
+
+                                    {$photos = getInvitedUsersPhotos($meeting.id)}
+
+                                    {foreach $photos as $photo}
+
+                                    <img class="user_photo" style="border-radius: 50%;" src={$photo}>
+
+                                    {/foreach}
+
+                                    {if $coordinator == 'true' || $creator == 'true' }
+
+                                        <span id="plus_user" class="glyphicon glyphicon-plus-sign"
+                                              aria-hidden="true" style="border-radius: 50%;" onclick="inviteMoreUsers({$meeting.id})">
+                                        </span>
+                                        <div id='{$meeting.id|cat:'uninvited-users'}' class="uninvited-users" hidden>
+                                            <form method="post" action="../actions/meetings/invite-user.php">
+                                                <select name="uninvited_users[]" id="uninvited-users" class="select2-multiple form-control" multiple="multiple" multiple>
+                                                    {foreach $notInvitedmembers as $notInvitedmember}
+                                                        {$name = getUserNameById($notInvitedmember)}
+                                                        <option value={$notInvitedmember}>{$name}</option>
+                                                    {/foreach}
+                                                </select>
+                                                <input name='meeting_id' value="{$meeting.id}" hidden>
+                                                <input name="Invite" id="submit_invite" type="submit" value="Invite" style="margin-top: 20px;">
+                                            </form>
+                                        </div>
+                                    {/if}
+
                                 </label>
                                 <br>
                             </div>
@@ -105,19 +135,25 @@
                                 </select>
                             </div>
 
-                            <div class="box drag_here text-center hidden-xs">
-                                <div>
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                    <br>
-                                    <span class="info"> Drag Files Here </span>
-                                </div>
+                            <div class="input-group task-tags ">
+                                <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                                <select name="tagOption" class="select2-multiple form-control" multiple="multiple">
+                                    {foreach $tags as $tag}
+                                        <option value={$tag.id}>{$tag.name}</option>
+                                    {/foreach}
+                                </select>
                             </div>
+
+                            <div class="box drag_here hidden-xs" ondrop="drop_handler(event);" ondragover="dragover_handler(event);" ondragend="dragend_handler(event);">
+                                <input class="box__file" type="file" name="file[]" id="file" multiple />
+                                <label for="file"><strong>Choose a file </strong><span class="box__dragndrop"> or drag it here</span>.</label>
+                            </div>
+
                             <div class="text-center">
                                 <input id="submit" type="submit" value="Submit" style="margin-top: 20px;">
                             </div>
 
                             <div class="title">{$errors}</div>
-
 
                         </form>
                     </div>
@@ -143,22 +179,8 @@
                         <label id="meeting_time" class="hour"></label>
                         <div id="meeting_description" class="description"></div>
                         <div id="meeting_duration" class="minutes"></div>
-                        <div class="files">
-                            <img class="file_show" src="../images/assets/pdf.png">
-                            <label class="file_description"> Meeting_15_Abr </label><br>
-                            <img class="file_show" src="../images/assets/file.png">
-                            <label class="file_description"> New_project_marketing </label>
-
-                        </div>
-
-                        <div class="guests">
-                            <img class="user_photo" src="../images/users/avatar2.png">
-                            <img class="user_photo" src="../images/users/avatar3.png">
-                            <img class="user_photo" src="../images/users/avatar4.png">
-                            <img class="user_photo" src="../images/users/avatar7.png">
-                            <span id="plus" class="glyphicon glyphicon-plus-sign"
-                                  aria-hidden="true"></span>
-                        </div>
+                        <div id="meeting_files" class="files"></div>
+                        <div id="guest_div" class="guests"></div>
                     </div>
                 </div>
             </div>

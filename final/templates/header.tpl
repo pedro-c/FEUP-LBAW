@@ -78,7 +78,7 @@
                     <a href="../pages/meetings.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
                 </li>
                 <li>
-                    <a href="../pages/PIU/UI5.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
+                    <a href="../pages/files.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
                 </li>
                 <li>
                     <a href="../pages/team.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
@@ -103,7 +103,7 @@
                             <a href="../../meetings.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
                         </li>
                         <li class="col-xs-6">
-                            <a href="../UI5.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
+                            <a href="../../files.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
                         </li>
                         <li class="col-xs-6">
                             <a href="../../team.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>

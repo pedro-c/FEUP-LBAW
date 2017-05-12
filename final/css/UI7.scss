@@ -118,6 +118,10 @@
             color: $color_yellow;
             font-size: 35px;
             cursor: pointer;
+
+            &:hover{
+              color: $blue_secondary;
+            }
           }
 
           .user_responsible {
@@ -211,6 +215,15 @@
         padding-bottom: 10px;
       }
 
+      .tag{
+        padding-bottom: 5px;
+        cursor: pointer;
+        color: $blue_secondary;
+        &:hover {
+          color: $color_yellow;
+        }
+      }
+
       .description {
         font-size: small;
         padding-bottom: 30px;
@@ -218,7 +231,6 @@
 
       .date {
         font-size: large;
-        padding-bottom: 5px;
       }
 
       .minutes {
@@ -231,8 +243,15 @@
           width: 25px;
         }
 
-        label {
+      }
+
+      #meeting_files{
+
+        a.file_description{
           padding-bottom: 10px;
+          padding-left: 10px;
+          text-decoration: none !important;
+          cursor: pointer !important;
         }
       }
 
@@ -322,6 +341,7 @@
             margin-bottom: 10px;
           }
         }
+
 
       }
 
@@ -456,18 +476,33 @@
           display: table-cell;
           vertical-align: middle;
         }
-        .info {
-          padding-top: 30px;
-          text-align: center;
-          font-size: medium;
-          color: grey;
-        }
 
         .glyphicon.glyphicon-plus {
           text-align: center;
           font-size: x-large;
           color: grey;
         }
+
+
+        #filedrag {
+          display: none;
+          font-weight: bold;
+          text-align: center;
+          padding: 1em 0;
+          margin: 1em 0;
+          color: #555;
+          border: 2px dashed #555;
+          border-radius: 7px;
+          cursor: default;
+
+          &:hover {
+            color: #f00;
+            border-color: #f00;
+            border-style: solid;
+            box-shadow: inset 0 3px 4px #888;
+          }
+        }
+
       }
 
       .meetings_icon {
