@@ -1,4 +1,5 @@
 <link href="../css/UI2.css" rel="stylesheet"/>
+<script src="../javascript/UI5.js"></script>
 
 <div class="page-wrapper container">
     <div class="row"><br>
@@ -84,7 +85,7 @@
         <div class="clearfix"></div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 dash-card">
             <div class="panel panel-primary">
-                <a href="#" class="panel-heading">
+                <a href="../pages/meetings.php" class="panel-heading">
                     <h4 class="panel-title"><i class="fa fa-calendar dash-title-icon"></i> Meetings
                         <span class="to-page glyphicon glyphicon-menu-right"></span>
                     </h4>
@@ -103,7 +104,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 dash-card">
             <div class="panel panel-primary">
-                <a href="#" class="panel-heading">
+                <a href="../pages/files.php" class="panel-heading">
                     <h4 class="panel-title"><i class="glyphicon glyphicon-file dash-title-icon"></i> Files
                         <span class="to-page glyphicon glyphicon-menu-right"></span>
                     </h4>

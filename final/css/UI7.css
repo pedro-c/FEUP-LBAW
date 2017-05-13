@@ -252,16 +252,17 @@ body {
         #page-meetings .container_meetings .meeting .panel-heading i {
           font-size: large; }
       #page-meetings .container_meetings .meeting .panel-body {
-        padding: 0 !important;
         padding-left: 30px !important;
-        padding-top: 0px !important; }
+        padding-top: 0 !important;
+        padding-bottom: 0 !important; }
         #page-meetings .container_meetings .meeting .panel-body .information_meeting .hour {
           font-size: large;
           font-weight: normal; }
         #page-meetings .container_meetings .meeting .panel-body .information_meeting #plus_user {
           color: #e9d460;
           font-size: 35px;
-          cursor: pointer; }
+          cursor: pointer;
+          border-radius: 50%; }
           #page-meetings .container_meetings .meeting .panel-body .information_meeting #plus_user:hover {
             color: #22313f; }
         #page-meetings .container_meetings .meeting .panel-body .information_meeting .user_responsible {
@@ -272,13 +273,15 @@ body {
           #page-meetings .container_meetings .meeting .panel-body .information_meeting .guests .user_photo {
             margin-right: 5px;
             width: 35px;
-            float: left; }
+            float: left;
+            border-radius: 50%; }
         #page-meetings .container_meetings .meeting .panel-body .information_meeting #submit_invite {
           background-color: #22313f;
           border-radius: 5px;
           border-color: transparent;
           color: white;
-          font-weight: lighter; }
+          font-weight: lighter;
+          margin-top: 20px; }
           #page-meetings .container_meetings .meeting .panel-body .information_meeting #submit_invite:hover {
             background-color: #e9d460; }
   #page-meetings #container_schedule_meeting .panel-heading,
@@ -555,7 +558,8 @@ body {
     border: none;
     border-radius: 5px;
     align-self: center;
-    outline: 0; }
+    outline: 0;
+    margin-top: 20px; }
     #page-meetings #submit:hover {
       background-color: #22313f;
       border: none; }

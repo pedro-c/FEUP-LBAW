@@ -182,7 +182,8 @@ body {
 
 .files_list .button_upload {
   padding-top: 20px;
-  padding-bottom: 40px; }
+  padding-bottom: 40px;
+  text-align: -webkit-right; }
   .files_list .button_upload .uploadFile {
     padding: 4px 20px 4px 20px;
     color: white;
@@ -208,7 +209,8 @@ body {
       font-weight: normal !important; }
     .files_list .file .panel-heading .file_details .file_show {
       padding-right: 5px;
-      width: 35px; }
+      width: 35px;
+      height: 35px; }
 .files_list .file .panel-body .minutes {
   padding-bottom: 10px; }
   .files_list .file .panel-body .minutes span {
@@ -276,7 +278,8 @@ body {
   border: none;
   border-radius: 5px;
   align-self: center;
-  outline: 0; }
+  outline: 0;
+  margin-top: 20px; }
   .files_list .uploadFile_container #submit:hover {
     background-color: #22313f;
     border: none; }

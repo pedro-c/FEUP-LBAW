@@ -135,9 +135,9 @@
       }
 
       .panel-body {
-        padding: 0 !important;
         padding-left: 30px !important;
-        padding-top: 0px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
 
         .information_meeting {
 
@@ -150,6 +150,7 @@
             color: $color_yellow;
             font-size: 35px;
             cursor: pointer;
+            border-radius: 50%;
 
             &:hover{
               color: $blue_secondary;
@@ -167,6 +168,7 @@
               margin-right: 5px;
               width: 35px;
               float: left;
+              border-radius: 50%;
             }
           }
 
@@ -176,6 +178,7 @@
             border-color: transparent;
             color: white;
             font-weight: lighter;
+            margin-top: 20px;
             &:hover {
               background-color: $color_yellow;
             }
@@ -563,6 +566,7 @@
     border-radius: 5px;
     align-self: center;
     outline: 0;
+    margin-top: 20px;
 
     &:hover {
       background-color: $blue_secondary;

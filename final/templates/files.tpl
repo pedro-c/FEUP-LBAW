@@ -20,7 +20,7 @@ include_once "common/header.php";
 
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div style="text-align: -webkit-right;" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 button_upload">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 button_upload">
                     <button class="uploadFile" onclick="uploadFile()">Upload a File</button>
                 </div>
 
@@ -63,7 +63,7 @@ include_once "common/header.php";
                                 {else}
                                     {$image = "../images/assets/default.png"}
                                 {/if}
-                                <img style="height: 35px" class="file_show" src={$image}>
+                                <img class="file_show" src={$image}>
                                 <label class="file_description">{$file.name|truncate:28}</label>
                             </div>
                         </div>
@@ -116,7 +116,7 @@ include_once "common/header.php";
 
 
                         <div class="text-center">
-                            <input id="submit" type="submit" value="Submit" style="margin-top: 20px;">
+                            <input id="submit" type="submit" value="Submit">
                         </div>
 
                         </form>

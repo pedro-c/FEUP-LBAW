@@ -31,6 +31,7 @@
   .button_upload {
     padding-top: 20px;
     padding-bottom: 40px;
+    text-align: -webkit-right;
 
     .uploadFile {
       padding: 4px 20px 4px 20px;
@@ -72,6 +73,7 @@
         .file_show {
           padding-right: 5px;
           width: 35px;
+          height: 35px;
         }
 
       }
@@ -184,6 +186,7 @@
       border-radius: 5px;
       align-self: center;
       outline: 0;
+      margin-top: 20px;
 
       &:hover {
         background-color: $blue_secondary;
