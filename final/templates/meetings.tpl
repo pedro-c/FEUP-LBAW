@@ -32,7 +32,13 @@
             </div>
         </div>
         <div id="container_to_collapse" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="row"> {foreach $meetings as $meeting} {$creator = getUserCreatorId($meeting.id)} {$creatorName = getUserNameById($creator)} {$time = getTimeFromTimestamp($meeting.date)} {$date = getDateFromTimestamp($meeting.date)} {$tag = getMeetingTag({$meeting.id})}
+            <div class="row">
+                {foreach $meetings as $meeting}
+                    {$creator = getUserCreatorId($meeting.id)}
+                    {$creatorName = getUserNameById($creator)}
+                    {$time = getTimeFromTimestamp($meeting.date)}
+                    {$date = getDateFromTimestamp($meeting.date)}
+                    {$tag = getMeetingTag({$meeting.id})}
                     <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="panel panel-default meeting">
                             <div class="panel-heading" onclick="show_Meeting_Info({$meeting.id})">
@@ -54,31 +60,66 @@
                                                     class="tag-name pull-right">{if {$tag} != null}#{$tag}{/if}</label><br>
                                         </div>
                                     </div>
-                                    <label class="user_responsible">{$creatorName}</label><br> <label
-                                            class="guests"> {$invited_users = getInvitedUsers($meeting.id)} {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)} {$coordinator = getMemberStatus($user_aut, $project)} {$creator = isMeetingCreator($meeting.id, $user_aut)} {$photos = getInvitedUsersPhotos($meeting.id)} {foreach $photos as $photo}
+                                    <label class="user_responsible">{$creatorName}</label><br>
+                                    <label class="guests"> {$invited_users = getInvitedUsers($meeting.id)} {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)} {$coordinator = getMemberStatus($user_aut, $project)} {$creator = isMeetingCreator($meeting.id, $user_aut)} {$photos = getInvitedUsersPhotos($meeting.id)} {foreach $photos as $photo}
                                             <img class="user_photo"
-                                                 src={$photo}>{/foreach} {if $coordinator == 'true' || $creator == 'true' }
-                                        <span id="plus_user" class="glyphicon glyphicon-plus-sign" aria-hidden="true"
-                                              onclick="inviteMoreUsers({$meeting.id})"> </span>
-                                        <div id='{$meeting.id|cat:'uninvited-users'}' class="uninvited-users" hidden>
-                                            <form method="post" action="../actions/meetings/invite-user.php"><select
-                                                        name="uninvited_users[]" id="uninvited-users"
-                                                        class="select2-multiple form-control" multiple="multiple"
-                                                        multiple> {foreach $notInvitedmembers as $notInvitedmember} {$name = getUserNameById($notInvitedmember)}
-                                                        <option value={$notInvitedmember}>{$name}</option>{/foreach}
-                                                </select> <input name='meeting_id' value="{$meeting.id}" hidden> <input
-                                                        name="Invite" id="submit_invite" type="submit" value="Invite"></form>
-                                        </div></div>
+                                                 src={$photo}>{/foreach}
+                                        {if $coordinator == 'true' || $creator == 'true' }
+                                            <span id="plus_user" class="glyphicon glyphicon-plus-sign"
+                                                  aria-hidden="true"
+                                                  onclick="inviteMoreUsers({$meeting.id})"> </span>
+                                            <div id='{$meeting.id|cat:'uninvited-users'}' class="uninvited-users"
+                                                 hidden>
+                                                <form method="post" action="../actions/meetings/invite-user.php">
+                                                    <select name="uninvited_users[]" id="uninvited-users"
+                                                            class="select2-multiple form-control" multiple="multiple"
+                                                            multiple>
+                                                        {foreach $notInvitedmembers as $notInvitedmember} {$name = getUserNameById($notInvitedmember)}
+                                                            <option value={$notInvitedmember}>{$name}</option>{/foreach}
+                                                    </select>
+                                                    <input name='meeting_id' value="{$meeting.id}" hidden>
+                                                    <input name="Invite" id="submit_invite" type="submit"
+                                                           value="Invite">
+                                                </form>
+                                            </div>
+
+                                    </label>
+                                </div>
+                                <div class="button_trash pull-right">
+                                    <button class="trash" onclick="" data-toggle="modal" data-id={$meeting.id} data-target="#deleteMeetingModal">
+                                        <span id="trash" class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    </button>
+                                </div>
                                 {/if}
 
-                                </label>
-                                <br>
+                                <div id="deleteMeetingModal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close"
+                                                        data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Delete Meeting</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p class="info-extra">You are allowed to delete this meeting because you
+                                                    are one team coordinator.</p>
+                                                <p>Are you sure you want to delete this meeting?</p>
+                                                <span id="meeting-id-delete" hidden></span>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="deleteMeeting()">Yes
+                                                </button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">No
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 {/foreach}
             </div>
-
         </div>
         <div id="container_schedule_meeting" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" hidden>
 
@@ -172,7 +213,10 @@
                     <div class="info-meeting" id="create-meeting-settings">
                         <div id="meeting_title" class="title"></div>
                         <div id="meeting_date" class="date"></div>
-                        <label id="meeting_time" class="hour"></label>
+                        <div>
+                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            <label id="meeting_time" class="hour"></label>
+                        </div>
                         <div id="meeting_description" class="description"></div>
                         <div id="meeting_duration" class="minutes"></div>
                         <div id="meeting_files" class="files"></div>

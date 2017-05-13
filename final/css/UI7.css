@@ -255,6 +255,35 @@ body {
         padding-left: 30px !important;
         padding-top: 0 !important;
         padding-bottom: 0 !important; }
+        #page-meetings .container_meetings .meeting .panel-body .information_meeting .button_trash {
+          text-align: right;
+          margin-left: 15px; }
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting .button_trash .trash {
+            padding: 4px 15px 4px 15px;
+            color: #c0392b;
+            border: 2px solid #c0392b;
+            border-radius: 5px;
+            align-self: center;
+            outline: 0; }
+            #page-meetings .container_meetings .meeting .panel-body .information_meeting .button_trash .trash:hover {
+              background-color: #c0392b;
+              border: 2px solid;
+              color: white; }
+        #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-header {
+          background-color: #22313f;
+          color: #fff; }
+        #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-footer {
+          background-color: #22313f;
+          color: #fff; }
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-footer #accept_button:hover {
+            background-color: #e9d460;
+            color: #fff; }
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-footer #cancel_button:hover {
+            background-color: #e9d460;
+            color: #fff; }
+        #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-body .info-extra {
+          font-size: smaller;
+          font-weight: lighter; }
         #page-meetings .container_meetings .meeting .panel-body .information_meeting .hour {
           font-size: large;
           font-weight: normal; }
@@ -291,31 +320,16 @@ body {
     #page-meetings #container_schedule_meeting .panel-heading span,
     #page-meetings #container_meeting_info .panel-heading span {
       font-size: medium; }
-  #page-meetings #container_schedule_meeting .button_trash,
-  #page-meetings #container_meeting_info .button_trash {
+  #page-meetings #container_schedule_meeting meet
+  .button_back,
+  #page-meetings #container_meeting_info meet
+  .button_back {
     text-align: right;
     margin-left: 15px; }
-    #page-meetings #container_schedule_meeting .button_trash .trash,
-    #page-meetings #container_meeting_info .button_trash .trash {
-      padding: 4px 15px 4px 15px;
-      color: white;
-      background-color: #c0392b;
-      border: 2px solid #c0392b;
-      border-radius: 5px;
-      align-self: center;
-      outline: 0; }
-      #page-meetings #container_schedule_meeting .button_trash .trash:hover,
-      #page-meetings #container_meeting_info .button_trash .trash:hover {
-        background-color: #913025;
-        border: 2px solid;
-        border-color: #913025;
-        color: white; }
-  #page-meetings #container_schedule_meeting .button_back,
-  #page-meetings #container_meeting_info .button_back {
-    text-align: right;
-    margin-left: 15px; }
-    #page-meetings #container_schedule_meeting .button_back .back,
-    #page-meetings #container_meeting_info .button_back .back {
+    #page-meetings #container_schedule_meeting meet
+    .button_back .back,
+    #page-meetings #container_meeting_info meet
+    .button_back .back {
       padding: 4px 15px 4px 15px;
       color: white;
       background-color: #22313f;
@@ -323,8 +337,10 @@ body {
       border-radius: 5px;
       align-self: center;
       outline: 0; }
-      #page-meetings #container_schedule_meeting .button_back .back:hover,
-      #page-meetings #container_meeting_info .button_back .back:hover {
+      #page-meetings #container_schedule_meeting meet
+      .button_back .back:hover,
+      #page-meetings #container_meeting_info meet
+      .button_back .back:hover {
         background-color: #192532;
         border: 2px solid;
         border-color: #192532;
@@ -355,7 +371,8 @@ body {
       padding-bottom: 30px; }
     #page-meetings #container_schedule_meeting .info-meeting .date,
     #page-meetings #container_meeting_info .info-meeting .date {
-      font-size: large; }
+      font-size: large;
+      padding-bottom: 10px; }
     #page-meetings #container_schedule_meeting .info-meeting .minutes,
     #page-meetings #container_meeting_info .info-meeting .minutes {
       padding-bottom: 30px; }

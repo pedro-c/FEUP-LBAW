@@ -141,6 +141,56 @@
 
         .information_meeting {
 
+          .button_trash {
+            text-align: right;
+            margin-left: 15px;
+
+            .trash {
+              padding: 4px 15px 4px 15px;
+              color:  #c0392b;
+              border: 2px solid #c0392b;
+              border-radius: 5px;
+              align-self: center;
+              outline: 0;
+
+              &:hover {
+                background-color:  #c0392b;
+                border: 2px solid;
+                color: white;
+              }
+            }
+
+          }
+
+          #deleteMeetingModal{
+            .modal-content {
+              .modal-header {
+                background-color: $color_ebony_clay;
+                color: $white;
+              }
+              .modal-footer {
+                background-color: $color_ebony_clay;
+                color: $white;
+
+                #accept_button:hover {
+                  background-color: $color_yellow;
+                  color: $white;
+                }
+                #cancel_button:hover {
+                  background-color: $color_yellow;
+                  color: $white;
+                }
+              }
+
+              .modal-body{
+                .info-extra{
+                  font-size: smaller;
+                  font-weight: lighter;
+                }
+              }
+            }
+          }
+
           .hour {
             font-size: large;
             font-weight: normal;
@@ -201,28 +251,7 @@
       }
     }
 
-    .button_trash {
-      text-align: right;
-      margin-left: 15px;
-
-      .trash {
-        padding: 4px 15px 4px 15px;
-        color: white;
-        background-color: #c0392b;
-        border: 2px solid #c0392b;
-        border-radius: 5px;
-        align-self: center;
-        outline: 0;
-
-        &:hover {
-          background-color: #913025;
-          border: 2px solid;
-          border-color: #913025;
-          color: white;
-        }
-      }
-
-    }
+   meet
 
     .button_back {
       text-align: right;
@@ -277,6 +306,7 @@
 
       .date {
         font-size: large;
+        padding-bottom: 10px;
       }
 
       .minutes {
