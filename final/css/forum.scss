@@ -108,6 +108,37 @@ button#new-post-button.active{
   margin-left: 5px;
 }
 
+.reply-likes{
+  float: right;
+}
+
+.reply-like-button{
+  top:5px;
+}
+
+#replies p.reply-content{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#replies li.list-group-item{
+  padding-bottom: 0;
+}
+
+#replies .reply-like-button:hover,
+#replies .reply-likes:hover{
+  color: $color_yellow;
+  cursor: pointer;
+}
+
+#replies .reply-like-button.liked{
+  color: $color_yellow;
+
+  &:hover{
+    color: black;
+  }
+}
+
 /*Overriding bootstrap class panel-primary*/
 .panel-primary {
   border: 0;

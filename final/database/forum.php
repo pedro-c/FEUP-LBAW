@@ -63,10 +63,26 @@ function getPostContent($projectID, $postID){
     return $result['content'];
 }
 
+/**
+ * Returns the id, creation date, content, replier id and number of likes of every reply of a given forum post
+ *
+ * @param $postID id of the forum post
+ * @return array id, creation date, content, replier id and number of likes
+ */
 function getReplies($postID){
     global $conn;
 
-    $stmt = $conn->prepare("SELECT * FROM forum_reply WHERE forum_reply.post_ID = ? ORDER BY creation_date ASC");
+    $stmt = $conn->prepare(
+        "SELECT id,creation_date,content,creator_id,n_likes
+        FROM 
+        (
+        SELECT id, creation_date,content,creator_id, count(forum_reply_like.user_id) AS n_likes
+        FROM forum_reply LEFT JOIN forum_reply_like ON id = reply_id
+        WHERE post_id = ?
+        GROUP BY id
+        ) reply_info
+        ORDER BY creation_date ASC"
+    );
     $stmt->execute(array($postID));
     $replies = $stmt->fetchAll();
     return $replies;
@@ -93,4 +109,29 @@ function submitPostReply($userID, $postID, $replyContent){
     $output['photo'] = $photo;
 
     return json_encode($output);
+}
+
+function likePost($replyId,$userId){
+    global $conn;
+
+    $stmt = $conn->prepare("INSERT INTO forum_reply_like(reply_id,user_id) VALUES (?,?)");
+    $stmt->execute(array($replyId,$userId));
+
+    return getNumLikesReply($replyId);
+}
+
+function getNumLikesReply($replyId){
+    global $conn;
+
+    $stmt = $conn->prepare("SELECT COUNT(*) FROM forum_reply_like WHERE reply_id = ?");
+    $stmt->execute(array($replyId));
+    return $stmt->fetch()['count'];
+}
+
+function userLikedReply($replyId,$userId){
+    global $conn;
+
+    $stmt = $conn->prepare( "SELECT EXISTS (SELECT * FROM forum_reply_like WHERE reply_id = ? AND user_id = ?)" );
+    $stmt->execute(array($replyId,$userId));;
+    return $stmt->fetch()['exists'];
 }

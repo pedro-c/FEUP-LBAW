@@ -21,34 +21,14 @@
                         </div>
                     </button>
 
-                    <!-- list the posts - to be filled by JS -->
                     <div id="post-listing">
+                        <!-- list the posts - to be filled by JS -->
                     </div>
 
                     <nav aria-label="Page navigation">
                         <div class="text-center">
                             <ul class="pagination">
-                                <li id="pagination-prev" {if $forumPage == 1}class="disabled"{/if}>
-                                    <a href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <span id="pagination-pages">
-                                {for $i=1 to $numPages}
-                                    {if $i == $forumPage}
-                                    <li class="active"><a>{$i}</a></li>
-                                    {else}
-                                    {if $i == 1 || $i == $numPages || $i >= $forumPage - 2 || $i <= forumPage + 2}
-                                    <li><a>{$i}</a></li>
-                                    {/if}
-                                    {/if}
-                                    {/for}
-                                    </span>
-                                <li id="pagination-next">
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
+                                <!-- Will be loaded by JS -->
                             </ul>
                         </div>
                     </nav>
