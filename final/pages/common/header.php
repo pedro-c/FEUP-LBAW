@@ -4,6 +4,11 @@ include_once '../config/init.php';
 include_once('../database/users.php');
 include_once('../database/projects.php');
 
+if(!isset($_SESSION['user_id'] )){
+    header("Location: ". $BASE_URL . "pages/authentication.php");
+}
+
+
 $firstProjectName = getProjectName($_SESSION['project_id']);
 $name = getUserNameById($_SESSION['user_id']);
 $projects = getUserProjects($_SESSION['user_id']);

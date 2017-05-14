@@ -8,8 +8,8 @@
     <!-- Page Heading -->
     <div class="tasks-body">
         <div class="tasks-nav">
-            <button type="button">To-Do</button>
-            <button type="button">Completed</button>
+            <button type="button" onclick="showUncompletedTasks()">To-Do</button>
+            <button type="button" onclick="showCompletedTasks()">Completed</button>
         </div>
 
 
@@ -27,22 +27,29 @@
 
                     {foreach $tasks as $task}
 
+                        {if $task.completer_id eq ''}
+                            {$completed = 'uncompleted'}
+                        {else}
+                            {$completed = 'completed'}
+                        {/if}
+
+
                         {$tags = getTagFromTaskId($task.id)}
 
-                        <tr class="task">
+                        <tr class="task {$completed}" id="{$task.id}">
                             <td>
-                                <i id="complete-button" name="complete-task" class="fa fa-check-circle-o task-button"></i>
+                                <i id="complete-button" name="complete-task"  onclick="completeTask({$task.id})" class="fa fa-check-circle-o"></i>
                             </td>
                             <td>
                                 <div>
-                                    <textarea onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
+                                    <textarea class="task-name" onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
                                     {foreach $tags as $tag}
                                     <p>{$tag.name}</p>
                                     {/foreach}
                                 </div>
                             </td>
                             <td>
-                                <i id="delete-button" name="delete-task" class="fa fa-times task-button" name="delete-task"></i>
+                                <i id="delete-button" onclick="deleteTask({$task.id})" name="delete-task" class="fa fa-times"></i>
                             </td>
                         </tr>
 
@@ -60,11 +67,9 @@
 
                     </select>
                 </div>
-                <button class="btn btn-danger" id="delete-button"> Delete </button>
             </div>
 
             <div class="col-xs-12" id="create-task-title">
-                <i class="fa fa-check-circle-o" id="complete-button"></i>
                 <input type="text" id="task-name" placeholder="New Task">
             </div>
             <div class="col-xs-12" id="create-task-settings">
@@ -75,7 +80,7 @@
                 </div>
                 <div class="input-group task-tags">
                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                    <select id="task-tags" class="select2-multiple form-control" multiple="multiple">
+                    <select id="task-tags" class="select2-single form-control" multiple="multiple">
 
                     </select>
                 </div>
@@ -83,19 +88,14 @@
             <div class="col-xs-12" id="create-task-description">
                 <textarea id="task-description"placeholder="Description"></textarea>
             </div>
-            <div class="task-comments col-xs-12">
-                <div class="comment-info">
-                    <img src="../images/users/avatar6.png" class="img-circle">
-                    <h4>Pedro Costa</h4>
-                    <p>Today at 17:49</p>
-                </div>
-                <p>Good luck !</p>
+            <div id="task-comments" class="task-comments col-xs-12">
+
 
             </div>
             <div class="add-comment" id="add-comment">
                 <img src="../images/users/avatar6.png" class="img-circle">
-                <textarea placeholder="Write a comment..."></textarea>
-                <button class="btn">Add</button>
+                <textarea id = "comment-content" placeholder="Write a comment..."></textarea>
+                <button id="add-comment-btn" class="btn">Add</button>
             </div>
 
         </div>

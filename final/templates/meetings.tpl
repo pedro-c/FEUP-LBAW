@@ -1,60 +1,14 @@
-<link href="../css/UI7.css" rel="stylesheet">
-<script src="../javascript/UI7.js"></script>
+<link href="../css/UI7.css" rel="stylesheet"> <script src="../javascript/UI7.js"></script> <div id="page-meetings"> <div class="row"> <div class="col-xs-12"> <div class="title_bar text-center"> <button id="future_meetings" onclick="exit_trash()">Future Meetings</button> <button id="schedule_meetings" onclick="schedule()">Schedule a Meeting</button> </div> </div> </div> <div class="container_meetings container"> <div class="row"> <div class="padding-tag-button col-lg-12 col-md-12 col-sm-12 col-xs-12"> <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <div class="text-center button_schedule"> <button class="schedule pull-right" onclick="schedule()">Schedule Meeting</button> </div> </div> <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <div class="padding-button-tags"> <button id="tag-name" class="dropdown-toggle button-tags" typse="button" data-toggle="dropdown">Tag <span class="caret"></span></button> <ul class="dropdown-menu"> <li><a id="tag-name-dropwdown" onclick="changeMeetingTagName('All')">All</a></li> {foreach $tags as $tag} <li><a id="tag-name-dropwdown" onclick="changeMeetingTagName('{$tag.name}')">{$tag.name}</a></li>{/foreach} </ul> </div> </div> </div> </div> <div id="container_to_collapse" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <div class="row"> {foreach $meetings as $meeting} {$creator = getUserCreatorId($meeting.id)} {$creatorName = getUserNameById($creator)} {$time = getTimeFromTimestamp($meeting.date)} {$date = getDateFromTimestamp($meeting.date)} {$tag = getMeetingTag({$meeting.id})} <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12"> <div class="panel panel-default meeting"> <div class="panel-heading" onclick="show_Meeting_Info({$meeting.id})"> <div class="padding"> <i class="fa fa-calendar-o" aria-hidden="true"></i> <label class="date">{$date}</label><br> <label class="description">{$meeting.name} </label><br> </div> <div class="align_middle"> <span id="see_more" class="glyphicon glyphicon-chevron-right" aria-hidden="true" onclick="show_Meeting_Info()"></span> </div> </div> <div class="panel-body"> <div class="information_meeting"><br> <div class="row"> <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <span class="glyphicon glyphicon-time" aria-hidden="true"></span> <label class="hour">{$time}</label><br> </div> <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <label onclick="changeMeetingTagName('{$tag}')" class="tag-name pull-right">{if {$tag} != null}#{$tag}{/if}</label><br> </div> </div> <label class="user_responsible">{$creatorName}</label><br> <label class="guests"> {$invited_users = getInvitedUsers($meeting.id)} {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)} {$coordinator = getMemberStatus($user_aut, $project)} {$creator = isMeetingCreator($meeting.id, $user_aut)} {$photos = getInvitedUsersPhotos($meeting.id)} {foreach $photos as $photo} <img class="user_photo" style="border-radius: 50%;" src={$photo}>{/foreach} {if $coordinator == 'true' || $creator == 'true' } <span id="plus_user" class="glyphicon glyphicon-plus-sign" aria-hidden="true" style="border-radius: 50%;" onclick="inviteMoreUsers({$meeting.id})"> </span> <div id='{$meeting.id|cat:'uninvited-users'}' class="uninvited-users" hidden> <form method="post" action="../actions/meetings/invite-user.php"> <select name="uninvited_users[]" id="uninvited-users" class="select2-multiple form-control" multiple="multiple" multiple> {foreach $notInvitedmembers as $notInvitedmember} {$name = getUserNameById($notInvitedmember)} <option value={$notInvitedmember}>{$name}</option>{/foreach} </select> <input name='meeting_id' value="{$meeting.id}" hidden> <input name="Invite" id="submit_invite" type="submit" value="Invite" style="margin-top: 20px;"> </form> </div> </div>
 
-<div id="page-meetings">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="title_bar text-center">
-                <button id="future_meetings" onclick="exit_trash()">Future Meetings</button>
-                <button id="schedule_meetings" onclick="schedule()">Schedule a Meeting</button>
-            </div>
-        </div>
-    </div>
 
-    <div class="container_meetings container">
-        <div class="text-center button_scheduale">
-            <button class="schedule" onclick="schedule()">Schedule Meeting</button>
-        </div>
-        <div id="container_to_collapse" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="row">
-            {foreach $meetings as $meeting}
+                            {/if}
 
-                {$creatorName = getUserNameById($meeting.id_creator)}
-                {$time = getTimeFromTimestamp($meeting.date)}
-                {$date = getDateFromTimestamp($meeting.date)}
-
-                <div class="meeting-panel col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div class="panel panel-default meeting">
-                        <div class="panel-heading" onclick="show_Meeting_Info({$meeting.id})">
-                            <div class="padding">
-                                <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                                <label class="date">{$date}</label><br>
-                                <label class="description">{$meeting.name} </label><br>
-                            </div>
-                            <div class="align_middle">
-                                <span id="see_more" class="glyphicon glyphicon-chevron-right"
-                                      aria-hidden="true" onclick="show_Meeting_Info()"></span>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="information_meeting"><br>
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                <label class="hour">{$time}</label><br>
-                                <label class="user_responsible">{$creatorName}</label><br>
-                                <label class="guests">
-                                    <img class="user_photo" src="../images/users/avatar2.png">
-                                    <img class="user_photo" src="../images/users/avatar3.png">
-                                    <img class="user_photo" src="../images/users/avatar4.png">
-                                    <img class="user_photo" src="../images/users/avatar7.png">
-                                    <span id="plus_user" class="glyphicon glyphicon-plus-sign"
-                                          aria-hidden="true"></span>
-                                </label>
-                                <br>
-                            </div>
+                            </label>
+                            <br>
                         </div>
                     </div>
                 </div>
-            {/foreach}
+                {/foreach}
             </div>
 
         </div>
@@ -105,19 +59,25 @@
                                 </select>
                             </div>
 
-                            <div class="box drag_here text-center hidden-xs">
-                                <div>
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                    <br>
-                                    <span class="info"> Drag Files Here </span>
-                                </div>
+                            <div class="input-group task-tags ">
+                                <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                                <select name="tagOption" class="select2-multiple form-control" multiple="multiple">
+                                    {foreach $tags as $tag}
+                                        <option value={$tag.id}>{$tag.name}</option>
+                                    {/foreach}
+                                </select>
                             </div>
+
+                            <div class="box drag_here hidden-xs" ondrop="drop_handler(event);" ondragover="dragover_handler(event);" ondragend="dragend_handler(event);">
+                                <input class="box__file" type="file" name="file[]" id="file" multiple />
+                                <label for="file"><strong>Choose a file </strong><span class="box__dragndrop"> or drag it here</span>.</label>
+                            </div>
+
                             <div class="text-center">
                                 <input id="submit" type="submit" value="Submit" style="margin-top: 20px;">
                             </div>
 
                             <div class="title">{$errors}</div>
-
 
                         </form>
                     </div>
@@ -143,22 +103,8 @@
                         <label id="meeting_time" class="hour"></label>
                         <div id="meeting_description" class="description"></div>
                         <div id="meeting_duration" class="minutes"></div>
-                        <div class="files">
-                            <img class="file_show" src="../images/assets/pdf.png">
-                            <label class="file_description"> Meeting_15_Abr </label><br>
-                            <img class="file_show" src="../images/assets/file.png">
-                            <label class="file_description"> New_project_marketing </label>
-
-                        </div>
-
-                        <div class="guests">
-                            <img class="user_photo" src="../images/users/avatar2.png">
-                            <img class="user_photo" src="../images/users/avatar3.png">
-                            <img class="user_photo" src="../images/users/avatar4.png">
-                            <img class="user_photo" src="../images/users/avatar7.png">
-                            <span id="plus" class="glyphicon glyphicon-plus-sign"
-                                  aria-hidden="true"></span>
-                        </div>
+                        <div id="meeting_files" class="files"></div>
+                        <div id="guest_div" class="guests"></div>
                     </div>
                 </div>
             </div>

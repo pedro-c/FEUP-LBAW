@@ -78,7 +78,7 @@
                     <a href="../pages/meetings.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
                 </li>
                 <li>
-                    <a href="../pages/PIU/UI5.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
+                    <a href="../pages/files.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
                 </li>
                 <li>
                     <a href="../pages/team.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
@@ -103,7 +103,7 @@
                             <a href="../../meetings.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
                         </li>
                         <li class="col-xs-6">
-                            <a href="../UI5.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
+                            <a href="../../files.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
                         </li>
                         <li class="col-xs-6">
                             <a href="../../team.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
@@ -128,7 +128,7 @@
                         </p>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="../UI8.php">My Profile</a></li>
+                        <li><a href="../pages/profile.php">My Profile</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href={$BASE_URL}actions/users/logout.php>Sign Out<i class="nav-dropdown-icon glyphicon glyphicon-log-out"></i></a></li>
                     </ul>
@@ -150,7 +150,7 @@
                             {$project_name = getProjectName($project.id_project)}
                             <li><a onclick="changeProject({$project.id_project})">{$project_name}</a></li>
                         {/foreach}
-                        <li><a href="../PIU/UI8.php#new_project">New Project<i class="nav-dropdown-icon glyphicon glyphicon-plus"></i></a></li>
+                        <li><a href="../pages/profile.php#new_project">New Project<i class="nav-dropdown-icon glyphicon glyphicon-plus"></i></a></li>
                     </ul>
                 </div>
             </div>

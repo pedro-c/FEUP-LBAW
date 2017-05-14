@@ -194,6 +194,9 @@ body {
     .files_list .button_upload .uploadFile:hover {
       background-color: #22313f;
       border: none; }
+.files_list .tagTop {
+  padding-top: 20px;
+  padding-bottom: 40px; }
 .files_list .file .panel-heading {
   background-color: #22313f;
   padding-left: 20px; }
@@ -240,7 +243,7 @@ body {
       border: 2px solid;
       border-color: #913025;
       color: white; }
-.files_list .uploadFile_container .panel-body .box.drag_here {
+.files_list .uploadFile_container .panel-body .box.drag-here {
   border-radius: 5px;
   height: 150px;
   margin-top: 40px;
@@ -249,18 +252,21 @@ body {
   background-color: #ecf0f1;
   display: table;
   width: 100%; }
-  .files_list .uploadFile_container .panel-body .box.drag_here div {
+  .files_list .uploadFile_container .panel-body .box.drag-here div {
     display: table-cell;
     vertical-align: middle; }
-  .files_list .uploadFile_container .panel-body .box.drag_here .info {
+  .files_list .uploadFile_container .panel-body .box.drag-here .info {
     padding-top: 30px;
     text-align: center;
     font-size: medium;
     color: grey; }
-  .files_list .uploadFile_container .panel-body .box.drag_here .glyphicon.glyphicon-plus {
+  .files_list .uploadFile_container .panel-body .box.drag-here .glyphicon.glyphicon-plus {
     text-align: center;
     font-size: x-large;
     color: grey; }
+  .files_list .uploadFile_container .panel-body .box.drag-here .dragover {
+    background-color: #22313f;
+    border: none; }
 .files_list .uploadFile_container .panel-body .input-group.task-tags {
   padding-top: 40px; }
 .files_list .uploadFile_container #submit {
