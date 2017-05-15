@@ -215,19 +215,6 @@
               border-radius: 50%;
             }
           }
-
-          #submit_invite{
-            background-color: $blue_secondary;
-            border-radius: 5px;
-            border-color: transparent;
-            color: white;
-            font-weight: lighter;
-            margin-top: 20px;
-            &:hover {
-              background-color: $color_yellow;
-            }
-          }
-
         }
       }
     }
@@ -597,4 +584,14 @@
       border: none;
     }
   }
+
+  .modal-dialog{
+
+    .select-box:first-child{
+      span {
+        width: 100% !important;
+      }
+    }
+  }
+
 }

@@ -261,7 +261,7 @@ body {
             color: #22313f;
             font-size: large;
             cursor: pointer;
-            margin-bottom: 5px; }
+            margin-bottom: 15px; }
             #page-meetings .container_meetings .meeting .panel-body .information_meeting .delete-icon .fa.fa-trash:hover {
               color: #e9d460; }
           #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-header {
@@ -297,15 +297,6 @@ body {
             width: 35px;
             float: left;
             border-radius: 50%; }
-          #page-meetings .container_meetings .meeting .panel-body .information_meeting #submit_invite {
-            background-color: #22313f;
-            border-radius: 5px;
-            border-color: transparent;
-            color: white;
-            font-weight: lighter;
-            margin-top: 20px; }
-            #page-meetings .container_meetings .meeting .panel-body .information_meeting #submit_invite:hover {
-              background-color: #e9d460; }
   #page-meetings #container_schedule_meeting .panel-heading,
   #page-meetings #container_meeting_info .panel-heading {
     background-color: #e9d460;
@@ -573,5 +564,7 @@ body {
     #page-meetings #submit:hover {
       background-color: #22313f;
       border: none; }
+  #page-meetings .modal-dialog .select-box:first-child span {
+    width: 100% !important; }
 
 /*# sourceMappingURL=UI7.css.map */

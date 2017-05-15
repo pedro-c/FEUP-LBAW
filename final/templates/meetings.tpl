@@ -78,18 +78,17 @@
                                                         </div>
                                                         <form method="post" action="../actions/meetings/invite-user.php">
                                                         <div class="modal-body">
-                                                            <select name="uninvited_users[]" id="uninvited-users"
-                                                                    class="select2-multiple form-control" multiple="multiple"
-                                                                    multiple>
-                                                                {foreach $notInvitedmembers as $notInvitedmember} {$name = getUserNameById($notInvitedmember)}
-                                                                    <option value={$notInvitedmember}>{$name}</option>{/foreach}
-                                                            </select>
-
-                                                                <input name='meeting_id' value="{$meeting.id}" hidden>
-                                                                <input name="Invite" id="submit_invite" type="submit"
-                                                                       value="Invite">
+                                                            <div class="select-box">
+                                                                <select name="uninvited_users[]" id="uninvited-users" class="select2-multiple form-control" multiple="multiple" multiple>
+                                                                    {foreach $notInvitedmembers as $notInvitedmember} {$name = getUserNameById($notInvitedmember)}
+                                                                        <option value={$notInvitedmember}>{$name}</option>
+                                                                    {/foreach}
+                                                                </select>
+                                                            </div>
                                                         </div>
                                                         <div class="modal-footer">
+                                                            <input name='meeting_id' value="{$meeting.id}" hidden>
+                                                            <button name="Invite" class="btn btn-default" type="submit">Invite</button>
                                                             <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
                                                         </div>
                                                         </form>
