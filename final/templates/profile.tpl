@@ -78,7 +78,7 @@
                             <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
                         </div>
                         <div>
-                            <input name="new-password" type="password" placeholder="New Password">
+                            <input name="new-password" id="new-password" type="password" placeholder="New Password">
                             <span class="error_messages">{$ERROR_MESSAGES[1]}</span>
                         </div>
                         <div>
