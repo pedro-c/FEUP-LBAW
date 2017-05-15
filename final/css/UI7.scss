@@ -141,25 +141,20 @@
 
         .information_meeting {
 
-          .button_trash {
-            text-align: right;
-            margin-left: 15px;
+          margin-bottom: 5px;
 
-            .trash {
-              padding: 4px 15px 4px 15px;
-              color:  #c0392b;
-              border: 2px solid #c0392b;
-              border-radius: 5px;
-              align-self: center;
-              outline: 0;
+          .delete-icon{
+
+            .fa.fa-trash{
+              color: $blue_secondary;
+              font-size: large;
+              cursor: pointer;
+              margin-bottom: 15px;
 
               &:hover {
-                background-color:  #c0392b;
-                border: 2px solid;
-                color: white;
+                color: $color_yellow;
               }
             }
-
           }
 
           #deleteMeetingModal{
@@ -207,14 +202,13 @@
             }
           }
 
-          .user_responsible {
+          .user-responsible {
             font-weight: normal;
             padding-bottom: 5px;
           }
 
           .guests {
-            padding-top: 10px;
-            .user_photo {
+            .user-photo {
               margin-right: 5px;
               width: 35px;
               float: left;

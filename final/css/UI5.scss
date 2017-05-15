@@ -28,10 +28,13 @@
 
 .files_list {
 
+  #button-upload{
+    text-align: right;
+  }
+
   .button_upload {
     padding-top: 20px;
     padding-bottom: 40px;
-    text-align: -webkit-right;
 
     .uploadFile {
       padding: 4px 20px 4px 20px;
@@ -103,12 +106,17 @@
 
       .fa.fa-download, .fa.fa-trash {
         color: $blue_secondary;
-        font-size: x-large;
+        font-size: large;
         cursor: pointer;
         &:hover {
           color: $color_yellow;
         }
       }
+
+      .fa.fa-trash{
+        margin-right: 7px;
+      }
+
     }
   }
 

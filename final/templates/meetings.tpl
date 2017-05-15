@@ -60,9 +60,9 @@
                                                     class="tag-name pull-right">{if {$tag} != null}#{$tag}{/if}</label><br>
                                         </div>
                                     </div>
-                                    <label class="user_responsible">{$creatorName}</label><br>
+                                    <label class="user-responsible">{$creatorName}</label><br>
                                     <label class="guests"> {$invited_users = getInvitedUsers($meeting.id)} {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)} {$coordinator = getMemberStatus($user_aut, $project)} {$creator = isMeetingCreator($meeting.id, $user_aut)} {$photos = getInvitedUsersPhotos($meeting.id)} {foreach $photos as $photo}
-                                            <img class="user_photo"
+                                            <img class="user-photo"
                                                  src={$photo}>{/foreach}
                                         {if $coordinator == 'true' || $creator == 'true' }
                                             <span id="plus_user" class="glyphicon glyphicon-plus-sign"
@@ -84,14 +84,11 @@
                                             </div>
                                         {/if}
                                     </label>
-                                </div>
-                                {if $coordinator == 'true'}
-                                    <div class="button_trash pull-right">
-                                        <button class="trash" onclick="" data-toggle="modal" data-id={$meeting.id} data-target="#deleteMeetingModal">
-                                            <span id="trash" class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                        </button>
+                                    {if $coordinator == 'true'}
+                                    <div class="delete-icon">
+                                        <i class="pull-right fa fa-trash" aria-hidden="true" data-toggle="modal" data-id={$meeting.id} data-target="#deleteMeetingModal"></i>
                                     </div>
-
+                                </div>
                                     <div id="deleteMeetingModal" class="modal fade" role="dialog">
                                         <div class="modal-dialog modal-sm">
                                             <div class="modal-content">

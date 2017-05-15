@@ -180,10 +180,11 @@ body {
     border-bottom: 4px solid;
     border-bottom-color: #e9d460; }
 
+.files_list #button-upload {
+  text-align: right; }
 .files_list .button_upload {
   padding-top: 20px;
-  padding-bottom: 40px;
-  text-align: -webkit-right; }
+  padding-bottom: 40px; }
   .files_list .button_upload .uploadFile {
     padding: 4px 20px 4px 20px;
     color: white;
@@ -225,10 +226,12 @@ body {
   font-size: medium; }
 .files_list .file .panel-body .fa.fa-download, .files_list .file .panel-body .fa.fa-trash {
   color: #22313f;
-  font-size: x-large;
+  font-size: large;
   cursor: pointer; }
   .files_list .file .panel-body .fa.fa-download:hover, .files_list .file .panel-body .fa.fa-trash:hover {
     color: #e9d460; }
+.files_list .file .panel-body .fa.fa-trash {
+  margin-right: 7px; }
 .files_list .uploadFile_container .panel-heading {
   background-color: #e9d460;
   color: white;

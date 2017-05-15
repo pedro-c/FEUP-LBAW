@@ -13,7 +13,7 @@ $(document).ready(function () {
         $("p").hide();
     });
 
-    $('a[data-toggle=modal], button[data-toggle=modal]').click(function () {
+    $('i[data-toggle=modal]').click(function () {
         var data_id = '';
         if (typeof $(this).data('id') !== 'undefined')
             data_id = $(this).data('id');

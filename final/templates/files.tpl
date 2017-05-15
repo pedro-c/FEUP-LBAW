@@ -20,11 +20,11 @@ include_once "common/header.php";
 
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 button_upload">
+                <div id="button-upload" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 button_upload">
                     <button class="uploadFile" onclick="uploadFile()">Upload a File</button>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 button_upload">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 button_upload pull-right">
                     <div class="drop-down">
                         <button id="tag-name" class="dropdown-toggle uploadFile" type="button" data-toggle="dropdown">Tag
                             <span class="caret"></span></button>

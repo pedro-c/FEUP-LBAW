@@ -255,64 +255,57 @@ body {
         padding-left: 30px !important;
         padding-top: 0 !important;
         padding-bottom: 0 !important; }
-        #page-meetings .container_meetings .meeting .panel-body .information_meeting .button_trash {
-          text-align: right;
-          margin-left: 15px; }
-          #page-meetings .container_meetings .meeting .panel-body .information_meeting .button_trash .trash {
-            padding: 4px 15px 4px 15px;
-            color: #c0392b;
-            border: 2px solid #c0392b;
-            border-radius: 5px;
-            align-self: center;
-            outline: 0; }
-            #page-meetings .container_meetings .meeting .panel-body .information_meeting .button_trash .trash:hover {
-              background-color: #c0392b;
-              border: 2px solid;
-              color: white; }
-        #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-header {
-          background-color: #22313f;
-          color: #fff; }
-        #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-footer {
-          background-color: #22313f;
-          color: #fff; }
-          #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-footer #accept_button:hover {
-            background-color: #e9d460;
+        #page-meetings .container_meetings .meeting .panel-body .information_meeting {
+          margin-bottom: 5px; }
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting .delete-icon .fa.fa-trash {
+            color: #22313f;
+            font-size: large;
+            cursor: pointer;
+            margin-bottom: 5px; }
+            #page-meetings .container_meetings .meeting .panel-body .information_meeting .delete-icon .fa.fa-trash:hover {
+              color: #e9d460; }
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-header {
+            background-color: #22313f;
             color: #fff; }
-          #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-footer #cancel_button:hover {
-            background-color: #e9d460;
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-footer {
+            background-color: #22313f;
             color: #fff; }
-        #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-body .info-extra {
-          font-size: smaller;
-          font-weight: lighter; }
-        #page-meetings .container_meetings .meeting .panel-body .information_meeting .hour {
-          font-size: large;
-          font-weight: normal; }
-        #page-meetings .container_meetings .meeting .panel-body .information_meeting #plus_user {
-          color: #e9d460;
-          font-size: 35px;
-          cursor: pointer;
-          border-radius: 50%; }
-          #page-meetings .container_meetings .meeting .panel-body .information_meeting #plus_user:hover {
-            color: #22313f; }
-        #page-meetings .container_meetings .meeting .panel-body .information_meeting .user_responsible {
-          font-weight: normal;
-          padding-bottom: 5px; }
-        #page-meetings .container_meetings .meeting .panel-body .information_meeting .guests {
-          padding-top: 10px; }
-          #page-meetings .container_meetings .meeting .panel-body .information_meeting .guests .user_photo {
+            #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-footer #accept_button:hover {
+              background-color: #e9d460;
+              color: #fff; }
+            #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-footer #cancel_button:hover {
+              background-color: #e9d460;
+              color: #fff; }
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting #deleteMeetingModal .modal-content .modal-body .info-extra {
+            font-size: smaller;
+            font-weight: lighter; }
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting .hour {
+            font-size: large;
+            font-weight: normal; }
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting #plus_user {
+            color: #e9d460;
+            font-size: 35px;
+            cursor: pointer;
+            border-radius: 50%; }
+            #page-meetings .container_meetings .meeting .panel-body .information_meeting #plus_user:hover {
+              color: #22313f; }
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting .user-responsible {
+            font-weight: normal;
+            padding-bottom: 5px; }
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting .guests .user-photo {
             margin-right: 5px;
             width: 35px;
             float: left;
             border-radius: 50%; }
-        #page-meetings .container_meetings .meeting .panel-body .information_meeting #submit_invite {
-          background-color: #22313f;
-          border-radius: 5px;
-          border-color: transparent;
-          color: white;
-          font-weight: lighter;
-          margin-top: 20px; }
-          #page-meetings .container_meetings .meeting .panel-body .information_meeting #submit_invite:hover {
-            background-color: #e9d460; }
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting #submit_invite {
+            background-color: #22313f;
+            border-radius: 5px;
+            border-color: transparent;
+            color: white;
+            font-weight: lighter;
+            margin-top: 20px; }
+            #page-meetings .container_meetings .meeting .panel-body .information_meeting #submit_invite:hover {
+              background-color: #e9d460; }
   #page-meetings #container_schedule_meeting .panel-heading,
   #page-meetings #container_meeting_info .panel-heading {
     background-color: #e9d460;
