@@ -161,7 +161,7 @@ $(document).ready(function () {
                 scrollTop: $("#post-reply").offset().top
             }, 500);
 
-            $("#post-reply textarea").focus();
+            $("#post-reply").find("textarea").focus();
         });
     };
 
@@ -198,7 +198,7 @@ $(document).ready(function () {
         let postSection = $(
             '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">' +
             '<div id="post-content" class="panel panel-primary">' + header +
-            '<div class="panel-body"></div>'+
+            '<div class="panel-body"></div>' +
             '</div>' +
             '<div id="reply-button">' +
             '<a id="reply-post-button" class="btn btn-default btn-reply"><i class="glyphicon glyphicon-plus"></i> Reply to this post</a>' +
@@ -251,8 +251,8 @@ $(document).ready(function () {
 
     /**
      * Returns the content of the selected post
-     * @param clickedPost
      * @returns {*|jQuery|HTMLElement}
+     * @param postId
      */
     let getPostContent = function (postId) {
 
@@ -272,8 +272,8 @@ $(document).ready(function () {
 
     /**
      * Returns the replies for the selected post
-     * @param clickedPost
      * @returns {*|jQuery|HTMLElement}
+     * @param postId
      */
     let getPostReplies = function (postId) {
         let content = $(
@@ -345,7 +345,6 @@ function loadPagePosts(postsSection, currentPage) {
         let posts = JSON.parse(data);
         for (let post of posts) {
             let photo = post.submitter_photo;
-            console.log(photo);
             let postID = post.id;
             let title = post.title;
             let creationDate = post.creation_date;

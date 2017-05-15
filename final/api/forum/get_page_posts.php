@@ -17,7 +17,7 @@ $posts = getProjectPosts($projectID, $forumPage);
 $count = 0;
 $output = array();
 
-foreach ($posts as $post){
+foreach ($posts as $post) {
     $postOutput = array();
     $userID = $post['id_creator'];
     $user = getUser($userID);
