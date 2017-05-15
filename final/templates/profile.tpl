@@ -71,19 +71,24 @@
                     </div>
                 </div>
                 <div class="password">
-                    <h4 id="change-password">Change Password</h4>
-                    <div>
-                        <input type="password" placeholder="Current Password">
-                    </div>
-                    <div>
-                        <input id="new-password" type="password" placeholder="New Password">
-                    </div>
-                    <div>
-                        <input type="password" placeholder="Repeat Password">
-                    </div>
-                    <div>
-                        <button class="btn btn-success">Update</button>
-                    </div>
+                    <form action="{$BASE_URL}actions/users/change-password.php" method="post">
+                        <h4 id="change-password">Change Password</h4>
+                        <div>
+                            <input name="old-password" type="password" placeholder="Current Password">
+                            <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
+                        </div>
+                        <div>
+                            <input name="new-password" type="password" placeholder="New Password">
+                            <span class="error_messages">{$ERROR_MESSAGES[1]}</span>
+                        </div>
+                        <div>
+                            <input name="repeat-password" type="password" placeholder="Repeat Password">
+                            <span class="error_messages">{$ERROR_MESSAGES[2]}</span>
+                        </div>
+                        <div>
+                            <input class="btn btn-success" type="submit" value="Update">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

@@ -11,6 +11,24 @@ function isLoginCorrect($email, $password){
     return password_verify($password,$hashed_password);
 }
 
+function isPasswordCorrect($password){
+
+    global $conn;
+    $stmt = $conn -> prepare('SELECT password FROM user_table WHERE id = ?');
+    $stmt->execute([$_SESSION['user_id']]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $hashed_password = $result['password'];
+
+    return password_verify($password,$hashed_password);
+}
+
+
+function changePassword($new_password){
+    global $conn;
+    $stmt = $conn -> prepare('UPDATE user_table SET password = ? WHERE id = ?');
+    return $stmt->execute([$new_password, $_SESSION['user_id']]);
+}
+
 function createUser($name, $email, $username, $password){
 
     global $conn;
