@@ -19,13 +19,15 @@ $projectId = $_SESSION['project_id'];
 
 $numPosts = getNumPosts(array($projectId));
 $numPages = ceil($numPosts / 5);
+if($numPages == 0)
+    $numPages = 1;
 
 $forumPage = 1;
 
 if (isset($_POST['forum_page']))
     $forumPage = $_POST['forum_page'];
 
-if($forumPage < 0)
+if($forumPage <= 0)
     $forumPage = 1;
 
 if($forumPage > $numPages)

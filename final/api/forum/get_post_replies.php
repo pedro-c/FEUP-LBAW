@@ -21,7 +21,7 @@ foreach ($replies as $reply){
     $replyOutput = array();
     $replyId = $reply['id'];
     $likedByUser = userLikedReply($replyId,$userId);
-    $user = getUser($reply['creator_id']);
+    $user = getUser($reply['id_creator']);
     $photo = getUserPhoto($user);
     $replyOutput['content'] = $reply['content'];
     $replyOutput['creation_date'] = $reply['creation_date'];
