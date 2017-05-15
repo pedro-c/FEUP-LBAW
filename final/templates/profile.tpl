@@ -14,7 +14,10 @@
                         <img class="img-circle" src="{$user_photo_path}">
                     </div>
                     <div>
-                        <a href="#">Change Photo</a>
+                        <form action="../actions/users/upload-user-photo.php" method="post" enctype="multipart/form-data">
+                            <input onchange="this.form.submit()" name="file" type="file"/><br />
+                            <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
+                        </form>
                     </div>
                 </div>
                 <div class="project-managment">
