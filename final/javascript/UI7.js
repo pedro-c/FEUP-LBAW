@@ -35,6 +35,7 @@ function deleteMeeting() {
         dataType: 'json',
         success: function (data) {
             console.log(data);
+            location.reload();
         }
     });
 }
