@@ -23,9 +23,8 @@ if(!empty($_FILES['file'])){
         $current_date = date('m/d/Y h:i:s a', time());
         $file = addFile($current_date, $_SESSION['user_id'],$_SESSION['project_id'], $_FILES['file']['name'][$i]);
 
-        if(isset($_POST['tagOption']))
-            addTagToFile($file,$_POST['tagOption']);
-
+       if(isset($_POST['tagOption']))
+           addTagToFile($file,$_POST['tagOption']);
     }
 
     $_SESSION['success_messages'][] = '<br>'.'Uploaded Files with success';
