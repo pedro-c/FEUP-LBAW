@@ -75,4 +75,10 @@ function getLastThreeUploadedFiles($project_id){
     return $stmt->fetchAll();
 }
 
+function deleteFile($file_id){
+    global $conn;
+    $stmt = $conn->prepare('DELETE FROM file WHERE id=?');
+    return $stmt->execute([$file_id]);
+}
+
 

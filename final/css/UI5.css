@@ -223,10 +223,11 @@ body {
       color: #e9d460; }
 .files_list .file .panel-body .name {
   font-size: medium; }
-.files_list .file .panel-body .fa.fa-download {
+.files_list .file .panel-body .fa.fa-download, .files_list .file .panel-body .fa.fa-trash {
   color: #22313f;
-  font-size: x-large; }
-  .files_list .file .panel-body .fa.fa-download:hover {
+  font-size: x-large;
+  cursor: pointer; }
+  .files_list .file .panel-body .fa.fa-download:hover, .files_list .file .panel-body .fa.fa-trash:hover {
     color: #e9d460; }
 .files_list .uploadFile_container .panel-heading {
   background-color: #e9d460;

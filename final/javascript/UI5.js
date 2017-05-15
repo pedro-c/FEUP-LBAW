@@ -9,7 +9,31 @@ $(document).ready(function () {
         return false;
     });
 
+    $('i[data-toggle=modal]').click(function () {
+        var data_id = '';
+        if (typeof $(this).data('id') !== 'undefined')
+            data_id = $(this).data('id');
+
+        $("#file-id-delete").text(data_id);
+    });
+
 });
+
+function deleteFile(){
+    file_id = $("#file-id-delete").text();
+
+    $.ajax({
+        type: 'POST',
+        data: { 'file_id': file_id } ,
+        url:'../api/files/delete-file.php',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            location.reload();
+        }
+    });
+
+}
 
 function uploadFile() {
 
