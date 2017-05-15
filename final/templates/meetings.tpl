@@ -67,20 +67,35 @@
                                         {if $coordinator == 'true' || $creator == 'true' }
                                             <span id="plus_user" class="glyphicon glyphicon-plus-sign"
                                                   aria-hidden="true"
-                                                  onclick="inviteMoreUsers({$meeting.id})"> </span>
-                                            <div id='{$meeting.id|cat:'uninvited-users'}' class="uninvited-users"
-                                                 hidden>
-                                                <form method="post" action="../actions/meetings/invite-user.php">
-                                                    <select name="uninvited_users[]" id="uninvited-users"
-                                                            class="select2-multiple form-control" multiple="multiple"
-                                                            multiple>
-                                                        {foreach $notInvitedmembers as $notInvitedmember} {$name = getUserNameById($notInvitedmember)}
-                                                            <option value={$notInvitedmember}>{$name}</option>{/foreach}
-                                                    </select>
-                                                    <input name='meeting_id' value="{$meeting.id}" hidden>
-                                                    <input name="Invite" id="submit_invite" type="submit"
-                                                           value="Invite">
-                                                </form>
+                                                  onclick="inviteMoreUsers({$meeting.id})"  data-toggle="modal" data-target="#{$meeting.id|cat:'uninvited-users'}">
+                                            </span>
+                                            <div id='{$meeting.id|cat:'uninvited-users'}' class="modal fade" role="dialog">
+                                                <div class="modal-dialog">
+
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Invite Users</h4>
+                                                        </div>
+                                                        <form method="post" action="../actions/meetings/invite-user.php">
+                                                        <div class="modal-body">
+                                                            <select name="uninvited_users[]" id="uninvited-users"
+                                                                    class="select2-multiple form-control" multiple="multiple"
+                                                                    multiple>
+                                                                {foreach $notInvitedmembers as $notInvitedmember} {$name = getUserNameById($notInvitedmember)}
+                                                                    <option value={$notInvitedmember}>{$name}</option>{/foreach}
+                                                            </select>
+
+                                                                <input name='meeting_id' value="{$meeting.id}" hidden>
+                                                                <input name="Invite" id="submit_invite" type="submit"
+                                                                       value="Invite">
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                        </form>
+                                                    </div>
+
+                                                </div>
                                             </div>
                                         {/if}
                                     </label>
