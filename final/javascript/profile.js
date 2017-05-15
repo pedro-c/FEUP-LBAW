@@ -57,3 +57,15 @@ function createProject() {
 
     });
 }
+
+function leaveProject(projectId){
+    $.ajax({
+        type:'post',
+        url: '../actions/users/leave-project.php',
+        data:  {'projectId': projectId},
+        success: function() {
+            window.location.reload();
+        }
+
+    });
+}

@@ -29,8 +29,33 @@
                             {$project_name = getProjectName($project.id_project)}
                             <div>
                                 <a onclick="changeProject({$project.id_project})">{$project_name}</a>
+                                <span type="button" class="glyphicon glyphicon-log-out" aria-hidden="true" data-toggle="modal" data-target="#{$project.id_project}"></span>
                             </div>
+
+                            <!-- Modal -->
+                            <div id="{$project.id_project}" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Leave project {$project_name}</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Are you sure you want to leave?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="leaveProject({$project.id_project})">Yes</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         {/foreach}
+
+
                     </div>
                     <h4>Join Project</h4>
                     <div class="join-project">
