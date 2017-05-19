@@ -262,10 +262,10 @@ button#new-post-button.active #plus-icon h4 {
   color: #e9d460;
   cursor: pointer; }
 
-.reply-like-button.liked
+.reply-like-button.liked,
 .post-like-button.liked {
   color: #e9d460; }
-  .reply-like-button.liked
+  .reply-like-button.liked:hover,
   .post-like-button.liked:hover {
     color: black; }
 

@@ -141,8 +141,8 @@ $(document).ready(function () {
         if (newPost === true)
             displayedContent = newPostPanel.append(mobileBack);
         else {
-            let selectedPost = makePostSection(clickedObject);
-            displayedContent = selectedPost.append(mobileBack);
+            let selectedPost = loadPost(clickedObject);
+            // displayedContent = selectedPost.append(mobileBack);
         }
 
         displayedPosts.push(displayedContent);
@@ -184,10 +184,24 @@ $(document).ready(function () {
      * @param clickedPost
      * @returns {*|jQuery|HTMLElement}
      */
-    let makePostSection = function (clickedPost) {
+    let loadPost = function (clickedPost) {
         let postId = parseInt(clickedPost.find(".post-id").text());
         curPostID = postId;
-        let header = getPostHeader(clickedPost);
+
+        /*
+         * Load the post information
+         * title, username, userphoto and submission date
+         * content
+         * number of likes
+         */
+
+        $.post("../api/forum/get_forum_post.php",{
+            post_id : postId
+        }, function(data){
+            console.log(data);
+        });
+/*
+        let header = getPostHeader(clickedPost, postId);
         let content = getPostContent(postId);
         let numLikes = getPostLikes(postId);
         let likedByUser = userLikedPost(postId);
@@ -211,6 +225,7 @@ $(document).ready(function () {
             '</div>'
         );
 
+        console.log("num likes = " + numLikes);
         postSection.find("#submit-reply").click(submitReply);
         postSection.find(".panel-body").append(content);
         postSection.find(".panel-body").append(
@@ -224,7 +239,18 @@ $(document).ready(function () {
         );
         postSection.find("#reply-post-button").after(replies);
 
-        return postSection;
+        $("body").on('click', '.post-like-button', function () {
+            let postElement = $(this).parents("#post-content");
+            if ($(this).hasClass('liked')) {
+                //unlike
+                unlikePost(postElement);
+            }
+            else {
+                //like
+                likePost(postElement);
+            }
+        });
+        return postSection;*/
     };
 
     /**
@@ -232,7 +258,7 @@ $(document).ready(function () {
      * @param clickedPost
      * @returns {string}
      */
-    let getPostHeader = function (clickedPost) {
+    let getPostHeader = function (clickedPost, id) {
         let title = clickedPost.find(".post-title").text();
         let userPhoto = clickedPost.find(".submitter-photo").attr("src");
         let username = clickedPost.find(".submitter-uname").text();
@@ -240,6 +266,7 @@ $(document).ready(function () {
 
 
         return '<div class="panel-heading">' +
+            '<span hidden="hidden" id="current-post-id">' + id + ' </span>' +
             '<h3 class="panel-title selected-post-title"><strong>' + title + '</strong></h3>' +
             '<span>' +
             '<img id="selected-post-submitter-info" class="submitter-photo" src=' + userPhoto + '>' +
@@ -455,6 +482,32 @@ function userLikedPost(postId) {
     );
 
     return likedByUser;
+}
+
+function likePost(postElement) {
+    let postId = parseInt(postElement.find('#current-post-id').text());
+    $.post("../api/forum/like_post.php", {
+        post_id: postId
+    }, function (data) {
+        let replyLikeButton = postElement.find(".post-like-button");
+        replyLikeButton.addClass("liked");
+        replyLikeButton.find(".like-status").text(' Liked');
+        postElement.find(".post-likes").html("<strong><i class='fa fa-thumbs-up'></i> " + data + "</strong>")
+    });
+}
+
+function unlikePost(postElement) {
+    let postId = parseInt(postElement.find('#current-post-id').text());
+    $.post("../api/forum/unlike_post.php", {
+        post_id: postId
+    }, function (data) {
+        let replyLikeButton = postElement.find(".post-like-button");
+        replyLikeButton.removeClass("liked");
+        replyLikeButton.find(".like-status").text(' Like');
+        postElement.find(".post-likes").html(
+            data > 0 ? '<strong><i class="fa fa-thumbs-up"></i> ' + data + '</strong>' : ''
+        );
+    });
 }
 
 function likeReply(replyElement) {

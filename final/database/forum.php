@@ -58,6 +58,30 @@ function getUserPhoto($user)
     }
 }
 
+function getPost($postId,$userId){
+    global $conn;
+
+    /*$stmt = $conn->prepare("SELECT forum_post.id, title, creation_date, content, date_modified, id_creator, username
+    FROM forum_post, user_table
+    WHERE forum_post.id = ?
+    AND forum_post.id_creator = user_table.id");*/
+
+    $stmt = $conn->prepare("SELECT forum_post.id as post_id, title, creation_date, content, date_modified, id_creator, username, count(id_user) as num_likes, 
+    EXISTS 
+    (
+        SELECT * FROM forum_post_like WHERE id_post = ? AND id_user = ?
+    ) as user_liked
+
+    FROM forum_post, user_table, forum_post_like
+    WHERE forum_post.id = ?
+    AND forum_post.id_creator = user_table.id
+    AND forum_post_like.id_post = forum_post.id
+    GROUP BY forum_post.id,username");
+
+    $stmt->execute(array($postId,$userId,$postId));
+    return $stmt->fetchAll()[0];
+}
+
 function getPostContent($projectID, $postID)
 {
     global $conn;
@@ -119,6 +143,25 @@ function submitPostReply($userID, $postID, $replyContent)
     return json_encode($output);
 }
 
+function likePost($postId, $userId)
+{
+    global $conn;
+
+    $stmt = $conn->prepare("INSERT INTO forum_post_like(id_post,id_user) VALUES (?,?)");
+    $stmt->execute(array($postId, $userId));
+
+    return getNumLikesPost($postId);
+}
+
+function unlikePost($postId, $userId)
+{
+    global $conn;
+
+    $stmt = $conn->prepare("DELETE FROM forum_reply_like WHERE id_post = ? AND id_user = ?");
+    $stmt->execute(array($postId, $userId));
+
+    return getNumLikesReply($postId);
+}
 function likeReply($replyId, $userId)
 {
     global $conn;
@@ -133,8 +176,7 @@ function unlikeReply($replyId, $userId)
 {
     global $conn;
 
-    $stmt = $conn->prepare("DELETE FROM forum_reply_like
-    WHERE id_reply = ? AND id_user = ?");
+    $stmt = $conn->prepare("DELETE FROM forum_reply_like WHERE id_reply = ? AND id_user = ?");
     $stmt->execute(array($replyId, $userId));
 
     return getNumLikesReply($replyId);
