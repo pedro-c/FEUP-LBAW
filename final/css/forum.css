@@ -243,13 +243,11 @@ button#new-post-button.active #plus-icon h4 {
 #pagination-last a {
   margin-left: 5px; }
 
-.reply-likes {
+.reply-likes, .post-likes {
   float: right; }
 
-#selected-post-content {
-  margin-bottom: 10px; }
-
-#replies p.reply-content {
+#replies p.reply-content,
+p#post-content {
   margin-top: 10px;
   margin-bottom: 10px; }
 

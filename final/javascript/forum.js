@@ -33,7 +33,7 @@ $(document).ready(function () {
             likeReply(replyElement);
         }
     });
-    $('body').on('click', '#submit-reply', function(){
+    $('body').on('click', '#submit-reply', function () {
         let text = $("#reply-text");
         let content = text.val();
         if (content === null || content === "")
@@ -153,8 +153,12 @@ $(document).ready(function () {
     let showForumContent = function (clickedObject, newPost) {
         curPost = clickedObject;
 
-        if (displayedPosts.length > 0)
-            displayedPosts.pop().remove();
+        if (displayedPosts.length > 0) {
+            let post = displayedPosts.pop();
+            console.log(post);
+            post.remove();
+
+        }
 
         if (curPost.hasClass("active")) {
             resetForum();
@@ -175,13 +179,10 @@ $(document).ready(function () {
         let displayedContent;
 
         if (newPost === true) {
-            displayedContent = newPostPanel.append(mobileBack);
-            forum.after(displayedContent);
+            newPostPanel.append(mobileBack);
         }
-        else {
-            let selectedPost = loadPost(forum,clickedObject,mobileBack);
-            displayedPosts.push("post");
-        }
+        else
+            loadPost(forum, clickedObject, mobileBack, displayedPosts);
 
 
         nav.affix();
@@ -220,7 +221,7 @@ $(document).ready(function () {
      * @param clickedPost
      * @returns {*|jQuery|HTMLElement}
      */
-    let loadPost = function (forum, clickedPost, mobileBack) {
+    let loadPost = function (forum, clickedPost, mobileBack, displayedPostsStack) {
         let postId = parseInt(clickedPost.find(".post-id").text());
         curPostID = postId;
 
@@ -235,20 +236,23 @@ $(document).ready(function () {
         }, function (data) {
             console.log(data);
 
-            let id = data.id;
-            let title = data.title;
-            let creationDate = data.creation_date;
-            let content = data.content;
-            let dateModified = data.date_modified;
-            let username = data.username;
-            let photo = data.photo;
-            let numLikes = data.num_likes;
-            let likedByUser = data.liked_by_user;
+            let postInfo = JSON.parse(data);
+            let id = postInfo.id;
+            let title = postInfo.title;
+            let creationDate = postInfo.creation_date;
+            let content = postInfo.content;
+            let dateModified = postInfo.date_modified;
+            let username = postInfo.username;
+            let photo = postInfo.photo;
+            let numLikes = postInfo.num_likes;
+            let likedByUser = postInfo.liked_by_user;
 
             let postElement = makePostElement(id, title, creationDate, content, dateModified, username, photo, numLikes, likedByUser);
             postElement.append(mobileBack);
 
+            displayedPostsStack.push(postElement);
             forum.after(postElement);
+
         });
         /*
          let header = getPostHeader(clickedPost, postId);
@@ -427,6 +431,7 @@ function unlikePost(postElement) {
     $.post("../api/forum/unlike_post.php", {
         post_id: postId
     }, function (data) {
+        console.log(data);
         let replyLikeButton = postElement.find(".post-like-button");
         replyLikeButton.removeClass("liked");
         replyLikeButton.find(".like-status").text(' Like');
@@ -486,35 +491,45 @@ function makePostElement(id, title, creationDate, content, dateModified, usernam
         '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">' +
         '<div id="post-content" class="panel panel-primary">' +
         '<div class="panel-heading">' +
-        '<span hidden="hidden" id="current-post-id">' + id + ' </span>' +
+        '<span hidden="hidden" id="current-post-id">' + id + '</span>' +
         '<h3 class="panel-title selected-post-title"><strong>' + title + '</strong></h3>' +
         '<span>' +
         '<img id="selected-post-submitter-info" class="submitter-photo" src=' + photo + '>' +
-        '<small>' + username + ' on ' + creationDate +
-        '</small>' +
+        '<small>' + username + ' on ' + creationDate + '</small>' +
         '</span>' +
         '</div>' +
-        '<div class="panel-body"></div>' +
+        '<div class="panel-body">' +
+        '<div class="post-likes">' + (numLikes > 0 ? '<i class="fa fa-thumbs-up"></i>' + numLikes : '') + '</div>' +
+        '<p id="post-content">' +
+        content +
+        '</p>' +
+        '<div class="like-section">' +
+        '<small>' +
+        '<span class="post-like-button ' + (likedByUser ? 'liked' : '') + '"><i class="fa fa-thumbs-up"></i>' +
+        '<span class="like-status"> ' + (likedByUser ? 'Liked' : 'Like') + '</span></span>' +
+        '</small>' +
+        '</div>' +
+        '</div>' +
         '</div>' +
         '<div id="reply-button">' +
         '<a id="reply-post-button" class="btn btn-default btn-reply"><i class="glyphicon glyphicon-plus"></i> Reply to this post</a>' +
         '</div>' +
+        '</div>' +
+        '</div>'
+    );
+
+    post.append(replies);
+
+    post.append(
         '<li id="post-reply" class="list-group-item">' +
         '<h5 class="list-group-item-heading"><img class="submitter-photo" src="' + photo + '"><strong>' + username + '</strong></h5>' +
         '<textarea id="reply-text" class="form-control" rows="3" style="resize: none" required="required" placeholder="Reply to this post"></textarea>' +
         '<button id="submit-reply" class="btn btn-default btn-form btn-comment">Submit</button>' +
-        '</li>' +
-        '</div>' +
-        '<div class="like-section"><small>' +
-        '<span class="post-likes">' + (numLikes > 0 ? '<i class="fa fa-thumbs-up"></i>' + numLikes + '</span>' : '') +
-        '<span class="post-like-button ' + (likedByUser ? 'liked' : '') + '">' +
-        '<i class="fa fa-thumbs-up"></i>' +
-        '<span class="like-status"> ' + (likedByUser ? 'Liked' : 'Like') + '</span>' +
-        '</span>' +
-        '</small></div>'
+        '</li>'
     );
-
     console.log(post);
+
+    return post;
 
 }
 

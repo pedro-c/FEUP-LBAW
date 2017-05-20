@@ -61,11 +61,6 @@ function getUserPhoto($user)
 function getPost($postId,$userId){
     global $conn;
 
-    /*$stmt = $conn->prepare("SELECT forum_post.id, title, creation_date, content, date_modified, id_creator, username
-    FROM forum_post, user_table
-    WHERE forum_post.id = ?
-    AND forum_post.id_creator = user_table.id");*/
-
     $stmt = $conn->prepare("SELECT forum_post.id as post_id, title, creation_date, content, date_modified, id_creator, username, count(id_user) as num_likes, 
     EXISTS 
     (
@@ -157,7 +152,7 @@ function unlikePost($postId, $userId)
 {
     global $conn;
 
-    $stmt = $conn->prepare("DELETE FROM forum_reply_like WHERE id_post = ? AND id_user = ?");
+    $stmt = $conn->prepare("DELETE FROM forum_post_like WHERE id_post = ? AND id_user = ?");
     $stmt->execute(array($postId, $userId));
 
     return getNumLikesReply($postId);
