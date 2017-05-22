@@ -61,16 +61,16 @@ function getUserPhoto($user)
 function getPost($postId,$userId){
     global $conn;
 
-    $stmt = $conn->prepare("SELECT forum_post.id as post_id, title, creation_date, content, date_modified, id_creator, username, count(id_user) as num_likes, 
+    $stmt = $conn->prepare("
+    SELECT forum_post.id as post_id, title, creation_date, forum_post.content, date_modified, id_creator, username, count(forum_post_like.id_user) as num_likes, 
     EXISTS 
     (
         SELECT * FROM forum_post_like WHERE id_post = ? AND id_user = ?
     ) as user_liked
 
-    FROM forum_post, user_table, forum_post_like
+    FROM forum_post LEFT JOIN forum_post_like ON id = id_post, user_table
     WHERE forum_post.id = ?
     AND forum_post.id_creator = user_table.id
-    AND forum_post_like.id_post = forum_post.id
     GROUP BY forum_post.id,username");
 
     $stmt->execute(array($postId,$userId,$postId));

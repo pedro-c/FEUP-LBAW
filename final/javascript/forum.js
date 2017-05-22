@@ -225,6 +225,8 @@ $(document).ready(function () {
         let postId = parseInt(clickedPost.find(".post-id").text());
         curPostID = postId;
 
+        console.log(postId);
+
         /*
          * Load the post information
          * title, username, userphoto and submission date
