@@ -1,73 +1,73 @@
 @import 'global';
 
-#new-post-panel>.panel-body{
+#new-post-panel > .panel-body {
   text-align: center;
 }
 
-.reply-options{
+.reply-options {
 
   margin-left: 10px;
 
-  .btn.dropdown-toggle{
+  .btn.dropdown-toggle {
     padding: 0px;
     background-color: $white;
-
-    &.open{
-      background-color: $white;
-    }
+    -webkit-box-shadow: none;
+    box-shadow: none;
   }
 
-  .dropdown-item{
+  .dropdown-item {
     padding-left: 10px;
     display: block;
     padding-top: 5px;
     color: $color_ebony_clay;
 
-    &.delete-option{
-      color:$color-tall_poppy_approx;
+    &.delete-option {
+      color: $color-tall_poppy_approx;
     }
- }
+  }
 
-  .dropdown-item:hover{
+  .dropdown-item:hover {
     background-color: $background_white;
     text-decoration: none;
   }
 }
 
-.submitter-photo{
+.submitter-photo {
   width: 25px;
   margin-right: 3px;
 }
 
-.selected-post-title{
+.selected-post-title {
   margin-bottom: 5px;
 }
 
-button.btn-form{
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+button.btn-form {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   background-color: $white;
   border-color: $white;
   color: $color_ebony_clay;
   margin-right: 10px;
 }
 
-button.list-group-item.background{
+button.list-group-item.background {
   background-color: #f0f0f0;
 }
 
 button#new-post-button {
   margin-bottom: 10px;
 
-  .row{
+  .row {
     display: table;
     height: 100%;
   }
 
-  &:hover{
-    #plus-icon h4{color: $color_yellow;}
+  &:hover {
+    #plus-icon h4 {
+      color: $color_yellow;
+    }
   }
 
-  #plus-icon{
+  #plus-icon {
     vertical-align: middle;
     text-align: center;
     float: none;
@@ -76,16 +76,17 @@ button#new-post-button {
     margin-bottom: -10px;
   }
 
-  #new-content{
+  #new-content {
     display: table-cell;
     float: none;
   }
 }
 
-button#new-post-button.active{
-  #plus-icon h4{color: $color_yellow;}
+button#new-post-button.active {
+  #plus-icon h4 {
+    color: $color_yellow;
+  }
 }
-
 
 @media (max-width: 767px) {
   #replies {
@@ -105,70 +106,70 @@ button#new-post-button.active{
   }
 }
 
-#reply-post-button{
+#reply-post-button {
   margin-bottom: 5px;
-  &:hover{
+  &:hover {
     color: $white;
     background-color: #d9c559;
     border-color: #d9c559;
   }
 }
 
-#submit-reply:hover, #submit-new-post:hover{
+#submit-reply:hover, #submit-new-post:hover {
   color: $white;
   background-color: #d9c559;
   border-color: #d9c559;
 }
-.btn-reply, #submit-reply, #submit-new-post{
+
+.btn-reply, #submit-reply, #submit-new-post {
   background-color: $color_yellow;
   border-color: $color_yellow;
   color: $white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 
-  i{
+  i {
     color: $white;
   }
 }
 
-.btn-comment{
+.btn-comment {
   margin-top: 10px;
 }
 
-#pagination-first a{
+#pagination-first a {
   margin-right: 5px;
 }
 
-#pagination-last a{
+#pagination-last a {
   margin-left: 5px;
 }
 
-.reply-likes, .post-likes{
+.reply-likes, .post-likes {
   float: right;
 }
 
-
 #replies p.reply-content,
-p#post-content{
+p#post-content {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-#replies li.list-group-item{
+#replies li.list-group-item {
   padding-bottom: 0;
 }
 
 .reply-like-button:hover,
 .reply-likes:hover,
-.post-like-button:hover{
+.post-like-button:hover {
   color: $color_yellow;
   cursor: pointer;
 }
 
 .reply-like-button.liked,
-.post-like-button.liked{
+.post-like-button.liked {
   color: $color_yellow;
 
-  &:hover{
+  &:hover {
     color: black;
   }
 }
@@ -176,13 +177,15 @@ p#post-content{
 /*Overriding bootstrap class panel-primary*/
 .panel-primary {
   border: 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
+
 .panel-primary > .panel-heading {
   color: $white;
   background-color: $color_yellow;
   border-color: $color_yellow;
 }
+
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: $color_yellow;
 }
@@ -191,10 +194,10 @@ p#post-content{
   color: #337ab7;
   background-color: #fff;
 }
+
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: $color_ebony_clay;
 }
-
 
 /*Overriding bootstrap class list-group*/
 .list-group-item.active,
@@ -206,7 +209,7 @@ p#post-content{
   border-color: $white;
   color: $color_ebony_clay;
 
-  small{
+  small {
     color: $color_ebony_clay;
   }
 }
@@ -218,21 +221,23 @@ a.list-group-item:focus {
   text-decoration: none;
   background-color: #f5f5f5;
 }
+
 button.list-group-item:focus {
   background-color: $white;
   border-color: $white;
   color: $color_ebony_clay;
 }
-.list-group{
+
+.list-group {
   border-radius: 10px;
 }
 
-.list-group-item{
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+.list-group-item {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /*Changing glyphicon color*/
-.glyphicon{
+.glyphicon {
   color: #777;
 }
 
@@ -243,9 +248,11 @@ button.list-group-item:focus {
   margin: 20px 0;
   border-radius: 4px;
 }
+
 .pagination > li {
   display: inline;
 }
+
 .pagination > li > a,
 .pagination > li > span {
   position: relative;
@@ -258,17 +265,20 @@ button.list-group-item:focus {
   background-color: #fafafa;
   border: 1px solid #ddd;
 }
+
 .pagination > li:first-child > a,
 .pagination > li:first-child > span {
   margin-left: 0;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
+
 .pagination > li:last-child > a,
 .pagination > li:last-child > span {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
+
 .pagination > li > a:hover,
 .pagination > li > span:hover,
 .pagination > li > a:focus,
@@ -295,6 +305,7 @@ button.list-group-item:focus {
   background-color: $color-ebony_clay;
   border-color: $color_ebony_clay;
 }
+
 .pagination > .disabled > span,
 .pagination > .disabled > span:hover,
 .pagination > .disabled > span:focus,
@@ -306,33 +317,39 @@ button.list-group-item:focus {
   background-color: #fafafa;
   border-color: #ddd;
 }
+
 .pagination-lg > li > a,
 .pagination-lg > li > span {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
 }
+
 .pagination-lg > li:first-child > a,
 .pagination-lg > li:first-child > span {
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
 }
+
 .pagination-lg > li:last-child > a,
 .pagination-lg > li:last-child > span {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
+
 .pagination-sm > li > a,
 .pagination-sm > li > span {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
 }
+
 .pagination-sm > li:first-child > a,
 .pagination-sm > li:first-child > span {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
+
 .pagination-sm > li:last-child > a,
 .pagination-sm > li:last-child > span {
   border-top-right-radius: 3px;
@@ -341,7 +358,7 @@ button.list-group-item:focus {
 
 /* Overriding btn-default bootstrap class */
 .btn-default:focus,
-.btn-default:hover ,
+.btn-default:hover,
 .btn-default.focus {
   color: $white;
   background-color: $color_yellow;

@@ -496,8 +496,8 @@ function makeReplyElement(replyId, userPhoto, username, creationDate, numLikes, 
             '<i class="fa fa-caret-down"></i>' +
             '</button>' +
             '<div class="dropdown-menu">' +
-            '<a class="dropdown-item" href="#">Edit Post</a>' +
-            '<a class="dropdown-item delete-option" href="#">Delete Post</a>' +
+            '<a class="dropdown-item" href="#">Edit Reply</a>' +
+            '<a class="dropdown-item delete-option" href="#">Delete Reply</a>' +
             '</div>' +
             '</div>'
         );

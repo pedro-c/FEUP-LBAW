@@ -168,9 +168,9 @@ body {
   margin-left: 10px; }
   .reply-options .btn.dropdown-toggle {
     padding: 0px;
-    background-color: #fff; }
-    .reply-options .btn.dropdown-toggle.open {
-      background-color: #fff; }
+    background-color: #fff;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
   .reply-options .dropdown-item {
     padding-left: 10px;
     display: block;
