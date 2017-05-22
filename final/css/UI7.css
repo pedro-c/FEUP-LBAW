@@ -519,7 +519,7 @@ body {
     border: 1px dashed grey;
     vertical-align: middle;
     background-color: #ecf0f1;
-    display: table;
+    display: table-cell;
     width: 100%; }
     #page-meetings #create-meeting-settings .new_meeting .box.drag_here .box__file {
       visibility: hidden; }
@@ -528,7 +528,7 @@ body {
       font-size: 40px !important;
       color: grey;
       text-align: center;
-      display: table; }
+      cursor: pointer; }
     #page-meetings #create-meeting-settings .new_meeting .box.drag_here div {
       display: table-cell;
       vertical-align: middle; }

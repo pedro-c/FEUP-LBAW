@@ -258,6 +258,8 @@ body {
   width: 100%; }
   .files_list .uploadFile_container .panel-body .box.drag-here .box__file {
     visibility: hidden; }
+  .files_list .uploadFile_container .panel-body .box.drag-here #file-info {
+    font-weight: 700; }
   .files_list .uploadFile_container .panel-body .box.drag-here .glyphicon.glyphicon-plus.img-responsive {
     margin: 0 auto;
     font-size: 40px !important;
@@ -343,7 +345,8 @@ body {
   padding-top: 30px; }
   .files_list #container_file_info .panel-body #user #user_photo {
     width: 70px;
-    float: left; }
+    float: left;
+    border-radius: 50%; }
   .files_list #container_file_info .panel-body #user .name {
     padding-left: 15px;
     padding-top: 30px;

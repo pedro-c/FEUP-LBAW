@@ -30,4 +30,3 @@ $smarty->display($BASE_DIR . 'templates/meetings.tpl');
 
 include_once "common/footer.php";
 ?>
-t

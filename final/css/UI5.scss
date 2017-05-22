@@ -160,6 +160,10 @@
           visibility: hidden;
         }
 
+        #file-info{
+          font-weight: 700;
+        }
+
         .glyphicon.glyphicon-plus.img-responsive {
           margin: 0 auto;
           font-size: 40px !important;
@@ -291,6 +295,7 @@
         #user_photo {
           width: 70px;
           float: left;
+          border-radius: 50%;
         }
 
         .name{

@@ -21,8 +21,7 @@ $(document).ready(function () {
         var files = $(this)[0].files;
         console.log(files);
         if(files.length > 0){
-            console.log("ENTREI");
-            $("#file-info").html("You selected " +  files.length + " files.");
+            $("#file-info").html("File uploaded.");
         }
     });
 

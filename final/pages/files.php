@@ -22,4 +22,3 @@ $smarty->display($BASE_DIR . 'templates/files.tpl');
 
 include_once "common/footer.php";
 ?>
-t

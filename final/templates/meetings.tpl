@@ -202,6 +202,7 @@
                                     <strong> Choose a file </strong>
                                     <span class="box__dragndrop"> or drag it here</span>.
                                 </label>-->
+                                <label id="file-info"></label>
 
                             </div>
 
