@@ -99,7 +99,7 @@
         padding-left: 30px !important;
         padding-right: 0px !important;
         padding-top: 10px;
-        background-color: $color_ebony_clay;
+        background-color: $blue_secondary;
         color: white;
         display: table;
 
@@ -136,9 +136,26 @@
 
       .panel-body {
         padding-left: 30px !important;
-        padding-top: 0px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
 
         .information_meeting {
+
+          margin-bottom: 5px;
+
+          .delete-icon{
+
+            .fa.fa-trash{
+              color: $blue_secondary;
+              font-size: large;
+              cursor: pointer;
+              margin-bottom: 15px;
+
+              &:hover {
+                color: $color_yellow;
+              }
+            }
+          }
 
           .hour {
             font-size: large;
@@ -149,37 +166,26 @@
             color: $color_yellow;
             font-size: 35px;
             cursor: pointer;
+            border-radius: 50%;
 
             &:hover{
               color: $blue_secondary;
             }
           }
 
-          .user_responsible {
+          .user-responsible {
             font-weight: normal;
             padding-bottom: 5px;
           }
 
           .guests {
-            padding-top: 10px;
-            .user_photo {
+            .user-photo {
               margin-right: 5px;
               width: 35px;
               float: left;
+              border-radius: 50%;
             }
           }
-
-          #submit_invite{
-            background-color: $blue_secondary;
-            border-radius: 5px;
-            border-color: transparent;
-            color: white;
-            font-weight: lighter;
-            &:hover {
-              background-color: $color_yellow;
-            }
-          }
-
         }
       }
     }
@@ -197,34 +203,11 @@
       }
     }
 
-    .button_trash {
+    .button_back, .button_trash {
       text-align: right;
       margin-left: 15px;
 
-      .trash {
-        padding: 4px 15px 4px 15px;
-        color: white;
-        background-color: #c0392b;
-        border: 2px solid #c0392b;
-        border-radius: 5px;
-        align-self: center;
-        outline: 0;
-
-        &:hover {
-          background-color: #913025;
-          border: 2px solid;
-          border-color: #913025;
-          color: white;
-        }
-      }
-
-    }
-
-    .button_back {
-      text-align: right;
-      margin-left: 15px;
-
-      .back {
+      .back, .trash{
         padding: 4px 15px 4px 15px;
         color: white;
         background-color: $blue_secondary;
@@ -273,6 +256,7 @@
 
       .date {
         font-size: large;
+        padding-bottom: 10px;
       }
 
       .minutes {
@@ -395,6 +379,15 @@
 
     .new_meeting {
 
+      .input-group-addon.meetings_icon.glyphicon.glyphicon-calendar,
+      .meetings_icon.glyphicon.glyphicon-time,
+      .meetings_icon.glyphicon.glyphicon-pushpin{
+        top:0px !important;
+      }
+
+      .input-group-addon{
+        width: 60px !important;
+      }
       .title {
         margin-bottom: 20px;
 
@@ -507,24 +500,27 @@
       .box.drag_here {
         border-radius: 5px;
         height: 150px;
-        margin-top: 40px;
         border: 1px dashed grey;
         vertical-align: middle;
         background-color: $background_white;
-        display: table;
+        display: table-cell;
         width: 100%;
+
+        .box__file{
+          visibility: hidden;
+        }
+
+        .glyphicon.glyphicon-plus.img-responsive {
+          margin: 0 auto;
+          font-size: 40px !important;
+          color: grey;
+          text-align: center;
+        }
 
         div {
           display: table-cell;
           vertical-align: middle;
         }
-
-        .glyphicon.glyphicon-plus {
-          text-align: center;
-          font-size: x-large;
-          color: grey;
-        }
-
 
         #filedrag {
           display: none;
@@ -562,10 +558,42 @@
     border-radius: 5px;
     align-self: center;
     outline: 0;
+    margin-top: 20px;
 
     &:hover {
       background-color: $blue_secondary;
       border: none;
     }
   }
+
+  .modal-dialog{
+
+    .select-box:first-child{
+      span {
+        width: 100% !important;
+      }
+    }
+  }
+
+
+  .modal-header {
+    background-color: $color_ebony_clay;
+    color: $white;
+  }
+  .modal-footer {
+    background-color: $color_ebony_clay;
+    color: $white;
+
+    #accept_button:hover {
+      background-color: $color_yellow;
+      color: $white;
+    }
+    #cancel_button:hover {
+      background-color: $color_yellow;
+      color: $white;
+    }
+
+  }
+
+
 }

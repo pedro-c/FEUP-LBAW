@@ -167,3 +167,9 @@ function getNextThreeMeetings($project_id){
 
     return $stmt->fetchAll();
 }
+
+function deleteMeeting($meeting_id){
+    global $conn;
+    $stmt = $conn->prepare('DELETE FROM meeting WHERE id=?');
+    return $stmt->execute([$meeting_id]);
+}

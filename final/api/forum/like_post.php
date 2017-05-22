@@ -10,8 +10,8 @@ include_once '../../config/init.php';
 include_once '../../database/forum.php';
 
 $userId = $_SESSION['user_id'];
-$replyId = $_POST['reply_id'];
+$postId = $_POST['post_id'];
 
-$numLikes = likeReply($replyId, $userId);
+$numLikes = likePost($postId, $userId);
 
 echo $numLikes;

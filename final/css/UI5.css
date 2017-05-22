@@ -180,6 +180,8 @@ body {
     border-bottom: 4px solid;
     border-bottom-color: #e9d460; }
 
+.files_list #button-upload {
+  text-align: right; }
 .files_list .button_upload {
   padding-top: 20px;
   padding-bottom: 40px; }
@@ -208,7 +210,8 @@ body {
       font-weight: normal !important; }
     .files_list .file .panel-heading .file_details .file_show {
       padding-right: 5px;
-      width: 35px; }
+      width: 35px;
+      height: 35px; }
 .files_list .file .panel-body .minutes {
   padding-bottom: 10px; }
   .files_list .file .panel-body .minutes span {
@@ -221,11 +224,14 @@ body {
       color: #e9d460; }
 .files_list .file .panel-body .name {
   font-size: medium; }
-.files_list .file .panel-body .fa.fa-download {
+.files_list .file .panel-body .fa.fa-download, .files_list .file .panel-body .fa.fa-trash {
   color: #22313f;
-  font-size: x-large; }
-  .files_list .file .panel-body .fa.fa-download:hover {
+  font-size: large;
+  cursor: pointer; }
+  .files_list .file .panel-body .fa.fa-download:hover, .files_list .file .panel-body .fa.fa-trash:hover {
     color: #e9d460; }
+.files_list .file .panel-body .fa.fa-trash {
+  margin-right: 7px; }
 .files_list .uploadFile_container .panel-heading {
   background-color: #e9d460;
   color: white;
@@ -246,12 +252,18 @@ body {
 .files_list .uploadFile_container .panel-body .box.drag-here {
   border-radius: 5px;
   height: 150px;
-  margin-top: 40px;
   border: 1px dashed grey;
-  vertical-align: middle;
   background-color: #ecf0f1;
   display: table;
   width: 100%; }
+  .files_list .uploadFile_container .panel-body .box.drag-here .box__file {
+    visibility: hidden; }
+  .files_list .uploadFile_container .panel-body .box.drag-here .glyphicon.glyphicon-plus.img-responsive {
+    margin: 0 auto;
+    font-size: 40px !important;
+    color: grey;
+    text-align: center;
+    vertical-align: middle; }
   .files_list .uploadFile_container .panel-body .box.drag-here div {
     display: table-cell;
     vertical-align: middle; }
@@ -259,10 +271,6 @@ body {
     padding-top: 30px;
     text-align: center;
     font-size: medium;
-    color: grey; }
-  .files_list .uploadFile_container .panel-body .box.drag-here .glyphicon.glyphicon-plus {
-    text-align: center;
-    font-size: x-large;
     color: grey; }
   .files_list .uploadFile_container .panel-body .box.drag-here .dragover {
     background-color: #22313f;
@@ -276,7 +284,8 @@ body {
   border: none;
   border-radius: 5px;
   align-self: center;
-  outline: 0; }
+  outline: 0;
+  margin-top: 20px; }
   .files_list .uploadFile_container #submit:hover {
     background-color: #22313f;
     border: none; }

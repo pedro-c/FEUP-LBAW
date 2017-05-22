@@ -20,11 +20,11 @@ include_once "common/header.php";
 
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div style="text-align: -webkit-right;" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 button_upload">
+                <div id="button-upload" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 button_upload">
                     <button class="uploadFile" onclick="uploadFile()">Upload a File</button>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 button_upload">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 button_upload pull-right">
                     <div class="drop-down">
                         <button id="tag-name" class="dropdown-toggle uploadFile" type="button" data-toggle="dropdown">Tag
                             <span class="caret"></span></button>
@@ -63,7 +63,7 @@ include_once "common/header.php";
                                 {else}
                                     {$image = "../images/assets/default.png"}
                                 {/if}
-                                <img style="height: 35px" class="file_show" src={$image}>
+                                <img class="file_show" src={$image}>
                                 <label class="file_description">{$file.name|truncate:28}</label>
                             </div>
                         </div>
@@ -77,6 +77,31 @@ include_once "common/header.php";
                             <div class="name">
                                 <span>{$uploaderName}</span>
                                 <i class="pull-right fa fa-download" aria-hidden="true" onclick="downloadFile({$file.id})"></i>
+<!-- Lixo -->                   <i class="pull-right fa fa-trash" aria-hidden="true" data-toggle="modal" data-id={$file.id} data-target="#deleteFileModal"></i>
+                            </div>
+
+                            <div id="deleteFileModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close"
+                                                    data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Delete File</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="info-extra">You are allowed to delete this file because you
+                                                are one team coordinator.</p>
+                                            <p>Are you sure you want to delete this file?</p>
+                                            <span id="file-id-delete" hidden></span>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="deleteFile()">Yes
+                                            </button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">No
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
@@ -97,12 +122,12 @@ include_once "common/header.php";
 
                         <form action="../actions/files/upload-file.php" method="post" enctype="multipart/form-data">
                         <div id="drag-here" class="box drag-here text-center">
-                                <br>
-                                <span class="glyphicon glyphicon-plus"></span>
-                                <br>
-                                <span class="info"> Drag Files Here </span>
-                                <br><br>
-                                <input name="file[]" type="file"/><br />
+
+                               <!-- <span class="info"> Drag Files Here </span>
+                                <br><br>-->
+                            <input id="add-file" class="box__file" name="file[]" type="file"/><br />
+                            <a id="plus"> <span class="glyphicon glyphicon-plus img-responsive"></span></a>
+                            <span id="file-info"></span>
                         </div>
 
                         <div class="input-group task-tags ">
@@ -116,7 +141,7 @@ include_once "common/header.php";
 
 
                         <div class="text-center">
-                            <input id="submit" type="submit" value="Submit" style="margin-top: 20px;">
+                            <input id="submit" type="submit" value="Submit">
                         </div>
 
                         </form>
