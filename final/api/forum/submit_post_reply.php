@@ -10,7 +10,7 @@ include_once '../../config/init.php';
 include_once  $BASE_DIR . 'database/forum.php';
 
 $userID = $_SESSION['user_id'];
-$postID = $_POST['postID'];
+$postID = $_POST['post_id'];
 $replyContent  = $_POST['content'];
 
 $reply = submitPostReply($userID, $postID, $replyContent);
