@@ -254,7 +254,7 @@ body {
   height: 150px;
   border: 1px dashed grey;
   background-color: #ecf0f1;
-  display: table-cell;
+  display: table;
   width: 100%; }
   .files_list .uploadFile_container .panel-body .box.drag-here .box__file {
     visibility: hidden; }
@@ -262,7 +262,8 @@ body {
     margin: 0 auto;
     font-size: 40px !important;
     color: grey;
-    text-align: center; }
+    text-align: center;
+    vertical-align: middle; }
   .files_list .uploadFile_container .panel-body .box.drag-here div {
     display: table-cell;
     vertical-align: middle; }
