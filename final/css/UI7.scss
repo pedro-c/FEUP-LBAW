@@ -511,21 +511,21 @@
           visibility: hidden;
         }
 
-        .glyphicon.glyphicon-plus{
-          font-size: 40px;
+        .glyphicon.glyphicon-puls.img-responsive {
+          margin: 0 auto;
+          font-size: 40px !important;
+          color: grey;
+          text-align: center;
+        }
+
+        .file-description{
+          text-align: center;
         }
 
         div {
           display: table-cell;
           vertical-align: middle;
         }
-
-        .glyphicon.glyphicon-plus {
-          text-align: center;
-          font-size: x-large;
-          color: grey;
-        }
-
 
         #filedrag {
           display: none;

@@ -197,8 +197,8 @@
                                  ondragover="dragover_handler(event);" ondragend="dragend_handler(event);">
 
                                 <input id="add-file" class="box__file" type="file" name="file[]" id="file" multiple/>
-                                <a id="plus"><span  class="glyphicon glyphicon-plus" aria-hidden="true"></span></a><br>
-                                <label for="file"><strong>Choose a file </strong><span class="box__dragndrop"> or drag it here</span>.</label>
+                                <a id="plus"><span  class="glyphicon glyphicon-plus img-responsive center-block" aria-hidden="true"></span></a><br>
+                                <label class="file-description" for="file"><strong>Choose a file </strong><span class="box__dragndrop"> or drag it here</span>.</label>
 
                             </div>
 
