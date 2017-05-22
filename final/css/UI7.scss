@@ -273,12 +273,15 @@
 
       #meeting_files{
 
-        a.file_description{
+        a{
           padding-bottom: 10px;
           padding-left: 10px;
           text-decoration: none !important;
           cursor: pointer !important;
+          font-weight: bold;
+          color: $blue_secondary;
         }
+
       }
 
       .guests {

@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     $('#plus').click(function(){$('#add-file').trigger('click'); });
 
-    $('input#add-file-files').change(function(){
+    $('input#add-file').change(function(){
         var files = $(this)[0].files;
         if(files.length > 0){
             $("#file-info").html("You have uploaded " + files.length + " files.");
