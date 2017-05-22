@@ -328,6 +328,7 @@ function loadPagePosts(postsSection, currentPage) {
     $.post("../api/forum/get_page_posts.php", {
         forum_page: currentPage
     }, function (data) {
+        console.log(data);
         let posts = JSON.parse(data);
         for (let post of posts) {
             let photo = post.submitter_photo;

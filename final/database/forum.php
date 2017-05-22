@@ -7,6 +7,8 @@
  */
 
 
+include_once 'common.php';
+
 function select()
 {
     echo 'Called select function';
@@ -40,23 +42,7 @@ function getProjectPosts($projectId, $forumPage)
     return $posts;
 }
 
-function getUser($userId)
-{
-    global $conn;
-    $stmt = $conn->prepare("SELECT * FROM user_table WHERE id = ?");
-    $stmt->execute(array($userId));
-    return $stmt->fetchAll()[0];
-}
 
-function getUserPhoto($user)
-{
-    global $BASE_DIR;
-    if (!is_null($user['photo_path']) && file_exists($BASE_DIR . $user['photo_path'])) {
-        return '../images/users/' . $user['photo_path'];
-    } else {
-        return '../images/assets/default_image_profile1.jpg';
-    }
-}
 
 function getPost($postId,$userId){
     global $conn;
@@ -127,7 +113,7 @@ function submitPostReply($userID, $postID, $replyContent)
     $reply = $stmt->fetchAll()[0];
     $user = getUser($reply['id_creator']);
     $username = $user['username'];
-    $photo = getUserPhoto($user);
+    $photo = getPhoto($user);
     $output = array();
     $output['id'] = $reply['id'];
     $output['creation_date'] = $reply['creation_date'];
