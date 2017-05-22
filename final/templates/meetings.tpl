@@ -61,7 +61,7 @@
                                         </div>
                                     </div>
                                     <label class="user-responsible">{$creatorName}</label><br>
-                                    <label class="guests"> {$invited_users = getInvitedUsers($meeting.id)} {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)} {$coordinator = getMemberStatus($user_aut, $project)} {$creator = isMeetingCreator($meeting.id, $user_aut)} {$photos = getInvitedUsersPhotos($meeting.id)} {foreach $photos as $photo}
+                                    <label class="guests"> {$invited_users = getInvitedUsers($meeting.id)} {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)} {$coordinator = isCoordinator($user_aut, $project)} {$creator = isMeetingCreator($meeting.id, $user_aut)} {$photos = getInvitedUsersPhotos($meeting.id)} {foreach $photos as $photo}
                                             <img class="user-photo"
                                                  src={$photo}>{/foreach}
                                         {if $coordinator == 'true' || $creator == 'true' }
