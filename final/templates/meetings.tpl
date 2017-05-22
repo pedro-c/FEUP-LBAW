@@ -193,19 +193,13 @@
                                 </select>
                             </div><br>
 
-                            <div class="box drag_here hidden-xs" ondrop="drop_handler(event);"
-                                 ondragover="dragover_handler(event);" ondragend="dragend_handler(event);">
-
-                                <input id="add-file" class="box__file" type="file" name="file[]" id="file" multiple/>
-                                <a id="plus"><span  class="glyphicon glyphicon-plus img-responsive center-block" aria-hidden="true"></span></a><br>
-                              <!--  <label class="file-description" for="file">
-                                    <strong> Choose a file </strong>
-                                    <span class="box__dragndrop"> or drag it here</span>.
-                                </label>-->
-                                <label id="file-info"></label>
-
+                            <div class="box">
+                                <div class="box drag_here hidden-xs">
+                                    <input id="add-file" class="box__file" type="file" name="file[]" id="file" multiple/>
+                                    <a id="plus"><span  class="glyphicon glyphicon-plus img-responsive center-block" aria-hidden="true"></span></a><br>
+                                    <label id="file-info"></label>
+                                </div>
                             </div>
-
                             <div class="text-center">
                                 <input id="submit" type="submit" value="Submit">
                             </div>
