@@ -6,7 +6,7 @@
  * Time: 9:44 AM
  */
 
-function getMemberStatus($member_id, $project_id)
+function isCoordinator($member_id, $project_id)
 {
 
     global $conn;
