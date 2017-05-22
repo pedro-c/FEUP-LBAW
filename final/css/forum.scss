@@ -4,6 +4,36 @@
   text-align: center;
 }
 
+.reply-options{
+
+  margin-left: 10px;
+
+  .btn.dropdown-toggle{
+    padding: 0px;
+    background-color: $white;
+
+    &.open{
+      background-color: $white;
+    }
+  }
+
+  .dropdown-item{
+    padding-left: 10px;
+    display: block;
+    padding-top: 5px;
+    color: $color_ebony_clay;
+
+    &.delete-option{
+      color:$color-tall_poppy_approx;
+    }
+ }
+
+  .dropdown-item:hover{
+    background-color: $background_white;
+    text-decoration: none;
+  }
+}
+
 .submitter-photo{
   width: 25px;
   margin-right: 3px;

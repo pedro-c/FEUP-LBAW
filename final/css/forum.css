@@ -164,6 +164,24 @@ body {
 #new-post-panel > .panel-body {
   text-align: center; }
 
+.reply-options {
+  margin-left: 10px; }
+  .reply-options .btn.dropdown-toggle {
+    padding: 0px;
+    background-color: #fff; }
+    .reply-options .btn.dropdown-toggle.open {
+      background-color: #fff; }
+  .reply-options .dropdown-item {
+    padding-left: 10px;
+    display: block;
+    padding-top: 5px;
+    color: #22313f; }
+    .reply-options .dropdown-item.delete-option {
+      color: #b52b27; }
+  .reply-options .dropdown-item:hover {
+    background-color: #ecf0f1;
+    text-decoration: none; }
+
 .submitter-photo {
   width: 25px;
   margin-right: 3px; }

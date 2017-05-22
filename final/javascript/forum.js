@@ -52,7 +52,7 @@ $(document).ready(function () {
             let userPhoto = reply.photo;
             let username = reply.username;
 
-            let replyElement = makeReplyElement(id, userPhoto, username, creationDate, 0, replyContent, false);
+            let replyElement = makeReplyElement(id, userPhoto, username, creationDate, 0, replyContent, false, true);
             $("#replies:last-child").append(replyElement);
         });
 
@@ -470,13 +470,14 @@ function unlikeReply(replyElement) {
     });
 }
 
-function makeReplyElement(replyId, userPhoto, username, creationDate, numLikes, replyContent, likedByUser) {
-    return $(
+function makeReplyElement(replyId, userPhoto, username, creationDate, numLikes, replyContent, likedByUser, userCanEdit) {
+    let replyElement = $(
         '<li class="list-group-item forum-reply">' +
         '<h5 class="list-group-item-heading">' +
         '<span hidden="hidden" class="reply-id">' + replyId + '</span>' +
         '<img class="submitter-photo" src=' + userPhoto + '>' +
         '<strong>' + username + ' on ' + creationDate + '</strong>' +
+        (userCanEdit ? '<span class="reply-options"></span>' : '') +
         '<span class="reply-likes">' + (numLikes > 0 ? '<strong><i class="fa fa-thumbs-up"></i> ' + numLikes + '</strong>' : '') + '</span>' +
         '</h5>' +
         '<p class="list-group-item-text reply-content">' + replyContent + '</p>' +
@@ -485,7 +486,26 @@ function makeReplyElement(replyId, userPhoto, username, creationDate, numLikes, 
         '<span class="like-status"> ' + (likedByUser ? 'Liked' : 'Like') + '</span>' +
         '</small></p>' +
         '</li>'
-    )
+    );
+
+    if (userCanEdit) {
+        let dropdown = $(
+            '<div class="btn-group dropdown">' +
+            '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
+            '<span class="sr-only">Toggle Dropdown</span>' +
+            '<i class="fa fa-caret-down"></i>' +
+            '</button>' +
+            '<div class="dropdown-menu">' +
+            '<a class="dropdown-item" href="#">Edit Post</a>' +
+            '<a class="dropdown-item delete-option" href="#">Delete Post</a>' +
+            '</div>' +
+            '</div>'
+        );
+
+        replyElement.find(".reply-options").append(dropdown);
+    }
+
+    return replyElement;
 }
 
 function makePostElement(id, title, creationDate, content, dateModified, username, photo, numLikes, likedByUser) {
@@ -560,8 +580,9 @@ let getPostReplies = function (postId) {
             let userPhoto = reply.photo;
             let username = reply.username;
             let likedByUser = reply.liked;
+            let userCanEdit = reply.user_can_edit;
 
-            let replyElement = makeReplyElement(id, userPhoto, username, creationDate, numLikes, replyContent, likedByUser);
+            let replyElement = makeReplyElement(id, userPhoto, username, creationDate, numLikes, replyContent, likedByUser, userCanEdit);
             content.append(replyElement);
         }
     });
