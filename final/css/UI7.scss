@@ -507,6 +507,14 @@
         display: table;
         width: 100%;
 
+        .box__file{
+          visibility: hidden;
+        }
+
+        .glyphicon.glyphicon-plus{
+          font-size: 40px;
+        }
+
         div {
           display: table-cell;
           vertical-align: middle;

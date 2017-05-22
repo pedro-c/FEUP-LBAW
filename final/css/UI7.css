@@ -522,6 +522,10 @@ body {
     background-color: #ecf0f1;
     display: table;
     width: 100%; }
+    #page-meetings #create-meeting-settings .new_meeting .box.drag_here .box__file {
+      visibility: hidden; }
+    #page-meetings #create-meeting-settings .new_meeting .box.drag_here .glyphicon.glyphicon-plus {
+      font-size: 40px; }
     #page-meetings #create-meeting-settings .new_meeting .box.drag_here div {
       display: table-cell;
       vertical-align: middle; }
