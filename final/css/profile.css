@@ -172,17 +172,24 @@ body {
 .profile-pic {
   text-align: center;
   padding: 10px;
-  cursor: pointer;
-  index-z: -4; }
+  index-z: -4;
+  display: block;
+  width: 100%;
+  height: auto; }
   .profile-pic img {
-    width: 40%;
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     transition: all 0.2s ease; }
     .profile-pic img:hover {
-      -webkit-filter: blur(5px); }
+      width: 100px;
+      height: 100px;
+      -webkit-filter: blur(1px);
+      content: url("../images/users/uploadImage.png"); }
 
 .project-managment {
   width: 100%;
@@ -272,6 +279,7 @@ body {
 
 @media (min-width: 768px) {
   .profile-pic img {
-    width: 30%; } }
+    width: 200px;
+    height: 200px; } }
 
 /*# sourceMappingURL=profile.css.map */

@@ -19,6 +19,7 @@ $(document).ready(function(){
     };
     $('#new-password').pwstrength(options);
 
+    $('#user-image-upload').click(function(){ $('#image-upload-button').trigger('click'); });
 
 });
 

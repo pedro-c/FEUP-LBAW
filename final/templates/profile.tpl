@@ -11,11 +11,11 @@
             <div class="content col-xs-8 col-md-4 col-xs-offset-2 col-md-offset-4">
                 <div class="profile-pic">
                     <div>
-                        <img class="img-circle" src="{$user_photo_path}">
-                    </div>
-                    <div>
                         <form action="../actions/users/upload-user-photo.php" method="post" enctype="multipart/form-data">
-                            <input onchange="this.form.submit()" name="file" type="file"/><br />
+                            <a id="user-image-upload">
+                                <img class="img-circle" src="{$user_photo_path}">
+                            </a>
+                            <input style="display:none" onchange="this.form.submit()" id="image-upload-button" name="file" type="file"/><br />
                             <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
                         </form>
                     </div>
