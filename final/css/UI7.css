@@ -516,20 +516,17 @@ body {
   #page-meetings #create-meeting-settings .new_meeting .box.drag_here {
     border-radius: 5px;
     height: 150px;
-    margin-top: 40px;
     border: 1px dashed grey;
     vertical-align: middle;
     background-color: #ecf0f1;
-    display: table;
+    display: table-cell;
     width: 100%; }
     #page-meetings #create-meeting-settings .new_meeting .box.drag_here .box__file {
       visibility: hidden; }
-    #page-meetings #create-meeting-settings .new_meeting .box.drag_here .glyphicon.glyphicon-puls.img-responsive {
+    #page-meetings #create-meeting-settings .new_meeting .box.drag_here .glyphicon.glyphicon-plus.img-responsive {
       margin: 0 auto;
       font-size: 40px !important;
       color: grey;
-      text-align: center; }
-    #page-meetings #create-meeting-settings .new_meeting .box.drag_here .file-description {
       text-align: center; }
     #page-meetings #create-meeting-settings .new_meeting .box.drag_here div {
       display: table-cell;

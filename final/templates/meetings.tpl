@@ -191,14 +191,17 @@
                                         <option value={$tag.id}>{$tag.name}</option>
                                     {/foreach}
                                 </select>
-                            </div>
+                            </div><br>
 
                             <div class="box drag_here hidden-xs" ondrop="drop_handler(event);"
                                  ondragover="dragover_handler(event);" ondragend="dragend_handler(event);">
 
                                 <input id="add-file" class="box__file" type="file" name="file[]" id="file" multiple/>
                                 <a id="plus"><span  class="glyphicon glyphicon-plus img-responsive center-block" aria-hidden="true"></span></a><br>
-                                <label class="file-description" for="file"><strong>Choose a file </strong><span class="box__dragndrop"> or drag it here</span>.</label>
+                              <!--  <label class="file-description" for="file">
+                                    <strong> Choose a file </strong>
+                                    <span class="box__dragndrop"> or drag it here</span>.
+                                </label>-->
 
                             </div>
 

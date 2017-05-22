@@ -500,25 +500,20 @@
       .box.drag_here {
         border-radius: 5px;
         height: 150px;
-        margin-top: 40px;
         border: 1px dashed grey;
         vertical-align: middle;
         background-color: $background_white;
-        display: table;
+        display: table-cell;
         width: 100%;
 
         .box__file{
           visibility: hidden;
         }
 
-        .glyphicon.glyphicon-puls.img-responsive {
+        .glyphicon.glyphicon-plus.img-responsive {
           margin: 0 auto;
           font-size: 40px !important;
           color: grey;
-          text-align: center;
-        }
-
-        .file-description{
           text-align: center;
         }
 

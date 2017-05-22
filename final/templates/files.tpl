@@ -122,12 +122,11 @@ include_once "common/header.php";
 
                         <form action="../actions/files/upload-file.php" method="post" enctype="multipart/form-data">
                         <div id="drag-here" class="box drag-here text-center">
-                                <br>
-                                <span class="glyphicon glyphicon-plus"></span>
-                                <br>
-                                <span class="info"> Drag Files Here </span>
-                                <br><br>
-                                <input name="file[]" type="file"/><br />
+
+                               <!-- <span class="info"> Drag Files Here </span>
+                                <br><br>-->
+                            <input id="add-file" class="box__file" name="file[]" type="file"/><br />
+                            <a id="plus"> <span class="glyphicon glyphicon-plus img-responsive"></span></a>
                         </div>
 
                         <div class="input-group task-tags ">

@@ -252,12 +252,17 @@ body {
 .files_list .uploadFile_container .panel-body .box.drag-here {
   border-radius: 5px;
   height: 150px;
-  margin-top: 40px;
   border: 1px dashed grey;
-  vertical-align: middle;
   background-color: #ecf0f1;
-  display: table;
+  display: table-cell;
   width: 100%; }
+  .files_list .uploadFile_container .panel-body .box.drag-here .box__file {
+    visibility: hidden; }
+  .files_list .uploadFile_container .panel-body .box.drag-here .glyphicon.glyphicon-plus.img-responsive {
+    margin: 0 auto;
+    font-size: 40px !important;
+    color: grey;
+    text-align: center; }
   .files_list .uploadFile_container .panel-body .box.drag-here div {
     display: table-cell;
     vertical-align: middle; }
@@ -265,10 +270,6 @@ body {
     padding-top: 30px;
     text-align: center;
     font-size: medium;
-    color: grey; }
-  .files_list .uploadFile_container .panel-body .box.drag-here .glyphicon.glyphicon-plus {
-    text-align: center;
-    font-size: x-large;
     color: grey; }
   .files_list .uploadFile_container .panel-body .box.drag-here .dragover {
     background-color: #22313f;

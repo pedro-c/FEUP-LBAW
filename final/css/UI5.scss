@@ -151,12 +151,22 @@
       .box.drag-here {
         border-radius: 5px;
         height: 150px;
-        margin-top: 40px;
         border: 1px dashed grey;
-        vertical-align: middle;
         background-color: $background_white;
-        display: table;
+        display: table-cell;
         width: 100%;
+
+        .box__file{
+          visibility: hidden;
+        }
+
+        .glyphicon.glyphicon-plus.img-responsive {
+          margin: 0 auto;
+          font-size: 40px !important;
+          color: grey;
+          text-align: center;
+          vertical-align: middle;
+        }
 
         div {
           display: table-cell;
@@ -166,12 +176,6 @@
           padding-top: 30px;
           text-align: center;
           font-size: medium;
-          color: grey;
-        }
-
-        .glyphicon.glyphicon-plus {
-          text-align: center;
-          font-size: x-large;
           color: grey;
         }
 
