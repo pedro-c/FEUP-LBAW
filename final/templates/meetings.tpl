@@ -111,16 +111,16 @@
                                                             data-dismiss="modal">&times;</button>
                                                     <h4 class="modal-title">Delete Meeting</h4>
                                                 </div>
-                                                <div class="modal-body">
+                                                <div class="modal-body" id="deleteFileModal">
                                                     <p class="info-extra">You are allowed to delete this meeting because you
                                                         are one team coordinator.</p>
                                                     <p>Are you sure you want to delete this meeting?</p>
                                                     <span id="meeting-id-delete" hidden></span>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="deleteMeeting()">Yes
+                                                    <button id="#accept_button" type="button" class="btn btn-default" data-dismiss="modal" onclick="deleteMeeting()">Yes
                                                     </button>
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">No
+                                                    <button id="#cancel_button" type="button" class="btn btn-default" data-dismiss="modal">No
                                                     </button>
                                                 </div>
                                             </div>
@@ -160,16 +160,17 @@
                                 <input type="date" name="date" class="form-control">
                             </div>
 
-                            <div class="time">
-                                <span class="meetings_icon glyphicon glyphicon-time" aria-hidden="true"></span>
-                                <input type="time" name="time" class="form-control">
-                            </div>
-
                             <div class="atendees">
                                 <span class="meetings_icon glyphicon glyphicon-pushpin" aria-hidden="true"></span>
                                 <input type="number" name="duration" class="form-control"
                                        placeholder="Meeting Duration">
                             </div>
+
+                            <div class="time">
+                                <span class="meetings_icon glyphicon glyphicon-time" aria-hidden="true"></span>
+                                <input type="time" name="time" class="form-control">
+                            </div>
+
 
                             <div class="atendees">
                                 <span class="meetings_icon glyphicon glyphicon-user" aria-hidden="true"></span>

@@ -99,7 +99,7 @@
         padding-left: 30px !important;
         padding-right: 0px !important;
         padding-top: 10px;
-        background-color: $color_ebony_clay;
+        background-color: $blue_secondary;
         color: white;
         display: table;
 
@@ -157,35 +157,6 @@
             }
           }
 
-          #deleteMeetingModal{
-            .modal-content {
-              .modal-header {
-                background-color: $color_ebony_clay;
-                color: $white;
-              }
-              .modal-footer {
-                background-color: $color_ebony_clay;
-                color: $white;
-
-                #accept_button:hover {
-                  background-color: $color_yellow;
-                  color: $white;
-                }
-                #cancel_button:hover {
-                  background-color: $color_yellow;
-                  color: $white;
-                }
-              }
-
-              .modal-body{
-                .info-extra{
-                  font-size: smaller;
-                  font-weight: lighter;
-                }
-              }
-            }
-          }
-
           .hour {
             font-size: large;
             font-weight: normal;
@@ -232,13 +203,11 @@
       }
     }
 
-   meet
-
-    .button_back {
+    .button_back, .button_trash {
       text-align: right;
       margin-left: 15px;
 
-      .back {
+      .back, .trash{
         padding: 4px 15px 4px 15px;
         color: white;
         background-color: $blue_secondary;
@@ -410,6 +379,15 @@
 
     .new_meeting {
 
+      .input-group-addon.meetings_icon.glyphicon.glyphicon-calendar,
+      .meetings_icon.glyphicon.glyphicon-time,
+      .meetings_icon.glyphicon.glyphicon-pushpin{
+        top:0px !important;
+      }
+
+      .input-group-addon{
+        width: 60px !important;
+      }
       .title {
         margin-bottom: 20px;
 
@@ -593,5 +571,26 @@
       }
     }
   }
+
+
+  .modal-header {
+    background-color: $color_ebony_clay;
+    color: $white;
+  }
+  .modal-footer {
+    background-color: $color_ebony_clay;
+    color: $white;
+
+    #accept_button:hover {
+      background-color: $color_yellow;
+      color: $white;
+    }
+    #cancel_button:hover {
+      background-color: $color_yellow;
+      color: $white;
+    }
+
+  }
+
 
 }
