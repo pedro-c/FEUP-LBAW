@@ -12,7 +12,8 @@ $insert_result = inviteMember($user_email, $project_id); //TODO When email alrea
 if($insert_result == null) {
     $jsonObject = array(
       'insert_result' => $insert_result,
-      'send_result' => FALSE
+      'send_result' => FALSE,
+      'code' => null
     );
     echo json_encode($jsonObject);
 }
@@ -26,7 +27,8 @@ $send_result = mail($user_email, $subject, $message, $headers);
 
 $jsonObject = array(
   'insert_result' => $insert_result,
-  'send_result' => $send_result
+  'send_result' => $send_result,
+  'code' => $insert_result
 );
 
 echo json_encode($jsonObject);

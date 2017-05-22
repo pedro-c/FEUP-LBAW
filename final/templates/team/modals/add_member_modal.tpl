@@ -15,7 +15,6 @@
               <label for="email_form">Email:</label>
               <input type="email" name="userEmail" class="form-control" id="email_form" />
               <input type="hidden" name="idProject" class="form-control" id="project_id_form" value={$project_id} />
-              <button type="submit">Test</button>
             </form>
           </div>
         </div>
