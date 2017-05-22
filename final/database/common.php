@@ -6,7 +6,8 @@
  * Time: 9:44 AM
  */
 
-function getMemberStatus($member_id, $project_id) {
+function getMemberStatus($member_id, $project_id)
+{
 
     global $conn;
     $sql_get_member_status = "SELECT is_coordinator FROM user_project, user_table
@@ -18,19 +19,18 @@ function getMemberStatus($member_id, $project_id) {
     return $result['is_coordinator'];
 }
 
-function getPhoto($user){
-
+function getPhoto($userId)
+{
 
     global $conn;
-    $stmt = $conn -> prepare('SELECT photo_path FROM user_table WHERE id = ?');
-    $stmt->execute([$user]);
+    $stmt = $conn->prepare('SELECT photo_path FROM user_table WHERE id = ?');
+    $stmt->execute(array($userId));
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-    if (!is_null($result['photo_path']) && file_exists("../images/users/". $result['photo_path'])) {
+    if (!is_null($result['photo_path']) && file_exists("../images/users/" . $result['photo_path'])) {
         return '../images/users/' . $result['photo_path'];
-    }
-    else {
+    } else {
         return '../images/assets/default_image_profile1.jpg';
     }
 }
