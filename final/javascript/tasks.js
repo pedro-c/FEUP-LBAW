@@ -212,22 +212,6 @@ function toggle(taskId) {
                 $("#task-deadline-date").attr("value",response[0][0].deadline.split(" ")[0]);
                 $("#task-deadline-time").attr("value",response[0][0].deadline.split(" ")[1]);
             }
-            $("#task-tags").html("");
-            for (var i = 0; i < response[1].length; i++) {
-                $("#task-tags").append($('<option>', {
-                    value: response[1][i].id,
-                    text: response[1][i].name,
-                    selected: true
-                }));
-            }
-            for (var i = 0; i < response[5].length; i++) {
-                $("#task-tags").append($('<option>', {
-                    value: response[5][i].id,
-                    text: response[5][i].name,
-                    selected: false
-                }));
-            }
-
 
             var id = "create-task";
             var taskCard = document.getElementById("task-card");
