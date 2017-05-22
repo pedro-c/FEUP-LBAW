@@ -21,7 +21,7 @@ $(document).ready(function () {
         $("#meeting-id-delete").text(data_id);
     });
 
-    $('#plus').click(function(){ console.log("ola"); $('#add-file').trigger('click'); });
+    $('#plus').click(function(){$('#add-file').trigger('click'); });
 
 });
 

@@ -17,6 +17,15 @@ $(document).ready(function () {
         $("#file-id-delete").text(data_id);
     });
 
+    $('input#add-file').change(function(){
+        var files = $(this)[0].files;
+        console.log(files);
+        if(files.length > 0){
+            console.log("ENTREI");
+            $("#file-info").html("You selected " +  files.length + " files.");
+        }
+    });
+
 });
 
 function deleteFile(){

@@ -127,6 +127,7 @@ include_once "common/header.php";
                                 <br><br>-->
                             <input id="add-file" class="box__file" name="file[]" type="file"/><br />
                             <a id="plus"> <span class="glyphicon glyphicon-plus img-responsive"></span></a>
+                            <span id="file-info"></span>
                         </div>
 
                         <div class="input-group task-tags ">
