@@ -54,7 +54,8 @@ function inviteMember($user_email, $project_id) {
     }
     $sql_invite_member = "INSERT INTO invited_users (id_project, email, code) VALUES (?, ?, ?);";
     $stmt = $conn->prepare($sql_invite_member);
-    return $stmt->execute(array($project_id, $user_email, $generated_code));
+    $stmt->execute(array($project_id, $user_email, $generated_code));
+    return $generated_code;
 }
 
 function getInvitedMember($user_email, $project_id) {
@@ -89,12 +90,12 @@ function generateInviteCode($user_email, $project_id) {
     }
 }
 
-function invitedUserExists($user_email, $project_id, $code) {
+function getInvitedMemberFromCode($code) {
 
     global $conn;
-    $sql_select_invited_member = "SELECT * FROM invited_users WHERE email = ? AND id_project = ? AND code = ?;";
+    $sql_select_invited_member = "SELECT email, id_project FROM invited_users WHERE code = ?;";
     $stmt = $conn->prepare($sql_select_invited_member);
-    $stmt->execute(array($user_email, $project_id, $code));
+    $stmt->execute(array($code));
     return $stmt->fetch();
 }
 ?>
