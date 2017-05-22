@@ -1,4 +1,5 @@
 <?php
+include_once('users.php');
 
 function getMemberStatus($member_id, $project_id) {
 
@@ -10,6 +11,14 @@ function getMemberStatus($member_id, $project_id) {
     $result = $stmt->fetch();
 
     return $result['is_coordinator'];
+}
+
+function getTeamMember($id_user, $project_id) {
+    global $conn;
+    $sql_get_team_member = "SELECT id_user FROM user_project WHERE id_user = ? AND id_project = ?;";
+    $stmt = $conn->prepare($sql_get_team_member);
+    $stmt->execute(array($id_user, $project_id));
+    return $stmt->fetch();
 }
 
 function getTeamMembers($project_id) {
@@ -47,6 +56,12 @@ function removeMember($user_id, $project_id) {
 function inviteMember($user_email, $project_id) {
 
     global $conn;
+
+    $user_id = getUserId($user_email);
+    $isTeamMember = getTeamMember($user_id, $project_id);
+    if($isTeamMember != null) {
+      return null;
+    }
     $invited_member = getInvitedMember($user_email, $project_id);
     $generated_code = generateInviteCode($user_email, $project_id);
     if($invited_member != null || $generated_code == null) {
@@ -64,6 +79,15 @@ function getInvitedMember($user_email, $project_id) {
     $sql_select_invited_member = "SELECT id_project, email FROM invited_users WHERE id_project = ? AND email = ?;";
     $stmt = $conn->prepare($sql_select_invited_member);
     $stmt->execute(array($project_id, $user_email));
+    return $stmt->fetch();
+}
+
+function getInvitedMemberFromCode($code) {
+
+    global $conn;
+    $sql_select_invited_member = "SELECT email, id_project FROM invited_users WHERE code = ?;";
+    $stmt = $conn->prepare($sql_select_invited_member);
+    $stmt->execute(array($code));
     return $stmt->fetch();
 }
 
@@ -88,14 +112,5 @@ function generateInviteCode($user_email, $project_id) {
     } else {
       return $randomString;
     }
-}
-
-function getInvitedMemberFromCode($code) {
-
-    global $conn;
-    $sql_select_invited_member = "SELECT email, id_project FROM invited_users WHERE code = ?;";
-    $stmt = $conn->prepare($sql_select_invited_member);
-    $stmt->execute(array($code));
-    return $stmt->fetch();
 }
 ?>

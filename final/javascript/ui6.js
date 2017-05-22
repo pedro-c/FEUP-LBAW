@@ -17,11 +17,15 @@ $(document).ready(function() {
     var email = $('#add_member_dialog input[name="userEmail"]').val()
     var project = $('#add_member_dialog input[name="idProject"]').attr('value');
     var dataString = "userEmail=" + email + "&idProject=" + project;
+    console.log(dataString);
 
     $.ajax({url: '../actions/team/invite_member.php', type: 'POST', data: dataString, dataType: "json",
     success: function(result) {
-      console.log(result);
-      alert("Code to accept: " + result['code']);
+      if(result['code'] == null){
+        alert("User already invited");
+      } else {
+        alert("Code to accept: " + result['code']);
+      }
     },
     error: function (err){
       console.log(err);

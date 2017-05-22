@@ -16,6 +16,7 @@ if($insert_result == null) {
       'code' => null
     );
     echo json_encode($jsonObject);
+    exit();
 }
 
 //TODO SEND EMAIL. Still sends error
