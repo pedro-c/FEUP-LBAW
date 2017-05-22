@@ -1,16 +1,5 @@
 <?php
 
-function isCoordinator($member_id, $project_id) {
-
-    global $conn;
-    $sql_get_member_status = "SELECT is_coordinator FROM user_project, user_table
-     WHERE user_table.id = ? AND user_table.id = user_project.id_user AND user_project.id_project = ?;";
-    $stmt = $conn->prepare($sql_get_member_status);
-    $stmt->execute(array($member_id, $project_id));
-    $result = $stmt->fetch();
-
-    return $result['is_coordinator'];
-}
 
 function getTeamMembers($project_id) {
 
