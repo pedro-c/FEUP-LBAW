@@ -6,6 +6,8 @@ include_once($BASE_DIR .'database/projects.php');
 include_once($BASE_DIR .'database/team.php');
 include_once($BASE_DIR .'database/tasks.php');
 include_once($BASE_DIR .'database/tag.php');
+include_once($BASE_DIR .'database/common.php');
+
 
 $user_id = $_SESSION['user_id'];
 $project = $_SESSION['project_id'];
