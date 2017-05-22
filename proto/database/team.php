@@ -1,6 +1,6 @@
 <?php
 
-function getMemberStatus($member_id, $project_id) {
+function isCoordinator($member_id, $project_id) {
 
     global $conn;
     $sql_get_member_status = "SELECT is_coordinator FROM user_project, user_table

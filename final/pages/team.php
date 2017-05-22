@@ -12,7 +12,7 @@ include_once "../database/team.php";
 $project_id = $_SESSION['project_id'];
 $user_id = $_SESSION['user_id'];
 
-$is_coordinator = getMemberStatus($user_id, $project_id);
+$is_coordinator = isCoordinator($user_id, $project_id);
 $project_members = getTeamMembers($project_id);
 $project_name = getTeamName($project_id);
 

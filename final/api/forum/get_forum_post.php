@@ -18,11 +18,12 @@ include_once '../../database/forum.php';
 
 $postId = $_POST['post_id'];
 $userId = $_SESSION['user_id'];
+$projectId = $_SESSION['project_id'];
 
 $output = array();
 $forum_post = getPost($postId,$userId);
 $photo = getPhoto($forum_post['id_creator']);
-//$user_can_edit = ($postId === $forum_post['id_creator'] || $postId === )
+$userCanEdit = ($forum_post['id_creator'] === $forum_post['id_creator'] || isCoordinator($userId,$projectId));
 
 $output['id'] = $forum_post['post_id'];
 $output['title'] = $forum_post['title'];
@@ -33,5 +34,6 @@ $output['username'] = $forum_post['username'];
 $output['photo'] = $photo;
 $output['num_likes'] = $forum_post['num_likes'];
 $output['liked_by_user'] = $forum_post['user_liked'];
+$output['user_can_edit'] = $userCanEdit;
 
 echo json_encode($output);

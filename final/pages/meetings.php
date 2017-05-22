@@ -12,7 +12,7 @@ include_once($BASE_DIR .'database/common.php');
 $user_id = $_SESSION['user_id'];
 $project = $_SESSION['project_id'];
 
-if(getMemberStatus($user_id, $project))
+if(isCoordinator($user_id, $project))
     $meetings = getFutureMeetings($project);
 else $meetings = getUserFutureMeeting($project);
 
