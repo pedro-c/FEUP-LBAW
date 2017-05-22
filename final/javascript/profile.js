@@ -19,6 +19,7 @@ $(document).ready(function(){
     };
     $('#new-password').pwstrength(options);
 
+    $('#user-image-upload').click(function(){ $('#image-upload-button').trigger('click'); });
 
 });
 
@@ -51,6 +52,18 @@ function createProject() {
         type:'post',
         url: '../actions/users/create-project.php',
         data:  {'projectName': $('#create-project-name').val()},
+        success: function() {
+            window.location.reload();
+        }
+
+    });
+}
+
+function leaveProject(projectId){
+    $.ajax({
+        type:'post',
+        url: '../actions/users/leave-project.php',
+        data:  {'projectId': projectId},
         success: function() {
             window.location.reload();
         }

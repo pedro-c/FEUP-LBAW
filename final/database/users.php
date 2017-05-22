@@ -11,6 +11,24 @@ function isLoginCorrect($email, $password){
     return password_verify($password,$hashed_password);
 }
 
+function isPasswordCorrect($password){
+
+    global $conn;
+    $stmt = $conn -> prepare('SELECT password FROM user_table WHERE id = ?');
+    $stmt->execute([$_SESSION['user_id']]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $hashed_password = $result['password'];
+
+    return password_verify($password,$hashed_password);
+}
+
+
+function changePassword($new_password){
+    global $conn;
+    $stmt = $conn -> prepare('UPDATE user_table SET password = ? WHERE id = ?');
+    return $stmt->execute([$new_password, $_SESSION['user_id']]);
+}
+
 function createUser($name, $email, $username, $password){
 
     global $conn;
@@ -90,6 +108,16 @@ function getUserInfo($id){
     return $result;
 }
 
+function getUserEmail(){
+
+    global $conn;
+    $stmt = $conn -> prepare('SELECT email FROM user_table WHERE id = ?');
+    $stmt->execute([$_SESSION['user_id']]);
+    $result = $stmt->fetch();
+
+    return $result;
+}
+
 function getUserCountry($userId){
     global $conn;
     $stmt = $conn -> prepare('SELECT DISTINCT country.name FROM user_table, country WHERE user_table.country_id = country.id AND user_table.id = ?');
@@ -103,6 +131,13 @@ function updateUserInfo($userName, $userEmail, $userCountry, $userCity){
     global $conn;
     $stmt = $conn->prepare('UPDATE user_table SET name = ?, email = ?, country_id = ?, city = ? WHERE id = ?');
     return $stmt->execute([$userName, $userEmail, $userCountry, $userCity, $_SESSION['user_id']]);
+}
+
+
+function updateUserPhoto($email){
+    global $conn;
+    $stmt = $conn->prepare('UPDATE user_table SET photo_path = ? WHERE id = ?');
+    return $stmt->execute([$email,$_SESSION['user_id']]);
 }
 
 function getPhoto($user){
@@ -142,6 +177,13 @@ function createProject($name){
     global $conn;
     $stmt = $conn->prepare('INSERT INTO user_project(id_user,id_project,is_coordinator) VALUES (?,?,?)');
     $stmt->execute([$_SESSION['user_id'],$last_id,TRUE]);
+}
+
+
+function leaveProject($projectID){
+    global $conn;
+    $stmt = $conn->prepare('DELETE FROM user_project WHERE id_project = ?');
+    $stmt->execute([$projectID]);
 }
 
 

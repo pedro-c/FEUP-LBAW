@@ -11,10 +11,13 @@
             <div class="content col-xs-8 col-md-4 col-xs-offset-2 col-md-offset-4">
                 <div class="profile-pic">
                     <div>
-                        <img class="img-circle" src="{$user_photo_path}">
-                    </div>
-                    <div>
-                        <a href="#">Change Photo</a>
+                        <form action="../actions/users/upload-user-photo.php" method="post" enctype="multipart/form-data">
+                            <a id="user-image-upload">
+                                <img class="img-circle" src="{$user_photo_path}">
+                            </a>
+                            <input style="display:none" onchange="this.form.submit()" id="image-upload-button" name="file" type="file"/><br />
+                            <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
+                        </form>
                     </div>
                 </div>
                 <div class="project-managment">
@@ -26,8 +29,33 @@
                             {$project_name = getProjectName($project.id_project)}
                             <div>
                                 <a onclick="changeProject({$project.id_project})">{$project_name}</a>
+                                <span type="button" class="glyphicon glyphicon-log-out" aria-hidden="true" data-toggle="modal" data-target="#{$project.id_project}"></span>
                             </div>
+
+                            <!-- Modal -->
+                            <div id="{$project.id_project}" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Leave project {$project_name}</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Are you sure you want to leave?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="leaveProject({$project.id_project})">Yes</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         {/foreach}
+
+
                     </div>
                     <h4>Join Project</h4>
                     <div class="join-project">
@@ -71,19 +99,24 @@
                     </div>
                 </div>
                 <div class="password">
-                    <h4 id="change-password">Change Password</h4>
-                    <div>
-                        <input type="password" placeholder="Current Password">
-                    </div>
-                    <div>
-                        <input id="new-password" type="password" placeholder="New Password">
-                    </div>
-                    <div>
-                        <input type="password" placeholder="Repeat Password">
-                    </div>
-                    <div>
-                        <button class="btn btn-success">Update</button>
-                    </div>
+                    <form action="{$BASE_URL}actions/users/change-password.php" method="post">
+                        <h4 id="change-password">Change Password</h4>
+                        <div>
+                            <input name="old-password" type="password" placeholder="Current Password">
+                            <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
+                        </div>
+                        <div>
+                            <input name="new-password" id="new-password" type="password" placeholder="New Password">
+                            <span class="error_messages">{$ERROR_MESSAGES[1]}</span>
+                        </div>
+                        <div>
+                            <input name="repeat-password" type="password" placeholder="Repeat Password">
+                            <span class="error_messages">{$ERROR_MESSAGES[2]}</span>
+                        </div>
+                        <div>
+                            <input class="btn btn-success" type="submit" value="Update">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
