@@ -95,9 +95,9 @@ include_once "common/header.php";
                                             <span id="file-id-delete" hidden></span>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="deleteFile()">Yes
+                                            <button id="#accept_button" type="button" class="btn btn-default" data-dismiss="modal" onclick="deleteFile()">Yes
                                             </button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">No
+                                            <button id="#cancel_button" type="button" class="btn btn-default" data-dismiss="modal">No
                                             </button>
                                         </div>
                                     </div>

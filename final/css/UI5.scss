@@ -331,7 +331,23 @@
 
     }
   }
+}
 
+.modal-header {
+  background-color: $color_ebony_clay;
+  color: $white;
+}
+.modal-footer {
+  background-color: $color_ebony_clay;
+  color: $white;
 
+  #accept_button:hover {
+    background-color: $color_yellow;
+    color: $white;
+  }
+  #cancel_button:hover {
+    background-color: $color_yellow;
+    color: $white;
+  }
 
 }

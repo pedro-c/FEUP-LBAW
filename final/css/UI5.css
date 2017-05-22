@@ -366,4 +366,18 @@ body {
   .files_list #container_file_info .panel-body .extra_info .minutes {
     padding-bottom: 10px; }
 
+.modal-header {
+  background-color: #22313f;
+  color: #fff; }
+
+.modal-footer {
+  background-color: #22313f;
+  color: #fff; }
+  .modal-footer #accept_button:hover {
+    background-color: #e9d460;
+    color: #fff; }
+  .modal-footer #cancel_button:hover {
+    background-color: #e9d460;
+    color: #fff; }
+
 /*# sourceMappingURL=UI5.css.map */
