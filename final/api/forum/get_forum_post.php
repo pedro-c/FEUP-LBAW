@@ -21,8 +21,8 @@ $userId = $_SESSION['user_id'];
 
 $output = array();
 $forum_post = getPost($postId,$userId);
-$photo = getUserPhoto($forum_post['id_creator']);
-$user_can_edit = ($postId === $forum_post['id_creator'] || $postId === )
+$photo = getPhoto($forum_post['id_creator']);
+//$user_can_edit = ($postId === $forum_post['id_creator'] || $postId === )
 
 $output['id'] = $forum_post['post_id'];
 $output['title'] = $forum_post['title'];
@@ -33,6 +33,5 @@ $output['username'] = $forum_post['username'];
 $output['photo'] = $photo;
 $output['num_likes'] = $forum_post['num_likes'];
 $output['liked_by_user'] = $forum_post['user_liked'];
-$output['user_can_edit'] = $
 
 echo json_encode($output);

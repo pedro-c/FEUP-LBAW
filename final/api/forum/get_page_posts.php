@@ -21,7 +21,7 @@ foreach ($posts as $post) {
     $postOutput = array();
     $userID = $post['id_creator'];
     $user = getUser($userID);
-    $postOutput['submitter_photo'] = getUserPhoto($user);
+    $postOutput['submitter_photo'] = getPhoto($userID);
     $postOutput['username'] = $user['username'];
     $postOutput['id'] = $post['id'];
     $postOutput['title'] = $post['title'];
