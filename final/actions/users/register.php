@@ -50,7 +50,7 @@
   $_SESSION['success_messages'][] = '<br>'.'User registered successfully';
   $_SESSION['success_messages'][] = '<br>'.'User registered successfully';
 
-  joinProject($_SESSION['user_id'], $_SESSION['project_id']);
+  joinProject($_SESSION['user_id'], $_SESSION['project_id'], TRUE);
 
   header('Location: ../../pages/dashboard.php');
 

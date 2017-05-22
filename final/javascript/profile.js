@@ -42,6 +42,9 @@ function joinProject() {
         success: function(result) {
           if(result == false) {
             alert("Invalid Code");
+          } else {
+            console.log(result);
+            alert("Result " + result);
           }
             window.location.reload();
         }
