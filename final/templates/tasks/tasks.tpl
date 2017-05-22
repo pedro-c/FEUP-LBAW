@@ -63,7 +63,7 @@
             <div class="col-xs-12" id="create-task-navbar">
                 <div class="col-xs-12" id="assign-to">
                     <img src="../images/users/avatar5.jpg" class="img-circle">
-                    <select id="task-assign" class="select2-single form-control" multiple="single" placeholder="Assign to">
+                    <select id="task-assign" class="select2-assign form-control" multiple="single" placeholder="Assign to">
 
                     </select>
                 </div>
@@ -80,8 +80,10 @@
                 </div>
                 <div class="input-group task-tags">
                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                    <select id="task-tags" class="select2-single form-control" multiple="multiple">
-
+                    <select id="task-tags" class="select2-tags form-control" multiple="multiple">
+                        {foreach $projectTags as $tag}
+                            <option id="{$tag.id}">{$tag.name}</option>
+                        {/foreach}
                     </select>
                 </div>
             </div>

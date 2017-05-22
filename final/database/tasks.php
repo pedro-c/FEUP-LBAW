@@ -10,6 +10,12 @@
         exit;
     }
 
+    function addTagToProject($tagName){
+        global $conn;
+        $stmt = $conn->prepare("INSERT INTO tag (id, name) VALUES (DEFAULT ,?) RETURNING id;");
+        return $stmt->execute([$tagName]);
+    }
+
     function getAllTasksFromProject($projectId){
         global $conn;
         $stmt = $conn->prepare("SELECT * FROM task WHERE project_id = ? ORDER BY deadline ASC;");
@@ -117,8 +123,8 @@
 
     function getTagsFromProject(){
         global $conn;
-        $stmt = $conn->prepare("SELECT DISTINCT tag.name, tag.id FROM tag, file, file_tag, task_tag, task, project WHERE (project.id = ? AND task.project_id = project.id AND task_tag.task_id = task.id AND task_tag.tag_id = tag.id) OR (project.id = ? AND file.project_id = project.id AND file.id = file_tag.file_id AND file_tag.tag_id = tag.id);");
-        $stmt->execute([$_SESSION['project_id'],$_SESSION['project_id']]);
+        $stmt = $conn->prepare("SELECT DISTINCT tag.name, tag.id FROM tag, project_tag WHERE project_tag.project_id = ? AND tag.id = project_tag.tag_id;");
+        $stmt->execute([$_SESSION['project_id']]);
         return $stmt->fetchAll();
     }
 
@@ -160,9 +166,16 @@
     }
 
     function addTaskTag($tag, $taskId){
+
+        $tags = getAllTagNames();
+        $tagId = 0;
+        if(!in_array($tag, $tags)){
+            $tagId = addTagToProject($tag);
+        }
+
         global $conn;
         $stmt = $conn->prepare("INSERT INTO task_tag (task_id, tag_id) VALUES (?,?);");
-        $stmt->execute([$tag, $taskId]);
+        $stmt->execute([$taskId, $tagId]);
     }
 
     function addTaskComment($comment, $taskId){

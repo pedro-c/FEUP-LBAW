@@ -30,12 +30,14 @@ $(document).ready(function(){
 
     $('.input-group.date').datepicker();
 
-    $('.select2-multiple').select2({
-        tags: true
+    $('.select2-assign').select2({
+        tags: true,
+        maximumSelectionLength: 1
     });
 
-    $('.select2-single').select2({
-        maximumSelectionLength: 1
+    $('.select2-tags').select2({
+        maximumSelectionLength: 1,
+        tags: true
     });
 
 
@@ -62,8 +64,18 @@ $(document).ready(function(){
 
         });
 
-    });
+        $.ajax({
+            type:'post',
+            url: '../api/tasks/set-task-tags.php',
+            data:  {'taskTags': $("#task-tags option:selected").html(), 'taskId': $("#task-name").attr("name")},
+            success: function() {
 
+                console.log($("#task-tags option:selected").html());
+
+            }
+
+        });
+    });
     $("#task-name").focusout(function(e) {
 
         $.ajax({
@@ -212,7 +224,6 @@ function toggle(taskId) {
                 $("#task-deadline-date").attr("value",response[0][0].deadline.split(" ")[0]);
                 $("#task-deadline-time").attr("value",response[0][0].deadline.split(" ")[1]);
             }
-
             var id = "create-task";
             var taskCard = document.getElementById("task-card");
             var state = document.getElementById(id).style.display;
