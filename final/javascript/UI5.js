@@ -17,11 +17,13 @@ $(document).ready(function () {
         $("#file-id-delete").text(data_id);
     });
 
-    $('input#add-file').change(function(){
+    $('#plus').click(function(){$('#add-file-files').trigger('click'); });
+
+    $('input#add-file-files').change(function(){
         var files = $(this)[0].files;
         console.log(files);
         if(files.length > 0){
-            $("#file-info").html("File uploaded.");
+            $("#file-info-files").html("File uploaded.");
         }
     });
 

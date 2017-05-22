@@ -5,6 +5,10 @@
   margin: 0 !important;
 }
 
+#file-info-files{
+  font-weight: 700;
+}
+
 .files_title {
 
   background-color: $white;
@@ -158,10 +162,6 @@
 
         .box__file{
           visibility: hidden;
-        }
-
-        #file-info{
-          font-weight: 700;
         }
 
         .glyphicon.glyphicon-plus.img-responsive {
