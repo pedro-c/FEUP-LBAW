@@ -105,22 +105,6 @@ function updateUserInfo($userName, $userEmail, $userCountry, $userCity){
     return $stmt->execute([$userName, $userEmail, $userCountry, $userCity, $_SESSION['user_id']]);
 }
 
-function getPhoto($user){
-
-
-    global $conn;
-    $stmt = $conn -> prepare('SELECT photo_path FROM user_table WHERE id = ?');
-    $stmt->execute([$user]);
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
-    if (!is_null($result['photo_path']) && file_exists("../images/users/". $result['photo_path'])) {
-        return '../images/users/' . $result['photo_path'];
-    }
-    else {
-        return '../images/assets/default_image_profile1.jpg';
-    }
-}
 
 function getCountries(){
     global $conn;
