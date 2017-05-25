@@ -1,5 +1,6 @@
 <?php
 include_once "common/header.php";
+include_once($BASE_DIR .'database/tag.php');
 include_once($BASE_DIR .'database/tasks.php');
 
 $projectId=$_SESSION['project_id'];

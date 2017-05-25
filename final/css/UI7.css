@@ -519,7 +519,7 @@ body {
     border: 1px dashed grey;
     vertical-align: middle;
     background-color: #ecf0f1;
-    display: table;
+    display: table-cell;
     width: 100%; }
     #page-meetings #create-meeting-settings .new_meeting .box.drag_here .box__file {
       visibility: hidden; }
@@ -527,8 +527,7 @@ body {
       margin: 0 auto;
       font-size: 40px !important;
       color: grey;
-      text-align: center;
-      display: table; }
+      text-align: center; }
     #page-meetings #create-meeting-settings .new_meeting .box.drag_here div {
       display: table-cell;
       vertical-align: middle; }
@@ -559,7 +558,7 @@ body {
     #page-meetings #submit:hover {
       background-color: #22313f;
       border: none; }
-  #page-meetings .modal-dialog .select-box:first-child span {
+  #page-meetings .modal-dialog .select2 {
     width: 100% !important; }
   #page-meetings .modal-header {
     background-color: #22313f;
