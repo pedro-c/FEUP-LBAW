@@ -202,7 +202,7 @@
                             </div><br>
 
                             <div class="box">
-                                <div class="box drag_here hidden-xs">
+                                <div class="box drag_here">
                                     <input id="add-file" class="box__file" type="file" name="file[]" id="file" multiple/>
                                     <a id="plus"><span  class="glyphicon glyphicon-plus img-responsive center-block" aria-hidden="true"></span></a><br>
                                     <label id="file-info"></label>

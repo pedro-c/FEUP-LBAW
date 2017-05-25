@@ -112,7 +112,7 @@ include_once "common/header.php";
         </div>
 
         <div class="uploadFile_container" hidden>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hidden-xs">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="panel panel-default meeting">
                     <div class="panel-heading">
                         <span>Upload File</span><span class="trash pull-right glyphicon glyphicon-trash"
