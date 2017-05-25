@@ -10,24 +10,53 @@
 }
 
 .profile-pic{
-  text-align: center;
-  padding: 10px;
-  index-z: -4;
-  display: block;
-  width: 100%;
-  height: auto;
-  img{
+  input,span{
+    display: inline-block;
+  }
+}
+
+.frame-square {
+  background: #fff;
+  display: inline-block;
+  vertical-align: top;
+  width: 130px;
+  height: 130px;
+  margin-right: .5em;
+  margin-bottom: .3em;
+}
+
+.frame-round {
+  @extend .frame-square;
+  border-radius: 50%;
+  overflow: hidden;
+
+  .crop {border-radius: 50%;}
+}
+
+.crop {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    margin: auto;
+    position: absolute;
+    top: -100%;
+    right: -100%;
+    bottom: -100%;
+    left: -100%;
     cursor: pointer;
-    width: 200px;
-    height: 200px;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     transition: all 0.2s ease;
     &:hover {
-      width: 100px;
-      height: 100px;
+      width: 100%;
+      height: auto;
       -webkit-filter: blur(1px);
       content: url('../images/users/uploadImage.png');
     }
@@ -94,7 +123,7 @@
       border-bottom-left-radius: 3px;
       border-top-left-radius: 3px;
     }
-    input{
+    input, select{
       text-align: left;
       padding-left: 10px;
       width: 250px;
@@ -104,6 +133,7 @@
       border: solid 1px $light_grey;
       border-bottom-right-radius: 3px;
       border-top-right-radius: 3px;
+      background-color: white;
     }
   }
   div.update{
@@ -140,12 +170,39 @@
   }
 }
 
-@media (min-width: 768px) {
-  .profile-pic{
-    img{
-      width: 200px;
-      height: 200px;
-    }
+/* ----------- Non-Retina Screens ----------- */
+@media screen
+and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 1) {
 
+  .frame-square{
+    width: 130px;
+    height: 130px;
+  }
+
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen
+and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (min-resolution: 192dpi) {
+  .frame-square{
+    width: 260px;
+    height: 260px;
+  }
+}
+
+/* ----------- Mobile Screens ----------- */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+  .frame-square{
+    width: 60px;
+    height: 60px;
   }
 }

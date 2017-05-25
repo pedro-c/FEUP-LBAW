@@ -8,17 +8,19 @@
 
         <!-- Page Heading -->
         <div class="row">
-            <div class="content col-xs-8 col-md-4 col-xs-offset-2 col-md-offset-4">
+            <div class="content col-xs-12 col-md-8 col-sm-8 col-lg-4 col-xs-offset-0 col-sm-offset-2 col-md-offset-2 col-lg-offset-4">
                 <div class="profile-pic">
-                    <div>
-                        <form action="../actions/users/upload-user-photo.php" method="post" enctype="multipart/form-data">
+                    <div class="frame-round">
+                        <div class="crop">
                             <a id="user-image-upload">
-                                <img class="img-circle" src="{$user_photo_path}">
+                                <img src="{$user_photo_path}">
                             </a>
-                            <input style="display:none" onchange="this.form.submit()" id="image-upload-button" name="file" type="file"/><br />
-                            <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
-                        </form>
+                        </div>
                     </div>
+                    <form class="hidden-lg hidden-md hidden-sm" action="../actions/users/upload-user-photo.php" method="post" enctype="multipart/form-data">
+                        <input onchange="this.form.submit()" id="image-upload-button" name="file" type="file"/><br />
+                        <span class="error_messages">{$ERROR_MESSAGES[0]}</span>
+                    </form>
                 </div>
                 <div class="project-managment">
                     <h4>Current Projects</h4>
