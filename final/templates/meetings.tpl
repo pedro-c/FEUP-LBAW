@@ -67,11 +67,11 @@
                                         {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)}
                                         {$coordinator = isCoordinator($user_aut, $project)}
                                         {$creator = isMeetingCreator($meeting.id, $user_aut)}
-                                        {$photos = getInvitedUsersPhotos($meeting.id)}
+                                        {$users_photos = getInvitedUsersPhotosPaths($meeting.id)}
 
-                                        {foreach $photos as $photo}
-                                            <img class="user-photo"
-                                                 src={$photo} onclick="showUserInfo({$user_aut})">{/foreach}
+                                        {foreach $users_photos as $user}
+                                            <img class="user-photo" src={$user} onclick="showUserInfo({$user_aut})">
+                                        {/foreach}
                                         {if $coordinator == 'true' || $creator == 'true' }
                                             <span id="plus_user" class="glyphicon glyphicon-plus-sign"
                                                   aria-hidden="true"
@@ -233,16 +233,24 @@
                 </div>
                 <div class="panel-body">
                     <div class="info-meeting" id="create-meeting-settings">
-                        <div id="meeting_title" class="title"></div>
-                        <div id="meeting_date" class="date"></div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 nopadding">
+                            <div class="col-lg-6 col-md-6 col-sm-6 title-meeting-info nopadding">
+                             <div id="meeting_title" class="title"></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 date-meeting-info nopadding">
+                                <div id="meeting_date" class="date"></div>
+                            </div>
+                        </div>
                         <div>
                             <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                             <label id="meeting_time" class="hour"></label>
                         </div>
-                        <div id="meeting_description" class="description"></div>
                         <div id="meeting_duration" class="minutes"></div>
+                        <div id="meeting_description" class="description"></div>
                         <div id="meeting_files" class="files"></div>
-                        <div id="guest_div" class="guests"></div>
+                        <div id="guest_div" class="guests">
+
+                        </div>
                     </div>
                 </div>
             </div>

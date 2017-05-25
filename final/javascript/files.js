@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     $(".select2-multiple").select2({
         tags: true,
-        placeholder: 'Select an option',
         maximumSelectionLength: 1
     });
 

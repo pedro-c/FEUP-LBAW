@@ -9,7 +9,6 @@ $(document).ready(function () {
 
     $(".select2-multiple").select2({
         tags: true,
-        placeholder: 'Select an option',
         maximumSelectionLength: 1
     });
 
@@ -50,7 +49,6 @@ function deleteMeeting() {
         url:'../api/meetings/delete-meeting.php',
         dataType: 'json',
         success: function (data) {
-            console.log(data);
             location.reload();
         }
     });
@@ -122,7 +120,6 @@ function downloadFile(file_id) {
         url:'../api/meetings/download-file.php',
         dataType: 'json',
         success: function (data) {
-            console.log(data);
             window.location.href = '../actions/meetings/download-file.php?f='+ data[0];
         }
     });
@@ -166,7 +163,12 @@ function show_Meeting_Info(meeting_id){
             $("#guest_div").html(" ");
             var i;
             for(i = 0; i< data.length; i++){
-                $("#guest_div").append("<img style='border-radius: 50%;' class='user_photo' src=" + data[i] + " >")
+
+                if(data[i].photo_path == null)
+                    var path = '../images/users/default_image_profile1.jpg';
+                else path = '../images/users/' + data[i].photo_path;
+
+                $("#guest_div").append("<div class='user-name' style='display: inline-block; padding-bottom: 10px;'><img style='border-radius: 50%; ' class='user_photo' src=" + path + " ><label style='padding-left: 5px; padding-top: 5px;'>" + data[i].name + "</label></div><br>")
             }
         }
     });
@@ -183,9 +185,7 @@ function show_Meeting_Info(meeting_id){
             for(i = 0; i< data.length; i++){
 
                 var format = data[i].name.substr(data[i].name.length - 3);
-                $("#meeting_files").append(" <img class='file_show'" +  "src=" + getFormatImage(format) +">");
-                $("#meeting_files").append("<a id=" + data[i].id + " class='file_description' onclick='downloadFile(" + data[i].id + ")' >" +  data[i].name + "</a> <br>");
-
+                $("#meeting_files").append(" <div class='file' style='padding-bottom: 7px'><img class='file_show'" +  "src=" + getFormatImage(format) +"><a style='font-size: small;' id=" + data[i].id + " class='file_description' onclick='downloadFile(" + data[i].id + ")' >" +  data[i].name + "</a></div>");
             }
 
         }

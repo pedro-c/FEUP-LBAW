@@ -4,6 +4,7 @@ include_once "common/header.php";
 include_once($BASE_DIR .'database/users.php');
 include_once($BASE_DIR .'database/projects.php');
 include_once($BASE_DIR .'database/files.php');
+include_once($BASE_DIR .'database/common.php');
 include_once($BASE_DIR .'database/tag.php');
 
 $user_id = $_SESSION['user_id'];

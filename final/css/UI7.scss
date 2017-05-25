@@ -11,6 +11,7 @@
 
   .nopadding {
     padding: 0 !important;
+    margin: 0 !important;
   }
 
   .title_bar {
@@ -227,15 +228,27 @@
     }
 
     .info-meeting {
-      display: inline-block;
+
+      .title-meeting-info{
+        text-align: left;
+      }
+
+      .date-meeting-info{
+        text-align: right;
+      }
 
       .title {
-        padding-bottom: 5px;
-        font-size: x-large;
+        padding-bottom: 22px;
+        font-size: large;
+        font-weight: bold;
+      }
+
+      .glyphicon.glyphicon-time{
+        font-size: small;
       }
 
       .hour {
-        font-size: small;
+        font-size: medium;
         font-weight: normal;
         padding-bottom: 10px;
       }
@@ -250,17 +263,19 @@
       }
 
       .description {
-        font-size: small;
-        padding-bottom: 30px;
+        font-size: x-small;
+        padding-bottom: 20px;
       }
 
       .date {
-        font-size: large;
+        font-size: medium;
+        font-weight: bold;
         padding-bottom: 10px;
       }
 
       .minutes {
-        padding-bottom: 30px;
+        font-size: small;
+        padding-bottom: 15px;
       }
 
       .files {
@@ -285,10 +300,9 @@
       }
 
       .guests {
-        padding-top: 10px;
         .user_photo {
           margin-right: 5px;
-          width: 55px;
+          width: 35px;
           float: left;
         }
         #plus {
@@ -600,6 +614,13 @@
     }
 
   }
+}
 
+#guest_div{
+  padding: 6px;
+  padding-top: 26px;
+  max-height: 300px;
+  overflow-y: scroll;
+  border-top: 0.1px solid #eee;
 
 }

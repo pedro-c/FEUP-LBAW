@@ -56,16 +56,6 @@ function getFileTag($file_id){
     return $stmt->fetch()['name'];
 }
 
-function get_day_name($timestamp){
-
-    if (strtotime($timestamp) >= strtotime("today"))
-        return "Today";
-    else if (strtotime($timestamp) >= strtotime("yesterday"))
-        return "Yesterday";
-
-    return date("Y-m-d", strtotime($timestamp));
-}
-
 function getLastThreeUploadedFiles($project_id){
 
     global $conn;
