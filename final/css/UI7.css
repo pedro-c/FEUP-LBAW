@@ -352,12 +352,14 @@ body {
       #page-meetings #container_schedule_meeting .info-meeting .files .file_show,
       #page-meetings #container_meeting_info .info-meeting .files .file_show {
         width: 25px; }
-    #page-meetings #container_schedule_meeting .info-meeting #meeting_files a.file_description,
-    #page-meetings #container_meeting_info .info-meeting #meeting_files a.file_description {
+    #page-meetings #container_schedule_meeting .info-meeting #meeting_files a,
+    #page-meetings #container_meeting_info .info-meeting #meeting_files a {
       padding-bottom: 10px;
       padding-left: 10px;
       text-decoration: none !important;
-      cursor: pointer !important; }
+      cursor: pointer !important;
+      font-weight: bold;
+      color: #22313f; }
     #page-meetings #container_schedule_meeting .info-meeting .guests,
     #page-meetings #container_meeting_info .info-meeting .guests {
       padding-top: 10px; }
@@ -513,39 +515,42 @@ body {
       color: white; }
       #page-meetings #create-meeting-settings .new_meeting .agenda button:hover {
         background-color: #e9d460; }
-  #page-meetings #create-meeting-settings .new_meeting .box.drag_here {
-    border-radius: 5px;
-    height: 150px;
-    border: 1px dashed grey;
-    vertical-align: middle;
-    background-color: #ecf0f1;
-    display: table-cell;
+  #page-meetings #create-meeting-settings .new_meeting .box {
+    display: table;
     width: 100%; }
-    #page-meetings #create-meeting-settings .new_meeting .box.drag_here .box__file {
-      visibility: hidden; }
-    #page-meetings #create-meeting-settings .new_meeting .box.drag_here .glyphicon.glyphicon-plus.img-responsive {
-      margin: 0 auto;
-      font-size: 40px !important;
-      color: grey;
+    #page-meetings #create-meeting-settings .new_meeting .box .box.drag_here {
+      border-radius: 5px;
+      height: 150px;
+      border: 1px dashed grey;
+      vertical-align: middle;
+      background-color: #ecf0f1;
+      display: table-cell; }
+      #page-meetings #create-meeting-settings .new_meeting .box .box.drag_here .box__file {
+        visibility: hidden; }
+      #page-meetings #create-meeting-settings .new_meeting .box .box.drag_here .glyphicon.glyphicon-plus.img-responsive {
+        margin: 0 auto;
+        font-size: 40px !important;
+        color: grey;
+        text-align: center;
+        cursor: pointer; }
+      #page-meetings #create-meeting-settings .new_meeting .box .box.drag_here #filedrag {
+        display: none;
+        font-weight: bold;
+        text-align: center;
+        padding: 1em 0;
+        margin: 1em 0;
+        color: #555;
+        border: 2px dashed #555;
+        border-radius: 7px;
+        cursor: default; }
+        #page-meetings #create-meeting-settings .new_meeting .box .box.drag_here #filedrag:hover {
+          color: #f00;
+          border-color: #f00;
+          border-style: solid;
+          box-shadow: inset 0 3px 4px #888; }
+    #page-meetings #create-meeting-settings .new_meeting .box #file-info {
+      display: block;
       text-align: center; }
-    #page-meetings #create-meeting-settings .new_meeting .box.drag_here div {
-      display: table-cell;
-      vertical-align: middle; }
-    #page-meetings #create-meeting-settings .new_meeting .box.drag_here #filedrag {
-      display: none;
-      font-weight: bold;
-      text-align: center;
-      padding: 1em 0;
-      margin: 1em 0;
-      color: #555;
-      border: 2px dashed #555;
-      border-radius: 7px;
-      cursor: default; }
-      #page-meetings #create-meeting-settings .new_meeting .box.drag_here #filedrag:hover {
-        color: #f00;
-        border-color: #f00;
-        border-style: solid;
-        box-shadow: inset 0 3px 4px #888; }
   #page-meetings #submit {
     padding: 4px 20px 4px 20px;
     color: white;

@@ -1,5 +1,5 @@
 <link href="../css/UI7.css" rel="stylesheet">
-<script src="../javascript/UI7.js"></script>
+<script src="../javascript/meetings.js"></script>
 <div id="page-meetings">
     <div class="row">
         <div class="col-xs-12">
@@ -25,7 +25,7 @@
                             <li><a id="tag-name-dropwdown" onclick="changeMeetingTagName('All')">All</a>
                             </li> {foreach $tags as $tag}
                                 <li><a id="tag-name-dropwdown"
-                                       onclick="changeMeetingTagName('{$tag.name}')">{$tag.name}</a></li>{/foreach}
+                                       onclick="changeMeetingTagName('{$tag}')">{$tag}</a></li>{/foreach}
                         </ul>
                     </div>
                 </div>
@@ -61,9 +61,17 @@
                                         </div>
                                     </div>
                                     <label class="user-responsible">{$creatorName}</label><br>
-                                    <label class="guests"> {$invited_users = getInvitedUsers($meeting.id)} {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)} {$coordinator = isCoordinator($user_aut, $project)} {$creator = isMeetingCreator($meeting.id, $user_aut)} {$photos = getInvitedUsersPhotos($meeting.id)} {foreach $photos as $photo}
+                                    <label class="guests">
+
+                                        {$invited_users = getInvitedUsers($meeting.id)}
+                                        {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)}
+                                        {$coordinator = isCoordinator($user_aut, $project)}
+                                        {$creator = isMeetingCreator($meeting.id, $user_aut)}
+                                        {$photos = getInvitedUsersPhotos($meeting.id)}
+
+                                        {foreach $photos as $photo}
                                             <img class="user-photo"
-                                                 src={$photo}>{/foreach}
+                                                 src={$photo} onclick="showUserInfo({$user_aut})">{/foreach}
                                         {if $coordinator == 'true' || $creator == 'true' }
                                             <span id="plus_user" class="glyphicon glyphicon-plus-sign"
                                                   aria-hidden="true"
@@ -79,7 +87,7 @@
                                                         <form method="post" action="../actions/meetings/invite-user.php">
                                                         <div class="modal-body">
                                                             <div class="select-box">
-                                                                <select name="uninvited_users[]" id="uninvited-users" class="select2-multiple form-control" multiple="multiple" multiple>
+                                                                <select name="uninvited_users[]" id="uninvited-users" class="select2-invite-users form-control" multiple="multiple" multiple>
                                                                     {foreach $notInvitedmembers as $notInvitedmember} {$name = getUserNameById($notInvitedmember)}
                                                                         <option value={$notInvitedmember}>{$name}</option>
                                                                     {/foreach}
@@ -188,23 +196,18 @@
                                 <span class="input-group-addon"><i class="fa fa-tag"></i></span>
                                 <select name="tagOption" class="select2-multiple form-control" multiple="multiple">
                                     {foreach $tags as $tag}
-                                        <option value={$tag.id}>{$tag.name}</option>
+                                        <option value={$tag}>{$tag}</option>
                                     {/foreach}
                                 </select>
                             </div><br>
 
-                            <div class="box drag_here hidden-xs" ondrop="drop_handler(event);"
-                                 ondragover="dragover_handler(event);" ondragend="dragend_handler(event);">
-
-                                <input id="add-file" class="box__file" type="file" name="file[]" id="file" multiple/>
-                                <a id="plus"><span  class="glyphicon glyphicon-plus img-responsive center-block" aria-hidden="true"></span></a><br>
-                              <!--  <label class="file-description" for="file">
-                                    <strong> Choose a file </strong>
-                                    <span class="box__dragndrop"> or drag it here</span>.
-                                </label>-->
-
+                            <div class="box">
+                                <div class="box drag_here hidden-xs">
+                                    <input id="add-file" class="box__file" type="file" name="file[]" id="file" multiple/>
+                                    <a id="plus"><span  class="glyphicon glyphicon-plus img-responsive center-block" aria-hidden="true"></span></a><br>
+                                    <label id="file-info"></label>
+                                </div>
                             </div>
-
                             <div class="text-center">
                                 <input id="submit" type="submit" value="Submit">
                             </div>

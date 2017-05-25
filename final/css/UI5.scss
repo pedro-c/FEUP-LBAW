@@ -5,6 +5,10 @@
   margin: 0 !important;
 }
 
+#file-info-files{
+  font-weight: 700;
+}
+
 .files_title {
 
   background-color: $white;
@@ -291,6 +295,7 @@
         #user_photo {
           width: 70px;
           float: left;
+          border-radius: 50%;
         }
 
         .name{
@@ -326,7 +331,27 @@
 
     }
   }
+}
 
+.modal-header {
+  background-color: $color_ebony_clay;
+  color: $white;
+}
+.modal-footer {
+  background-color: $color_ebony_clay;
+  color: $white;
 
+  #accept_button:hover {
+    background-color: $color_yellow;
+    color: $white;
+  }
+  #cancel_button:hover {
+    background-color: $color_yellow;
+    color: $white;
+  }
 
+}
+
+.dropdown-menu{
+  top: 55% !important;
 }

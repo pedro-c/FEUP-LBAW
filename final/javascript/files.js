@@ -1,6 +1,11 @@
 $(document).ready(function () {
 
-    $(".select2-multiple").select2();
+    $(".select2-multiple").select2({
+        tags: true,
+        placeholder: 'Select an option',
+        maximumSelectionLength: 1
+    });
+
 
 
     $( "#drag-here" ).bind( "dragover", function() {
@@ -17,12 +22,13 @@ $(document).ready(function () {
         $("#file-id-delete").text(data_id);
     });
 
-    $('input#add-file').change(function(){
+    $('#plus').click(function(){$('#add-file-files').trigger('click'); });
+
+    $('input#add-file-files').change(function(){
         var files = $(this)[0].files;
         console.log(files);
         if(files.length > 0){
-            console.log("ENTREI");
-            $("#file-info").html("You selected " +  files.length + " files.");
+            $("#file-info-files").html("File uploaded.");
         }
     });
 

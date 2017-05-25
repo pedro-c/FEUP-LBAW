@@ -7,7 +7,14 @@ $(document).ready(function () {
         orientation: "bottom left"
     });
 
-    $(".select2-multiple").select2();
+    $(".select2-multiple").select2({
+        tags: true,
+        placeholder: 'Select an option',
+        maximumSelectionLength: 1
+    });
+
+    $(".select2-invite-users").select2();
+
 
     $("#hide").click(function () {
         $("p").hide();
@@ -22,6 +29,13 @@ $(document).ready(function () {
     });
 
     $('#plus').click(function(){$('#add-file').trigger('click'); });
+
+    $('input#add-file').change(function(){
+        var files = $(this)[0].files;
+        if(files.length > 0){
+            $("#file-info").html("You have uploaded " + files.length + " files.");
+        }
+    });
 
 });
 
@@ -206,4 +220,9 @@ function changeMeetingTagName(tag_name){
 
         });
     }
+}
+
+
+function showUserInfo($user_id){
+    console.log("user_id " + $user_id);
 }
