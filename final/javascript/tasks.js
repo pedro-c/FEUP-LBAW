@@ -63,18 +63,20 @@ $(document).ready(function(){
             }
 
         });
+        if($("#task-tags option:selected").html() != undefined){
+            $.ajax({
+                type:'post',
+                url: '../api/tasks/set-task-tags.php',
+                data:  {'taskTag': $("#task-tags option:selected").html(), 'taskId': $("#task-name").attr("name")},
+                success: function() {
 
-        $.ajax({
-            type:'post',
-            url: '../api/tasks/set-task-tags.php',
-            data:  {'taskTags': $("#task-tags option:selected").html(), 'taskId': $("#task-name").attr("name")},
-            success: function() {
+                    console.log($("#task-tags option:selected").html());
 
-                console.log($("#task-tags option:selected").html());
+                }
 
-            }
+            });
+        }
 
-        });
     });
     $("#task-name").focusout(function(e) {
 

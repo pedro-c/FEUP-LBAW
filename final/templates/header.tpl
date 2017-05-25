@@ -109,7 +109,7 @@
                             <a href="../../team.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
                         </li>
                         <li  class="col-xs-6">
-                            <a href="#"> <i class="fa fa-refresh fa-2x"></i> <p>Change Project</p></a>
+                            <a href="../../profile.php"> <i class="fa fa-refresh fa-2x"></i> <p>Profile</p></a>
                         </li>
                         <li  class="col-xs-6">
                             <a href="#"> <i class="fa fa-sign-out fa-2x"></i> <p>Sign Out</p></a>
