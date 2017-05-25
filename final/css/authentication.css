@@ -168,16 +168,27 @@ html, body {
   width: 100%; }
 
 .container {
+  height: 100%;
+  padding: 0;
   align-content: center;
+  width: 100vw;
   display: table;
-  position: fixed;
-  width: 65%;
-  height: 80%;
   margin: auto;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0; }
+  left: 0;
+  overflow: hidden;
+  overflow-y: hidden; }
+  .container .container2 {
+    height: 100%; }
+  .container .panel {
+    margin: 0;
+    height: 100%; }
+  .container .panel-body {
+    height: 100%;
+    overflow: auto;
+    overflow-y: hidden; }
 
 .panelnopadding {
   padding: 0 !important; }
@@ -435,4 +446,10 @@ html, body {
         color: white;
         outline: 0; }
 
-/*# sourceMappingURL=UI1_novo.css.map */
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-device-width: 668px) {
+  .container {
+    height: 80vh !important;
+    padding-top: 10vh !important; } }
+
+/*# sourceMappingURL=authentication.css.map */
