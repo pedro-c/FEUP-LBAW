@@ -88,7 +88,8 @@ function getInvitedMemberFromCode($code) {
     $sql_select_invited_member = "SELECT email, id_project FROM invited_users WHERE code = ?;";
     $stmt = $conn->prepare($sql_select_invited_member);
     $stmt->execute(array($code));
-    return $stmt->fetch();
+    $var = $stmt->fetch();
+    return $var;
 }
 
 function generateInviteCode($user_email, $project_id) {

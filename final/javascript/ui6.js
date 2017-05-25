@@ -13,7 +13,7 @@ $(document).ready(function() {
     $("#remove_member_dialog [name='user_id']").attr("value", member_id);
   })
 
-  $('#add_member_dialog button[type="submit"]').click(function(){
+  $('#add_member_dialog #accept_button').click(function(){
     var email = $('#add_member_dialog input[name="userEmail"]').val()
     var project = $('#add_member_dialog input[name="idProject"]').attr('value');
     var dataString = "userEmail=" + email + "&idProject=" + project;

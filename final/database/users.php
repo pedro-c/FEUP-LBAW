@@ -69,7 +69,7 @@ function checkForInvitation($email,$project){
 
     $id_project = $result['id_project'];
 
-    return ($project==$id_project);
+    return $project + $id_project;
 }
 
 function joinProject($id, $project, $is_coordinator=FALSE){
