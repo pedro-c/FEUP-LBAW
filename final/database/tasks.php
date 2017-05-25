@@ -45,6 +45,13 @@ function insertTag($tagName){
         return $stmt->fetchAll();
     }
 
+    function get3UncompletedTasksFromProject($projectId){
+        global $conn;
+        $stmt = $conn->prepare("SELECT * FROM task WHERE project_id = ? AND completer_id IS NULL ORDER BY deadline ASC LIMIT 3;");
+        $stmt->execute([$projectId]);
+        return $stmt->fetchAll();
+    }
+
     function getAllCompletedTasksFromProject($projectId){
         global $conn;
         $stmt = $conn->prepare("SELECT * FROM task WHERE project_id = ? AND completer_id IS NOT NULL ORDER BY deadline ASC;");
@@ -133,7 +140,7 @@ function insertTag($tagName){
         global $conn;
         $stmt = $conn->prepare("SELECT DISTINCT user_table.name, user_table.id FROM user_table, task WHERE task.id = ? AND task.assigned_id = user_table.id;");
         $stmt->execute([$taskId]);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetch();
     }
 
     function getTaskCompleterName($taskId){

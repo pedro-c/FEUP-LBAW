@@ -24,13 +24,14 @@
                 </a>
                 <div class="panel-body">
                     <div class="list-group">
-                        <button class="list-group-item"><i class="glyphicon glyphicon-menu-right dash-icon"></i><span
-                                    class="dash-item-text">Implement feature</span></button>
-                        <button class="list-group-item"><i class="glyphicon glyphicon-menu-right dash-icon"></i><span
-                                    class="dash-item-text">Merge changes</span></button>
+                        {foreach $uncompletedTasks as $task}
+
                         <button class="list-group-item">
-                            <i class="glyphicon glyphicon-menu-right dash-icon"></i><span
-                                    class="dash-item-text">Fix conflicts</span></button>
+                            <i class="glyphicon glyphicon-menu-right dash-icon"></i>
+                            <span class="dash-item-text"> {$task.name}</span>
+                            <span class="dash-item-text"> Assigned to: {$taskName=getTaskAssignedName($task.id)}{$taskName.name}</span>
+                        </button>
+                        {/foreach}
                     </div>
                 </div>
             </div>
