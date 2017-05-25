@@ -126,6 +126,10 @@
 
   .uploadFile_container {
 
+
+
+
+
     .panel-heading {
       background-color: $color_yellow;
       color: white;
@@ -354,4 +358,18 @@
 
 .dropdown-menu{
   top: 55% !important;
+}
+
+/* Mobile */
+
+@media screen and (max-device-width: 667px) {
+  .file_show {
+    width: 40px !important;
+  }
+
+  .uploadFile_container, .col-lg-6.col-md-6.col-sm-6.col-xs-12{
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
 }

@@ -259,4 +259,7 @@ i.dash-title-icon {
     color: #d9c559;
     cursor: pointer; }
 
+img.dash-user-thumb {
+  border-radius: 50%; }
+
 /*# sourceMappingURL=UI2.css.map */

@@ -7,9 +7,15 @@ $(document).ready(function () {
 
     $("#mobile-back").click(function () {
         $("#container_file_info").hide();
-    })
+        $(".uploadFile_container").hide();
+    });
 
-
+    var width = $(window).width();
+    $(window).resize(function () {
+        if (width <= '720px') {
+            $('.uploadFile_container').addClass('nopadding');
+        }
+    });
 
     $( "#drag-here" ).bind( "dragover", function() {
         console.log("dragover");
