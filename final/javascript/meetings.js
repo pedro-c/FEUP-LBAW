@@ -7,12 +7,54 @@ $(document).ready(function () {
         orientation: "bottom left"
     });
 
-    $(".select2-multiple").select2();
+    $(".select2-multiple").select2({
+        tags: true,
+        placeholder: 'Select an option',
+        maximumSelectionLength: 1
+    });
 
-    $("#hide").click(function(){
+    $(".select2-invite-users").select2();
+
+
+    $("#hide").click(function () {
         $("p").hide();
     });
+
+    $('i[data-toggle=modal]').click(function () {
+        var data_id = '';
+        if (typeof $(this).data('id') !== 'undefined')
+            data_id = $(this).data('id');
+
+        $("#meeting-id-delete").text(data_id);
+    });
+
+    $('#plus').click(function(){$('#add-file').trigger('click'); });
+
+    $('input#add-file').change(function(){
+        var files = $(this)[0].files;
+        if(files.length > 0){
+            $("#file-info").html("You have uploaded " + files.length + " files.");
+        }
+    });
+
 });
+
+function deleteMeeting() {
+    meeting_id = $("#meeting-id-delete").text();
+
+    console.log(meeting_id);
+
+    $.ajax({
+        type: 'POST',
+        data: { 'meeting_id': meeting_id } ,
+        url:'../api/meetings/delete-meeting.php',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            location.reload();
+        }
+    });
+}
 
 
 function inviteMoreUsers(meeting_id) {
@@ -21,25 +63,6 @@ function inviteMoreUsers(meeting_id) {
         $(identifier).show();
     else $(identifier).hide();
 }
-
-/*
-function inviteUsers(meeting_id) {
-    console.log(meeting_id);
-    console.log($('#uninvited-users:selected').val());
-
-    $.ajax({
-        type: 'POST',
-        data: { 'meeting_id': meeting_id, 'uninvited_users': $('#uninvited-users:selected').val() } ,
-        url:'../api/meetings/invite-user.php',
-        dataType: 'json',
-        success: function (data) {
-            console.log(data);
-
-        }
-    });
-
-}*/
-
 
 function schedule() {
     $("#container_to_collapse").removeClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
@@ -117,7 +140,6 @@ function show_Meeting_Info(meeting_id){
         url:'../api/meetings/meeting-details.php',
         dataType: 'json',
         success: function (data) {
-        //    console.log(data[0]);
 
             date = data[0].date.substr(0,data[0].date.indexOf(' '));
             time = data[0].date.substr(data[0].date.indexOf(' ')+1);
@@ -177,7 +199,6 @@ function show_Meeting_Info(meeting_id){
     $("#container_schedule_meeting").hide();
     $("#container_meeting_info").show();
 
-
 }
 
 function changeMeetingTagName(tag_name){
@@ -192,7 +213,6 @@ function changeMeetingTagName(tag_name){
     else{
         $('.tag-name').each(function(i, obj) {
             var name = "#"+tag_name;
-
             if($(this).text() != name)
                 $(this).parents('.meeting-panel').hide();
             else
@@ -200,4 +220,9 @@ function changeMeetingTagName(tag_name){
 
         });
     }
+}
+
+
+function showUserInfo($user_id){
+    console.log("user_id " + $user_id);
 }

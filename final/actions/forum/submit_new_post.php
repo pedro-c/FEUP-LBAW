@@ -16,7 +16,7 @@ $id_project = $_SESSION['project_id'];
 $id_user = $_SESSION['user_id'];
 
 
-submit_post($id_project, $id_user, $title, $post_content);
+submitPost($id_project, $id_user, $title, $post_content);
 
 $_SESSION['success_messages'][] = '<br>'.'Submitted post with success';
 header("Location: ". $BASE_URL . "pages/forum.php");

@@ -169,20 +169,8 @@ body {
   top: 10px;
   padding: 20px; }
 
-.profile-pic {
-  text-align: center;
-  padding: 10px;
-  cursor: pointer;
-  index-z: -4; }
-  .profile-pic img {
-    width: 40%;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    transition: all 0.2s ease; }
-    .profile-pic img:hover {
-      -webkit-filter: blur(5px); }
+.profile-pic input, .profile-pic span {
+  display: inline-block; }
 
 .project-managment {
   width: 100%;
@@ -234,7 +222,7 @@ body {
       border: solid 1px #D3D3D3;
       border-bottom-left-radius: 3px;
       border-top-left-radius: 3px; }
-    .personal-info div.info input {
+    .personal-info div.info input, .personal-info div.info select {
       text-align: left;
       padding-left: 10px;
       width: 250px;
@@ -243,7 +231,8 @@ body {
       height: 35px;
       border: solid 1px #D3D3D3;
       border-bottom-right-radius: 3px;
-      border-top-right-radius: 3px; }
+      border-top-right-radius: 3px;
+      background-color: white; }
   .personal-info div.update {
     padding-top: 10px; }
     .personal-info div.update button {
@@ -270,8 +259,20 @@ body {
     width: 300px;
     margin: 0; }
 
-@media (min-width: 768px) {
-  .profile-pic img {
-    width: 30%; } }
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .frame-square {
+    width: 130px;
+    height: 130px; } }
+/* ----------- Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .frame-square {
+    width: 260px;
+    height: 260px; } }
+/* ----------- Mobile Screens ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .frame-square {
+    width: 60px;
+    height: 60px; } }
 
 /*# sourceMappingURL=profile.css.map */

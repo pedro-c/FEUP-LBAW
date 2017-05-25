@@ -167,17 +167,149 @@ html, body {
   background-color: #ecf0f1;
   width: 100%; }
 
-.container {
-  align-content: center;
-  display: table;
+h1 {
+  color: #EEEEEE; }
+
+#loader-wrapper {
   position: fixed;
-  width: 65%;
-  height: 80%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000; }
+
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 100%;
+  width: 50px;
+  height: 100%;
+  -webkit-animation: spin 3s;
+  /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 3s;
+  /* Chrome, Firefox 16+, IE 10+, Opera */
+  z-index: 1001; }
+  #loader img {
+    width: 100px;
+    height: auto; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: translateY(0);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateY(0);
+    /* IE 9 */
+    transform: translateY(0);
+    /* Firefox 16+, IE 10+, Opera */ }
+  100% {
+    -webkit-transform: translateY(-100%);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateY(-100%);
+    /* IE 9 */
+    transform: translateY(-100%);
+    /* Firefox 16+, IE 10+, Opera */ } }
+@keyframes spin {
+  0% {
+    -webkit-transform: translateY(0);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateY(0);
+    /* IE 9 */
+    transform: translateY(0);
+    /* Firefox 16+, IE 10+, Opera */ }
+  100% {
+    -webkit-transform: translateY(-100%);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateY(-100%);
+    /* IE 9 */
+    transform: translateY(-100%);
+    /* Firefox 16+, IE 10+, Opera */ } }
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #e9d460;
+  z-index: 1000;
+  -webkit-transform: translateX(0);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(0);
+  /* IE 9 */
+  transform: translateX(0);
+  /* Firefox 16+, IE 10+, Opera */ }
+
+#loader-wrapper .loader-section.section-left {
+  left: 0; }
+
+#loader-wrapper .loader-section.section-right {
+  right: 0; }
+
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(-100%);
+  /* IE 9 */
+  transform: translateX(-100%);
+  /* Firefox 16+, IE 10+, Opera */
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(100%);
+  /* IE 9 */
+  transform: translateX(100%);
+  /* Firefox 16+, IE 10+, Opera */
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.loaded #loader {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+  -webkit-transform: translateY(-100%);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateY(-100%);
+  /* IE 9 */
+  transform: translateY(-100%);
+  /* Firefox 16+, IE 10+, Opera */
+  -webkit-transition: all 0.3s 1s ease-out;
+  transition: all 0.3s 1s ease-out; }
+
+/* JavaScript Turned Off */
+.no-js #loader-wrapper {
+  display: none; }
+
+.no-js h1 {
+  color: #222222; }
+
+.container {
+  height: 100%;
+  padding: 0;
+  align-content: center;
+  width: 100vw;
+  display: table;
   margin: auto;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0; }
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: hidden; }
+  .container .container2 {
+    height: 100%; }
+  .container .panel {
+    margin: 0;
+    height: 100%; }
+  .container .panel-body {
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden; }
 
 .panelnopadding {
   padding: 0 !important; }
@@ -435,4 +567,10 @@ html, body {
         color: white;
         outline: 0; }
 
-/*# sourceMappingURL=UI1_novo.css.map */
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-device-width: 668px) {
+  .container {
+    height: 80vh !important;
+    padding-top: 10vh !important; } }
+
+/*# sourceMappingURL=authentication.css.map */

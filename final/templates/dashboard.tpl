@@ -1,4 +1,5 @@
 <link href="../css/UI2.css" rel="stylesheet"/>
+<script src="../javascript/files.js"></script>
 
 <div class="page-wrapper container">
     <div class="row"><br>
@@ -23,13 +24,14 @@
                 </a>
                 <div class="panel-body">
                     <div class="list-group">
-                        <button class="list-group-item"><i class="glyphicon glyphicon-menu-right dash-icon"></i><span
-                                    class="dash-item-text">Implement feature</span></button>
-                        <button class="list-group-item"><i class="glyphicon glyphicon-menu-right dash-icon"></i><span
-                                    class="dash-item-text">Merge changes</span></button>
+                        {foreach $uncompletedTasks as $task}
+
                         <button class="list-group-item">
-                            <i class="glyphicon glyphicon-menu-right dash-icon"></i><span
-                                    class="dash-item-text">Fix conflicts</span></button>
+                            <i class="glyphicon glyphicon-menu-right dash-icon"></i>
+                            <span class="dash-item-text"> {$task.name}</span>
+                            <span class="dash-item-text"> Assigned to: {$taskName=getTaskAssignedName($task.id)}{$taskName.name}</span>
+                        </button>
+                        {/foreach}
                     </div>
                 </div>
             </div>
@@ -84,7 +86,7 @@
         <div class="clearfix"></div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 dash-card">
             <div class="panel panel-primary">
-                <a href="#" class="panel-heading">
+                <a href="../pages/meetings.php" class="panel-heading">
                     <h4 class="panel-title"><i class="fa fa-calendar dash-title-icon"></i> Meetings
                         <span class="to-page glyphicon glyphicon-menu-right"></span>
                     </h4>
@@ -103,7 +105,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 dash-card">
             <div class="panel panel-primary">
-                <a href="#" class="panel-heading">
+                <a href="../pages/files.php" class="panel-heading">
                     <h4 class="panel-title"><i class="glyphicon glyphicon-file dash-title-icon"></i> Files
                         <span class="to-page glyphicon glyphicon-menu-right"></span>
                     </h4>

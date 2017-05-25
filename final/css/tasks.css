@@ -161,6 +161,47 @@ body {
           color: #e9d460 !important; }
       #sidebar li a p {
         margin-bottom: 0px !important; } }
+.frame-square, .frame-round {
+  background: #fff;
+  display: inline-block;
+  vertical-align: top;
+  width: 130px;
+  height: 130px;
+  margin-right: .5em;
+  margin-bottom: .3em; }
+
+.frame-round {
+  border-radius: 50%;
+  overflow: hidden; }
+  .frame-round .crop {
+    border-radius: 50%; }
+
+.crop {
+  height: 100%;
+  overflow: hidden;
+  position: relative; }
+  .crop img {
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    margin: auto;
+    position: absolute;
+    top: -100%;
+    right: -100%;
+    bottom: -100%;
+    left: -100%;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
+    .crop img:hover {
+      width: 100%;
+      height: auto;
+      -webkit-filter: blur(1px);
+      content: url("../images/users/uploadImage.png"); }
+
 .tasks-body {
   width: 100%;
   height: 100%;
@@ -208,6 +249,7 @@ body {
   margin: 20px !important; }
 
 .tasks-header {
+  display: inline-block;
   margin: 15px 20px 15px 20px;
   float: left;
   width: 90%;
@@ -234,6 +276,14 @@ body {
       .tasks-header ul li:hover {
         color: #1AAFD0;
         cursor: pointer; }
+  .tasks-header #tags-dropdown-menu {
+    position: relative;
+    display: block; }
+    .tasks-header #tags-dropdown-menu #tag-name {
+      margin-left: 20px; }
+    .tasks-header #tags-dropdown-menu .dropdown-menu {
+      top: 30px;
+      left: 90px; }
 
 .task {
   vertical-align: middle;
@@ -266,6 +316,16 @@ body {
     padding: 3px;
     border: solid 1px #d9c559;
     border-radius: 10px; }
+  .task .task-name {
+    float: left;
+    display: inline-block;
+    width: 100%;
+    left: 0; }
+    .task .task-name textarea {
+      vertical-align: middle !important;
+      float: left;
+      width: auto !important;
+      left: 0; }
 
 .task-content {
   margin: 10px; }

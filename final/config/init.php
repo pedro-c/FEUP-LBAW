@@ -1,5 +1,5 @@
 <?php
-session_set_cookie_params(3600, '/~lbaw1614'); //session_set_cookie_params(3600, '/');
+session_set_cookie_params(0 ,'/~lbaw1614'); //session_set_cookie_params(3600, '/');
 session_start();
 
 error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default

@@ -69,10 +69,16 @@ function get_day_name($timestamp){
 function getLastThreeUploadedFiles($project_id){
 
     global $conn;
-    $stmt = $conn->prepare('SELECT uploader_id, name FROM file WHERE project_id = ? ORDER BY upload_date DESC LIMIT 3;');
+    $stmt = $conn->prepare('SELECT id,uploader_id, name FROM file WHERE project_id = ? ORDER BY upload_date DESC LIMIT 3;');
     $stmt->execute([$project_id]);
 
     return $stmt->fetchAll();
+}
+
+function deleteFile($file_id){
+    global $conn;
+    $stmt = $conn->prepare('DELETE FROM file WHERE id=?');
+    return $stmt->execute([$file_id]);
 }
 
 

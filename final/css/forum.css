@@ -168,6 +168,9 @@ body {
   width: 25px;
   margin-right: 3px; }
 
+.selected-post-title {
+  margin-bottom: 5px; }
+
 button.btn-form {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   background-color: #fff;
@@ -240,27 +243,28 @@ button#new-post-button.active #plus-icon h4 {
 #pagination-last a {
   margin-left: 5px; }
 
-.reply-likes {
+.reply-likes, .post-likes {
   float: right; }
 
-.reply-like-button {
-  top: 5px; }
-
-#replies p.reply-content {
+#replies p.reply-content,
+p#post-content {
   margin-top: 10px;
   margin-bottom: 10px; }
 
 #replies li.list-group-item {
   padding-bottom: 0; }
 
-#replies .reply-like-button:hover,
-#replies .reply-likes:hover {
+.reply-like-button:hover,
+.reply-likes:hover,
+.post-like-button:hover {
   color: #e9d460;
   cursor: pointer; }
 
-#replies .reply-like-button.liked {
+.reply-like-button.liked,
+.post-like-button.liked {
   color: #e9d460; }
-  #replies .reply-like-button.liked:hover {
+  .reply-like-button.liked:hover,
+  .post-like-button.liked:hover {
     color: black; }
 
 /*Overriding bootstrap class panel-primary*/
@@ -289,7 +293,7 @@ button#new-post-button.active #plus-icon h4 {
 .list-group-item.active:hover,
 .list-group-item.active:focus {
   z-index: 2;
-  background-color: #fff;
+  background-color: #ecf0f1;
   border-color: #fff;
   color: #22313f; }
   .list-group-item.active small,
