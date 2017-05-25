@@ -87,7 +87,7 @@
                                                         <form method="post" action="../actions/meetings/invite-user.php">
                                                         <div class="modal-body">
                                                             <div class="select-box">
-                                                                <select name="uninvited_users[]" id="uninvited-users" class="select2-multiple form-control" multiple="multiple" multiple>
+                                                                <select name="uninvited_users[]" id="uninvited-users" class="select2-invite-users form-control" multiple="multiple" multiple>
                                                                     {foreach $notInvitedmembers as $notInvitedmember} {$name = getUserNameById($notInvitedmember)}
                                                                         <option value={$notInvitedmember}>{$name}</option>
                                                                     {/foreach}

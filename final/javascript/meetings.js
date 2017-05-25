@@ -9,8 +9,12 @@ $(document).ready(function () {
 
     $(".select2-multiple").select2({
         tags: true,
+        placeholder: 'Select an option',
         maximumSelectionLength: 1
     });
+
+    $(".select2-invite-users").select2();
+
 
     $("#hide").click(function () {
         $("p").hide();

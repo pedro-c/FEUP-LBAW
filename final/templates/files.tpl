@@ -31,7 +31,7 @@ include_once "common/header.php";
                         <ul class="dropdown-menu">
                             <li><a id="tag-name-dropwdown" onclick="changeTagName('All')">All</a></li>
                             {foreach $tags as $tag}
-                                <li><a id="tag-name-dropwdown" onclick="changeTagName('{$tag.name}')">{$tag.name}</a></li>
+                                <li><a id="tag-name-dropwdown" onclick="changeTagName('{$tag}')">{$tag}</a></li>
                             {/foreach}
 
                         </ul>
@@ -131,7 +131,7 @@ include_once "common/header.php";
                             <span class="input-group-addon"><i class="fa fa-tag"></i></span>
                             <select name="tagOption" class="select2-multiple form-control" multiple="multiple">
                                 {foreach $tags as $tag}
-                                <option value={$tag.id}>{$tag.name}</option>
+                                <option value={$tag}>{$tag}</option>
                                 {/foreach}
                             </select>
                         </div>

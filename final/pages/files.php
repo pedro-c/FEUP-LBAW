@@ -11,7 +11,7 @@ $project = $_SESSION['project_id'];
 
 $files = getAllFiles($project);
 $current_date = date('m/d/Y h:i:s a', time());
-$tags = getAllTagNames();
+$tags = getAllProjectTagName($project);
 $smarty->assign('tags',$tags);
 $smarty->assign('currentDate',$current_date);
 $smarty->assign('files',$files);
