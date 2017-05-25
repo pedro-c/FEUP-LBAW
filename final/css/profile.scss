@@ -15,54 +15,6 @@
   }
 }
 
-.frame-square {
-  background: #fff;
-  display: inline-block;
-  vertical-align: top;
-  width: 130px;
-  height: 130px;
-  margin-right: .5em;
-  margin-bottom: .3em;
-}
-
-.frame-round {
-  @extend .frame-square;
-  border-radius: 50%;
-  overflow: hidden;
-
-  .crop {border-radius: 50%;}
-}
-
-.crop {
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-
-  img {
-    display: block;
-    min-width: 100%;
-    min-height: 100%;
-    margin: auto;
-    position: absolute;
-    top: -100%;
-    right: -100%;
-    bottom: -100%;
-    left: -100%;
-    cursor: pointer;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-    &:hover {
-      width: 100%;
-      height: auto;
-      -webkit-filter: blur(1px);
-      content: url('../images/users/uploadImage.png');
-    }
-  }
-}
-
 .project-managment{
   width: 100%;
   border-top: solid 1px $light_grey ;
