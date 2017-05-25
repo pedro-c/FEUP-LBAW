@@ -146,9 +146,8 @@ function fileInfo(file_id){
 }
 
 function deleteUpload() {
-
     $("#container_to_collapse").addClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
-    $("#container_to_collapse").removeClass("col-lg-6 col-md-6 col-sm-6 col-xs-6");
+    $("#container_to_collapse").removeClass("col-lg-6 col-md-6 col-sm-6 col-xs-6 hidden-xs");
     $(".file").addClass("col-lg-4 col-md-4 col-sm-4 col-xs-12");
     $(".file").removeClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
     $(".uploadFile_container").hide();
@@ -156,6 +155,7 @@ function deleteUpload() {
     $("#uploadButton").css("border","none");
     $("#mobile-back").hide();
     $("#container_file_info").hide();
+
 }
 
 function exitMobile() {
