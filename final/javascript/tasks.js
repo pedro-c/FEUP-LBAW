@@ -63,19 +63,21 @@ $(document).ready(function(){
             }
 
         });
-        if($("#task-tags option:selected").html() != undefined){
-            $.ajax({
-                type:'post',
-                url: '../api/tasks/set-task-tags.php',
-                data:  {'taskTag': $("#task-tags option:selected").html(), 'taskId': $("#task-name").attr("name")},
-                success: function() {
 
-                    console.log($("#task-tags option:selected").html());
 
-                }
+        $.ajax({
+            type:'post',
+            url: '../api/tasks/set-task-tags.php',
+            data:  {'taskTag': $("#task-tags option:selected").html(), 'taskId': $("#task-name").attr("name")},
+            success: function(data) {
 
-            });
-        }
+                console.log(data);
+                console.log($("#task-tags option:selected").html());
+
+            }
+
+        });
+
 
     });
     $("#task-name").focusout(function(e) {
@@ -200,11 +202,22 @@ function toggle(taskId) {
 
             console.log(response);
 
-            if(response[2][0]!=null){
+            console.log("Assigned: " +response[2].name);
+
+
                 $("#task-assign").html("");
                 $("#task-assign").append($('<option>', {
-                    value: response[2][0].id,
-                    text: response[2][0].name,
+                    value: response[2].id,
+                    text: response[2].name,
+                    selected: true
+                }));
+
+            console.log("tag: " +response[1][0].name);
+            if(response[1].length > 0){
+
+                $("#task-tags").append($('<option>', {
+                    value: response[1][0].id,
+                    text: response[1][0].name,
                     selected: true
                 }));
             }
