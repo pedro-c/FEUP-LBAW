@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<script src="../javascript/jquery.js"></script>
 <head>
 
     <meta charset="utf-8">
@@ -25,6 +25,15 @@
 
 <body>
 
+<div id="loader-wrapper">
+    <div id="loader">
+        <img src="../images/assets/loader.png">
+    </div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+</div>
 
 <div class="container">
     <div class="container2 row col-lg-8 col-lg-offset-2">
