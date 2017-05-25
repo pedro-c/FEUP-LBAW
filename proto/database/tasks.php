@@ -19,7 +19,7 @@
 
     function getTagFromTaskId($taskId){
         global $conn;
-        $stmt = $conn->prepare("SELECT DISTINCT * FROM tag, task_tag WHERE task_id = ? AND tag.id = task_tag.tag_id;");
+        $stmt = $conn->prepare("SELECT DISTINCT tag.name, tag.id FROM tag, task_tag WHERE task_tag.task_id = ? AND tag.id = task_tag.tag_id;");
         $stmt->execute([$taskId]);
         return $stmt->fetchAll();
     }

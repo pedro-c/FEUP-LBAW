@@ -195,17 +195,10 @@ function insertTag($tagName){
         return $stmt->fetchAll();
     }
 
-    function addTaskTag($tag, $taskId){
-
-        $tags = getAllTags();
-        $tagId = 0;
-        if(!in_array($tag, $tags)){
-                $tagId = insertTag($tag);
-                addTagToProject($tagId);
-        }
+    function addTaskTag($tagId, $taskId){
         global $conn;
         $stmt = $conn->prepare("INSERT INTO task_tag (task_id, tag_id) VALUES (?,?);");
-        $stmt->execute([$taskId, $tagId]);
+        return $stmt->execute([$taskId, $tagId]);
     }
 
     function addTaskComment($comment, $taskId){
