@@ -1,5 +1,5 @@
 <link href="../css/UI2.css" rel="stylesheet"/>
-<script src="../javascript/UI5.js"></script>
+<script src="../javascript/files.js"></script>
 
 <div class="page-wrapper container">
     <div class="row"><br>

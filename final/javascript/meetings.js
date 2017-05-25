@@ -7,7 +7,10 @@ $(document).ready(function () {
         orientation: "bottom left"
     });
 
-    $(".select2-multiple").select2();
+    $(".select2-multiple").select2({
+        tags: true,
+        maximumSelectionLength: 1
+    });
 
     $("#hide").click(function () {
         $("p").hide();
@@ -213,4 +216,9 @@ function changeMeetingTagName(tag_name){
 
         });
     }
+}
+
+
+function showUserInfo($user_id){
+    console.log("user_id " + $user_id);
 }

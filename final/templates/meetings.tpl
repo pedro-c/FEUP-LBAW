@@ -1,5 +1,5 @@
 <link href="../css/UI7.css" rel="stylesheet">
-<script src="../javascript/UI7.js"></script>
+<script src="../javascript/meetings.js"></script>
 <div id="page-meetings">
     <div class="row">
         <div class="col-xs-12">
@@ -25,7 +25,7 @@
                             <li><a id="tag-name-dropwdown" onclick="changeMeetingTagName('All')">All</a>
                             </li> {foreach $tags as $tag}
                                 <li><a id="tag-name-dropwdown"
-                                       onclick="changeMeetingTagName('{$tag.name}')">{$tag.name}</a></li>{/foreach}
+                                       onclick="changeMeetingTagName('{$tag}')">{$tag}</a></li>{/foreach}
                         </ul>
                     </div>
                 </div>
@@ -61,9 +61,17 @@
                                         </div>
                                     </div>
                                     <label class="user-responsible">{$creatorName}</label><br>
-                                    <label class="guests"> {$invited_users = getInvitedUsers($meeting.id)} {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)} {$coordinator = isCoordinator($user_aut, $project)} {$creator = isMeetingCreator($meeting.id, $user_aut)} {$photos = getInvitedUsersPhotos($meeting.id)} {foreach $photos as $photo}
+                                    <label class="guests">
+
+                                        {$invited_users = getInvitedUsers($meeting.id)}
+                                        {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)}
+                                        {$coordinator = isCoordinator($user_aut, $project)}
+                                        {$creator = isMeetingCreator($meeting.id, $user_aut)}
+                                        {$photos = getInvitedUsersPhotos($meeting.id)}
+
+                                        {foreach $photos as $photo}
                                             <img class="user-photo"
-                                                 src={$photo}>{/foreach}
+                                                 src={$photo} onclick="showUserInfo({$user_aut})">{/foreach}
                                         {if $coordinator == 'true' || $creator == 'true' }
                                             <span id="plus_user" class="glyphicon glyphicon-plus-sign"
                                                   aria-hidden="true"
@@ -188,7 +196,7 @@
                                 <span class="input-group-addon"><i class="fa fa-tag"></i></span>
                                 <select name="tagOption" class="select2-multiple form-control" multiple="multiple">
                                     {foreach $tags as $tag}
-                                        <option value={$tag.id}>{$tag.name}</option>
+                                        <option value={$tag}>{$tag}</option>
                                     {/foreach}
                                 </select>
                             </div><br>

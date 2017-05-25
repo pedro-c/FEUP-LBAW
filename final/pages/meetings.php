@@ -17,7 +17,8 @@ if(isCoordinator($user_id, $project))
 else $meetings = getUserFutureMeeting($project);
 
 $members = getProjectMembers($project, $user_id);
-$tags = getAllTagNames();
+$tags = getAllProjectTagName($project);
+
 
 $smarty->assign('tags',$tags);
 $smarty->assign('errors', $_SESSION['error_messages']);

@@ -3,8 +3,8 @@ include_once "common/header.php";
 ?>
 
 <link href="../css/UI5.css" rel="stylesheet">
-<script src="../javascript/UI5.js"></script>
-<script src="../javascript/UI7.js"></script>
+<script src="../javascript/files.js"></script>
+<script src="../javascript/meetings.js"></script>
 
 <div class="files_pages">
     <div class="row">
