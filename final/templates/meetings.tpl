@@ -78,11 +78,11 @@
                                                   onclick="inviteMoreUsers({$meeting.id})"  data-toggle="modal" data-target="#{$meeting.id|cat:'uninvited-users'}">
                                             </span>
                                             <div id='{$meeting.id|cat:'uninvited-users'}' class="modal fade" role="dialog">
-                                                <div class="modal-dialog">
+                                                <div class="modal-dialog modal-sm">
 
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title">Invite Users</h4>
+                                                            <h4 class="modal-title">Invite Users to Meeting</h4>
                                                         </div>
                                                         <form method="post" action="../actions/meetings/invite-user.php">
                                                         <div class="modal-body">

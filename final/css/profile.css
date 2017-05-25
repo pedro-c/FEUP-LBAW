@@ -7,6 +7,10 @@ body {
   overflow-x: hidden;
   font-family: Roboto, Helvetica, sans-serif; }
 
+.nav-user-picture,
+.user-collapse-picture {
+  border-radius: 50%; }
+
 #parent {
   height: 100%; }
 

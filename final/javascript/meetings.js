@@ -168,7 +168,7 @@ function show_Meeting_Info(meeting_id){
                     var path = '../images/users/default_image_profile1.jpg';
                 else path = '../images/users/' + data[i].photo_path;
 
-                $("#guest_div").append("<div class='user-name' style='display: inline-block; padding-bottom: 10px;'><img style='border-radius: 50%; ' class='user_photo' src=" + path + " ><label style='padding-left: 5px; padding-top: 5px;'>" + data[i].name + "</label></div><br>")
+                $("#guest_div").append("<div class='user-name' style='display: inline-block; padding-bottom: 10px;'><img style='border-radius: 50%; ' class='user_photo' src=" + path + " ><label style='padding-left: 5px; font-weight: normal; padding-top: 5px;'>" + data[i].name + "</label></div><br>")
             }
         }
     });

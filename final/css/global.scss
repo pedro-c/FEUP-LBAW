@@ -30,6 +30,13 @@ body {
   font-family: $font-stack;
 }
 
+
+.nav-user-picture,
+.user-collapse-picture{
+  border-radius: 50%;
+}
+
+
 #parent{
   height: 100%;
 }

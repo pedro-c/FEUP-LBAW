@@ -7,6 +7,10 @@ body {
   overflow-x: hidden;
   font-family: Roboto, Helvetica, sans-serif; }
 
+.nav-user-picture,
+.user-collapse-picture {
+  border-radius: 50%; }
+
 #parent {
   height: 100%; }
 
@@ -584,6 +588,8 @@ body {
     #page-meetings .modal-footer #cancel_button:hover {
       background-color: #e9d460;
       color: #fff; }
+  #page-meetings .modal-body .select2-selection__choice {
+    display: flex; }
 
 #guest_div {
   padding: 6px;

@@ -614,6 +614,13 @@
     }
 
   }
+
+  .modal-body{
+
+    .select2-selection__choice{
+      display: flex;
+    }
+  }
 }
 
 #guest_div{
