@@ -5,6 +5,10 @@ $(document).ready(function () {
         maximumSelectionLength: 1
     });
 
+    $("#mobile-back").click(function () {
+        $("#container_file_info").hide();
+    })
+
 
 
     $( "#drag-here" ).bind( "dragover", function() {
