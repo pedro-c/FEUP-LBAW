@@ -380,4 +380,7 @@ body {
     background-color: #e9d460;
     color: #fff; }
 
+.dropdown-menu {
+  top: 55% !important; }
+
 /*# sourceMappingURL=UI5.css.map */
