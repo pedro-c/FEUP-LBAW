@@ -145,7 +145,7 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div class="button_trash">
+                    <div class="button_trash hidden-xs">
                         <button class="trash" onclick="exit_trash()"><span id="trash" class="glyphicon glyphicon-trash"
                                                                            aria-hidden="true"></span>
                         </button>
