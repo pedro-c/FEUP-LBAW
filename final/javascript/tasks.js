@@ -194,7 +194,6 @@ function toggle(taskId) {
         url: '../api/tasks/task-details.php',
         data:  {'taskId': taskId},
         success: function(request) {
-            /*[{"id":312,"name":"New Task","description":null,"deadline":null,"creator_id":119,"assigned_id":null,"completer_id":null,"project_id":31}]*/
 
             console.log(request);
 
@@ -339,4 +338,24 @@ function showUncompletedTasks() {
 function showCompletedTasks() {
     $('.uncompleted').hide();
     $('.completed').show();
+}
+
+function changeTagName(tag_name){
+
+    $("#tag-name").html(tag_name).append('<span class="caret"></span>');
+
+    if(tag_name == 'All'){
+        $('#hashtag').each(function(i, obj) {
+            $(this).parents('.task').show();
+        });
+    }
+    else{
+        $('#hashtag').each(function(i, obj) {
+            var name = tag_name;
+            if($(this).text() != name)
+                $(this).parents('.task').hide();
+            else
+                $(this).parents('.task').show();
+        });
+    }
 }

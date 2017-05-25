@@ -55,6 +55,7 @@
   margin: 20px !important;
 }
 .tasks-header{
+  display: inline-block;
   margin: 15px 20px 15px 20px;
   float: left;
   width: 90%;
@@ -84,6 +85,17 @@
         color: $light_blue;
         cursor: pointer;
       }
+    }
+  }
+  #tags-dropdown-menu{
+    position: relative;
+    display: block;
+    #tag-name{
+      margin-left: 20px;
+    }
+    .dropdown-menu{
+      top: 30px;
+      left: 90px;
     }
   }
 }
@@ -124,6 +136,18 @@
     padding: 3px;
     border: solid 1px $yellow_darker;
     border-radius: 10px;
+  }
+  .task-name{
+    float: left;
+    display: inline-block;
+    width: 100%;
+    left: 0;
+    textarea{
+      vertical-align: middle !important;
+      float: left;
+      width: auto !important;
+      left: 0;
+    }
   }
 }
 .task-content{
