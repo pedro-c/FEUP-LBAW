@@ -87,15 +87,48 @@ function checkForInvitation($email,$project){
 
     $id_project = $result['id_project'];
 
-    return ($project==$id_project);
+    return $project + $id_project;
 }
 
-function joinProject($id, $project){
+function joinProject($id, $project, $is_coordinator=FALSE){
 
     global $conn;
-    $is_coordinator = 'false';
+
+    if($is_coordinator == FALSE) {
+      $is_coordinator = 'false';
+    } elseif($is_coordinator == TRUE) {
+      $is_coordinator = 'true';
+    } else {
+      //TODO show error??
+      $is_coordinator = 'false';
+    }
     $stmt = $conn->prepare('INSERT INTO user_project VALUES(?,?,?)');
     return $stmt->execute([$id,$project,$is_coordinator]);
+}
+
+function joinProjectInvited($id_user, $project) {
+    global $conn;
+
+    $user_info = getUserInfo($id_user);
+
+    $sql_op1 =  "DELETE FROM invited_users WHERE email = ?;";
+    $sql_op2 = "INSERT INTO user_project(id_user,id_project, is_coordinator)
+    VALUES (?, ?, ?);";
+
+    $is_coordinator = 'false';
+
+    $conn->beginTransaction();
+    $stmt = $conn->prepare($sql_op1);
+    $sucess1 = $stmt->execute(array($user_info['email']));
+    $stmt = $conn->prepare($sql_op2);
+    $sucess2 = $stmt->execute(array($id_user,$project,$is_coordinator));
+    if($sucess1 && $sucess2) {
+        return $conn->commit();
+    } else {
+        $conn->rollBack();
+        return $sucess1 && $sucess2;
+    }
+
 }
 
 function getUserInfo($id){
@@ -162,5 +195,3 @@ function leaveProject($projectID){
     $stmt = $conn->prepare('DELETE FROM user_project WHERE id_project = ?');
     $stmt->execute([$projectID]);
 }
-
-

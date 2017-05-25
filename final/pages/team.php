@@ -91,7 +91,10 @@ $smarty->display("team/modals/remove_member_modal.tpl");
 
 
 <!-- Confirmation of User Promotion-->
-<?php $smarty->display("team/modals/promote_member_modal.tpl"); ?>
+<?php
+$smarty->assign('project_id', $project_id);
+$smarty->display("team/modals/promote_member_modal.tpl");
+?>
 
 <!-- Confirmation of User Depromotion-->
 <?php $smarty->display("team/modals/demote_member_modal.tpl"); ?>
