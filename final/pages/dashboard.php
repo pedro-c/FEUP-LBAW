@@ -2,6 +2,7 @@
 include_once "common/header.php";
 include_once "../database/projects.php";
 include_once "../database/files.php";
+include_once "../database/common.php";
 include_once "../database/users.php";
 include_once "../database/meetings.php";
 
