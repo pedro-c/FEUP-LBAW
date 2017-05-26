@@ -17,22 +17,34 @@ $(document).ready(function () {
     let posts = $(".forum-post");
     let pagination = $(".pagination");
 
+    /*
+     * Click Handlers Start
+     */
+
+    /*
+     * Click Handler for pagination
+     */
     pagination.on('click', 'li', function () {
         performPagination($(this), currentPage);
         loadPagination(currentPage);
     });
 
+    /*
+     * Click Handler for the like button on replies
+     */
     $("body").on('click', '.reply-like-button', function () {
         let replyElement = $(this).parents(".forum-reply");
         if ($(this).hasClass('liked')) {
-            //unlike
             unlikeReply(replyElement);
         }
         else {
-            //like
             likeReply(replyElement);
         }
     });
+
+    /*
+     * Click Handler for the submit reply button
+     */
     $('body').on('click', '#submit-reply', function () {
         let text = $("#reply-text");
         let content = text.val();
@@ -53,22 +65,82 @@ $(document).ready(function () {
             let username = reply.username;
 
             let replyElement = makeReplyElement(id, userPhoto, username, creationDate, 0, replyContent, false, true);
-            $("#replies:last-child").append(replyElement);
+            $("#replies").append(replyElement);
+
+            $('html, body').animate({
+                scrollTop: replyElement.offset().bottom
+            }, 500);
         });
 
         text.val("");
     });
+
+    /*
+     * Click Handler for the post like button
+     */
     $("body").on('click', '.post-like-button', function () {
         let postElement = $(this).parents("#post-content");
         if ($(this).hasClass('liked')) {
-            //unlike
             unlikePost(postElement);
         }
         else {
-            //like
             likePost(postElement);
         }
     });
+
+    /*
+     * Click Handler for the reply edit button
+     */
+    $("body").on('click', '.edit-reply-option', function (e) {
+        e.preventDefault();
+        let replyElement = $(this).parents(".forum-reply");
+        let replyContentElement = replyElement.find('.reply-content');
+        let replyContent = replyElement.find('.reply-content').text();
+        let textbox = $(
+            '<textarea id="reply-edit-text" class="form-control" rows="3" style="resize: none"' +
+            ' required="required">' + replyContent + '</textarea>' +
+            '<div class="reply-edit-buttons">' +
+            '<button id="submit-reply-edit" class="btn btn-default btn-form" type="submit">Submit</button>' +
+            '<button id="cancel-reply-edit" class="btn btn-default btn-form">Cancel</button>' +
+            '</div>'
+        );
+        replyContentElement.replaceWith(textbox)
+    });
+
+    /*
+     * Click handler for the reply edit submit button
+     */
+    $('body').on('click','#submit-reply-edit',function(e){
+        e.preventDefault();
+        let replyElement = $(this).parents(".forum-reply");
+        console.log(replyElement);
+        let replyId = parseInt(replyElement.find('span.reply-id').text());
+        console.log(replyId);
+        let replyButtons = replyElement.find(".reply-edit-buttons");
+
+        let text = $("#reply-edit-text");
+        let content = text.val();
+
+        if (content === null || content === "")
+            return;
+
+        $.post("../api/forum/submit_post_reply_edit.php", {
+            reply_id: replyId,
+            content: content,
+        }, function (data) {
+            text.replaceWith(
+               $('<p class="list-group-item-text reply-content">'+ data +'</p>')
+            );
+        });
+
+        text.val("");
+        replyButtons.remove();
+    });
+
+
+    /*
+     * Click Handlers End
+     */
 
 
     let performPagination = function (clickedObject, curPage) {
@@ -116,8 +188,10 @@ $(document).ready(function () {
         '<div class="panel-body">' +
         '<form action="../actions/forum/submit_new_post.php" method="post">' +
         '<div class="form-group">' +
-        '<input type="text" class="form-control" name="post_title" id="new-post-title" required="required" placeholder="Post Title">' +
-        '<textarea class="form-control" name="post_content" rows="17" id="new-post-text" style="resize: none" required="required" placeholder="Write something"></textarea>' +
+        '<input type="text" class="form-control" name="post_title" id="new-post-title" required="required" ' +
+        'placeholder="Post Title">' +
+        '<textarea class="form-control" name="post_content" rows="17" id="new-post-text" style="resize: none"' +
+        ' required="required" placeholder="Write something"></textarea>' +
         '</div>' +
         '<button id="submit-new-post" class="btn btn-default btn-form" type="submit">Submit</button>' +
         '<button id="cancel-new-post" class="btn btn-default btn-form">Cancel</button>' +
@@ -176,10 +250,11 @@ $(document).ready(function () {
 
         forum.addClass("col-lg-3 col-md-3 col-sm-3 hidden-xs");
 
-        let displayedContent;
 
         if (newPost === true) {
             newPostPanel.append(mobileBack);
+            forum.after(newPostPanel);
+            displayedPosts.push(newPostPanel)
         }
         else
             loadPost(forum, clickedObject, mobileBack, displayedPosts);
@@ -193,7 +268,7 @@ $(document).ready(function () {
 
         $("#new-post-title").focus();
 
-        $("#reply-post-button").click(function () {
+        $('body').on('click', "#reply-post-button", function () {
             $('html, body').animate({
                 scrollTop: $("#post-reply").offset().top
             }, 500);
@@ -249,74 +324,15 @@ $(document).ready(function () {
             let numLikes = postInfo.num_likes;
             let likedByUser = postInfo.liked_by_user;
 
-            let postElement = makePostElement(id, title, creationDate, content, dateModified, username, photo, numLikes, likedByUser);
+            let postElement = makePostElement(id, title, creationDate, content, dateModified, username, photo, numLikes,
+                likedByUser);
             postElement.append(mobileBack);
 
             displayedPostsStack.push(postElement);
             forum.after(postElement);
 
         });
-        /*
-         let header = getPostHeader(clickedPost, postId);
-         let content = getPostContent(postId);
-         let numLikes = getPostLikes(postId);
-         let likedByUser = userLikedPost(postId);
-         let replies = getPostReplies(postId);
-         let username = $("#nav-username").text();
-         let photo = $(".nav-user-picture").attr("src");
-
-
-         console.log("num likes = " + numLikes);
-         postSection.find(".panel-body").append(content);
-         postSection.find(".panel-body").append(
-         );
-         postSection.find("#reply-post-button").after(replies);
-
-         return postSection;*/
     };
-
-    /**
-     * Returns the header for the post element
-     * @param clickedPost
-     * @returns {string}
-     */
-    let getPostHeader = function (clickedPost, id) {
-        let title = clickedPost.find(".post-title").text();
-        let userPhoto = clickedPost.find(".submitter-photo").attr("src");
-        let username = clickedPost.find(".submitter-uname").text();
-        let submissionDate = clickedPost.find(".post-submission-date").text();
-
-
-        return;
-    };
-
-    /**
-     * Returns the content of the selected post
-     * @returns {*|jQuery|HTMLElement}
-     * @param postId
-     */
-    let getPostContent = function (postId) {
-
-        let content = $(
-            '<div id="selected-post-content">' +
-            '</div>'
-        );
-
-        $.post("../api/forum/get_post_content.php", {
-            postID: postId
-        }, function (data) {
-            content.text(data);
-        });
-
-        return content;
-    };
-
-    /**
-     * Creates a post request to submit a reply to a post
-     * and then displays the post in the page
-     */
-    let submitReply = function () {
-    }
 });
 
 /**
@@ -353,7 +369,7 @@ function loadPagePosts(postsSection, currentPage) {
 
             postsSection.append(postElement);
         }
-    })
+    });
 }
 
 function loadPagination(currentPage) {
@@ -396,10 +412,10 @@ function loadPagination(currentPage) {
                     continue;
 
                 if (i == 1) {
-                    element.attr('id', 'pagination-first'); //= '<li id="pagination-first"><a>' + i + '</a></li>';
+                    element.attr('id', 'pagination-first');
                 }
                 if (i == numPages) {
-                    element.attr('id', 'pagination-last'); // element = '<li id="pagination-last"><a>' + i + '</a></li>';
+                    element.attr('id', 'pagination-last');
                 }
 
                 paginationPages.append(element);
@@ -470,7 +486,7 @@ function unlikeReply(replyElement) {
     });
 }
 
-function makeReplyElement(replyId, userPhoto, username, creationDate, numLikes, replyContent, likedByUser, userCanEdit) {
+function makeReplyElement(replyId, userPhoto, username, creationDate, numLikes, replyContent, likedByUser, userCanEdit, userCanDelete) {
     let replyElement = $(
         '<li class="list-group-item forum-reply">' +
         '<h5 class="list-group-item-heading">' +
@@ -478,7 +494,8 @@ function makeReplyElement(replyId, userPhoto, username, creationDate, numLikes, 
         '<img class="submitter-photo" src=' + userPhoto + '>' +
         '<strong>' + username + ' on ' + creationDate + '</strong>' +
         (userCanEdit ? '<span class="reply-options"></span>' : '') +
-        '<span class="reply-likes">' + (numLikes > 0 ? '<strong><i class="fa fa-thumbs-up"></i> ' + numLikes + '</strong>' : '') + '</span>' +
+        '<span class="reply-likes">' + (numLikes > 0 ? '<strong><i class="fa fa-thumbs-up"></i> ' + numLikes + '</strong>' : '') +
+        '</span>' +
         '</h5>' +
         '<p class="list-group-item-text reply-content">' + replyContent + '</p>' +
         '<p><small class="reply-like-button ' + (likedByUser ? 'liked' : '') + '">' +
@@ -488,16 +505,17 @@ function makeReplyElement(replyId, userPhoto, username, creationDate, numLikes, 
         '</li>'
     );
 
-    if (userCanEdit) {
+    if (userCanDelete) {
         let dropdown = $(
             '<div class="btn-group dropdown">' +
-            '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
+            '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"' +
+            ' aria-expanded="false">' +
             '<span class="sr-only">Toggle Dropdown</span>' +
             '<i class="fa fa-caret-down"></i>' +
             '</button>' +
             '<div class="dropdown-menu">' +
-            '<a class="dropdown-item" href="#">Edit Reply</a>' +
-            '<a class="dropdown-item delete-option" href="#">Delete Reply</a>' +
+            (userCanEdit ? '<a class="dropdown-item edit-reply-option" href="#">Edit Reply</a>' : '') +
+            '<a class="dropdown-item delete-reply-option" href="#">Delete Reply</a>' +
             '</div>' +
             '</div>'
         );
@@ -535,7 +553,8 @@ function makePostElement(id, title, creationDate, content, dateModified, usernam
         '</div>' +
         '</div>' +
         '<div id="reply-button">' +
-        '<a id="reply-post-button" class="btn btn-default btn-reply"><i class="glyphicon glyphicon-plus"></i> Reply to this post</a>' +
+        '<a id="reply-post-button" class="btn btn-default btn-reply"><i class="glyphicon glyphicon-plus"></i>' +
+        ' Reply to this post</a>' +
         '</div>' +
         '</div>' +
         '</div>'
@@ -543,10 +562,12 @@ function makePostElement(id, title, creationDate, content, dateModified, usernam
 
     post.append(replies);
 
-    post.append(
+    replies.after(
         '<li id="post-reply" class="list-group-item">' +
-        '<h5 class="list-group-item-heading"><img class="submitter-photo" src="' + photo + '"><strong>' + username + '</strong></h5>' +
-        '<textarea id="reply-text" class="form-control" rows="3" style="resize: none" required="required" placeholder="Reply to this post"></textarea>' +
+        '<h5 class="list-group-item-heading"><img class="submitter-photo" src="' + photo + '">' +
+        '<strong>' + username + '</strong></h5>' +
+        '<textarea id="reply-text" class="form-control" rows="3" style="resize: none" required="required"' +
+        ' placeholder="Reply to this post"></textarea>' +
         '<button id="submit-reply" class="btn btn-default btn-form btn-comment">Submit</button>' +
         '</li>'
     );
@@ -581,8 +602,10 @@ let getPostReplies = function (postId) {
             let username = reply.username;
             let likedByUser = reply.liked;
             let userCanEdit = reply.user_can_edit;
+            let userCanDelete = reply.user_can_edit || reply.user_is_coordinator;
 
-            let replyElement = makeReplyElement(id, userPhoto, username, creationDate, numLikes, replyContent, likedByUser, userCanEdit);
+            let replyElement = makeReplyElement(id, userPhoto, username, creationDate, numLikes, replyContent,
+                likedByUser, userCanEdit, userCanDelete);
             content.append(replyElement);
         }
     });

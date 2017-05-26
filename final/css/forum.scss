@@ -8,6 +8,10 @@
 
   margin-left: 10px;
 
+  .dropdown-menu{
+    padding: 0
+  }
+
   .btn.dropdown-toggle {
     padding: 0px;
     background-color: $white;
@@ -17,11 +21,12 @@
 
   .dropdown-item {
     padding-left: 10px;
-    display: block;
     padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
     color: $color_ebony_clay;
 
-    &.delete-option {
+    &.delete-reply-option {
       color: $color-tall_poppy_approx;
     }
   }
@@ -89,7 +94,7 @@ button#new-post-button.active {
 }
 
 @media (max-width: 767px) {
-  #replies {
+  #post-reply {
     margin-bottom: 100px;
   }
 
@@ -115,17 +120,19 @@ button#new-post-button.active {
   }
 }
 
-#submit-reply:hover, #submit-new-post:hover {
+#submit-reply:hover, #submit-new-post:hover, #submit-reply-edit:hover, #submit-post-edit:hover {
   color: $white;
   background-color: #d9c559;
   border-color: #d9c559;
 }
 
-.btn-reply, #submit-reply, #submit-new-post {
+.btn-reply, #submit-reply, #submit-post-edit, #submit-reply-edit, #submit-new-post {
   background-color: $color_yellow;
   border-color: $color_yellow;
   color: $white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5px;
+  margin-top: 5px;
 
   i {
     color: $white;
