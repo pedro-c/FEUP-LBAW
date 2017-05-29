@@ -4,7 +4,7 @@
 
 function getFutureMeetings($project){
     global $conn;
-    $stmt = $conn->prepare('SELECT id,name,description,date FROM meeting WHERE meeting.date > CURRENT_DATE AND meeting.id_project = ?');
+    $stmt = $conn->prepare('SELECT id,name,description,date FROM meeting WHERE meeting.date > CURRENT_DATE AND meeting.id_project = ? ORDER BY date ASC ');
 
     $stmt->execute([$project]);
     return $stmt->fetchAll();
@@ -13,7 +13,7 @@ function getFutureMeetings($project){
 function getUserFutureMeeting($project){
     global $conn;
     $user = $_SESSION['user_id'];
-    $stmt = $conn->prepare('SELECT id,name,description,date FROM meeting,user_meeting WHERE meeting.date > CURRENT_DATE AND meeting.id_project = ? AND id = user_meeting.meeting_id AND user_meeting.user_id=?');
+    $stmt = $conn->prepare('SELECT id,name,description,date FROM meeting,user_meeting WHERE meeting.date > CURRENT_DATE AND meeting.id_project = ? AND id = user_meeting.meeting_id AND user_meeting.user_id=? ORDER by date ASC');
 
     $stmt->execute([$project,$user]);
     return $stmt->fetchAll();
