@@ -7,18 +7,12 @@ include_once('../../database/files.php');
 include_once('../../config/init.php');
 
 
-$title = $_POST['title'];
-echo $title;
-$description = $_POST['description'];
-echo $description;
+$title = htmlspecialchars($_POST['title']);
+$description = htmlspecialchars($_POST['description']);
 $date = $_POST['date'];
-echo $date;
 $time = $_POST['time'];
-echo $time;
 $duration = $_POST['duration'];
-echo $duration;
 $meeting_id = $_POST['id'];
-echo 'meeting'.$meeting_id;
 
 editMeetingInfo($title, $description, $date, $time, $duration, $meeting_id);
 $_SESSION['success_messages'][] = '<br>' . 'Edited Meeting successful';

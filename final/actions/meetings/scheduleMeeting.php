@@ -7,8 +7,8 @@ include_once('../../database/files.php');
 include_once('../../config/init.php');
 
 if (isset($_POST['title']) && isset($_POST['date']) && isset($_POST['time']) && isset($_POST['invited_users'])) {
-    $title = $_POST['title'];
-    $description = $_POST['description'];
+    $title = htmlspecialchars($_POST['title']);
+    $description = htmlspecialchars($_POST['description']);
     $date = $_POST['date'];
     $time = $_POST['time'];
     $duration = $_POST['duration'];
@@ -19,7 +19,7 @@ if (isset($_POST['title']) && isset($_POST['date']) && isset($_POST['time']) && 
     inviteUserToMeeting($meeting_id, $invited_users, $_SESSION['user_id']);
 
     if (isset($_POST['tagOption'])) {
-        $tag = existsTag($_POST['tagOption']);
+        $tag = existsTag(htmlspecialchars($_POST['tagOption']));
 
         if ($tag != -1)
             $tagId = $tag;
