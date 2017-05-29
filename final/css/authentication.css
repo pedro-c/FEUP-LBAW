@@ -247,6 +247,13 @@ html, body {
     overflow-x: auto;
     overflow-y: hidden; }
 
+.container2 {
+  padding: 0; }
+  .container2 .div {
+    padding: 0; }
+  .container2 .col-xs-12 {
+    padding: 0; }
+
 .panelnopadding {
   padding: 0 !important; }
 
