@@ -10,7 +10,7 @@
         <p>Are you sure you want to remove this member from the project?</p>
       </div>
       <div class="modal-footer">
-        <form action="../../actions/team/delete-member.php" method="post">
+        <form action="../actions/team/delete-member.php" method="post">
           <input type="hidden" name="project_id" value={$project_id} />
           <input type="hidden" name="user_id" value="0" />
           <button type="submit" class="btn btn-default" id="accept_button">Yes</button>

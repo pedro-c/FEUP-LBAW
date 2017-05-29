@@ -10,8 +10,12 @@
         <p>Are you sure you want to remove the privileges of this team coordinator? He will become a normal team member.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" id="accept_button">Yes</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel_button">No</button>
+        <form action="../actions/team/demote-member.php" method="post">
+          <input type="hidden" name="project_id" value={$project_id} />
+          <input type="hidden" name="user_id" value="0" />
+          <button type="submit" class="btn btn-default" id="accept_button">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel_button">No</button>
+        </form>
       </div>
     </div>
 

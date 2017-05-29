@@ -7,7 +7,7 @@ $(document).ready(function(){
     $(".update-info").focus(function () {
         $('#update-button').show();
     });
-    
+
     var options = {};
     options.ui = {
         container: "#pwd-container",
@@ -39,8 +39,14 @@ function joinProject() {
     $.ajax({
         type:'post',
         url: '../actions/users/join-project.php',
-        data:  {'projectId': $('#join-project-id').val()},
-        success: function() {
+        data:  {'userCode': $('#join-project-id').val()}, //TODO change id in the HTML
+        success: function(result) {
+          if(result == false) {
+            alert("Invalid Code");
+          } else {
+            console.log(result);
+            alert("Result " + result);
+          }
             window.location.reload();
         }
 

@@ -12,7 +12,6 @@
 
   $email = $_POST['email'];
   $password = $_POST['password'];
-  
   if (isLoginCorrect($email, $password)) {
     $_SESSION['email'] = $email;
     $_SESSION['user_id'] = getUserId($email);
