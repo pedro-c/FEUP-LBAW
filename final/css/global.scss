@@ -49,6 +49,7 @@ body {
   background-color: $color_ebony_clay;
   color: white;
   border: none !important;
+  height: 50px !important;
 
  .navbar-header>button.navbar-toggle{
     color: $white;
@@ -67,6 +68,7 @@ body {
 
   #navbar{
     border: none;
+    height: 50px !important;
   }
 
   .navbar-brand img{
@@ -118,6 +120,23 @@ body {
 
     i.nav-dropdown-icon{
       float: right;
+    }
+  }
+
+  #user-options{
+    height: 50px;
+    a{
+      height: 100%;
+      display: block;
+      width: 100%;
+    }
+  }
+  #user-projects{
+    height: 50px;
+    a{
+      height: 100%;
+      display: block;
+      width: 100%;
     }
   }
 }

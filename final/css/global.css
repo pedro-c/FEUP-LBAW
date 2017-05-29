@@ -21,7 +21,8 @@ body {
   right: 0;
   background-color: #22313f;
   color: white;
-  border: none !important; }
+  border: none !important;
+  height: 50px !important; }
   #header .navbar-header > button.navbar-toggle {
     color: #fff; }
     #header .navbar-header > button.navbar-toggle span {
@@ -31,7 +32,8 @@ body {
       background-color: #e9d460;
       border-color: #e9d460; }
   #header #navbar {
-    border: none; }
+    border: none;
+    height: 50px !important; }
   #header .navbar-brand img {
     margin-top: -10px;
     margin-left: -10px;
@@ -67,6 +69,18 @@ body {
       color: #fff; }
     #header .dropdown-menu i.nav-dropdown-icon {
       float: right; }
+  #header #user-options {
+    height: 50px; }
+    #header #user-options a {
+      height: 100%;
+      display: block;
+      width: 100%; }
+  #header #user-projects {
+    height: 50px; }
+    #header #user-projects a {
+      height: 100%;
+      display: block;
+      width: 100%; }
 
 .mobile-user-options {
   float: right;
@@ -180,12 +194,10 @@ body {
   .frame-round .crop {
     border-radius: 50%; }
 
-s
 .crop {
   height: 100%;
   overflow: hidden;
   position: relative; }
-  s
   .crop img {
     display: block;
     min-width: 100%;
@@ -202,7 +214,6 @@ s
     -o-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     transition: all 0.2s ease; }
-    s
     .crop img:hover {
       width: 100%;
       height: auto;
