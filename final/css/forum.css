@@ -168,6 +168,27 @@ body {
 #new-post-panel > .panel-body {
   text-align: center; }
 
+.reply-options {
+  margin-left: 10px; }
+  .reply-options .dropdown-menu {
+    padding: 0; }
+  .reply-options .btn.dropdown-toggle {
+    padding: 0px;
+    background-color: #fff;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  .reply-options .dropdown-item {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
+    color: #22313f; }
+    .reply-options .dropdown-item.delete-reply-option {
+      color: #b52b27; }
+  .reply-options .dropdown-item:hover {
+    background-color: #ecf0f1;
+    text-decoration: none; }
+
 .submitter-photo {
   width: 25px;
   margin-right: 3px; }
@@ -207,7 +228,7 @@ button#new-post-button.active #plus-icon h4 {
   color: #e9d460; }
 
 @media (max-width: 767px) {
-  #replies {
+  #post-reply {
     margin-bottom: 100px; }
 
   #mobile-back {
@@ -225,17 +246,19 @@ button#new-post-button.active #plus-icon h4 {
     background-color: #d9c559;
     border-color: #d9c559; }
 
-#submit-reply:hover, #submit-new-post:hover {
+#submit-reply:hover, #submit-new-post:hover, #submit-reply-edit:hover, #submit-post-edit:hover {
   color: #fff;
   background-color: #d9c559;
   border-color: #d9c559; }
 
-.btn-reply, #submit-reply, #submit-new-post {
+.btn-reply, #submit-reply, #submit-post-edit, #submit-reply-edit, #submit-new-post {
   background-color: #e9d460;
   border-color: #e9d460;
   color: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
-  .btn-reply i, #submit-reply i, #submit-new-post i {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5px;
+  margin-top: 5px; }
+  .btn-reply i, #submit-reply i, #submit-post-edit i, #submit-reply-edit i, #submit-new-post i {
     color: #fff; }
 
 .btn-comment {
