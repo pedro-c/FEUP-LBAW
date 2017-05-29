@@ -2,7 +2,7 @@
 include_once "common/header.php";
 ?>
 
-<link href="../css/UI5.css" rel="stylesheet">
+<link href="../css/files.css" rel="stylesheet">
 <script src="../javascript/files.js"></script>
 <script src="../javascript/meetings.js"></script>
 
