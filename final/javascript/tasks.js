@@ -266,7 +266,7 @@ function toggle(taskId) {
 
             $("#task-comments").html("");
             for (var i = 0; i < response[4].length; i++) {
-                $("#task-comments").append("<div class='comment-info'><img src='../images/users/"+  response[4][i].photo_path +"' class='img-circle'><h4>" + response[4][i].name + "</h4></div><p>" + response[4][i].creation_date.substring(0,16) + "</p><p>" + response[4][i].content +"</p>");
+                $("#task-comments").append("<div class='comment-info'><img src='../images/users/"+  response[4][i].photo_path +"' class='img-circle'><h4>" + response[4][i].name + "</h4></div><p id='info_date'>" + response[4][i].creation_date.substring(0,16) + "</p><p>" + response[4][i].content +"</p>");
             }
         }
 

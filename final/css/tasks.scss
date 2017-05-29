@@ -314,8 +314,12 @@
     text-align: left;
     overflow: auto !important;
     height: 45% !important;
+    padding-left: 0!important;
+    margin-left: 0!important;
+
     .comment-info{
       width: 100%;
+      padding-top: 5px;
       display: inline-block !important;
       text-align: left;
       i{
@@ -446,5 +450,10 @@ textarea{
 #task-deadline-time,
 #task-deadline-date{
   width: 160px;
+}
+
+#info_date{
+  font-size: small;
+  font-weight: lighter;
 }
 
