@@ -71,8 +71,16 @@ body {
       float: right; }
   #header #user-options {
     height: 50px; }
+    #header #user-options a {
+      height: 100%;
+      display: block;
+      width: 100%; }
   #header #user-projects {
     height: 50px; }
+    #header #user-projects a {
+      height: 100%;
+      display: block;
+      width: 100%; }
 
 .mobile-user-options {
   float: right;
@@ -149,7 +157,7 @@ body {
     width: 100px;
     border: none;
     border-radius: 0;
-    overflow-y: auto;
+    overflow-y: hidden;
     bottom: 0;
     overflow-x: hidden;
     padding-bottom: 40px; }

@@ -69,6 +69,13 @@ div.forum-posts-nav {
   margin-bottom: 5px;
 }
 
+h4.list-group-item-heading.post-title{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 button.btn-form {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   background-color: $white;

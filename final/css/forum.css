@@ -157,7 +157,7 @@ body {
     width: 100px;
     border: none;
     border-radius: 0;
-    overflow-y: auto;
+    overflow-y: hidden;
     bottom: 0;
     overflow-x: hidden;
     padding-bottom: 40px; }
@@ -265,6 +265,12 @@ div.forum-posts-nav {
 
 .selected-post-title {
   margin-bottom: 5px; }
+
+h4.list-group-item-heading.post-title {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 button.btn-form {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);

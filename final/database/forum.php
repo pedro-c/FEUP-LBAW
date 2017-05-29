@@ -9,12 +9,6 @@
 
 include_once 'common.php';
 
-function select()
-{
-    echo 'Called select function';
-    exit;
-}
-
 function submitPost($id_project, $id_user, $title, $content)
 {
     global $conn;
@@ -247,5 +241,17 @@ function deletePost($postId)
     global $conn;
     $stmt = $conn->prepare("DELETE FROM forum_post WHERE id = ?");
     $stmt->execute(array($postId));
+    return $stmt->fetchAll();
+}
+
+function getLastActiveForumPosts($projectId, $numPosts)
+{
+    global $conn;
+    $stmt = $conn->prepare("SELECT username, user_table.id as creator_id, forum_post.title as title
+        FROM forum_post, user_table
+        WHERE forum_post.id_project = ? AND user_table.id = forum_post.id_creator
+        ORDER BY date_modified DESC
+        LIMIT ?");
+    $stmt->execute(array($projectId,$numPosts));
     return $stmt->fetchAll();
 }

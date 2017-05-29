@@ -157,7 +157,7 @@ body {
     width: 100px;
     border: none;
     border-radius: 0;
-    overflow-y: auto;
+    overflow-y: hidden;
     bottom: 0;
     overflow-x: hidden;
     padding-bottom: 40px; }
@@ -252,6 +252,11 @@ i.dash-title-icon {
 
 .dash-item-text {
   margin-left: 5px; }
+
+.item-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 .dash-card > .panel > .panel-body {
   text-align: center; }
