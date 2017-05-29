@@ -26,12 +26,12 @@ if(!empty($_FILES['file'])){
 
 
         if (isset($_POST['tagOption'])) {
-            $tag = existsTag($_POST['tagOption']);
+            $tag = existsTag(htmlspecialchars($_POST['tagOption']));
 
             if ($tag != -1)
                 $tagId = $tag;
             else {
-                $tagId = createTag($_POST['tagOption']);
+                $tagId = createTag(htmlspecialchars($_POST['tagOption']));
                 addTagToProject($_SESSION['project_id'], $tagId);
             }
 

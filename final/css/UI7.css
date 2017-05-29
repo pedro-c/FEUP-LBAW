@@ -21,7 +21,8 @@ body {
   right: 0;
   background-color: #22313f;
   color: white;
-  border: none !important; }
+  border: none !important;
+  height: 50px !important; }
   #header .navbar-header > button.navbar-toggle {
     color: #fff; }
     #header .navbar-header > button.navbar-toggle span {
@@ -31,7 +32,8 @@ body {
       background-color: #e9d460;
       border-color: #e9d460; }
   #header #navbar {
-    border: none; }
+    border: none;
+    height: 50px !important; }
   #header .navbar-brand img {
     margin-top: -10px;
     margin-left: -10px;
@@ -67,6 +69,18 @@ body {
       color: #fff; }
     #header .dropdown-menu i.nav-dropdown-icon {
       float: right; }
+  #header #user-options {
+    height: 50px; }
+    #header #user-options a {
+      height: 100%;
+      display: block;
+      width: 100%; }
+  #header #user-projects {
+    height: 50px; }
+    #header #user-projects a {
+      height: 100%;
+      display: block;
+      width: 100%; }
 
 .mobile-user-options {
   float: right;
@@ -310,6 +324,14 @@ body {
             margin-bottom: 15px; }
             #page-meetings .container_meetings .meeting .panel-body .information_meeting .delete-icon .fa.fa-trash:hover {
               color: #e9d460; }
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting .edit-icon .fa.fa-pencil {
+            color: #22313f;
+            font-size: large;
+            cursor: pointer;
+            margin-bottom: 15px;
+            padding-right: 5px; }
+            #page-meetings .container_meetings .meeting .panel-body .information_meeting .edit-icon .fa.fa-pencil:hover {
+              color: #e9d460; }
           #page-meetings .container_meetings .meeting .panel-body .information_meeting .hour {
             font-size: large;
             font-weight: normal; }
@@ -329,22 +351,30 @@ body {
             float: left;
             border-radius: 50%; }
   #page-meetings #container_schedule_meeting .panel-heading,
-  #page-meetings #container_meeting_info .panel-heading {
+  #page-meetings #container_meeting_info .panel-heading,
+  #page-meetings #container_edit_meeting .panel-heading {
     background-color: #e9d460;
     color: white; }
     #page-meetings #container_schedule_meeting .panel-heading span,
-    #page-meetings #container_meeting_info .panel-heading span {
+    #page-meetings #container_meeting_info .panel-heading span,
+    #page-meetings #container_edit_meeting .panel-heading span {
       font-size: medium; }
   #page-meetings #container_schedule_meeting .button_back, #page-meetings #container_schedule_meeting .button_trash,
   #page-meetings #container_meeting_info .button_back,
-  #page-meetings #container_meeting_info .button_trash {
+  #page-meetings #container_meeting_info .button_trash,
+  #page-meetings #container_edit_meeting .button_back,
+  #page-meetings #container_edit_meeting .button_trash {
     text-align: right;
     margin-left: 15px; }
     #page-meetings #container_schedule_meeting .button_back .back, #page-meetings #container_schedule_meeting .button_back .trash, #page-meetings #container_schedule_meeting .button_trash .back, #page-meetings #container_schedule_meeting .button_trash .trash,
     #page-meetings #container_meeting_info .button_back .back,
     #page-meetings #container_meeting_info .button_back .trash,
     #page-meetings #container_meeting_info .button_trash .back,
-    #page-meetings #container_meeting_info .button_trash .trash {
+    #page-meetings #container_meeting_info .button_trash .trash,
+    #page-meetings #container_edit_meeting .button_back .back,
+    #page-meetings #container_edit_meeting .button_back .trash,
+    #page-meetings #container_edit_meeting .button_trash .back,
+    #page-meetings #container_edit_meeting .button_trash .trash {
       padding: 4px 15px 4px 15px;
       color: white;
       background-color: #22313f;
@@ -356,59 +386,76 @@ body {
       #page-meetings #container_meeting_info .button_back .back:hover,
       #page-meetings #container_meeting_info .button_back .trash:hover,
       #page-meetings #container_meeting_info .button_trash .back:hover,
-      #page-meetings #container_meeting_info .button_trash .trash:hover {
+      #page-meetings #container_meeting_info .button_trash .trash:hover,
+      #page-meetings #container_edit_meeting .button_back .back:hover,
+      #page-meetings #container_edit_meeting .button_back .trash:hover,
+      #page-meetings #container_edit_meeting .button_trash .back:hover,
+      #page-meetings #container_edit_meeting .button_trash .trash:hover {
         background-color: #192532;
         border: 2px solid;
         border-color: #192532;
         color: white; }
   #page-meetings #container_schedule_meeting .info-meeting .title-meeting-info,
-  #page-meetings #container_meeting_info .info-meeting .title-meeting-info {
+  #page-meetings #container_meeting_info .info-meeting .title-meeting-info,
+  #page-meetings #container_edit_meeting .info-meeting .title-meeting-info {
     text-align: left; }
   #page-meetings #container_schedule_meeting .info-meeting .date-meeting-info,
-  #page-meetings #container_meeting_info .info-meeting .date-meeting-info {
+  #page-meetings #container_meeting_info .info-meeting .date-meeting-info,
+  #page-meetings #container_edit_meeting .info-meeting .date-meeting-info {
     text-align: right; }
   #page-meetings #container_schedule_meeting .info-meeting .title,
-  #page-meetings #container_meeting_info .info-meeting .title {
+  #page-meetings #container_meeting_info .info-meeting .title,
+  #page-meetings #container_edit_meeting .info-meeting .title {
     padding-bottom: 22px;
     font-size: large;
     font-weight: bold; }
   #page-meetings #container_schedule_meeting .info-meeting .glyphicon.glyphicon-time,
-  #page-meetings #container_meeting_info .info-meeting .glyphicon.glyphicon-time {
+  #page-meetings #container_meeting_info .info-meeting .glyphicon.glyphicon-time,
+  #page-meetings #container_edit_meeting .info-meeting .glyphicon.glyphicon-time {
     font-size: small; }
   #page-meetings #container_schedule_meeting .info-meeting .hour,
-  #page-meetings #container_meeting_info .info-meeting .hour {
+  #page-meetings #container_meeting_info .info-meeting .hour,
+  #page-meetings #container_edit_meeting .info-meeting .hour {
     font-size: medium;
     font-weight: normal;
     padding-bottom: 10px; }
   #page-meetings #container_schedule_meeting .info-meeting .tag,
-  #page-meetings #container_meeting_info .info-meeting .tag {
+  #page-meetings #container_meeting_info .info-meeting .tag,
+  #page-meetings #container_edit_meeting .info-meeting .tag {
     padding-bottom: 5px;
     cursor: pointer;
     color: #22313f; }
     #page-meetings #container_schedule_meeting .info-meeting .tag:hover,
-    #page-meetings #container_meeting_info .info-meeting .tag:hover {
+    #page-meetings #container_meeting_info .info-meeting .tag:hover,
+    #page-meetings #container_edit_meeting .info-meeting .tag:hover {
       color: #e9d460; }
   #page-meetings #container_schedule_meeting .info-meeting .description,
-  #page-meetings #container_meeting_info .info-meeting .description {
+  #page-meetings #container_meeting_info .info-meeting .description,
+  #page-meetings #container_edit_meeting .info-meeting .description {
     font-size: x-small;
     padding-bottom: 20px; }
   #page-meetings #container_schedule_meeting .info-meeting .date,
-  #page-meetings #container_meeting_info .info-meeting .date {
+  #page-meetings #container_meeting_info .info-meeting .date,
+  #page-meetings #container_edit_meeting .info-meeting .date {
     font-size: medium;
     font-weight: bold;
     padding-bottom: 10px; }
   #page-meetings #container_schedule_meeting .info-meeting .minutes,
-  #page-meetings #container_meeting_info .info-meeting .minutes {
+  #page-meetings #container_meeting_info .info-meeting .minutes,
+  #page-meetings #container_edit_meeting .info-meeting .minutes {
     font-size: small;
     padding-bottom: 15px; }
   #page-meetings #container_schedule_meeting .info-meeting .files,
-  #page-meetings #container_meeting_info .info-meeting .files {
+  #page-meetings #container_meeting_info .info-meeting .files,
+  #page-meetings #container_edit_meeting .info-meeting .files {
     padding-bottom: 20px; }
     #page-meetings #container_schedule_meeting .info-meeting .files .file_show,
-    #page-meetings #container_meeting_info .info-meeting .files .file_show {
+    #page-meetings #container_meeting_info .info-meeting .files .file_show,
+    #page-meetings #container_edit_meeting .info-meeting .files .file_show {
       width: 25px; }
   #page-meetings #container_schedule_meeting .info-meeting #meeting_files a,
-  #page-meetings #container_meeting_info .info-meeting #meeting_files a {
+  #page-meetings #container_meeting_info .info-meeting #meeting_files a,
+  #page-meetings #container_edit_meeting .info-meeting #meeting_files a {
     padding-bottom: 10px;
     padding-left: 10px;
     text-decoration: none !important;
@@ -416,69 +463,84 @@ body {
     font-weight: bold;
     color: #22313f; }
   #page-meetings #container_schedule_meeting .info-meeting .guests .user_photo,
-  #page-meetings #container_meeting_info .info-meeting .guests .user_photo {
+  #page-meetings #container_meeting_info .info-meeting .guests .user_photo,
+  #page-meetings #container_edit_meeting .info-meeting .guests .user_photo {
     margin-right: 5px;
     width: 35px;
     float: left; }
   #page-meetings #container_schedule_meeting .info-meeting .guests #plus,
-  #page-meetings #container_meeting_info .info-meeting .guests #plus {
+  #page-meetings #container_meeting_info .info-meeting .guests #plus,
+  #page-meetings #container_edit_meeting .info-meeting .guests #plus {
     color: #e9d460;
     font-size: 55px;
     cursor: pointer; }
   #page-meetings #container_schedule_meeting .form_meeting .new_meeting,
-  #page-meetings #container_meeting_info .form_meeting .new_meeting {
+  #page-meetings #container_meeting_info .form_meeting .new_meeting,
+  #page-meetings #container_edit_meeting .form_meeting .new_meeting {
     margin-top: 10px;
     padding-left: 25px;
     padding-bottom: 190px;
     padding-top: 50px; }
     #page-meetings #container_schedule_meeting .form_meeting .new_meeting .title,
-    #page-meetings #container_meeting_info .form_meeting .new_meeting .title {
+    #page-meetings #container_meeting_info .form_meeting .new_meeting .title,
+    #page-meetings #container_edit_meeting .form_meeting .new_meeting .title {
       background-color: transparent;
       border: none;
       outline: 0;
       padding-bottom: 15px;
       font-size: medium; }
     #page-meetings #container_schedule_meeting .form_meeting .new_meeting .date,
-    #page-meetings #container_meeting_info .form_meeting .new_meeting .date {
+    #page-meetings #container_meeting_info .form_meeting .new_meeting .date,
+    #page-meetings #container_edit_meeting .form_meeting .new_meeting .date {
       background-color: transparent;
       border: none;
       outline: 0; }
     #page-meetings #container_schedule_meeting .form_meeting .new_meeting .time,
-    #page-meetings #container_meeting_info .form_meeting .new_meeting .time {
+    #page-meetings #container_meeting_info .form_meeting .new_meeting .time,
+    #page-meetings #container_edit_meeting .form_meeting .new_meeting .time {
       background-color: transparent;
       border: none;
       outline: 0; }
-    #page-meetings #container_schedule_meeting .form_meeting .new_meeting .atendees,
-    #page-meetings #container_meeting_info .form_meeting .new_meeting .atendees {
+    #page-meetings #container_schedule_meeting .form_meeting .new_meeting .atendees, #page-meetings #container_schedule_meeting .form_meeting .new_meeting .duration,
+    #page-meetings #container_meeting_info .form_meeting .new_meeting .atendees,
+    #page-meetings #container_meeting_info .form_meeting .new_meeting .duration,
+    #page-meetings #container_edit_meeting .form_meeting .new_meeting .atendees,
+    #page-meetings #container_edit_meeting .form_meeting .new_meeting .duration {
       background-color: transparent;
       border: none;
       outline: 0; }
     #page-meetings #container_schedule_meeting .form_meeting .new_meeting .agenda,
-    #page-meetings #container_meeting_info .form_meeting .new_meeting .agenda {
+    #page-meetings #container_meeting_info .form_meeting .new_meeting .agenda,
+    #page-meetings #container_edit_meeting .form_meeting .new_meeting .agenda {
       margin-bottom: 20px; }
     #page-meetings #container_schedule_meeting .form_meeting .new_meeting textarea.agenda,
-    #page-meetings #container_meeting_info .form_meeting .new_meeting textarea.agenda {
+    #page-meetings #container_meeting_info .form_meeting .new_meeting textarea.agenda,
+    #page-meetings #container_edit_meeting .form_meeting .new_meeting textarea.agenda {
       background-color: transparent;
       outline: 0; }
     #page-meetings #container_schedule_meeting .form_meeting .new_meeting .minutes,
-    #page-meetings #container_meeting_info .form_meeting .new_meeting .minutes {
+    #page-meetings #container_meeting_info .form_meeting .new_meeting .minutes,
+    #page-meetings #container_edit_meeting .form_meeting .new_meeting .minutes {
       background-color: transparent;
       border: none;
       outline: 0; }
     #page-meetings #container_schedule_meeting .form_meeting .new_meeting .file,
-    #page-meetings #container_meeting_info .form_meeting .new_meeting .file {
+    #page-meetings #container_meeting_info .form_meeting .new_meeting .file,
+    #page-meetings #container_edit_meeting .form_meeting .new_meeting .file {
       background-color: transparent;
       border: none;
       outline: 0; }
     #page-meetings #container_schedule_meeting .form_meeting .new_meeting .box_input,
-    #page-meetings #container_meeting_info .form_meeting .new_meeting .box_input {
+    #page-meetings #container_meeting_info .form_meeting .new_meeting .box_input,
+    #page-meetings #container_edit_meeting .form_meeting .new_meeting .box_input {
       border: 3px dashed;
       border-radius: 6px;
       border-color: #2C3E50;
       background-color: #F2F1EF;
       vertical-align: middle; }
       #page-meetings #container_schedule_meeting .form_meeting .new_meeting .box_input .box_button,
-      #page-meetings #container_meeting_info .form_meeting .new_meeting .box_input .box_button {
+      #page-meetings #container_meeting_info .form_meeting .new_meeting .box_input .box_button,
+      #page-meetings #container_edit_meeting .form_meeting .new_meeting .box_input .box_button {
         background-color: transparent;
         font-size: medium;
         border: none;
@@ -526,21 +588,21 @@ body {
       height: 30px;
       border-top-left-radius: 0px;
       border-bottom-left-radius: 0px; }
-  #page-meetings #create-meeting-settings .new_meeting .atendees, #page-meetings #create-meeting-settings .new_meeting .minutes, #page-meetings #create-meeting-settings .new_meeting .time {
+  #page-meetings #create-meeting-settings .new_meeting .atendees, #page-meetings #create-meeting-settings .new_meeting .minutes, #page-meetings #create-meeting-settings .new_meeting .time, #page-meetings #create-meeting-settings .new_meeting .duration {
     text-align: center;
     vertical-align: middle;
     height: 34px;
     display: table;
     margin-bottom: 20px; }
-    #page-meetings #create-meeting-settings .new_meeting .atendees span.select2, #page-meetings #create-meeting-settings .new_meeting .minutes span.select2, #page-meetings #create-meeting-settings .new_meeting .time span.select2 {
+    #page-meetings #create-meeting-settings .new_meeting .atendees span.select2, #page-meetings #create-meeting-settings .new_meeting .minutes span.select2, #page-meetings #create-meeting-settings .new_meeting .time span.select2, #page-meetings #create-meeting-settings .new_meeting .duration span.select2 {
       top: 1px;
       height: 34px; }
-    #page-meetings #create-meeting-settings .new_meeting .atendees span.select2-selection, #page-meetings #create-meeting-settings .new_meeting .minutes span.select2-selection, #page-meetings #create-meeting-settings .new_meeting .time span.select2-selection {
+    #page-meetings #create-meeting-settings .new_meeting .atendees span.select2-selection, #page-meetings #create-meeting-settings .new_meeting .minutes span.select2-selection, #page-meetings #create-meeting-settings .new_meeting .time span.select2-selection, #page-meetings #create-meeting-settings .new_meeting .duration span.select2-selection {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0; }
-    #page-meetings #create-meeting-settings .new_meeting .atendees .select2-selection.select2-selection--multiple, #page-meetings #create-meeting-settings .new_meeting .minutes .select2-selection.select2-selection--multiple, #page-meetings #create-meeting-settings .new_meeting .time .select2-selection.select2-selection--multiple {
+    #page-meetings #create-meeting-settings .new_meeting .atendees .select2-selection.select2-selection--multiple, #page-meetings #create-meeting-settings .new_meeting .minutes .select2-selection.select2-selection--multiple, #page-meetings #create-meeting-settings .new_meeting .time .select2-selection.select2-selection--multiple, #page-meetings #create-meeting-settings .new_meeting .duration .select2-selection.select2-selection--multiple {
       height: 34px; }
-    #page-meetings #create-meeting-settings .new_meeting .atendees span.meetings_icon, #page-meetings #create-meeting-settings .new_meeting .minutes span.meetings_icon, #page-meetings #create-meeting-settings .new_meeting .time span.meetings_icon {
+    #page-meetings #create-meeting-settings .new_meeting .atendees span.meetings_icon, #page-meetings #create-meeting-settings .new_meeting .minutes span.meetings_icon, #page-meetings #create-meeting-settings .new_meeting .time span.meetings_icon, #page-meetings #create-meeting-settings .new_meeting .duration span.meetings_icon {
       width: 60px;
       border: solid 1px #bebebe;
       border-top-left-radius: 3px;
@@ -549,7 +611,7 @@ body {
       text-align: center;
       display: table-cell;
       vertical-align: middle; }
-    #page-meetings #create-meeting-settings .new_meeting .atendees input, #page-meetings #create-meeting-settings .new_meeting .minutes input, #page-meetings #create-meeting-settings .new_meeting .time input {
+    #page-meetings #create-meeting-settings .new_meeting .atendees input, #page-meetings #create-meeting-settings .new_meeting .minutes input, #page-meetings #create-meeting-settings .new_meeting .time input, #page-meetings #create-meeting-settings .new_meeting .duration input {
       border-top-left-radius: 0px;
       border-bottom-left-radius: 0px; }
   #page-meetings #create-meeting-settings .new_meeting .agenda {
@@ -603,7 +665,7 @@ body {
     #page-meetings #create-meeting-settings .new_meeting .box #file-info {
       display: block;
       text-align: center; }
-  #page-meetings #submit {
+  #page-meetings #submit, #page-meetings #edit-meeting {
     padding: 4px 20px 4px 20px;
     color: white;
     background-color: #e9d460;
@@ -612,7 +674,7 @@ body {
     align-self: center;
     outline: 0;
     margin-top: 20px; }
-    #page-meetings #submit:hover {
+    #page-meetings #submit:hover, #page-meetings #edit-meeting:hover {
       background-color: #22313f;
       border: none; }
   #page-meetings .modal-dialog .select2 {
@@ -643,6 +705,9 @@ body {
 @media screen and (max-device-width: 667px) {
   .uploadFile_container, .col-lg-6.col-md-6.col-sm-6.col-xs-12 {
     padding: 0 !important;
-    margin: 0 !important; } }
+    margin: 0 !important; }
+
+  #tag-name.pull-right {
+    text-align: center; } }
 
 /*# sourceMappingURL=UI7.css.map */
