@@ -138,41 +138,11 @@
                 </a>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <div href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../images/users/avatar2.png"/>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../images/users/avatar7.png"/>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../images/users/avatar6.png"/>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../images/users/avatar5.jpg"/>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../images/users/avatar4.png"/>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../images/users/avatar3.png"/>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../images/users/avatar1.png"/>
-                            </a>
-                        </div>
+                        {foreach from=$teamMembers item=member}
+                          <!--{$photo_path = $team_members[$i]['photo_path']}-->
+                          {$photo_path = $member['photo_path']}
+                          {include file="./team/member_square.tpl" photopath=$photo_path}
+                        {/foreach}
                     </div>
                 </div>
             </div>
