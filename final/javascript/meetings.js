@@ -73,6 +73,8 @@ function schedule() {
     $("#schedule_meetings").css("border-bottom","4px solid");
     $("#schedule_meetings").css("border-bottom-color","#e9d460");
     $("#future_meetings").css("border-bottom","none");
+    $("#edit-meeting").hide();
+    $("#container_edit_meeting").hide();
 }
 
 function exitMobile() {
@@ -94,6 +96,7 @@ function exit_trash() {
     $("#future_meetings").css("border-bottom","4px solid");
     $("#future_meetings").css("border-bottom-color","#e9d460");
     $("#schedule_meetings").css("border-bottom","none");
+    $("#container_edit_meeting").hide();
 }
 
 function getFormatImage(format) {
@@ -223,6 +226,21 @@ function changeMeetingTagName(tag_name){
 }
 
 
-function showUserInfo($user_id){
-    console.log("user_id " + $user_id);
+function showUserInfo(user_id){
+    console.log("user_id " + user_id);
+}
+
+
+function editMeetingInfo(meeting_id){
+
+    console.log(meeting_id);
+
+    $("#container_edit_meeting").show();
+    $("#mobile-back").show();
+    $("#container_schedule_meeting").hide();
+    $("#container_to_collapse").removeClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
+    $("#container_to_collapse").addClass("col-lg-6 col-md-6 col-sm-6 hidden-xs");
+    $(".meeting-panel").removeClass("col-lg-6 col-md-6 col-sm-6 col-xs-12");
+    $(".meeting-panel").addClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
+    $("#container_meeting_info").hide();
 }

@@ -110,6 +110,9 @@
                                     <div class="delete-icon">
                                         <i class="pull-right fa fa-trash" aria-hidden="true" data-toggle="modal" data-id={$meeting.id} data-target="#deleteMeetingModal"></i>
                                     </div>
+                                    <div class="edit-icon">
+                                        <i class="pull-right fa fa-pencil" aria-hidden="true" data-toggle="modal" onclick=editMeetingInfo({$meeting.id})></i>
+                                    </div>
                                 </div>
                                     <div id="deleteMeetingModal" class="modal fade" role="dialog">
                                         <div class="modal-dialog modal-sm">
@@ -142,7 +145,6 @@
             </div>
         </div>
         <div id="container_schedule_meeting" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" hidden>
-
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="button_trash hidden-xs">
@@ -157,26 +159,26 @@
                         <form class="new_meeting" method="post" action="../actions/meetings/scheduleMeeting.php"
                               enctype="multipart/form-data">
                             <div class="title">
-                                <input type="text" name="title" class="form-control"
+                                <input id="meeting-title-id" type="text" name="title" class="form-control"
                                        placeholder="Choose a Creative Title">
                             </div>
-                            <textarea name="description" maxlength="512">Meeting Resume</textarea>
+                            <textarea id="meeting-description-id" name="description" maxlength="512">Meeting Resume</textarea>
 
                             <div class="calendar">
                                 <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar"
                                       aria-hidden="true"></span>
-                                <input type="date" name="date" class="form-control">
+                                <input id="meeting-date-id" type="date" name="date" class="form-control">
                             </div>
 
-                            <div class="atendees">
+                            <div class="duration">
                                 <span class="meetings_icon glyphicon glyphicon-pushpin" aria-hidden="true"></span>
-                                <input type="number" name="duration" class="form-control"
+                                <input id="meeting-duration-id" type="number" name="duration" class="form-control"
                                        placeholder="Meeting Duration">
                             </div>
 
                             <div class="time">
                                 <span class="meetings_icon glyphicon glyphicon-time" aria-hidden="true"></span>
-                                <input type="time" name="time" class="form-control">
+                                <input id="meeting-time-id" type="time" name="time" class="form-control">
                             </div>
 
 
@@ -192,7 +194,7 @@
                                 </select>
                             </div>
 
-                            <div class="input-group task-tags ">
+                            <div class="input-group task-tags">
                                 <span class="input-group-addon"><i class="fa fa-tag"></i></span>
                                 <select name="tagOption" class="select2-multiple form-control" multiple="multiple">
                                     {foreach $tags as $tag}
@@ -210,6 +212,7 @@
                             </div>
                             <div class="text-center">
                                 <input id="submit" type="submit" value="Submit">
+                                <input id="edit-meeting" type="submit" value="Submit Changes">
                             </div>
 
                             <div class="title">{$errors}</div>
@@ -219,6 +222,59 @@
                 </div>
             </div>
         </div>
+
+
+        <div id="container_edit_meeting" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" hidden>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="button_trash hidden-xs">
+                        <button class="trash" onclick="exit_trash()"><span id="trash" class="fa fa-chevron-left"
+                                                                           aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <span>Edit a Meeting</span>
+                </div>
+                <div class="panel-body">
+                    <div class="form-meeting" id="create-meeting-settings">
+                        <form class="new_meeting" method="post" action="../actions/meetings/scheduleMeeting.php"
+                              enctype="multipart/form-data">
+                            <div class="title">
+                                <input id="meeting-title-id" type="text" name="title" class="form-control"
+                                       placeholder="Choose a Creative Title">
+                            </div>
+                            <textarea id="meeting-description-id" name="description" maxlength="512">Meeting Resume</textarea>
+
+                            <div class="calendar">
+                                <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar"
+                                      aria-hidden="true"></span>
+                                <input id="meeting-date-id" type="date" name="date" class="form-control">
+                            </div>
+
+                            <div class="duration">
+                                <span class="meetings_icon glyphicon glyphicon-pushpin" aria-hidden="true"></span>
+                                <input id="meeting-duration-id" type="number" name="duration" class="form-control"
+                                       placeholder="Meeting Duration">
+                            </div>
+
+                            <div class="time">
+                                <span class="meetings_icon glyphicon glyphicon-time" aria-hidden="true"></span>
+                                <input id="meeting-time-id" type="time" name="time" class="form-control">
+                            </div>
+
+                            <div class="text-center">
+                                <input id="edit-meeting" type="submit" value="Submit Changes">
+                            </div>
+
+                            <div class="title">{$errors}</div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
 
         <div id="container_meeting_info" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" hidden>
 
