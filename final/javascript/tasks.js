@@ -354,10 +354,11 @@ function changeTagName(tag_name){
 
     $("#tag-name").html(tag_name).append('<span class="caret"></span>');
 
-    console.log(tag_name);
-
     if(tag_name === 'All'){
-        $('#hashtag').each(function(i, obj) {
+        $('.hashtag').each(function(i, obj) {
+
+            console.log($(this));
+
             $(this).parents('.task').show();
 
             if($(this).hasClass("uncompleted")){
@@ -381,11 +382,13 @@ function changeTagName(tag_name){
         });
     }
     else{
-        $('#hashtag').each(function(i, obj) {
+        $('.hashtag').each(function(i, obj) {
             var name = tag_name;
-            if($(this).text() != name){
+            console.log($(this).text());
+
+            if($(this).text() != name || $(this).text() === "#"){
                 $(this).parents('.task').hide();
-                console.log(tag_name);
+                console.log($(this).parents('.task'));
             }else{
                 console.log(tag_name);
                 if($(this).hasClass("uncompleted")){

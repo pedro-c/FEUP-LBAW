@@ -50,7 +50,7 @@
                             <td>
                                 <div class="task-name">
                                     <textarea onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
-                                    {if {$tag[0].name} != null}<p id="hashtag" class="{$completed}">{$tag[0].name}</p>{/if}
+                                    <p class="hashtag {$completed}">{if {$tag[0].name} != null}{$tag[0].name}{/if}</p>
 
                                 </div>
                             </td>
