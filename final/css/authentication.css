@@ -248,11 +248,15 @@ html, body {
     overflow-y: hidden; }
 
 .container2 {
+  height: 100% !important;
   padding: 0; }
   .container2 .div {
     padding: 0; }
   .container2 .col-xs-12 {
     padding: 0; }
+  .container2 .row {
+    margin-right: 0;
+    margin-left: 0; }
 
 .panelnopadding {
   padding: 0 !important; }
@@ -509,6 +513,47 @@ html, body {
         background-color: #e9d460;
         color: white;
         outline: 0; }
+
+@keyframes slidy {
+  0% {
+    left: 0%; }
+  20% {
+    left: 0%; }
+  25% {
+    left: -100%; }
+  45% {
+    left: -100%; }
+  50% {
+    left: -200%; }
+  70% {
+    left: -200%; }
+  75% {
+    left: -300%; }
+  95% {
+    left: -300%; }
+  100% {
+    left: -400%; } }
+body {
+  margin: 0; }
+
+div#slider {
+  overflow: hidden;
+  height: 100%; }
+
+div#slider figure img {
+  width: 20%;
+  height: 100%;
+  float: left; }
+
+div#slider figure {
+  position: relative;
+  width: 500%;
+  height: 100%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite; }
 
 /* ----------- Non-Retina Screens ----------- */
 @media screen and (min-device-width: 668px) {
