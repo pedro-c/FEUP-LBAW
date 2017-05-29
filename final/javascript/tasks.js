@@ -51,11 +51,11 @@ $(document).ready(function(){
         var m=$("input#task-name");
         var value= m.val();
         var taskId = $("#task-name").attr("name");
-        $("textarea#"+taskId).val(value);
+        $("#"+taskId + " textarea").val(value);
 
         console.log(taskId);
 
-        console.log($("textarea#"+taskId).innerHTML);
+        console.log($("#"+taskId + " textarea").innerHTML);
         console.log( $("#task-name").attr("name"));
         console.log(m.val());
     });
@@ -96,6 +96,7 @@ $(document).ready(function(){
 
 
     });
+
     $("#task-name").focusout(function(e) {
 
         $.ajax({

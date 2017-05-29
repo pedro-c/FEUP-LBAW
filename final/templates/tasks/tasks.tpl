@@ -48,8 +48,8 @@
                                 <i id="complete-button" name="complete-task"  onclick="completeTask({$task.id})" class="fa fa-check-circle-o"></i>
                             </td>
                             <td>
-                                <div class="task-name">
-                                    <textarea onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
+                                <div class="task-name" onclick="toggle({$task.id});">
+                                    <textarea onclick="toggle({$task.id});" id="{$task.id}" disabled="true">{$task.name}</textarea>
                                     {if {$tag[0].name} != null}
                                         <p class="hashtag {$completed}">{$tag[0].name}</p>
                                     {else}
