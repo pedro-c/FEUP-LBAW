@@ -21,7 +21,8 @@ body {
   right: 0;
   background-color: #22313f;
   color: white;
-  border: none !important; }
+  border: none !important;
+  height: 50px !important; }
   #header .navbar-header > button.navbar-toggle {
     color: #fff; }
     #header .navbar-header > button.navbar-toggle span {
@@ -159,7 +160,7 @@ body {
     width: 100px;
     border: none;
     border-radius: 0;
-    overflow-y: hidden;
+    overflow-y: auto;
     bottom: 0;
     overflow-x: hidden;
     padding-bottom: 40px; }
