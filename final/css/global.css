@@ -7,6 +7,10 @@ body {
   overflow-x: hidden;
   font-family: Roboto, Helvetica, sans-serif; }
 
+.nav-user-picture,
+.user-collapse-picture {
+  border-radius: 50%; }
+
 #parent {
   height: 100%; }
 
@@ -176,10 +180,12 @@ body {
   .frame-round .crop {
     border-radius: 50%; }
 
+s
 .crop {
   height: 100%;
   overflow: hidden;
   position: relative; }
+  s
   .crop img {
     display: block;
     min-width: 100%;
@@ -196,6 +202,7 @@ body {
     -o-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     transition: all 0.2s ease; }
+    s
     .crop img:hover {
       width: 100%;
       height: auto;
