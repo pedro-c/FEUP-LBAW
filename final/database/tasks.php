@@ -10,9 +10,37 @@
         exit;
     }
 
+function getAllTags(){
+    global $conn;
+    $stmt = $conn->prepare("SELECT DISTINCT * FROM tag, project_tag WHERE project_tag.project_id = ? AND tag.id = project_tag.tag_id;");
+    $stmt->execute([$_SESSION['project_id']]);
+    return $stmt->fetchAll();
+}
+
+
+function insertTag($tagName){
+        global $conn;
+        $stmt = $conn->prepare("INSERT INTO tag (id, name) VALUES (DEFAULT ,?) RETURNING id;");
+        return $stmt->execute([$tagName]);
+    }
+
+    function getTagId($tagName){
+        global $conn;
+        $stmt = $conn->prepare("SELECT * FROM tag WHERE name = $tagName;");
+        $stmt->execute([$tagName]);
+        return $stmt->fetchAll();
+    }
+
     function getAllTasksFromProject($projectId){
         global $conn;
         $stmt = $conn->prepare("SELECT * FROM task WHERE project_id = ? ORDER BY deadline ASC;");
+        $stmt->execute([$projectId]);
+        return $stmt->fetchAll();
+    }
+
+    function get3UncompletedTasksFromProject($projectId){
+        global $conn;
+        $stmt = $conn->prepare("SELECT * FROM task WHERE project_id = ? AND completer_id IS NULL ORDER BY deadline ASC LIMIT 3;");
         $stmt->execute([$projectId]);
         return $stmt->fetchAll();
     }
@@ -105,7 +133,7 @@
         global $conn;
         $stmt = $conn->prepare("SELECT DISTINCT user_table.name, user_table.id FROM user_table, task WHERE task.id = ? AND task.assigned_id = user_table.id;");
         $stmt->execute([$taskId]);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetch();
     }
 
     function getTaskCompleterName($taskId){
@@ -117,8 +145,8 @@
 
     function getTagsFromProject(){
         global $conn;
-        $stmt = $conn->prepare("SELECT DISTINCT tag.name, tag.id FROM tag, file, file_tag, task_tag, task, project WHERE (project.id = ? AND task.project_id = project.id AND task_tag.task_id = task.id AND task_tag.tag_id = tag.id) OR (project.id = ? AND file.project_id = project.id AND file.id = file_tag.file_id AND file_tag.tag_id = tag.id);");
-        $stmt->execute([$_SESSION['project_id'],$_SESSION['project_id']]);
+        $stmt = $conn->prepare("SELECT DISTINCT tag.name, tag.id FROM tag, project_tag WHERE project_tag.project_id = ? AND tag.id = project_tag.tag_id;");
+        $stmt->execute([$_SESSION['project_id']]);
         return $stmt->fetchAll();
     }
 
@@ -159,10 +187,18 @@
         $stmt->execute([$taskId]);
     }
 
-    function addTaskTag($tag, $taskId){
+    function getTask($taskId){
+
+        global $conn;
+        $stmt = $conn->prepare("SELECT name FROM user_table, task WHERE task.id = ? AND task.completer_id = user_table.id;");
+        $stmt->execute([$taskId]);
+        return $stmt->fetchAll();
+    }
+
+    function addTaskTag($tagId, $taskId){
         global $conn;
         $stmt = $conn->prepare("INSERT INTO task_tag (task_id, tag_id) VALUES (?,?);");
-        $stmt->execute([$tag, $taskId]);
+        return $stmt->execute([$taskId, $tagId]);
     }
 
     function addTaskComment($comment, $taskId){

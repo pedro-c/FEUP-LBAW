@@ -1,6 +1,7 @@
 <?php
 include_once "common/header.php";
 include_once($BASE_DIR .'database/users.php');
+include_once($BASE_DIR .'database/common.php');
 
 $user = getUserInfo($_SESSION['user_id']);
 $projects = getUserProjects($_SESSION['user_id']);

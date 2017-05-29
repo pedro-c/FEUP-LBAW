@@ -3,9 +3,8 @@
 
 function getAllTagNames(){
     global $conn;
-    $stmt = $conn->prepare('SELECT * FROM tag');
-    $stmt->execute();
-
+    $stmt = $conn->prepare("SELECT DISTINCT * FROM tag, project_tag WHERE project_tag.project_id = ? AND tag.id = project_tag.tag_id;");
+    $stmt->execute([$_SESSION['project_id']]);
     return $stmt->fetchAll();
 }
 

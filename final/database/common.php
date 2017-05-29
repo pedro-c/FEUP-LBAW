@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: epassos
- * Date: 5/22/17
- * Time: 9:44 AM
- */
 
 function isCoordinator($member_id, $project_id)
 {

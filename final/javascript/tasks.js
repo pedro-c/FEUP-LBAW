@@ -30,12 +30,14 @@ $(document).ready(function(){
 
     $('.input-group.date').datepicker();
 
-    $('.select2-multiple').select2({
-        tags: true
+    $('.select2-assign').select2({
+        tags: true,
+        maximumSelectionLength: 1
     });
 
-    $('.select2-single').select2({
-        maximumSelectionLength: 1
+    $('.select2-tags').select2({
+        maximumSelectionLength: 1,
+        tags: true
     });
 
 
@@ -62,8 +64,22 @@ $(document).ready(function(){
 
         });
 
-    });
 
+        $.ajax({
+            type:'post',
+            url: '../api/tasks/set-task-tags.php',
+            data:  {'taskTag': $("#task-tags option:selected").html(), 'taskId': $("#task-name").attr("name")},
+            success: function(data) {
+
+                console.log(data);
+                console.log($("#task-tags option:selected").html());
+
+            }
+
+        });
+
+
+    });
     $("#task-name").focusout(function(e) {
 
         $.ajax({
@@ -178,7 +194,6 @@ function toggle(taskId) {
         url: '../api/tasks/task-details.php',
         data:  {'taskId': taskId},
         success: function(request) {
-            /*[{"id":312,"name":"New Task","description":null,"deadline":null,"creator_id":119,"assigned_id":null,"completer_id":null,"project_id":31}]*/
 
             console.log(request);
 
@@ -186,13 +201,28 @@ function toggle(taskId) {
 
             console.log(response);
 
-            if(response[2][0]!=null){
-                $("#task-assign").html("");
+            console.log("Assigned: " +response[2].name);
+
+
+            $("#task-assign").html("");
+            if(response[1].length > 0) {
                 $("#task-assign").append($('<option>', {
-                    value: response[2][0].id,
-                    text: response[2][0].name,
+                    value: response[2].id,
+                    text: response[2].name,
                     selected: true
                 }));
+            }
+
+
+            if(response[1].length > 0){
+
+                $("#task-tags").append($('<option>', {
+                    value: response[1][0].id,
+                    text: response[1][0].name,
+                    selected: true
+                }));
+            }else{
+                $("#task-tags").html("");
             }
 
             for (var i = 0; i < response[3].length; i++) {
@@ -212,23 +242,6 @@ function toggle(taskId) {
                 $("#task-deadline-date").attr("value",response[0][0].deadline.split(" ")[0]);
                 $("#task-deadline-time").attr("value",response[0][0].deadline.split(" ")[1]);
             }
-            $("#task-tags").html("");
-            for (var i = 0; i < response[1].length; i++) {
-                $("#task-tags").append($('<option>', {
-                    value: response[1][i].id,
-                    text: response[1][i].name,
-                    selected: true
-                }));
-            }
-            for (var i = 0; i < response[5].length; i++) {
-                $("#task-tags").append($('<option>', {
-                    value: response[5][i].id,
-                    text: response[5][i].name,
-                    selected: false
-                }));
-            }
-
-
             var id = "create-task";
             var taskCard = document.getElementById("task-card");
             var state = document.getElementById(id).style.display;
@@ -324,9 +337,47 @@ function back() {
 function showUncompletedTasks() {
     $('.uncompleted').show();
     $('.completed').hide();
+
+    $('#completed-button').removeClass('selected');
+    $('#uncompleted-button').addClass('selected');
 }
 
 function showCompletedTasks() {
     $('.uncompleted').hide();
     $('.completed').show();
+
+    $('#uncompleted-button').removeClass('selected');
+    $('#completed-button').addClass('selected');
+}
+
+function changeTagName(tag_name){
+
+    $("#tag-name").html(tag_name).append('<span class="caret"></span>');
+
+    if(tag_name == 'All'){
+        $('#hashtag').each(function(i, obj) {
+            $(this).parents('.task').show();
+        });
+    }
+    else{
+        $('#hashtag').each(function(i, obj) {
+            var name = tag_name;
+            if($(this).text() != name){
+                console.log(name);
+                console.log($(this).text());
+                $(this).parents('.task').hide();
+            }else{
+                if($(this).attr('class') =='completed' && $('#completed-button').attr('class') == 'selected'){
+                    $(this).parents('.task').show();
+                }else{
+                    $(this).parents('.task').hide();
+                }
+                if($(this).attr('class') =='uncompleted' && $('#uncompleted-button').attr('class') == 'selected'){
+                    $(this).parents('.task').show();
+                }else{
+                    $(this).parents('.task').hide();
+                }
+            }
+        });
+    }
 }
