@@ -63,7 +63,12 @@ function insertTag($tagName){
         global $conn;
         $stmt = $conn->prepare("SELECT DISTINCT * FROM tag, task_tag WHERE task_id = ? AND tag.id = task_tag.tag_id;");
         $stmt->execute([$taskId]);
-        return $stmt->fetchAll();
+        $result = $stmt->fetchAll();
+        if(is_null($result)){
+            return null;
+        }else{
+            return $result;
+        }
     }
 
     function createTask(){

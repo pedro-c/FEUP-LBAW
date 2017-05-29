@@ -11,7 +11,6 @@ if (isset($_POST['taskId'])) {
     $taskAssignedName = null;
     $projectMembers = null;
     $taskComments = null;
-    $taskTags = null;
 
     $taskDetails = getTaskDetails($taskId);
     $taskTags = getTagFromTaskId($taskId);

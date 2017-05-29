@@ -220,12 +220,13 @@ function toggle(taskId) {
             }));
 
 
-
-            $("#task-tags").append($('<option>', {
-                value: response[1][0].id,
-                text: response[1][0].name,
-                selected: true
-            }));
+            if(response[1].length > 0){
+                $("#task-tags").append($('<option>', {
+                    value: response[1][0].id,
+                    text: response[1][0].name,
+                    selected: true
+                }));
+            }
 
 
             for (var i = 0; i < response[3].length; i++) {
