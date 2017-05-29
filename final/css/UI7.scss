@@ -158,6 +158,21 @@
             }
           }
 
+          .edit-icon{
+
+            .fa.fa-pencil{
+              color: $blue_secondary;
+              font-size: large;
+              cursor: pointer;
+              margin-bottom: 15px;
+              padding-right: 5px;
+
+              &:hover {
+                color: $color_yellow;
+              }
+            }
+          }
+
           .hour {
             font-size: large;
             font-weight: normal;
@@ -342,7 +357,7 @@
           outline: 0;
         }
 
-        .atendees {
+        .atendees, .duration {
           background-color: transparent;
           border: none;
           outline: 0;
@@ -454,7 +469,7 @@
         }
       }
 
-      .atendees, .minutes, .time {
+      .atendees, .minutes, .time, .duration{
         text-align: center;
         vertical-align: middle;
         height: 34px;
@@ -570,7 +585,7 @@
 
   }
 
-  #submit {
+  #submit, #edit-meeting {
     padding: 4px 20px 4px 20px;
     color: white;
     background-color: $color_yellow;
