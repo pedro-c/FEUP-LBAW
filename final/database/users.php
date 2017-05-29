@@ -189,8 +189,8 @@ function createProject($name){
 }
 
 
-function leaveProject($projectID){
+function leaveProject($userID, $projectID){
     global $conn;
-    $stmt = $conn->prepare('DELETE FROM user_project WHERE id_project = ?');
-    $stmt->execute([$projectID]);
+    $stmt = $conn->prepare('DELETE FROM user_project WHERE id_project = ? AND id_user = ?');
+    $stmt->execute([$projectID, $userID]);
 }

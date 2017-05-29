@@ -21,6 +21,12 @@ $(document).ready(function(){
 
     $('#user-image-upload').click(function(){ $('#image-upload-button').trigger('click'); });
 
+    $('.modal-dialog .modal-footer button').click(function() {
+        var projectId = $(this).siblings("input[type='hidden']").val();
+        alert(projectId);
+        leaveProject(projectId);
+    });
+
 });
 
 function updateUserInfo() {

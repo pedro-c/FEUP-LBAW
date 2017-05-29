@@ -48,7 +48,8 @@
                                             <p>Are you sure you want to leave?</p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="leaveProject({$project.id_project})">Yes</button>
+                                            <input type="hidden" value={$project.id_project} />
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
                                         </div>
                                     </div>
 
@@ -124,5 +125,3 @@
         </div>
     </div>
 </div>
-
-
