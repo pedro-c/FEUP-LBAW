@@ -116,10 +116,22 @@
                         {foreach $files as $file}
                             {$uploader_name = getNickNameById($file.uploader_id)}
                             {$photo_path = getPhoto($file.uploader_id)}
+                            {assign var="format" value=$file.name}
+                            {if {$format|substr:-3} eq "png"}
+                                {$image = "../images/assets/png.png"}
+                            {elseif {$format|substr:-3} eq "pdf"}
+                                {$image = "../images/assets/pdf.png"}
+                            {elseif {$format|substr:-3} eq "jpg"}
+                                {$image = "../images/assets/png.png"}
+                            {elseif {$format|substr:-3} eq "JPG"}
+                                {$image = "../images/assets/png.png"}
+                            {else}
+                                {$image = "../images/assets/default.png"}
+                            {/if}
                             <button class="list-group-item">
                                 <div class="row">
                                 <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                               <img class="file_show" src="../images/assets/excel.png"><span class="dash-item-text">{$file.name|truncate:18}</span>
+                               <img class="file_show" src={$image}><span class="dash-item-text">{$file.name|truncate:18}</span>
                                 </span>
                                     <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
                                         <img src={$photo_path} class="dash-user-thumb"/><span
