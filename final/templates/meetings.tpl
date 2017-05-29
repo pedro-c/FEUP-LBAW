@@ -184,8 +184,7 @@
 
                             <div class="atendees">
                                 <span class="meetings_icon glyphicon glyphicon-user" aria-hidden="true"></span>
-                                <select name="invited_users[]" class="select2-multiple form-control" multiple="multiple"
-                                        placeholder="Invite Participants" multiple>
+                                <select name="invited_users[]" class="select2-invite-users form-control" placeholder="Invite Participants" multiple>
                                     {foreach $members as $member}
 
                                         {$memberName = getUserNameById($member['id_user'])}
@@ -196,7 +195,7 @@
 
                             <div class="input-group task-tags">
                                 <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                                <select name="tagOption" class="select2-multiple form-control" multiple="multiple">
+                                <select name="tagOption" class="select2-single form-control" multiple="multiple">
                                     {foreach $tags as $tag}
                                         <option value={$tag}>{$tag}</option>
                                     {/foreach}

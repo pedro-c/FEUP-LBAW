@@ -7,12 +7,14 @@ $(document).ready(function () {
         orientation: "bottom left"
     });
 
-    $(".select2-multiple").select2({
+    $(".select2-single").select2({
         tags: true,
         maximumSelectionLength: 1
     });
 
-    $(".select2-invite-users").select2();
+    $(".select2-invite-users").select2({
+        tags:true
+    });
 
 
     $("#hide").click(function () {

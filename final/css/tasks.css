@@ -21,7 +21,8 @@ body {
   right: 0;
   background-color: #22313f;
   color: white;
-  border: none !important; }
+  border: none !important;
+  height: 50px !important; }
   #header .navbar-header > button.navbar-toggle {
     color: #fff; }
     #header .navbar-header > button.navbar-toggle span {
@@ -31,7 +32,8 @@ body {
       background-color: #e9d460;
       border-color: #e9d460; }
   #header #navbar {
-    border: none; }
+    border: none;
+    height: 50px !important; }
   #header .navbar-brand img {
     margin-top: -10px;
     margin-left: -10px;
@@ -67,6 +69,18 @@ body {
       color: #fff; }
     #header .dropdown-menu i.nav-dropdown-icon {
       float: right; }
+  #header #user-options {
+    height: 50px; }
+    #header #user-options a {
+      height: 100%;
+      display: block;
+      width: 100%; }
+  #header #user-projects {
+    height: 50px; }
+    #header #user-projects a {
+      height: 100%;
+      display: block;
+      width: 100%; }
 
 .mobile-user-options {
   float: right;
@@ -245,8 +259,8 @@ body {
     background-color: white;
     box-shadow: none;
     border: 0;
-    margin: 10px; }
-    .tasks-nav button:focus, .tasks-nav button:hover {
+    padding: 10px; }
+    .tasks-nav button:focus, .tasks-nav button:disabled, .tasks-nav button:hover {
       border-bottom: solid 4px #e9d460; }
 
 .task-content {
@@ -328,7 +342,7 @@ body {
     .task .task-name textarea {
       vertical-align: middle !important;
       float: left;
-      width: auto !important;
+      width: 60% !important;
       left: 0; }
 
 .task-content {
