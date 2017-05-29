@@ -4,7 +4,6 @@ include_once "common/header.php";
 
 <link href="../css/files.css" rel="stylesheet">
 <script src="../javascript/files.js"></script>
-<script src="../javascript/meetings.js"></script>
 
 <div class="files_pages">
     <div class="row">

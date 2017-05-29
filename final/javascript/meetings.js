@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    $("li#icon-meet a").css("background-color","#192532");
+    $("li#icon-meet a").css("color", "#e9d460");
 
     $(".input-group.date").datepicker({
         format: "dd/M/yyyy",

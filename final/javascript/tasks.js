@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    $("li#icon-task a").css("background-color","#192532");
+    $("li#icon-task a").css("color", "#e9d460");
+
     var addTaskButton = $(".task-button");
 
    $('.uncompleted').show();

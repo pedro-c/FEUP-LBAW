@@ -65,25 +65,25 @@
 
         <div id="sidebar">
             <ul class="nav navbar-nav hidden-xs" >
-                <li>
+                <li class="selected" id="icon-dash">
                     <a href="../pages/dashboard.php"><i class="fa fa-home fa-2x"></i><p>Dashboard</p></a>
                 </li>
-                <li>
+                <li class="unselected" id="icon-task">
                     <a href="../pages/tasks.php"><i class="fa fa-check-square-o fa-2x"></i><p>Tasks</p></a>
                 </li>
-                <li>
+                <li class="unselected" id="icon-forum">
                     <a class="to-forum" href="../pages/forum.php"><i class="fa fa-quote-right fa-2x"></i><p>Forum</p></a>
                 </li>
-                <li>
+                <li class="unselected" id="icon-meet">
                     <a href="../pages/meetings.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
                 </li>
-                <li>
+                <li class="unselected" id="icon-file">
                     <a href="../pages/files.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
                 </li>
-                <li>
+                <li class="unselected" id="icon-team">
                     <a href="../pages/team.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
                 </li>
-                <li>
+                <li class="unselected" id="icon-help">
                     <a href="../pages/help.php"><i class="fa fa-question-circle fa-2x"></i><p>Help</p></a>
                 </li>
             </ul>
@@ -93,28 +93,28 @@
             <div id="sidebar-resp" class="hidden-lg hidden-md hidden-sm">
                 <div class="row">
                     <ul class="nav navbar-nav" >
-                        <li class="col-xs-6">
+                        <li class="col-xs-6 selected">
                             <a href="../pages/dashboard.php"><i class="fa fa-home fa-2x"></i><p>Dashboard</p></a>
                         </li>
-                        <li class="col-xs-6">
+                        <li class="col-xs-6 unselected">
                             <a href="../pages/tasks.php"><i class="fa fa-check-square-o fa-2x"></i><p>Tasks</p></a>
                         </li>
-                        <li class="col-xs-6">
+                        <li class="col-xs-6 unselected">
                             <a class="to-forum" href="../pages/forum.php"><i class="fa fa-quote-right fa-2x"></i><p>Forum</p></a>
                         </li>
-                        <li class="col-xs-6">
+                        <li class="col-xs-6 unselected">
                             <a href="../pages/meetings.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
                         </li>
-                        <li class="col-xs-6">
+                        <li class="col-xs-6 unselected">
                             <a href="../pages/files.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
                         </li>
-                        <li class="col-xs-6">
+                        <li class="col-xs-6 unselected">
                             <a href="../pages/team.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
                         </li>
-                        <li  class="col-xs-6">
+                        <li  class="col-xs-6 unselected">
                             <a href="../pages/profile.php"><i class="fa fa-user fa-2x" aria-hidden="true"></i><p>Profile</p></a>
                         </li>
-                        <li  class="col-xs-6">
+                        <li  class="col-xs-6 unselected">
                             <a href="#"> <i class="fa fa-sign-out fa-2x"></i> <p>Sign Out</p></a>
                         </li>
                     </ul>

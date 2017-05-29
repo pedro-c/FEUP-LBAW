@@ -1,5 +1,4 @@
 <link href="../css/UI2.css" rel="stylesheet"/>
-<script src="../javascript/files.js"></script>
 <script src="../javascript/dashboard.js"></script>
 
 <div class="page-wrapper container">

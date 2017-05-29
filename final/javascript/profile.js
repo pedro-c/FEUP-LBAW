@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     var updateName = document.getElementById('update-name');
     var updateMail = document.getElementById('update-mail');
     var updateNameButton = document.getElementById('update-name-button');

@@ -1,7 +1,8 @@
-/**
- * Created by epassos on 2/25/17.
- */
 $(document).ready(function () {
+
+    $("li#icon-forum a").css("background-color","#192532");
+    $("li#icon-forum a").css("color", "#e9d460");
+
     let currentPage = 1;
 
     let forum = $("#forum-posts");

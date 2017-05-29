@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    $("li#icon-dash a").css("background-color","#192532");
+    $("li#icon-dash a").css("color", "#e9d460");
+
 });
 
 function changeProjectName() {

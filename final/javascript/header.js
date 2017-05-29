@@ -1,4 +1,3 @@
-
 function changeProject(projectId){
     $.ajax({
         type: 'POST',
