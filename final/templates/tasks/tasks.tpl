@@ -89,8 +89,9 @@
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     <input id="task-deadline-date" type="date" class="form-control">
-                    <input id="task-deadline-time" type="time" name="time" class="form-control">
-                </div>
+                </div><br>
+                <div class="input-group"> <span class="input-group-addon"> <span class="glyphicon glyphicon-time"></span></span>
+                    <input id="task-deadline-time" type="time" name="time" class="form-control"></div><br>
                 <div class="input-group task-tags">
                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
                     <select id="task-tags" class="select2-tags form-control" multiple="multiple">

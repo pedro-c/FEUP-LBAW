@@ -701,6 +701,17 @@ body {
   overflow-y: scroll;
   border-top: 0.1px solid #eee; }
 
+.atendees {
+  display: inline-table; }
+  .atendees span {
+    display: table-cell;
+    min-height: 100%; }
+    .atendees span .selection {
+      height: 100%;
+      min-width: 100px; }
+    .atendees span .select2-selection {
+      min-height: 100%; }
+
 /* Mobile */
 @media screen and (max-device-width: 667px) {
   .uploadFile_container, .col-lg-6.col-md-6.col-sm-6.col-xs-12 {
@@ -710,4 +721,4 @@ body {
   #tag-name.pull-right {
     text-align: center; } }
 
-/*# sourceMappingURL=UI7.css.map */
+/*# sourceMappingURL=meetings.css.map */

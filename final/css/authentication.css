@@ -71,8 +71,16 @@ body {
       float: right; }
   #header #user-options {
     height: 50px; }
+    #header #user-options a {
+      height: 100%;
+      display: block;
+      width: 100%; }
   #header #user-projects {
     height: 50px; }
+    #header #user-projects a {
+      height: 100%;
+      display: block;
+      width: 100%; }
 
 .mobile-user-options {
   float: right;
@@ -231,8 +239,6 @@ html, body {
   left: 0;
   overflow-x: hidden;
   overflow-y: hidden; }
-  .container .container2 {
-    height: 100%; }
   .container .panel {
     margin: 0;
     height: 100%; }

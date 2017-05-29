@@ -647,6 +647,20 @@
 
 }
 
+.atendees{
+  display: inline-table;
+  span{
+    display: table-cell;
+    min-height: 100%;
+    .selection{
+      height: 100%;
+      min-width: 100px;
+    }
+    .select2-selection{
+      min-height: 100%;
+    }
+  }
+}
 /* Mobile */
 
 @media screen and (max-device-width: 667px) {

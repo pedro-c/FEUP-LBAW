@@ -1,4 +1,4 @@
-<link href="../css/UI7.css" rel="stylesheet">
+<link href="../css/meetings.css" rel="stylesheet">
 <script src="../javascript/meetings.js"></script>
 <div id="page-meetings">
     <div class="row">
