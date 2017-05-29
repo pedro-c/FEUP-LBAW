@@ -76,9 +76,21 @@ function insertTag($tagName){
     }
 
     function completeTask($taskId){
+
         global $conn;
-        $stmt = $conn->prepare("UPDATE task SET completer_id = ? WHERE id = ?;");
-        $stmt->execute([$_SESSION['user_id'], $taskId]);
+        $stmt = $conn->prepare("SELECT task.completer_id FROM task WHERE id = ?");
+        $stmt->execute([$taskId]);
+        $result = $stmt->fetch();
+
+        if(is_null($result['completer_id'])){
+            global $conn;
+            $stmt = $conn->prepare("UPDATE task SET completer_id = ? WHERE id = ?;");
+            return $stmt->execute([$_SESSION['user_id'], $taskId]);
+        }else{
+            global $conn;
+            $stmt = $conn->prepare("UPDATE task SET completer_id = NULL WHERE id = ?;");
+            return $stmt->execute([$taskId]);
+        }
     }
 
     function deleteTask($taskId){

@@ -12,7 +12,7 @@ include_once  $BASE_DIR . 'database/forum.php';
 $userID = $_SESSION['user_id'];
 $postID = $_POST['post_id'];
 $replyContent  = $_POST['content'];
-
+$replyContent = htmlspecialchars($replyContent);
 $reply = submitPostReply($userID, $postID, $replyContent);
 
 echo $reply;

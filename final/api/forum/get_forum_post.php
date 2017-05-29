@@ -23,7 +23,8 @@ $projectId = $_SESSION['project_id'];
 $output = array();
 $forum_post = getPost($postId,$userId);
 $photo = getPhoto($forum_post['id_creator']);
-$userCanEdit = ($forum_post['id_creator'] === $forum_post['id_creator'] || isCoordinator($userId,$projectId));
+$userCanEdit = ($forum_post['id_creator'] === $forum_post['id_creator']);
+$userCanDelete = ($userCanEdit || isCoordinator($userId,$projectId));
 
 $output['id'] = $forum_post['post_id'];
 $output['title'] = $forum_post['title'];
@@ -35,5 +36,6 @@ $output['photo'] = $photo;
 $output['num_likes'] = $forum_post['num_likes'];
 $output['liked_by_user'] = $forum_post['user_liked'];
 $output['user_can_edit'] = $userCanEdit;
+$output['user_can_delete'] = $userCanDelete;
 
 echo json_encode($output);

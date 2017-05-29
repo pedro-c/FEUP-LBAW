@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    $("li#icon-file a").css("background-color","#192532");
+    $("li#icon-file a").css("color", "#e9d460");
+
     $(".select2-multiple").select2({
         tags: true,
         maximumSelectionLength: 1,
@@ -87,6 +90,21 @@ function getFormatImage(format) {
         default:
             return "../images/assets/default.png";
     }
+}
+
+function downloadFile(file_id) {
+    console.log(file_id);
+
+    $.ajax({
+        type: 'POST',
+        data: { 'file_id': file_id } ,
+        url:'../api/meetings/download-file.php',
+        dataType: 'json',
+        success: function (data) {
+            window.location.href = '../actions/meetings/download-file.php?f='+ data[0];
+        }
+    });
+
 }
 
 function fileInfo(file_id){

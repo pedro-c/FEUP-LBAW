@@ -17,6 +17,7 @@
   .title_bar {
     background-color: white;
     padding: 10px 10px 0px 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 
     button {
       background-color: transparent;
@@ -146,14 +147,16 @@
 
           .delete-icon{
 
-            .fa.fa-trash{
+            .fa.fa-trash,
+            .fa.fa-times{
               color: $blue_secondary;
               font-size: large;
               cursor: pointer;
               margin-bottom: 15px;
+              padding-right: 5px;
 
               &:hover {
-                color: $color_yellow;
+                color: red;
               }
             }
           }
@@ -647,6 +650,20 @@
 
 }
 
+.atendees{
+  display: inline-table;
+  span{
+    display: table-cell;
+    min-height: 100%;
+    .selection{
+      height: 100%;
+      min-width: 100px;
+    }
+    .select2-selection{
+      min-height: 100%;
+    }
+  }
+}
 /* Mobile */
 
 @media screen and (max-device-width: 667px) {

@@ -21,7 +21,8 @@ body {
   right: 0;
   background-color: #22313f;
   color: white;
-  border: none !important; }
+  border: none !important;
+  height: 50px !important; }
   #header .navbar-header > button.navbar-toggle {
     color: #fff; }
     #header .navbar-header > button.navbar-toggle span {
@@ -31,7 +32,11 @@ body {
       background-color: #e9d460;
       border-color: #e9d460; }
   #header #navbar {
-    border: none; }
+    border: none;
+    height: 50px !important; }
+    #header #navbar.collapsing, #header #navbar.collapse, #header #navbar.in {
+      max-height: none;
+      overflow-y: visible; }
   #header .navbar-brand img {
     margin-top: -10px;
     margin-left: -10px;
@@ -67,6 +72,18 @@ body {
       color: #fff; }
     #header .dropdown-menu i.nav-dropdown-icon {
       float: right; }
+  #header #user-options {
+    height: 50px; }
+    #header #user-options a {
+      height: 100%;
+      display: block;
+      width: 100%; }
+  #header #user-projects {
+    height: 50px; }
+    #header #user-projects a {
+      height: 100%;
+      display: block;
+      width: 100%; }
 
 .mobile-user-options {
   float: right;
@@ -239,6 +256,11 @@ i.dash-title-icon {
 .dash-item-text {
   margin-left: 5px; }
 
+.item-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
 .dash-card > .panel > .panel-body {
   text-align: center; }
 
@@ -306,5 +328,27 @@ i.dash-title-icon {
 
 img.dash-user-thumb {
   border-radius: 50%; }
+
+.modal-header {
+  background-color: #22313f;
+  color: #fff; }
+
+.new-info input {
+  width: 90%;
+  border: none;
+  outline: none; }
+
+.modal-footer {
+  background-color: #22313f;
+  color: #fff; }
+  .modal-footer #accept_button:hover {
+    background-color: #e9d460;
+    color: #fff; }
+  .modal-footer #cancel_button:hover {
+    background-color: #e9d460;
+    color: #fff; }
+
+#subtitle {
+  padding-top: 5px; }
 
 /*# sourceMappingURL=UI2.css.map */

@@ -34,6 +34,9 @@ body {
   #header #navbar {
     border: none;
     height: 50px !important; }
+    #header #navbar.collapsing, #header #navbar.collapse, #header #navbar.in {
+      max-height: none;
+      overflow-y: visible; }
   #header .navbar-brand img {
     margin-top: -10px;
     margin-left: -10px;
@@ -229,7 +232,6 @@ body {
 
 .files_title {
   background-color: #fff;
-  border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
   .files_title button {
     display: inline;
@@ -292,6 +294,13 @@ body {
   cursor: pointer; }
   .files_list .file .panel-body .fa.fa-download:hover, .files_list .file .panel-body .fa.fa-trash:hover {
     color: #e9d460; }
+.files_list .file .panel-body .fa.fa-times {
+  color: #22313f;
+  font-size: large;
+  cursor: pointer;
+  padding-right: 5px; }
+  .files_list .file .panel-body .fa.fa-times:hover {
+    color: red; }
 .files_list .file .panel-body .fa.fa-trash {
   margin-right: 7px; }
 .files_list .uploadFile_container .panel-heading {
@@ -446,5 +455,8 @@ body {
   #container_schedule_meeting {
     padding: 0 !important;
     margin: 0 !important; } }
+#goBackButton,
+#uploadButton {
+  padding-top: 10px; }
 
-/*# sourceMappingURL=UI5.css.map */
+/*# sourceMappingURL=files.css.map */

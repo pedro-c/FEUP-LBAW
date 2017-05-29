@@ -34,9 +34,6 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
 
-  .container2{
-    height:100%;
-  }
   .panel{
     margin: 0;
     height: 100%;
@@ -45,6 +42,21 @@ body {
     height: 100%;
     overflow-x: auto;
     overflow-y: hidden;
+  }
+}
+
+.container2{
+  height: 100% !important;
+  padding: 0;
+  .div{
+    padding: 0;
+  }
+  .col-xs-12{
+    padding: 0;
+  }
+  .row{
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
@@ -443,6 +455,7 @@ body {
     .register-button {
       padding: 10px 50px 10px 50px;
       margin-top: 25px;
+      margin-bottom: 25px;
       background-color: #425262;
       border: none;
       color: white;
@@ -459,6 +472,33 @@ body {
 
   }
 }
+
+@keyframes slidy {
+  0% { left: 0%; }
+  20% { left: 0%; }
+  25% { left: -100%; }
+  45% { left: -100%; }
+  50% { left: -200%; }
+  70% { left: -200%; }
+  75% { left: -300%; }
+  95% { left: -300%; }
+  100% { left: -400%; }
+}
+
+body { margin: 0; }
+div#slider { overflow: hidden; height: 100%; }
+div#slider figure img { width: 25%; height: 100%; float: left; }
+div#slider figure {
+  position: relative;
+  width: 400%;
+  height: 100%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite;
+}
+
 
 /* ----------- Non-Retina Screens ----------- */
 @media screen

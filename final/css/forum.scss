@@ -4,19 +4,20 @@
   text-align: center;
 }
 
-.reply-options {
+.page-wrapper.container > div.row {
+  margin-right: auto;
+}
+
+div.forum-posts-nav {
+  padding-right: 20px;
+}
+
+.forum-options {
 
   margin-left: 10px;
 
-  .dropdown-menu{
+  .dropdown-menu {
     padding: 0
-  }
-
-  .btn.dropdown-toggle {
-    padding: 0px;
-    background-color: $white;
-    -webkit-box-shadow: none;
-    box-shadow: none;
   }
 
   .dropdown-item {
@@ -26,7 +27,7 @@
     display: block;
     color: $color_ebony_clay;
 
-    &.delete-reply-option {
+    &.delete-reply-option, &.delete-post-option {
       color: $color-tall_poppy_approx;
     }
   }
@@ -37,13 +38,42 @@
   }
 }
 
+.forum-options.post-options {
+  .btn.dropdown-toggle {
+    padding: 0px;
+    background-color: $color_yellow;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: $white;
+  }
+}
+
+.forum-options.reply-options {
+
+  .btn.dropdown-toggle {
+    padding: 0px;
+    background-color: $white;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+}
+
 .submitter-photo {
   width: 25px;
   margin-right: 3px;
+  border-radius:50%;
 }
 
 .selected-post-title {
   margin-bottom: 5px;
+}
+
+h4.list-group-item-heading.post-title, h3.panel-title.selected-post-title{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 button.btn-form {
@@ -120,13 +150,51 @@ button#new-post-button.active {
   }
 }
 
-#submit-reply:hover, #submit-new-post:hover, #submit-reply-edit:hover, #submit-post-edit:hover {
+.reply-delete-buttons, .post-delete-buttons {
+  margin-bottom: 15px;
+  margin-top: 5px;
+
+  p {
+    border-top: 1px solid $background_white;
+    padding-top: 10px;
+  }
+
+  .confirm-delete-reply, .confirm-delete-post {
+    background-color: $color_chestnut_rose_approx;
+    border-color: $color_chestnut_rose_approx;
+    color: $white;
+
+    &:hover {
+      background-color: $color_tall_poppy_approx;
+      border-color: $color_tall_poppy_approx;
+    }
+  }
+  .cancel-delete-reply:hover, .cancel-delete-reply:focus,
+  .cancel-delete-post:hover, .cancel-delete-post:focus{
+    color: $color_ebony_clay;
+    background-color: #f1f1f1;
+    border-color: #f1f1f1;
+  }
+}
+
+.post-delete-buttons {
+  padding-bottom: 15px;
+  padding-left: 10px;
+}
+
+#submit-reply:hover, #submit-new-post:hover, button.submit-reply-edit:hover, button.submit-post-edit:hover {
   color: $white;
   background-color: #d9c559;
   border-color: #d9c559;
 }
 
-.btn-reply, #submit-reply, #submit-post-edit, #submit-reply-edit, #submit-new-post {
+button.cancel-reply-edit:hover, button.cancel-reply-edit:focus {
+  color: $color_ebony_clay;
+  background-color: #f1f1f1;
+  border-color: #f1f1f1;
+}
+
+.btn-reply, #submit-reply, button.submit-post-edit, button.submit-reply-edit, #submit-new-post {
   background-color: $color_yellow;
   border-color: $color_yellow;
   color: $white;

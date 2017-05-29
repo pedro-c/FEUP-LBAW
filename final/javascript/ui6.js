@@ -1,4 +1,8 @@
 $(document).ready(function() {
+
+    $("li#icon-team a").css("background-color","#192532");
+    $("li#icon-team a").css("color", "#e9d460");
+
   $('.media-body i').click(function(){
     $(this).css("display", "none");
   });

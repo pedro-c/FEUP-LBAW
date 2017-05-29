@@ -25,7 +25,7 @@ foreach ($posts as $post) {
     $postOutput['username'] = $user['username'];
     $postOutput['id'] = $post['id'];
     $postOutput['title'] = $post['title'];
-    $postOutput['creation_date'] = $post['creation_date'];
+    $postOutput['creation_date'] = get_day_name($post['creation_date']);
 
     $output[$count] = $postOutput;
     $count++;

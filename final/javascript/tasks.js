@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    $("li#icon-task a").css("background-color","#192532");
+    $("li#icon-task a").css("color", "#e9d460");
+
     var addTaskButton = $(".task-button");
 
    $('.uncompleted').show();
@@ -45,10 +48,16 @@ $(document).ready(function(){
 
     $("#task-name").keyup(function(e) {
 
-        var m=$("#task-name");
+        var m=$("input#task-name");
         var value= m.val();
         var taskId = $("#task-name").attr("name");
-        $("#"+taskId+".task-name").val(value);
+        $("textarea#"+taskId).val(value);
+
+        console.log(taskId);
+
+        console.log($("textarea#"+taskId).innerHTML);
+        console.log( $("#task-name").attr("name"));
+        console.log(m.val());
     });
 
     $(".select2").on('focusout', function() {
@@ -204,26 +213,20 @@ function toggle(taskId) {
             console.log(response);
 
 
-            $("#task-assign").html("");
-            if(response[1].length > 0) {
-                $("#task-assign").append($('<option>', {
-                    value: response[2].id,
-                    text: response[2].name,
-                    selected: true
-                }));
-            }
+            $("#task-assign").append($('<option>', {
+                value: response[2].id,
+                text: response[2].name,
+                selected: true
+            }));
 
 
-            if(response[1].length > 0){
 
-                $("#task-tags").append($('<option>', {
-                    value: response[1][0].id,
-                    text: response[1][0].name,
-                    selected: true
-                }));
-            }else{
-                $("#task-tags").html("");
-            }
+            $("#task-tags").append($('<option>', {
+                value: response[1][0].id,
+                text: response[1][0].name,
+                selected: true
+            }));
+
 
             for (var i = 0; i < response[3].length; i++) {
                 $("#task-assign").append($('<option>', {
@@ -266,7 +269,7 @@ function toggle(taskId) {
 
             $("#task-comments").html("");
             for (var i = 0; i < response[4].length; i++) {
-                $("#task-comments").append("<div class='comment-info'><img src='../images/users/"+  response[4][i].photo_path +"' class='img-circle'><h4>" + response[4][i].name + "</h4></div><p>" + response[4][i].creation_date.substring(0,16) + "</p><p>" + response[4][i].content +"</p>");
+                $("#task-comments").append("<div class='comment-info'><img src='../images/users/"+  response[4][i].photo_path +"' class='img-circle'><h4>" + response[4][i].name + "</h4></div><p id='info_date'>" + response[4][i].creation_date.substring(0,16) + "</p><p>" + response[4][i].content +"</p>");
             }
         }
 
@@ -293,12 +296,27 @@ function deleteTask(taskId) {
 
 function completeTask(taskId) {
 
+    if($("#"+taskId).hasClass("uncompleted")){
+        $("#"+taskId).removeClass("uncompleted");
+        $("#"+taskId).addClass("completed");
+    }else{
+        $("#"+taskId).removeClass("completed");
+        $("#"+taskId).addClass("uncompleted");
+    }
+
+    if($('#uncompleted-button').prop("disabled")){
+        showUncompletedTasks();
+    }else{
+        showCompletedTasks();
+    }
+
     $.ajax({
         type:'post',
         url: '../api/tasks/complete-task.php',
         data:  {'taskId': taskId},
-        success: function() {
+        success: function(result) {
 
+            console.log(result);
 
         }
 

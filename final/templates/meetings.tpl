@@ -1,4 +1,4 @@
-<link href="../css/UI7.css" rel="stylesheet">
+<link href="../css/meetings.css" rel="stylesheet">
 <script src="../javascript/meetings.js"></script>
 <div id="page-meetings">
     <div class="row">
@@ -73,21 +73,23 @@
                                             <img class="user-photo" src={$user} onclick="showUserInfo({$user_aut})">
                                         {/foreach}
                                         {if $coordinator == 'true' || $creator == 'true' }
-                                            <span id="plus_user" class="glyphicon glyphicon-plus-sign"
-                                                  aria-hidden="true"
-                                                  onclick="inviteMoreUsers({$meeting.id})"  data-toggle="modal" data-target="#{$meeting.id|cat:'uninvited-users'}">
+                                        <span id="plus_user" class="glyphicon glyphicon-plus-sign"
+                                              aria-hidden="true"
+                                              onclick="inviteMoreUsers({$meeting.id})" data-toggle="modal"
+                                              data-target="#{$meeting.id|cat:'uninvited-users'}">
                                             </span>
-                                            <div id='{$meeting.id|cat:'uninvited-users'}' class="modal fade" role="dialog">
-                                                <div class="modal-dialog modal-sm">
-
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h4 class="modal-title">Invite Users to Meeting</h4>
-                                                        </div>
-                                                        <form method="post" action="../actions/meetings/invite-user.php">
+                                        <div id='{$meeting.id|cat:'uninvited-users'}' class="modal fade" role="dialog">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Invite Users to Meeting</h4>
+                                                    </div>
+                                                    <form method="post" action="../actions/meetings/invite-user.php">
                                                         <div class="modal-body">
                                                             <div class="select-box">
-                                                                <select name="uninvited_users[]" id="uninvited-users" class="select2-invite-users form-control" multiple="multiple" multiple>
+                                                                <select name="uninvited_users[]" id="uninvited-users"
+                                                                        class="select2-invite-users form-control"
+                                                                        multiple="multiple" multiple>
                                                                     {foreach $notInvitedmembers as $notInvitedmember} {$name = getUserNameById($notInvitedmember)}
                                                                         <option value={$notInvitedmember}>{$name}</option>
                                                                     {/foreach}
@@ -96,48 +98,61 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             <input name='meeting_id' value="{$meeting.id}" hidden>
-                                                            <button name="Invite" class="btn btn-default" type="submit">Invite</button>
-                                                            <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button name="Invite" class="btn btn-default" type="submit">
+                                                                Invite
+                                                            </button>
+                                                            <button type="submit" class="btn btn-default"
+                                                                    data-dismiss="modal">Close
+                                                            </button>
                                                         </div>
-                                                        </form>
-                                                    </div>
+                                                    </form>
+                                                </div>
 
-                                                </div>
                                             </div>
-                                        {/if}
+                                        </div>
                                     </label>
-                                    {if $coordinator == 'true'}
-                                    <div class="delete-icon">
-                                        <i class="pull-right fa fa-trash" aria-hidden="true" data-toggle="modal" data-id={$meeting.id} data-target="#deleteMeetingModal"></i>
-                                    </div>
                                     <div class="edit-icon">
-                                        <i class="pull-right fa fa-pencil" aria-hidden="true" data-toggle="modal" onclick=editMeetingInfo({$meeting.id})></i>
+                                        <i class="pull-right fa fa-pencil" aria-hidden="true" data-toggle="modal"
+                                           onclick=editMeetingInfo({$meeting.id})></i>
                                     </div>
+                                    <div class="delete-icon">
+                                        <i class="pull-right fa fa-times" aria-hidden="true" data-toggle="modal"
+                                           data-id={$meeting.id} data-target="#deleteMeetingModal"></i>
+                                    </div>
+                                    {else}
+                                    <div class="edit-icon" style="visibility: hidden">
+                                        <i class="pull-right fa fa-pencil"></i>
+                                    </div>
+                                    <div class="delete-icon" style="visibility: hidden">
+                                        <i class="pull-right fa fa-times"></i>
+                                    </div>
+                                    {/if}
                                 </div>
-                                    <div id="deleteMeetingModal" class="modal fade" role="dialog">
-                                        <div class="modal-dialog modal-sm">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close"
-                                                            data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title">Delete Meeting</h4>
-                                                </div>
-                                                <div class="modal-body" id="deleteFileModal">
-                                                    <p class="info-extra">You are allowed to delete this meeting because you
-                                                        are one team coordinator.</p>
-                                                    <p>Are you sure you want to delete this meeting?</p>
-                                                    <span id="meeting-id-delete" hidden></span>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button id="#accept_button" type="button" class="btn btn-default" data-dismiss="modal" onclick="deleteMeeting()">Yes
-                                                    </button>
-                                                    <button id="#cancel_button" type="button" class="btn btn-default" data-dismiss="modal">No
-                                                    </button>
-                                                </div>
+                                <div id="deleteMeetingModal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close"
+                                                        data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Delete Meeting</h4>
+                                            </div>
+                                            <div class="modal-body" id="deleteFileModal">
+                                                <p class="info-extra">You are allowed to delete this meeting because you
+                                                    are one team coordinator.</p>
+                                                <p>Are you sure you want to delete this meeting?</p>
+                                                <span id="meeting-id-delete" hidden></span>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button id="#accept_button" type="button" class="btn btn-default"
+                                                        data-dismiss="modal" onclick="deleteMeeting()">Yes
+                                                </button>
+                                                <button id="#cancel_button" type="button" class="btn btn-default"
+                                                        data-dismiss="modal">No
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
-                                {/if}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -184,7 +199,8 @@
 
                             <div class="atendees">
                                 <span class="meetings_icon glyphicon glyphicon-user" aria-hidden="true"></span>
-                                <select name="invited_users[]" class="select2-invite-users form-control" placeholder="Invite Participants" multiple>
+                                <select name="invited_users[]" class="select2-invite-users form-control"
+                                        placeholder="Invite Participants" multiple>
                                     {foreach $members as $member}
 
                                         {$memberName = getUserNameById($member['id_user'])}
@@ -200,12 +216,15 @@
                                         <option value={$tag}>{$tag}</option>
                                     {/foreach}
                                 </select>
-                            </div><br>
+                            </div>
+                            <br>
 
                             <div class="box">
                                 <div class="box drag_here">
-                                    <input id="add-file" class="box__file" type="file" name="file[]" id="file" multiple/>
-                                    <a id="plus"><span  class="glyphicon glyphicon-plus img-responsive center-block" aria-hidden="true"></span></a><br>
+                                    <input id="add-file" class="box__file" type="file" name="file[]" id="file"
+                                           multiple/>
+                                    <a id="plus"><span class="glyphicon glyphicon-plus img-responsive center-block"
+                                                       aria-hidden="true"></span></a><br>
                                     <label id="file-info"></label>
                                 </div>
                             </div>
@@ -235,12 +254,14 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-meeting" id="create-meeting-settings">
-                        <form class="new_meeting" method="post" action="../actions/meetings/edit-meeting.php" enctype="multipart/form-data">
+                        <form class="new_meeting" method="post" action="../actions/meetings/edit-meeting.php"
+                              enctype="multipart/form-data">
                             <div class="title">
                                 <input id="meeting-title-id" type="text" name="title" class="form-control"
                                        placeholder="Choose a Creative Title">
                             </div>
-                            <textarea id="meeting-description-id" name="description" maxlength="512">Meeting Resume</textarea>
+                            <textarea id="meeting-description-id" name="description"
+                                      maxlength="512">Meeting Resume</textarea>
 
                             <input name="id" id="meeting" hidden>
 
@@ -289,7 +310,7 @@
                     <div class="info-meeting" id="create-meeting-settings">
                         <div class="col-lg-12 col-md-12 col-sm-12 nopadding">
                             <div class="col-lg-6 col-md-6 col-sm-6 title-meeting-info nopadding">
-                             <div id="meeting_title" class="title"></div>
+                                <div id="meeting_title" class="title"></div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 date-meeting-info nopadding">
                                 <div id="meeting_date" class="date"></div>
