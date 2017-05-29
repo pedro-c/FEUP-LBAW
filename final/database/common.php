@@ -36,3 +36,13 @@ function getUser($userId)
     $stmt->execute(array($userId));
     return $stmt->fetchAll()[0];
 }
+
+function get_day_name($timestamp){
+
+    if (strtotime($timestamp) >= strtotime("today"))
+        return "Today";
+    else if (strtotime($timestamp) >= strtotime("yesterday"))
+        return "Yesterday";
+
+    return date("Y-m-d", strtotime($timestamp));
+}

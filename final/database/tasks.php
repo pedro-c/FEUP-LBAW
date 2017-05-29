@@ -31,13 +31,6 @@ function insertTag($tagName){
         return $stmt->fetchAll();
     }
 
-    function addTagToProject($tagId){
-        global $conn;
-        $stmt = $conn->prepare("INSERT INTO tag_project (project_id, tag_id) VALUES (? ,?);");
-        return $stmt->execute([$_SESSION['project_id'],$tagId]);
-    }
-
-
     function getAllTasksFromProject($projectId){
         global $conn;
         $stmt = $conn->prepare("SELECT * FROM task WHERE project_id = ? ORDER BY deadline ASC;");

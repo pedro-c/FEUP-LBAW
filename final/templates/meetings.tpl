@@ -1,5 +1,5 @@
 <link href="../css/UI7.css" rel="stylesheet">
-<script src="../javascript/UI7.js"></script>
+<script src="../javascript/meetings.js"></script>
 <div id="page-meetings">
     <div class="row">
         <div class="col-xs-12">
@@ -25,7 +25,7 @@
                             <li><a id="tag-name-dropwdown" onclick="changeMeetingTagName('All')">All</a>
                             </li> {foreach $tags as $tag}
                                 <li><a id="tag-name-dropwdown"
-                                       onclick="changeMeetingTagName('{$tag.name}')">{$tag.name}</a></li>{/foreach}
+                                       onclick="changeMeetingTagName('{$tag}')">{$tag}</a></li>{/foreach}
                         </ul>
                     </div>
                 </div>
@@ -61,25 +61,33 @@
                                         </div>
                                     </div>
                                     <label class="user-responsible">{$creatorName}</label><br>
-                                    <label class="guests"> {$invited_users = getInvitedUsers($meeting.id)} {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)} {$coordinator = isCoordinator($user_aut, $project)} {$creator = isMeetingCreator($meeting.id, $user_aut)} {$photos = getInvitedUsersPhotos($meeting.id)} {foreach $photos as $photo}
-                                            <img class="user-photo"
-                                                 src={$photo}>{/foreach}
+                                    <label class="guests">
+
+                                        {$invited_users = getInvitedUsers($meeting.id)}
+                                        {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)}
+                                        {$coordinator = isCoordinator($user_aut, $project)}
+                                        {$creator = isMeetingCreator($meeting.id, $user_aut)}
+                                        {$users_photos = getInvitedUsersPhotosPaths($meeting.id)}
+
+                                        {foreach $users_photos as $user}
+                                            <img class="user-photo" src={$user} onclick="showUserInfo({$user_aut})">
+                                        {/foreach}
                                         {if $coordinator == 'true' || $creator == 'true' }
                                             <span id="plus_user" class="glyphicon glyphicon-plus-sign"
                                                   aria-hidden="true"
                                                   onclick="inviteMoreUsers({$meeting.id})"  data-toggle="modal" data-target="#{$meeting.id|cat:'uninvited-users'}">
                                             </span>
                                             <div id='{$meeting.id|cat:'uninvited-users'}' class="modal fade" role="dialog">
-                                                <div class="modal-dialog">
+                                                <div class="modal-dialog modal-sm">
 
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title">Invite Users</h4>
+                                                            <h4 class="modal-title">Invite Users to Meeting</h4>
                                                         </div>
                                                         <form method="post" action="../actions/meetings/invite-user.php">
                                                         <div class="modal-body">
                                                             <div class="select-box">
-                                                                <select name="uninvited_users[]" id="uninvited-users" class="select2-multiple form-control" multiple="multiple" multiple>
+                                                                <select name="uninvited_users[]" id="uninvited-users" class="select2-invite-users form-control" multiple="multiple" multiple>
                                                                     {foreach $notInvitedmembers as $notInvitedmember} {$name = getUserNameById($notInvitedmember)}
                                                                         <option value={$notInvitedmember}>{$name}</option>
                                                                     {/foreach}
@@ -137,7 +145,7 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div class="button_trash">
+                    <div class="button_trash hidden-xs">
                         <button class="trash" onclick="exit_trash()"><span id="trash" class="glyphicon glyphicon-trash"
                                                                            aria-hidden="true"></span>
                         </button>
@@ -188,23 +196,18 @@
                                 <span class="input-group-addon"><i class="fa fa-tag"></i></span>
                                 <select name="tagOption" class="select2-multiple form-control" multiple="multiple">
                                     {foreach $tags as $tag}
-                                        <option value={$tag.id}>{$tag.name}</option>
+                                        <option value={$tag}>{$tag}</option>
                                     {/foreach}
                                 </select>
                             </div><br>
 
-                            <div class="box drag_here hidden-xs" ondrop="drop_handler(event);"
-                                 ondragover="dragover_handler(event);" ondragend="dragend_handler(event);">
-
-                                <input id="add-file" class="box__file" type="file" name="file[]" id="file" multiple/>
-                                <a id="plus"><span  class="glyphicon glyphicon-plus img-responsive center-block" aria-hidden="true"></span></a><br>
-                              <!--  <label class="file-description" for="file">
-                                    <strong> Choose a file </strong>
-                                    <span class="box__dragndrop"> or drag it here</span>.
-                                </label>-->
-
+                            <div class="box">
+                                <div class="box drag_here">
+                                    <input id="add-file" class="box__file" type="file" name="file[]" id="file" multiple/>
+                                    <a id="plus"><span  class="glyphicon glyphicon-plus img-responsive center-block" aria-hidden="true"></span></a><br>
+                                    <label id="file-info"></label>
+                                </div>
                             </div>
-
                             <div class="text-center">
                                 <input id="submit" type="submit" value="Submit">
                             </div>
@@ -230,16 +233,24 @@
                 </div>
                 <div class="panel-body">
                     <div class="info-meeting" id="create-meeting-settings">
-                        <div id="meeting_title" class="title"></div>
-                        <div id="meeting_date" class="date"></div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 nopadding">
+                            <div class="col-lg-6 col-md-6 col-sm-6 title-meeting-info nopadding">
+                             <div id="meeting_title" class="title"></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 date-meeting-info nopadding">
+                                <div id="meeting_date" class="date"></div>
+                            </div>
+                        </div>
                         <div>
                             <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                             <label id="meeting_time" class="hour"></label>
                         </div>
-                        <div id="meeting_description" class="description"></div>
                         <div id="meeting_duration" class="minutes"></div>
+                        <div id="meeting_description" class="description"></div>
                         <div id="meeting_files" class="files"></div>
-                        <div id="guest_div" class="guests"></div>
+                        <div id="guest_div" class="guests">
+
+                        </div>
                     </div>
                 </div>
             </div>

@@ -11,6 +11,7 @@
 
   .nopadding {
     padding: 0 !important;
+    margin: 0 !important;
   }
 
   .title_bar {
@@ -227,15 +228,27 @@
     }
 
     .info-meeting {
-      display: inline-block;
+
+      .title-meeting-info{
+        text-align: left;
+      }
+
+      .date-meeting-info{
+        text-align: right;
+      }
 
       .title {
-        padding-bottom: 5px;
-        font-size: x-large;
+        padding-bottom: 22px;
+        font-size: large;
+        font-weight: bold;
+      }
+
+      .glyphicon.glyphicon-time{
+        font-size: small;
       }
 
       .hour {
-        font-size: small;
+        font-size: medium;
         font-weight: normal;
         padding-bottom: 10px;
       }
@@ -250,17 +263,19 @@
       }
 
       .description {
-        font-size: small;
-        padding-bottom: 30px;
+        font-size: x-small;
+        padding-bottom: 20px;
       }
 
       .date {
-        font-size: large;
+        font-size: medium;
+        font-weight: bold;
         padding-bottom: 10px;
       }
 
       .minutes {
-        padding-bottom: 30px;
+        font-size: small;
+        padding-bottom: 15px;
       }
 
       .files {
@@ -273,19 +288,21 @@
 
       #meeting_files{
 
-        a.file_description{
+        a{
           padding-bottom: 10px;
           padding-left: 10px;
           text-decoration: none !important;
           cursor: pointer !important;
+          font-weight: bold;
+          color: $blue_secondary;
         }
+
       }
 
       .guests {
-        padding-top: 10px;
         .user_photo {
           margin-right: 5px;
-          width: 55px;
+          width: 35px;
           float: left;
         }
         #plus {
@@ -497,55 +514,58 @@
 
       }
 
-      .box.drag_here {
-        border-radius: 5px;
-        height: 150px;
-        border: 1px dashed grey;
-        vertical-align: middle;
-        background-color: $background_white;
-        display: table-cell;
+      .box{
+
+        display: table;
         width: 100%;
 
-        .box__file{
-          visibility: hidden;
-        }
-
-        .glyphicon.glyphicon-plus.img-responsive {
-          margin: 0 auto;
-          font-size: 40px !important;
-          color: grey;
-          text-align: center;
-        }
-
-        div {
-          display: table-cell;
+        .box.drag_here {
+          border-radius: 5px;
+          height: 150px;
+          border: 1px dashed grey;
           vertical-align: middle;
-        }
+          background-color: $background_white;
+          display: table-cell;
 
-        #filedrag {
-          display: none;
-          font-weight: bold;
-          text-align: center;
-          padding: 1em 0;
-          margin: 1em 0;
-          color: #555;
-          border: 2px dashed #555;
-          border-radius: 7px;
-          cursor: default;
-
-          &:hover {
-            color: #f00;
-            border-color: #f00;
-            border-style: solid;
-            box-shadow: inset 0 3px 4px #888;
+          .box__file{
+            visibility: hidden;
           }
+
+          .glyphicon.glyphicon-plus.img-responsive {
+            margin: 0 auto;
+            font-size: 40px !important;
+            color: grey;
+            text-align: center;
+            cursor: pointer;
+          }
+
+          #filedrag {
+            display: none;
+            font-weight: bold;
+            text-align: center;
+            padding: 1em 0;
+            margin: 1em 0;
+            color: #555;
+            border: 2px dashed #555;
+            border-radius: 7px;
+            cursor: default;
+
+            &:hover {
+              color: #f00;
+              border-color: #f00;
+              border-style: solid;
+              box-shadow: inset 0 3px 4px #888;
+            }
+          }
+
         }
 
+        #file-info{
+          display: block;
+          text-align: center;
+        }
       }
 
-      .meetings_icon {
-
-      }
     }
 
   }
@@ -568,10 +588,9 @@
 
   .modal-dialog{
 
-    .select-box:first-child{
-      span {
+    .select2{
         width: 100% !important;
-      }
+
     }
   }
 
@@ -595,5 +614,31 @@
 
   }
 
+  .modal-body{
+
+    .select2-selection__choice{
+      display: flex;
+    }
+  }
+}
+
+#guest_div{
+  padding: 6px;
+  padding-top: 26px;
+  max-height: 300px;
+  overflow-y: scroll;
+  border-top: 0.1px solid #eee;
+
+}
+
+
+/* Mobile */
+
+@media screen and (max-device-width: 667px) {
+
+  .uploadFile_container, .col-lg-6.col-md-6.col-sm-6.col-xs-12{
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 
 }

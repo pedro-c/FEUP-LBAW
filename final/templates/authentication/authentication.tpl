@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<script src="../javascript/jquery.js"></script>
 <head>
 
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="../css/UI1_novo.css" rel="stylesheet">
+    <link href="../css/authentication.css" rel="stylesheet">
     <link href="../css/plugins/morris.css" rel="stylesheet">
     <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -42,14 +42,14 @@
 -->
 
 <div class="container">
-    <div class="row">
+    <div class="container2 row col-lg-8 col-lg-offset-2">
         <div class="panel panel-default login-box panelnopadding" >
             <div class="panel-body panelnopadding">
                 <div class="col-lg-6 col-sm-6 col-md-6 hidden-xs content_login panelnopadding">
                     <img class="img-responsive" src="../images/assets/2.png"
                          style="width:100%;overflow: hidden; height: 100%;"/>
                 </div>
-                <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 content_login pull-right panelnopadding">
+                <div class="container2 col-lg-6 col-sm-6 col-md-6 col-xs-12 content_login pull-right panelnopadding">
                     <div class="row row-centered">
                         <div class="description-links">
                             <div class="col-xs-12 nopadding">

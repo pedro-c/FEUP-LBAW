@@ -3,8 +3,8 @@ include_once "common/header.php";
 ?>
 
 <link href="../css/UI5.css" rel="stylesheet">
-<script src="../javascript/UI5.js"></script>
-<script src="../javascript/UI7.js"></script>
+<script src="../javascript/files.js"></script>
+<script src="../javascript/meetings.js"></script>
 
 <div class="files_pages">
     <div class="row">
@@ -17,13 +17,11 @@ include_once "common/header.php";
     </div>
 
     <div class="container files_list">
-
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div id="button-upload" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 button_upload">
                     <button class="uploadFile" onclick="uploadFile()">Upload a File</button>
                 </div>
-
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 button_upload pull-right">
                     <div class="drop-down">
                         <button id="tag-name" class="dropdown-toggle uploadFile" type="button" data-toggle="dropdown">Tag
@@ -31,7 +29,7 @@ include_once "common/header.php";
                         <ul class="dropdown-menu">
                             <li><a id="tag-name-dropwdown" onclick="changeTagName('All')">All</a></li>
                             {foreach $tags as $tag}
-                                <li><a id="tag-name-dropwdown" onclick="changeTagName('{$tag.name}')">{$tag.name}</a></li>
+                                <li><a id="tag-name-dropwdown" onclick="changeTagName('{$tag}')">{$tag}</a></li>
                             {/foreach}
 
                         </ul>
@@ -95,9 +93,9 @@ include_once "common/header.php";
                                             <span id="file-id-delete" hidden></span>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="deleteFile()">Yes
+                                            <button id="#accept_button" type="button" class="btn btn-default" data-dismiss="modal" onclick="deleteFile()">Yes
                                             </button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">No
+                                            <button id="#cancel_button" type="button" class="btn btn-default" data-dismiss="modal">No
                                             </button>
                                         </div>
                                     </div>
@@ -112,29 +110,26 @@ include_once "common/header.php";
         </div>
 
         <div class="uploadFile_container" hidden>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hidden-xs">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="panel panel-default meeting">
                     <div class="panel-heading">
-                        <span>Upload File</span><span class="trash pull-right glyphicon glyphicon-trash"
-                                                      aria-hidden="true" onclick="deleteUpload()"></span>
+                        <span>Upload File</span><span class="trash pull-right glyphicon glyphicon-trash hidden-xs"
+                                                      aria-hidden="true" onclick="deleteUpload()" ></span>
                     </div>
                     <div class="panel-body">
 
                         <form action="../actions/files/upload-file.php" method="post" enctype="multipart/form-data">
                         <div id="drag-here" class="box drag-here text-center">
-
-                               <!-- <span class="info"> Drag Files Here </span>
-                                <br><br>-->
-                            <input id="add-file" class="box__file" name="file[]" type="file"/><br />
+                            <input id="add-file-files" class="box__file" name="file[]" type="file"/><br />
                             <a id="plus"> <span class="glyphicon glyphicon-plus img-responsive"></span></a>
-                            <span id="file-info"></span>
+                            <span id="file-info-files"></span>
                         </div>
 
                         <div class="input-group task-tags ">
                             <span class="input-group-addon"><i class="fa fa-tag"></i></span>
                             <select name="tagOption" class="select2-multiple form-control" multiple="multiple">
                                 {foreach $tags as $tag}
-                                <option value={$tag.id}>{$tag.name}</option>
+                                <option value={$tag}>{$tag}</option>
                                 {/foreach}
                             </select>
                         </div>

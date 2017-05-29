@@ -58,7 +58,7 @@
                 <img src="../images/assets/logo.png" alt="Direkt"/>
             </a>
             <a href="#" class="mobile-user-options hidden-lg hidden-md hidden-sm">
-                <img src="../images/users/avatar2.png" alt="Your Picture" class="user-collapse-picture"/>
+                <img src={$photo} alt="Your Picture" style="border-radius: 50%;" class="user-collapse-picture"/>
                 <span>{$name}</span>
             </a>
         </div>
@@ -91,25 +91,25 @@
                 <div class="row">
                     <ul class="nav navbar-nav" >
                         <li class="col-xs-6">
-                            <a href="../../dashboard.php"><i class="fa fa-home fa-2x"></i><p>Dashboard</p></a>
+                            <a href="../pages/dashboard.php"><i class="fa fa-home fa-2x"></i><p>Dashboard</p></a>
                         </li>
                         <li class="col-xs-6">
-                            <a href="../../tasks.php"><i class="fa fa-check-square-o fa-2x"></i><p>Tasks</p></a>
+                            <a href="../pages/tasks.php"><i class="fa fa-check-square-o fa-2x"></i><p>Tasks</p></a>
                         </li>
                         <li class="col-xs-6">
-                            <a class="to-forum" href="../../forum.php"><i class="fa fa-quote-right fa-2x"></i><p>Forum</p></a>
+                            <a class="to-forum" href="../pages/forum.php"><i class="fa fa-quote-right fa-2x"></i><p>Forum</p></a>
                         </li>
                         <li class="col-xs-6">
-                            <a href="../../meetings.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
+                            <a href="../pages/meetings.php"><i class="fa fa-calendar-o fa-2x"></i><p>Meetings</p></a>
                         </li>
                         <li class="col-xs-6">
-                            <a href="../../files.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
+                            <a href="../pages/files.php"><i class="fa fa-file fa-2x"></i><p>Files</p></a>
                         </li>
                         <li class="col-xs-6">
-                            <a href="../../team.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
+                            <a href="../pages/team.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
                         </li>
                         <li  class="col-xs-6">
-                            <a href="../../profile.php"> <i class="fa fa-refresh fa-2x"></i> <p>Profile</p></a>
+                            <a href="../pages/profile.php"><i class="fa fa-user" aria-hidden="true"></i><p>Profile</p></a>
                         </li>
                         <li  class="col-xs-6">
                             <a href="#"> <i class="fa fa-sign-out fa-2x"></i> <p>Sign Out</p></a>
@@ -123,7 +123,7 @@
                 <div id="user-options" class="dropdown">
                     <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <p>
-                            <img src="../images/users/avatar2.png" alt="User profile picture" class="nav-user-picture">
+                            <img src={$photo} alt="User profile picture" style="border-radius: 50%;" class="nav-user-picture">
                             <span id="nav-username">{$name}</span>
                         </p>
                     </a>
@@ -154,8 +154,8 @@
                     </ul>
                 </div>
             </div>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </div>
+    </div>
 </nav>
 
 <div id="parent">

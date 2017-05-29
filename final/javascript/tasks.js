@@ -194,7 +194,6 @@ function toggle(taskId) {
         url: '../api/tasks/task-details.php',
         data:  {'taskId': taskId},
         success: function(request) {
-            /*[{"id":312,"name":"New Task","description":null,"deadline":null,"creator_id":119,"assigned_id":null,"completer_id":null,"project_id":31}]*/
 
             console.log(request);
 
@@ -205,14 +204,16 @@ function toggle(taskId) {
             console.log("Assigned: " +response[2].name);
 
 
-                $("#task-assign").html("");
+            $("#task-assign").html("");
+            if(response[1].length > 0) {
                 $("#task-assign").append($('<option>', {
                     value: response[2].id,
                     text: response[2].name,
                     selected: true
                 }));
+            }
 
-            console.log("tag: " +response[1][0].name);
+
             if(response[1].length > 0){
 
                 $("#task-tags").append($('<option>', {
@@ -220,6 +221,8 @@ function toggle(taskId) {
                     text: response[1][0].name,
                     selected: true
                 }));
+            }else{
+                $("#task-tags").html("");
             }
 
             for (var i = 0; i < response[3].length; i++) {
@@ -334,9 +337,47 @@ function back() {
 function showUncompletedTasks() {
     $('.uncompleted').show();
     $('.completed').hide();
+
+    $('#completed-button').removeClass('selected');
+    $('#uncompleted-button').addClass('selected');
 }
 
 function showCompletedTasks() {
     $('.uncompleted').hide();
     $('.completed').show();
+
+    $('#uncompleted-button').removeClass('selected');
+    $('#completed-button').addClass('selected');
+}
+
+function changeTagName(tag_name){
+
+    $("#tag-name").html(tag_name).append('<span class="caret"></span>');
+
+    if(tag_name == 'All'){
+        $('#hashtag').each(function(i, obj) {
+            $(this).parents('.task').show();
+        });
+    }
+    else{
+        $('#hashtag').each(function(i, obj) {
+            var name = tag_name;
+            if($(this).text() != name){
+                console.log(name);
+                console.log($(this).text());
+                $(this).parents('.task').hide();
+            }else{
+                if($(this).attr('class') =='completed' && $('#completed-button').attr('class') == 'selected'){
+                    $(this).parents('.task').show();
+                }else{
+                    $(this).parents('.task').hide();
+                }
+                if($(this).attr('class') =='uncompleted' && $('#uncompleted-button').attr('class') == 'selected'){
+                    $(this).parents('.task').show();
+                }else{
+                    $(this).parents('.task').hide();
+                }
+            }
+        });
+    }
 }
