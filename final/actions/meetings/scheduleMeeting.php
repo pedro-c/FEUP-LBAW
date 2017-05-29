@@ -6,6 +6,8 @@ include_once('../../database/tag.php');
 include_once('../../database/files.php');
 include_once('../../config/init.php');
 
+
+
 if (isset($_POST['title']) && isset($_POST['date']) && isset($_POST['time']) && isset($_POST['invited_users'])) {
     $title = $_POST['title'];
     $description = $_POST['description'];
@@ -52,6 +54,7 @@ if (isset($_POST['title']) && isset($_POST['date']) && isset($_POST['time']) && 
                 addTagToFile($file, $tagId);
         }
     }
+
 
 
     $_SESSION['success_messages'][] = '<br>' . 'Schedule Meeting successful';
