@@ -27,7 +27,7 @@ foreach ($replies as $reply){
     $userCanEdit = ($userId === $reply['id_creator']);
     $userCanDelete = ($userCanEdit || isCoordinator($userId,$projectId));
     $replyOutput['content'] = $reply['content'];
-    $replyOutput['creation_date'] = $reply['creation_date'];
+    $replyOutput['creation_date'] = get_day_name($reply['creation_date']);
     $replyOutput['username'] = $user['username'];
     $replyOutput['photo'] = $photo;
     $replyOutput['n_likes'] = $reply['n_likes'];

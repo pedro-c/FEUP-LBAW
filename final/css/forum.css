@@ -260,7 +260,8 @@ div.forum-posts-nav {
 
 .submitter-photo {
   width: 25px;
-  margin-right: 3px; }
+  margin-right: 3px;
+  border-radius: 50%; }
 
 .selected-post-title {
   margin-bottom: 5px; }
