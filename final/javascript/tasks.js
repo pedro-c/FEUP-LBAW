@@ -27,7 +27,7 @@ $(document).ready(function(){
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
             cell1.innerHTML = "<i class='fa fa-check-circle-o' id='complete-button' onclick='completeTask("+data[0].id+")'></i>";
-            cell2.innerHTML = "<div><textarea onclick='toggle("+data[0].id+");' id="+data[0].id+">New Task</textarea></div>";
+            cell2.innerHTML = "<div onclick='toggle("+data[0].id+");'><textarea onclick='toggle("+data[0].id+");' id="+data[0].id+" disabled='true'>New Task</textarea></div>";
             cell3.innerHTML = "<i id='delete-button' onclick='deleteTask("+data[0].id+")' name='delete-task' class='fa fa-times'></i>";
         });
 
