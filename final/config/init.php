@@ -11,7 +11,7 @@ $conn = new PDO('pgsql:host=dbm.fe.up.pt;dbname=lbaw1614', 'lbaw1614', 'yz54fi76
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$conn->exec('SET SCHEMA \'public\''); //FIXME?
+$conn->exec('SET SCHEMA \'final\''); //FIXME?
 
 include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
 

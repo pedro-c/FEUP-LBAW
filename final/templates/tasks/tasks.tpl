@@ -22,7 +22,9 @@
                     <ul class="dropdown-menu">
                         <li><a id="tag-name-dropwdown" onclick="changeTagName('All')">All</a></li>
                         {foreach $projectTags as $projectTag}
-                            <li><a id="tag-name-dropwdown" onclick="changeTagName('{$projectTag.name}')">{$projectTag.name}</a></li>
+                            {if {$projectTag} != "null-tag"}
+                                <li><a id="tag-name-dropwdown" onclick="changeTagName('{$projectTag.name}')">{$projectTag.name}</a></li>
+                            {/if}
                         {/foreach}
 
                     </ul>
@@ -96,7 +98,9 @@
                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
                     <select id="task-tags" class="select2-tags form-control" multiple="multiple">
                         {foreach $projectTags as $tag}
-                            <option id="{$tag.id}">{$tag.name}</option>
+                            {if {$tag.name} != 'null-tag'}
+                                <option id="{$tag.id}">{$tag.name}</option>
+                            {/if}
                         {/foreach}
                     </select>
                 </div>

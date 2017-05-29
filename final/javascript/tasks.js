@@ -75,24 +75,22 @@ $(document).ready(function(){
 
         });
 
-        var tagName = null;
-        if($("#task-tags option:selected").html() === undefined){
-            tagName = "null-tag"
-        }else{
-            tagName = $("#task-tags option:selected").html();
+
+        if($("#task-tags option:selected").html() != undefined){
+            $.ajax({
+                type:'post',
+                url: '../api/tasks/set-task-tags.php',
+                data:  {'taskTag':$("#task-tags option:selected").html() , 'taskId': $("#task-name").attr("name")},
+                success: function(data) {
+
+                    console.log(data);
+                    console.log($("#task-tags option:selected").html());
+
+                }
+
+            });
         }
-        $.ajax({
-            type:'post',
-            url: '../api/tasks/set-task-tags.php',
-            data:  {'taskTag':tagName , 'taskId': $("#task-name").attr("name")},
-            success: function(data) {
 
-                console.log(data);
-                console.log($("#task-tags option:selected").html());
-
-            }
-
-        });
 
 
     });
@@ -226,9 +224,8 @@ function toggle(taskId) {
                 selected: true
             }));
 
-
+            $("#task-tags").html("");
             if(response[1].length > 0){
-                $("#task-tags").html("");
                 $("#task-tags").append($('<option>', {
                     value: response[1][0].id,
                     text: response[1][0].name,
@@ -237,10 +234,12 @@ function toggle(taskId) {
             }
 
             for (var i = 0; i < response[5].length; i++) {
-                $("#task-tags").append($('<option>', {
-                    value: response[5][i].id,
-                    text: response[5][i].name,
-                }));
+                if(response[5][i].name != "null-tag"){
+                    $("#task-tags").append($('<option>', {
+                        value: response[5][i].id,
+                        text: response[5][i].name,
+                    }));
+                }
             }
 
 
