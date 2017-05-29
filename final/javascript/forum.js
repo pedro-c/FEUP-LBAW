@@ -62,7 +62,7 @@ $(document).ready(function () {
             let userPhoto = reply.photo;
             let username = reply.username;
 
-            let replyElement = makeReplyElement(id, userPhoto, username, creationDate, 0, replyContent, false, true);
+            let replyElement = makeReplyElement(id, userPhoto, username, creationDate, 0, replyContent, false, true, true);
             $("#replies").append(replyElement);
 
             $('html, body').animate({
