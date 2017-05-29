@@ -107,11 +107,12 @@
                                         {/if}
                                     </label>
                                     {if $coordinator == 'true'}
-                                    <div class="delete-icon">
-                                        <i class="pull-right fa fa-trash" aria-hidden="true" data-toggle="modal" data-id={$meeting.id} data-target="#deleteMeetingModal"></i>
-                                    </div>
+
                                     <div class="edit-icon">
                                         <i class="pull-right fa fa-pencil" aria-hidden="true" data-toggle="modal" onclick=editMeetingInfo({$meeting.id})></i>
+                                    </div>
+                                    <div class="delete-icon">
+                                        <i class="pull-right fa fa-times" aria-hidden="true" data-toggle="modal" data-id={$meeting.id} data-target="#deleteMeetingModal"></i>
                                     </div>
                                 </div>
                                     <div id="deleteMeetingModal" class="modal fade" role="dialog">

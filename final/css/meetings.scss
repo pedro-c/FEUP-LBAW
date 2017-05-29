@@ -146,14 +146,16 @@
 
           .delete-icon{
 
-            .fa.fa-trash{
+            .fa.fa-trash,
+            .fa.fa-times{
               color: $blue_secondary;
               font-size: large;
               cursor: pointer;
               margin-bottom: 15px;
+              padding-right: 5px;
 
               &:hover {
-                color: $color_yellow;
+                color: red;
               }
             }
           }

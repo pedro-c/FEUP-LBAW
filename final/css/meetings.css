@@ -317,13 +317,16 @@ body {
         padding-bottom: 0 !important; }
         #page-meetings .container_meetings .meeting .panel-body .information_meeting {
           margin-bottom: 5px; }
-          #page-meetings .container_meetings .meeting .panel-body .information_meeting .delete-icon .fa.fa-trash {
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting .delete-icon .fa.fa-trash,
+          #page-meetings .container_meetings .meeting .panel-body .information_meeting .delete-icon .fa.fa-times {
             color: #22313f;
             font-size: large;
             cursor: pointer;
-            margin-bottom: 15px; }
-            #page-meetings .container_meetings .meeting .panel-body .information_meeting .delete-icon .fa.fa-trash:hover {
-              color: #e9d460; }
+            margin-bottom: 15px;
+            padding-right: 5px; }
+            #page-meetings .container_meetings .meeting .panel-body .information_meeting .delete-icon .fa.fa-trash:hover,
+            #page-meetings .container_meetings .meeting .panel-body .information_meeting .delete-icon .fa.fa-times:hover {
+              color: red; }
           #page-meetings .container_meetings .meeting .panel-body .information_meeting .edit-icon .fa.fa-pencil {
             color: #22313f;
             font-size: large;
