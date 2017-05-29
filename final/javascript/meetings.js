@@ -89,6 +89,7 @@ function exitMobile() {
     $(".meeting-panel").removeClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
     $("#container_schedule_meeting").hide();
     $("#container_edit_meeting").hide();
+    $("#container_meeting_info").hide();
 }
 
 function exit_trash() {
