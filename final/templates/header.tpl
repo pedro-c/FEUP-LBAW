@@ -83,6 +83,9 @@
                 <li>
                     <a href="../pages/team.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
                 </li>
+                <li>
+                    <a href="../pages/help.php"><i class="fa fa-question-circle fa-2x"></i><p>Help</p></a>
+                </li>
             </ul>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
