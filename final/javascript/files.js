@@ -22,7 +22,6 @@ $(document).ready(function () {
     });
 
     $( "#drag-here" ).bind( "dragover", function() {
-        console.log("dragover");
         $("#here").className = "box drag-here text-center dragover";
         return false;
     });
@@ -39,7 +38,6 @@ $(document).ready(function () {
 
     $('input#add-file-files').change(function(){
         var files = $(this)[0].files;
-        console.log(files);
         if(files.length > 0){
             $("#file-info-files").html("File uploaded.");
         }
@@ -56,7 +54,6 @@ function deleteFile(){
         url:'../api/files/delete-file.php',
         dataType: 'json',
         success: function (data) {
-            console.log(data);
             location.reload();
         }
     });
@@ -93,7 +90,6 @@ function getFormatImage(format) {
 }
 
 function downloadFile(file_id) {
-    console.log(file_id);
 
     $.ajax({
         type: 'POST',
@@ -114,12 +110,10 @@ function fileInfo(file_id){
         url:'../api/files/file-details.php',
         dataType: 'json',
         success: function (data) {
-            console.log(data[0]);
 
             var i;
             for(i=0; i< data.length; i++){
                var format = data[i].file_name.substr(data[i].file_name.length - 3);
-                console.log("Format " + format);
                 $("#format").attr('src', getFormatImage(format));
                 $("#file_name").text(data[i].file_name);
                 $("#download_file").attr('onclick','downloadFile('+ data[i].id + ')');
