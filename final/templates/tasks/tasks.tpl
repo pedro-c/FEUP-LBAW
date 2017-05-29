@@ -43,13 +43,13 @@
 
                         {$tag = getTagFromTaskId($task.id)}
 
-                        <tr class="task {$completed}" id="{$task.id}">
+                        <tr class="task {$completed}" id="{$task.id}" style="cursor: pointer">
                             <td>
                                 <i id="complete-button" name="complete-task"  onclick="completeTask({$task.id})" class="fa fa-check-circle-o"></i>
                             </td>
                             <td>
-                                <div class="task-name" onclick="toggle({$task.id});">
-                                    <textarea onclick="toggle({$task.id});" id="{$task.id}" disabled="true">{$task.name}</textarea>
+                                <div class="task-name" onclick="toggle({$task.id});" style="z-index: -10">
+                                    <textarea onclick="toggle({$task.id});" id="{$task.id}" disabled="true" style="cursor: pointer">{$task.name}</textarea>
                                     {if {$tag[0].name} != null}
                                         <p class="hashtag {$completed}">{$tag[0].name}</p>
                                     {else}
