@@ -46,6 +46,12 @@ i.dash-title-icon{
   margin-left: 5px;
 }
 
+.item-title{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .dash-card>.panel>.panel-body{
     text-align: center;
 }

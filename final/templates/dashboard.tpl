@@ -18,7 +18,7 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 dash-card">
             <div class="panel panel-primary">
-                <a href="#" class="panel-heading">
+                <a href="../pages/tasks.php" class="panel-heading">
                     <h4 class="panel-title"><i class="glyphicon glyphicon-check dash-title-icon"></i> Your Tasks
                         <span class="to-page glyphicon glyphicon-menu-right"></span>
                     </h4>
@@ -26,12 +26,11 @@
                 <div class="panel-body">
                     <div class="list-group">
                         {foreach $uncompletedTasks as $task}
-
-                        <button class="list-group-item">
-                            <i class="glyphicon glyphicon-menu-right dash-icon"></i>
-                            <span class="dash-item-text"> {$task.name}</span>
-                            <span class="dash-item-text"> Assigned to: {$taskName=getTaskAssignedName($task.id)}{$taskName.name}</span>
-                        </button>
+                            <button class="list-group-item">
+                                <i class="glyphicon glyphicon-menu-right dash-icon"></i>
+                                <span class="dash-item-text item-title"> {$task.name}</span>
+                                <span class="dash-item-text"> Assigned to: {$taskName=getTaskAssignedName($task.id)}{$taskName.name}</span>
+                            </button>
                         {/foreach}
                     </div>
                 </div>
@@ -39,47 +38,27 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 dash-card">
             <div class="panel panel-primary">
-                <a href="#" class="panel-heading">
+                <a href="../pages/forum.php" class="panel-heading">
                     <h4 class="panel-title"><i class="fa fa-quote-right dash-title-icon"></i> Forum
                         <span class="to-page glyphicon glyphicon-menu-right"></span>
                     </h4>
                 </a>
                 <div class="panel-body">
                     <div class="list-group">
+                        {foreach $forumPosts as $post}
                         <button class="list-group-item">
                             <div class="row">
-                                <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 item-title">
                                     <i class="glyphicon glyphicon-menu-right dash-icon"></i><span
-                                            class="dash-item-text">Don't forget to comment</span>
+                                            class="dash-item-text">{$post.title}</span>
                                 </span>
                                 <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                        <img src="../images/users/avatar2.png" class="dash-user-thumb"/><span
-                                            class="dash-item-username"><small>epassos</small></span>
+                                        <img src="{getPhoto($post.creator_id)}" class="dash-user-thumb"/><span
+                                            class="dash-item-username"><small>{$post.username}</small></span>
                                 </span>
                             </div>
                         </button>
-                        <button class="list-group-item">
-                            <div class="row">
-                                <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <i class="glyphicon glyphicon-menu-right dash-icon"></i><span class="dash-item-text">Great JS resource</span>
-                                </span>
-                                <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                        <img src="../images/users/avatar6.png" class="dash-user-thumb"/><span
-                                            class="dash-item-username"><small>pedroc</small></span>
-                                </span>
-                            </div>
-                        </button>
-                        <button class="list-group-item">
-                            <div class="row">
-                                <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <i class="glyphicon glyphicon-menu-right dash-icon"></i><span class="dash-item-text">Some changes needed</span>
-                                </span>
-                                <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                        <img src="../images/users/avatar1.png" class="dash-user-thumb"/><span
-                                            class="dash-item-username"><small>mariajoaomp</small></span>
-                                </span>
-                            </div>
-                        </button>
+                        {/foreach}
                     </div>
                 </div>
             </div>
@@ -96,7 +75,8 @@
                     <div class="list-group">
                         {foreach $meetings as $meeting}
                             <button class="list-group-item">
-                                <i class="glyphicon glyphicon-menu-right dash-icon"></i><span class="dash-item-text">{$meeting.name}</span>
+                                <i class="glyphicon glyphicon-menu-right dash-icon"></i><span
+                                        class="dash-item-text item-title">{$meeting.name}</span>
                                 <small class="dash-date">{$meeting.date|substr:0:10}</small>
                             </button>
                         {/foreach}
@@ -146,7 +126,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 dash-card">
             <div class="panel panel-primary">
-                <a href="#" class="panel-heading">
+                <a href="../pages/team.php" class="panel-heading">
                     <h4 class="panel-title"><i class="fa fa-users dash-title-icon"></i> The Team
                         <span class="to-page glyphicon glyphicon-menu-right"></span>
                     </h4>
@@ -154,9 +134,9 @@
                 <div class="panel-body">
                     <div class="row">
                         {foreach from=$teamMembers item=member}
-                          <!--{$photo_path = $team_members[$i]['photo_path']}-->
-                          {$photo_path = $member['photo_path']}
-                          {include file="./team/member_square.tpl" photopath=$photo_path}
+                            <!--{$photo_path = $team_members[$i]['photo_path']}-->
+                            {$photo_path = $member['photo_path']}
+                            {include file="./team/member_square.tpl" photopath=$photo_path}
                         {/foreach}
                     </div>
                 </div>
