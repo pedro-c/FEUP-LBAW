@@ -431,7 +431,7 @@ body {
       float: right; }
   .create-task .task-tags {
     text-align: start;
-    padding: 5px;
+    padding-top: 5px;
     width: 200px; }
     .create-task .task-tags span {
       width: 100% !important;
@@ -545,5 +545,8 @@ textarea {
   text-align: start;
   border-collapse: separate;
   empty-cells: show; }
+
+.input-group {
+  border-bottom: 10px; }
 
 /*# sourceMappingURL=tasks.css.map */

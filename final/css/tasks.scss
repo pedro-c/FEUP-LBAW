@@ -273,7 +273,7 @@
   }
   .task-tags{
     text-align: start;
-    padding: 5px;
+    padding-top: 5px;
     width: 200px;
     span{
       li > span{
@@ -287,7 +287,6 @@
       width: 50px !important;
       border-bottom-left-radius: 4px !important;
       border-top-left-radius: 4px !important;
-
     }
   }
 
@@ -415,4 +414,8 @@ textarea{
   //-webkit-writing-mode: horizontal-tb;
   border-collapse: separate;
   empty-cells: show;
+}
+
+.input-group{
+  border-bottom: 10px;
 }
