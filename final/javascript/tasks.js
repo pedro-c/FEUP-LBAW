@@ -293,12 +293,27 @@ function deleteTask(taskId) {
 
 function completeTask(taskId) {
 
+    if($("#"+taskId).hasClass("uncompleted")){
+        $("#"+taskId).removeClass("uncompleted");
+        $("#"+taskId).addClass("completed");
+    }else{
+        $("#"+taskId).removeClass("completed");
+        $("#"+taskId).addClass("uncompleted");
+    }
+
+    if($('#uncompleted-button').prop("disabled")){
+        showUncompletedTasks();
+    }else{
+        showCompletedTasks();
+    }
+
     $.ajax({
         type:'post',
         url: '../api/tasks/complete-task.php',
         data:  {'taskId': taskId},
-        success: function() {
+        success: function(result) {
 
+            console.log(result);
 
         }
 
