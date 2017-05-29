@@ -99,6 +99,7 @@ $(document).ready(function () {
         let textbox = $(
             '<textarea id="reply-edit-text" class="form-control" rows="3" style="resize: none"' +
             ' required="required">' + replyContent + '</textarea>' +
+            '<span hidden="hidden" class="cur-reply-content">' + replyContent + '</span>' +
             '<div class="reply-edit-buttons">' +
             '<button id="submit-reply-edit" class="btn btn-default btn-form" type="submit">Submit</button>' +
             '<button id="cancel-reply-edit" class="btn btn-default btn-form">Cancel</button>' +
@@ -110,7 +111,7 @@ $(document).ready(function () {
     /*
      * Click handler for the reply edit submit button
      */
-    $('body').on('click','#submit-reply-edit',function(e){
+    $('body').on('click', '#submit-reply-edit', function (e) {
         e.preventDefault();
         let replyElement = $(this).parents(".forum-reply");
         console.log(replyElement);
@@ -129,7 +130,7 @@ $(document).ready(function () {
             content: content,
         }, function (data) {
             text.replaceWith(
-               $('<p class="list-group-item-text reply-content">'+ data +'</p>')
+                $('<p class="list-group-item-text reply-content">' + data + '</p>')
             );
         });
 
@@ -137,12 +138,33 @@ $(document).ready(function () {
         replyButtons.remove();
     });
 
+    /*
+     * Click handler for the reply edit cancel button
+     */
+    $('body').on('click', '#cancel-reply-edit', function (e) {
+        e.preventDefault();
+        let replyElement = $(this).parents(".forum-reply");
+        console.log(replyElement);
+        let replyId = parseInt(replyElement.find('span.reply-id').text());
+        console.log(replyId);
+        let replyButtons = replyElement.find(".reply-edit-buttons");
+        let replyContentElement = replyElement.find(".cur-reply-content");
+        let replyContentText = replyContentElement.text();
+
+        let text = $("#reply-edit-text");
+
+        text.replaceWith(
+            $('<p class="list-group-item-text reply-content">' + replyContentText + '</p>')
+        );
+
+        replyContentElement.remove();
+        replyButtons.remove();
+    });
+
 
     /*
      * Click Handlers End
      */
-
-
     let performPagination = function (clickedObject, curPage) {
         let numPages = parseInt($("#pagination-n-pages").text());
         let selectedPage;
