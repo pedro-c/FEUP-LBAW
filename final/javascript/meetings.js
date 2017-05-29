@@ -74,6 +74,7 @@ function schedule() {
     $("#schedule_meetings").css("border-bottom-color","#e9d460");
     $("#future_meetings").css("border-bottom","none");
     $("#edit-meeting").hide();
+    $("#container_edit_meeting").hide();
 }
 
 function exitMobile() {
@@ -232,32 +233,12 @@ function showUserInfo(user_id){
 function editMeetingInfo(meeting_id){
 
     console.log(meeting_id);
-    schedule();
 
-    $(".atendees").hide();
-    $(".input-group.task-tags").hide();
-    $(".box").hide();
-    $("#edit-meeting").show();
-    $("#submit").hide();
-
-    $.ajax({
-        type: 'POST',
-        data: { 'meeting_id': meeting_id} ,
-        url:'../api/meetings/meeting-details.php',
-        dataType: 'json',
-        success: function (data) {
-            date = data[0].date.substr(0,data[0].date.indexOf(' '));
-            time = data[0].date.substr(data[0].date.indexOf(' ')+1);
-
-            $("#meeting-date-id").attr('value', date);
-            $("#meeting-duration-id").attr('value', data[0].duration);
-            $("#meeting-time-id").attr('value', time);
-            $("#meeting-title-id").attr('placeholder', data[0].name);
-            $("#meeting-description-id").html(data[0].description);
-
-        }
-    });
-
-
-
+    $("#container_edit_meeting").show();
+    $("#mobile-back").show();
+    $("#container_schedule_meeting").hide();
+    $("#container_to_collapse").removeClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
+    $("#container_to_collapse").addClass("col-lg-6 col-md-6 col-sm-6 hidden-xs");
+    $(".meeting-panel").removeClass("col-lg-6 col-md-6 col-sm-6 col-xs-12");
+    $(".meeting-panel").addClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
 }
