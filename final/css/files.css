@@ -229,7 +229,6 @@ body {
 
 .files_title {
   background-color: #fff;
-  border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
   .files_title button {
     display: inline;
@@ -453,5 +452,8 @@ body {
   #container_schedule_meeting {
     padding: 0 !important;
     margin: 0 !important; } }
+#goBackButton,
+#uploadButton {
+  padding-top: 10px; }
 
 /*# sourceMappingURL=files.css.map */
