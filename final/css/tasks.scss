@@ -268,7 +268,10 @@
         width:30px;
       }
       span{
-        width: auto !important;
+        width: 100% !important;
+      }
+      .select2-selection__choice__remove{
+        display: initial !important;
       }
     }
 

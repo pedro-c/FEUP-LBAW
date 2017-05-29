@@ -45,10 +45,16 @@ $(document).ready(function(){
 
     $("#task-name").keyup(function(e) {
 
-        var m=$("#task-name");
+        var m=$("input#task-name");
         var value= m.val();
         var taskId = $("#task-name").attr("name");
-        $("#"+taskId+".task-name").val(value);
+        $("textarea#"+taskId).val(value);
+
+        console.log(taskId);
+
+        console.log($("textarea#"+taskId).innerHTML);
+        console.log( $("#task-name").attr("name"));
+        console.log(m.val());
     });
 
     $(".select2").on('focusout', function() {
@@ -204,26 +210,20 @@ function toggle(taskId) {
             console.log(response);
 
 
-            $("#task-assign").html("");
-            if(response[1].length > 0) {
-                $("#task-assign").append($('<option>', {
-                    value: response[2].id,
-                    text: response[2].name,
-                    selected: true
-                }));
-            }
+            $("#task-assign").append($('<option>', {
+                value: response[2].id,
+                text: response[2].name,
+                selected: true
+            }));
 
 
-            if(response[1].length > 0){
 
-                $("#task-tags").append($('<option>', {
-                    value: response[1][0].id,
-                    text: response[1][0].name,
-                    selected: true
-                }));
-            }else{
-                $("#task-tags").html("");
-            }
+            $("#task-tags").append($('<option>', {
+                value: response[1][0].id,
+                text: response[1][0].name,
+                selected: true
+            }));
+
 
             for (var i = 0; i < response[3].length; i++) {
                 $("#task-assign").append($('<option>', {
