@@ -194,5 +194,3 @@ function leaveProject($projectID){
     $stmt = $conn->prepare('DELETE FROM user_project WHERE id_project = ?');
     $stmt->execute([$projectID]);
 }
-
-

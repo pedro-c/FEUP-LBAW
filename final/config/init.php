@@ -1,13 +1,13 @@
 <?php
-session_set_cookie_params(0 ,'/~lbaw1614');
+session_set_cookie_params(0 ,'/~lbaw1614'); //session_set_cookie_params(3600, '/');
 session_start();
 
 error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-$BASE_DIR = '/opt/lbaw/lbaw1614/public_html/final/';
-$BASE_URL = '/~lbaw1614/final/';
+$BASE_DIR = '/opt/lbaw/lbaw1614/public_html/final/'; //'/home/jczelik/Documents/LBAW/FEUP-LBAW/final/';
+$BASE_URL = '/~lbaw1614/final/'; //'/final/';
 
-$conn = new PDO('pgsql:host=dbm;dbname=lbaw1614', 'lbaw1614', 'yz54fi76');
+$conn = new PDO('pgsql:host=dbm.fe.up.pt;dbname=lbaw1614', 'lbaw1614', 'yz54fi76');
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

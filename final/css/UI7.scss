@@ -647,7 +647,6 @@
 
 }
 
-
 /* Mobile */
 
 @media screen and (max-device-width: 667px) {
@@ -655,6 +654,10 @@
   .uploadFile_container, .col-lg-6.col-md-6.col-sm-6.col-xs-12{
     padding: 0 !important;
     margin: 0 !important;
+  }
+
+  #tag-name.pull-right{
+    text-align: center;
   }
 
 }

@@ -159,26 +159,26 @@
                         <form class="new_meeting" method="post" action="../actions/meetings/scheduleMeeting.php"
                               enctype="multipart/form-data">
                             <div class="title">
-                                <input id="meeting-title-id" type="text" name="title" class="form-control"
+                                <input type="text" name="title" class="form-control"
                                        placeholder="Choose a Creative Title">
                             </div>
-                            <textarea id="meeting-description-id" name="description" maxlength="512">Meeting Resume</textarea>
+                            <textarea name="description" maxlength="512">Meeting Resume</textarea>
 
                             <div class="calendar">
                                 <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar"
                                       aria-hidden="true"></span>
-                                <input id="meeting-date-id" type="date" name="date" class="form-control">
+                                <input type="date" name="date" class="form-control">
                             </div>
 
                             <div class="duration">
                                 <span class="meetings_icon glyphicon glyphicon-pushpin" aria-hidden="true"></span>
-                                <input id="meeting-duration-id" type="number" name="duration" class="form-control"
+                                <input type="number" name="duration" class="form-control"
                                        placeholder="Meeting Duration">
                             </div>
 
                             <div class="time">
                                 <span class="meetings_icon glyphicon glyphicon-time" aria-hidden="true"></span>
-                                <input id="meeting-time-id" type="time" name="time" class="form-control">
+                                <input type="time" name="time" class="form-control">
                             </div>
 
 
@@ -235,13 +235,14 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-meeting" id="create-meeting-settings">
-                        <form class="new_meeting" method="post" action="../actions/meetings/scheduleMeeting.php"
-                              enctype="multipart/form-data">
+                        <form class="new_meeting" method="post" action="../actions/meetings/edit-meeting.php" enctype="multipart/form-data">
                             <div class="title">
                                 <input id="meeting-title-id" type="text" name="title" class="form-control"
                                        placeholder="Choose a Creative Title">
                             </div>
                             <textarea id="meeting-description-id" name="description" maxlength="512">Meeting Resume</textarea>
+
+                            <input name="id" id="meeting" hidden>
 
                             <div class="calendar">
                                 <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar"
@@ -271,8 +272,6 @@
                 </div>
             </div>
         </div>
-
-
 
 
         <div id="container_meeting_info" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" hidden>
