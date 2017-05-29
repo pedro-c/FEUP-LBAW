@@ -34,6 +34,9 @@ body {
   #header #navbar {
     border: none;
     height: 50px !important; }
+    #header #navbar.collapsing, #header #navbar.collapse, #header #navbar.in {
+      max-height: none;
+      overflow-y: visible; }
   #header .navbar-brand img {
     margin-top: -10px;
     margin-left: -10px;

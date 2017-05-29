@@ -508,6 +508,7 @@ html, body {
     .form-register .form-actions .register-button {
       padding: 10px 50px 10px 50px;
       margin-top: 25px;
+      margin-bottom: 25px;
       background-color: #425262;
       border: none;
       color: white; }
