@@ -18,7 +18,7 @@ $(document).ready(function () {
     let pagination = $(".pagination");
 
     /*
-     * Click Handlers Start
+     ************************************ Click Handlers Start *****************************************************
      */
 
     /*
@@ -94,15 +94,22 @@ $(document).ready(function () {
     $("body").on('click', '.edit-reply-option', function (e) {
         e.preventDefault();
         let replyElement = $(this).parents(".forum-reply");
+
+        if(replyElement.find("[class=reply-edit-buttons]").length !== 0)
+            return;
         let replyContentElement = replyElement.find('.reply-content');
+
+        if(replyContentElement === null)
+            return;
+
         let replyContent = replyElement.find('.reply-content').text();
         let textbox = $(
             '<textarea id="reply-edit-text" class="form-control" rows="3" style="resize: none"' +
             ' required="required">' + replyContent + '</textarea>' +
             '<span hidden="hidden" class="cur-reply-content">' + replyContent + '</span>' +
             '<div class="reply-edit-buttons">' +
-            '<button id="submit-reply-edit" class="btn btn-default btn-form" type="submit">Submit</button>' +
-            '<button id="cancel-reply-edit" class="btn btn-default btn-form">Cancel</button>' +
+            '<button class="submit-reply-edit btn btn-default btn-form" type="submit">Submit</button>' +
+            '<button class="cancel-reply-edit btn btn-default btn-form">Cancel</button>' +
             '</div>'
         );
         replyContentElement.replaceWith(textbox)
@@ -111,12 +118,10 @@ $(document).ready(function () {
     /*
      * Click handler for the reply edit submit button
      */
-    $('body').on('click', '#submit-reply-edit', function (e) {
+    $('body').on('click', '.submit-reply-edit', function (e) {
         e.preventDefault();
         let replyElement = $(this).parents(".forum-reply");
-        console.log(replyElement);
         let replyId = parseInt(replyElement.find('span.reply-id').text());
-        console.log(replyId);
         let replyButtons = replyElement.find(".reply-edit-buttons");
 
         let text = $("#reply-edit-text");
@@ -141,12 +146,9 @@ $(document).ready(function () {
     /*
      * Click handler for the reply edit cancel button
      */
-    $('body').on('click', '#cancel-reply-edit', function (e) {
+    $('body').on('click', '.cancel-reply-edit', function (e) {
         e.preventDefault();
         let replyElement = $(this).parents(".forum-reply");
-        console.log(replyElement);
-        let replyId = parseInt(replyElement.find('span.reply-id').text());
-        console.log(replyId);
         let replyButtons = replyElement.find(".reply-edit-buttons");
         let replyContentElement = replyElement.find(".cur-reply-content");
         let replyContentText = replyContentElement.text();
@@ -161,9 +163,65 @@ $(document).ready(function () {
         replyButtons.remove();
     });
 
+    /*
+     * Click handler for the reply delete button
+     */
+    $('body').on('click', '.delete-reply-option', function (e) {
+        e.preventDefault();
+        let replyElement = $(this).parents(".forum-reply");
+
+        if(replyElement.find("[class=reply-delete-buttons]").length !== 0)
+            return;
+
+        let deleteOptionButtons = $(
+            '<div class="reply-delete-buttons">' +
+            '<p class="delete-reply-prompt">' +
+            'Are you sure you want to delete this reply?' +
+            '</p>' +
+            '<button class="btn btn-default btn-form confirm-delete-reply" type="submit">Delete</button>' +
+            '<button class="btn btn-default btn-form cancel-delete-reply">Cancel</button>' +
+            '</div>'
+        );
+        replyElement.append(deleteOptionButtons);
+    });
 
     /*
-     * Click Handlers End
+     * Click handler for the reply delete confirm button
+     */
+    $('body').on('click', '.confirm-delete-reply', function (e) {
+        e.preventDefault();
+
+        let replyElement = $(this).parents(".forum-reply");
+        let replyId = parseInt(replyElement.find('span.reply-id').text());
+
+        $.post("../api/forum/delete_post_reply.php",{
+            reply_id : replyId
+        }, function(data){
+            console.log(data);
+            if(data === 'success')
+                replyElement.remove();
+        });
+
+    });
+
+    /*
+     * Click handler for the reply delete cancel button
+     */
+    $('body').on('click', '.cancel-reply-delete', function (e) {
+        e.preventDefault();
+        let replyElement = $(this).parents(".forum-reply");
+        let replyButtons = replyElement.find(".reply-cancel-buttons");
+        replyButtons.remove();
+    });
+
+    /*
+     ************************************ Click Handlers End *****************************************************
+     */
+
+    /**
+     * Perform the forum pagination, called when a button on the pagination nav is clicked
+     * @param clickedObject
+     * @param curPage
      */
     let performPagination = function (clickedObject, curPage) {
         let numPages = parseInt($("#pagination-n-pages").text());
@@ -308,7 +366,9 @@ $(document).ready(function () {
         posts.removeClass("background");
         newPostButton.removeClass("background");
         forum.removeClass("col-lg-3 col-md-3 col-sm-3 hidden-xs");
-        nav.width(nav.parent().width());
+        nav.removeClass('affix affix-top affix-bottom').removeData('bs.affix');
+        nav.on('affix-top.bs.affix',function(e){e.preventDefault()});
+        nav.css('width','inherit');
     };
 
 
@@ -528,7 +588,15 @@ function makeReplyElement(replyId, userPhoto, username, creationDate, numLikes, 
     );
 
     if (userCanDelete) {
-        let dropdown = $(
+        let dropdown = makeReplyOptions(userCanEdit);
+        replyElement.find(".reply-options").append(dropdown);
+    }
+
+    return replyElement;
+}
+
+function makeReplyOptions(userCanEdit){
+    return $(
             '<div class="btn-group dropdown">' +
             '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"' +
             ' aria-expanded="false">' +
@@ -539,13 +607,7 @@ function makeReplyElement(replyId, userPhoto, username, creationDate, numLikes, 
             (userCanEdit ? '<a class="dropdown-item edit-reply-option" href="#">Edit Reply</a>' : '') +
             '<a class="dropdown-item delete-reply-option" href="#">Delete Reply</a>' +
             '</div>' +
-            '</div>'
-        );
-
-        replyElement.find(".reply-options").append(dropdown);
-    }
-
-    return replyElement;
+            '</div>');
 }
 
 function makePostElement(id, title, creationDate, content, dateModified, username, photo, numLikes, likedByUser) {

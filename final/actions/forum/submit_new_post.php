@@ -12,6 +12,7 @@ if(!isset($_SESSION['user_id'] ) || !isset($_SESSION['project_id'])){
 
 $title = $_POST['post_title'];
 $post_content = $_POST['post_content'];
+$post_content = htmlspecialchars($post_content);
 $id_project = $_SESSION['project_id'];
 $id_user = $_SESSION['user_id'];
 
