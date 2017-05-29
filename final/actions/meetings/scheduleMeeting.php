@@ -19,12 +19,14 @@ if (isset($_POST['title']) && isset($_POST['date']) && isset($_POST['time']) && 
     inviteUserToMeeting($meeting_id, $invited_users, $_SESSION['user_id']);
 
     if (isset($_POST['tagOption'])) {
-        $tag = existsTag(htmlspecialchars($_POST['tagOption']));
+
+        $tagOption = htmlspecialchars($_POST['tagOption']);
+        $tag = existsTag($tagOption);
 
         if ($tag != -1)
             $tagId = $tag;
         else {
-            $tagId = createTag($_POST['tagOption']);
+            $tagId = createTag($tagOption);
             addTagToProject($_SESSION['project_id'], $tagId);
         }
 

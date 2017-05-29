@@ -31,7 +31,7 @@ if(!empty($_FILES['file'])){
             if ($tag != -1)
                 $tagId = $tag;
             else {
-                $tagId = createTag($_POST['tagOption']);
+                $tagId = createTag(htmlspecialchars($_POST['tagOption']));
                 addTagToProject($_SESSION['project_id'], $tagId);
             }
 

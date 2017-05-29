@@ -9,11 +9,12 @@ $(document).ready(function () {
 
     $(".select2-single").select2({
         tags: true,
-        maximumSelectionLength: 1
+        maximumSelectionLength: 1,
+        maximumInputLength: 15
     });
 
     $(".select2-invite-users").select2({
-        tags:true
+        tags:true,
     });
 
 
