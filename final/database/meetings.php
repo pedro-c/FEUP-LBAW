@@ -98,11 +98,21 @@ function getInvitedUsers($meeting_id){
 
 function getInvitedUsersPhotos($meeting_id){
     global $conn;
+
+    $stmt = $conn->prepare('SELECT photo_path,name FROM user_table INNER JOIN user_meeting ON user_meeting.user_id=user_table.id AND user_meeting.meeting_id=?');
+    $stmt->execute([$meeting_id]);
+    $result =  $stmt->fetchAll();
+
+    return $result;
+}
+
+function getInvitedUsersPhotosPaths($meeting_id){
+    global $conn;
     global $BASE_DIR;
 
     $stmt = $conn->prepare('SELECT photo_path FROM user_table INNER JOIN user_meeting ON user_meeting.user_id=user_table.id AND user_meeting.meeting_id=?');
     $stmt->execute([$meeting_id]);
-    $result =  $stmt->fetchAll(PDO::FETCH_COLUMN, 0);;
+    $result =  $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
 
     $photos = [];
 

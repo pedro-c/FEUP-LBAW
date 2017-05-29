@@ -113,7 +113,7 @@ function submitPostReply($userID, $postID, $replyContent)
     $reply = $stmt->fetchAll()[0];
     $user = getUser($reply['id_creator']);
     $username = $user['username'];
-    $photo = getPhoto($user);
+    $photo = getPhoto($userID);
     $output = array();
     $output['id'] = $reply['id'];
     $output['creation_date'] = $reply['creation_date'];
@@ -195,6 +195,15 @@ function userLikedReply($replyId, $userId)
     global $conn;
 
     $stmt = $conn->prepare("SELECT EXISTS (SELECT * FROM forum_reply_like WHERE id_reply = ? AND id_user = ?)");
-    $stmt->execute(array($replyId, $userId));;
+    $stmt->execute(array($replyId, $userId));
     return $stmt->fetch()['exists'];
+}
+
+function editReply($replyId, $replyContent)
+{
+    global $conn;
+    $stmt = $conn->prepare("UPDATE forum_reply
+    SET content = ? WHERE id = ? RETURNING content");
+    $stmt->execute(array($replyContent,$replyId));
+    return $stmt->fetch()['content'];
 }

@@ -8,8 +8,8 @@
     <!-- Page Heading -->
     <div class="tasks-body">
         <div class="tasks-nav">
-            <button type="button" onclick="showUncompletedTasks()">To-Do</button>
-            <button type="button" onclick="showCompletedTasks()">Completed</button>
+            <button type="button" id="completed-button" class="selected" onclick="showUncompletedTasks()">To-Do</button>
+            <button type="button" id="uncompleted-button" onclick="showCompletedTasks()">Completed</button>
         </div>
 
 
@@ -50,7 +50,7 @@
                             <td>
                                 <div class="task-name">
                                     <textarea onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
-                                    <p id="hashtag">{$tag[0].name}</p>
+                                    <p id="hashtag" class=" {$completed}">{$tag[0].name}</p>
                                 </div>
                             </td>
                             <td>

@@ -126,6 +126,10 @@
 
   .uploadFile_container {
 
+
+
+
+
     .panel-heading {
       background-color: $color_yellow;
       color: white;
@@ -354,4 +358,14 @@
 
 .dropdown-menu{
   top: 55% !important;
+}
+
+/* Mobile */
+
+@media screen and (max-device-width: 667px) {
+
+  #container_schedule_meeting{
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 }

@@ -2,7 +2,7 @@
   <div class="panel-body">
      <div class="media">
           <div class="media-left media-middle" id="profile_pic">
-              <img style="width: 100px;" src="../../images/{$profile_image_path}" class="media-object" alt="Profile Photo">
+              <img style="width: 100px;" src="../images/users/{$profile_image_path}" class="media-object" alt="Profile Photo">
           </div>
           <div class="media-body">
               <h4 class="media-heading">{$profile_name|capitalize}</h4>

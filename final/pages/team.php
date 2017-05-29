@@ -65,7 +65,7 @@ $col_division = 12 / $elems_per_row; //DONT CHANGE. Used for grid position purpo
                   $smarty->assign('profile_email', $project_members[$actual_elem]['email']);
                   $smarty->assign('profile_number', $project_members[$actual_elem]['phone_number']);
                   $smarty->assign('profile_id', $project_members[$actual_elem]['id']);
-                  $smarty->assign('profile_image_path', "users/".$project_members[$actual_elem]['photo_path']); //TODO user must define what is his photo
+                  $smarty->assign('profile_image_path', $project_members[$actual_elem]['photo_path']); //TODO user must define what is his photo
 
                   $smarty->display("team/profile_card.tpl");
                 } ?>

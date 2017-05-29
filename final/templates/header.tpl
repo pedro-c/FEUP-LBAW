@@ -58,7 +58,7 @@
                 <img src="../images/assets/logo.png" alt="Direkt"/>
             </a>
             <a href="#" class="mobile-user-options hidden-lg hidden-md hidden-sm">
-                <img src="../images/users/avatar2.png" alt="Your Picture" class="user-collapse-picture"/>
+                <img src={$photo} alt="Your Picture" style="border-radius: 50%;" class="user-collapse-picture"/>
                 <span>{$name}</span>
             </a>
         </div>
@@ -123,7 +123,7 @@
                 <div id="user-options" class="dropdown">
                     <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <p>
-                            <img src="../images/users/avatar2.png" alt="User profile picture" class="nav-user-picture">
+                            <img src={$photo} alt="User profile picture" style="border-radius: 50%;" class="nav-user-picture">
                             <span id="nav-username">{$name}</span>
                         </p>
                     </a>
@@ -154,8 +154,8 @@
                     </ul>
                 </div>
             </div>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </div>
+    </div>
 </nav>
 
 <div id="parent">
