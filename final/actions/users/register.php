@@ -52,7 +52,11 @@
           exit;
       };
 
-  $_SESSION['project_id'] = $invited_user['id_project'];
+  if($answer == "join") {
+    $_SESSION['project_id'] = $invited_user['id_project'];
+  } elseif ($answer == "create") {
+    $_SESSION['project_id'] = $project_id;
+  }
   $_SESSION['email'] = $email;
   $_SESSION['user_id'] = getUserId($email);
   $_SESSION['username'] = $username;
@@ -62,7 +66,7 @@
   if($answer == "join"){
     joinProjectInvited($_SESSION['user_id'], $_SESSION['project_id']);
   } else {
-    joinProject($_SESSION['user_id'], $_SESSION['project_id'], TRUE);
+    joinProject($_SESSION['user_id'], $project_id, TRUE);
   }
 
   header('Location: ../../pages/dashboard.php');

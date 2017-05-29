@@ -58,3 +58,10 @@ function getUserProjects($user_id){
 
     return $result;
 }
+
+function deleteProject($project_id) {
+    global $conn;
+
+    $stmt = $conn->prepare('DELETE FROM project WHERE id = ?;');
+    return $stmt->execute(array($project_id));
+}

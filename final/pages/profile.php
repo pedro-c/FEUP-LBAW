@@ -3,6 +3,9 @@ include_once "common/header.php";
 include_once($BASE_DIR .'database/users.php');
 include_once($BASE_DIR .'database/common.php');
 
+if(!isset($_SESSION['user_id']))
+    header('Location: '. $BASE_URL . 'pages/authentication.php');
+
 $user = getUserInfo($_SESSION['user_id']);
 $projects = getUserProjects($_SESSION['user_id']);
 $country = getUserCountry($_SESSION['user_id']);
@@ -20,5 +23,3 @@ $smarty->display($BASE_DIR . 'templates/profile.tpl');
 <?php
 include_once "common/footer.php";
 ?>
-
-

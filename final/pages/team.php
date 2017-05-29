@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include_once "../config/init.php";
 include_once "common/header.php";
 include_once "../database/team.php";
@@ -8,6 +9,15 @@ include_once "../database/team.php";
 <script src="../javascript/ui6.js"></script>
 
 <?php
+if(!isset($_SESSION['user_id'])) {
+    header('Location: '. $BASE_URL . 'pages/authentication.php');
+    exit();
+  }
+if(!isset($_SESSION['project_id'])) {
+    header('Location: '. $BASE_URL . 'pages/profile.php');
+    exit();
+  }
+ob_end_flush();
 
 $project_id = $_SESSION['project_id'];
 $user_id = $_SESSION['user_id'];

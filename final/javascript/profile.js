@@ -23,7 +23,6 @@ $(document).ready(function(){
 
     $('.modal-dialog .modal-footer button').click(function() {
         var projectId = $(this).siblings("input[type='hidden']").val();
-        alert(projectId);
         leaveProject(projectId);
     });
 
@@ -76,8 +75,31 @@ function leaveProject(projectId){
         type:'post',
         url: '../actions/users/leave-project.php',
         data:  {'projectId': projectId},
-        success: function() {
+        success: function(result) {
+          if(result == "Error") {
+              alert("Error occured");
+          } else if(result == "Delete") {
+              alert("Since you are the only member, your project has been deleted");
+              $.ajax({
+                type: 'get',
+                url: '../actions/users/switch-project.php'
+              });
+          } else if(result == "Nominate") {
+              alert("You are the only Coordinator.\nIn order to leave the project, you must nominate another Coordinator first.");
+          } else if(result == "NoProjects") {
+              alert("Because you have no other projects, you can only access your profile page.");
+              $.ajax({
+                type: 'get',
+                url: '../actions/users/unset-project-id.php',
+                error: function() {
+                  alert("Error");
+                }
+              });
+          }
             window.location.reload();
+        },
+        error: function(result) {
+          alert("PHP error");
         }
 
     });

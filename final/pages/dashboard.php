@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include_once "common/header.php";
 include_once "../database/projects.php";
 include_once "../database/files.php";
@@ -8,6 +9,11 @@ include_once "../database/meetings.php";
 include_once "../database/team.php";
 include_once "../database/tasks.php";
 
+if(!isset($_SESSION['user_id']))
+    header('Location: '. $BASE_URL . 'pages/authentication.php');
+if(!isset($_SESSION['project_id']))
+    header('Location: '. $BASE_URL . 'pages/profile.php');
+ob_end_flush();
 $projectName = getProjectName($_SESSION['project_id']);
 $projectDescription = getProjectDescription($_SESSION['project_id']);
 $projectId = $_SESSION['project_id'];

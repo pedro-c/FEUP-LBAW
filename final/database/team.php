@@ -103,4 +103,13 @@ function generateInviteCode($user_email, $project_id) {
       return $randomString;
     }
 }
+
+function getNumCoordinators($project_id) {
+    global $conn;
+
+    $sql_select_coordinators = "SELECT * FROM user_project WHERE is_coordinator = TRUE AND id_project = ?;";
+    $stmt = $conn->prepare($sql_select_coordinators);
+    $stmt->execute([$project_id]);
+    return count($stmt->fetchAll());
+}
 ?>

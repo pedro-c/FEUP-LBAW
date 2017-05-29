@@ -5,11 +5,13 @@
  * Date: 4/13/17
  * Time: 3:09 PM
  */
-
+ob_start();
 include_once '../config/init.php';
-if(!isset($_SESSION['project_id']) || !isset($_SESSION['user_id']))
+if(!isset($_SESSION['user_id']))
     header('Location: '. $BASE_URL . 'pages/authentication.php');
-
+if(!isset($_SESSION['project_id']))
+    header('Location: '. $BASE_URL . 'pages/profile.php');
+ob_end_flush();
 include_once 'common/header.php';
 include_once $BASE_DIR . 'database/forum.php';
 include_once $BASE_DIR . 'pages/common/header.php';

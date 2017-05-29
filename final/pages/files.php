@@ -1,6 +1,12 @@
 <?php
+ob_start();
 include_once "common/header.php";
 
+if(!isset($_SESSION['user_id']))
+    header('Location: '. $BASE_URL . 'pages/authentication.php');
+if(!isset($_SESSION['project_id']))
+    header('Location: '. $BASE_URL . 'pages/profile.php');
+ob_end_flush();
 include_once($BASE_DIR .'database/users.php');
 include_once($BASE_DIR .'database/projects.php');
 include_once($BASE_DIR .'database/files.php');
