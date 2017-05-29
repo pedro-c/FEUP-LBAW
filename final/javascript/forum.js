@@ -55,11 +55,9 @@ $(document).ready(function () {
             post_id: curPostID,
             content: content,
         }, function (data) {
-            console.log(data);
             let reply = JSON.parse(data);
             let replyContent = reply.content;
             let id = reply.id;
-            console.log(id);
             let creationDate = reply.creation_date;
             let userPhoto = reply.photo;
             let username = reply.username;
@@ -198,7 +196,6 @@ $(document).ready(function () {
         $.post("../api/forum/delete_post_reply.php", {
             reply_id: replyId
         }, function (data) {
-            console.log(data);
             if (data === 'success')
                 replyElement.remove();
         });
@@ -337,13 +334,11 @@ $(document).ready(function () {
         let selectedPage;
 
         if (clickedObject.is("#pagination-next")) {
-            console.log(curPage);
             if (curPage == numPages)
                 return;
             selectedPage = curPage + 1;
         }
         else if (clickedObject.is("#pagination-prev")) {
-            console.log(curPage);
             if (curPage == 1)
                 return;
             selectedPage = curPage - 1;
@@ -358,7 +353,6 @@ $(document).ready(function () {
         currentPage = selectedPage;
         $(".pagination li.active").removeClass("active");
         $('.pagination li:contains("' + selectedPage + '")').addClass("active");
-        console.log('.pagination li:contains("' + selectedPage + '")');
         loadPagePosts(postListing, selectedPage);
     };
 
@@ -418,7 +412,6 @@ $(document).ready(function () {
 
         if (displayedPosts.length > 0) {
             let post = displayedPosts.pop();
-            console.log(post);
             post.remove();
 
         }
@@ -493,7 +486,6 @@ $(document).ready(function () {
         let postId = parseInt(clickedPost.find(".post-id").text());
         curPostID = postId;
 
-        console.log(postId);
 
         /*
          * Load the post information
@@ -504,7 +496,6 @@ $(document).ready(function () {
         $.post("../api/forum/get_forum_post.php", {
             post_id: postId
         }, function (data) {
-            console.log(data);
 
             let postInfo = JSON.parse(data);
             let id = postInfo.id;
@@ -539,7 +530,6 @@ function loadPagePosts(postsSection, currentPage) {
     $.post("../api/forum/get_page_posts.php", {
         forum_page: currentPage
     }, function (data) {
-        console.log(data);
         let posts = JSON.parse(data);
         for (let post of posts) {
             let photo = post.submitter_photo;
@@ -645,7 +635,6 @@ function unlikePost(postElement) {
     $.post("../api/forum/unlike_post.php", {
         post_id: postId
     }, function (data) {
-        console.log(data);
         let replyLikeButton = postElement.find(".post-like-button");
         replyLikeButton.removeClass("liked");
         replyLikeButton.find(".like-status").text(' Like');
@@ -774,7 +763,6 @@ function makePostElement(id, title, creationDate, content, dateModified, usernam
         let options = makePostOptions(userCanEdit);
         post.find('.post-options').append(options);
     }
-    console.log(post);
 
     return post;
 
@@ -809,7 +797,6 @@ let getPostReplies = function (postId) {
     $.post("../api/forum/get_post_replies.php", {
         postID: postId
     }, function (data) {
-        console.log(data);
         let replies = JSON.parse(data);
         for (let reply of replies) {
             let id = reply.reply_id;

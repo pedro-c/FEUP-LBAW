@@ -69,6 +69,11 @@ body {
   #navbar{
     border: none;
     height: 50px !important;
+
+    &.collapsing, &.collapse, &.in{
+      max-height: none;
+      overflow-y: visible;
+    }
   }
 
   .navbar-brand img{
@@ -201,6 +206,7 @@ body {
 #page-wrapper{
   height: 100%;
 }
+
 
 #bs-example-navbar-collapse-1{
   border-top-width: 0px !important;
