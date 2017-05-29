@@ -42,6 +42,10 @@ if(!empty($_FILES['file'])){
     $_SESSION['success_messages'][] = '<br>'.'Uploaded Files with success';
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
+else{
+    $_SESSION['success_messages'][] = '<br>'.'Error uploading file';
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+}
 
 
 
