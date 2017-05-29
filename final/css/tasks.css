@@ -259,8 +259,8 @@ body {
     background-color: white;
     box-shadow: none;
     border: 0;
-    margin: 10px; }
-    .tasks-nav button:focus, .tasks-nav button:hover {
+    padding: 10px; }
+    .tasks-nav button:focus, .tasks-nav button:disabled, .tasks-nav button:hover {
       border-bottom: solid 4px #e9d460; }
 
 .task-content {
