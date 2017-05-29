@@ -210,19 +210,17 @@ function toggle(taskId) {
             console.log(response);
 
 
-            if(response[1].length > 0) {
-                $("#task-assign").append($('<option>', {
-                    value: response[2].id,
-                    text: response[2].name,
-                    selected: true
-                }));
-            }
+            $("#task-assign").append($('<option>', {
+                value: response[2].id,
+                text: response[2].name,
+                selected: true
+            }));
 
 
 
             $("#task-tags").append($('<option>', {
-                value: response[2].id,
-                text: response[2].name,
+                value: response[1][0].id,
+                text: response[1][0].name,
                 selected: true
             }));
 
