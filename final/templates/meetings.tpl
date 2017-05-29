@@ -175,25 +175,25 @@
                               enctype="multipart/form-data">
                             <div class="title">
                                 <input type="text" name="title" class="form-control"
-                                       placeholder="Choose a Creative Title">
+                                       placeholder="Choose a Creative Title" required="required">
                             </div>
                             <textarea name="description" maxlength="512">Meeting Resume</textarea>
 
                             <div class="calendar">
                                 <span class="input-group-addon meetings_icon glyphicon glyphicon-calendar"
                                       aria-hidden="true"></span>
-                                <input type="date" name="date" class="form-control">
+                                <input type="date" name="date" class="form-control" required="required">
                             </div>
 
                             <div class="duration">
                                 <span class="meetings_icon glyphicon glyphicon-pushpin" aria-hidden="true"></span>
                                 <input type="number" name="duration" class="form-control"
-                                       placeholder="Meeting Duration">
+                                       placeholder="Meeting Duration" required="required">
                             </div>
 
                             <div class="time">
                                 <span class="meetings_icon glyphicon glyphicon-time" aria-hidden="true"></span>
-                                <input type="time" name="time" class="form-control">
+                                <input type="time" name="time" class="form-control" required="required">
                             </div>
 
 

@@ -8,7 +8,7 @@ include_once('../../config/init.php');
 
 
 
-if (isset($_POST['title']) && isset($_POST['date']) && isset($_POST['time']) && isset($_POST['invited_users'])) {
+if (isset($_POST['title']) && isset($_POST['date']) && isset($_POST['time'])) {
     $title = htmlspecialchars($_POST['title']);
     $description = htmlspecialchars($_POST['description']);
     $date = $_POST['date'];
@@ -18,7 +18,8 @@ if (isset($_POST['title']) && isset($_POST['date']) && isset($_POST['time']) && 
     $total = count($_FILES['file']['name']);
 
     $meeting_id = scheduleMeeting($title, $description, $date, $time, $duration, $_SESSION['project_id']);
-    inviteUserToMeeting($meeting_id, $invited_users, $_SESSION['user_id']);
+    if(isset($_POST['invited_users']))
+        inviteUserToMeeting($meeting_id, $invited_users, $_SESSION['user_id']);
 
     if (isset($_POST['tagOption'])) {
 
@@ -62,6 +63,6 @@ if (isset($_POST['title']) && isset($_POST['date']) && isset($_POST['time']) && 
     $_SESSION['success_messages'][] = '<br>' . 'Schedule Meeting successful';
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 } else {
-    $_SESSION['error_messages'][] = '<br>' . 'You are not allowed to schedule a meeting without fill title, date and time fields. You must invite at least one member.';
+    $_SESSION['error_messages'][] = '<br>' . 'You are not allowed to schedule a meeting without filling the title, date and time fields. You must invite at least one member.';
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
