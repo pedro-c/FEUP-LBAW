@@ -7,17 +7,18 @@ include_once('../../database/tasks.php');
 if (isset($_POST['taskTag'])) {
     if (isset($_POST['taskId'])) {
 
-        $taskId = $_POST['taskId'];
-        if (isset($_POST['taskTag'])) {
-            $tag = existsTag($_POST['taskTag']);
+        $taskId = htmlspecialchars($_POST['taskId']);
+        $taskTag= htmlspecialchars($_POST['taskTag']);
+        if (isset($taskTag)) {
+            $tag = existsTag($taskTag);
 
             if ($tag != -1)
                 $tagId = $tag;
             else {
-                $tagId = createTag($_POST['taskTag']);
-                addTagToProject($_SESSION['project_id'], $tagId);
+                $tagId = createTag($taskTag);
+                addTagToProject(htmlspecialchars($_SESSION['project_id']), htmlspecialchars($tagId));
             }
-
+            deleteTaskTags($taskId);
             print json_encode(addTaskTag($tagId,$taskId));
         }
     }

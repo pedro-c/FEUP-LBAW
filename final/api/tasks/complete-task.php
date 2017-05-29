@@ -4,6 +4,6 @@ include_once('../../database/tasks.php');
 
 if (isset($_POST['taskId'])) {
 
-    completeTask($_POST['taskId']);
+    completeTask(htmlspecialchars($_POST['taskId']));
 
 }

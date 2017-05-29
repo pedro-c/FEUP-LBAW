@@ -4,7 +4,7 @@ include_once('../../database/tasks.php');
 
 if (isset($_POST['taskId'])) {
 
-    $taskId = $_POST['taskId'];
+    $taskId = htmlspecialchars($_POST['taskId']);
 
     $taskDetails = null;
     $taskTags = null;
