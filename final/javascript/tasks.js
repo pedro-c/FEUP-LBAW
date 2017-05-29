@@ -75,11 +75,16 @@ $(document).ready(function(){
 
         });
 
-
+        var tagName = null;
+        if($("#task-tags option:selected").html() === undefined){
+            tagName = "null-tag"
+        }else{
+            tagName = $("#task-tags option:selected").html();
+        }
         $.ajax({
             type:'post',
             url: '../api/tasks/set-task-tags.php',
-            data:  {'taskTag': $("#task-tags option:selected").html(), 'taskId': $("#task-name").attr("name")},
+            data:  {'taskTag':tagName , 'taskId': $("#task-name").attr("name")},
             success: function(data) {
 
                 console.log(data);
@@ -153,10 +158,11 @@ $(document).ready(function(){
             type:'post',
             url: '../api/tasks/set-task-tags.php',
             data:  {'taskTags':  $("#task-assign option:selected").val() , 'taskId': $("#task-name").attr("name")},
-            success: function() {
+            success: function(data) {
                 console.log($("#task-assign option:selected").val());
                 console.log("id: " + $("#task-name").attr("name"));
 
+                console.log(data);
             }
 
         });
