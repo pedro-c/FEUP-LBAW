@@ -212,7 +212,7 @@ function toggle(taskId) {
 
             console.log(response);
 
-
+            $("#task-assign").html("");
             $("#task-assign").append($('<option>', {
                 value: response[2].id,
                 text: response[2].name,
@@ -221,10 +221,18 @@ function toggle(taskId) {
 
 
             if(response[1].length > 0){
+                $("#task-tags").html("");
                 $("#task-tags").append($('<option>', {
                     value: response[1][0].id,
                     text: response[1][0].name,
                     selected: true
+                }));
+            }
+
+            for (var i = 0; i < response[5].length; i++) {
+                $("#task-tags").append($('<option>', {
+                    value: response[5][i].id,
+                    text: response[5][i].name,
                 }));
             }
 
