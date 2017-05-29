@@ -32,7 +32,6 @@
   text-align: left;
   .create-task{
     visibility: hidden;
-    width: 150px;
   }
 }
 .tasks{
@@ -190,10 +189,6 @@
     display: inline-block;
     align-content: left;
     margin-top: 30px;
-    padding-left: 0!important;
-    margin-left: 0!important;
-    outline: none;
-
     i{
       color: grey;
       font-size: 2em;
@@ -225,15 +220,15 @@
     width: 100%;
     padding: 20px 0px 20px 0px;
     i, input{
+      padding: 0px 0px 0px 0px;
       float: left;
     }
   }
 
   #create-task-description{
-    padding-left: 0!important;
-    margin-left: 0 !important;
     textarea{
       min-height: 50px;
+      padding: 10px;
       &:focus,
       &:hover{
         border: 1px solid $light_grey;
@@ -292,6 +287,7 @@
   }
   .task-tags{
     text-align: start;
+    padding-top: 5px;
     width: 200px;
     span{
       li > span{
@@ -302,7 +298,7 @@
       border-top-left-radius: 0px;
     }
     span.input-group-addon{
-      width: 40px !important;
+      width: 50px !important;
       border-bottom-left-radius: 4px !important;
       border-top-left-radius: 4px !important;
     }
@@ -314,12 +310,8 @@
     text-align: left;
     overflow: auto !important;
     height: 45% !important;
-    padding-left: 0!important;
-    margin-left: 0!important;
-
     .comment-info{
       width: 100%;
-      padding-top: 5px;
       display: inline-block !important;
       text-align: left;
       i{
@@ -336,8 +328,6 @@
         min-width: 100px;
         max-width: 400px;
       }
-
-
     }
   }
   .add-comment{
@@ -442,18 +432,3 @@ textarea{
 .input-group{
   border-bottom: 10px;
 }
-
-.input-group-addon{
-  width: 40px;
-}
-
-#task-deadline-time,
-#task-deadline-date{
-  width: 160px;
-}
-
-#info_date{
-  font-size: small;
-  font-weight: lighter;
-}
-
