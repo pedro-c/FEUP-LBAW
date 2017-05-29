@@ -259,7 +259,7 @@ body {
     background-color: white;
     box-shadow: none;
     border: 0;
-    padding: 10px; }
+    padding-top: 10px; }
     .tasks-nav button:focus, .tasks-nav button:disabled, .tasks-nav button:hover {
       border-bottom: solid 4px #e9d460; }
 
