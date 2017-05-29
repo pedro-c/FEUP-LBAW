@@ -51,11 +51,11 @@ $(document).ready(function(){
         var m=$("input#task-name");
         var value= m.val();
         var taskId = $("#task-name").attr("name");
-        $("textarea#"+taskId).val(value);
+        $("#"+taskId + " textarea").val(value);
 
         console.log(taskId);
 
-        console.log($("textarea#"+taskId).innerHTML);
+        console.log($("#"+taskId + " textarea").innerHTML);
         console.log( $("#task-name").attr("name"));
         console.log(m.val());
     });
@@ -75,11 +75,16 @@ $(document).ready(function(){
 
         });
 
-
+        var tagName = null;
+        if($("#task-tags option:selected").html() === undefined){
+            tagName = "null-tag"
+        }else{
+            tagName = $("#task-tags option:selected").html();
+        }
         $.ajax({
             type:'post',
             url: '../api/tasks/set-task-tags.php',
-            data:  {'taskTag': $("#task-tags option:selected").html(), 'taskId': $("#task-name").attr("name")},
+            data:  {'taskTag':tagName , 'taskId': $("#task-name").attr("name")},
             success: function(data) {
 
                 console.log(data);
@@ -91,6 +96,7 @@ $(document).ready(function(){
 
 
     });
+
     $("#task-name").focusout(function(e) {
 
         $.ajax({
@@ -153,10 +159,11 @@ $(document).ready(function(){
             type:'post',
             url: '../api/tasks/set-task-tags.php',
             data:  {'taskTags':  $("#task-assign option:selected").val() , 'taskId': $("#task-name").attr("name")},
-            success: function() {
+            success: function(data) {
                 console.log($("#task-assign option:selected").val());
                 console.log("id: " + $("#task-name").attr("name"));
 
+                console.log(data);
             }
 
         });

@@ -21,5 +21,9 @@ if (isset($_POST['taskTag'])) {
             deleteTaskTags($taskId);
             print json_encode(addTaskTag($tagId,$taskId));
         }
+
+        if($taskTag == "null-tag"){
+            deleteTaskTags($taskId);
+        }
     }
 }
