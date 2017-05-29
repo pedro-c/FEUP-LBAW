@@ -96,6 +96,7 @@ function exit_trash() {
     $("#future_meetings").css("border-bottom","4px solid");
     $("#future_meetings").css("border-bottom-color","#e9d460");
     $("#schedule_meetings").css("border-bottom","none");
+    $("#container_edit_meeting").hide();
 }
 
 function getFormatImage(format) {
@@ -241,4 +242,5 @@ function editMeetingInfo(meeting_id){
     $("#container_to_collapse").addClass("col-lg-6 col-md-6 col-sm-6 hidden-xs");
     $(".meeting-panel").removeClass("col-lg-6 col-md-6 col-sm-6 col-xs-12");
     $(".meeting-panel").addClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
+    $("#container_meeting_info").hide();
 }

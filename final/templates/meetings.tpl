@@ -227,6 +227,11 @@
         <div id="container_edit_meeting" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" hidden>
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <div class="button_trash hidden-xs">
+                        <button class="trash" onclick="exit_trash()"><span id="trash" class="fa fa-chevron-left"
+                                                                           aria-hidden="true"></span>
+                        </button>
+                    </div>
                     <span>Edit a Meeting</span>
                 </div>
                 <div class="panel-body">
