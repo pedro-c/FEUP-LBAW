@@ -22,7 +22,6 @@
 .tasks-card{
   //transition: width 0.2s ease-in-out;
   overflow-y: auto;
-  width: 70%;
   display: inline-block;
   background-color: $white;
   box-shadow: 0 1px 3px rgba(0,0,0,0.3);
@@ -161,7 +160,6 @@
 }
 
 #create-task{
-  width: 1%;
   overflow: hidden;
   transition: all 2s;
 }
@@ -236,11 +234,12 @@
     display: inline-block;
     vertical-align: middle;
     width: 100%;
+    align-items: left;
 
     #assign-to{
       vertical-align: middle;
       display: block;
-      width: 65%;
+      float: left;
       &:focus,
       &:hover{
         border: 1px solid $light_grey;
@@ -251,6 +250,9 @@
         padding-right: 5px;
         float: left;
         width:30px;
+      }
+      span{
+        width: auto !important;
       }
     }
 

@@ -13,7 +13,7 @@
         </div>
 
 
-        <div class="tasks-card" id="task-card">
+        <div class="tasks-card col-lg-8 col-md-8 col-sm-11 col-xs-11" id="task-card">
             <div class="tasks-header">
                 <button id="task-button" class="task-button" value="create-task">Add Task</button>
                 <div id="tags-dropdown-menu" class="drop-down">
@@ -69,7 +69,7 @@
                 </table>
             </div>
         </div>
-        <div class="tasks-card create-task row" id="create-task" style="display: none">
+        <div class="tasks-card create-task row col-lg-8 col-md-8 col-sm-11 col-xs-11" id="create-task" style="display: none">
             <div class="col-xs-12" id="create-task-navbar">
                 <div class="col-xs-12" id="assign-to">
                     <img src="../images/users/avatar5.jpg" class="img-circle">
