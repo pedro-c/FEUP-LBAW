@@ -183,3 +183,16 @@ function deleteMeeting($meeting_id){
     $stmt = $conn->prepare('DELETE FROM meeting WHERE id=?');
     return $stmt->execute([$meeting_id]);
 }
+
+function editMeetingInfo($title, $description, $date, $time, $duration, $meeting_id){
+
+    list($year, $month, $day) = explode('-', $date);
+    list($hour, $minute, $second) = explode(':', $time);
+    $timestamp = mktime($hour, $minute, $second, $month, $day, $year);
+    $time = date('Y-m-d H:i:s',$timestamp);
+
+    global $conn;
+    $stmt = $conn->prepare('UPDATE meeting SET (name,duration,description, date) = (?,?,?,?) WHERE id=?');
+
+    return $stmt->execute([$title, $duration, $description, $time, $meeting_id]);
+}

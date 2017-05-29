@@ -8,12 +8,12 @@
     <!-- Page Heading -->
     <div class="tasks-body">
         <div class="tasks-nav">
-            <button type="button" id="completed-button" class="selected" onclick="showUncompletedTasks()">To-Do</button>
-            <button type="button" id="uncompleted-button" onclick="showCompletedTasks()">Completed</button>
+            <button type="button" id="uncompleted-button" class="selected" onclick="showUncompletedTasks()">To-Do</button>
+            <button type="button" id="completed-button" onclick="showCompletedTasks()">Completed</button>
         </div>
 
 
-        <div class="tasks-card" id="task-card">
+        <div class="tasks-card col-lg-8 col-md-8 col-sm-11 col-xs-11" id="task-card">
             <div class="tasks-header">
                 <button id="task-button" class="task-button" value="create-task">Add Task</button>
                 <div id="tags-dropdown-menu" class="drop-down">
@@ -34,10 +34,10 @@
 
                     {foreach $tasks as $task}
 
-                        {if $task.completer_id eq ''}
-                            {$completed = 'uncompleted'}
+                        {if $task.completer_id eq ""}
+                            {$completed = "uncompleted"}
                         {else}
-                            {$completed = 'completed'}
+                            {$completed = "completed"}
                         {/if}
 
 
@@ -50,7 +50,12 @@
                             <td>
                                 <div class="task-name">
                                     <textarea onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
-                                    <p id="hashtag" class=" {$completed}">{$tag[0].name}</p>
+                                    {if {$tag[0].name} != null}
+                                        <p class="hashtag {$completed}">{$tag[0].name}</p>
+                                    {else}
+                                        <p style="visibility: hidden;" class="hashtag {$completed}">{$tag[0].name}</p>
+                                    {/if}
+
                                 </div>
                             </td>
                             <td>
@@ -64,7 +69,7 @@
                 </table>
             </div>
         </div>
-        <div class="tasks-card create-task row" id="create-task" style="display: none">
+        <div class="tasks-card create-task row col-lg-8 col-md-8 col-sm-11 col-xs-11" id="create-task" style="display: none">
             <div class="col-xs-12" id="create-task-navbar">
                 <div class="col-xs-12" id="assign-to">
                     <img src="../images/users/avatar5.jpg" class="img-circle">

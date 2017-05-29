@@ -2,7 +2,8 @@ $(document).ready(function () {
 
     $(".select2-multiple").select2({
         tags: true,
-        maximumSelectionLength: 1
+        maximumSelectionLength: 1,
+        maximumInputLength: 15
     });
 
     $("#mobile-back").click(function () {

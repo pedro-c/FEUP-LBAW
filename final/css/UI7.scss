@@ -158,6 +158,21 @@
             }
           }
 
+          .edit-icon{
+
+            .fa.fa-pencil{
+              color: $blue_secondary;
+              font-size: large;
+              cursor: pointer;
+              margin-bottom: 15px;
+              padding-right: 5px;
+
+              &:hover {
+                color: $color_yellow;
+              }
+            }
+          }
+
           .hour {
             font-size: large;
             font-weight: normal;
@@ -194,7 +209,8 @@
   }
 
   #container_schedule_meeting,
-  #container_meeting_info {
+  #container_meeting_info,
+  #container_edit_meeting{
 
     .panel-heading {
       background-color: $color_yellow;
@@ -342,7 +358,7 @@
           outline: 0;
         }
 
-        .atendees {
+        .atendees, .duration {
           background-color: transparent;
           border: none;
           outline: 0;
@@ -454,7 +470,7 @@
         }
       }
 
-      .atendees, .minutes, .time {
+      .atendees, .minutes, .time, .duration{
         text-align: center;
         vertical-align: middle;
         height: 34px;
@@ -570,7 +586,7 @@
 
   }
 
-  #submit {
+  #submit, #edit-meeting {
     padding: 4px 20px 4px 20px;
     color: white;
     background-color: $color_yellow;
@@ -631,7 +647,6 @@
 
 }
 
-
 /* Mobile */
 
 @media screen and (max-device-width: 667px) {
@@ -639,6 +654,10 @@
   .uploadFile_container, .col-lg-6.col-md-6.col-sm-6.col-xs-12{
     padding: 0 !important;
     margin: 0 !important;
+  }
+
+  #tag-name.pull-right{
+    text-align: center;
   }
 
 }

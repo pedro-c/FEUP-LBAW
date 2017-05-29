@@ -21,7 +21,8 @@ body {
   right: 0;
   background-color: #22313f;
   color: white;
-  border: none !important; }
+  border: none !important;
+  height: 50px !important; }
   #header .navbar-header > button.navbar-toggle {
     color: #fff; }
     #header .navbar-header > button.navbar-toggle span {
@@ -31,7 +32,8 @@ body {
       background-color: #e9d460;
       border-color: #e9d460; }
   #header #navbar {
-    border: none; }
+    border: none;
+    height: 50px !important; }
   #header .navbar-brand img {
     margin-top: -10px;
     margin-left: -10px;
@@ -67,6 +69,18 @@ body {
       color: #fff; }
     #header .dropdown-menu i.nav-dropdown-icon {
       float: right; }
+  #header #user-options {
+    height: 50px; }
+    #header #user-options a {
+      height: 100%;
+      display: block;
+      width: 100%; }
+  #header #user-projects {
+    height: 50px; }
+    #header #user-projects a {
+      height: 100%;
+      display: block;
+      width: 100%; }
 
 .mobile-user-options {
   float: right;
@@ -224,7 +238,6 @@ body {
 
 .tasks-card {
   overflow-y: auto;
-  width: 70%;
   display: inline-block;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -245,8 +258,8 @@ body {
     background-color: white;
     box-shadow: none;
     border: 0;
-    margin: 10px; }
-    .tasks-nav button:focus, .tasks-nav button:hover {
+    padding: 10px; }
+    .tasks-nav button:focus, .tasks-nav button:disabled, .tasks-nav button:hover {
       border-bottom: solid 4px #e9d460; }
 
 .task-content {
@@ -328,7 +341,7 @@ body {
     .task .task-name textarea {
       vertical-align: middle !important;
       float: left;
-      width: auto !important;
+      width: 60% !important;
       left: 0; }
 
 .task-content {
@@ -338,7 +351,6 @@ body {
   width: 0px; }
 
 #create-task {
-  width: 1%;
   overflow: hidden;
   transition: all 2s; }
 
@@ -390,11 +402,12 @@ body {
     padding: 10px;
     display: inline-block;
     vertical-align: middle;
-    width: 100%; }
+    width: 100%;
+    align-items: left; }
     .create-task #create-task-navbar #assign-to {
       vertical-align: middle;
       display: block;
-      width: 65%; }
+      float: left; }
       .create-task #create-task-navbar #assign-to:focus, .create-task #create-task-navbar #assign-to:hover {
         border: 1px solid #D3D3D3;
         border-radius: 20px; }
@@ -403,6 +416,8 @@ body {
         padding-right: 5px;
         float: left;
         width: 30px; }
+      .create-task #create-task-navbar #assign-to span {
+        width: auto !important; }
     .create-task #create-task-navbar i {
       vertical-align: middle;
       float: left;

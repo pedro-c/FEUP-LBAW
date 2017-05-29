@@ -316,7 +316,6 @@ body {
   height: 150px;
   border: 1px dashed grey;
   background-color: #ecf0f1;
-  display: table;
   width: 100%; }
   .files_list .uploadFile_container .panel-body .box.drag-here .box__file {
     visibility: hidden; }

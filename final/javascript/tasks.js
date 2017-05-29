@@ -5,6 +5,8 @@ $(document).ready(function(){
    $('.uncompleted').show();
    $('.completed').hide();
 
+    $('#uncompleted-button').prop("disabled",true);
+
     addTaskButton.click(function () {
 
         var clickBtnValue = $(this).val();
@@ -201,8 +203,6 @@ function toggle(taskId) {
 
             console.log(response);
 
-            console.log("Assigned: " +response[2].name);
-
 
             $("#task-assign").html("");
             if(response[1].length > 0) {
@@ -248,7 +248,6 @@ function toggle(taskId) {
             if (state != 'none') {
                 document.getElementById(id).style.display = 'none';
                 document.getElementById(id).style.width = '1%';
-                taskCard.style.width = '70%';
                 taskCard.style.display = 'inline-block';
                 document.getElementById('mobile-back').style.display = 'none';
             } else {
@@ -256,7 +255,6 @@ function toggle(taskId) {
                     taskCard.style.width = '1%';
                     taskCard.style.display = 'none';
                     document.getElementById(id).style.display = 'inline-block';
-                    document.getElementById(id).style.width = '70%';
                     document.getElementById('mobile-back').style.display = 'inline-block';
                 } else {
                     document.getElementById(id).style.display = 'inline-block';
@@ -338,46 +336,75 @@ function showUncompletedTasks() {
     $('.uncompleted').show();
     $('.completed').hide();
 
-    $('#completed-button').removeClass('selected');
-    $('#uncompleted-button').addClass('selected');
+    $('#uncompleted-button').prop("disabled",true);
+    $('#completed-button').prop("disabled",false);
 }
 
 function showCompletedTasks() {
     $('.uncompleted').hide();
     $('.completed').show();
 
-    $('#uncompleted-button').removeClass('selected');
-    $('#completed-button').addClass('selected');
+    $('#uncompleted-button').prop("disabled",false);
+    $('#completed-button').prop("disabled",true);
 }
 
 function changeTagName(tag_name){
 
     $("#tag-name").html(tag_name).append('<span class="caret"></span>');
 
-    if(tag_name == 'All'){
-        $('#hashtag').each(function(i, obj) {
+    if(tag_name === 'All'){
+        $('.hashtag').each(function(i, obj) {
+
+            console.log($(this));
+
             $(this).parents('.task').show();
-        });
-    }
-    else{
-        $('#hashtag').each(function(i, obj) {
-            var name = tag_name;
-            if($(this).text() != name){
-                console.log(name);
-                console.log($(this).text());
-                $(this).parents('.task').hide();
-            }else{
-                if($(this).attr('class') =='completed' && $('#completed-button').attr('class') == 'selected'){
-                    $(this).parents('.task').show();
-                }else{
-                    $(this).parents('.task').hide();
-                }
-                if($(this).attr('class') =='uncompleted' && $('#uncompleted-button').attr('class') == 'selected'){
+
+            if($(this).hasClass("uncompleted")){
+                if($('#uncompleted-button').prop("disabled")){
                     $(this).parents('.task').show();
                 }else{
                     $(this).parents('.task').hide();
                 }
             }
+
+            if($(this).hasClass("completed")){
+                if($('#completed-button').prop("disabled")){
+                    $(this).parents('.task').show();
+                }else {
+                    $(this).parents('.task').hide();
+                }
+            }
+
+            console.log($(this).hasClass("uncompleted"));
+
         });
+    }
+    else{
+        $('.hashtag').each(function(i, obj) {
+            var name = tag_name;
+            console.log($(this).text());
+
+            if($(this).text() != name || $(this).text() === "#"){
+                $(this).parents('.task').hide();
+                console.log($(this).parents('.task'));
+            }else{
+                console.log(tag_name);
+                if($(this).hasClass("uncompleted")){
+                    if($('#uncompleted-button').prop("disabled")){
+                        $(this).parents('.task').show();
+                    }else{
+                        $(this).parents('.task').hide();
+                    }
+                }
+                if($(this).hasClass("completed")){
+                    if($('#completed-button').prop("disabled")){
+                        $(this).parents('.task').show();
+                    }else {
+                        $(this).parents('.task').hide();
+                    }
+                }
+            }
+        });
+
     }
 }
