@@ -8,8 +8,8 @@
     <!-- Page Heading -->
     <div class="tasks-body">
         <div class="tasks-nav">
-            <button type="button" id="completed-button" class="selected" onclick="showUncompletedTasks()">To-Do</button>
-            <button type="button" id="uncompleted-button" onclick="showCompletedTasks()">Completed</button>
+            <button type="button" id="uncompleted-button" class="selected" onclick="showUncompletedTasks()">To-Do</button>
+            <button type="button" id="completed-button" onclick="showCompletedTasks()">Completed</button>
         </div>
 
 
@@ -34,10 +34,10 @@
 
                     {foreach $tasks as $task}
 
-                        {if $task.completer_id eq ''}
-                            {$completed = 'uncompleted'}
+                        {if $task.completer_id eq ""}
+                            {$completed = "uncompleted"}
                         {else}
-                            {$completed = 'completed'}
+                            {$completed = "completed"}
                         {/if}
 
 
@@ -50,7 +50,8 @@
                             <td>
                                 <div class="task-name">
                                     <textarea onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
-                                    <p id="hashtag" class=" {$completed}">{$tag[0].name}</p>
+                                    {if {$tag[0].name} != null}<p id="hashtag" class="{$completed}">{$tag[0].name}</p>{/if}
+
                                 </div>
                             </td>
                             <td>

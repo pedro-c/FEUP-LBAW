@@ -5,6 +5,8 @@ $(document).ready(function(){
    $('.uncompleted').show();
    $('.completed').hide();
 
+    $('#uncompleted-button').prop("disabled",true);
+
     addTaskButton.click(function () {
 
         var clickBtnValue = $(this).val();
@@ -201,8 +203,6 @@ function toggle(taskId) {
 
             console.log(response);
 
-            console.log("Assigned: " +response[2].name);
-
 
             $("#task-assign").html("");
             if(response[1].length > 0) {
@@ -338,46 +338,72 @@ function showUncompletedTasks() {
     $('.uncompleted').show();
     $('.completed').hide();
 
-    $('#completed-button').removeClass('selected');
-    $('#uncompleted-button').addClass('selected');
+    $('#uncompleted-button').prop("disabled",true);
+    $('#completed-button').prop("disabled",false);
 }
 
 function showCompletedTasks() {
     $('.uncompleted').hide();
     $('.completed').show();
 
-    $('#uncompleted-button').removeClass('selected');
-    $('#completed-button').addClass('selected');
+    $('#uncompleted-button').prop("disabled",false);
+    $('#completed-button').prop("disabled",true);
 }
 
 function changeTagName(tag_name){
 
     $("#tag-name").html(tag_name).append('<span class="caret"></span>');
 
-    if(tag_name == 'All'){
+    console.log(tag_name);
+
+    if(tag_name === 'All'){
         $('#hashtag').each(function(i, obj) {
             $(this).parents('.task').show();
+
+            if($(this).hasClass("uncompleted")){
+                if($('#uncompleted-button').prop("disabled")){
+                    $(this).parents('.task').show();
+                }else{
+                    $(this).parents('.task').hide();
+                }
+            }
+
+            if($(this).hasClass("completed")){
+                if($('#completed-button').prop("disabled")){
+                    $(this).parents('.task').show();
+                }else {
+                    $(this).parents('.task').hide();
+                }
+            }
+
+            console.log($(this).hasClass("uncompleted"));
+
         });
     }
     else{
         $('#hashtag').each(function(i, obj) {
             var name = tag_name;
             if($(this).text() != name){
-                console.log(name);
-                console.log($(this).text());
                 $(this).parents('.task').hide();
+                console.log(tag_name);
             }else{
-                if($(this).attr('class') =='completed' && $('#completed-button').attr('class') == 'selected'){
-                    $(this).parents('.task').show();
-                }else{
-                    $(this).parents('.task').hide();
+                console.log(tag_name);
+                if($(this).hasClass("uncompleted")){
+                    if($('#uncompleted-button').prop("disabled")){
+                        $(this).parents('.task').show();
+                    }else{
+                        $(this).parents('.task').hide();
+                    }
                 }
-                if($(this).attr('class') =='uncompleted' && $('#uncompleted-button').attr('class') == 'selected'){
-                    $(this).parents('.task').show();
-                }else{
-                    $(this).parents('.task').hide();
+                if($(this).hasClass("completed")){
+                    if($('#completed-button').prop("disabled")){
+                        $(this).parents('.task').show();
+                    }else {
+                        $(this).parents('.task').hide();
+                    }
                 }
             }
         });
+
     }
 }
