@@ -141,6 +141,12 @@ function getUserInfo($id){
     return $result;
 }
 
+function updateUserPhoto($email){
+    global $conn;
+    $stmt = $conn->prepare('UPDATE user_table SET photo_path = ? WHERE id = ?');
+    return $stmt->execute([$email,$_SESSION['user_id']]);
+}
+
 function getUserEmail(){
 
     global $conn;
