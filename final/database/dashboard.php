@@ -27,3 +27,16 @@ function getLastUploadedFiles($id_project){
     $stmt->execute([$id_project]);
     return $stmt->fetchAll();
 }
+
+
+function changeProjectName($project_name, $project_id){
+    global $conn;
+    $stmt = $conn->prepare('UPDATE project set name=? WHERE id=? ');
+    return $stmt->execute([$project_name, $project_id]);
+}
+
+function changeProjectDescription($project_description, $project_id){
+    global $conn;
+    $stmt = $conn->prepare('UPDATE project set description=? WHERE id=? ');
+    return $stmt->execute([$project_description, $project_id]);
+}

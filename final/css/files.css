@@ -292,6 +292,13 @@ body {
   cursor: pointer; }
   .files_list .file .panel-body .fa.fa-download:hover, .files_list .file .panel-body .fa.fa-trash:hover {
     color: #e9d460; }
+.files_list .file .panel-body .fa.fa-times {
+  color: #22313f;
+  font-size: large;
+  cursor: pointer;
+  padding-right: 5px; }
+  .files_list .file .panel-body .fa.fa-times:hover {
+    color: red; }
 .files_list .file .panel-body .fa.fa-trash {
   margin-right: 7px; }
 .files_list .uploadFile_container .panel-heading {
@@ -447,4 +454,4 @@ body {
     padding: 0 !important;
     margin: 0 !important; } }
 
-/*# sourceMappingURL=UI5.css.map */
+/*# sourceMappingURL=files.css.map */
