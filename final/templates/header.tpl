@@ -112,7 +112,7 @@
                             <a href="../pages/team.php"><i class="fa fa-users fa-2x"></i><p>Team</p></a>
                         </li>
                         <li  class="col-xs-6">
-                            <a href="../pages/profile.php"><i class="fa fa-user" aria-hidden="true"></i><p>Profile</p></a>
+                            <a href="../pages/profile.php"><i class="fa fa-user fa-2x" aria-hidden="true"></i><p>Profile</p></a>
                         </li>
                         <li  class="col-xs-6">
                             <a href="#"> <i class="fa fa-sign-out fa-2x"></i> <p>Sign Out</p></a>
