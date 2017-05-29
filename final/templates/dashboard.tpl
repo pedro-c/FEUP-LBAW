@@ -1,4 +1,6 @@
 <link href="../css/UI2.css" rel="stylesheet"/>
+<script src="../javascript/files.js"></script>
+<script src="../javascript/dashboard.js"></script>
 
 <div class="page-wrapper container">
     <div class="row"><br>
@@ -10,7 +12,7 @@
                 </div>
                 <div id="project-description">
                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                    <span id="subtitle">{$projectDescription}</span>
+                    <span id="subtitle" onclick="changeProjectDescription()">{$projectDescription} ola </span>
                 </div>
             </div>
         </div>
@@ -23,13 +25,14 @@
                 </a>
                 <div class="panel-body">
                     <div class="list-group">
-                        <button class="list-group-item"><i class="glyphicon glyphicon-menu-right dash-icon"></i><span
-                                    class="dash-item-text">Implement feature</span></button>
-                        <button class="list-group-item"><i class="glyphicon glyphicon-menu-right dash-icon"></i><span
-                                    class="dash-item-text">Merge changes</span></button>
+                        {foreach $uncompletedTasks as $task}
+
                         <button class="list-group-item">
-                            <i class="glyphicon glyphicon-menu-right dash-icon"></i><span
-                                    class="dash-item-text">Fix conflicts</span></button>
+                            <i class="glyphicon glyphicon-menu-right dash-icon"></i>
+                            <span class="dash-item-text"> {$task.name}</span>
+                            <span class="dash-item-text"> Assigned to: {$taskName=getTaskAssignedName($task.id)}{$taskName.name}</span>
+                        </button>
+                        {/foreach}
                     </div>
                 </div>
             </div>
@@ -84,7 +87,7 @@
         <div class="clearfix"></div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 dash-card">
             <div class="panel panel-primary">
-                <a href="#" class="panel-heading">
+                <a href="../pages/meetings.php" class="panel-heading">
                     <h4 class="panel-title"><i class="fa fa-calendar dash-title-icon"></i> Meetings
                         <span class="to-page glyphicon glyphicon-menu-right"></span>
                     </h4>
@@ -103,7 +106,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 dash-card">
             <div class="panel panel-primary">
-                <a href="#" class="panel-heading">
+                <a href="../pages/files.php" class="panel-heading">
                     <h4 class="panel-title"><i class="glyphicon glyphicon-file dash-title-icon"></i> Files
                         <span class="to-page glyphicon glyphicon-menu-right"></span>
                     </h4>
@@ -138,41 +141,11 @@
                 </a>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <div href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../images/users/avatar2.png"/>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../images/users/avatar7.png"/>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../images/users/avatar6.png"/>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../images/users/avatar5.jpg"/>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../images/users/avatar4.png"/>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../images/users/avatar3.png"/>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../images/users/avatar1.png"/>
-                            </a>
-                        </div>
+                        {foreach from=$teamMembers item=member}
+                          <!--{$photo_path = $team_members[$i]['photo_path']}-->
+                          {$photo_path = $member['photo_path']}
+                          {include file="./team/member_square.tpl" photopath=$photo_path}
+                        {/foreach}
                     </div>
                 </div>
             </div>

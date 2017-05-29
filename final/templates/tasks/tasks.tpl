@@ -8,18 +8,25 @@
     <!-- Page Heading -->
     <div class="tasks-body">
         <div class="tasks-nav">
-            <button type="button" onclick="showUncompletedTasks()">To-Do</button>
-            <button type="button" onclick="showCompletedTasks()">Completed</button>
+            <button type="button" id="completed-button" class="selected" onclick="showUncompletedTasks()">To-Do</button>
+            <button type="button" id="uncompleted-button" onclick="showCompletedTasks()">Completed</button>
         </div>
 
 
         <div class="tasks-card" id="task-card">
             <div class="tasks-header">
                 <button id="task-button" class="task-button" value="create-task">Add Task</button>
-                <ul class="tasks-tags">
-                    <li>#Logistics</li>
-                    <li>#Marketing</li>
-                </ul>
+                <div id="tags-dropdown-menu" class="drop-down">
+                    <button id="tag-name" class="dropdown-toggle" type="button" data-toggle="dropdown">Tag
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a id="tag-name-dropwdown" onclick="changeTagName('All')">All</a></li>
+                        {foreach $projectTags as $projectTag}
+                            <li><a id="tag-name-dropwdown" onclick="changeTagName('{$projectTag.name}')">{$projectTag.name}</a></li>
+                        {/foreach}
+
+                    </ul>
+                </div>
             </div>
             <div class="task-content">
                 <table class="tasks">
@@ -34,18 +41,16 @@
                         {/if}
 
 
-                        {$tags = getTagFromTaskId($task.id)}
+                        {$tag = getTagFromTaskId($task.id)}
 
                         <tr class="task {$completed}" id="{$task.id}">
                             <td>
                                 <i id="complete-button" name="complete-task"  onclick="completeTask({$task.id})" class="fa fa-check-circle-o"></i>
                             </td>
                             <td>
-                                <div>
-                                    <textarea class="task-name" onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
-                                    {foreach $tags as $tag}
-                                    <p>{$tag.name}</p>
-                                    {/foreach}
+                                <div class="task-name">
+                                    <textarea onclick="toggle({$task.id});" id="{$task.id}">{$task.name}</textarea>
+                                    <p id="hashtag" class=" {$completed}">{$tag[0].name}</p>
                                 </div>
                             </td>
                             <td>
@@ -63,7 +68,7 @@
             <div class="col-xs-12" id="create-task-navbar">
                 <div class="col-xs-12" id="assign-to">
                     <img src="../images/users/avatar5.jpg" class="img-circle">
-                    <select id="task-assign" class="select2-single form-control" multiple="single" placeholder="Assign to">
+                    <select id="task-assign" class="select2-assign form-control" multiple="single" placeholder="Assign to">
 
                     </select>
                 </div>
@@ -80,8 +85,10 @@
                 </div>
                 <div class="input-group task-tags">
                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                    <select id="task-tags" class="select2-single form-control" multiple="multiple">
-
+                    <select id="task-tags" class="select2-tags form-control" multiple="multiple">
+                        {foreach $projectTags as $tag}
+                            <option id="{$tag.id}">{$tag.name}</option>
+                        {/foreach}
                     </select>
                 </div>
             </div>

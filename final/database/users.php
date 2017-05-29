@@ -11,6 +11,24 @@ function isLoginCorrect($email, $password){
     return password_verify($password,$hashed_password);
 }
 
+function isPasswordCorrect($password){
+
+    global $conn;
+    $stmt = $conn -> prepare('SELECT password FROM user_table WHERE id = ?');
+    $stmt->execute([$_SESSION['user_id']]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $hashed_password = $result['password'];
+
+    return password_verify($password,$hashed_password);
+}
+
+
+function changePassword($new_password){
+    global $conn;
+    $stmt = $conn -> prepare('UPDATE user_table SET password = ? WHERE id = ?');
+    return $stmt->execute([$new_password, $_SESSION['user_id']]);
+}
+
 function createUser($name, $email, $username, $password){
 
     global $conn;
@@ -69,15 +87,48 @@ function checkForInvitation($email,$project){
 
     $id_project = $result['id_project'];
 
-    return ($project==$id_project);
+    return $project + $id_project;
 }
 
-function joinProject($id, $project){
+function joinProject($id, $project, $is_coordinator=FALSE){
 
     global $conn;
-    $is_coordinator = 'false';
+
+    if($is_coordinator == FALSE) {
+      $is_coordinator = 'false';
+    } elseif($is_coordinator == TRUE) {
+      $is_coordinator = 'true';
+    } else {
+      //TODO show error??
+      $is_coordinator = 'false';
+    }
     $stmt = $conn->prepare('INSERT INTO user_project VALUES(?,?,?)');
     return $stmt->execute([$id,$project,$is_coordinator]);
+}
+
+function joinProjectInvited($id_user, $project) {
+    global $conn;
+
+    $user_info = getUserInfo($id_user);
+
+    $sql_op1 =  "DELETE FROM invited_users WHERE email = ?;";
+    $sql_op2 = "INSERT INTO user_project(id_user,id_project, is_coordinator)
+    VALUES (?, ?, ?);";
+
+    $is_coordinator = 'false';
+
+    $conn->beginTransaction();
+    $stmt = $conn->prepare($sql_op1);
+    $sucess1 = $stmt->execute(array($user_info['email']));
+    $stmt = $conn->prepare($sql_op2);
+    $sucess2 = $stmt->execute(array($id_user,$project,$is_coordinator));
+    if($sucess1 && $sucess2) {
+        return $conn->commit();
+    } else {
+        $conn->rollBack();
+        return $sucess1 && $sucess2;
+    }
+
 }
 
 function getUserInfo($id){
@@ -86,6 +137,16 @@ function getUserInfo($id){
     $stmt = $conn -> prepare('SELECT * FROM user_table WHERE id = ?');
     $stmt->execute([$id]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function getUserEmail(){
+
+    global $conn;
+    $stmt = $conn -> prepare('SELECT email FROM user_table WHERE id = ?');
+    $stmt->execute([$_SESSION['user_id']]);
+    $result = $stmt->fetch();
 
     return $result;
 }
@@ -114,7 +175,6 @@ function getCountries(){
 
 }
 
-
 function createProject($name){
 
     global $conn;
@@ -126,6 +186,13 @@ function createProject($name){
     global $conn;
     $stmt = $conn->prepare('INSERT INTO user_project(id_user,id_project,is_coordinator) VALUES (?,?,?)');
     $stmt->execute([$_SESSION['user_id'],$last_id,TRUE]);
+}
+
+
+function leaveProject($projectID){
+    global $conn;
+    $stmt = $conn->prepare('DELETE FROM user_project WHERE id_project = ?');
+    $stmt->execute([$projectID]);
 }
 
 

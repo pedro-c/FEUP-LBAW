@@ -7,6 +7,10 @@ body {
   overflow-x: hidden;
   font-family: Roboto, Helvetica, sans-serif; }
 
+.nav-user-picture,
+.user-collapse-picture {
+  border-radius: 50%; }
+
 #parent {
   height: 100%; }
 
@@ -161,6 +165,47 @@ body {
           color: #e9d460 !important; }
       #sidebar li a p {
         margin-bottom: 0px !important; } }
+.frame-square, .frame-round {
+  background: #fff;
+  display: inline-block;
+  vertical-align: top;
+  width: 130px;
+  height: 130px;
+  margin-right: .5em;
+  margin-bottom: .3em; }
+
+.frame-round {
+  border-radius: 50%;
+  overflow: hidden; }
+  .frame-round .crop {
+    border-radius: 50%; }
+
+.crop {
+  height: 100%;
+  overflow: hidden;
+  position: relative; }
+  .crop img {
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    margin: auto;
+    position: absolute;
+    top: -100%;
+    right: -100%;
+    bottom: -100%;
+    left: -100%;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
+    .crop img:hover {
+      width: 100%;
+      height: auto;
+      -webkit-filter: blur(1px);
+      content: url("../images/users/uploadImage.png"); }
+
 #new-post-panel > .panel-body {
   text-align: center; }
 

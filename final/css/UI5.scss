@@ -5,6 +5,10 @@
   margin: 0 !important;
 }
 
+#file-info-files{
+  font-weight: 700;
+}
+
 .files_title {
 
   background-color: $white;
@@ -27,6 +31,10 @@
 }
 
 .files_list {
+
+  #button-upload{
+    text-align: right;
+  }
 
   .button_upload {
     padding-top: 20px;
@@ -72,6 +80,7 @@
         .file_show {
           padding-right: 5px;
           width: 35px;
+          height: 35px;
         }
 
       }
@@ -99,17 +108,27 @@
         font-size: medium;
       }
 
-      .fa.fa-download {
+      .fa.fa-download, .fa.fa-trash {
         color: $blue_secondary;
-        font-size: x-large;
+        font-size: large;
+        cursor: pointer;
         &:hover {
           color: $color_yellow;
         }
       }
+
+      .fa.fa-trash{
+        margin-right: 7px;
+      }
+
     }
   }
 
   .uploadFile_container {
+
+
+
+
 
     .panel-heading {
       background-color: $color_yellow;
@@ -140,12 +159,22 @@
       .box.drag-here {
         border-radius: 5px;
         height: 150px;
-        margin-top: 40px;
         border: 1px dashed grey;
-        vertical-align: middle;
         background-color: $background_white;
         display: table;
         width: 100%;
+
+        .box__file{
+          visibility: hidden;
+        }
+
+        .glyphicon.glyphicon-plus.img-responsive {
+          margin: 0 auto;
+          font-size: 40px !important;
+          color: grey;
+          text-align: center;
+          vertical-align: middle;
+        }
 
         div {
           display: table-cell;
@@ -155,12 +184,6 @@
           padding-top: 30px;
           text-align: center;
           font-size: medium;
-          color: grey;
-        }
-
-        .glyphicon.glyphicon-plus {
-          text-align: center;
-          font-size: x-large;
           color: grey;
         }
 
@@ -184,6 +207,7 @@
       border-radius: 5px;
       align-self: center;
       outline: 0;
+      margin-top: 20px;
 
       &:hover {
         background-color: $blue_secondary;
@@ -275,6 +299,7 @@
         #user_photo {
           width: 70px;
           float: left;
+          border-radius: 50%;
         }
 
         .name{
@@ -310,7 +335,37 @@
 
     }
   }
+}
 
+.modal-header {
+  background-color: $color_ebony_clay;
+  color: $white;
+}
+.modal-footer {
+  background-color: $color_ebony_clay;
+  color: $white;
 
+  #accept_button:hover {
+    background-color: $color_yellow;
+    color: $white;
+  }
+  #cancel_button:hover {
+    background-color: $color_yellow;
+    color: $white;
+  }
 
+}
+
+.dropdown-menu{
+  top: 55% !important;
+}
+
+/* Mobile */
+
+@media screen and (max-device-width: 667px) {
+
+  #container_schedule_meeting{
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 }

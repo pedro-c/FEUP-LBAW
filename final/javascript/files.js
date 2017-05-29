@@ -1,7 +1,21 @@
 $(document).ready(function () {
 
-    $(".select2-multiple").select2();
+    $(".select2-multiple").select2({
+        tags: true,
+        maximumSelectionLength: 1
+    });
 
+    $("#mobile-back").click(function () {
+        $("#container_file_info").hide();
+        $(".uploadFile_container").hide();
+    });
+
+    var width = $(window).width();
+    $(window).resize(function () {
+        if (width <= '720px') {
+            $('.uploadFile_container').addClass('nopadding');
+        }
+    });
 
     $( "#drag-here" ).bind( "dragover", function() {
         console.log("dragover");
@@ -9,7 +23,41 @@ $(document).ready(function () {
         return false;
     });
 
+    $('i[data-toggle=modal]').click(function () {
+        var data_id = '';
+        if (typeof $(this).data('id') !== 'undefined')
+            data_id = $(this).data('id');
+
+        $("#file-id-delete").text(data_id);
+    });
+
+    $('#plus').click(function(){$('#add-file-files').trigger('click'); });
+
+    $('input#add-file-files').change(function(){
+        var files = $(this)[0].files;
+        console.log(files);
+        if(files.length > 0){
+            $("#file-info-files").html("File uploaded.");
+        }
+    });
+
 });
+
+function deleteFile(){
+    file_id = $("#file-id-delete").text();
+
+    $.ajax({
+        type: 'POST',
+        data: { 'file_id': file_id } ,
+        url:'../api/files/delete-file.php',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            location.reload();
+        }
+    });
+
+}
 
 function uploadFile() {
 
@@ -98,9 +146,8 @@ function fileInfo(file_id){
 }
 
 function deleteUpload() {
-
     $("#container_to_collapse").addClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
-    $("#container_to_collapse").removeClass("col-lg-6 col-md-6 col-sm-6 col-xs-6");
+    $("#container_to_collapse").removeClass("col-lg-6 col-md-6 col-sm-6 col-xs-6 hidden-xs");
     $(".file").addClass("col-lg-4 col-md-4 col-sm-4 col-xs-12");
     $(".file").removeClass("col-lg-12 col-md-12 col-sm-12 col-xs-12");
     $(".uploadFile_container").hide();
@@ -108,6 +155,7 @@ function deleteUpload() {
     $("#uploadButton").css("border","none");
     $("#mobile-back").hide();
     $("#container_file_info").hide();
+
 }
 
 function exitMobile() {
