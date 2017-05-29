@@ -7,7 +7,7 @@
         <div id="project-presentation" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="page-header">
                 <div id="project-title">
-                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="modal" data-target="#editProjectName"></span>
                     <h2 id="title"> {$projectName} </h2>
                 </div>
                 <div id="project-description">
@@ -149,6 +149,29 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div id="editProjectName" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Change Project Name</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="new-info">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        <input id="new-title" name="title" placeholder="Change project name here">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="changeProjectName()">Change</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

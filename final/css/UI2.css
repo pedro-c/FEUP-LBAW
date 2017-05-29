@@ -321,4 +321,23 @@ i.dash-title-icon {
 img.dash-user-thumb {
   border-radius: 50%; }
 
+.modal-header {
+  background-color: #22313f;
+  color: #fff; }
+
+.new-info input {
+  width: 90%;
+  border: none;
+  outline: none; }
+
+.modal-footer {
+  background-color: #22313f;
+  color: #fff; }
+  .modal-footer #accept_button:hover {
+    background-color: #e9d460;
+    color: #fff; }
+  .modal-footer #cancel_button:hover {
+    background-color: #e9d460;
+    color: #fff; }
+
 /*# sourceMappingURL=UI2.css.map */
