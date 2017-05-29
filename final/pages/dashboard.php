@@ -19,6 +19,7 @@ $team_members = getTeamMembers($projectId);
 $smarty->assign('meetings',$meetings);
 $smarty->assign('files',$files);
 $smarty->assign('projectName',$projectName);
+$smarty->assign('projectDescription',$projectDescription);
 $smarty->assign('teamMembers', $team_members);
 $smarty->assign('uncompletedTasks', $uncompletedTasks);
 $smarty->display($BASE_DIR . 'templates/dashboard.tpl');

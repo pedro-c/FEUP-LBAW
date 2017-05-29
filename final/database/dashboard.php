@@ -34,3 +34,9 @@ function changeProjectName($project_name, $project_id){
     $stmt = $conn->prepare('UPDATE project set name=? WHERE id=? ');
     return $stmt->execute([$project_name, $project_id]);
 }
+
+function changeProjectDescription($project_description, $project_id){
+    global $conn;
+    $stmt = $conn->prepare('UPDATE project set description=? WHERE id=? ');
+    return $stmt->execute([$project_description, $project_id]);
+}

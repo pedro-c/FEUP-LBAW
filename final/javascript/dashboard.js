@@ -19,3 +19,17 @@ function changeProjectName() {
 
 }
 
+function changeProjectDescription() {
+    var description = $("#new-description").val();
+
+    $.ajax({
+        type: 'POST',
+        data: { 'description': description} ,
+        url:'../api/dashboard/change-project-description.php',
+        dataType: 'json',
+        success: function (data) {
+            location.reload();
+        }
+    });
+}
+

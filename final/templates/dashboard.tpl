@@ -8,11 +8,11 @@
             <div class="page-header">
                 <div id="project-title">
                     <span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="modal" data-target="#editProjectName"></span>
-                    <h2 id="title"> {$projectName} </h2>
+                    <h2 id="title"> {$projectName}</h2>
                 </div>
                 <div id="project-description">
-                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                    <span id="subtitle" onclick="changeProjectDescription()">{$projectDescription} ola </span>
+                    <span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#editProjectDescription" aria-hidden="true"></span>
+                    <span id="subtitle">{$projectDescription}</span>
                 </div>
             </div>
         </div>
@@ -168,6 +168,29 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal" onclick="changeProjectName()">Change</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="editProjectDescription" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Change Project Description</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="new-info">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        <input id="new-description" name="title" placeholder="Change project description here">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="changeProjectDescription()">Change</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
