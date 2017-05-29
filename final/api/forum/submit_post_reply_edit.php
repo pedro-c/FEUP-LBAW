@@ -10,9 +10,13 @@ include_once '../../config/init.php';
 include_once  $BASE_DIR . 'database/forum.php';
 
 $replyId = $_POST['reply_id'];
+$userId = $_SESSION['user_id'];
 $replyContent  = $_POST['content'];
 $replyContent = htmlspecialchars($replyContent);
+$reply = '';
 
-$reply = editReply($replyId, $replyContent);
+if (userOwnsReply($userId, $replyId)) {
+    $reply = editReply($replyId, $replyContent);
+}
 
 echo $reply;

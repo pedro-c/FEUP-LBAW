@@ -25,6 +25,7 @@ foreach ($replies as $reply){
     $user = getUser($reply['id_creator']);
     $photo = getPhoto($reply['id_creator']);
     $userCanEdit = ($userId === $reply['id_creator']);
+    $userCanDelete = ($userCanEdit || isCoordinator($userId,$projectId));
     $replyOutput['content'] = $reply['content'];
     $replyOutput['creation_date'] = $reply['creation_date'];
     $replyOutput['username'] = $user['username'];
@@ -33,7 +34,7 @@ foreach ($replies as $reply){
     $replyOutput['reply_id'] = $replyId;
     $replyOutput['liked'] = $likedByUser;
     $replyOutput['user_can_edit'] = $userCanEdit;
-    $replyOutput['user_is_coordinator'] = isCoordinator($userId,$projectId);
+    $replyOutput['user_can_delete'] = $userCanDelete;
 
     $output[$count] = $replyOutput;
     $count++;

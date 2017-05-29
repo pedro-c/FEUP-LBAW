@@ -141,7 +141,7 @@ function unlikePost($postId, $userId)
     $stmt = $conn->prepare("DELETE FROM forum_post_like WHERE id_post = ? AND id_user = ?");
     $stmt->execute(array($postId, $userId));
 
-    return getNumLikesReply($postId);
+    return getNumLikesPost($postId);
 }
 
 function likeReply($replyId, $userId)
@@ -209,11 +209,28 @@ function editReply($replyId, $replyContent)
     return $stmt->fetch()['content'];
 }
 
+function editPost($postId, $postContent)
+{
+    global $conn;
+    $stmt = $conn->prepare("UPDATE forum_post
+    SET content = ? WHERE id = ? RETURNING content");
+    $stmt->execute(array($postContent,$postId));
+    return $stmt->fetch()['content'];
+}
+
 function userOwnsReply($userId, $replyId)
 {
     global $conn;
     $stmt = $conn->prepare("SELECT EXISTS (SELECT * FROM forum_reply WHERE id_creator = ? AND id = ?)");
-    $stmt->execute(array($userId,$replyId));
+    $stmt->execute(array($userId, $replyId));
+    return $stmt->fetch()['exists'];
+}
+
+function userOwnsPost($userId, $postId)
+{
+    global $conn;
+    $stmt = $conn->prepare("SELECT EXISTS (SELECT * FROM forum_post WHERE id_creator = ? AND id = ?)");
+    $stmt->execute(array($userId, $postId));
     return $stmt->fetch()['exists'];
 }
 
@@ -222,5 +239,13 @@ function deleteReply($replyId)
     global $conn;
     $stmt = $conn->prepare("DELETE FROM forum_reply WHERE id = ?");
     $stmt->execute(array($replyId));
+    return $stmt->fetchAll();
+}
+
+function deletePost($postId)
+{
+    global $conn;
+    $stmt = $conn->prepare("DELETE FROM forum_post WHERE id = ?");
+    $stmt->execute(array($postId));
     return $stmt->fetchAll();
 }

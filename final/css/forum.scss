@@ -4,26 +4,20 @@
   text-align: center;
 }
 
-.page-wrapper.container > div.row{
+.page-wrapper.container > div.row {
   margin-right: auto;
 }
 
-div.forum-posts-nav{
+div.forum-posts-nav {
   padding-right: 20px;
 }
-.reply-options {
+
+.forum-options {
 
   margin-left: 10px;
 
   .dropdown-menu {
     padding: 0
-  }
-
-  .btn.dropdown-toggle {
-    padding: 0px;
-    background-color: $white;
-    -webkit-box-shadow: none;
-    box-shadow: none;
   }
 
   .dropdown-item {
@@ -33,7 +27,7 @@ div.forum-posts-nav{
     display: block;
     color: $color_ebony_clay;
 
-    &.delete-reply-option {
+    &.delete-reply-option, &.delete-post-option {
       color: $color-tall_poppy_approx;
     }
   }
@@ -42,6 +36,27 @@ div.forum-posts-nav{
     background-color: $background_white;
     text-decoration: none;
   }
+}
+
+.forum-options.post-options {
+  .btn.dropdown-toggle {
+    padding: 0px;
+    background-color: $color_yellow;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: $white;
+  }
+}
+
+.forum-options.reply-options {
+
+  .btn.dropdown-toggle {
+    padding: 0px;
+    background-color: $white;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
 }
 
 .submitter-photo {
@@ -127,7 +142,7 @@ button#new-post-button.active {
   }
 }
 
-.reply-delete-buttons, .reply-delete-buttons {
+.reply-delete-buttons, .post-delete-buttons {
   margin-bottom: 15px;
   margin-top: 5px;
 
@@ -136,7 +151,7 @@ button#new-post-button.active {
     padding-top: 10px;
   }
 
-  .confirm-delete-reply {
+  .confirm-delete-reply, .confirm-delete-post {
     background-color: $color_chestnut_rose_approx;
     border-color: $color_chestnut_rose_approx;
     color: $white;
@@ -146,11 +161,17 @@ button#new-post-button.active {
       border-color: $color_tall_poppy_approx;
     }
   }
-  .cancel-delete-reply:hover, .cancel-delete-reply:focus{
+  .cancel-delete-reply:hover, .cancel-delete-reply:focus,
+  .cancel-delete-post:hover, .cancel-delete-post:focus{
     color: $color_ebony_clay;
     background-color: #f1f1f1;
     border-color: #f1f1f1;
   }
+}
+
+.post-delete-buttons {
+  padding-bottom: 15px;
+  padding-left: 10px;
 }
 
 #submit-reply:hover, #submit-new-post:hover, button.submit-reply-edit:hover, button.submit-post-edit:hover {
@@ -159,7 +180,7 @@ button#new-post-button.active {
   border-color: #d9c559;
 }
 
-button.cancel-reply-edit:hover, button.cancel-reply-edit:focus{
+button.cancel-reply-edit:hover, button.cancel-reply-edit:focus {
   color: $color_ebony_clay;
   background-color: #f1f1f1;
   border-color: #f1f1f1;

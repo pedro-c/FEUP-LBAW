@@ -21,7 +21,8 @@ body {
   right: 0;
   background-color: #22313f;
   color: white;
-  border: none !important; }
+  border: none !important;
+  height: 50px !important; }
   #header .navbar-header > button.navbar-toggle {
     color: #fff; }
     #header .navbar-header > button.navbar-toggle span {
@@ -31,7 +32,8 @@ body {
       background-color: #e9d460;
       border-color: #e9d460; }
   #header #navbar {
-    border: none; }
+    border: none;
+    height: 50px !important; }
   #header .navbar-brand img {
     margin-top: -10px;
     margin-left: -10px;
@@ -67,6 +69,18 @@ body {
       color: #fff; }
     #header .dropdown-menu i.nav-dropdown-icon {
       float: right; }
+  #header #user-options {
+    height: 50px; }
+    #header #user-options a {
+      height: 100%;
+      display: block;
+      width: 100%; }
+  #header #user-projects {
+    height: 50px; }
+    #header #user-projects a {
+      height: 100%;
+      display: block;
+      width: 100%; }
 
 .mobile-user-options {
   float: right;
@@ -215,26 +229,34 @@ body {
 div.forum-posts-nav {
   padding-right: 20px; }
 
-.reply-options {
+.forum-options {
   margin-left: 10px; }
-  .reply-options .dropdown-menu {
+  .forum-options .dropdown-menu {
     padding: 0; }
-  .reply-options .btn.dropdown-toggle {
-    padding: 0px;
-    background-color: #fff;
-    -webkit-box-shadow: none;
-    box-shadow: none; }
-  .reply-options .dropdown-item {
+  .forum-options .dropdown-item {
     padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
     display: block;
     color: #22313f; }
-    .reply-options .dropdown-item.delete-reply-option {
+    .forum-options .dropdown-item.delete-reply-option, .forum-options .dropdown-item.delete-post-option {
       color: #b52b27; }
-  .reply-options .dropdown-item:hover {
+  .forum-options .dropdown-item:hover {
     background-color: #ecf0f1;
     text-decoration: none; }
+
+.forum-options.post-options .btn.dropdown-toggle {
+  padding: 0px;
+  background-color: #e9d460;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #fff; }
+
+.forum-options.reply-options .btn.dropdown-toggle {
+  padding: 0px;
+  background-color: #fff;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
 
 .submitter-photo {
   width: 25px;
@@ -293,23 +315,29 @@ button#new-post-button.active #plus-icon h4 {
     background-color: #d9c559;
     border-color: #d9c559; }
 
-.reply-delete-buttons, .reply-delete-buttons {
+.reply-delete-buttons, .post-delete-buttons {
   margin-bottom: 15px;
   margin-top: 5px; }
-  .reply-delete-buttons p, .reply-delete-buttons p {
+  .reply-delete-buttons p, .post-delete-buttons p {
     border-top: 1px solid #ecf0f1;
     padding-top: 10px; }
-  .reply-delete-buttons .confirm-delete-reply, .reply-delete-buttons .confirm-delete-reply {
+  .reply-delete-buttons .confirm-delete-reply, .reply-delete-buttons .confirm-delete-post, .post-delete-buttons .confirm-delete-reply, .post-delete-buttons .confirm-delete-post {
     background-color: #d9534f;
     border-color: #d9534f;
     color: #fff; }
-    .reply-delete-buttons .confirm-delete-reply:hover, .reply-delete-buttons .confirm-delete-reply:hover {
+    .reply-delete-buttons .confirm-delete-reply:hover, .reply-delete-buttons .confirm-delete-post:hover, .post-delete-buttons .confirm-delete-reply:hover, .post-delete-buttons .confirm-delete-post:hover {
       background-color: #b52b27;
       border-color: #b52b27; }
-  .reply-delete-buttons .cancel-delete-reply:hover, .reply-delete-buttons .cancel-delete-reply:focus, .reply-delete-buttons .cancel-delete-reply:hover, .reply-delete-buttons .cancel-delete-reply:focus {
+  .reply-delete-buttons .cancel-delete-reply:hover, .reply-delete-buttons .cancel-delete-reply:focus,
+  .reply-delete-buttons .cancel-delete-post:hover, .reply-delete-buttons .cancel-delete-post:focus, .post-delete-buttons .cancel-delete-reply:hover, .post-delete-buttons .cancel-delete-reply:focus,
+  .post-delete-buttons .cancel-delete-post:hover, .post-delete-buttons .cancel-delete-post:focus {
     color: #22313f;
     background-color: #f1f1f1;
     border-color: #f1f1f1; }
+
+.post-delete-buttons {
+  padding-bottom: 15px;
+  padding-left: 10px; }
 
 #submit-reply:hover, #submit-new-post:hover, button.submit-reply-edit:hover, button.submit-post-edit:hover {
   color: #fff;
