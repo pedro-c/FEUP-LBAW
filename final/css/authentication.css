@@ -21,8 +21,7 @@ body {
   right: 0;
   background-color: #22313f;
   color: white;
-  border: none !important;
-  height: 50px !important; }
+  border: none !important; }
   #header .navbar-header > button.navbar-toggle {
     color: #fff; }
     #header .navbar-header > button.navbar-toggle span {
@@ -34,6 +33,9 @@ body {
   #header #navbar {
     border: none;
     height: 50px !important; }
+    #header #navbar.collapsing, #header #navbar.collapse, #header #navbar.in {
+      max-height: none;
+      overflow-y: visible; }
   #header .navbar-brand img {
     margin-top: -10px;
     margin-left: -10px;
@@ -71,8 +73,16 @@ body {
       float: right; }
   #header #user-options {
     height: 50px; }
+    #header #user-options a {
+      height: 100%;
+      display: block;
+      width: 100%; }
   #header #user-projects {
     height: 50px; }
+    #header #user-projects a {
+      height: 100%;
+      display: block;
+      width: 100%; }
 
 .mobile-user-options {
   float: right;
@@ -149,7 +159,7 @@ body {
     width: 100px;
     border: none;
     border-radius: 0;
-    overflow-y: auto;
+    overflow-y: hidden;
     bottom: 0;
     overflow-x: hidden;
     padding-bottom: 40px; }
@@ -231,8 +241,6 @@ html, body {
   left: 0;
   overflow-x: hidden;
   overflow-y: hidden; }
-  .container .container2 {
-    height: 100%; }
   .container .panel {
     margin: 0;
     height: 100%; }
@@ -240,6 +248,13 @@ html, body {
     height: 100%;
     overflow-x: auto;
     overflow-y: hidden; }
+
+.container2 {
+  padding: 0; }
+  .container2 .div {
+    padding: 0; }
+  .container2 .col-xs-12 {
+    padding: 0; }
 
 .panelnopadding {
   padding: 0 !important; }

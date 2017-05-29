@@ -18,7 +18,7 @@ $(document).ready(function () {
     let pagination = $(".pagination");
 
     /*
-     * Click Handlers Start
+     ************************************ Click Handlers Start *****************************************************
      */
 
     /*
@@ -55,11 +55,9 @@ $(document).ready(function () {
             post_id: curPostID,
             content: content,
         }, function (data) {
-            console.log(data);
             let reply = JSON.parse(data);
             let replyContent = reply.content;
             let id = reply.id;
-            console.log(id);
             let creationDate = reply.creation_date;
             let userPhoto = reply.photo;
             let username = reply.username;
@@ -79,7 +77,7 @@ $(document).ready(function () {
      * Click Handler for the post like button
      */
     $("body").on('click', '.post-like-button', function () {
-        let postElement = $(this).parents("#post-content");
+        let postElement = $(this).parents("#open-forum-post");
         if ($(this).hasClass('liked')) {
             unlikePost(postElement);
         }
@@ -94,15 +92,22 @@ $(document).ready(function () {
     $("body").on('click', '.edit-reply-option', function (e) {
         e.preventDefault();
         let replyElement = $(this).parents(".forum-reply");
+
+        if (replyElement.find("[class=reply-edit-buttons]").length !== 0)
+            return;
         let replyContentElement = replyElement.find('.reply-content');
+
+        if (replyContentElement === null)
+            return;
+
         let replyContent = replyElement.find('.reply-content').text();
         let textbox = $(
-            '<textarea id="reply-edit-text" class="form-control" rows="3" style="resize: none"' +
+            '<textarea class="form-control reply-edit-text" rows="3" style="resize: none"' +
             ' required="required">' + replyContent + '</textarea>' +
             '<span hidden="hidden" class="cur-reply-content">' + replyContent + '</span>' +
             '<div class="reply-edit-buttons">' +
-            '<button id="submit-reply-edit" class="btn btn-default btn-form" type="submit">Submit</button>' +
-            '<button id="cancel-reply-edit" class="btn btn-default btn-form">Cancel</button>' +
+            '<button class="submit-reply-edit btn btn-default btn-form" type="submit">Submit</button>' +
+            '<button class="cancel-reply-edit btn btn-default btn-form">Cancel</button>' +
             '</div>'
         );
         replyContentElement.replaceWith(textbox)
@@ -111,15 +116,13 @@ $(document).ready(function () {
     /*
      * Click handler for the reply edit submit button
      */
-    $('body').on('click', '#submit-reply-edit', function (e) {
+    $('body').on('click', '.submit-reply-edit', function (e) {
         e.preventDefault();
         let replyElement = $(this).parents(".forum-reply");
-        console.log(replyElement);
         let replyId = parseInt(replyElement.find('span.reply-id').text());
-        console.log(replyId);
         let replyButtons = replyElement.find(".reply-edit-buttons");
 
-        let text = $("#reply-edit-text");
+        let text = $(".reply-edit-text");
         let content = text.val();
 
         if (content === null || content === "")
@@ -141,17 +144,14 @@ $(document).ready(function () {
     /*
      * Click handler for the reply edit cancel button
      */
-    $('body').on('click', '#cancel-reply-edit', function (e) {
+    $('body').on('click', '.cancel-reply-edit', function (e) {
         e.preventDefault();
         let replyElement = $(this).parents(".forum-reply");
-        console.log(replyElement);
-        let replyId = parseInt(replyElement.find('span.reply-id').text());
-        console.log(replyId);
         let replyButtons = replyElement.find(".reply-edit-buttons");
         let replyContentElement = replyElement.find(".cur-reply-content");
         let replyContentText = replyContentElement.text();
 
-        let text = $("#reply-edit-text");
+        let text = $(".reply-edit-text");
 
         text.replaceWith(
             $('<p class="list-group-item-text reply-content">' + replyContentText + '</p>')
@@ -161,22 +161,184 @@ $(document).ready(function () {
         replyButtons.remove();
     });
 
+    /*
+     * Click handler for the reply delete button
+     */
+    $('body').on('click', '.delete-reply-option', function (e) {
+        e.preventDefault();
+        let replyElement = $(this).parents(".forum-reply");
+
+        if (replyElement.find("[class=reply-delete-buttons]").length !== 0)
+            return;
+
+        let deleteOptionButtons = $(
+            '<div class="reply-delete-buttons">' +
+            '<p class="delete-reply-prompt">' +
+            'Are you sure you want to delete this reply?' +
+            '</p>' +
+            '<button class="btn btn-default btn-form confirm-delete-reply" type="submit">Delete</button>' +
+            '<button class="btn btn-default btn-form cancel-delete-reply">Cancel</button>' +
+            '</div>'
+        );
+        replyElement.append(deleteOptionButtons);
+    });
+
 
     /*
-     * Click Handlers End
+     * Click handler for the reply delete confirm button
+     */
+    $('body').on('click', '.confirm-delete-reply', function (e) {
+        e.preventDefault();
+
+        let replyElement = $(this).parents(".forum-reply");
+        let replyId = parseInt(replyElement.find('span.reply-id').text());
+
+        $.post("../api/forum/delete_post_reply.php", {
+            reply_id: replyId
+        }, function (data) {
+            if (data === 'success')
+                replyElement.remove();
+        });
+
+    });
+
+    /*
+     * Click handler for the reply delete cancel button
+     */
+    $('body').on('click', '.cancel-delete-reply', function (e) {
+        e.preventDefault();
+        let replyElement = $(this).parents(".forum-reply");
+        let replyButtons = replyElement.find(".reply-delete-buttons");
+        replyButtons.remove();
+    });
+
+    /*
+     * Click handler for the post edit button
+     */
+    $("body").on('click', '.edit-post-option', function (e) {
+        e.preventDefault();
+        let postElement = $(this).parents("#open-forum-post");
+
+        if (postElement.find("[class=post-edit-buttons]").length !== 0)
+            return;
+        let postContentElement = postElement.find('#post-content');
+        let postContent = postContentElement.text();
+        let textbox = $(
+            '<textarea class="post-edit-text form-control" rows="8" style="resize: none"' +
+            ' required="required">' + postContent + '</textarea>' +
+            '<span hidden="hidden" class="cur-post-content">' + postContent + '</span>' +
+            '<div class="post-edit-buttons">' +
+            '<button class="submit-post-edit btn btn-default btn-form" type="submit">Submit</button>' +
+            '<button class="cancel-post-edit btn btn-default btn-form">Cancel</button>' +
+            '</div>'
+        );
+        postContentElement.replaceWith(textbox)
+    });
+
+    /*
+     * Click handler for the forum post edit submit button
+     */
+    $('body').on('click', '.submit-post-edit', function (e) {
+        e.preventDefault();
+        let postElement = $(this).parents("#open-forum-post");
+        let postId = parseInt(postElement.find('#current-post-id').text());
+        let postButtons = postElement.find(".post-edit-buttons");
+        let postContentElement = postElement.find(".cur-post-content");
+
+        let text = $(".post-edit-text");
+        let content = text.val();
+
+        if (content === null || content === "")
+            return;
+
+        $.post("../api/forum/submit_post_edit.php", {
+            post_id: postId,
+            content: content,
+        }, function (data) {
+            text.replaceWith(
+                $('<p class="post-content">' + data + '</p>')
+            );
+        });
+
+        text.val("");
+        postContentElement.remove();
+        postButtons.remove();
+    });
+
+    /*
+     * Click handler for the forum post edit cancel button
+     */
+    $('body').on('click', '.cancel-post-edit', function (e) {
+        e.preventDefault();
+        let postElement = $(this).parents("#open-forum-post");
+        let postButtons = postElement.find(".post-edit-buttons");
+        let postContentElement = postElement.find(".cur-post-content");
+        let postContentText = postContentElement.text();
+
+        let text = $(".post-edit-text");
+
+        text.replaceWith(
+            $('<p id="post-content">' + postContentText + '</p>')
+        );
+
+        postContentElement.remove();
+        postButtons.remove();
+    });
+
+    /*
+     * Click handler for the post delete button
+     */
+    $('body').on('click', '.delete-post-option', function (e) {
+        e.preventDefault();
+        let postElement = $(this).parents("#open-forum-post");
+        let postId = parseInt(postElement.find('#current-post-id').text());
+
+        if (postElement.find("[class=reply-delete-buttons]").length !== 0)
+            return;
+
+        let deleteOptionButtons = $(
+            '<form action="../actions/forum/delete_post.php" method="post">' +
+            '<div class="post-delete-buttons">' +
+            '<p class="delete-post-prompt">' +
+            'Are you sure you want to delete this post?' +
+            '</p>' +
+            '<input hidden="hidden" name="post_id" value="'+ postId + '">' +
+            '<button class="btn btn-default btn-form confirm-delete-post" type="submit">Delete</button>' +
+            '<button class="btn btn-default btn-form cancel-delete-post" type="button">Cancel</button>' +
+            '</div>' +
+            '</form>'
+        );
+        postElement.append(deleteOptionButtons);
+    });
+
+    /*
+     * Click handler for the post delete cancel button
+     */
+    $('body').on('click', '.cancel-delete-post', function (e) {
+        e.preventDefault();
+        let postElement = $(this).parents("#open-forum-post");
+        let postButtons = postElement.find(".post-delete-buttons");
+        postButtons.remove();
+    });
+    /*
+     ************************************ Click Handlers End *****************************************************
+     */
+
+    /**
+     * Perform the forum pagination, called when a button on the pagination nav is clicked
+     * @param clickedObject
+     * @param curPage
      */
     let performPagination = function (clickedObject, curPage) {
         let numPages = parseInt($("#pagination-n-pages").text());
         let selectedPage;
 
         if (clickedObject.is("#pagination-next")) {
-            console.log(curPage);
             if (curPage == numPages)
                 return;
             selectedPage = curPage + 1;
         }
         else if (clickedObject.is("#pagination-prev")) {
-            console.log(curPage);
             if (curPage == 1)
                 return;
             selectedPage = curPage - 1;
@@ -191,7 +353,6 @@ $(document).ready(function () {
         currentPage = selectedPage;
         $(".pagination li.active").removeClass("active");
         $('.pagination li:contains("' + selectedPage + '")').addClass("active");
-        console.log('.pagination li:contains("' + selectedPage + '")');
         loadPagePosts(postListing, selectedPage);
     };
 
@@ -251,7 +412,6 @@ $(document).ready(function () {
 
         if (displayedPosts.length > 0) {
             let post = displayedPosts.pop();
-            console.log(post);
             post.remove();
 
         }
@@ -308,7 +468,11 @@ $(document).ready(function () {
         posts.removeClass("background");
         newPostButton.removeClass("background");
         forum.removeClass("col-lg-3 col-md-3 col-sm-3 hidden-xs");
-        nav.width(nav.parent().width());
+        nav.removeClass('affix affix-top affix-bottom').removeData('bs.affix');
+        nav.on('affix-top.bs.affix', function (e) {
+            e.preventDefault()
+        });
+        nav.css('width', 'inherit');
     };
 
 
@@ -322,7 +486,6 @@ $(document).ready(function () {
         let postId = parseInt(clickedPost.find(".post-id").text());
         curPostID = postId;
 
-        console.log(postId);
 
         /*
          * Load the post information
@@ -333,7 +496,6 @@ $(document).ready(function () {
         $.post("../api/forum/get_forum_post.php", {
             post_id: postId
         }, function (data) {
-            console.log(data);
 
             let postInfo = JSON.parse(data);
             let id = postInfo.id;
@@ -345,9 +507,11 @@ $(document).ready(function () {
             let photo = postInfo.photo;
             let numLikes = postInfo.num_likes;
             let likedByUser = postInfo.liked_by_user;
+            let userCanDelete = postInfo.user_can_delete;
+            let userCanEdit = postInfo.user_can_edit;
 
             let postElement = makePostElement(id, title, creationDate, content, dateModified, username, photo, numLikes,
-                likedByUser);
+                likedByUser, userCanDelete, userCanEdit);
             postElement.append(mobileBack);
 
             displayedPostsStack.push(postElement);
@@ -366,7 +530,6 @@ function loadPagePosts(postsSection, currentPage) {
     $.post("../api/forum/get_page_posts.php", {
         forum_page: currentPage
     }, function (data) {
-        console.log(data);
         let posts = JSON.parse(data);
         for (let post of posts) {
             let photo = post.submitter_photo;
@@ -472,7 +635,6 @@ function unlikePost(postElement) {
     $.post("../api/forum/unlike_post.php", {
         post_id: postId
     }, function (data) {
-        console.log(data);
         let replyLikeButton = postElement.find(".post-like-button");
         replyLikeButton.removeClass("liked");
         replyLikeButton.find(".like-status").text(' Like');
@@ -515,7 +677,7 @@ function makeReplyElement(replyId, userPhoto, username, creationDate, numLikes, 
         '<span hidden="hidden" class="reply-id">' + replyId + '</span>' +
         '<img class="submitter-photo" src=' + userPhoto + '>' +
         '<strong>' + username + ' on ' + creationDate + '</strong>' +
-        (userCanEdit ? '<span class="reply-options"></span>' : '') +
+        (userCanEdit ? '<span class="forum-options reply-options"></span>' : '') +
         '<span class="reply-likes">' + (numLikes > 0 ? '<strong><i class="fa fa-thumbs-up"></i> ' + numLikes + '</strong>' : '') +
         '</span>' +
         '</h5>' +
@@ -528,37 +690,40 @@ function makeReplyElement(replyId, userPhoto, username, creationDate, numLikes, 
     );
 
     if (userCanDelete) {
-        let dropdown = $(
-            '<div class="btn-group dropdown">' +
-            '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"' +
-            ' aria-expanded="false">' +
-            '<span class="sr-only">Toggle Dropdown</span>' +
-            '<i class="fa fa-caret-down"></i>' +
-            '</button>' +
-            '<div class="dropdown-menu">' +
-            (userCanEdit ? '<a class="dropdown-item edit-reply-option" href="#">Edit Reply</a>' : '') +
-            '<a class="dropdown-item delete-reply-option" href="#">Delete Reply</a>' +
-            '</div>' +
-            '</div>'
-        );
-
+        let dropdown = makeReplyOptions(userCanEdit);
         replyElement.find(".reply-options").append(dropdown);
     }
 
     return replyElement;
 }
 
-function makePostElement(id, title, creationDate, content, dateModified, username, photo, numLikes, likedByUser) {
+function makeReplyOptions(userCanEdit) {
+    return $(
+        '<div class="btn-group dropdown">' +
+        '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"' +
+        ' aria-expanded="false">' +
+        '<span class="sr-only">Toggle Dropdown</span>' +
+        '<i class="fa fa-caret-down"></i>' +
+        '</button>' +
+        '<div class="dropdown-menu">' +
+        (userCanEdit ? '<a class="dropdown-item edit-reply-option" href="#">Edit Reply</a>' : '') +
+        '<a class="dropdown-item delete-reply-option" href="#">Delete Reply</a>' +
+        '</div>' +
+        '</div>');
+}
+
+function makePostElement(id, title, creationDate, content, dateModified, username, photo, numLikes, likedByUser, userCanDelete, userCanEdit) {
     let replies = getPostReplies(id);
     let post = $(
         '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">' +
-        '<div id="post-content" class="panel panel-primary">' +
+        '<div id="open-forum-post" class="panel panel-primary">' +
         '<div class="panel-heading">' +
         '<span hidden="hidden" id="current-post-id">' + id + '</span>' +
         '<h3 class="panel-title selected-post-title"><strong>' + title + '</strong></h3>' +
         '<span>' +
         '<img id="selected-post-submitter-info" class="submitter-photo" src=' + photo + '>' +
         '<small>' + username + ' on ' + creationDate + '</small>' +
+        '<span class="forum-options post-options"></span>' +
         '</span>' +
         '</div>' +
         '<div class="panel-body">' +
@@ -593,10 +758,29 @@ function makePostElement(id, title, creationDate, content, dateModified, usernam
         '<button id="submit-reply" class="btn btn-default btn-form btn-comment">Submit</button>' +
         '</li>'
     );
-    console.log(post);
+
+    if (userCanDelete) {
+        let options = makePostOptions(userCanEdit);
+        post.find('.post-options').append(options);
+    }
 
     return post;
 
+}
+
+function makePostOptions(userCanEdit) {
+    return $(
+        '<div class="btn-group dropdown">' +
+        '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"' +
+        ' aria-expanded="false">' +
+        '<span class="sr-only">Toggle Dropdown</span>' +
+        '<i class="fa fa-caret-down"></i>' +
+        '</button>' +
+        '<div class="dropdown-menu">' +
+        (userCanEdit ? '<a class="dropdown-item edit-post-option" href="#">Edit Post</a>' : '') +
+        '<a class="dropdown-item delete-post-option" href="#">Delete Post</a>' +
+        '</div>' +
+        '</div>');
 }
 
 /**
@@ -613,7 +797,6 @@ let getPostReplies = function (postId) {
     $.post("../api/forum/get_post_replies.php", {
         postID: postId
     }, function (data) {
-        console.log(data);
         let replies = JSON.parse(data);
         for (let reply of replies) {
             let id = reply.reply_id;
@@ -624,7 +807,7 @@ let getPostReplies = function (postId) {
             let username = reply.username;
             let likedByUser = reply.liked;
             let userCanEdit = reply.user_can_edit;
-            let userCanDelete = reply.user_can_edit || reply.user_is_coordinator;
+            let userCanDelete = reply.user_can_delete;
 
             let replyElement = makeReplyElement(id, userPhoto, username, creationDate, numLikes, replyContent,
                 likedByUser, userCanEdit, userCanDelete);

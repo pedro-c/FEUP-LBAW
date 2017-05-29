@@ -2,7 +2,7 @@
 include_once "common/header.php";
 ?>
 
-<link href="../css/UI5.css" rel="stylesheet">
+<link href="../css/files.css" rel="stylesheet">
 <script src="../javascript/files.js"></script>
 <script src="../javascript/meetings.js"></script>
 
@@ -75,7 +75,7 @@ include_once "common/header.php";
                             <div class="name">
                                 <span>{$uploaderName}</span>
                                 <i class="pull-right fa fa-download" aria-hidden="true" onclick="downloadFile({$file.id})"></i>
-<!-- Lixo -->                   <i class="pull-right fa fa-trash" aria-hidden="true" data-toggle="modal" data-id={$file.id} data-target="#deleteFileModal"></i>
+<!-- Lixo -->                   <i class="pull-right fa fa-times" aria-hidden="true" data-toggle="modal" data-id={$file.id} data-target="#deleteFileModal"></i>
                             </div>
 
                             <div id="deleteFileModal" class="modal fade" role="dialog">

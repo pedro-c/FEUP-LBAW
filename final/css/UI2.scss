@@ -46,6 +46,12 @@ i.dash-title-icon{
   margin-left: 5px;
 }
 
+.item-title{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .dash-card>.panel>.panel-body{
     text-align: center;
 }
@@ -141,4 +147,37 @@ i.dash-title-icon{
 
 img.dash-user-thumb{
      border-radius: 50%;
+}
+
+.modal-header {
+  background-color: $color_ebony_clay;
+  color: $white;
+}
+
+.new-info{
+
+  input{
+    width: 90%;
+    border: none;
+    outline: none;
+  }
+}
+
+.modal-footer {
+  background-color: $color_ebony_clay;
+  color: $white;
+
+  #accept_button:hover {
+    background-color: $color_yellow;
+    color: $white;
+  }
+  #cancel_button:hover {
+    background-color: $color_yellow;
+    color: $white;
+  }
+
+}
+
+#subtitle{
+  padding-top: 5px;
 }

@@ -9,12 +9,6 @@
 
 include_once 'common.php';
 
-function select()
-{
-    echo 'Called select function';
-    exit;
-}
-
 function submitPost($id_project, $id_user, $title, $content)
 {
     global $conn;
@@ -43,23 +37,23 @@ function getProjectPosts($projectId, $forumPage)
 }
 
 
-
-function getPost($postId,$userId){
+function getPost($postId, $userId)
+{
     global $conn;
 
     $stmt = $conn->prepare("
-    SELECT forum_post.id as post_id, title, creation_date, forum_post.content, date_modified, id_creator, username, count(forum_post_like.id_user) as num_likes, 
+    SELECT forum_post.id AS post_id, title, creation_date, forum_post.content, date_modified, id_creator, username, count(forum_post_like.id_user) AS num_likes, 
     EXISTS 
     (
         SELECT * FROM forum_post_like WHERE id_post = ? AND id_user = ?
-    ) as user_liked
+    ) AS user_liked
 
     FROM forum_post LEFT JOIN forum_post_like ON id = id_post, user_table
     WHERE forum_post.id = ?
     AND forum_post.id_creator = user_table.id
     GROUP BY forum_post.id,username");
 
-    $stmt->execute(array($postId,$userId,$postId));
+    $stmt->execute(array($postId, $userId, $postId));
     return $stmt->fetchAll()[0];
 }
 
@@ -141,8 +135,9 @@ function unlikePost($postId, $userId)
     $stmt = $conn->prepare("DELETE FROM forum_post_like WHERE id_post = ? AND id_user = ?");
     $stmt->execute(array($postId, $userId));
 
-    return getNumLikesReply($postId);
+    return getNumLikesPost($postId);
 }
+
 function likeReply($replyId, $userId)
 {
     global $conn;
@@ -204,6 +199,59 @@ function editReply($replyId, $replyContent)
     global $conn;
     $stmt = $conn->prepare("UPDATE forum_reply
     SET content = ? WHERE id = ? RETURNING content");
-    $stmt->execute(array($replyContent,$replyId));
+    $stmt->execute(array($replyContent, $replyId));
     return $stmt->fetch()['content'];
+}
+
+function editPost($postId, $postContent)
+{
+    global $conn;
+    $stmt = $conn->prepare("UPDATE forum_post
+    SET content = ? WHERE id = ? RETURNING content");
+    $stmt->execute(array($postContent,$postId));
+    return $stmt->fetch()['content'];
+}
+
+function userOwnsReply($userId, $replyId)
+{
+    global $conn;
+    $stmt = $conn->prepare("SELECT EXISTS (SELECT * FROM forum_reply WHERE id_creator = ? AND id = ?)");
+    $stmt->execute(array($userId, $replyId));
+    return $stmt->fetch()['exists'];
+}
+
+function userOwnsPost($userId, $postId)
+{
+    global $conn;
+    $stmt = $conn->prepare("SELECT EXISTS (SELECT * FROM forum_post WHERE id_creator = ? AND id = ?)");
+    $stmt->execute(array($userId, $postId));
+    return $stmt->fetch()['exists'];
+}
+
+function deleteReply($replyId)
+{
+    global $conn;
+    $stmt = $conn->prepare("DELETE FROM forum_reply WHERE id = ?");
+    $stmt->execute(array($replyId));
+    return $stmt->fetchAll();
+}
+
+function deletePost($postId)
+{
+    global $conn;
+    $stmt = $conn->prepare("DELETE FROM forum_post WHERE id = ?");
+    $stmt->execute(array($postId));
+    return $stmt->fetchAll();
+}
+
+function getLastActiveForumPosts($projectId, $numPosts)
+{
+    global $conn;
+    $stmt = $conn->prepare("SELECT username, user_table.id as creator_id, forum_post.title as title
+        FROM forum_post, user_table
+        WHERE forum_post.id_project = ? AND user_table.id = forum_post.id_creator
+        ORDER BY date_modified DESC
+        LIMIT ?");
+    $stmt->execute(array($projectId,$numPosts));
+    return $stmt->fetchAll();
 }

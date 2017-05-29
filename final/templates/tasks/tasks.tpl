@@ -72,10 +72,13 @@
         <div class="tasks-card create-task row col-lg-8 col-md-8 col-sm-11 col-xs-11" id="create-task" style="display: none">
             <div class="col-xs-12" id="create-task-navbar">
                 <div class="col-xs-12" id="assign-to">
+                    <div class="col-xs-2">
                     <img src="../images/users/avatar5.jpg" class="img-circle">
+                    </div>
+                    <div class="col-xs-10">
                     <select id="task-assign" class="select2-assign form-control" multiple="single" placeholder="Assign to">
-
                     </select>
+                    </div>
                 </div>
             </div>
 
@@ -86,8 +89,9 @@
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     <input id="task-deadline-date" type="date" class="form-control">
-                    <input id="task-deadline-time" type="time" name="time" class="form-control">
-                </div>
+                </div><br>
+                <div class="input-group"> <span class="input-group-addon"> <span class="glyphicon glyphicon-time"></span></span>
+                    <input id="task-deadline-time" type="time" name="time" class="form-control"></div><br>
                 <div class="input-group task-tags">
                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
                     <select id="task-tags" class="select2-tags form-control" multiple="multiple">

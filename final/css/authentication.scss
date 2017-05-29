@@ -34,9 +34,6 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
 
-  .container2{
-    height:100%;
-  }
   .panel{
     margin: 0;
     height: 100%;
@@ -45,6 +42,16 @@ body {
     height: 100%;
     overflow-x: auto;
     overflow-y: hidden;
+  }
+}
+
+.container2{
+  padding: 0;
+  .div{
+    padding: 0;
+  }
+  .col-xs-12{
+    padding: 0;
   }
 }
 

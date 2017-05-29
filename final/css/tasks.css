@@ -21,8 +21,7 @@ body {
   right: 0;
   background-color: #22313f;
   color: white;
-  border: none !important;
-  height: 50px !important; }
+  border: none !important; }
   #header .navbar-header > button.navbar-toggle {
     color: #fff; }
     #header .navbar-header > button.navbar-toggle span {
@@ -34,6 +33,9 @@ body {
   #header #navbar {
     border: none;
     height: 50px !important; }
+    #header #navbar.collapsing, #header #navbar.collapse, #header #navbar.in {
+      max-height: none;
+      overflow-y: visible; }
   #header .navbar-brand img {
     margin-top: -10px;
     margin-left: -10px;
@@ -157,7 +159,7 @@ body {
     width: 100px;
     border: none;
     border-radius: 0;
-    overflow-y: auto;
+    overflow-y: hidden;
     bottom: 0;
     overflow-x: hidden;
     padding-bottom: 40px; }
@@ -244,9 +246,11 @@ body {
   margin: 10px;
   height: 85%;
   border-radius: 3px;
-  float: none; }
+  float: none;
+  text-align: left; }
   .tasks-card .create-task {
-    visibility: hidden; }
+    visibility: hidden;
+    width: 150px; }
 
 .tasks {
   width: 100%; }
@@ -258,7 +262,7 @@ body {
     background-color: white;
     box-shadow: none;
     border: 0;
-    padding: 10px; }
+    padding-top: 10px; }
     .tasks-nav button:focus, .tasks-nav button:disabled, .tasks-nav button:hover {
       border-bottom: solid 4px #e9d460; }
 
@@ -329,10 +333,10 @@ body {
     margin-right: 5px;
     font-size: 0.8em;
     float: right;
-    height: 100%;
     padding: 3px;
     border: solid 1px #d9c559;
-    border-radius: 10px; }
+    border-radius: 10px;
+    top: 50%; }
   .task .task-name {
     float: left;
     display: inline-block;
@@ -342,7 +346,8 @@ body {
       vertical-align: middle !important;
       float: left;
       width: 60% !important;
-      left: 0; }
+      left: 0;
+      top: 50%; }
 
 .task-content {
   margin: 10px; }
@@ -371,7 +376,10 @@ body {
   .create-task #create-task-title {
     display: inline-block;
     align-content: left;
-    margin-top: 30px; }
+    margin-top: 30px;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    outline: none; }
     .create-task #create-task-title i {
       color: grey;
       font-size: 2em;
@@ -384,19 +392,27 @@ body {
       .create-task #create-task-title textarea:focus, .create-task #create-task-title textarea:hover {
         border: 1px solid #D3D3D3;
         border-radius: 2px; }
+    .create-task #create-task-title input {
+      vertical-align: middle !important;
+      float: left;
+      width: 60% !important;
+      left: 0;
+      font-size: 2em;
+      border: hidden; }
   .create-task #create-task-settings {
     display: inline-block;
     width: 100%;
     padding: 20px 0px 20px 0px; }
     .create-task #create-task-settings i, .create-task #create-task-settings input {
-      padding: 0px 0px 0px 0px;
       float: left; }
-  .create-task #create-task-description textarea {
-    min-height: 50px;
-    padding: 10px; }
-    .create-task #create-task-description textarea:focus, .create-task #create-task-description textarea:hover {
-      border: 1px solid #D3D3D3;
-      border-radius: 2px; }
+  .create-task #create-task-description {
+    padding-left: 0 !important;
+    margin-left: 0 !important; }
+    .create-task #create-task-description textarea {
+      min-height: 50px; }
+      .create-task #create-task-description textarea:focus, .create-task #create-task-description textarea:hover {
+        border: 1px solid #D3D3D3;
+        border-radius: 2px; }
   .create-task #create-task-navbar {
     border-bottom: solid 1px #D3D3D3;
     padding: 10px;
@@ -405,6 +421,7 @@ body {
     width: 100%;
     align-items: left; }
     .create-task #create-task-navbar #assign-to {
+      align-items: left;
       vertical-align: middle;
       display: block;
       float: left; }
@@ -417,7 +434,9 @@ body {
         float: left;
         width: 30px; }
       .create-task #create-task-navbar #assign-to span {
-        width: auto !important; }
+        width: 100% !important; }
+      .create-task #create-task-navbar #assign-to .select2-selection__choice__remove {
+        display: initial !important; }
     .create-task #create-task-navbar i {
       vertical-align: middle;
       float: left;
@@ -431,7 +450,6 @@ body {
       float: right; }
   .create-task .task-tags {
     text-align: start;
-    padding: 5px;
     width: 200px; }
     .create-task .task-tags span {
       width: 100% !important;
@@ -440,7 +458,7 @@ body {
       .create-task .task-tags span li > span {
         display: inline !important; }
     .create-task .task-tags span.input-group-addon {
-      width: 50px !important;
+      width: 40px !important;
       border-bottom-left-radius: 4px !important;
       border-top-left-radius: 4px !important; }
   .create-task .task-comments {
@@ -448,9 +466,12 @@ body {
     width: 100%;
     text-align: left;
     overflow: auto !important;
-    height: 45% !important; }
+    height: 45% !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important; }
     .create-task .task-comments .comment-info {
       width: 100%;
+      padding-top: 5px;
       display: inline-block !important;
       text-align: left; }
       .create-task .task-comments .comment-info i {
@@ -530,7 +551,6 @@ textarea {
   overflow: hidden;
   color: #1B2432;
   width: 100%;
-  height: 35px;
   background: transparent;
   border: 0px solid transparent;
   outline: 0px solid transparent;
@@ -545,5 +565,19 @@ textarea {
   text-align: start;
   border-collapse: separate;
   empty-cells: show; }
+
+.input-group {
+  border-bottom: 10px; }
+
+.input-group-addon {
+  width: 40px; }
+
+#task-deadline-time,
+#task-deadline-date {
+  width: 160px; }
+
+#info_date {
+  font-size: small;
+  font-weight: lighter; }
 
 /*# sourceMappingURL=tasks.css.map */
