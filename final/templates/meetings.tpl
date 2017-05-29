@@ -67,22 +67,22 @@
                                         {$notInvitedmembers = getNonInvitedUser($meeting.id, $project)}
                                         {$coordinator = isCoordinator($user_aut, $project)}
                                         {$creator = isMeetingCreator($meeting.id, $user_aut)}
-                                        {$photos = getInvitedUsersPhotos($meeting.id)}
+                                        {$users_photos = getInvitedUsersPhotosPaths($meeting.id)}
 
-                                        {foreach $photos as $photo}
-                                            <img class="user-photo"
-                                                 src={$photo} onclick="showUserInfo({$user_aut})">{/foreach}
+                                        {foreach $users_photos as $user}
+                                            <img class="user-photo" src={$user} onclick="showUserInfo({$user_aut})">
+                                        {/foreach}
                                         {if $coordinator == 'true' || $creator == 'true' }
                                             <span id="plus_user" class="glyphicon glyphicon-plus-sign"
                                                   aria-hidden="true"
                                                   onclick="inviteMoreUsers({$meeting.id})"  data-toggle="modal" data-target="#{$meeting.id|cat:'uninvited-users'}">
                                             </span>
                                             <div id='{$meeting.id|cat:'uninvited-users'}' class="modal fade" role="dialog">
-                                                <div class="modal-dialog">
+                                                <div class="modal-dialog modal-sm">
 
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title">Invite Users</h4>
+                                                            <h4 class="modal-title">Invite Users to Meeting</h4>
                                                         </div>
                                                         <form method="post" action="../actions/meetings/invite-user.php">
                                                         <div class="modal-body">
@@ -145,7 +145,7 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div class="button_trash">
+                    <div class="button_trash hidden-xs">
                         <button class="trash" onclick="exit_trash()"><span id="trash" class="glyphicon glyphicon-trash"
                                                                            aria-hidden="true"></span>
                         </button>
@@ -202,7 +202,7 @@
                             </div><br>
 
                             <div class="box">
-                                <div class="box drag_here hidden-xs">
+                                <div class="box drag_here">
                                     <input id="add-file" class="box__file" type="file" name="file[]" id="file" multiple/>
                                     <a id="plus"><span  class="glyphicon glyphicon-plus img-responsive center-block" aria-hidden="true"></span></a><br>
                                     <label id="file-info"></label>
@@ -233,16 +233,24 @@
                 </div>
                 <div class="panel-body">
                     <div class="info-meeting" id="create-meeting-settings">
-                        <div id="meeting_title" class="title"></div>
-                        <div id="meeting_date" class="date"></div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 nopadding">
+                            <div class="col-lg-6 col-md-6 col-sm-6 title-meeting-info nopadding">
+                             <div id="meeting_title" class="title"></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 date-meeting-info nopadding">
+                                <div id="meeting_date" class="date"></div>
+                            </div>
+                        </div>
                         <div>
                             <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                             <label id="meeting_time" class="hour"></label>
                         </div>
-                        <div id="meeting_description" class="description"></div>
                         <div id="meeting_duration" class="minutes"></div>
+                        <div id="meeting_description" class="description"></div>
                         <div id="meeting_files" class="files"></div>
-                        <div id="guest_div" class="guests"></div>
+                        <div id="guest_div" class="guests">
+
+                        </div>
                     </div>
                 </div>
             </div>

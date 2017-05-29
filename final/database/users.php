@@ -142,7 +142,6 @@ function getCountries(){
 
 }
 
-
 function createProject($name){
 
     global $conn;

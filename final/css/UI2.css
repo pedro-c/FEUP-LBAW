@@ -7,6 +7,10 @@ body {
   overflow-x: hidden;
   font-family: Roboto, Helvetica, sans-serif; }
 
+.nav-user-picture,
+.user-collapse-picture {
+  border-radius: 50%; }
+
 #parent {
   height: 100%; }
 
@@ -258,5 +262,8 @@ i.dash-title-icon {
   #project-description:hover span.glyphicon:hover {
     color: #d9c559;
     cursor: pointer; }
+
+img.dash-user-thumb {
+  border-radius: 50%; }
 
 /*# sourceMappingURL=UI2.css.map */

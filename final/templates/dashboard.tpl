@@ -1,5 +1,6 @@
 <link href="../css/UI2.css" rel="stylesheet"/>
 <script src="../javascript/files.js"></script>
+<script src="../javascript/dashboard.js"></script>
 
 <div class="page-wrapper container">
     <div class="row"><br>
@@ -11,7 +12,7 @@
                 </div>
                 <div id="project-description">
                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                    <span id="subtitle">{$projectDescription}</span>
+                    <span id="subtitle" onclick="changeProjectDescription()">{$projectDescription} ola </span>
                 </div>
             </div>
         </div>

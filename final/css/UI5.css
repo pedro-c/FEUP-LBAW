@@ -7,6 +7,10 @@ body {
   overflow-x: hidden;
   font-family: Roboto, Helvetica, sans-serif; }
 
+.nav-user-picture,
+.user-collapse-picture {
+  border-radius: 50%; }
+
 #parent {
   height: 100%; }
 
@@ -382,5 +386,11 @@ body {
 
 .dropdown-menu {
   top: 55% !important; }
+
+/* Mobile */
+@media screen and (max-device-width: 667px) {
+  #container_schedule_meeting {
+    padding: 0 !important;
+    margin: 0 !important; } }
 
 /*# sourceMappingURL=UI5.css.map */
