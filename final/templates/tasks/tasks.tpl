@@ -72,10 +72,10 @@
         <div class="tasks-card create-task row col-lg-8 col-md-8 col-sm-11 col-xs-11" id="create-task" style="display: none">
             <div class="col-xs-12" id="create-task-navbar">
                 <div class="col-xs-12" id="assign-to">
-                    <div class="col-xs-4">
+                    <div class="col-xs-2">
                     <img src="../images/users/avatar5.jpg" class="img-circle">
                     </div>
-                    <div class="col-xs-8">
+                    <div class="col-xs-10">
                     <select id="task-assign" class="select2-assign form-control" multiple="single" placeholder="Assign to">
                     </select>
                     </div>

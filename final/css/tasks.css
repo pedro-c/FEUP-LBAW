@@ -427,7 +427,9 @@ body {
         float: left;
         width: 30px; }
       .create-task #create-task-navbar #assign-to span {
-        width: auto !important; }
+        width: 100% !important; }
+      .create-task #create-task-navbar #assign-to .select2-selection__choice__remove {
+        display: initial !important; }
     .create-task #create-task-navbar i {
       vertical-align: middle;
       float: left;
