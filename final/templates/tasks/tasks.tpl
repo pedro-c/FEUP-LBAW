@@ -15,22 +15,32 @@
 
         <div class="tasks-card col-lg-8 col-md-8 col-sm-11 col-xs-11" id="task-card">
             <div class="tasks-header">
-                <button id="task-button" class="task-button" value="create-task">Add Task</button>
-                <div id="tags-dropdown-menu" class="drop-down">
-                    <button id="tag-name" class="dropdown-toggle" type="button" data-toggle="dropdown">Tag
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a id="tag-name-dropwdown" onclick="changeTagName('All')">All</a></li>
-                        {foreach $projectTags as $projectTag}
-                            {if {$projectTag} != "null-tag"}
-                                <li><a id="tag-name-dropwdown" onclick="changeTagName('{$projectTag.name}')">{$projectTag.name}</a></li>
-                            {/if}
-                        {/foreach}
-                    </ul>
-                </div>
-                <div class="form-group">
-                    <input class="form-control find-task" id="task-search-input" type="text">
-                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6">
+                        <button id="task-button" class="task-button" value="create-task">Add Task</button>
+                        <div id="tags-dropdown-menu" class="drop-down">
+                            <button id="tag-name" class="dropdown-toggle" type="button" data-toggle="dropdown">Tag
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a id="tag-name-dropwdown" onclick="changeTagName('All')">All</a></li>
+                                {foreach $projectTags as $projectTag}
+                                    {if {$projectTag} != "null-tag"}
+                                        <li><a id="tag-name-dropwdown" onclick="changeTagName('{$projectTag.name}')">{$projectTag.name}</a></li>
+                                    {/if}
+                                {/foreach}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <input class="form-control find-task" id="task-search-input" type="text">
+
+                        </div>
+                    </div>
+
+            </div>
             </div>
             <div class="task-content">
                 <table class="tasks">
