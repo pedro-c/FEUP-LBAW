@@ -30,7 +30,7 @@
                     </ul>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text">
+                    <input class="form-control find-task" type="text">
                     <button id="search-button" type="button" >Search Tag</button>
                 </div>
             </div>

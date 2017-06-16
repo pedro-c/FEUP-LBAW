@@ -35,16 +35,39 @@ $(document).ready(function(){
     });
 
     searchTaskButton.click(function() {
+
     	var text = $(this).siblings("input.form-control").val();
+
+    	/*console.log(text);
+        console.log("antes");
+        $.ajax({
+            type: 'POST',
+            data: {'searchTaskText' : text} ,
+            url:'../api/tasks/search-tasks.php',
+            dataType: 'json',
+            success: function (result) {
+                console.log("aqui");
+                console.log(result);
+                var tasklist = document.getElementById('task-list');
+
+              //  hideAllTasks();
+            }
+        });*/
+
+
+        console.log(text);
+
     	var ajaxurl = "../api/tasks/search-tasks.php";
     	var data = {'searchTaskText' : text};
     	$.post(ajaxurl, data, function(response) {
         //TODO
-    	    var result = response;//JSON.parse(response);
+    	    var result = response;
     	    console.log(result);
     	    var tasklist = document.getElementById('task-list');
+    	    console.log(tasklist);
     	    hideAllTasks();
     	})
+
     });
 
     $('.input-group.date').datepicker();
@@ -458,7 +481,17 @@ function changeTagName(tag_name){
 
 function hideAllTasks() {
     var tasklist = document.getElementById('task-list');
-    for(var i = 0; i < tasklist.childNodes.length; i++){
-        var row = tasklist.deleteRow();
-    }
+
+    $('#task-list .task').each(function(i, obj) {
+        $(this).hide();
+    });
+
+
+   /* for(var i = 0; i < tasklist.childNodes.length; i++){
+
+        $(this).hide();
+        console.log("entrei");
+
+       // var row = tasklist.deleteRow();
+    }*/
 }
