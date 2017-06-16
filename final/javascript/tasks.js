@@ -50,16 +50,33 @@ $(document).ready(function(){
     	    for(let i = 0; i < result.length ; i++){
                 let data = result[i][0];
 
+                console.log(result[i][1][0]);
+
                 var tasklist = document.getElementById('task-list');
                 var row = tasklist.insertRow();
-                row.setAttribute("class", "task");
+                if(data[0].completer_id === null){
+                    row.setAttribute("class", "task uncompleted");
+                }else{
+                    row.setAttribute("class", "task completed");
+                }
                 row.setAttribute("id", data[0].id);
                 var cell1 = row.insertCell(0);
                 var cell2 = row.insertCell(1);
                 var cell3 = row.insertCell(2);
                 cell1.innerHTML = "<i class='fa fa-check-circle-o' id='complete-button' onclick='completeTask("+data[0].id+")'></i>";
-                cell2.innerHTML = "<div onclick='toggle("+data[0].id+");'><textarea onclick='toggle("+data[0].id+");' id="+data[0].id+" disabled='true'>"+data[0].name+"</textarea></div>";
+                if(data[0].completer_id === null){
+                    cell2.innerHTML = "<div onclick='toggle("+data[0].id+");'><textarea onclick='toggle("+data[0].id+");' id="+data[0].id+" disabled='true'>"+data[0].name+"</textarea><p class='hashtag completed'>"+result[i][1][0].name+"</p></div>";
+                }else{
+                    cell2.innerHTML = "<div onclick='toggle("+data[0].id+");'><textarea onclick='toggle("+data[0].id+");' id="+data[0].id+" disabled='true'>"+data[0].name+"</textarea><p style='visibility: hidden;' class='hashtag uncompleted'>"+result[i][1][0].name+"</p></div>";
+                }
                 cell3.innerHTML = "<i id='delete-button' onclick='deleteTask("+data[0].id+")' name='delete-task' class='fa fa-times'></i>";
+
+
+                if($('#uncompleted-button').prop("disabled")){
+                    showUncompletedTasks();
+                }else{
+                    showCompletedTasks();
+                }
 
             }
 

@@ -26,7 +26,6 @@
                                 <li><a id="tag-name-dropwdown" onclick="changeTagName('{$projectTag.name}')">{$projectTag.name}</a></li>
                             {/if}
                         {/foreach}
-
                     </ul>
                 </div>
                 <div class="form-group">
