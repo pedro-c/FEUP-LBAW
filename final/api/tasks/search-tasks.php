@@ -5,7 +5,11 @@ include_once('../../database/tasks.php');
 if(isset($_POST['searchTaskText'])) {
   $searchTaskText = htmlspecialchars($_POST['searchTaskText']);
 
-  $searchResultIds = fullTextSearchTask($searchTaskText, $_SESSION['project_id']);
+  if($searchTaskText == ''){
+      $searchResultIds=getAllTasksFromProject($_SESSION['project_id']);
+  }else{
+      $searchResultIds = fullTextSearchTask($searchTaskText, $_SESSION['project_id']);
+  }
   $resultArray = array();
 
 

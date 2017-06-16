@@ -29,8 +29,7 @@
                     </ul>
                 </div>
                 <div class="form-group">
-                    <input class="form-control find-task" type="text">
-                    <button id="search-button" type="button" >Search Tag</button>
+                    <input class="form-control find-task" id="task-search-input" type="text">
                 </div>
             </div>
             <div class="task-content">
