@@ -9,8 +9,6 @@ if(isset($_POST['searchTaskText'])) {
   $resultArray = array();
 
 
-  echo $searchResultIds;
-
   for($i = 0; $i < count($searchResultIds); $i++){
     $taskDetails = null;
     $taskTags = null;
@@ -19,11 +17,14 @@ if(isset($_POST['searchTaskText'])) {
     $taskComments = null;
     $projectTags = null;
 
-    $taskDetails = getTaskDetails($searchResultIds[$i]);
-    $taskTags = getTagFromTaskId($searchResultIds[$i]);
-    $taskAssignedName = getTaskAssignedName($searchResultIds[$i]);
+
+
+
+    $taskDetails = getTaskDetails($searchResultIds[$i]['id']);
+    $taskTags = getTagFromTaskId($searchResultIds[$i]['id']);
+    $taskAssignedName = getTaskAssignedName($searchResultIds[$i]['id']);
     $projectMembers = getProjectMembersNames($_SESSION['project_id']);
-    $taskComments = getTaskComments($searchResultIds[$i]);
+    $taskComments = getTaskComments($searchResultIds[$i]['id']);
     $projectTags = getTagsFromProject();
 
     array_push($resultArray, [$taskDetails, $taskTags, $taskAssignedName, $projectMembers, $taskComments, $projectTags]);
