@@ -4,6 +4,7 @@ $(document).ready(function(){
     $("li#icon-task a").css("color", "#e9d460");
 
     var addTaskButton = $(".task-button");
+    var searchTaskButton = $("#search-button");
 
    $('.uncompleted').show();
    $('.completed').hide();
@@ -31,6 +32,19 @@ $(document).ready(function(){
             cell3.innerHTML = "<i id='delete-button' onclick='deleteTask("+data[0].id+")' name='delete-task' class='fa fa-times'></i>";
         });
 
+    });
+
+    searchTaskButton.click(function() {
+    	var text = $(this).siblings("input.form-control").val();
+    	var ajaxurl = "../api/tasks/search-tasks.php";
+    	var data = {'searchTaskText' : text};
+    	$.post(ajaxurl, data, function(response) {
+        //TODO
+    	    var result = response;//JSON.parse(response);
+    	    console.log(result);
+    	    var tasklist = document.getElementById('task-list');
+    	    hideAllTasks();
+    	})
     });
 
     $('.input-group.date').datepicker();
@@ -439,5 +453,12 @@ function changeTagName(tag_name){
             }
         });
 
+    }
+}
+
+function hideAllTasks() {
+    var tasklist = document.getElementById('task-list');
+    for(var i = 0; i < tasklist.childNodes.length; i++){
+        var row = tasklist.deleteRow();
     }
 }

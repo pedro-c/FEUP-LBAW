@@ -223,3 +223,14 @@ function insertTag($tagName){
         $stmt = $conn->prepare("INSERT INTO comment (id, creation_date, content, id_user, id_task) VALUES (DEFAULT,LOCALTIMESTAMP,?,?,?);");
         $stmt->execute([$comment, $_SESSION['user_id'],$taskId]);
     }
+
+    function fullTextSearchTask($taskSearchText, $project_id) {
+        global $conn;
+        $stmtString = "SELECT id, ts_rank_cd((to_tsvector('portuguese', name)), query) AS rank
+                        FROM task, plainto_tsquery('portuguese', ?) AS query
+                        WHERE to_tsvector('portuguese', name) @@ plainto_tsquery('portuguese', ?) AND project_id = ?
+                        ORDER BY rank DESC;";
+        $stmt = $conn->prepare($stmtString);
+        $stmt->execute([$taskSearchText, $taskSearchText, $project_id]);
+        return $stmt->fetchAll();
+    }
