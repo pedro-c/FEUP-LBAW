@@ -37,36 +37,35 @@ $(document).ready(function(){
     searchTaskButton.click(function() {
 
     	var text = $(this).siblings("input.form-control").val();
-
-    	/*console.log(text);
-        console.log("antes");
-        $.ajax({
-            type: 'POST',
-            data: {'searchTaskText' : text} ,
-            url:'../api/tasks/search-tasks.php',
-            dataType: 'json',
-            success: function (result) {
-                console.log("aqui");
-                console.log(result);
-                var tasklist = document.getElementById('task-list');
-
-              //  hideAllTasks();
-            }
-        });*/
-
+        removeAllTasks();
 
         console.log(text);
 
     	var ajaxurl = "../api/tasks/search-tasks.php";
     	var data = {'searchTaskText' : text};
     	$.post(ajaxurl, data, function(response) {
-        //TODO
-    	    var result = response;
-    	    console.log(result);
-    	    var tasklist = document.getElementById('task-list');
-    	    console.log(tasklist);
-    	    hideAllTasks();
-    	})
+
+            var result = JSON.parse(response);
+
+    	    for(let i = 0; i < result.length ; i++){
+                let data = result[i][0];
+
+                var tasklist = document.getElementById('task-list');
+                var row = tasklist.insertRow();
+                row.setAttribute("class", "task");
+                row.setAttribute("id", data[0].id);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                cell1.innerHTML = "<i class='fa fa-check-circle-o' id='complete-button' onclick='completeTask("+data[0].id+")'></i>";
+                cell2.innerHTML = "<div onclick='toggle("+data[0].id+");'><textarea onclick='toggle("+data[0].id+");' id="+data[0].id+" disabled='true'>"+data[0].name+"</textarea></div>";
+                cell3.innerHTML = "<i id='delete-button' onclick='deleteTask("+data[0].id+")' name='delete-task' class='fa fa-times'></i>";
+
+            }
+
+
+
+        })
 
     });
 
@@ -479,19 +478,12 @@ function changeTagName(tag_name){
     }
 }
 
-function hideAllTasks() {
+function removeAllTasks() {
     var tasklist = document.getElementById('task-list');
 
     $('#task-list .task').each(function(i, obj) {
-        $(this).hide();
+        $(this).remove();
     });
 
 
-   /* for(var i = 0; i < tasklist.childNodes.length; i++){
-
-        $(this).hide();
-        console.log("entrei");
-
-       // var row = tasklist.deleteRow();
-    }*/
 }
