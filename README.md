@@ -5,58 +5,26 @@
 ### 3MIEIC01 - Group 14 - 7.Project management
 http://lbaw.fe.up.pt/201617/doku.php/lbaw1614/index
 
-### Checklist
-
-- [ ] Implement user management.
-
-- [ ] Implement support for mobile devices.
-
-- [ ] Implement an information search system using the full-text search features of PostgreSQL.
-
-- [ ] Implementing online assistance (e.g. help online) in the product.
-
-- [ ] Ensure isolation of various system layers (SQL, PHP, and HTML/CSS/JSON) with technologies such as PDO and Smarty.
-
-- [ ] Implement an architecture to handle internal errors.
-
-- [ ] Use AJAX in web pages.
-
-- [ ] Validate data entered by the user in forms using HTML5.
-
-- [ ] Validate data entered by the user in forms using JavaScript.
-
-- [ ] Validate data entered by the user in forms using PHP.
-
-- [ ] Implement access control.
-
-- [ ] Check the HTML and CSS using the W3C validation tools.
-
-- [ ] Check the accessibility of interfaces using automated tools.
-
-- [ ] Check the usability of the product based on lists of common web usability problems.
-
-- [ ] Remove test and development comments from source code.
-
-- [ ] Remove temporary or unused files from the delivered source code.
-
-- [ ] Include the source code in a single .zip file attached in the wiki page of the product.
-
-- [ ] Include a list of features in the product wiki page, indicating the implementation status of each feature (as a percentage).
-
-- [ ] Display the URL of the product on the wiki page.
-
-- [ ] Include product access credentials (with different levels of permissions) on the wiki page.
-
-- [ ] Prepare and include in the wiki page a promotional video of the product (2 minutes maximum).
-
-- [ ] Remove test data from the database.
-
-- [ ] Populate the database with good (realistic) examples.
-
-- [ ] Prepare the script for product demonstration.
-
 ### Developers
 * [Edgar de Lemos Passos](https://github.com/epassos26)
 * [José Carlos Milheiro Soares Coutinho](https://github.com/ZeCarlosCoutinho)
 * [Maria João dos Santos Aguiar e Mira Paulo](https://github.com/MariaJoaoMiraPaulo)
 * [Pedro Duarte da Costa](https://github.com/pedro-c)
+
+### Artefacts
+#### User Requirements specification
+A1: [Project presentation](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/a1_direkt.pdf)
+A2: [Personas and Usage Scenarios](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/a2_actors_and_user_stories.pdf)
+A3: [User Interfaces Prototype](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/a3_user_interface_prototype.pdf)
+#### Database specification
+A4: [Conceptual Data Model](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/a4_conceptual_data_model.pdf)
+A5: [Relational schema, validation and schema refinement](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/a5_relational_schema.pdf)
+A6: [Integrity constraints. indexes, triggers, user functions, database populated with data](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/a6_integrity_constraints_indexes_triggers_and_user_functions.pdf)
+#### Architecture specification and Prototype
+A7: [High-level architecture. Privileges. Web resources specification](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/a7_web_resources_documentation.pdf)
+A8: [Vertical Prototype](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/a8_vertical_prototype.pdf)
+A9: [Main Accesses to the database and transactions](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/a9_main_accesses_to_the_database_and_transactions.pdf)
+#### Product and Presentation
+A10: [Product](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/a10_product.pdf)
+
+
