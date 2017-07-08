@@ -432,3 +432,18 @@ textarea{
 .input-group{
   border-bottom: 10px;
 }
+
+.form-group{
+  position: relative;
+
+
+  .fa{
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+  }
+
+  .find-task{
+    text-indent: 20px;
+  }
+}
