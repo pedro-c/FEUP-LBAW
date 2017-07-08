@@ -27,4 +27,14 @@ http://lbaw.fe.up.pt/201617/doku.php/lbaw1614/index
 #### Product and Presentation
 * A10: [Product](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/a10_product.pdf)
 
+### Prototypes
+![Login](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/mockups/login.png)
+![Dashboard](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/mockups/dashboard.png)
+![Tasks](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/mockups/tasks.png)
+![Files](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/mockups/files.png)
+![Forum](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/mockups/forum.png)
+![Meetings](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/mockups/meetings2.png)
+![Team](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/mockups/profile.png)
+![Profile](https://github.com/pedro-c/FEUP-LBAW/blob/master/artefacts/mockups/team.png)
+
 
