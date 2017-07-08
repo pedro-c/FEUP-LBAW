@@ -1,0 +1,160 @@
+@import 'global';
+
+.content{
+  text-align: center;
+  background-color: $white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  border-radius: 3px;
+  top: 10px;
+  padding: 20px;
+}
+
+.profile-pic{
+  input,span{
+    display: inline-block;
+  }
+}
+
+.project-managment{
+  width: 100%;
+  border-top: solid 1px $light_grey ;
+  padding: 20px;
+  display: block;
+  align-content: center;
+  .join-project{
+    input{
+      height: 30px;
+      padding: 5px;
+      border: solid 1px $light_grey ;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      margin-right: -5px;
+    }
+    button{
+      margin-top:1px;
+      height: 30px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  .new-project{
+    input{
+      height: 30px;
+      padding: 5px;
+      border: solid 1px $light_grey ;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      margin-right: -5px;
+    }
+    button{
+      margin-top:1px;
+      height: 30px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+
+.personal-info{
+  width: 100%;
+  border-top: solid 1px $light_grey ;
+  padding: 20px;
+  display: block;
+  align-content: center;
+  div.info{
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    span{
+      display: table-cell;
+      width: 50px;
+      vertical-align: middle;
+      height: 35px;
+      background-color: #eee;
+      border: solid 1px $light_grey;
+      border-bottom-left-radius: 3px;
+      border-top-left-radius: 3px;
+    }
+    input, select{
+      text-align: left;
+      padding-left: 10px;
+      width: 250px;
+      display: table-cell;
+      vertical-align: middle;
+      height: 35px;
+      border: solid 1px $light_grey;
+      border-bottom-right-radius: 3px;
+      border-top-right-radius: 3px;
+      background-color: white;
+    }
+  }
+  div.update{
+    padding-top: 10px;
+    button{
+      width: 100px;
+      display: none;
+    }
+  }
+}
+
+.password{
+  border-top: solid 1px $light_grey ;
+  padding: 10px;
+  text-align: center;
+  div{
+    padding: 5px;
+    text-align: center;
+    align-content: center;
+    #new-password{
+      width: 300px;
+    }
+  }
+  input{
+    width: 300px;
+    padding: 5px;
+    border: solid 1px $light_grey;
+    border-radius: 3px;
+  }
+  div.progress{
+    display: inline-block;
+    width: 300px;
+    margin: 0;
+  }
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen
+and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 1) {
+
+  .frame-square{
+    width: 130px;
+    height: 130px;
+  }
+
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen
+and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (min-resolution: 192dpi) {
+  .frame-square{
+    width: 260px;
+    height: 260px;
+  }
+}
+
+/* ----------- Mobile Screens ----------- */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+  .frame-square{
+    width: 60px;
+    height: 60px;
+  }
+}

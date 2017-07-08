@@ -1,0 +1,514 @@
+//colors
+@import 'global';
+
+//@extend-elements
+//original selectors
+//html, body
+%extend_1 {
+  margin: 0;
+  height: 100%;
+  background-color: $background_white;
+  width: 100%;
+}
+
+html {
+  @extend %extend_1;
+}
+
+body {
+  @extend %extend_1;
+}
+
+
+.container {
+  height: 100%;
+  padding: 0;
+  align-content: center;
+  width: 100vw;
+  display: table;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .panel{
+    margin: 0;
+    height: 100%;
+  }
+  .panel-body{
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
+.container2{
+  height: 100% !important;
+  padding: 0;
+  .div{
+    padding: 0;
+  }
+  .col-xs-12{
+    padding: 0;
+  }
+  .row{
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.panelnopadding{
+  padding: 0 !important;
+}
+
+.vertical-align {
+  min-height: 50vh;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+  .content_login {
+    background-color: #22313f;
+    height: 80vh;
+  }
+
+  .nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #buttons{
+    white-space: normal !important;
+  }
+
+.description-links {
+  margin-top: 65px;
+  font-size: x-large;
+  text-align: center;
+  cursor: pointer;
+
+  .sign-in-title {
+    text-align: center;
+    text-decoration: none;
+    margin-right: 20px;
+    padding-bottom: 5px;
+    color: white;
+    border-bottom: 4px solid;
+    border-bottom-color: $color_yellow;
+    &:hover,
+    &:visited {
+      border-bottom: 4px solid;
+      border-bottom-color: $color_yellow;
+      outline: 0;
+    }
+  }
+
+  .or-title {
+    padding-right: 20px;
+    color: white;
+    font-size: large;
+  }
+
+  .sign-up-title {
+    text-align: center;
+    text-decoration: none;
+    color: #425262;
+    padding-bottom: 5px;
+    &:hover,
+    &:visited {
+      border-bottom: 4px solid;
+      border-bottom-color: $color_yellow;
+      outline: 0;
+    }
+  }
+}
+
+.form-login {
+  margin-top: 90px;
+  font-size: small;
+  color: white !important;
+
+  .form-login-right {
+    margin-left: 35px;
+    margin-right: 45px;
+
+    .border-bottom {
+      padding-left: 0 !important;
+    }
+
+    .border-bottom:nth-child(3),
+    .border-bottom:nth-child(7) {
+      padding-bottom: 4px;
+      border-bottom-style: solid;
+      border-bottom-color: #425262;
+      outline: 0;
+    }
+  }
+
+  .error_messages{
+    font-size: 15px;
+  }
+
+  .email {
+
+  }
+
+  #email-input-id.email-input {
+    font-size: small;
+    padding-top: 15px;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+
+
+  .password {
+    padding-top: 35px;
+    display: inline-block;
+  }
+
+  #password-input-id.password-input {
+    padding-top: 15px;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+
+  .form-actions {
+    margin: 0;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+
+    .login-button {
+      padding: 10px 60px 10px 60px;
+      margin-top: 122px;
+      background-color: #425262;
+      border: none;
+      color: white;
+
+      &:active,
+      &:focus,
+      &:hover,
+      &:visited {
+        background-color: $color_yellow;
+        color: white;
+        outline: 0;
+      }
+    }
+
+  }
+
+}
+
+
+.form-register {
+  margin-top: 50px;
+  font-size: small;
+  color: white !important;
+
+  .form-register-right {
+    margin-left: 45px;
+    margin-right: 45px;
+
+    .border-bottom {
+      padding-left: 0 !important;
+    }
+
+    .border{
+      padding-bottom: 4px;
+      border-bottom-style: solid;
+      border-bottom-color: #425262;
+      outline: 0;
+      box-shadow: 0px 24px 3px -24px #425262;
+    }
+  }
+
+  .email {
+    display: inline-block;
+  }
+
+  #email-input-id.email-input {
+    font-size: small;
+    padding-top: 15px;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+  .error_messages{
+    font-size: 15px;
+  }
+
+  .name {
+    padding-top: 35px;
+    display: inline-block;
+  }
+
+  #name-input-id.name-input {
+    font-size: small;
+    padding-top: 15px;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+
+  .username {
+    padding-top: 35px;
+    display: inline-block;
+  }
+
+  #username-input-id.username-input {
+    font-size: small;
+    padding-top: 15px;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+  .password {
+    padding-top: 35px;
+    display: inline-block;
+  }
+
+  #password-input-id.password-input {
+    padding-top: 15px;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+
+  .project {
+    display: inline-block;
+  }
+
+  #project-input-id {
+    font-size: small;
+    background-color: transparent !important;
+    border: none !important;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+
+  .group2{
+    padding-top: 35px;
+    padding-bottom: 15px;
+    vertical-align: middle;
+  }
+
+  .group1{
+    padding-top: 15px;
+  }
+
+  .new-project {
+    display: inline-block;
+  }
+
+  #new-project-input-id {
+    font-size: small;
+    background-color: transparent !important;
+    border: none !important;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+    &::-moz-placeholder {
+      color: #425262;
+    }
+    &:-ms-input-placeholder {
+      color: #425262;
+    }
+
+  }
+
+  .form-actions {
+    margin: 0;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+
+    .register-button {
+      padding: 10px 50px 10px 50px;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      background-color: #425262;
+      border: none;
+      color: white;
+
+      &:active,
+      &:focus,
+      &:hover,
+      &:visited {
+        background-color: $color_yellow;
+        color: white;
+        outline: 0;
+      }
+    }
+
+  }
+}
+
+@keyframes slidy {
+  0% { left: 0%; }
+  20% { left: 0%; }
+  25% { left: -100%; }
+  45% { left: -100%; }
+  50% { left: -200%; }
+  70% { left: -200%; }
+  75% { left: -300%; }
+  95% { left: -300%; }
+  100% { left: -400%; }
+}
+
+body { margin: 0; }
+div#slider { overflow: hidden; height: 100%; }
+div#slider figure img { width: 25%; height: 100%; float: left; }
+div#slider figure {
+  position: relative;
+  width: 400%;
+  height: 100%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite;
+}
+
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen
+and (min-device-width: 668px){
+
+  .container{
+    height: 80vh !important;
+    padding-top: 10vh !important;
+  }
+
+}
+
+

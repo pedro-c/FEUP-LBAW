@@ -1,10 +1,10 @@
 <?php
-include_once "common/header.html";
+include_once "common/header.php";
 ?>
 
-<link href="../css/profile.css" rel="stylesheet"/>
-<script src="../js/pwstrength-bootstrap.min.js"></script>
-<script src="../js/profile.js"></script>
+<link href="../../css/profile.css" rel="stylesheet"/>
+<script src="../../javascript/pwstrength-bootstrap.min.js"></script>
+<script src="../../javascript/profile.js"></script>
 
 <div id="page-wrapper">
 
@@ -15,7 +15,7 @@ include_once "common/header.html";
             <div class="content col-xs-8 col-md-4 col-xs-offset-2 col-md-offset-4">
                 <div class="profile-pic">
                     <div>
-                        <img class="img-circle" src="../../assets/avatar5.jpg">
+                        <img class="img-circle" src="../../images/users/avatar5.jpg">
                     </div>
                     <div>
                         <a href="#">Change Photo</a>

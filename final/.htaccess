@@ -1,0 +1,5 @@
+DirectoryIndex pages/authentication.php
+
+RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ ../../../../../~lbaw1614/final/pages/authentication.php

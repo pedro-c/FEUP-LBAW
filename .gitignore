@@ -45,3 +45,7 @@ fabric.properties
 
 # SCSS Mapping
 *.css.map
+
+proto/config/init\.php
+
+proto/templates_c/

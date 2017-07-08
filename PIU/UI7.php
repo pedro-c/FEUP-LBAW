@@ -1,9 +1,10 @@
 <?php
-include_once "common/header.html";
+include_once "common/header.php";
+include_once "../../database/meetings.php";
 ?>
 
-<link href="../css/UI7.css" rel="stylesheet">
-<script src="../js/UI7.js"></script>
+<link href="../../css/UI7.css" rel="stylesheet">
+<script src="../../javascript/UI7.js"></script>
 
 <div id="page-meetings">
     <div class="row">
@@ -40,10 +41,10 @@ include_once "common/header.html";
                                 <label class="hour">7:00PM</label><br>
                                 <label class="user_responsible">Maria Joao Mira Paulo</label><br>
                                 <label class="guests">
-                                    <img class="user_photo" src="../assets/avatar2.png">
-                                    <img class="user_photo" src="../assets/avatar3.png">
-                                    <img class="user_photo" src="../assets/avatar4.png">
-                                    <img class="user_photo" src="../assets/avatar7.png">
+                                    <img class="user_photo" src="../../images/users/avatar2.png">
+                                    <img class="user_photo" src="../../images/users/avatar3.png">
+                                    <img class="user_photo" src="../../images/users/avatar4.png">
+                                    <img class="user_photo" src="../../images/users/avatar7.png">
                                     <span id="plus_user" class="glyphicon glyphicon-plus-sign"
                                           aria-hidden="true"></span>
                                 </label>
@@ -73,10 +74,10 @@ include_once "common/header.html";
                                 <label class="hour">7:00PM</label><br>
                                 <label class="user_responsible">Maria Joao Mira Paulo</label><br>
                                 <label class="guests">
-                                    <img class="user_photo" src="../assets/avatar2.png">
-                                    <img class="user_photo" src="../assets/avatar3.png">
-                                    <img class="user_photo" src="../assets/avatar4.png">
-                                    <img class="user_photo" src="../assets/avatar7.png">
+                                    <img class="user_photo" src="../../images/users/avatar2.png">
+                                    <img class="user_photo" src="../../images/users/avatar3.png">
+                                    <img class="user_photo" src="../../images/users/avatar4.png">
+                                    <img class="user_photo" src="../../images/users/avatar7.png">
                                     <span id="plus_user" class="glyphicon glyphicon-plus-sign"
                                           aria-hidden="true"></span>
                                 </label>
@@ -107,8 +108,8 @@ include_once "common/header.html";
                                 <label class="hour">7:00PM</label><br>
                                 <label class="user_responsible">Edgar Passos</label><br>
                                 <label class="guests">
-                                    <img class="user_photo" src="../assets/avatar3.png">
-                                    <img class="user_photo" src="../assets/avatar6.png">
+                                    <img class="user_photo" src="../../images/users/avatar3.png">
+                                    <img class="user_photo" src="../../images/users/avatar6.png">
                                     <span id="plus_user" class="glyphicon glyphicon-plus-sign"
                                           aria-hidden="true"></span>
                                 </label>
@@ -135,11 +136,11 @@ include_once "common/header.html";
                                 <label class="hour">7:00PM</label><br>
                                 <label class="user_responsible">Pedro Duarte Costa</label><br>
                                 <label class="guests">
-                                    <img class="user_photo" src="../assets/avatar3.png">
-                                    <img class="user_photo" src="../assets/avatar6.png">
-                                    <img class="user_photo" src="../assets/avatar1.png">
-                                    <img class="user_photo" src="../assets/avatar2.png">
-                                    <img class="user_photo" src="../assets/avatar4.png">
+                                    <img class="user_photo" src="../../images/users/avatar3.png">
+                                    <img class="user_photo" src="../../images/users/avatar6.png">
+                                    <img class="user_photo" src="../../images/users/avatar1.png">
+                                    <img class="user_photo" src="../../images/users/avatar2.png">
+                                    <img class="user_photo" src="../../images/users/avatar4.png">
                                     <span id="plus_user" class="glyphicon glyphicon-plus-sign"
                                           aria-hidden="true"></span>
                                 </label>
@@ -241,18 +242,18 @@ include_once "common/header.html";
                         </div>
                         <div class="minutes">Approximately 30 minutes</div>
                         <div class="files">
-                            <img class="file_show" src="../assets/pdf.png">
+                            <img class="file_show" src="../../images/assets/pdf.png">
                             <label class="file_description"> Meeting_15_Abr </label><br>
-                            <img class="file_show" src="../assets/file.png">
+                            <img class="file_show" src="../../images/assets/file.png">
                             <label class="file_description"> New_project_marketing </label>
 
                         </div>
 
                         <div class="guests">
-                            <img class="user_photo" src="../assets/avatar2.png">
-                            <img class="user_photo" src="../assets/avatar3.png">
-                            <img class="user_photo" src="../assets/avatar4.png">
-                            <img class="user_photo" src="../assets/avatar7.png">
+                            <img class="user_photo" src="../../images/users/avatar2.png">
+                            <img class="user_photo" src="../../images/users/avatar3.png">
+                            <img class="user_photo" src="../../images/users/avatar4.png">
+                            <img class="user_photo" src="../../images/users/avatar7.png">
                             <span id="plus" class="glyphicon glyphicon-plus-sign"
                                   aria-hidden="true"></span>
                         </div>
@@ -267,7 +268,7 @@ include_once "common/header.html";
 
 
 <?php
-include_once "common/footer.html";
+include_once "common/footer.php";
 ?>
 
 

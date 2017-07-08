@@ -1,8 +1,9 @@
 <?php
-include_once 'common/header.html';
+include_once 'common/header.php';
+include_once '../../database/dashboard.php';
 ?>
-<link href="../css/UI2.css" rel="stylesheet"/>
-<script src="../js/dashboard.js"></script>
+
+<link href="../../css/UI2.css" rel="stylesheet"/>
 
 <div class="page-wrapper container">
     <div class="row"><br>
@@ -58,7 +59,7 @@ include_once 'common/header.html';
                                             class="dash-item-text">Don't forget to comment</span>
                                 </span>
                                 <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                        <img src="../assets/avatar2.png" class="dash-user-thumb"/><span
+                                        <img src="../../images/users/avatar2.png" class="dash-user-thumb"/><span
                                             class="dash-item-username"><small>epassos</small></span>
                                 </span>
                             </div>
@@ -69,7 +70,7 @@ include_once 'common/header.html';
                             <i class="glyphicon glyphicon-menu-right dash-icon"></i><span class="dash-item-text">Great JS resource</span>
                                 </span>
                                 <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                        <img src="../assets/avatar6.png" class="dash-user-thumb"/><span
+                                        <img src="../../images/users/avatar6.png" class="dash-user-thumb"/><span
                                             class="dash-item-username"><small>pedroc</small></span>
                                 </span>
                             </div>
@@ -80,7 +81,7 @@ include_once 'common/header.html';
                             <i class="glyphicon glyphicon-menu-right dash-icon"></i><span class="dash-item-text">Some changes needed</span>
                                 </span>
                                 <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                        <img src="../assets/avatar1.png" class="dash-user-thumb"/><span
+                                        <img src="../../images/users/avatar1.png" class="dash-user-thumb"/><span
                                             class="dash-item-username"><small>mariajoaomp</small></span>
                                 </span>
                             </div>
@@ -127,10 +128,10 @@ include_once 'common/header.html';
                         <button class="list-group-item">
                             <div class="row">
                                 <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                               <img class="file_show" src="../assets/excel.png"><span class="dash-item-text">clients.xls</span>
+                               <img class="file_show" src="../../images/assets/excel.png"><span class="dash-item-text">clients.xls</span>
                                 </span>
                                 <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                        <img src="../assets/avatar1.png" class="dash-user-thumb"/><span
+                                        <img src="../../images/users/avatar1.png" class="dash-user-thumb"/><span
                                             class="dash-item-username"><small>mariajoaomp</small></span>
                                 </span>
                             </div>
@@ -138,11 +139,11 @@ include_once 'common/header.html';
                         <button class="list-group-item">
                             <div class="row">
                                 <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                              <img class="file_show" src="../assets/pdf.png">
+                              <img class="file_show" src="../../images/assets/pdf.png">
                                 <span class="dash-item-text">requirements.pdf</span>
                                 </span>
                                 <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                        <img src="../assets/avatar2.png" class="dash-user-thumb"/><span
+                                        <img src="../../images/users/avatar2.png" class="dash-user-thumb"/><span
                                             class="dash-item-username"><small>epassos</small></span>
                                 </span>
                             </div>
@@ -150,11 +151,11 @@ include_once 'common/header.html';
                         <button class="list-group-item">
                             <div class="row">
                                 <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                             <img class="file_show" src="../assets/file.png">
+                             <img class="file_show" src="../../images/assets/file.png">
                                 <span class="dash-item-text">team_guide.pdf</span>
                                 </span>
                                 <span class="dash-item-user col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                        <img src="../assets/avatar3.png" class="dash-user-thumb"/><span
+                                        <img src="../../images/users/avatar3.png" class="dash-user-thumb"/><span
                                             class="dash-item-username"><small>jccoutinho</small></span>
                                 </span>
                             </div>
@@ -174,37 +175,37 @@ include_once 'common/header.html';
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                             <div href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../assets/avatar2.png"/>
+                                <img alt="Team member picture" src="../../images/users/avatar2.png"/>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                             <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../assets/avatar7.png"/>
+                                <img alt="Team member picture" src="../../images/users/avatar7.png"/>
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                             <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../assets/avatar6.png"/>
+                                <img alt="Team member picture" src="../../images/users/avatar6.png"/>
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                             <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../assets/avatar5.jpg"/>
+                                <img alt="Team member picture" src="../../images/users/avatar5.jpg"/>
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                             <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../assets/avatar4.png"/>
+                                <img alt="Team member picture" src="../../images/users/avatar4.png"/>
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                             <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../assets/avatar3.png"/>
+                                <img alt="Team member picture" src="../../images/users/avatar3.png"/>
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                             <a href="#" class="dash-thumbnail thumbnail">
-                                <img alt="Team member picture" src="../assets/avatar1.png"/>
+                                <img alt="Team member picture" src="../../images/users/avatar1.png"/>
                             </a>
                         </div>
                     </div>

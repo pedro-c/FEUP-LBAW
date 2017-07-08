@@ -9,16 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Direkt</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="../css/UI1.css" rel="stylesheet">
-    <link href="../css/plugins/morris.css" rel="stylesheet">
-    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/UI1_novo.css" rel="stylesheet">
+    <link href="../../css/plugins/morris.css" rel="stylesheet">
+    <link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <script src="../js/UI1.js"></script>
-    <script src="../js/jquery.js"></script>
+    <script src="../../javascript/UI1.js"></script>
+    <script src="../../javascript/jquery.js"></script>
 
 
 </head>
@@ -27,112 +25,106 @@
 
 
 <div class="container">
-    <div class="row vertical-align">
-        <div class="col-xs-8 col-xs-offset-2 login-box">
-            <div class="border_radius">
-                <div class="col-lg-6 col-sm-6 col-md-6 hidden-xs content_login nopadding" id="slider-card">
-                    <img class="img-responsive" src="../assets/2.png"
-                         style="width:100%;overflow: hidden; height: 100%;"/>
-                </div>
-                <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 content_login pull-right">
-                    <div class="row row-centered">
-                        <div class="description-links">
-                            <div class="col-xs-12 nopadding">
-                                <a class="sign-in-title" onclick="signIn()">Sign In</a>
-                                <span class="or-title"> or </span>
-                                <a class="sign-up-title" onclick="signUp()">Sign Up</a>
-                            </div>
-                        </div>
+   <div class="row">
+             <div class="panel panel-default login-box panelnopadding" >
+                 <div class="panel-body panelnopadding">
+                    <div class="col-lg-6 col-sm-6 col-md-6 hidden-xs content_login panelnopadding">
+                        <img class="img-responsive" src="../../images/assets/2.png"
+                             style="width:100%;overflow: hidden; height: 100%;"/>
                     </div>
-                    <div class="row text-left">
-                        <div class="col-xs-12">
-                            <div class="form-login">
-                                <form>
-                                    <div class="form-login-right">
-                                        <div class="col-xs-12 border-bottom">
-                                            <span class="username"> Username: </span>
-                                        </div>
-                                        <br>
-                                        <div class="col-xs-12 border-bottom">
-                                            <input id="username-input-id" class="username-input"
-                                                   placeholder="Enter your username"
-                                                   type="text">
-                                        </div>
-                                        <br>
-                                        <div class="col-xs-12 border-bottom">
-                                            <span class="password"> Password: </span>
-                                        </div>
-                                        <br>
-                                        <div class="col-xs-12 border-bottom">
-                                            <input id="password-input-id" class="password-input"
-                                                   placeholder="Enter your password"
-                                                   type="password">
-                                        </div>
-                                        <br>
-                                    </div>
-                                    <div class="col-xs-12 col-login nopadding">
-                                        <div class="form-actions nopadding">
-                                            <input href="../UI2.php" class="btn btn-default login-button" type="submit" value="Login">
-                                        </div>
-                                    </div>
+                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 content_login pull-right panelnopadding">
+                         <div class="row row-centered">
+                             <div class="description-links">
+                                 <div class="col-xs-12 nopadding">
+                                     <a class="sign-in-title" onclick="signIn()">Sign In</a>
+                                     <span class="or-title"> or </span>
+                                     <a class="sign-up-title" onclick="signUp()">Sign Up</a>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="row text-left">
+                             <div class="col-xs-12">
+                                 <div class="form-login">
+                                     <form>
+                                         <div class="form-login-right">
+                                             <div class="col-xs-12 border-bottom">
+                                                 <span class="email"> Email: </span>
+                                             </div>
+                                             <br>
+                                             <div class="col-xs-12 border-bottom">
+                                                 <input id="email-input-id" class="email-input"
+                                                        placeholder="Enter your email"
+                                                        type="text">
+                                                 <span class="error_messages"> {$ERROR_MESSAGES[0]}</span>
+                                             </div>
+                                             <br>
+                                             <div class="col-xs-12 border-bottom">
+                                                 <span class="password"> Password: </span>
+                                             </div>
+                                             <br>
+                                             <div class="col-xs-12 border-bottom">
+                                                 <input id="password-input-id" class="password-input"
+                                                        placeholder="Enter your password"
+                                                        type="password">
+                                             </div>
+                                             <br>
+                                         </div>
+                                         <div class="col-xs-12 col-login nopadding">
+                                             <div class="form-actions nopadding">
+                                                 <input href="../UI2.php" class="btn btn-default login-button" type="submit" value="Login">
+                                             </div>
+                                         </div>
 
-                                </form>
-                            </div>
+                                     </form>
+                                 </div>
+                                 <div class="form-register" hidden>
+                                     <form>
+                                         <div class="form-register-right">
 
-                            <!--SignUp-->
-                            <div class="form-register" hidden>
-                                <form>
-                                    <div class="form-register-right">
+                                             <div class="col-xs-12 border-bottom">
+                                                 <span class="email"> Email: </span>
+                                             </div>
+                                             <br>
+                                             <div class="col-xs-12 border-bottom">
+                                                 <input id="email-input-id" class="email-input"
+                                                        placeholder="Enter your email"
+                                                        type="email">
+                                             </div>
+                                             <br>
+                                             <div class="col-xs-12 border-bottom">
+                                                 <span class="username"> Username: </span>
+                                             </div>
+                                             <br>
+                                             <div class="col-xs-12 border-bottom">
+                                                 <input id="username-input-id" class="username-input"
+                                                        placeholder="Choose your username"
+                                                        type="text">
+                                             </div>
+                                             <br>
+                                             <div class="col-xs-12 border-bottom">
+                                                 <span class="password"> Password: </span>
+                                             </div>
+                                             <br>
+                                             <div class="col-xs-12 border-bottom">
+                                                 <input id="password-input-id" class="password-input"
+                                                        placeholder="Choose your password"
+                                                        type="password">
+                                             </div>
+                                             <br>
+                                         </div>
+                                         <div class="col-xs-12 col-login nopadding">
+                                             <div class="form-actions nopadding">
+                                                 <input href="../UI2.php" class="btn btn-default register-button" type="submit"
+                                                        value="Register">
+                                             </div>
+                                         </div>
 
-                                        <div class="col-xs-12 border-bottom">
-                                            <span class="email"> Email: </span>
-                                        </div>
-                                        <br>
-                                        <div class="col-xs-12 border-bottom">
-                                            <input id="email-input-id" class="email-input"
-                                                   placeholder="Enter your email"
-                                                   type="email">
-                                        </div>
-                                        <br>
-                                        <div class="col-xs-12 border-bottom">
-                                            <span class="username"> Username: </span>
-                                        </div>
-                                        <br>
-                                        <div class="col-xs-12 border-bottom">
-                                            <input id="username-input-id" class="username-input"
-                                                   placeholder="Choose your username"
-                                                   type="text">
-                                        </div>
-                                        <br>
-                                        <div class="col-xs-12 border-bottom">
-                                            <span class="password"> Password: </span>
-                                        </div>
-                                        <br>
-                                        <div class="col-xs-12 border-bottom">
-                                            <input id="password-input-id" class="password-input"
-                                                   placeholder="Choose your password"
-                                                   type="password">
-                                        </div>
-                                        <br>
-                                    </div>
-                                    <div class="col-xs-12 col-login nopadding">
-                                        <div class="form-actions nopadding">
-                                            <input href="../UI2.php" class="btn btn-default register-button" type="submit"
-                                                   value="Register">
-                                        </div>
-                                    </div>
-
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                                     </form>
+                                 </div>
+                     </div>
+                 </div>
+             </div>
     </div>
 </div>
-</div>
-
-
 </body>
 </html>

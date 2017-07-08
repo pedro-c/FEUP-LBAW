@@ -1,0 +1,24 @@
+@import 'global';
+
+.item{
+  padding: 90px;
+  text-align: center;
+
+  i{
+    padding-bottom: 5px;
+    font-size: xx-large;
+    color: $blue_secondary;
+  }
+
+  .title{
+    font-weight: bold;
+    color: $blue_secondary;
+  }
+
+  .description{
+    color: $blue_secondary;
+    font-weight: lighter;
+    font-style: italic;
+  }
+
+}
