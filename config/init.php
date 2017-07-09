@@ -4,10 +4,10 @@ session_start();
 
 error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-$BASE_DIR = '/usr/users2/mieic2014/up201403820/public_html/final/'; //'/home/jczelik/Documents/LBAW/FEUP-LBAW/final/';
-$BASE_URL = '/~up201403820/final/'; //'/final/';
+$BASE_DIR = '/';
+$BASE_URL = '/'; //'/final/';
 
-$conn = new PDO('pgsql:host=dbm.fe.up.pt;dbname=lbaw1614', 'lbaw1614', 'yz54fi76');
+$conn = new PDO('pgsql:host=ec2-54-228-235-185.eu-west-1.compute.amazonaws.com;dbname=d644nnjg8qdhki', 'wwsobtwkkeflwe', '43d65b605514ded279487770a79c0ea1ba5a9d589c5aea337a9b31bff300f27e');
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
