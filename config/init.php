@@ -4,7 +4,7 @@ session_start();
 
 error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-$BASE_DIR = '/';
+$BASE_DIR = './';
 $BASE_URL = '/'; //'/final/';
 
 $conn = new PDO('pgsql:host=ec2-79-125-110-209.eu-west-1.compute.amazonaws.com;dbname=dg0raohtqa808', 'ineaipbghpfvid', '48acc6b1af17a447ac5f1ac4ad8dbaabc32993d16e39a1f91be6e161948256f0');
