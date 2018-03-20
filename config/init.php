@@ -7,7 +7,7 @@ error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 $BASE_DIR = '/';
 $BASE_URL = '/'; //'/final/';
 
-$conn = new PDO('pgsql:host=ec2-54-228-235-185.eu-west-1.compute.amazonaws.com;dbname=d644nnjg8qdhki', 'wwsobtwkkeflwe', '43d65b605514ded279487770a79c0ea1ba5a9d589c5aea337a9b31bff300f27e');
+$conn = new PDO('pgsql:host=ec2-79-125-110-209.eu-west-1.compute.amazonaws.com;dbname=dg0raohtqa808', 'ineaipbghpfvid', '48acc6b1af17a447ac5f1ac4ad8dbaabc32993d16e39a1f91be6e161948256f0');
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
